@@ -18,7 +18,7 @@ package tibia.chat
       
       protected var m_HTMLText:String = null;
       
-      protected var m_Mode:int = 0;
+      protected var m_Mode:int;
       
       protected var m_Timestamp:Number = NaN;
       
@@ -30,6 +30,7 @@ package tibia.chat
       
       public function ChannelMessage(param1:int, param2:String, param3:int, param4:int, param5:String)
       {
+         this.m_Mode = MessageMode.MESSAGE_NONE;
          super();
          if(param1 <= 0)
          {

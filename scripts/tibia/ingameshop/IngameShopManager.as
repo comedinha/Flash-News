@@ -13,8 +13,6 @@ package tibia.ingameshop
       public static const TIBIA_COINS_APPEARANCE_TYPE_ID:int = 22118;
        
       
-      private var m_CreditPackageSize:Number = 25;
-      
       private var m_ImageManager:tibia.ingameshop.DynamicImageManager;
       
       private var m_CreditsAreFinal:Boolean = false;
@@ -22,6 +20,8 @@ package tibia.ingameshop
       private var m_CurrentlyFeaturedServiceType:int = 0;
       
       private var m_Categories:Vector.<tibia.ingameshop.IngameShopCategory>;
+      
+      private var m_CanRequestNextTransactionHistoryPage:Boolean = false;
       
       private var m_History:Vector.<tibia.ingameshop.IngameShopHistoryEntry>;
       
@@ -31,7 +31,7 @@ package tibia.ingameshop
       
       private var m_ConfirmedCreditBalance:Number = NaN;
       
-      private var m_NumberOfTransactionHistoryPages:int = 0;
+      private var m_CreditPackageSize:Number = 25;
       
       public function IngameShopManager()
       {
@@ -47,6 +47,11 @@ package tibia.ingameshop
             s_Instance = new tibia.ingameshop.IngameShopManager();
          }
          return s_Instance;
+      }
+      
+      public function canRequestNextHistoryPage() : Boolean
+      {
+         return this.m_CanRequestNextTransactionHistoryPage;
       }
       
       public function purchaseRegularOffer(param1:int) : void
@@ -79,12 +84,26 @@ package tibia.ingameshop
          return OfferList.length > 0?OfferList[0]:null;
       }
       
+      public function creditsAreFinal() : Boolean
+      {
+         return this.m_CreditsAreFinal;
+      }
+      
       public function pageTransactionHistory(param1:int, param2:int) : void
       {
          var _loc3_:Communication = Tibia.s_GetCommunication();
          if(_loc3_ != null && _loc3_.isGameRunning)
          {
             _loc3_.sendCGETTRANSACTIONHISTORY(param1,param2);
+         }
+      }
+      
+      public function setCreditBalanceUpdating(param1:Boolean) : void
+      {
+         if(this.m_CreditsAreFinal != param1)
+         {
+            this.m_CreditsAreFinal = param1;
+            dispatchEvent(new IngameShopEvent(IngameShopEvent.CREDIT_BALANCE_CHANGED));
          }
       }
       
@@ -106,35 +125,16 @@ package tibia.ingameshop
          }
       }
       
-      public function getCreditPackageSize() : Number
-      {
-         return this.m_CreditPackageSize;
-      }
-      
       public function refreshTransactionHistory(param1:int) : void
       {
          if(this.getHistory().length > 0)
          {
-            this.setHistory(0,0,new Vector.<tibia.ingameshop.IngameShopHistoryEntry>());
+            this.setHistory(0,false,new Vector.<tibia.ingameshop.IngameShopHistoryEntry>());
          }
          var _loc2_:Communication = Tibia.s_GetCommunication();
          if(_loc2_ != null && _loc2_.isGameRunning)
          {
             _loc2_.sendCOPENTRANSACTIONHISTORY(param1);
-         }
-      }
-      
-      public function get imageManager() : tibia.ingameshop.DynamicImageManager
-      {
-         return this.m_ImageManager;
-      }
-      
-      public function setCreditBalanceUpdating(param1:Boolean) : void
-      {
-         if(this.m_CreditsAreFinal != param1)
-         {
-            this.m_CreditsAreFinal = param1;
-            dispatchEvent(new IngameShopEvent(IngameShopEvent.CREDIT_BALANCE_CHANGED));
          }
       }
       
@@ -151,13 +151,9 @@ package tibia.ingameshop
          }
       }
       
-      public function setHistory(param1:int, param2:int, param3:Vector.<tibia.ingameshop.IngameShopHistoryEntry>) : void
+      public function get imageManager() : tibia.ingameshop.DynamicImageManager
       {
-         this.m_History = param3;
-         this.m_CurrentTransactionHistoryPage = param1;
-         this.m_NumberOfTransactionHistoryPages = param2;
-         var _loc4_:IngameShopEvent = new IngameShopEvent(IngameShopEvent.HISTORY_CHANGED);
-         dispatchEvent(_loc4_);
+         return this.m_ImageManager;
       }
       
       public function getRootCategories() : Vector.<tibia.ingameshop.IngameShopCategory>
@@ -178,14 +174,13 @@ package tibia.ingameshop
          dispatchEvent(_loc3_);
       }
       
-      public function setCreditBalance(param1:Number, param2:Number) : void
+      public function setHistory(param1:int, param2:Boolean, param3:Vector.<tibia.ingameshop.IngameShopHistoryEntry>) : void
       {
-         if(this.m_CreditBalance != param1)
-         {
-            this.m_CreditBalance = param1;
-            this.m_ConfirmedCreditBalance = param2;
-            dispatchEvent(new IngameShopEvent(IngameShopEvent.CREDIT_BALANCE_CHANGED));
-         }
+         this.m_History = param3;
+         this.m_CurrentTransactionHistoryPage = param1;
+         this.m_CanRequestNextTransactionHistoryPage = param2;
+         var _loc4_:IngameShopEvent = new IngameShopEvent(IngameShopEvent.HISTORY_CHANGED);
+         dispatchEvent(_loc4_);
       }
       
       public function purchaseCharacterNameChange(param1:int, param2:String) : void
@@ -200,11 +195,6 @@ package tibia.ingameshop
       public function getHistoryPage() : int
       {
          return this.m_CurrentTransactionHistoryPage;
-      }
-      
-      public function getNumberOfHistoryPages() : int
-      {
-         return this.m_NumberOfTransactionHistoryPages;
       }
       
       private function recursiveSearchCategory(param1:String, param2:Vector.<tibia.ingameshop.IngameShopCategory>) : tibia.ingameshop.IngameShopCategory
@@ -227,6 +217,16 @@ package tibia.ingameshop
             }
          }
          return null;
+      }
+      
+      public function setCreditBalance(param1:Number, param2:Number) : void
+      {
+         if(this.m_CreditBalance != param1)
+         {
+            this.m_CreditBalance = param1;
+            this.m_ConfirmedCreditBalance = param2;
+            dispatchEvent(new IngameShopEvent(IngameShopEvent.CREDIT_BALANCE_CHANGED));
+         }
       }
       
       public function requestNameForNameChange(param1:int) : void
@@ -280,11 +280,6 @@ package tibia.ingameshop
          return this.recursiveSearchCategory(param1,this.m_Categories);
       }
       
-      public function creditsAreFinal() : Boolean
-      {
-         return this.m_CreditsAreFinal;
-      }
-      
       public function getConfirmedCreditBalance() : Number
       {
          return this.m_ConfirmedCreditBalance;
@@ -293,6 +288,11 @@ package tibia.ingameshop
       public function get currentlyFeaturedServiceType() : int
       {
          return this.m_CurrentlyFeaturedServiceType;
+      }
+      
+      public function getCreditPackageSize() : Number
+      {
+         return this.m_CreditPackageSize;
       }
       
       public function addCategory(param1:tibia.ingameshop.IngameShopCategory, param2:String) : void

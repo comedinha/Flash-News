@@ -3,9 +3,9 @@ package
    import mx.core.IFlexModuleFactory;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
-   import mx.skins.halo.ScrollThumbSkin;
    import mx.skins.halo.ScrollTrackSkin;
    import mx.skins.halo.ScrollArrowSkin;
+   import mx.skins.halo.ScrollThumbSkin;
    
    public class _ScrollBarStyle
    {
@@ -29,18 +29,18 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.thumbSkin = ScrollThumbSkin;
-               this.borderColor = 12040892;
-               this.paddingBottom = 0;
                this.thumbOffset = 0;
-               this.paddingRight = 0;
+               this.paddingTop = 0;
+               this.borderColor = 12040892;
+               this.trackColors = [9738651,15198183];
                this.trackSkin = ScrollTrackSkin;
                this.downArrowSkin = ScrollArrowSkin;
-               this.upArrowSkin = ScrollArrowSkin;
-               this.paddingTop = 0;
-               this.paddingLeft = 0;
-               this.trackColors = [9738651,15198183];
                this.cornerRadius = 4;
+               this.upArrowSkin = ScrollArrowSkin;
+               this.paddingLeft = 0;
+               this.paddingBottom = 0;
+               this.thumbSkin = ScrollThumbSkin;
+               this.paddingRight = 0;
             };
          }
       }

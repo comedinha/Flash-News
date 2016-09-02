@@ -26,10 +26,10 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.backgroundColor = 16777215;
                this.borderColor = 16777215;
-               this.footerColors = [15198183,13092807];
+               this.backgroundColor = 16777215;
                this.headerColors = [15198183,14277081];
+               this.footerColors = [15198183,13092807];
                this.borderAlpha = 1;
             };
          }

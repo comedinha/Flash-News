@@ -6,7 +6,6 @@ package tibia.ingameshop.shopWidgetClasses
    import mx.containers.Grid;
    import tibia.ingameshop.IngameShopOffer;
    import tibia.ingameshop.IngameShopWidget;
-   import shared.utility.i18n.i18nFormatDate;
    import flash.errors.IllegalOperationError;
    import tibia.ingameshop.IngameShopProduct;
    import mx.containers.GridRow;
@@ -56,28 +55,6 @@ package tibia.ingameshop.shopWidgetClasses
          this.m_UIBundleBox.addChild(this.m_UIProductGrid);
       }
       
-      private function formatTimeLeftString(param1:Number) : String
-      {
-         var _loc3_:uint = 0;
-         var _loc4_:uint = 0;
-         var _loc2_:Number = param1 - Math.floor(new Date().time / 1000);
-         if(_loc2_ > 0)
-         {
-            _loc3_ = _loc2_ / 86400;
-            _loc4_ = _loc2_ % 86400 / (60 * 60);
-            if(_loc3_ > 0)
-            {
-               return resourceManager.getString(BUNDLE,_loc3_ == 1?"TEXT_SALE_DURATION_DAY":"TEXT_SALE_DURATION_DAYS",[_loc3_]);
-            }
-            if(_loc4_ > 0)
-            {
-               return resourceManager.getString(BUNDLE,_loc4_ == 1?"TEXT_SALE_DURATION_HOUR":"TEXT_SALE_DURATION_HOURS",[_loc4_]);
-            }
-            return resourceManager.getString(BUNDLE,"TEXT_SALE_DURATION_MINUTES");
-         }
-         return resourceManager.getString(BUNDLE,"TEXT_SALE_DURATION_MINUTES");
-      }
-      
       public function dispose() : void
       {
          this.m_ShopWindow = null;
@@ -85,25 +62,12 @@ package tibia.ingameshop.shopWidgetClasses
       
       override protected function commitProperties() : void
       {
-         var _loc1_:* = null;
+         var _loc1_:String = null;
          if(this.m_UncommittedOffer)
          {
             if(this.m_Offer != null)
             {
-               _loc1_ = "";
-               if(this.m_Offer.disabled)
-               {
-                  _loc1_ = _loc1_ + ("<p><font color=\"#" + DISABLED_REASON_COLOR + "\">");
-                  _loc1_ = _loc1_ + (resourceManager.getString(BUNDLE,"LBL_CANNOT_BUY_GENERIC") + "\n" + this.m_Offer.disabledReason);
-                  _loc1_ = _loc1_ + "</font></p>\n";
-               }
-               if(this.m_Offer.isSale())
-               {
-                  _loc1_ = _loc1_ + "<p>";
-                  _loc1_ = _loc1_ + resourceManager.getString(BUNDLE,"TEXT_SALE_DESCRIPTION",[i18nFormatDate(new Date(this.m_Offer.saleValidUntilTimestamp * 1000)),this.formatTimeLeftString(this.m_Offer.saleValidUntilTimestamp),resourceManager.getString(BUNDLE,this.m_Offer.price == 1?"LBL_CREDITS_LONG_SINGULAR":"LBL_CREDITS_LONG_PLURAL",[this.m_Offer.price]),(this.m_Offer.priceReductionPercent() * 100).toFixed(0),resourceManager.getString(BUNDLE,this.m_Offer.basePrice == 1?"LBL_CREDITS_LONG_SINGULAR":"LBL_CREDITS_LONG_PLURAL",[this.m_Offer.basePrice])]);
-                  _loc1_ = _loc1_ + "</p>\n";
-               }
-               _loc1_ = _loc1_ + this.m_Offer.description;
+               _loc1_ = !!this.m_Offer.disabled?"<p><font color=\"#" + DISABLED_REASON_COLOR + "\">" + resourceManager.getString(BUNDLE,"LBL_CANNOT_BUY_GENERIC") + "\n" + this.m_Offer.disabledReason + "</font></p>\n" + this.m_Offer.description:this.m_Offer.description;
                this.m_UIDescriptionText.htmlText = _loc1_;
                this.m_UIBundleBox.setVisible(this.m_Offer.isBundle());
                this.buildBundleGrid();

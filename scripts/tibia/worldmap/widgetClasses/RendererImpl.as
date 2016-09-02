@@ -262,8 +262,6 @@ package tibia.worldmap.widgetClasses
       
       public static const STATUS_STYLE_HUD:int = 2;
       
-      protected static const SKILL_EXPERIENCE_GAIN:int = -2;
-      
       protected static const PROFESSION_MASK_SORCERER:int = 1 << PROFESSION_SORCERER;
       
       protected static const UNDERGROUND_LAYER:int = 2;

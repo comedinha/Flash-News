@@ -35,7 +35,6 @@ package tibia.ingameshop.shopWidgetClasses
             {
                this.m_UITitle.text = this.m_Offer.name;
                this.m_UIPrice.coins = this.m_Offer.price;
-               this.m_UIPrice.baseCoins = this.m_Offer.basePrice;
                this.m_UIIcon.setImageIdentifiers(this.m_Offer.iconIdentifiers);
             }
             else

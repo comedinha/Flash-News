@@ -26,9 +26,9 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.borderThickness = 0;
-               this.backgroundColor = 16777215;
                this.dropShadowEnabled = true;
+               this.backgroundColor = 16777215;
+               this.borderThickness = 0;
             };
          }
       }

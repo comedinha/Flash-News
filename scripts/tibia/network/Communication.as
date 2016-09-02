@@ -139,7 +139,7 @@ package tibia.network
       
       protected static const SKILL_EXPERIENCE:int = 0;
       
-      protected static const CGETOUTFIT:int = 210;
+      protected static const PACKETLENGTH_SIZE:int = 2;
       
       protected static const SSETTACTICS:int = 167;
       
@@ -363,7 +363,7 @@ package tibia.network
       
       protected static const SCHANNELS:int = 171;
       
-      public static const CLIENT_VERSION:uint = 2309;
+      public static const CLIENT_VERSION:uint = 2265;
       
       protected static const TYPE_SUMMON_OWN:int = 3;
       
@@ -391,13 +391,13 @@ package tibia.network
       
       protected static const CGETTRANSACTIONHISTORY:int = 254;
       
-      protected static const SSTOREBUTTONINDICATORS:int = 25;
+      protected static const SLOGINWAIT:int = 22;
       
       protected static const SCREATEONMAP:int = 106;
       
       protected static const CPRIVATECHANNEL:int = 154;
       
-      protected static const SLOGINWAIT:int = 22;
+      protected static const SINGAMESHOPSUCCESS:int = 254;
       
       public static const PREVIEW_STATE_REGULAR:uint = 0;
       
@@ -407,13 +407,11 @@ package tibia.network
       
       protected static const CLOOK:int = 140;
       
-      protected static const SINGAMESHOPSUCCESS:int = 254;
+      protected static const ERR_INVALID_CHECKSUM:int = 2;
       
       protected static const CTRADEOBJECT:int = 125;
       
       protected static const BLESSING_EMBRACE_OF_TIBIA:int = BLESSING_SPIRITUAL_SHIELDING << 1;
-      
-      protected static const ERR_INVALID_CHECKSUM:int = 2;
       
       protected static const SCONTAINER:int = 110;
       
@@ -422,8 +420,6 @@ package tibia.network
       protected static const SNPCOFFER:int = 122;
       
       protected static const SWORLDENTERED:int = 15;
-      
-      protected static const PACKETLENGTH_SIZE:int = 2;
       
       protected static const PAYLOAD_POS:int = HEADER_POS + HEADER_SIZE;
       
@@ -489,6 +485,8 @@ package tibia.network
       
       protected static const GUILD_WAR_ENEMY:int = 2;
       
+      protected static const SCREATURESPEED:int = 143;
+      
       protected static const CREQUESTSHOPOFFERS:int = 251;
       
       protected static const PROFESSION_MASK_ANY:int = PROFESSION_MASK_DRUID | PROFESSION_MASK_KNIGHT | PROFESSION_MASK_PALADIN | PROFESSION_MASK_SORCERER;
@@ -498,8 +496,6 @@ package tibia.network
       protected static const CANSWERMODALDIALOG:int = 249;
       
       protected static const NPC_SPEECH_NORMAL:uint = 1;
-      
-      protected static const SCREATURESPEED:int = 143;
       
       protected static const SSPELLDELAY:int = 164;
       
@@ -517,7 +513,7 @@ package tibia.network
       
       protected static const SCREATUREOUTFIT:int = 142;
       
-      public static const PROTOCOL_VERSION:int = 1097;
+      public static const PROTOCOL_VERSION:int = 1095;
       
       protected static const CEDITGUILDMESSAGE:int = 156;
       
@@ -676,8 +672,6 @@ package tibia.network
       protected static const SCHANGEONMAP:int = 107;
       
       protected static const CGOPATH:int = 100;
-      
-      protected static const SKILL_EXPERIENCE_GAIN:int = -2;
       
       protected static const FIELD_ENTER_NOT_POSSIBLE:uint = 2;
       
@@ -841,7 +835,7 @@ package tibia.network
       
       protected static const NPC_SPEECH_NONE:uint = 0;
       
-      protected static const SSETSTOREDEEPLINK:int = 168;
+      protected static const CGETOUTFIT:int = 210;
       
       protected static const PATH_MATRIX_CENTER:int = PATH_MAX_DISTANCE;
       
@@ -1537,13 +1531,15 @@ package tibia.network
             _loc2_.push(param1.readUnsignedByte());
             _loc3_--;
          }
-         Tibia.s_GetPremiumManager().updatePremiumMessages(_loc2_);
+         var _loc4_:int = param1.readUnsignedByte();
+         Tibia.s_GetPremiumManager().updatePremiumMessages(_loc2_,_loc4_);
+         IngameShopManager.getInstance().currentlyFeaturedServiceType = _loc4_;
       }
       
       protected function readSTRANSACTIONHISTORY(param1:ByteArray) : void
       {
          var _loc2_:int = 0;
-         var _loc3_:int = 0;
+         var _loc3_:* = false;
          var _loc4_:int = 0;
          var _loc5_:Vector.<IngameShopHistoryEntry> = null;
          var _loc6_:int = 0;
@@ -1551,8 +1547,8 @@ package tibia.network
          var _loc8_:int = 0;
          var _loc9_:Number = NaN;
          var _loc10_:String = null;
-         _loc2_ = param1.readUnsignedInt();
-         _loc3_ = param1.readUnsignedInt();
+         _loc2_ = param1.readUnsignedShort();
+         _loc3_ = param1.readUnsignedByte() == 1;
          _loc4_ = param1.readUnsignedByte();
          _loc5_ = new Vector.<IngameShopHistoryEntry>();
          _loc6_ = 0;
@@ -1953,17 +1949,11 @@ package tibia.network
       protected function readSPLAYERSKILLS(param1:ByteArray) : void
       {
          var _loc2_:int = 0;
-         var _loc3_:Number = NaN;
-         var _loc4_:Number = NaN;
-         var _loc5_:Number = NaN;
-         var _loc6_:Array = null;
-         var _loc7_:Array = null;
-         _loc2_ = 0;
-         _loc3_ = 0;
-         _loc4_ = 0;
-         _loc5_ = 0;
-         _loc6_ = [SKILL_FIGHTFIST,SKILL_FIGHTCLUB,SKILL_FIGHTSWORD,SKILL_FIGHTAXE,SKILL_FIGHTDISTANCE,SKILL_FIGHTSHIELD,SKILL_FISHING];
-         _loc7_ = [SKILL_CRITICAL_HIT_CHANCE,SKILL_CRITICAL_HIT_DAMAGE,SKILL_LIFE_LEECH_CHANCE,SKILL_LIFE_LEECH_AMOUNT,SKILL_MANA_LEECH_CHANCE,SKILL_MANA_LEECH_AMOUNT];
+         var _loc3_:Number = 0;
+         var _loc4_:Number = 0;
+         var _loc5_:Number = 0;
+         var _loc6_:Array = [SKILL_FIGHTFIST,SKILL_FIGHTCLUB,SKILL_FIGHTSWORD,SKILL_FIGHTAXE,SKILL_FIGHTDISTANCE,SKILL_FIGHTSHIELD,SKILL_FISHING];
+         var _loc7_:Array = [SKILL_CRITICAL_HIT_CHANCE,SKILL_CRITICAL_HIT_DAMAGE,SKILL_LIFE_LEECH_CHANCE,SKILL_LIFE_LEECH_AMOUNT,SKILL_MANA_LEECH_CHANCE,SKILL_MANA_LEECH_AMOUNT];
          for each(_loc2_ in _loc6_)
          {
             _loc3_ = param1.readUnsignedShort();
@@ -1979,10 +1969,20 @@ package tibia.network
          }
       }
       
-      protected function readSSTOREBUTTONINDICATORS(param1:ByteArray) : void
+      protected function readSCLEARTARGET(param1:ByteArray) : void
       {
-         var _loc2_:Boolean = param1.readBoolean();
-         var _loc3_:Boolean = param1.readBoolean();
+         var _loc2_:int = 0;
+         var _loc3_:Creature = null;
+         _loc2_ = param1.readUnsignedInt();
+         _loc3_ = null;
+         if((_loc3_ = this.m_CreatureStorage.getAttackTarget()) != null && _loc2_ == _loc3_.ID)
+         {
+            this.m_CreatureStorage.setAttackTarget(null,false);
+         }
+         else if((_loc3_ = this.m_CreatureStorage.getFollowTarget()) != null && _loc2_ == _loc3_.ID)
+         {
+            this.m_CreatureStorage.setFollowTarget(null,false);
+         }
       }
       
       protected function readSPVPSITUATIONS(param1:ByteArray) : void
@@ -2010,22 +2010,6 @@ package tibia.network
          {
             handleSendError(CEDITLIST,e);
             return;
-         }
-      }
-      
-      protected function readSCLEARTARGET(param1:ByteArray) : void
-      {
-         var _loc2_:int = 0;
-         var _loc3_:Creature = null;
-         _loc2_ = param1.readUnsignedInt();
-         _loc3_ = null;
-         if((_loc3_ = this.m_CreatureStorage.getAttackTarget()) != null && _loc2_ == _loc3_.ID)
-         {
-            this.m_CreatureStorage.setAttackTarget(null,false);
-         }
-         else if((_loc3_ = this.m_CreatureStorage.getFollowTarget()) != null && _loc2_ == _loc3_.ID)
-         {
-            this.m_CreatureStorage.setFollowTarget(null,false);
          }
       }
       
@@ -2617,8 +2601,8 @@ package tibia.network
          {
             b = this.m_ServerConnection.messageWriter.createMessage();
             b.writeByte(CGETTRANSACTIONHISTORY);
-            b.writeUnsignedInt(a_CurrentPage);
-            b.writeByte(a_EntriesPerPage);
+            b.writeShort(a_CurrentPage);
+            b.writeUnsignedInt(a_EntriesPerPage);
             this.m_ServerConnection.messageWriter.finishMessage();
             return;
          }
@@ -3088,12 +3072,7 @@ package tibia.network
          _loc4_ = 1;
          _loc5_ = param1.readUnsignedByte();
          this.m_Player.setSkill(SKILL_LEVEL,_loc3_,_loc4_,_loc5_);
-         var _loc6_:Number = param1.readUnsignedShort() / 100;
-         var _loc7_:Number = param1.readUnsignedShort() / 100;
-         var _loc8_:Number = param1.readUnsignedShort() / 100;
-         var _loc9_:Number = param1.readUnsignedShort() / 100;
-         var _loc10_:Number = param1.readUnsignedShort() / 100;
-         this.m_Player.experienceGainInfo.updateGainInfo(_loc6_,_loc7_,_loc8_,_loc9_,_loc10_);
+         this.m_Player.experienceBonus = this.readDouble(param1);
          _loc3_ = Math.max(0,param1.readShort());
          _loc4_ = Math.max(0,param1.readShort());
          _loc5_ = 0;
@@ -3122,9 +3101,6 @@ package tibia.network
          _loc4_ = _loc2_;
          _loc5_ = 0;
          this.m_Player.setSkill(SKILL_OFFLINETRAINING,_loc3_,_loc4_,_loc5_);
-         var _loc11_:uint = param1.readUnsignedShort();
-         var _loc12_:Boolean = param1.readBoolean();
-         this.m_Player.experienceGainInfo.updateStoreXpBoost(_loc11_,_loc12_);
       }
       
       protected function readSOWNOFFER(param1:ByteArray) : void
@@ -3296,13 +3272,6 @@ package tibia.network
             handleSendError(CCLOSENPCTRADE,e);
             return;
          }
-      }
-      
-      protected function readSSETSTOREDEEPLINK(param1:ByteArray) : void
-      {
-         var _loc2_:int = 0;
-         _loc2_ = param1.readUnsignedByte();
-         IngameShopManager.getInstance().currentlyFeaturedServiceType = _loc2_;
       }
       
       public function sendCSELLOBJECT(param1:int, param2:int, param3:int, param4:Boolean) : void
@@ -4205,10 +4174,6 @@ package tibia.network
                   this.readSLOGINSUCCESS(CommunicationData);
                   a_MessageReader.finishMessage();
                   break;
-               case SSTOREBUTTONINDICATORS:
-                  this.readSSTOREBUTTONINDICATORS(CommunicationData);
-                  a_MessageReader.finishMessage();
-                  break;
                case SDEAD:
                   this.readSDEAD(CommunicationData);
                   a_MessageReader.finishMessage();
@@ -4415,10 +4380,6 @@ package tibia.network
                   break;
                case SSETTACTICS:
                   this.readSSETTACTICS(CommunicationData);
-                  a_MessageReader.finishMessage();
-                  break;
-               case SSETSTOREDEEPLINK:
-                  this.readSSETSTOREDEEPLINK(CommunicationData);
                   a_MessageReader.finishMessage();
                   break;
                case STALK:
@@ -4961,11 +4922,6 @@ package tibia.network
             _loc10_ = new IngameShopOffer(_loc7_,_loc8_,_loc9_);
             _loc10_.price = param1.readUnsignedInt();
             _loc10_.highlightState = param1.readUnsignedByte();
-            if(_loc10_.highlightState == IngameShopOffer.HIGHLIGHT_STATE_SALE)
-            {
-               _loc10_.saleValidUntilTimestamp = param1.readUnsignedInt();
-               _loc10_.basePrice = param1.readUnsignedInt();
-            }
             _loc10_.disabledState = param1.readUnsignedByte();
             if(_loc10_.disabledState == IngameShopOffer.DISABLED_STATE_DISABLED)
             {
@@ -5578,8 +5534,8 @@ package tibia.network
                case MessageMode.MESSAGE_CHANNEL_MANAGEMENT:
                   ChannelID = a_Bytes.readUnsignedShort();
                   Text = StringHelper.s_ReadLongStringFromByteArray(a_Bytes);
-                  SpeakerMatch = Text.match(/^(.+?) invites you to |^You have been excluded from the channel ([^']+)'s Channel\.$/);
-                  Speaker = SpeakerMatch != null?SpeakerMatch[1] != undefined?SpeakerMatch[1]:SpeakerMatch[2]:null;
+                  SpeakerMatch = Text.match(/^(.+?) invites you to |^You have been excluded from ([^']+)'s channel\./);
+                  Speaker = SpeakerMatch != null?SpeakerMatch[1] != undefined?SpeakerMatch[1]:SpeakerMatch[3]:null;
                   NameFilter = Tibia.s_GetOptions().getNameFilterSet(NameFilterSet.DEFAULT_SET);
                   if(NameFilter != null && NameFilter.acceptMessage(Mode,Speaker,Text))
                   {

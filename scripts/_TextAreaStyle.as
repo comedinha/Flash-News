@@ -26,11 +26,11 @@ package
          {
             style.defaultFactory = function():void
             {
+               this.borderStyle = "solid";
+               this.verticalScrollBarStyleName = "textAreaVScrollBarStyle";
                this.backgroundColor = 16777215;
                this.horizontalScrollBarStyleName = "textAreaHScrollBarStyle";
-               this.verticalScrollBarStyleName = "textAreaVScrollBarStyle";
                this.backgroundDisabledColor = 14540253;
-               this.borderStyle = "solid";
             };
          }
       }

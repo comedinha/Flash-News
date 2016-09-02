@@ -91,7 +91,7 @@ package tibia.appearances
          this.m_TempRectangle = new Rectangle();
          super();
          var i:uint = 0;
-         this.m_SpriteAssetInformations = new Vector.<SpriteAssetInformation>();
+         this.m_SpriteAssetInformations = new Vector.<SpritesInformation>();
          for each(_SpritesAsset in a_SpritesAssets)
          {
             _Information = new SpriteAssetInformation();

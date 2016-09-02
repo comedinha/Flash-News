@@ -27,15 +27,15 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.leading = 0;
-               this.paddingRight = 5;
-               this.skin = ComboBoxArrowSkin;
-               this.arrowButtonWidth = 22;
+               this.fontWeight = "bold";
                this.disabledIconColor = 9542041;
                this.dropdownStyleName = "comboDropdown";
-               this.paddingLeft = 5;
-               this.fontWeight = "bold";
+               this.leading = 0;
+               this.arrowButtonWidth = 22;
                this.cornerRadius = 5;
+               this.skin = ComboBoxArrowSkin;
+               this.paddingLeft = 5;
+               this.paddingRight = 5;
             };
          }
       }

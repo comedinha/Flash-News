@@ -30,21 +30,21 @@ package
             style.defaultFactory = function():void
             {
                this.borderColor = 9542041;
-               this.trackHighlightSkin = SliderHighlightSkin;
                this.tickColor = 7305079;
-               this.dataTipPrecision = 2;
+               this.trackHighlightSkin = SliderHighlightSkin;
+               this.tickThickness = 1;
+               this.showTrackHighlight = false;
+               this.thumbSkin = SliderThumbSkin;
+               this.tickLength = 4;
+               this.thumbOffset = 0;
                this.slideDuration = 300;
                this.trackColors = [15198183,15198183];
-               this.thumbSkin = SliderThumbSkin;
                this.labelOffset = -10;
-               this.showTrackHighlight = false;
-               this.tickOffset = -6;
-               this.tickThickness = 1;
-               this.thumbOffset = 0;
-               this.trackSkin = SliderTrackSkin;
-               this.dataTipPlacement = "top";
-               this.tickLength = 4;
                this.dataTipOffset = 16;
+               this.trackSkin = SliderTrackSkin;
+               this.dataTipPrecision = 2;
+               this.dataTipPlacement = "top";
+               this.tickOffset = -6;
             };
          }
       }

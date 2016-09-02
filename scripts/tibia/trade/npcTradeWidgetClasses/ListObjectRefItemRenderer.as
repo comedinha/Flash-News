@@ -109,12 +109,11 @@ package tibia.trade.npcTradeWidgetClasses
       
       override protected function measure() : void
       {
-         var _loc1_:Number = NaN;
          var _loc2_:Number = NaN;
          var _loc3_:Number = NaN;
          var _loc4_:Number = NaN;
          super.measure();
-         _loc1_ = getStyle("rendererPaddingLeft") + getStyle("rendererPaddingRight");
+         var _loc1_:Number = getStyle("rendererPaddingLeft") + getStyle("rendererPaddingRight");
          _loc2_ = getStyle("rendererPaddingTop") + getStyle("rendererPaddingBottom");
          _loc3_ = Math.max(this.m_UIObject.getExplicitOrMeasuredWidth(),this.m_UIName.getExplicitOrMeasuredHeight() + this.m_UIProperties.getExplicitOrMeasuredHeight());
          _loc4_ = this.m_UIObject.getExplicitOrMeasuredHeight() + getStyle("rendererHorizontalGap") + Math.max(this.m_UIName.getExplicitOrMeasuredWidth(),this.m_UIProperties.getExplicitOrMeasuredWidth());

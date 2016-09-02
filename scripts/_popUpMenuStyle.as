@@ -26,8 +26,8 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.textAlign = "left";
                this.fontWeight = "normal";
+               this.textAlign = "left";
             };
          }
       }

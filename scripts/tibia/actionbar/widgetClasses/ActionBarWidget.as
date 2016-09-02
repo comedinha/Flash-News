@@ -96,7 +96,7 @@ package tibia.actionbar.widgetClasses
       
       protected var m_MaxChildWidth:Number = 0;
       
-      protected var m_MaxScrollPosition:int;
+      protected var m_MaxScrollPosition:int = 29.0;
       
       protected var m_Options:OptionsStorage = null;
       
@@ -126,7 +126,6 @@ package tibia.actionbar.widgetClasses
       
       public function ActionBarWidget(param1:int = 0)
       {
-         this.m_MaxScrollPosition = ActionBar.NUM_ACTIONS - 1;
          super();
          this.m_Direction = param1;
          horizontalScrollPolicy = ScrollPolicy.OFF;

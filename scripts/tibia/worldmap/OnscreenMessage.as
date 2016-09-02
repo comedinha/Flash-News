@@ -81,7 +81,7 @@ package tibia.worldmap
       
       protected var m_Speaker:String = null;
       
-      protected var m_Mode:int = 0;
+      protected var m_Mode:int;
       
       protected var m_CacheText:String = null;
       
@@ -97,6 +97,7 @@ package tibia.worldmap
       
       public function OnscreenMessage(param1:int, param2:String, param3:int, param4:int, param5:String)
       {
+         this.m_Mode = MessageMode.MESSAGE_NONE;
          super();
          if(param1 <= 0)
          {

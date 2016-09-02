@@ -113,7 +113,7 @@ package tibia.appearances.widgetClasses
             throw new Error("MarksView.MarksView: Invalid marks start size.");
          }
          this.m_MarksStartSize = param1;
-         this.m_MarksViewInformations = new Vector.<MarksView>();
+         this.m_MarksViewInformations = new Vector.<MarksViewInformation>();
       }
       
       private static function s_CreateCacheKey(param1:Vector.<uint>) : String

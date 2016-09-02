@@ -26,12 +26,12 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.verticalAlign = "top";
-               this.horizontalGap = -1;
+               this.selectedTabTextStyleName = "activeTabStyle";
                this.textAlign = "center";
                this.horizontalAlign = "left";
+               this.verticalAlign = "top";
                this.verticalGap = -1;
-               this.selectedTabTextStyleName = "activeTabStyle";
+               this.horizontalGap = -1;
             };
          }
       }

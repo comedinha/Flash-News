@@ -27,18 +27,18 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.backgroundColor = 16777164;
-               this.borderColor = 9542041;
-               this.paddingBottom = 2;
-               this.paddingRight = 4;
-               this.backgroundAlpha = 0.95;
-               this.fontSize = 9;
-               this.paddingTop = 2;
-               this.borderSkin = ToolTipBorder;
                this.borderStyle = "toolTip";
-               this.paddingLeft = 4;
-               this.shadowColor = 0;
+               this.paddingTop = 2;
+               this.borderColor = 9542041;
+               this.backgroundColor = 16777164;
+               this.borderSkin = ToolTipBorder;
                this.cornerRadius = 2;
+               this.fontSize = 9;
+               this.shadowColor = 0;
+               this.paddingLeft = 4;
+               this.paddingBottom = 2;
+               this.backgroundAlpha = 0.95;
+               this.paddingRight = 4;
             };
          }
       }

@@ -188,9 +188,10 @@ package tibia.premium
          navigateToURL(_loc2_,"_blank");
       }
       
-      public function updatePremiumMessages(param1:Vector.<uint>) : void
+      public function updatePremiumMessages(param1:Vector.<uint>, param2:int) : void
       {
          var a_MessageIds:Vector.<uint> = param1;
+         var a_FeaturedServiceType:int = param2;
          this.m_PremiumMessages.length = 0;
          a_MessageIds.forEach(function(param1:uint, param2:int, param3:Vector.<uint>):void
          {
@@ -198,6 +199,7 @@ package tibia.premium
          });
          var Event:PremiumEvent = new PremiumEvent(PremiumEvent.TRIGGER);
          Event.messages = this.m_PremiumMessages;
+         Event.featuredStoreServiceType = a_FeaturedServiceType;
          Event.highlightExpiry = HIGHLIGHT_TIMEOUT;
          dispatchEvent(Event);
       }

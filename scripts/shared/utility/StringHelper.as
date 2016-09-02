@@ -41,21 +41,20 @@ package shared.utility
          return param1;
       }
       
-      public static function s_MillisecondsToTimeString(param1:uint, param2:Boolean = true, param3:Boolean = false) : String
+      public static function s_MillisecondsToTimeString(param1:uint, param2:Boolean = true) : String
       {
+         var _loc3_:uint = 0;
          var _loc4_:uint = 0;
-         var _loc5_:uint = 0;
-         _loc4_ = param1 / 1000;
-         _loc5_ = _loc4_ / 60;
-         var _loc6_:uint = _loc5_ / 60;
-         var _loc7_:String = !!param3?s_PadWithChars(String(_loc6_),"00"):String(_loc6_);
-         var _loc8_:String = "";
-         _loc8_ = _loc7_ + ":" + s_PadWithChars(String(_loc5_ % 60),"00") + ":" + s_PadWithChars(String(_loc4_ % 60),"00");
+         _loc3_ = param1 / 1000;
+         _loc4_ = _loc3_ / 60;
+         var _loc5_:uint = _loc4_ / 60;
+         var _loc6_:String = "";
+         _loc6_ = _loc5_ + ":" + s_PadWithChars(String(_loc4_ % 60),"00") + ":" + s_PadWithChars(String(_loc3_ % 60),"00");
          if(param2)
          {
-            _loc8_ = _loc8_ + ("." + s_PadWithChars(String(param1 % 1000),"000"));
+            _loc6_ = _loc6_ + ("." + s_PadWithChars(String(param1 % 1000),"000"));
          }
-         return _loc8_;
+         return _loc6_;
       }
       
       public static function s_StripNewline(param1:String) : String

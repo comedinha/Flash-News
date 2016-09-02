@@ -27,16 +27,16 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.horizontalGap = 2;
-               this.paddingBottom = 2;
-               this.textAlign = "center";
-               this.paddingRight = 10;
-               this.skin = ButtonSkin;
-               this.paddingTop = 2;
-               this.verticalGap = 2;
-               this.paddingLeft = 10;
                this.fontWeight = "bold";
+               this.paddingTop = 2;
                this.cornerRadius = 4;
+               this.textAlign = "center";
+               this.verticalGap = 2;
+               this.horizontalGap = 2;
+               this.skin = ButtonSkin;
+               this.paddingLeft = 10;
+               this.paddingBottom = 2;
+               this.paddingRight = 10;
             };
          }
       }

@@ -73,8 +73,7 @@ package tibia.ingameshop
       
       public function showGetCoinsConfirmationDialog() : void
       {
-         var _loc1_:EmbeddedDialog = null;
-         _loc1_ = new EmbeddedDialog();
+         var _loc1_:EmbeddedDialog = new EmbeddedDialog();
          _loc1_.width = tibia.ingameshop.IngameShopWidget.EMBEDDED_DIALOG_WIDTH;
          _loc1_.title = resourceManager.getString(BUNDLE,"TITLE_GET_COINS");
          _loc1_.text = resourceManager.getString(BUNDLE,"LBL_GET_COINS");

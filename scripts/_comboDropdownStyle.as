@@ -26,16 +26,16 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.shadowDistance = 1;
-               this.borderThickness = 0;
-               this.backgroundColor = 16777215;
-               this.leading = 0;
-               this.paddingRight = 5;
-               this.dropShadowEnabled = true;
                this.shadowDirection = "center";
-               this.paddingLeft = 5;
                this.fontWeight = "normal";
+               this.dropShadowEnabled = true;
+               this.leading = 0;
+               this.backgroundColor = 16777215;
+               this.shadowDistance = 1;
                this.cornerRadius = 0;
+               this.borderThickness = 0;
+               this.paddingLeft = 5;
+               this.paddingRight = 5;
             };
          }
       }

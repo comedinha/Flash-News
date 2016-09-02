@@ -35,9 +35,11 @@ package tibia.sessiondump
       
       protected static const CGONORTHWEST:int = 109;
       
-      protected static const PK_MAX_FLASHING_TIME:uint = 5000;
+      protected static const CMARKETCREATE:int = 246;
       
       protected static const PARTY_MAX_FLASHING_TIME:uint = 5000;
+      
+      protected static const PK_MAX_FLASHING_TIME:uint = 5000;
       
       protected static const PK_REVENGE:int = 6;
       
@@ -56,8 +58,6 @@ package tibia.sessiondump
       protected static const CADDBUDDY:int = 220;
       
       protected static const RISKINESS_DANGEROUS:int = 1;
-      
-      protected static const GUILD_NONE:int = 0;
       
       protected static const PK_PARTYMODE:int = 2;
       
@@ -109,6 +109,8 @@ package tibia.sessiondump
       
       protected static const SKILL_EXPERIENCE:int = 0;
       
+      protected static const GUILD_NONE:int = 0;
+      
       protected static const SKILL_MANA_LEECH_CHANCE:int = 23;
       
       protected static const CLOOKATCREATURE:int = 141;
@@ -145,21 +147,21 @@ package tibia.sessiondump
       
       protected static const CGUILDMESSAGE:int = 155;
       
-      protected static const CREMOVEBUDDY:int = 221;
-      
       public static const STATE_DEFAULT:int = 0;
       
       protected static const TYPE_SUMMON_OTHERS:int = 4;
       
-      protected static const SKILL_NONE:int = -1;
+      protected static const CREMOVEBUDDY:int = 221;
       
       protected static const CCLOSECONTAINER:int = 135;
       
-      protected static const GUILD_MEMBER:int = 4;
+      protected static const SKILL_NONE:int = -1;
       
       protected static const SFIELDDATA:int = 105;
       
-      protected static const PROFESSION_MASK_KNIGHT:int = 1 << PROFESSION_KNIGHT;
+      private static const KEYFRAME_STATE_PROCESS:uint = 1;
+      
+      protected static const GUILD_MEMBER:int = 4;
       
       protected static const SKILL_HITPOINTS_PERCENT:int = 3;
       
@@ -283,15 +285,13 @@ package tibia.sessiondump
       
       protected static const SBLESSINGS:int = 156;
       
+      protected static const PROFESSION_MASK_KNIGHT:int = 1 << PROFESSION_KNIGHT;
+      
       protected static const BLESSING_WISDOM_OF_SOLITUDE:int = BLESSING_FIRE_OF_SUNS << 1;
       
       protected static const PARTY_LEADER_SEXP_INACTIVE_GUILTY:int = 8;
       
-      private static const KEYFRAME_STATE_PROCESS:uint = 1;
-      
       protected static const SINGAMESHOPSUCCESS:int = 254;
-      
-      protected static const SSTOREBUTTONINDICATORS:int = 25;
       
       protected static const CPRIVATECHANNEL:int = 154;
       
@@ -315,9 +315,9 @@ package tibia.sessiondump
       
       protected static const BLESSING_EMBRACE_OF_TIBIA:int = BLESSING_SPIRITUAL_SHIELDING << 1;
       
-      protected static const SCONTAINER:int = 110;
-      
       protected static const SNPCOFFER:int = 122;
+      
+      protected static const SCONTAINER:int = 110;
       
       protected static const SKILL_MANA_LEECH_AMOUNT:int = 24;
       
@@ -405,7 +405,7 @@ package tibia.sessiondump
       
       protected static const CROTATEWEST:int = 114;
       
-      public static const PROTOCOL_VERSION:int = 1097;
+      public static const PROTOCOL_VERSION:int = 1095;
       
       protected static const SCREATUREOUTFIT:int = 142;
       
@@ -575,8 +575,6 @@ package tibia.sessiondump
       
       protected static const PROFESSION_MASK_SORCERER:int = 1 << PROFESSION_SORCERER;
       
-      protected static const SKILL_EXPERIENCE_GAIN:int = -2;
-      
       protected static const COPENCHANNEL:int = 170;
       
       protected static const SDEAD:int = 40;
@@ -679,6 +677,8 @@ package tibia.sessiondump
       
       protected static const STATE_HUNGRY:int = 31;
       
+      protected static const SBUDDYSTATUSCHANGE:int = 211;
+      
       protected static const SKILL_LEVEL:int = 1;
       
       protected static const SCLOSECHANNEL:int = 179;
@@ -687,23 +687,17 @@ package tibia.sessiondump
       
       protected static const CSETOUTFIT:int = 211;
       
-      protected static const PACKETLENGTH_POS:int = HEADER_POS;
-      
-      protected static const SBUDDYSTATUSCHANGE:int = 211;
-      
       protected static const SUMMON_NONE:int = 0;
       
       protected static const SAUTOMAPFLAG:int = 221;
       
       protected static const SOWNOFFER:int = 125;
       
-      protected static const PAYLOAD_POS:int = HEADER_POS + HEADER_SIZE;
+      protected static const PACKETLENGTH_POS:int = HEADER_POS;
       
       protected static const SKILL_GOSTRENGTH:int = 6;
       
-      protected static const SSETSTOREDEEPLINK:int = 168;
-      
-      protected static const CMARKETCREATE:int = 246;
+      protected static const PAYLOAD_POS:int = HEADER_POS + HEADER_SIZE;
       
       protected static const SPLAYERSTATE:int = 162;
        

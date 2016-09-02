@@ -27,16 +27,16 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.downSkin = null;
                this.upSkin = null;
-               this.horizontalGap = 1;
                this.selectedDownSkin = null;
                this.overSkin = null;
-               this.selectedUpSkin = null;
-               this.skin = ButtonBarButtonSkin;
-               this.disabledSkin = null;
-               this.selectedOverSkin = null;
+               this.downSkin = null;
                this.selectedDisabledSkin = null;
+               this.selectedUpSkin = null;
+               this.disabledSkin = null;
+               this.horizontalGap = 1;
+               this.skin = ButtonBarButtonSkin;
+               this.selectedOverSkin = null;
             };
          }
       }

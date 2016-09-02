@@ -220,8 +220,6 @@ package tibia.options
       
       protected static const SUMMON_OWN:int = 1;
       
-      protected static const SKILL_EXPERIENCE_GAIN:int = -2;
-      
       protected static const PROFESSION_MASK_NONE:int = 1 << PROFESSION_NONE;
       
       protected static const TYPE_SUMMON_OWN:int = 3;
@@ -248,11 +246,11 @@ package tibia.options
       
       protected static const BLESSING_EMBRACE_OF_TIBIA:int = BLESSING_SPIRITUAL_SHIELDING << 1;
       
-      protected static const STATE_FAST:int = 6;
-      
       protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_SPARK_OF_PHOENIX << 1;
       
       protected static const SKILL_MANA_LEECH_AMOUNT:int = 24;
+      
+      protected static const STATE_FAST:int = 6;
       
       protected static const BLESSING_NONE:int = 0;
       
@@ -685,13 +683,13 @@ package tibia.options
       }
       
       [Bindable(event="propertyChange")]
-      public function set rendererScaleMap(param1:Boolean) : void
+      public function set statusCreatureHealth(param1:Boolean) : void
       {
-         var _loc2_:Object = this.rendererScaleMap;
+         var _loc2_:Object = this.statusCreatureHealth;
          if(_loc2_ !== param1)
          {
-            this._1408018027rendererScaleMap = param1;
-            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"rendererScaleMap",_loc2_,param1));
+            this._1714951155statusCreatureHealth = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"statusCreatureHealth",_loc2_,param1));
          }
       }
       
@@ -953,13 +951,13 @@ package tibia.options
       }
       
       [Bindable(event="propertyChange")]
-      public function set statusCreaturePvpFrames(param1:Boolean) : void
+      public function set combatAttackMode(param1:int) : void
       {
-         var _loc2_:Object = this.statusCreaturePvpFrames;
+         var _loc2_:Object = this.combatAttackMode;
          if(_loc2_ !== param1)
          {
-            this._147163423statusCreaturePvpFrames = param1;
-            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"statusCreaturePvpFrames",_loc2_,param1));
+            this._251195935combatAttackMode = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"combatAttackMode",_loc2_,param1));
          }
       }
       
@@ -999,13 +997,13 @@ package tibia.options
       }
       
       [Bindable(event="propertyChange")]
-      public function set combatAttackMode(param1:int) : void
+      public function set statusCreaturePvpFrames(param1:Boolean) : void
       {
-         var _loc2_:Object = this.combatAttackMode;
+         var _loc2_:Object = this.statusCreaturePvpFrames;
          if(_loc2_ !== param1)
          {
-            this._251195935combatAttackMode = param1;
-            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"combatAttackMode",_loc2_,param1));
+            this._147163423statusCreaturePvpFrames = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"statusCreaturePvpFrames",_loc2_,param1));
          }
       }
       
@@ -1094,17 +1092,6 @@ package tibia.options
                default:
                   continue;
             }
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function set statusCreatureHealth(param1:Boolean) : void
-      {
-         var _loc2_:Object = this.statusCreatureHealth;
-         if(_loc2_ !== param1)
-         {
-            this._1714951155statusCreatureHealth = param1;
-            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"statusCreatureHealth",_loc2_,param1));
          }
       }
       
@@ -1214,6 +1201,17 @@ package tibia.options
       public function get marketBrowserCategory() : int
       {
          return this.m_MarketBrowserCategory;
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function set rendererScaleMap(param1:Boolean) : void
+      {
+         var _loc2_:Object = this.rendererScaleMap;
+         if(_loc2_ !== param1)
+         {
+            this._1408018027rendererScaleMap = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"rendererScaleMap",_loc2_,param1));
+         }
       }
       
       private function set _789326636statusPlayerFlags(param1:Boolean) : void
@@ -1862,13 +1860,13 @@ package tibia.options
       }
       
       [Bindable(event="propertyChange")]
-      public function set statusWidgetStyle(param1:int) : void
+      public function set marketBrowserCategory(param1:int) : void
       {
-         var _loc2_:Object = this.statusWidgetStyle;
+         var _loc2_:Object = this.marketBrowserCategory;
          if(_loc2_ !== param1)
          {
-            this._2037738107statusWidgetStyle = param1;
-            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"statusWidgetStyle",_loc2_,param1));
+            this._131184534marketBrowserCategory = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"marketBrowserCategory",_loc2_,param1));
          }
       }
       
@@ -1893,6 +1891,17 @@ package tibia.options
          {
             this._1621507731rendererShowFrameRate = param1;
             this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"rendererShowFrameRate",_loc2_,param1));
+         }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function set statusWidgetStyle(param1:int) : void
+      {
+         var _loc2_:Object = this.statusWidgetStyle;
+         if(_loc2_ !== param1)
+         {
+            this._2037738107statusWidgetStyle = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"statusWidgetStyle",_loc2_,param1));
          }
       }
       
@@ -2094,17 +2103,6 @@ package tibia.options
       public function get npcTradeSellKeepEquipped() : Boolean
       {
          return this.m_NPCTradeSellKeepEquipped;
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function set marketBrowserCategory(param1:int) : void
-      {
-         var _loc2_:Object = this.marketBrowserCategory;
-         if(_loc2_ !== param1)
-         {
-            this._131184534marketBrowserCategory = param1;
-            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"marketBrowserCategory",_loc2_,param1));
-         }
       }
       
       private function set _356338236marketSelectedView(param1:int) : void

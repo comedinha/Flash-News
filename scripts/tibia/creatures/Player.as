@@ -66,8 +66,6 @@ package tibia.creatures
       
       protected var m_AutowalkPathDelta:Vector3D;
       
-      private var m_ExperienceGainInfo:tibia.creatures.ExperienceGainInfo;
-      
       private var m_StateFlags:uint = 4.294967295E9;
       
       private var m_Profession:int = 0;
@@ -84,6 +82,8 @@ package tibia.creatures
       
       protected var m_AutowalkTarget:Vector3D;
       
+      protected var m_ExperienceBonus:Number = 0.0;
+      
       protected var m_AutowalkTargetExact:Boolean = false;
       
       private var m_Premium:Boolean = false;
@@ -99,14 +99,12 @@ package tibia.creatures
       public function Player()
       {
          this.m_ExperienceCounter = new tibia.creatures.SkillCounter();
-         this.m_ExperienceGainInfo = new tibia.creatures.ExperienceGainInfo();
          this.m_AutowalkPathDelta = new Vector3D(0,0,0);
          this.m_AutowalkPathSteps = [];
          this.m_AutowalkTarget = new Vector3D(-1,-1,-1);
          this.m_KnownSpells = [];
          this.m_UnjustPoints = new tibia.creatures.UnjustPointsInfo(0,0,0,0,0,0,0);
          super(0,TYPE_PLAYER,null);
-         this.m_ExperienceGainInfo.addEventListener(PropertyChangeEventKind.UPDATE,this.onExperienceGainChanged);
       }
       
       public static function s_GetExperienceForLevel(param1:uint) : Number
@@ -179,11 +177,6 @@ package tibia.creatures
          return uint(getSkillValue(SKILL_LEVEL));
       }
       
-      protected function onExperienceGainChanged(param1:PropertyChangeEvent) : void
-      {
-         dispatchEvent(param1);
-      }
-      
       public function set profession(param1:int) : void
       {
          var _loc2_:PropertyChangeEvent = null;
@@ -246,12 +239,6 @@ package tibia.creatures
             default:
                super.setSkill(param1,param2,param3,param4);
          }
-      }
-      
-      public function resetAutowalk() : void
-      {
-         this.stopAutowalk(true);
-         this.abortAutowalk(2);
       }
       
       public function set unjustPoints(param1:tibia.creatures.UnjustPointsInfo) : void
@@ -402,6 +389,11 @@ package tibia.creatures
             return getSkillValue(SKILL_HITPOINTS) * 100 / _loc1_;
          }
          return 100;
+      }
+      
+      public function set experienceBonus(param1:Number) : void
+      {
+         this.m_ExperienceBonus = param1;
       }
       
       public function set premium(param1:Boolean) : void
@@ -563,26 +555,24 @@ package tibia.creatures
          return getSkillBase(SKILL_SOULPOINTS);
       }
       
-      public function get experienceGainInfo() : tibia.creatures.ExperienceGainInfo
+      override public function reset() : void
       {
-         return this.m_ExperienceGainInfo;
-      }
-      
-      public function set knownSpells(param1:Array) : void
-      {
-         var _loc2_:PropertyChangeEvent = null;
-         if(param1 == null)
-         {
-            param1 = [];
-         }
-         if(this.m_KnownSpells != param1)
-         {
-            this.m_KnownSpells = param1.sort(Array.NUMERIC);
-            _loc2_ = new PropertyChangeEvent(PropertyChangeEvent.PROPERTY_CHANGE);
-            _loc2_.kind = PropertyChangeEventKind.UPDATE;
-            _loc2_.property = "knownSpells";
-            dispatchEvent(_loc2_);
-         }
+         var _loc1_:int = m_ID;
+         super.reset();
+         this.resetAutowalk();
+         this.resetFlags();
+         this.resetSkills();
+         m_ID = _loc1_;
+         this.m_KnownSpells.length = 0;
+         this.m_Premium = false;
+         this.m_PremiumUntil = 0;
+         this.m_Blessings = BLESSING_NONE;
+         this.m_Profession = PROFESSION_NONE;
+         m_Type = TYPE_PLAYER;
+         var _loc2_:PropertyChangeEvent = new PropertyChangeEvent(PropertyChangeEvent.PROPERTY_CHANGE);
+         _loc2_.kind = PropertyChangeEventKind.UPDATE;
+         _loc2_.property = "*";
+         dispatchEvent(_loc2_);
       }
       
       private function startAutowalkInternal() : void
@@ -638,24 +628,10 @@ package tibia.creatures
          }
       }
       
-      override public function reset() : void
+      public function resetAutowalk() : void
       {
-         var _loc1_:int = m_ID;
-         super.reset();
-         this.resetAutowalk();
-         this.resetFlags();
-         this.resetSkills();
-         m_ID = _loc1_;
-         this.m_KnownSpells.length = 0;
-         this.m_Premium = false;
-         this.m_PremiumUntil = 0;
-         this.m_Blessings = BLESSING_NONE;
-         this.m_Profession = PROFESSION_NONE;
-         m_Type = TYPE_PLAYER;
-         var _loc2_:PropertyChangeEvent = new PropertyChangeEvent(PropertyChangeEvent.PROPERTY_CHANGE);
-         _loc2_.kind = PropertyChangeEventKind.UPDATE;
-         _loc2_.property = "*";
-         dispatchEvent(_loc2_);
+         this.stopAutowalk(true);
+         this.abortAutowalk(2);
       }
       
       public function abortAutowalk(param1:int) : void
@@ -671,9 +647,31 @@ package tibia.creatures
          }
       }
       
+      public function set knownSpells(param1:Array) : void
+      {
+         var _loc2_:PropertyChangeEvent = null;
+         if(param1 == null)
+         {
+            param1 = [];
+         }
+         if(this.m_KnownSpells != param1)
+         {
+            this.m_KnownSpells = param1.sort(Array.NUMERIC);
+            _loc2_ = new PropertyChangeEvent(PropertyChangeEvent.PROPERTY_CHANGE);
+            _loc2_.kind = PropertyChangeEventKind.UPDATE;
+            _loc2_.property = "knownSpells";
+            dispatchEvent(_loc2_);
+         }
+      }
+      
       public function set stateFlags(param1:uint) : void
       {
          this.updateStateFlags(param1);
+      }
+      
+      public function get experienceBonus() : Number
+      {
+         return this.m_ExperienceBonus;
       }
       
       public function get knownSpells() : Array
@@ -693,7 +691,6 @@ package tibia.creatures
             _loc1_ = _loc1_ + 3;
          }
          this.m_ExperienceCounter.reset();
-         this.m_ExperienceGainInfo.reset();
       }
       
       public function get stateFlags() : uint
