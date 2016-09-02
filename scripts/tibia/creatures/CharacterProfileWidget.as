@@ -136,6 +136,8 @@ package tibia.creatures
       
       protected static const SUMMON_OWN:int = 1;
       
+      protected static const SKILL_EXPERIENCE_GAIN:int = -2;
+      
       protected static const PROFESSION_MASK_NONE:int = 1 << PROFESSION_NONE;
       
       protected static const TYPE_SUMMON_OWN:int = 3;
@@ -162,11 +164,11 @@ package tibia.creatures
       
       protected static const BLESSING_EMBRACE_OF_TIBIA:int = BLESSING_SPIRITUAL_SHIELDING << 1;
       
+      protected static const STATE_FAST:int = 6;
+      
       protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_SPARK_OF_PHOENIX << 1;
       
       protected static const SKILL_MANA_LEECH_AMOUNT:int = 24;
-      
-      protected static const STATE_FAST:int = 6;
       
       protected static const BLESSING_NONE:int = 0;
       
@@ -253,6 +255,11 @@ package tibia.creatures
          },{
             "skill":SKILL_EXPERIENCE,
             "label":"FORM_ITEM_EXPERIENCE",
+            "renderer":null,
+            "leftSide":true
+         },{
+            "skill":SKILL_EXPERIENCE_GAIN,
+            "label":"FORM_ITEM_EXPERIENCEGAIN",
             "renderer":null,
             "leftSide":true
          },{
@@ -387,7 +394,14 @@ package tibia.creatures
          {
             if((_loc1_ = _loc2_.renderer as Label) != null)
             {
-               _loc1_.htmlText = this.formatSkill(this.m_Player,_loc2_.skill);
+               if(_loc2_.skill != SKILL_EXPERIENCE_GAIN)
+               {
+                  _loc1_.htmlText = this.formatSkill(this.m_Player,_loc2_.skill);
+               }
+               else
+               {
+                  _loc1_.htmlText = (this.m_Player.experienceGainInfo.computeXpGainModifier() * 100).toFixed(0) + "%";
+               }
             }
          }
       }
@@ -462,7 +476,7 @@ package tibia.creatures
          {
             this.m_UIName.htmlText = this.player.name;
          }
-         else if(param1.property == "skill")
+         else if(param1.property == "skill" || param1.property == "xpGain")
          {
             this.updateSkills();
          }

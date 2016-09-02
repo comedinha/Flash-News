@@ -156,6 +156,8 @@ package tibia.creatures.unjustPointsWidgetClasses
       
       protected static const SUMMON_OWN:int = 1;
       
+      protected static const SKILL_EXPERIENCE_GAIN:int = -2;
+      
       protected static const PROFESSION_MASK_NONE:int = 1 << PROFESSION_NONE;
       
       protected static const TYPE_SUMMON_OWN:int = 3;
@@ -182,11 +184,11 @@ package tibia.creatures.unjustPointsWidgetClasses
       
       protected static const BLESSING_EMBRACE_OF_TIBIA:int = BLESSING_SPIRITUAL_SHIELDING << 1;
       
+      protected static const STATE_FAST:int = 6;
+      
       protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_SPARK_OF_PHOENIX << 1;
       
       protected static const SKILL_MANA_LEECH_AMOUNT:int = 24;
-      
-      protected static const STATE_FAST:int = 6;
       
       protected static const BLESSING_NONE:int = 0;
       
@@ -397,8 +399,9 @@ package tibia.creatures.unjustPointsWidgetClasses
       
       override protected function measure() : void
       {
+         var _loc1_:EdgeMetrics = null;
          super.measure();
-         var _loc1_:EdgeMetrics = viewMetricsAndPadding;
+         _loc1_ = viewMetricsAndPadding;
          measuredMinWidth = measuredWidth = _loc1_.left + WIDGET_VIEW_WIDTH + _loc1_.right;
          measuredMinHeight = measuredHeight = _loc1_.top + WIDGET_VIEW_HEIGHT + _loc1_.bottom;
       }
@@ -425,9 +428,8 @@ package tibia.creatures.unjustPointsWidgetClasses
       
       private function createProgressBars() : void
       {
-         var _loc1_:EdgeMetrics = null;
          var _loc3_:UnjustPointsBarRenderer = null;
-         _loc1_ = viewMetricsAndPadding;
+         var _loc1_:EdgeMetrics = viewMetricsAndPadding;
          this.m_UIOpenSituationLabel = new Label();
          this.m_UIOpenSituationLabel.toolTip = resourceManager.getString(BUNDLE,"TOOLTIP_OPEN_SITUATIONS");
          this.updateOpenPvPSituations();

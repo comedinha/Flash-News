@@ -74,12 +74,13 @@ package tibia.trade.npcTradeWidgetClasses
       
       protected var m_DataProvider:IList = null;
       
-      protected var m_TradeMode:int = 0;
+      protected var m_TradeMode:int;
       
       private var m_UncommittedSortOrder:Boolean = true;
       
       public function ObjectRefSelectorBase()
       {
+         this.m_TradeMode = NPCTradeWidgetView.MODE_BUY;
          super();
          addEventListener(MouseEvent.CLICK,this.onMouseClick);
          addEventListener(MouseEvent.MIDDLE_CLICK,this.onMouseClick);

@@ -28,19 +28,30 @@ package tibia.controls
       }
       
       [Bindable(event="propertyChange")]
-      public function set top(param1:IUIComponent) : void
+      public function set center(param1:IUIComponent) : void
       {
-         var _loc2_:Object = this.top;
+         var _loc2_:Object = this.center;
          if(_loc2_ !== param1)
          {
-            this._115029top = param1;
-            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"top",_loc2_,param1));
+            this._1364013995center = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"center",_loc2_,param1));
          }
       }
       
       public function get top() : IUIComponent
       {
          return this.m_Child[CHILD_TOP];
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function set bottom(param1:IUIComponent) : void
+      {
+         var _loc2_:Object = this.bottom;
+         if(_loc2_ !== param1)
+         {
+            this._1383228885bottom = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"bottom",_loc2_,param1));
+         }
       }
       
       private function getExplicitOrMeasuredMinHeight(param1:IUIComponent) : Number
@@ -89,17 +100,6 @@ package tibia.controls
       private function set _115029top(param1:IUIComponent) : void
       {
          this.setChild(CHILD_TOP,param1);
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function set left(param1:IUIComponent) : void
-      {
-         var _loc2_:Object = this.left;
-         if(_loc2_ !== param1)
-         {
-            this._3317767left = param1;
-            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"left",_loc2_,param1));
-         }
       }
       
       public function get center() : IUIComponent
@@ -183,13 +183,13 @@ package tibia.controls
       }
       
       [Bindable(event="propertyChange")]
-      public function set center(param1:IUIComponent) : void
+      public function set top(param1:IUIComponent) : void
       {
-         var _loc2_:Object = this.center;
+         var _loc2_:Object = this.top;
          if(_loc2_ !== param1)
          {
-            this._1364013995center = param1;
-            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"center",_loc2_,param1));
+            this._115029top = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"top",_loc2_,param1));
          }
       }
       
@@ -228,13 +228,13 @@ package tibia.controls
       }
       
       [Bindable(event="propertyChange")]
-      public function set bottom(param1:IUIComponent) : void
+      public function set left(param1:IUIComponent) : void
       {
-         var _loc2_:Object = this.bottom;
+         var _loc2_:Object = this.left;
          if(_loc2_ !== param1)
          {
-            this._1383228885bottom = param1;
-            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"bottom",_loc2_,param1));
+            this._3317767left = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"left",_loc2_,param1));
          }
       }
       

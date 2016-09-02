@@ -27,17 +27,17 @@ package
          {
             style.defaultFactory = function():void
             {
+               this.downSkin = null;
                this.upSkin = null;
+               this.paddingBottom = 1;
                this.selectedDownSkin = null;
                this.overSkin = null;
-               this.downSkin = null;
-               this.selectedDisabledSkin = null;
-               this.paddingTop = 1;
                this.selectedUpSkin = null;
-               this.disabledSkin = null;
                this.skin = TabSkin;
-               this.paddingBottom = 1;
+               this.disabledSkin = null;
                this.selectedOverSkin = null;
+               this.paddingTop = 1;
+               this.selectedDisabledSkin = null;
             };
          }
       }

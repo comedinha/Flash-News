@@ -4,13 +4,17 @@ package tibia.ingameshop
    
    public class IngameShopCategory extends EventDispatcher
    {
+      
+      private static var CATEGORY_NEW_PRODUCTS:String = "New Products";
+      
+      private static var CATEGORY_SPECIAL_OFFERS:String = "Special Offers";
        
       
       private var m_Offers:Vector.<tibia.ingameshop.IngameShopOffer> = null;
       
       private var m_Subcategories:Vector.<tibia.ingameshop.IngameShopCategory> = null;
       
-      private var m_CategoryHighlightState:int;
+      private var m_CategoryHighlightState:int = 0;
       
       private var m_Description:String = null;
       
@@ -20,7 +24,6 @@ package tibia.ingameshop
       
       public function IngameShopCategory(param1:String, param2:String, param3:int)
       {
-         this.m_CategoryHighlightState = tibia.ingameshop.IngameShopOffer.HIGHLIGHT_STATE_NONE;
          super();
          if(param1 == null)
          {
@@ -51,7 +54,7 @@ package tibia.ingameshop
       
       public function hasSaleOffer() : Boolean
       {
-         return this.m_CategoryHighlightState == tibia.ingameshop.IngameShopOffer.HIGHLIGHT_STATE_SALE;
+         return this.m_Name != tibia.ingameshop.IngameShopCategory.CATEGORY_SPECIAL_OFFERS && this.m_CategoryHighlightState == tibia.ingameshop.IngameShopOffer.HIGHLIGHT_STATE_SALE;
       }
       
       public function get name() : String
@@ -69,7 +72,7 @@ package tibia.ingameshop
       
       public function hasNewOffer() : Boolean
       {
-         return this.m_CategoryHighlightState == tibia.ingameshop.IngameShopOffer.HIGHLIGHT_STATE_NEW;
+         return this.m_Name != tibia.ingameshop.IngameShopCategory.CATEGORY_NEW_PRODUCTS && this.m_CategoryHighlightState == tibia.ingameshop.IngameShopOffer.HIGHLIGHT_STATE_NEW;
       }
       
       public function get offers() : Vector.<tibia.ingameshop.IngameShopOffer>

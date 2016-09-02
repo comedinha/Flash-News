@@ -26,13 +26,13 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.disabledOverlayAlpha = 0;
-               this.borderStyle = "controlBar";
-               this.paddingTop = 10;
                this.verticalAlign = "middle";
-               this.paddingLeft = 10;
                this.paddingBottom = 10;
                this.paddingRight = 10;
+               this.disabledOverlayAlpha = 0;
+               this.paddingTop = 10;
+               this.borderStyle = "controlBar";
+               this.paddingLeft = 10;
             };
          }
       }

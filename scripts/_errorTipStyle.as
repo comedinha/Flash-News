@@ -26,16 +26,16 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.fontWeight = "bold";
-               this.borderStyle = "errorTipRight";
-               this.paddingTop = 4;
                this.borderColor = 13510953;
+               this.paddingBottom = 4;
                this.color = 16777215;
+               this.paddingRight = 4;
                this.fontSize = 9;
+               this.paddingTop = 4;
+               this.borderStyle = "errorTipRight";
                this.shadowColor = 0;
                this.paddingLeft = 4;
-               this.paddingBottom = 4;
-               this.paddingRight = 4;
+               this.fontWeight = "bold";
             };
          }
       }

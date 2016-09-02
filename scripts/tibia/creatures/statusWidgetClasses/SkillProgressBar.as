@@ -8,6 +8,9 @@ package tibia.creatures.statusWidgetClasses
    import tibia.creatures.Player;
    import mx.core.IInvalidating;
    import shared.controls.ShapeWrapper;
+   import flash.display.Bitmap;
+   import shared.controls.CustomButton;
+   import flash.events.MouseEvent;
    import mx.styles.CSSStyleDeclaration;
    import flash.geom.Matrix;
    import flash.text.TextField;
@@ -19,8 +22,10 @@ package tibia.creatures.statusWidgetClasses
    import flash.display.BitmapData;
    import flash.geom.Rectangle;
    import mx.events.PropertyChangeEvent;
+   import shared.utility.StringHelper;
    import flash.display.DisplayObject;
-   import flash.display.Bitmap;
+   import tibia.ingameshop.IngameShopManager;
+   import tibia.ingameshop.IngameShopProduct;
    
    public class SkillProgressBar extends HBox
    {
@@ -210,6 +215,8 @@ package tibia.creatures.statusWidgetClasses
       
       protected static const SUMMON_OWN:int = 1;
       
+      protected static const SKILL_EXPERIENCE_GAIN:int = -2;
+      
       protected static const PROFESSION_MASK_NONE:int = 1 << PROFESSION_NONE;
       
       protected static const TYPE_SUMMON_OWN:int = 3;
@@ -236,11 +243,11 @@ package tibia.creatures.statusWidgetClasses
       
       protected static const BLESSING_EMBRACE_OF_TIBIA:int = BLESSING_SPIRITUAL_SHIELDING << 1;
       
+      protected static const STATE_FAST:int = 6;
+      
       protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_SPARK_OF_PHOENIX << 1;
       
       protected static const SKILL_MANA_LEECH_AMOUNT:int = 24;
-      
-      protected static const STATE_FAST:int = 6;
       
       protected static const BLESSING_NONE:int = 0;
       
@@ -332,6 +339,8 @@ package tibia.creatures.statusWidgetClasses
       
       private var m_Character:Player = null;
       
+      private var m_UIBuyXpBoostButton:CustomButton = null;
+      
       private var m_UIIcon:ShapeWrapper = null;
       
       public function SkillProgressBar()
@@ -389,10 +398,10 @@ package tibia.creatures.statusWidgetClasses
             {
                _loc7_.text = resourceManager.getString(BUNDLE,"TIP_SKILL_TEXT_SIMPLE",[_loc6_,_loc2_,_loc4_,_loc5_]);
             }
-            _loc8_ = this.character.experienceBonus * 100;
-            if(this.skill == SKILL_LEVEL && _loc8_ > 0)
+            _loc8_ = this.character.experienceGainInfo.computeXpGainModifier() * 100;
+            if(this.skill == SKILL_LEVEL)
             {
-               _loc7_.text = _loc7_.text + resourceManager.getString(BUNDLE,"TIP_SKILL_TEXT_EXP_BONUS",[_loc8_]);
+               _loc7_.text = _loc7_.text + ("\n" + this.generateExperienceGainTooltip());
             }
             if(_loc7_ is IInvalidating)
             {
@@ -412,14 +421,42 @@ package tibia.creatures.statusWidgetClasses
          }
       }
       
-      protected function set skillLabel(param1:String) : void
+      public function locationChanged(param1:int) : void
       {
-         if(this.m_SkillLabel != param1)
+         if(param1 == StatusWidget.LOCATION_LEFT || param1 == StatusWidget.LOCATION_RIGHT)
          {
-            this.m_SkillLabel = param1;
-            this.m_UncommittedSkillLabel = true;
-            invalidateProperties();
+            this.m_UIBuyXpBoostButton.label = "";
          }
+         else
+         {
+            this.m_UIBuyXpBoostButton.label = resourceManager.getString(BUNDLE,"BTN_XPGAIN_BUY");
+         }
+      }
+      
+      override protected function createChildren() : void
+      {
+         super.createChildren();
+         this.m_UIIcon = new ShapeWrapper();
+         this.m_UIIcon.styleName = getStyle("iconStyleName");
+         addChild(this.m_UIIcon);
+         this.m_UILabel = new Bitmap();
+         this.m_UILabelWrapper = new ShapeWrapper();
+         this.m_UILabelWrapper.addChild(this.m_UILabel);
+         addChild(this.m_UILabelWrapper);
+         this.m_UIProgress = new tibia.creatures.statusWidgetClasses.BitmapProgressBar();
+         this.m_UIProgress.labelEnabled = false;
+         this.m_UIProgress.labelFormat = "{1}%";
+         this.m_UIProgress.percentWidth = 100;
+         this.m_UIProgress.styleName = getStyle("progressBarStyleName");
+         this.m_UIProgress.tickValues = [25,50,75];
+         addChild(this.m_UIProgress);
+         this.m_UIBuyXpBoostButton = new CustomButton();
+         this.m_UIBuyXpBoostButton.label = resourceManager.getString(BUNDLE,"BTN_XPGAIN_BUY");
+         this.m_UIBuyXpBoostButton.labelPlacement = "right";
+         this.m_UIBuyXpBoostButton.styleName = "buttonDialogOpenStoreButton";
+         this.m_UIBuyXpBoostButton.toolTip = resourceManager.getString(BUNDLE,"TIP_XPGAIN_BUY_BUTTON");
+         this.m_UIBuyXpBoostButton.addEventListener(MouseEvent.CLICK,this.onBuyXpBoostClicked);
+         addChild(this.m_UIBuyXpBoostButton);
       }
       
       private function updateSkillLabel(param1:String) : void
@@ -470,9 +507,29 @@ package tibia.creatures.statusWidgetClasses
          _loc4_.unlock();
       }
       
+      private function onXpBoostAvailabilityChange(param1:PropertyChangeEvent) : void
+      {
+         if(param1.property == "storeXpBoost")
+         {
+            this.updateBuyXpButtonEnabledState();
+         }
+      }
+      
       public function get skill() : int
       {
          return this.m_Skill;
+      }
+      
+      private function updateBuyXpButtonEnabledState() : void
+      {
+         if(this.m_Character != null)
+         {
+            this.m_UIBuyXpBoostButton.enabled = this.m_Character.experienceGainInfo.canCurrentlyBuyXpBoost && this.m_Character.experienceGainInfo.remaingStoreXpBoostSeconds == 0;
+         }
+         else
+         {
+            this.m_UIBuyXpBoostButton.enabled = false;
+         }
       }
       
       public function set character(param1:Player) : void
@@ -482,6 +539,7 @@ package tibia.creatures.statusWidgetClasses
             if(this.m_Character != null)
             {
                this.m_Character.removeEventListener(PropertyChangeEvent.PROPERTY_CHANGE,this.onCharacterChange);
+               this.m_Character.experienceGainInfo.removeEventListener(PropertyChangeEvent.PROPERTY_CHANGE,this.onXpBoostAvailabilityChange);
             }
             this.m_Character = param1;
             this.m_UncommittedCharacter = true;
@@ -489,13 +547,14 @@ package tibia.creatures.statusWidgetClasses
             if(this.m_Character != null)
             {
                this.m_Character.addEventListener(PropertyChangeEvent.PROPERTY_CHANGE,this.onCharacterChange);
+               this.m_Character.experienceGainInfo.addEventListener(PropertyChangeEvent.PROPERTY_CHANGE,this.onXpBoostAvailabilityChange);
             }
          }
       }
       
       private function onCharacterChange(param1:PropertyChangeEvent) : void
       {
-         if((param1.property == "skill" || param1.property == "*") && this.skill != SKILL_NONE)
+         if((param1.property == "skill" || param1.property == "xpGain" || param1.property == "*") && this.skill != SKILL_NONE)
          {
             this.skillLabel = String(this.character.getSkillValue(this.skill));
             this.m_UIProgress.value = this.character.getSkillProgress(this.skill);
@@ -503,13 +562,83 @@ package tibia.creatures.statusWidgetClasses
          }
       }
       
+      private function generateExperienceGainTooltip() : String
+      {
+         var _loc2_:uint = 0;
+         var _loc3_:uint = 0;
+         var _loc4_:uint = 0;
+         var _loc5_:uint = 0;
+         var _loc1_:String = resourceManager.getString(BUNDLE,"TIP_XPGAIN_BASE",[(this.m_Character.experienceGainInfo.computeXpGainModifier() * 100).toFixed(0),(this.m_Character.experienceGainInfo.baseXpGain * 100).toFixed(0)]);
+         if(this.m_Character.experienceGainInfo.grindingAddend > 0)
+         {
+            _loc1_ = _loc1_ + resourceManager.getString(BUNDLE,"TIP_XPGAIN_GRINDING",[(this.m_Character.experienceGainInfo.grindingAddend * 100).toFixed(0)]);
+         }
+         if(this.m_Character.experienceGainInfo.remaingStoreXpBoostSeconds > 0)
+         {
+            _loc2_ = this.m_Character.experienceGainInfo.remaingStoreXpBoostSeconds % 60;
+            _loc3_ = this.m_Character.experienceGainInfo.remaingStoreXpBoostSeconds;
+            if(_loc2_ > 0)
+            {
+               _loc3_ = _loc3_ + (60 - _loc2_);
+            }
+            if(this.m_Character.experienceGainInfo.storeBoostAddend > 0)
+            {
+               _loc1_ = _loc1_ + resourceManager.getString(BUNDLE,"TIP_XPGAIN_XPBOOST",[(this.m_Character.experienceGainInfo.storeBoostAddend * 100).toFixed(0),StringHelper.s_MillisecondsToTimeString(_loc3_ * 1000,false,true).substring(0,5)]);
+            }
+            else
+            {
+               _loc1_ = _loc1_ + resourceManager.getString(BUNDLE,"TIP_XPGAIN_XPBOOST_PAUSED",[(this.m_Character.experienceGainInfo.storeBoostAddend * 100).toFixed(0)]);
+            }
+         }
+         if(this.m_Character.experienceGainInfo.voucherAddend > 0)
+         {
+            _loc1_ = _loc1_ + resourceManager.getString(BUNDLE,"TIP_XPGAIN_VOUCHER",[(this.m_Character.experienceGainInfo.voucherAddend * 100).toFixed(0)]);
+         }
+         if(this.m_Character.experienceGainInfo.huntingBoostFactor > 1)
+         {
+            _loc4_ = this.m_Character.getSkillValue(SKILL_STAMINA);
+            _loc5_ = Math.max(0,Math.max(0,this.m_Character.getSkillValue(SKILL_STAMINA) - this.m_Character.getSkillBase(SKILL_STAMINA)) - 40 * 60 * 60 * 1000);
+            _loc1_ = _loc1_ + resourceManager.getString(BUNDLE,"TIP_XPGAIN_HUNTINGBONUS",[this.m_Character.experienceGainInfo.huntingBoostFactor.toFixed(1),StringHelper.s_MillisecondsToTimeString(_loc5_,false,true).substring(0,5)]);
+         }
+         else if(this.m_Character.experienceGainInfo.huntingBoostFactor < 1)
+         {
+            _loc1_ = _loc1_ + resourceManager.getString(BUNDLE,"TIP_XPGAIN_HUNTINGMALUS",[this.m_Character.experienceGainInfo.huntingBoostFactor.toFixed(1)]);
+         }
+         return _loc1_;
+      }
+      
+      protected function set skillLabel(param1:String) : void
+      {
+         if(this.m_SkillLabel != param1)
+         {
+            this.m_SkillLabel = param1;
+            this.m_UncommittedSkillLabel = true;
+            invalidateProperties();
+         }
+      }
+      
       private function updateExperienceBarStyle() : void
       {
          if(this.m_UIProgress != null)
          {
-            if(this.m_Character != null && this.m_Character.experienceBonus > 0)
+            if(this.skill == SKILL_LEVEL)
             {
-               this.m_UIProgress.styleName = getStyle("progressBarBonusStyleName");
+               if(this.m_Character != null && this.m_Character.experienceGainInfo.computeXpGainModifier() > 1)
+               {
+                  this.m_UIProgress.styleName = getStyle("progressBarBonusStyleName");
+               }
+               else if(this.m_Character != null && this.m_Character.experienceGainInfo.computeXpGainModifier() == 0)
+               {
+                  this.m_UIProgress.styleName = getStyle("progressBarZeroStyleName");
+               }
+               else if(this.m_Character != null && this.m_Character.experienceGainInfo.computeXpGainModifier() < 1)
+               {
+                  this.m_UIProgress.styleName = getStyle("progressBarMalusStyleName");
+               }
+               else
+               {
+                  this.m_UIProgress.styleName = getStyle("progressBarStyleName");
+               }
             }
             else
             {
@@ -572,6 +701,7 @@ package tibia.creatures.statusWidgetClasses
                this.skillLabel = String(this.character.getSkillValue(this.skill));
                this.m_UIProgress.value = this.character.getSkillProgress(this.skill);
             }
+            this.updateBuyXpButtonEnabledState();
             this.m_UncommittedCharacter = false;
          }
          if(this.m_UncommittedSkill)
@@ -598,6 +728,7 @@ package tibia.creatures.statusWidgetClasses
                visible = false;
             }
             this.updateExperienceBarStyle();
+            this.updateBuyXpButtonEnabledState();
             this.m_UncommittedSkill = false;
          }
          if(this.m_UncommittedSkillLabel)
@@ -605,6 +736,11 @@ package tibia.creatures.statusWidgetClasses
             this.updateSkillLabel(this.skillLabel);
             this.m_UncommittedSkillLabel = false;
          }
+      }
+      
+      private function onBuyXpBoostClicked(param1:MouseEvent) : void
+      {
+         IngameShopManager.getInstance().openShopWindow(true,IngameShopProduct.SERVICE_TYPE_XPBOOST);
       }
       
       override public function set styleName(param1:Object) : void
@@ -617,25 +753,6 @@ package tibia.creatures.statusWidgetClasses
          this.updateExperienceBarStyle();
          this.m_UncommittedSkillLabel = true;
          invalidateProperties();
-      }
-      
-      override protected function createChildren() : void
-      {
-         super.createChildren();
-         this.m_UIIcon = new ShapeWrapper();
-         this.m_UIIcon.styleName = getStyle("iconStyleName");
-         addChild(this.m_UIIcon);
-         this.m_UILabel = new Bitmap();
-         this.m_UILabelWrapper = new ShapeWrapper();
-         this.m_UILabelWrapper.addChild(this.m_UILabel);
-         addChild(this.m_UILabelWrapper);
-         this.m_UIProgress = new tibia.creatures.statusWidgetClasses.BitmapProgressBar();
-         this.m_UIProgress.labelEnabled = false;
-         this.m_UIProgress.labelFormat = "{1}%";
-         this.m_UIProgress.percentWidth = 100;
-         this.m_UIProgress.styleName = getStyle("progressBarStyleName");
-         this.m_UIProgress.tickValues = [25,50,75];
-         addChild(this.m_UIProgress);
       }
    }
 }

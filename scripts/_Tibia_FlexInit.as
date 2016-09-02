@@ -82,7 +82,7 @@ package
          {
             registerClassAlias("flex.messaging.io.ObjectProxy",ObjectProxy);
          }
-         var styleNames:Array = ["fontAntiAliasType","errorColor","horizontalGridLineColor","kerning","backgroundDisabledColor","iconColor","modalTransparencyColor","textRollOverColor","textIndent","verticalGridLineColor","themeColor","modalTransparency","textDecoration","dividerColor","headerColors","fontThickness","textAlign","fontFamily","depthColors","textSelectedColor","strokeWidth","selectionDisabledColor","labelWidth","fontGridFitType","letterSpacing","rollOverColor","fontStyle","dropShadowColor","fontSize","shadowColor","selectionColor","disabledColor","strokeColor","dropdownBorderColor","indicatorGap","fontWeight","disabledIconColor","modalTransparencyBlur","leading","color","alternatingItemColors","fontSharpness","barColor","modalTransparencyDuration"];
+         var styleNames:Array = ["selectionDisabledColor","strokeWidth","horizontalGridLineColor","fontGridFitType","kerning","errorColor","color","alternatingItemColors","leading","fontAntiAliasType","backgroundDisabledColor","selectionColor","labelWidth","textIndent","barColor","fontThickness","fontFamily","textSelectedColor","disabledIconColor","strokeColor","dropShadowColor","shadowColor","fontWeight","dividerColor","dropdownBorderColor","textAlign","fontSharpness","depthColors","headerColors","letterSpacing","textDecoration","fontStyle","disabledColor","indicatorGap","modalTransparencyColor","rollOverColor","modalTransparencyBlur","themeColor","modalTransparencyDuration","verticalGridLineColor","modalTransparency","iconColor","fontSize","textRollOverColor"];
          var i:int = 0;
          while(i < styleNames.length)
          {

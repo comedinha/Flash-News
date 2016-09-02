@@ -22,8 +22,6 @@ package tibia.sessiondump.controller
       
       protected static const CGONORTHWEST:int = 109;
       
-      protected static const CMARKETCREATE:int = 246;
-      
       protected static const SOUTFIT:int = 200;
       
       protected static const CSETTACTICS:int = 160;
@@ -170,6 +168,8 @@ package tibia.sessiondump.controller
       
       protected static const SINGAMESHOPSUCCESS:int = 254;
       
+      protected static const SSTOREBUTTONINDICATORS:int = 25;
+      
       protected static const CPRIVATECHANNEL:int = 154;
       
       protected static const PAYLOADLENGTH_POS:int = PAYLOAD_POS;
@@ -186,9 +186,9 @@ package tibia.sessiondump.controller
       
       protected static const ERR_INVALID_CHECKSUM:int = 2;
       
-      protected static const SNPCOFFER:int = 122;
-      
       protected static const SCONTAINER:int = 110;
+      
+      protected static const SNPCOFFER:int = 122;
       
       protected static const CMARKETCANCEL:int = 247;
       
@@ -240,7 +240,7 @@ package tibia.sessiondump.controller
       
       protected static const CROTATEWEST:int = 114;
       
-      public static const PROTOCOL_VERSION:int = 1095;
+      public static const PROTOCOL_VERSION:int = 1097;
       
       protected static const SCREATUREOUTFIT:int = 142;
       
@@ -422,19 +422,23 @@ package tibia.sessiondump.controller
       
       protected static const CGETOUTFIT:int = 210;
       
-      protected static const SBUDDYSTATUSCHANGE:int = 211;
-      
       protected static const SCLOSECHANNEL:int = 179;
       
       protected static const CSETOUTFIT:int = 211;
+      
+      protected static const PACKETLENGTH_POS:int = HEADER_POS;
+      
+      protected static const SBUDDYSTATUSCHANGE:int = 211;
       
       protected static const SAUTOMAPFLAG:int = 221;
       
       protected static const SOWNOFFER:int = 125;
       
-      protected static const PACKETLENGTH_POS:int = HEADER_POS;
-      
       protected static const PAYLOAD_POS:int = HEADER_POS + HEADER_SIZE;
+      
+      protected static const SSETSTOREDEEPLINK:int = 168;
+      
+      protected static const CMARKETCREATE:int = 246;
       
       protected static const SPLAYERSTATE:int = 162;
        

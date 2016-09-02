@@ -22,6 +22,8 @@ package tibia.ingameshop
       
       private var m_OfferID:int;
       
+      private var m_BasePrice:Number;
+      
       private var m_Description:String;
       
       private var m_Products:Vector.<tibia.ingameshop.IngameShopProduct>;
@@ -30,7 +32,7 @@ package tibia.ingameshop
       
       private var m_ActualPrice:Number;
       
-      private var m_Disabled:Boolean;
+      private var m_SalidValidUntilTimestamp:Number;
       
       private var m_HighlightState:int;
       
@@ -47,9 +49,11 @@ package tibia.ingameshop
          this.m_Products = new Vector.<tibia.ingameshop.IngameShopProduct>();
          this.m_IconIdentifiers = new Vector.<String>();
          this.m_ActualPrice = 0;
+         this.m_BasePrice = NaN;
          this.m_HighlightState = HIGHLIGHT_STATE_NONE;
          this.m_DisabledState = DISABLED_STATE_ACTIVE;
          this.m_DisabledReason = "";
+         this.m_SalidValidUntilTimestamp = 0;
       }
       
       public function set disabledReason(param1:String) : void
@@ -80,6 +84,11 @@ package tibia.ingameshop
       public function get name() : String
       {
          return this.m_Name;
+      }
+      
+      public function isTimed() : Boolean
+      {
+         return this.m_HighlightState == HIGHLIGHT_STATE_TIMED;
       }
       
       public function isBundle() : Boolean
@@ -121,13 +130,16 @@ package tibia.ingameshop
       {
          var Clone:IngameShopOffer = new IngameShopOffer(this.m_OfferID,this.m_Name,this.m_Description);
          Clone.m_ActualPrice = this.m_ActualPrice;
-         Clone.m_Disabled = this.m_Disabled;
+         Clone.m_BasePrice = this.m_BasePrice;
          Clone.m_HighlightState = this.m_HighlightState;
          Clone.m_Products = this.m_Products.map(function(param1:IngameShopProduct):IngameShopProduct
          {
             return param1.clone();
          });
          Clone.m_IconIdentifiers = this.m_IconIdentifiers;
+         Clone.m_DisabledReason = this.m_DisabledReason;
+         Clone.m_DisabledState = this.m_DisabledState;
+         Clone.m_SalidValidUntilTimestamp = this.m_SalidValidUntilTimestamp;
          return Clone;
       }
       
@@ -145,14 +157,24 @@ package tibia.ingameshop
          return this.m_Products;
       }
       
-      public function isTimed() : Boolean
+      public function set basePrice(param1:Number) : void
       {
-         return this.m_HighlightState == HIGHLIGHT_STATE_TIMED;
+         this.m_BasePrice = param1;
       }
       
       public function get iconIdentifiers() : Vector.<String>
       {
          return this.m_IconIdentifiers;
+      }
+      
+      public function set saleValidUntilTimestamp(param1:Number) : void
+      {
+         this.m_SalidValidUntilTimestamp = param1;
+      }
+      
+      public function get saleValidUntilTimestamp() : Number
+      {
+         return this.m_SalidValidUntilTimestamp;
       }
       
       public function get disabled() : Boolean
@@ -163,6 +185,22 @@ package tibia.ingameshop
       public function get offerID() : int
       {
          return this.m_OfferID;
+      }
+      
+      public function get basePrice() : Number
+      {
+         return this.m_BasePrice;
+      }
+      
+      public function priceReductionPercent() : Number
+      {
+         var _loc1_:Number = NaN;
+         if(!isNaN(this.m_BasePrice) && this.m_BasePrice > 0 && this.m_BasePrice > this.m_ActualPrice)
+         {
+            _loc1_ = this.m_ActualPrice / this.m_BasePrice;
+            return 1 - _loc1_;
+         }
+         return 0;
       }
       
       public function get description() : String

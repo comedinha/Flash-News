@@ -15,6 +15,7 @@ package
       {
          var _loc1_:Object = {
             "FORM_ITEM_FED":"Food",
+            "FORM_ITEM_EXPERIENCEGAIN":"XP Gain Rate",
             "FORM_ITEM_EXPERIENCE":"Experience",
             "FORM_ITEM_MANA_LEECH_CHANCE":"Mana Leech Chance",
             "FORM_ITEM_FIGHTAXE":"Axe Fighting",

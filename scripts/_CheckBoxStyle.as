@@ -27,30 +27,30 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.icon = CheckBoxIcon;
-               this.downSkin = null;
-               this.overSkin = null;
-               this.selectedDisabledSkin = null;
-               this.disabledIcon = null;
-               this.upIcon = null;
-               this.selectedDownIcon = null;
-               this.iconColor = 2831164;
-               this.selectedUpSkin = null;
-               this.overIcon = null;
-               this.skin = null;
-               this.paddingLeft = 0;
-               this.paddingRight = 0;
                this.upSkin = null;
-               this.fontWeight = "normal";
-               this.selectedDownSkin = null;
-               this.selectedUpIcon = null;
-               this.selectedOverIcon = null;
-               this.selectedDisabledIcon = null;
                this.textAlign = "left";
+               this.paddingRight = 0;
+               this.upIcon = null;
+               this.icon = CheckBoxIcon;
+               this.selectedUpIcon = null;
+               this.skin = null;
+               this.overIcon = null;
+               this.selectedOverIcon = null;
                this.disabledSkin = null;
-               this.horizontalGap = 5;
+               this.selectedDisabledIcon = null;
                this.selectedOverSkin = null;
+               this.selectedDisabledSkin = null;
+               this.downSkin = null;
                this.downIcon = null;
+               this.horizontalGap = 5;
+               this.selectedDownSkin = null;
+               this.iconColor = 2831164;
+               this.overSkin = null;
+               this.selectedUpSkin = null;
+               this.disabledIcon = null;
+               this.paddingLeft = 0;
+               this.fontWeight = "normal";
+               this.selectedDownIcon = null;
             };
          }
       }
