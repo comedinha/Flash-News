@@ -27,15 +27,15 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.backgroundSize = "100%";
-               this.paddingTop = 24;
+               this.backgroundGradientAlphas = [1,1];
                this.backgroundColor = 8821927;
+               this.paddingBottom = 24;
                this.backgroundImage = ApplicationBackground;
                this.horizontalAlign = "center";
-               this.backgroundGradientAlphas = [1,1];
-               this.paddingLeft = 24;
-               this.paddingBottom = 24;
                this.paddingRight = 24;
+               this.backgroundSize = "100%";
+               this.paddingTop = 24;
+               this.paddingLeft = 24;
             };
          }
       }

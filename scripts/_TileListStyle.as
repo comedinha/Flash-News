@@ -26,10 +26,10 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.textAlign = "center";
                this.verticalAlign = "middle";
-               this.paddingLeft = 2;
+               this.textAlign = "center";
                this.paddingRight = 2;
+               this.paddingLeft = 2;
             };
          }
       }

@@ -167,6 +167,8 @@ package tibia.options.configurationWidgetClasses
       
       protected static const SUMMON_OWN:int = 1;
       
+      protected static const SKILL_EXPERIENCE_GAIN:int = -2;
+      
       protected static const PROFESSION_MASK_NONE:int = 1 << PROFESSION_NONE;
       
       protected static const TYPE_SUMMON_OWN:int = 3;
@@ -193,11 +195,11 @@ package tibia.options.configurationWidgetClasses
       
       protected static const BLESSING_EMBRACE_OF_TIBIA:int = BLESSING_SPIRITUAL_SHIELDING << 1;
       
+      protected static const STATE_FAST:int = 6;
+      
       protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_SPARK_OF_PHOENIX << 1;
       
       protected static const SKILL_MANA_LEECH_AMOUNT:int = 24;
-      
-      protected static const STATE_FAST:int = 6;
       
       protected static const BLESSING_NONE:int = 0;
       
@@ -298,7 +300,7 @@ package tibia.options.configurationWidgetClasses
       
       private var m_UncommittedOptions:Boolean = false;
       
-      protected var m_WidgetStyle:int = 1;
+      protected var m_WidgetStyle:int;
       
       protected var m_UIWidgetSkill:ComboBox = null;
       
@@ -318,6 +320,7 @@ package tibia.options.configurationWidgetClasses
       {
          this.m_OwnStyle = RendererImpl.STATUS_STYLE_CLASSIC;
          this.m_OtherStyle = RendererImpl.STATUS_STYLE_CLASSIC;
+         this.m_WidgetStyle = StatusWidget.STATUS_STYLE_DEFAULT;
          super();
          label = resourceManager.getString(ConfigurationWidget.BUNDLE,"STATUS_LABEL");
       }

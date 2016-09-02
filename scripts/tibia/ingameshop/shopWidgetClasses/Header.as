@@ -108,6 +108,7 @@ package tibia.ingameshop.shopWidgetClasses
             {
                this.m_UILabelHeader.text = _loc2_.name;
                this.m_UILabelPrice.coins = _loc2_.price;
+               this.m_UILabelPrice.baseCoins = _loc2_.basePrice;
                this.m_UIIcon.setImageIdentifiers(_loc2_.iconIdentifiers);
                this.m_UIDetailsStack.selectedIndex = VIEW_OFFER;
             }

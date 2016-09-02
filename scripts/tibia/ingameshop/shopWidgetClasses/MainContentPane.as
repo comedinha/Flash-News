@@ -1,22 +1,22 @@
 package tibia.ingameshop.shopWidgetClasses
 {
    import mx.containers.VBox;
-   import flash.events.Event;
    import mx.containers.ViewStack;
-   import tibia.ingameshop.IngameShopOffer;
-   import tibia.ingameshop.IngameShopManager;
-   import tibia.ingameshop.IngameShopEvent;
-   import mx.controls.Button;
-   import mx.containers.HBox;
-   import mx.controls.Label;
+   import flash.events.Event;
    import mx.events.CloseEvent;
+   import tibia.ingameshop.IngameShopManager;
    import shared.controls.EmbeddedDialog;
+   import mx.controls.Button;
+   import mx.controls.Label;
+   import tibia.ingameshop.IngameShopEvent;
    import flash.events.MouseEvent;
-   import mx.containers.Box;
-   import mx.core.UIComponent;
-   import shared.controls.CustomButton;
    import tibia.ingameshop.IngameShopWidget;
    import flash.errors.IllegalOperationError;
+   import mx.containers.Box;
+   import mx.containers.HBox;
+   import mx.core.UIComponent;
+   import shared.controls.CustomButton;
+   import tibia.ingameshop.IngameShopOffer;
    
    public class MainContentPane extends VBox implements IIngameShopWidgetComponent
    {
@@ -36,25 +36,27 @@ package tibia.ingameshop.shopWidgetClasses
       
       private var m_UIDetailsButton:Button;
       
+      private var m_UINextTransactionPage:Button;
+      
+      private var m_UIBetweenButtonsLabel:Label;
+      
+      private var m_UIOfferList:tibia.ingameshop.shopWidgetClasses.OfferList;
+      
+      private var m_UIPreviousTransactionPage:Button;
+      
+      private var m_UITransactions:tibia.ingameshop.shopWidgetClasses.TransactionHistory;
+      
+      private var m_UIBackButton:Button;
+      
+      private var m_ShopWindow:IngameShopWidget;
+      
       private var m_UIBottomButtonBox:HBox;
       
       private var m_UITitle:Label;
       
-      private var m_UINextTransactionPage:Button;
-      
-      private var m_UIPreviousTransactionPage:Button;
-      
       private var m_UIBuyButton:Button;
       
-      private var m_UIOfferList:tibia.ingameshop.shopWidgetClasses.OfferList;
-      
-      private var m_UITransactions:tibia.ingameshop.shopWidgetClasses.TransactionHistory;
-      
       private var m_UIGetCoinsButton:Button;
-      
-      private var m_ShopWindow:IngameShopWidget;
-      
-      private var m_UIBackButton:Button;
       
       public function MainContentPane()
       {
@@ -70,112 +72,35 @@ package tibia.ingameshop.shopWidgetClasses
          return this.m_UIOfferDetails;
       }
       
-      protected function onHistoryClicked(param1:Event) : void
+      protected function onBuyClicked(param1:Event) : void
       {
-         this.m_UITransactions.refreshTransactionHistory();
-         this.switchView(VIEW_TRANSACTIONS);
-      }
-      
-      private function switchBetweenBuyAndGetCoinsButton() : void
-      {
-         var _loc1_:IngameShopOffer = null;
-         if(this.m_UIStack.selectedIndex != VIEW_TRANSACTIONS)
+         var _loc2_:PurchaseConfirmationWidget = null;
+         if(this.m_UIOfferList.getSelectedOffer() != null)
          {
-            _loc1_ = this.m_UIOfferList.getSelectedOffer();
-            this.m_UIBuyButton.setVisible(_loc1_ != null && IngameShopManager.getInstance().getCreditBalance() >= _loc1_.price);
-            this.m_UIBuyButton.includeInLayout = this.m_UIBuyButton.visible;
-            this.m_UIBuyButton.enabled = _loc1_ != null && _loc1_.disabled == false;
-            this.m_UIGetCoinsButton.setVisible(!this.m_UIBuyButton.visible);
-            this.m_UIGetCoinsButton.includeInLayout = this.m_UIGetCoinsButton.visible;
+            if(Tibia.s_GetOptions().generalShopShowBuyConfirmation)
+            {
+               _loc2_ = new PurchaseConfirmationWidget(this.m_UIOfferList.getSelectedOffer());
+               _loc2_.addEventListener(CloseEvent.CLOSE,this.onBuyConfirmationClosed);
+               this.m_ShopWindow.embeddedDialog = _loc2_;
+            }
+            else
+            {
+               IngameShopManager.getInstance().purchaseRegularOffer(this.m_UIOfferList.getSelectedOffer().offerID);
+               this.switchView(VIEW_OFFERS);
+            }
          }
       }
       
-      public function switchToOfferSelection() : void
+      protected function onBuyConfirmationClosed(param1:CloseEvent) : void
       {
-         this.switchView(VIEW_OFFERS);
-      }
-      
-      protected function onCategorySelected(param1:IngameShopEvent) : void
-      {
-         this.m_UIOfferList.selectedItem = null;
-         this.switchView(VIEW_OFFERS);
-      }
-      
-      public function setShowButtonBar(param1:Boolean) : void
-      {
-         this.m_UIBottomButtonBox.setVisible(param1);
-         if(param1)
+         this.m_ShopWindow.embeddedDialog.removeEventListener(CloseEvent.CLOSE,this.onBuyConfirmationClosed);
+         var _loc2_:PurchaseConfirmationWidget = this.m_ShopWindow.embeddedDialog as PurchaseConfirmationWidget;
+         if(_loc2_ != null && param1.detail == EmbeddedDialog.YES)
          {
-            this.switchBetweenBuyAndGetCoinsButton();
+            IngameShopManager.getInstance().purchaseRegularOffer(this.m_UIOfferList.getSelectedOffer().offerID);
+            this.switchView(VIEW_OFFERS);
+            Tibia.s_GetOptions().generalShopShowBuyConfirmation = !_loc2_.hasCheckedDoNotShowDialogAgain();
          }
-      }
-      
-      protected function onDetailsClicked(param1:Event) : void
-      {
-         this.switchView(VIEW_DETAILS);
-         var _loc2_:IngameShopEvent = new IngameShopEvent(IngameShopEvent.OFFER_ACTIVATED);
-         _loc2_.data = this.m_UIOfferList.getSelectedOffer();
-         dispatchEvent(_loc2_);
-      }
-      
-      private function switchView(param1:int) : void
-      {
-         var _loc2_:IngameShopOffer = this.m_UIOfferList.getSelectedOffer();
-         if(param1 == VIEW_OFFERS)
-         {
-            this.m_UITitle.text = resourceManager.getString(BUNDLE,"LBL_OFFERS");
-            this.m_UIStack.selectedIndex = VIEW_OFFERS;
-            this.m_UIBackButton.setVisible(false);
-            this.m_UIBackButton.includeInLayout = false;
-            this.m_UIDetailsButton.setVisible(true);
-            this.m_UIDetailsButton.includeInLayout = true;
-            this.switchBetweenBuyAndGetCoinsButton();
-            this.m_UIPreviousTransactionPage.setVisible(false);
-            this.m_UIPreviousTransactionPage.includeInLayout = false;
-            this.m_UINextTransactionPage.setVisible(false);
-            this.m_UINextTransactionPage.includeInLayout = false;
-            this.m_UIBottomButtonBox.setVisible(this.m_UIOfferList.getSelectedOffer() != null);
-         }
-         else if(param1 == VIEW_DETAILS)
-         {
-            this.m_UITitle.text = resourceManager.getString(BUNDLE,"LBL_DETAILS");
-            this.m_UIStack.selectedIndex = VIEW_DETAILS;
-            this.m_UIBackButton.setVisible(true);
-            this.m_UIBackButton.includeInLayout = true;
-            this.m_UIDetailsButton.setVisible(false);
-            this.m_UIDetailsButton.includeInLayout = false;
-            this.switchBetweenBuyAndGetCoinsButton();
-            this.m_UIPreviousTransactionPage.setVisible(false);
-            this.m_UIPreviousTransactionPage.includeInLayout = false;
-            this.m_UINextTransactionPage.setVisible(false);
-            this.m_UINextTransactionPage.includeInLayout = false;
-            this.m_UIBottomButtonBox.setVisible(this.m_UIOfferList.getSelectedOffer() != null);
-         }
-         else if(param1 == VIEW_TRANSACTIONS)
-         {
-            this.m_UITitle.text = resourceManager.getString(BUNDLE,"LBL_HISTORY");
-            this.m_UIStack.selectedIndex = VIEW_TRANSACTIONS;
-            this.m_UIBackButton.setVisible(false);
-            this.m_UIBackButton.includeInLayout = false;
-            this.m_UIDetailsButton.setVisible(false);
-            this.m_UIDetailsButton.includeInLayout = false;
-            this.m_UIBuyButton.setVisible(false);
-            this.m_UIBuyButton.includeInLayout = false;
-            this.m_UIGetCoinsButton.setVisible(false);
-            this.m_UIGetCoinsButton.includeInLayout = false;
-            this.m_UIPreviousTransactionPage.setVisible(true);
-            this.m_UIPreviousTransactionPage.includeInLayout = true;
-            this.m_UINextTransactionPage.setVisible(true);
-            this.m_UINextTransactionPage.includeInLayout = true;
-            this.m_UIBottomButtonBox.setVisible(true);
-         }
-      }
-      
-      protected function onNameChangeRequest(param1:IngameShopEvent) : void
-      {
-         var _loc2_:CharacterNameChangeWidget = new CharacterNameChangeWidget(int(param1.data));
-         _loc2_.addEventListener(CloseEvent.CLOSE,this.onNameChangeDialogClosed);
-         this.m_ShopWindow.embeddedDialog = _loc2_;
       }
       
       protected function onCreditBalanceChanged(param1:IngameShopEvent) : void
@@ -186,17 +111,6 @@ package tibia.ingameshop.shopWidgetClasses
       public function get offerList() : tibia.ingameshop.shopWidgetClasses.OfferList
       {
          return this.m_UIOfferList;
-      }
-      
-      protected function onNameChangeDialogClosed(param1:CloseEvent) : void
-      {
-         this.m_ShopWindow.embeddedDialog.removeEventListener(CloseEvent.CLOSE,this.onNameChangeDialogClosed);
-         var _loc2_:CharacterNameChangeWidget = this.m_ShopWindow.embeddedDialog as CharacterNameChangeWidget;
-         if(param1.detail == EmbeddedDialog.OKAY && _loc2_ != null && _loc2_.desiredName.length > 0)
-         {
-            IngameShopManager.getInstance().purchaseCharacterNameChange(_loc2_.offerID,_loc2_.desiredName);
-            this.switchView(VIEW_OFFERS);
-         }
       }
       
       public function dispose() : void
@@ -221,10 +135,37 @@ package tibia.ingameshop.shopWidgetClasses
          this.m_ShopWindow = null;
       }
       
-      protected function onBackClicked(param1:Event) : void
+      protected function onPurchaseCompleted(param1:IngameShopEvent) : void
       {
+         var _loc2_:ShopReponseWidget = new ShopReponseWidget(param1.message,param1.errorType);
+         this.m_ShopWindow.embeddedDialog = _loc2_;
+         this.m_ShopWindow.sideBar.requestOffersForCategory(this.m_ShopWindow.sideBar.getSelectedCategory());
+      }
+      
+      protected function onHistoryClicked(param1:Event) : void
+      {
+         this.m_UITransactions.refreshTransactionHistory();
+         this.switchView(VIEW_TRANSACTIONS);
+      }
+      
+      public function set shopWidget(param1:IngameShopWidget) : void
+      {
+         if(this.m_ShopWindow != null)
+         {
+            throw new IllegalOperationError("IngameShopMainContentPane.shopWidget: Attempted to set reference twice");
+         }
+         this.m_ShopWindow = param1;
+         this.m_ShopWindow.sideBar.addEventListener(IngameShopEvent.CATEGORY_SELECTED,this.onCategorySelected);
+         this.m_ShopWindow.sideBar.addEventListener(IngameShopEvent.HISTORY_CLICKED,this.onHistoryClicked);
+         this.m_UIOfferList.shopWidget = param1;
+         this.m_UIOfferDetails.shopWidget = param1;
+         this.m_UITransactions.shopWidget = param1;
+      }
+      
+      protected function onCategorySelected(param1:IngameShopEvent) : void
+      {
+         this.m_UIOfferList.selectedItem = null;
          this.switchView(VIEW_OFFERS);
-         dispatchEvent(new IngameShopEvent(IngameShopEvent.OFFER_DEACTIVATED));
       }
       
       override protected function createChildren() : void
@@ -266,14 +207,21 @@ package tibia.ingameshop.shopWidgetClasses
          this.m_UIPreviousTransactionPage.width = 75;
          this.m_UIBottomButtonBox.addChild(this.m_UIPreviousTransactionPage);
          var _loc2_:UIComponent = new UIComponent();
-         _loc2_.percentWidth = 100;
+         _loc2_.percentWidth = 50;
+         _loc2_.visible = false;
+         this.m_UIBottomButtonBox.addChild(_loc2_);
+         this.m_UIBetweenButtonsLabel = new Label();
+         this.m_UIBetweenButtonsLabel.visible = false;
+         this.m_UIBottomButtonBox.addChild(this.m_UIBetweenButtonsLabel);
+         _loc2_ = new UIComponent();
+         _loc2_.percentWidth = 50;
          _loc2_.visible = false;
          this.m_UIBottomButtonBox.addChild(_loc2_);
          this.m_UINextTransactionPage = new Button();
          this.m_UINextTransactionPage.label = resourceManager.getString(BUNDLE,"BTN_HISTORY_NEXT");
          this.m_UINextTransactionPage.width = 75;
          this.m_UIBottomButtonBox.addChild(this.m_UINextTransactionPage);
-         this.m_UITransactions.setControlledButton(this.m_UIPreviousTransactionPage,this.m_UINextTransactionPage);
+         this.m_UITransactions.setControlledButtonsAndLabel(this.m_UIPreviousTransactionPage,this.m_UINextTransactionPage,this.m_UIBetweenButtonsLabel);
          this.m_UIBackButton = new Button();
          this.m_UIBackButton.width = 75;
          this.m_UIBackButton.label = resourceManager.getString(BUNDLE,"BTN_BACK");
@@ -300,23 +248,58 @@ package tibia.ingameshop.shopWidgetClasses
          this.m_UIBottomButtonBox.addChild(this.m_UIGetCoinsButton);
       }
       
-      protected function onBuyClicked(param1:Event) : void
+      public function switchToOfferSelection() : void
       {
-         var _loc2_:PurchaseConfirmationWidget = null;
-         if(this.m_UIOfferList.getSelectedOffer() != null)
+         this.switchView(VIEW_OFFERS);
+      }
+      
+      public function setShowButtonBar(param1:Boolean) : void
+      {
+         this.m_UIBottomButtonBox.setVisible(param1);
+         if(param1)
          {
-            if(Tibia.s_GetOptions().generalShopShowBuyConfirmation)
-            {
-               _loc2_ = new PurchaseConfirmationWidget(this.m_UIOfferList.getSelectedOffer());
-               _loc2_.addEventListener(CloseEvent.CLOSE,this.onBuyConfirmationClosed);
-               this.m_ShopWindow.embeddedDialog = _loc2_;
-            }
-            else
-            {
-               IngameShopManager.getInstance().purchaseRegularOffer(this.m_UIOfferList.getSelectedOffer().offerID);
-               this.switchView(VIEW_OFFERS);
-            }
+            this.switchBetweenBuyAndGetCoinsButton();
          }
+      }
+      
+      private function switchBetweenBuyAndGetCoinsButton() : void
+      {
+         var _loc1_:IngameShopOffer = null;
+         if(this.m_UIStack.selectedIndex != VIEW_TRANSACTIONS)
+         {
+            _loc1_ = this.m_UIOfferList.getSelectedOffer();
+            this.m_UIBuyButton.setVisible(_loc1_ != null && IngameShopManager.getInstance().getCreditBalance() >= _loc1_.price);
+            this.m_UIBuyButton.includeInLayout = this.m_UIBuyButton.visible;
+            this.m_UIBuyButton.enabled = _loc1_ != null && _loc1_.disabled == false;
+            this.m_UIGetCoinsButton.setVisible(!this.m_UIBuyButton.visible);
+            this.m_UIGetCoinsButton.includeInLayout = this.m_UIGetCoinsButton.visible;
+         }
+      }
+      
+      protected function onDetailsClicked(param1:Event) : void
+      {
+         this.switchView(VIEW_DETAILS);
+         var _loc2_:IngameShopEvent = new IngameShopEvent(IngameShopEvent.OFFER_ACTIVATED);
+         _loc2_.data = this.m_UIOfferList.getSelectedOffer();
+         dispatchEvent(_loc2_);
+      }
+      
+      protected function onNameChangeDialogClosed(param1:CloseEvent) : void
+      {
+         this.m_ShopWindow.embeddedDialog.removeEventListener(CloseEvent.CLOSE,this.onNameChangeDialogClosed);
+         var _loc2_:CharacterNameChangeWidget = this.m_ShopWindow.embeddedDialog as CharacterNameChangeWidget;
+         if(param1.detail == EmbeddedDialog.OKAY && _loc2_ != null && _loc2_.desiredName.length > 0)
+         {
+            IngameShopManager.getInstance().purchaseCharacterNameChange(_loc2_.offerID,_loc2_.desiredName);
+            this.switchView(VIEW_OFFERS);
+         }
+      }
+      
+      protected function onNameChangeRequest(param1:IngameShopEvent) : void
+      {
+         var _loc2_:CharacterNameChangeWidget = new CharacterNameChangeWidget(int(param1.data));
+         _loc2_.addEventListener(CloseEvent.CLOSE,this.onNameChangeDialogClosed);
+         this.m_ShopWindow.embeddedDialog = _loc2_;
       }
       
       protected function onOfferDoubleClicked(param1:IngameShopEvent) : void
@@ -325,37 +308,10 @@ package tibia.ingameshop.shopWidgetClasses
          dispatchEvent(param1);
       }
       
-      protected function onPurchaseCompleted(param1:IngameShopEvent) : void
+      protected function onBackClicked(param1:Event) : void
       {
-         var _loc2_:ShopReponseWidget = new ShopReponseWidget(param1.message,param1.errorType);
-         this.m_ShopWindow.embeddedDialog = _loc2_;
-         this.m_ShopWindow.sideBar.requestOffersForCategory(this.m_ShopWindow.sideBar.getSelectedCategory());
-      }
-      
-      public function set shopWidget(param1:IngameShopWidget) : void
-      {
-         if(this.m_ShopWindow != null)
-         {
-            throw new IllegalOperationError("IngameShopMainContentPane.shopWidget: Attempted to set reference twice");
-         }
-         this.m_ShopWindow = param1;
-         this.m_ShopWindow.sideBar.addEventListener(IngameShopEvent.CATEGORY_SELECTED,this.onCategorySelected);
-         this.m_ShopWindow.sideBar.addEventListener(IngameShopEvent.HISTORY_CLICKED,this.onHistoryClicked);
-         this.m_UIOfferList.shopWidget = param1;
-         this.m_UIOfferDetails.shopWidget = param1;
-         this.m_UITransactions.shopWidget = param1;
-      }
-      
-      protected function onBuyConfirmationClosed(param1:CloseEvent) : void
-      {
-         this.m_ShopWindow.embeddedDialog.removeEventListener(CloseEvent.CLOSE,this.onBuyConfirmationClosed);
-         var _loc2_:PurchaseConfirmationWidget = this.m_ShopWindow.embeddedDialog as PurchaseConfirmationWidget;
-         if(_loc2_ != null && param1.detail == EmbeddedDialog.YES)
-         {
-            IngameShopManager.getInstance().purchaseRegularOffer(this.m_UIOfferList.getSelectedOffer().offerID);
-            this.switchView(VIEW_OFFERS);
-            Tibia.s_GetOptions().generalShopShowBuyConfirmation = !_loc2_.hasCheckedDoNotShowDialogAgain();
-         }
+         this.switchView(VIEW_OFFERS);
+         dispatchEvent(new IngameShopEvent(IngameShopEvent.OFFER_DEACTIVATED));
       }
       
       protected function onErrorReceived(param1:IngameShopEvent) : void
@@ -370,6 +326,65 @@ package tibia.ingameshop.shopWidgetClasses
             _loc2_ = new ShopReponseWidget(param1.message,param1.errorType);
             this.m_ShopWindow.embeddedDialog = _loc2_;
             this.m_ShopWindow.sideBar.requestOffersForCategory(this.m_ShopWindow.sideBar.getSelectedCategory());
+         }
+      }
+      
+      private function switchView(param1:int) : void
+      {
+         var _loc2_:IngameShopOffer = this.m_UIOfferList.getSelectedOffer();
+         if(param1 == VIEW_OFFERS)
+         {
+            this.m_UITitle.text = resourceManager.getString(BUNDLE,"LBL_OFFERS");
+            this.m_UIStack.selectedIndex = VIEW_OFFERS;
+            this.m_UIBackButton.setVisible(false);
+            this.m_UIBackButton.includeInLayout = false;
+            this.m_UIDetailsButton.setVisible(true);
+            this.m_UIDetailsButton.includeInLayout = true;
+            this.switchBetweenBuyAndGetCoinsButton();
+            this.m_UIPreviousTransactionPage.setVisible(false);
+            this.m_UIPreviousTransactionPage.includeInLayout = false;
+            this.m_UIBetweenButtonsLabel.setVisible(false);
+            this.m_UIBetweenButtonsLabel.includeInLayout = false;
+            this.m_UINextTransactionPage.setVisible(false);
+            this.m_UINextTransactionPage.includeInLayout = false;
+            this.m_UIBottomButtonBox.setVisible(this.m_UIOfferList.getSelectedOffer() != null);
+         }
+         else if(param1 == VIEW_DETAILS)
+         {
+            this.m_UITitle.text = resourceManager.getString(BUNDLE,"LBL_DETAILS");
+            this.m_UIStack.selectedIndex = VIEW_DETAILS;
+            this.m_UIBackButton.setVisible(true);
+            this.m_UIBackButton.includeInLayout = true;
+            this.m_UIDetailsButton.setVisible(false);
+            this.m_UIDetailsButton.includeInLayout = false;
+            this.switchBetweenBuyAndGetCoinsButton();
+            this.m_UIPreviousTransactionPage.setVisible(false);
+            this.m_UIPreviousTransactionPage.includeInLayout = false;
+            this.m_UIBetweenButtonsLabel.setVisible(false);
+            this.m_UIBetweenButtonsLabel.includeInLayout = false;
+            this.m_UINextTransactionPage.setVisible(false);
+            this.m_UINextTransactionPage.includeInLayout = false;
+            this.m_UIBottomButtonBox.setVisible(this.m_UIOfferList.getSelectedOffer() != null);
+         }
+         else if(param1 == VIEW_TRANSACTIONS)
+         {
+            this.m_UITitle.text = resourceManager.getString(BUNDLE,"LBL_HISTORY");
+            this.m_UIStack.selectedIndex = VIEW_TRANSACTIONS;
+            this.m_UIBackButton.setVisible(false);
+            this.m_UIBackButton.includeInLayout = false;
+            this.m_UIDetailsButton.setVisible(false);
+            this.m_UIDetailsButton.includeInLayout = false;
+            this.m_UIBuyButton.setVisible(false);
+            this.m_UIBuyButton.includeInLayout = false;
+            this.m_UIGetCoinsButton.setVisible(false);
+            this.m_UIGetCoinsButton.includeInLayout = false;
+            this.m_UIPreviousTransactionPage.setVisible(true);
+            this.m_UIPreviousTransactionPage.includeInLayout = true;
+            this.m_UIBetweenButtonsLabel.setVisible(false);
+            this.m_UIBetweenButtonsLabel.includeInLayout = true;
+            this.m_UINextTransactionPage.setVisible(true);
+            this.m_UINextTransactionPage.includeInLayout = true;
+            this.m_UIBottomButtonBox.setVisible(true);
          }
       }
       

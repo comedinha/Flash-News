@@ -5,14 +5,14 @@ package
    import mx.styles.StyleManager;
    import mx.skins.halo.DataGridSortArrow;
    import mx.skins.halo.DataGridColumnDropIndicator;
-   import mx.skins.halo.DataGridColumnResizeSkin;
    import mx.skins.halo.DataGridHeaderSeparator;
+   import mx.skins.halo.DataGridColumnResizeSkin;
    import mx.skins.halo.DataGridHeaderBackgroundSkin;
    
    public class _DataGridStyle
    {
       
-      private static var _embed_css_Assets_swf_cursorStretch_970976020:Class = _DataGridStyle__embed_css_Assets_swf_cursorStretch_970976020;
+      private static var _embed_css_Assets_swf_cursorStretch_2132883076:Class = _DataGridStyle__embed_css_Assets_swf_cursorStretch_2132883076;
        
       
       public function _DataGridStyle()
@@ -33,17 +33,17 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.sortArrowSkin = DataGridSortArrow;
-               this.columnDropIndicatorSkin = DataGridColumnDropIndicator;
-               this.columnResizeSkin = DataGridColumnResizeSkin;
-               this.stretchCursor = _embed_css_Assets_swf_cursorStretch_970976020;
-               this.alternatingItemColors = [16250871,16777215];
-               this.headerStyleName = "dataGridStyles";
-               this.headerSeparatorSkin = DataGridHeaderSeparator;
-               this.headerBackgroundSkin = DataGridHeaderBackgroundSkin;
-               this.headerColors = [16777215,15132390];
                this.headerDragProxyStyleName = "headerDragProxyStyle";
+               this.alternatingItemColors = [16250871,16777215];
+               this.sortArrowSkin = DataGridSortArrow;
                this.verticalGridLineColor = 13421772;
+               this.headerColors = [16777215,15132390];
+               this.headerStyleName = "dataGridStyles";
+               this.columnDropIndicatorSkin = DataGridColumnDropIndicator;
+               this.headerSeparatorSkin = DataGridHeaderSeparator;
+               this.stretchCursor = _embed_css_Assets_swf_cursorStretch_2132883076;
+               this.columnResizeSkin = DataGridColumnResizeSkin;
+               this.headerBackgroundSkin = DataGridHeaderBackgroundSkin;
             };
          }
       }

@@ -26,16 +26,16 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.borderStyle = "inset";
-               this.borderColor = 14015965;
                this.highlightColor = 12897484;
                this.backgroundColor = 16777215;
-               this.shadowCapColor = 14015965;
-               this.shadowColor = 14015965;
-               this.paddingLeft = 5;
-               this.buttonColor = 7305079;
+               this.borderColor = 14015965;
                this.borderCapColor = 9542041;
+               this.buttonColor = 7305079;
+               this.shadowCapColor = 14015965;
                this.paddingRight = 5;
+               this.borderStyle = "inset";
+               this.paddingLeft = 5;
+               this.shadowColor = 14015965;
             };
          }
       }

@@ -67,7 +67,7 @@ package tibia.network
       
       protected static const CBUYOBJECT:int = 122;
       
-      public static const CLIENT_VERSION:uint = 2265;
+      public static const CLIENT_VERSION:uint = 2309;
       
       protected static const SPING:int = 29;
       
@@ -115,8 +115,6 @@ package tibia.network
       
       protected static const SFIELDDATA:int = 105;
       
-      protected static const CPASSLEADERSHIP:int = 166;
-      
       protected static const SCLOSECONTAINER:int = 111;
       
       protected static const SLEFTROW:int = 104;
@@ -126,6 +124,8 @@ package tibia.network
       protected static const SMISSILEEFFECT:int = 133;
       
       protected static const CGOWEST:int = 104;
+      
+      protected static const CPASSLEADERSHIP:int = 166;
       
       protected static const SSPELLGROUPDELAY:int = 165;
       
@@ -191,6 +191,8 @@ package tibia.network
       
       protected static const SINGAMESHOPSUCCESS:int = 254;
       
+      protected static const SSTOREBUTTONINDICATORS:int = 25;
+      
       protected static const CPRIVATECHANNEL:int = 154;
       
       protected static const CGETTRANSACTIONHISTORY:int = 254;
@@ -213,9 +215,9 @@ package tibia.network
       
       protected static const SNPCOFFER:int = 122;
       
-      protected static const SWORLDENTERED:int = 15;
-      
       protected static const CMARKETCANCEL:int = 247;
+      
+      protected static const SWORLDENTERED:int = 15;
       
       protected static const CEXCLUDEFROMCHANNEL:int = 172;
       
@@ -269,7 +271,7 @@ package tibia.network
       
       protected static const SCREATUREOUTFIT:int = 142;
       
-      public static const PROTOCOL_VERSION:int = 1095;
+      public static const PROTOCOL_VERSION:int = 1097;
       
       protected static const SAMBIENTE:int = 130;
       
@@ -367,13 +369,13 @@ package tibia.network
       
       protected static const SCLOSETRADE:int = 127;
       
-      protected static const CONNECTION_STATE_GAME:int = 4;
-      
       protected static const SMULTIUSEDELAY:int = 166;
       
-      protected static const SSETINVENTORY:int = 120;
+      protected static const CONNECTION_STATE_GAME:int = 4;
       
       protected static const CSTOREEVENT:int = 233;
+      
+      protected static const SSETINVENTORY:int = 120;
       
       protected static const CGOPATH:int = 100;
       
@@ -470,6 +472,8 @@ package tibia.network
       protected static const SOWNOFFER:int = 125;
       
       protected static const PAYLOAD_POS:int = HEADER_POS + HEADER_SIZE;
+      
+      protected static const SSETSTOREDEEPLINK:int = 168;
       
       protected static const CMARKETCREATE:int = 246;
       

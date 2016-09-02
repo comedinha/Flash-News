@@ -140,9 +140,8 @@ package tibia.chat.chatWidgetClasses
       
       override protected function measure() : void
       {
-         var _loc1_:EdgeMetrics = null;
          var _loc2_:TextLineMetrics = null;
-         _loc1_ = this.viewMetricsAndPadding;
+         var _loc1_:EdgeMetrics = this.viewMetricsAndPadding;
          _loc2_ = textField.getUITextFormat().measureText("gG");
          measuredMinWidth = measuredWidth = _loc2_.width + 4 + _loc1_.left + _loc1_.right;
          measuredMinHeight = measuredHeight = _loc2_.height + 4 + _loc1_.top + _loc1_.bottom;

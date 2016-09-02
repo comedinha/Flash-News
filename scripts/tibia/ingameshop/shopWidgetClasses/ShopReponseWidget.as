@@ -1,25 +1,45 @@
 package tibia.ingameshop.shopWidgetClasses
 {
    import shared.controls.EmbeddedDialog;
-   import tibia.ingameshop.IngameShopOffer;
+   import flash.display.BitmapData;
+   import mx.core.BitmapAsset;
+   import flash.utils.Timer;
+   import mx.controls.Button;
+   import flash.events.TimerEvent;
+   import mx.events.CloseEvent;
+   import tibia.appearances.widgetClasses.SimpleAnimationRenderer;
+   import flash.events.MouseEvent;
+   import tibia.appearances.FrameDuration;
+   import tibia.appearances.AppearanceAnimator;
    import tibia.ingameshop.IngameShopEvent;
+   import mx.containers.HBox;
+   import mx.controls.Text;
+   import mx.controls.TextArea;
    import tibia.ingameshop.IngameShopWidget;
    
    public class ShopReponseWidget extends EmbeddedDialog
    {
       
+      private static const PURCHASE_SUCCESS_IDLE_BITMAP:BitmapData = (new PURCHASE_SUCCESS_IDLE() as BitmapAsset).bitmapData;
+      
       private static const BUNDLE:String = "IngameShopWidget";
+      
+      private static const PURCHASE_SUCCESS_PRESSED_BITMAP:BitmapData = (new PURCHASE_SUCCESS_PRESSED() as BitmapAsset).bitmapData;
+      
+      private static const PURCHASE_SUCCESS_PRESSED:Class = ShopReponseWidget_PURCHASE_SUCCESS_PRESSED;
+      
+      private static const PURCHASE_SUCCESS_IDLE:Class = ShopReponseWidget_PURCHASE_SUCCESS_IDLE;
        
       
-      private var m_Offer:IngameShopOffer;
+      private var m_ButtonTimer:Timer;
       
-      private var m_UncommittedOffer:Boolean;
+      private var m_SuccessButton:Button;
+      
+      private var m_ButtonAnimation:SimpleAnimationRenderer;
       
       private var m_ErrorType:int;
       
       private var m_Message:String;
-      
-      private var m_UIOfferDisplayBox:tibia.ingameshop.shopWidgetClasses.OfferDisplayBlock;
       
       public function ShopReponseWidget(param1:String, param2:int)
       {
@@ -28,28 +48,55 @@ package tibia.ingameshop.shopWidgetClasses
          this.m_Message = param1;
          title = this.getTitleStringByErrorState();
          text = param1;
-         buttonFlags = EmbeddedDialog.OKAY;
          width = IngameShopWidget.EMBEDDED_DIALOG_WIDTH;
-         minHeight = 175;
-         this.m_UncommittedOffer = true;
-      }
-      
-      public function set offer(param1:IngameShopOffer) : void
-      {
-         this.m_Offer = param1;
-         this.m_UncommittedOffer = true;
-         invalidateProperties();
-      }
-      
-      override protected function commitProperties() : void
-      {
-         super.commitProperties();
-         if(this.m_UncommittedOffer)
+         if(param2 != IngameShopEvent.ERROR_NO_ERROR)
          {
-            this.m_UIOfferDisplayBox.offer = this.m_Offer;
-            this.m_UIOfferDisplayBox.includeInLayout = this.m_Offer != null;
-            this.m_UIOfferDisplayBox.visible = this.m_Offer != null;
-            this.m_UncommittedOffer = false;
+            minHeight = 175;
+            buttonFlags = EmbeddedDialog.OKAY;
+         }
+         else
+         {
+            buttonFlags = EmbeddedDialog.NONE;
+         }
+      }
+      
+      protected function onStoreSuccessButtonAnimationOver(param1:TimerEvent) : void
+      {
+         var _loc2_:CloseEvent = new CloseEvent(CloseEvent.CLOSE,false,true,EmbeddedDialog.OKAY);
+         dispatchEvent(_loc2_);
+      }
+      
+      protected function onStoreSuccessButtonClicked(param1:MouseEvent) : void
+      {
+         this.setPurchaseButtonPressedAnimation();
+         this.m_ButtonAnimation.removeEventListener(MouseEvent.CLICK,this.onStoreSuccessButtonClicked);
+         this.m_ButtonTimer.start();
+      }
+      
+      private function setPurchaseButtonPressedAnimation() : void
+      {
+         var _loc1_:uint = 0;
+         var _loc2_:int = 0;
+         var _loc3_:uint = 0;
+         var _loc4_:Vector.<FrameDuration> = null;
+         var _loc5_:uint = 0;
+         var _loc6_:AppearanceAnimator = null;
+         var _loc7_:uint = 0;
+         if(this.m_ButtonAnimation != null)
+         {
+            _loc1_ = 108;
+            _loc2_ = 1;
+            _loc3_ = PURCHASE_SUCCESS_PRESSED_BITMAP.width / _loc1_;
+            _loc4_ = new Vector.<FrameDuration>();
+            _loc5_ = 0;
+            while(_loc5_ < _loc3_)
+            {
+               _loc7_ = _loc5_ < 5?uint(150):uint(100);
+               _loc4_.push(new FrameDuration(_loc7_,_loc7_));
+               _loc5_++;
+            }
+            _loc6_ = new AppearanceAnimator(_loc3_,0,_loc2_,AppearanceAnimator.ANIMATION_ASYNCHRON,_loc4_);
+            this.m_ButtonAnimation.setAnimation(PURCHASE_SUCCESS_PRESSED_BITMAP,_loc1_,_loc6_);
          }
       }
       
@@ -68,14 +115,39 @@ package tibia.ingameshop.shopWidgetClasses
       
       override protected function createChildren() : void
       {
+         var _loc1_:HBox = null;
+         var _loc2_:Text = null;
+         var _loc3_:TextArea = null;
          super.createChildren();
          if(this.getTextColorStyleNameByErrorState() != null)
          {
             titleBox.setStyle("color",getStyle(this.getTextColorStyleNameByErrorState()));
          }
-         this.m_UIOfferDisplayBox = new tibia.ingameshop.shopWidgetClasses.OfferDisplayBlock();
-         this.m_UIOfferDisplayBox.percentWidth = 100;
-         content.addChildAt(this.m_UIOfferDisplayBox,0);
+         if(this.m_ErrorType == IngameShopEvent.ERROR_NO_ERROR)
+         {
+            _loc1_ = new HBox();
+            _loc1_.percentHeight = 100;
+            _loc1_.percentWidth = 100;
+            this.m_SuccessButton = new Button();
+            this.m_SuccessButton.styleName = "purchaseCompletedStyle";
+            this.m_ButtonAnimation = new SimpleAnimationRenderer();
+            this.m_ButtonAnimation.moveTarget = this.m_SuccessButton;
+            this.m_ButtonAnimation.addEventListener(MouseEvent.CLICK,this.onStoreSuccessButtonClicked);
+            _loc2_ = content.getChildAt(0) as Text;
+            content.removeAllChildren();
+            _loc3_ = new TextArea();
+            _loc3_.editable = false;
+            _loc3_.text = text;
+            _loc3_.percentWidth = 100;
+            _loc3_.maxHeight = _loc3_.height = PURCHASE_SUCCESS_IDLE_BITMAP.height;
+            _loc1_.addChild(_loc3_);
+            _loc1_.addChild(this.m_SuccessButton);
+            _loc1_.rawChildren.addChild(this.m_ButtonAnimation);
+            content.addChild(_loc1_);
+            this.m_ButtonTimer = new Timer(2050);
+            this.m_ButtonTimer.addEventListener(TimerEvent.TIMER,this.onStoreSuccessButtonAnimationOver);
+            this.setPurchaseButtonIdleAnimation();
+         }
       }
       
       private function getTextColorStyleNameByErrorState() : String
@@ -95,6 +167,33 @@ package tibia.ingameshop.shopWidgetClasses
             case IngameShopEvent.ERROR_TRANSACTION_HISTORY:
             default:
                return null;
+         }
+      }
+      
+      private function setPurchaseButtonIdleAnimation() : void
+      {
+         var _loc1_:uint = 0;
+         var _loc2_:int = 0;
+         var _loc3_:uint = 0;
+         var _loc4_:uint = 0;
+         var _loc5_:Vector.<FrameDuration> = null;
+         var _loc6_:uint = 0;
+         var _loc7_:AppearanceAnimator = null;
+         if(this.m_ButtonAnimation != null)
+         {
+            _loc1_ = 108;
+            _loc2_ = 0;
+            _loc3_ = PURCHASE_SUCCESS_IDLE_BITMAP.width / _loc1_;
+            _loc4_ = 150;
+            _loc5_ = new Vector.<FrameDuration>();
+            _loc6_ = 0;
+            while(_loc6_ < _loc3_)
+            {
+               _loc5_.push(new FrameDuration(_loc4_,_loc4_));
+               _loc6_++;
+            }
+            _loc7_ = new AppearanceAnimator(_loc3_,0,_loc2_,AppearanceAnimator.ANIMATION_ASYNCHRON,_loc5_);
+            this.m_ButtonAnimation.setAnimation(PURCHASE_SUCCESS_IDLE_BITMAP,_loc1_,_loc7_);
          }
       }
    }

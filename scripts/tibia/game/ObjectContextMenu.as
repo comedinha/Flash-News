@@ -168,6 +168,8 @@ package tibia.game
       
       private static const ACTION_LOOK:int = 6;
       
+      protected static const SKILL_EXPERIENCE_GAIN:int = -2;
+      
       protected static const PROFESSION_MASK_NONE:int = 1 << PROFESSION_NONE;
       
       protected static const TYPE_SUMMON_OWN:int = 3;
@@ -198,13 +200,13 @@ package tibia.game
       
       protected static const BLESSING_EMBRACE_OF_TIBIA:int = BLESSING_SPIRITUAL_SHIELDING << 1;
       
+      protected static const STATE_FAST:int = 6;
+      
       protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_SPARK_OF_PHOENIX << 1;
       
       protected static const SKILL_MANA_LEECH_AMOUNT:int = 24;
       
       private static const ACTION_CONTEXT_MENU:int = 5;
-      
-      protected static const STATE_FAST:int = 6;
       
       protected static const BLESSING_NONE:int = 0;
       

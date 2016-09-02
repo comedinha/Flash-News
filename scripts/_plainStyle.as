@@ -26,13 +26,13 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.paddingTop = 0;
                this.backgroundColor = 16777215;
+               this.paddingBottom = 0;
                this.backgroundImage = "";
                this.horizontalAlign = "left";
-               this.paddingLeft = 0;
-               this.paddingBottom = 0;
                this.paddingRight = 0;
+               this.paddingTop = 0;
+               this.paddingLeft = 0;
             };
          }
       }

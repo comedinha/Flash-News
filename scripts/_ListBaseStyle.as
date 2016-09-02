@@ -27,14 +27,14 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.borderStyle = "solid";
-               this.paddingTop = 2;
                this.backgroundColor = 16777215;
-               this.backgroundDisabledColor = 14540253;
-               this.dropIndicatorSkin = ListDropIndicator;
-               this.paddingLeft = 2;
                this.paddingBottom = 2;
+               this.backgroundDisabledColor = 14540253;
                this.paddingRight = 0;
+               this.dropIndicatorSkin = ListDropIndicator;
+               this.paddingTop = 2;
+               this.borderStyle = "solid";
+               this.paddingLeft = 2;
             };
          }
       }
