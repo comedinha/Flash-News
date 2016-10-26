@@ -1405,11 +1405,10 @@ package tibia.controls
       
       override protected function updateDisplayList(param1:Number, param2:Number) : void
       {
-         var _loc3_:Number = NaN;
          var _loc20_:Number = NaN;
          var _loc21_:* = false;
          super.updateDisplayList(param1,param2);
-         _loc3_ = getStyle("paddingLeft");
+         var _loc3_:Number = getStyle("paddingLeft");
          var _loc4_:Number = param1;
          var _loc5_:Number = getStyle("paddingTop");
          var _loc6_:Number = param1 - _loc3_ - getStyle("paddingRight");

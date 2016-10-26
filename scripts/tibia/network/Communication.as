@@ -363,7 +363,7 @@ package tibia.network
       
       protected static const SCHANNELS:int = 171;
       
-      public static const CLIENT_VERSION:uint = 2309;
+      public static const CLIENT_VERSION:uint = 2357;
       
       protected static const TYPE_SUMMON_OWN:int = 3;
       
@@ -517,7 +517,7 @@ package tibia.network
       
       protected static const SCREATUREOUTFIT:int = 142;
       
-      public static const PROTOCOL_VERSION:int = 1097;
+      public static const PROTOCOL_VERSION:int = 1099;
       
       protected static const CEDITGUILDMESSAGE:int = 156;
       

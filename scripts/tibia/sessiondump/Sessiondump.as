@@ -405,7 +405,7 @@ package tibia.sessiondump
       
       protected static const CROTATEWEST:int = 114;
       
-      public static const PROTOCOL_VERSION:int = 1097;
+      public static const PROTOCOL_VERSION:int = 1099;
       
       protected static const SCREATUREOUTFIT:int = 142;
       

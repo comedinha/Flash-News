@@ -67,7 +67,7 @@ package tibia.network
       
       protected static const CBUYOBJECT:int = 122;
       
-      public static const CLIENT_VERSION:uint = 2309;
+      public static const CLIENT_VERSION:uint = 2357;
       
       protected static const SPING:int = 29;
       
@@ -271,7 +271,7 @@ package tibia.network
       
       protected static const SCREATUREOUTFIT:int = 142;
       
-      public static const PROTOCOL_VERSION:int = 1097;
+      public static const PROTOCOL_VERSION:int = 1099;
       
       protected static const SAMBIENTE:int = 130;
       

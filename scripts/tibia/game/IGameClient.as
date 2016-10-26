@@ -30,6 +30,8 @@ package tibia.game
       
       function saveLocalData() : void;
       
+      function set isFocusNotifierEnabled(param1:Boolean) : void;
+      
       function setAssetProvider(param1:IAssetProvider) : void;
    }
 }

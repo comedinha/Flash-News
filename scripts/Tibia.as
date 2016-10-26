@@ -121,7 +121,7 @@ package
       
       public static const BUGGY_FLASH_PLAYER_VERSION:String = "21,0,0,182";
       
-      public static const PROTOCOL_VERSION:int = 1097;
+      public static const PROTOCOL_VERSION:int = 1099;
       
       public static var s_FrameTibiaTimestamp:Number = 0;
       
@@ -143,7 +143,7 @@ package
       
       protected static const CHECKSUM_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
       
-      public static const CLIENT_VERSION:uint = 2309;
+      public static const CLIENT_VERSION:uint = 2357;
       
       public static const PREVIEW_STATE_PREVIEW_NO_ACTIVE_CHANGE:uint = 1;
       
@@ -921,6 +921,8 @@ package
       private var _embed_css_images_Button_Maximize_pressed_png_1415129086:Class;
       
       private var _embed_css_images_ChatTab_tileable_idle_png_627868017:Class;
+      
+      protected var m_EnableFocusNotifier:Boolean = true;
       
       protected var m_CurrentOptionsUploading:Boolean = false;
       
@@ -2207,13 +2209,16 @@ package
          if(this.m_IsActive != param1)
          {
             this.m_IsActive = param1;
-            if(this.m_IsActive == true)
+            if(this.m_EnableFocusNotifier)
             {
-               FocusNotifier.getInstance().hide();
-            }
-            else
-            {
-               FocusNotifier.getInstance().show();
+               if(this.m_IsActive == true)
+               {
+                  FocusNotifier.getInstance().hide();
+               }
+               else
+               {
+                  FocusNotifier.getInstance().show();
+               }
             }
          }
       }
@@ -9723,7 +9728,7 @@ package
             this.m_UICenterColumn.getDividerAt(0).doubleClickEnabled = true;
             this.m_UICenterColumn.getDividerAt(0).addEventListener(MouseEvent.DOUBLE_CLICK,this.onGameWindowAutofit);
          }
-         if(this.isActive == false)
+         if(this.m_EnableFocusNotifier && this.isActive == false)
          {
             FocusNotifier.getInstance().captureMouse = true;
             FocusNotifier.getInstance().show();
@@ -9826,6 +9831,11 @@ package
       protected function onGameWindowAutofit(param1:MouseEvent) : void
       {
          this.autofitGameWindow();
+      }
+      
+      public function get isFocusNotifierEnabled() : Boolean
+      {
+         return this.m_EnableFocusNotifier;
       }
       
       private function setCurrentOptionsFromAssets(param1:IAssetProvider) : void
@@ -10548,6 +10558,18 @@ package
       public function get m_UIBottomContainer() : HBox
       {
          return this._967396880m_UIBottomContainer;
+      }
+      
+      public function set isFocusNotifierEnabled(param1:Boolean) : void
+      {
+         if(param1 != this.m_EnableFocusNotifier)
+         {
+            this.m_EnableFocusNotifier = param1;
+            if(!this.m_EnableFocusNotifier)
+            {
+               FocusNotifier.getInstance().hide();
+            }
+         }
       }
       
       private function onConnectionLoginError(param1:ConnectionEvent) : void
