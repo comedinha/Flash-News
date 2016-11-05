@@ -7,11 +7,11 @@ package
    public class _DividedBoxStyle
    {
       
-      private static var _embed_css_Assets_swf_mx_skins_cursor_HBoxDivider_1837932102:Class = _DividedBoxStyle__embed_css_Assets_swf_mx_skins_cursor_HBoxDivider_1837932102;
+      private static var _embed_css_Assets_swf_mx_skins_cursor_HBoxDivider_769095364:Class = _DividedBoxStyle__embed_css_Assets_swf_mx_skins_cursor_HBoxDivider_769095364;
       
-      private static var _embed_css_Assets_swf_mx_skins_cursor_VBoxDivider_939671556:Class = _DividedBoxStyle__embed_css_Assets_swf_mx_skins_cursor_VBoxDivider_939671556;
+      private static var _embed_css_Assets_swf_mx_skins_cursor_VBoxDivider_1617517722:Class = _DividedBoxStyle__embed_css_Assets_swf_mx_skins_cursor_VBoxDivider_1617517722;
       
-      private static var _embed_css_Assets_swf_mx_skins_BoxDividerSkin_1406913505:Class = _DividedBoxStyle__embed_css_Assets_swf_mx_skins_BoxDividerSkin_1406913505;
+      private static var _embed_css_Assets_swf_mx_skins_BoxDividerSkin_2063647417:Class = _DividedBoxStyle__embed_css_Assets_swf_mx_skins_BoxDividerSkin_2063647417;
        
       
       public function _DividedBoxStyle()
@@ -35,11 +35,11 @@ package
                this.dividerAlpha = 0.75;
                this.dividerThickness = 3;
                this.horizontalGap = 10;
-               this.dividerSkin = _embed_css_Assets_swf_mx_skins_BoxDividerSkin_1406913505;
+               this.dividerSkin = _embed_css_Assets_swf_mx_skins_BoxDividerSkin_2063647417;
                this.dividerAffordance = 6;
-               this.verticalDividerCursor = _embed_css_Assets_swf_mx_skins_cursor_VBoxDivider_939671556;
+               this.verticalDividerCursor = _embed_css_Assets_swf_mx_skins_cursor_VBoxDivider_1617517722;
                this.verticalGap = 10;
-               this.horizontalDividerCursor = _embed_css_Assets_swf_mx_skins_cursor_HBoxDivider_1837932102;
+               this.horizontalDividerCursor = _embed_css_Assets_swf_mx_skins_cursor_HBoxDivider_769095364;
                this.dividerColor = 7305079;
             };
          }

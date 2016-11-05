@@ -24,7 +24,7 @@ package
             "LBL_CURRENT_PRICE":"Price",
             "LBL_CURRENT_WEIGHT":"Weight",
             "CTX_SELL_KEEP_EQUIPPED":"Ignore Equipped",
-            "LBL_AVAILABLE_MONEY":"Money",
+            "LBL_AVAILABLE_MONEY":"Gold",
             "CTX_SORT_NAME":"Sort by Name",
             "CTX_BUY_IGNORE_CAPACITY":"Ignore Capacity",
             "CTX_LOOK":"Look",

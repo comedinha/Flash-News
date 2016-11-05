@@ -66,11 +66,15 @@ package tibia.creatures
       
       protected var m_AutowalkPathDelta:Vector3D;
       
+      private var m_BankGoldBalance:Number = NaN;
+      
       private var m_ExperienceGainInfo:tibia.creatures.ExperienceGainInfo;
       
-      private var m_StateFlags:uint = 4.294967295E9;
+      private var m_InventoryGoldBalance:Number = NaN;
       
       private var m_Profession:int = 0;
+      
+      private var m_StateFlags:uint = 4.294967295E9;
       
       protected var m_AutowalkTargetDiagonal:Boolean = false;
       
@@ -87,6 +91,8 @@ package tibia.creatures
       protected var m_AutowalkTargetExact:Boolean = false;
       
       private var m_Premium:Boolean = false;
+      
+      private var m_HasReachedMain:Boolean = false;
       
       protected var m_AutowalkPathSteps:Array;
       
@@ -206,6 +212,32 @@ package tibia.creatures
          return this.m_Profession;
       }
       
+      public function get bankGoldBalance() : Number
+      {
+         return this.m_BankGoldBalance;
+      }
+      
+      override public function resetSkills() : void
+      {
+         m_Skills = new Vector.<Number>((SKILL_MANA_LEECH_AMOUNT + 1) * 3,true);
+         var _loc1_:int = 0;
+         while(_loc1_ < m_Skills.length)
+         {
+            m_Skills[_loc1_ + 0] = 0;
+            m_Skills[_loc1_ + 1] = 0;
+            m_Skills[_loc1_ + 2] = 0;
+            _loc1_ = _loc1_ + 3;
+         }
+         this.m_ExperienceCounter.reset();
+         this.m_ExperienceGainInfo.reset();
+      }
+      
+      public function resetAutowalk() : void
+      {
+         this.stopAutowalk(true);
+         this.abortAutowalk(2);
+      }
+      
       public function set premiumUntil(param1:uint) : void
       {
          var _loc2_:PropertyChangeEvent = null;
@@ -248,12 +280,6 @@ package tibia.creatures
          }
       }
       
-      public function resetAutowalk() : void
-      {
-         this.stopAutowalk(true);
-         this.abortAutowalk(2);
-      }
-      
       public function set unjustPoints(param1:tibia.creatures.UnjustPointsInfo) : void
       {
          var _loc2_:PropertyChangeEvent = null;
@@ -288,11 +314,6 @@ package tibia.creatures
          guildFlag = GUILD_NONE;
       }
       
-      public function get isFighting() : Boolean
-      {
-         return (this.m_StateFlags & 1 << STATE_FIGHTING) > 0;
-      }
-      
       public function get manaMax() : Number
       {
          return getSkillBase(SKILL_MANA);
@@ -318,6 +339,20 @@ package tibia.creatures
             _loc4_.newValue = _loc2_;
             dispatchEvent(_loc4_);
          }
+      }
+      
+      public function set bankGoldBalance(param1:Number) : void
+      {
+         this.m_BankGoldBalance = param1;
+         var _loc2_:PropertyChangeEvent = new PropertyChangeEvent(PropertyChangeEvent.PROPERTY_CHANGE);
+         _loc2_.kind = PropertyChangeEventKind.UPDATE;
+         _loc2_.property = "bankGoldBalance";
+         dispatchEvent(_loc2_);
+      }
+      
+      public function get isFighting() : Boolean
+      {
+         return (this.m_StateFlags & 1 << STATE_FIGHTING) > 0;
       }
       
       public function get levelPercent() : uint
@@ -354,6 +389,19 @@ package tibia.creatures
          }
       }
       
+      public function set openPvpSituations(param1:uint) : void
+      {
+         var _loc2_:PropertyChangeEvent = null;
+         if(this.m_OpenPvPSituations != param1)
+         {
+            this.m_OpenPvPSituations = param1;
+            _loc2_ = new PropertyChangeEvent(PropertyChangeEvent.PROPERTY_CHANGE);
+            _loc2_.kind = PropertyChangeEventKind.UPDATE;
+            _loc2_.property = "openPvpSituations";
+            dispatchEvent(_loc2_);
+         }
+      }
+      
       public function getRuneUses(param1:Rune) : int
       {
          if(param1 == null || param1.restrictLevel > getSkillValue(SKILL_LEVEL) || param1.restrictMagicLevel > getSkillValue(SKILL_MAGLEVEL) || (param1.restrictProfession & 1 << this.profession) == 0)
@@ -365,6 +413,11 @@ package tibia.creatures
             return param1.castMana > 0?int(int(this.mana / param1.castMana)):int(int.MAX_VALUE);
          }
          return 0;
+      }
+      
+      public function get hasReachedMain() : Boolean
+      {
+         return this.m_HasReachedMain;
       }
       
       public function stopAutowalk(param1:Boolean) : void
@@ -381,17 +434,13 @@ package tibia.creatures
          this.m_AutowalkTargetExact = false;
       }
       
-      public function set openPvpSituations(param1:uint) : void
+      public function set premium(param1:Boolean) : void
       {
-         var _loc2_:PropertyChangeEvent = null;
-         if(this.m_OpenPvPSituations != param1)
-         {
-            this.m_OpenPvPSituations = param1;
-            _loc2_ = new PropertyChangeEvent(PropertyChangeEvent.PROPERTY_CHANGE);
-            _loc2_.kind = PropertyChangeEventKind.UPDATE;
-            _loc2_.property = "openPvpSituations";
-            dispatchEvent(_loc2_);
-         }
+         this.m_Premium = param1;
+         var _loc2_:PropertyChangeEvent = new PropertyChangeEvent(PropertyChangeEvent.PROPERTY_CHANGE);
+         _loc2_.kind = PropertyChangeEventKind.UPDATE;
+         _loc2_.property = "premium";
+         dispatchEvent(_loc2_);
       }
       
       override public function get hitpointsPercent() : Number
@@ -402,15 +451,6 @@ package tibia.creatures
             return getSkillValue(SKILL_HITPOINTS) * 100 / _loc1_;
          }
          return 100;
-      }
-      
-      public function set premium(param1:Boolean) : void
-      {
-         this.m_Premium = param1;
-         var _loc2_:PropertyChangeEvent = new PropertyChangeEvent(PropertyChangeEvent.PROPERTY_CHANGE);
-         _loc2_.kind = PropertyChangeEventKind.UPDATE;
-         _loc2_.property = "premium";
-         dispatchEvent(_loc2_);
       }
       
       public function get soulPointPercent() : Number
@@ -432,11 +472,6 @@ package tibia.creatures
             default:
                return NaN;
          }
-      }
-      
-      public function get soulPoints() : Number
-      {
-         return getSkillValue(SKILL_SOULPOINTS);
       }
       
       override function animateMovement(param1:Number) : void
@@ -474,27 +509,9 @@ package tibia.creatures
          return 0;
       }
       
-      public function isSpellKnown(param1:Spell) : Boolean
+      public function get soulPoints() : Number
       {
-         var _loc2_:int = 0;
-         var _loc3_:int = 0;
-         var _loc4_:int = this.knownSpells.length - 1;
-         while(_loc3_ <= _loc4_)
-         {
-            _loc2_ = _loc3_ + _loc4_ >>> 1;
-            if(param1.ID < this.knownSpells[_loc2_])
-            {
-               _loc4_ = _loc2_ - 1;
-               continue;
-            }
-            if(param1.ID > this.knownSpells[_loc2_])
-            {
-               _loc3_ = _loc2_ + 1;
-               continue;
-            }
-            return true;
-         }
-         return false;
+         return getSkillValue(SKILL_SOULPOINTS);
       }
       
       override public function get mana() : Number
@@ -530,6 +547,29 @@ package tibia.creatures
          }
       }
       
+      public function isSpellKnown(param1:Spell) : Boolean
+      {
+         var _loc2_:int = 0;
+         var _loc3_:int = 0;
+         var _loc4_:int = this.knownSpells.length - 1;
+         while(_loc3_ <= _loc4_)
+         {
+            _loc2_ = _loc3_ + _loc4_ >>> 1;
+            if(param1.ID < this.knownSpells[_loc2_])
+            {
+               _loc4_ = _loc2_ - 1;
+               continue;
+            }
+            if(param1.ID > this.knownSpells[_loc2_])
+            {
+               _loc3_ = _loc2_ + 1;
+               continue;
+            }
+            return true;
+         }
+         return false;
+      }
+      
       public function get openPvpSituations() : uint
       {
          return this.m_OpenPvPSituations;
@@ -549,6 +589,15 @@ package tibia.creatures
          return this.m_Premium;
       }
       
+      public function set inventoryGoldBalance(param1:Number) : void
+      {
+         this.m_InventoryGoldBalance = param1;
+         var _loc2_:PropertyChangeEvent = new PropertyChangeEvent(PropertyChangeEvent.PROPERTY_CHANGE);
+         _loc2_.kind = PropertyChangeEventKind.UPDATE;
+         _loc2_.property = "inventoryGoldBalance";
+         dispatchEvent(_loc2_);
+      }
+      
       public function hasBlessing(param1:uint) : Boolean
       {
          if(param1 == BLESSING_NONE)
@@ -566,6 +615,19 @@ package tibia.creatures
       public function get experienceGainInfo() : tibia.creatures.ExperienceGainInfo
       {
          return this.m_ExperienceGainInfo;
+      }
+      
+      public function set hasReachedMain(param1:Boolean) : void
+      {
+         var _loc2_:PropertyChangeEvent = null;
+         if(this.m_HasReachedMain != param1)
+         {
+            this.m_HasReachedMain = param1;
+            _loc2_ = new PropertyChangeEvent(PropertyChangeEvent.PROPERTY_CHANGE);
+            _loc2_.kind = PropertyChangeEventKind.UPDATE;
+            _loc2_.property = "hasReachedMain";
+            dispatchEvent(_loc2_);
+         }
       }
       
       public function set knownSpells(param1:Array) : void
@@ -638,6 +700,21 @@ package tibia.creatures
          }
       }
       
+      public function get inventoryGoldBalance() : Number
+      {
+         return this.m_InventoryGoldBalance;
+      }
+      
+      public function set stateFlags(param1:uint) : void
+      {
+         this.updateStateFlags(param1);
+      }
+      
+      public function get knownSpells() : Array
+      {
+         return this.m_KnownSpells;
+      }
+      
       override public function reset() : void
       {
          var _loc1_:int = m_ID;
@@ -649,9 +726,12 @@ package tibia.creatures
          this.m_KnownSpells.length = 0;
          this.m_Premium = false;
          this.m_PremiumUntil = 0;
+         this.m_HasReachedMain = false;
          this.m_Blessings = BLESSING_NONE;
          this.m_Profession = PROFESSION_NONE;
          m_Type = TYPE_PLAYER;
+         this.m_BankGoldBalance = NaN;
+         this.m_InventoryGoldBalance = NaN;
          var _loc2_:PropertyChangeEvent = new PropertyChangeEvent(PropertyChangeEvent.PROPERTY_CHANGE);
          _loc2_.kind = PropertyChangeEventKind.UPDATE;
          _loc2_.property = "*";
@@ -669,31 +749,6 @@ package tibia.creatures
             stopMovementAnimation();
             this.startAutowalkInternal();
          }
-      }
-      
-      public function set stateFlags(param1:uint) : void
-      {
-         this.updateStateFlags(param1);
-      }
-      
-      public function get knownSpells() : Array
-      {
-         return this.m_KnownSpells;
-      }
-      
-      override public function resetSkills() : void
-      {
-         m_Skills = new Vector.<Number>((SKILL_MANA_LEECH_AMOUNT + 1) * 3,true);
-         var _loc1_:int = 0;
-         while(_loc1_ < m_Skills.length)
-         {
-            m_Skills[_loc1_ + 0] = 0;
-            m_Skills[_loc1_ + 1] = 0;
-            m_Skills[_loc1_ + 2] = 0;
-            _loc1_ = _loc1_ + 3;
-         }
-         this.m_ExperienceCounter.reset();
-         this.m_ExperienceGainInfo.reset();
       }
       
       public function get stateFlags() : uint

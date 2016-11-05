@@ -1,8 +1,8 @@
 package tibia.chat.chatWidgetClasses
 {
-   import shared.skins.BitmapButtonSkin;
+   import shared.skins.StyleSizedBitmapButtonSkin;
    
-   public class CycleButtonSkin extends BitmapButtonSkin
+   public class CycleButtonSkin extends StyleSizedBitmapButtonSkin
    {
        
       

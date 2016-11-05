@@ -40,6 +40,7 @@ package
             "CTX_CREATURE_ATTACK_STOP":"Stop Attack",
             "CTX_PARTY_LEAVE":"Leave Party",
             "CTX_OBJECT_MULTIUSE":"Use with ...",
+            "CTX_PLAYER_OPEN_PREY_DIALOG":"Open Prey Dialog",
             "CTX_OBJECT_OPEN":"Open",
             "CTX_PLAYER_CHAT_MESSAGE":"Message to {0} ...",
             "CTX_OBJECT_BROWSE_FIELD":"Browse Field",

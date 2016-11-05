@@ -56,8 +56,9 @@ package tibia.reporting.reportWidgetClasses
       
       override protected function commitProperties() : void
       {
-         super.commitProperties();
          var _loc1_:int = 0;
+         super.commitProperties();
+         _loc1_ = 0;
          if(this.m_UncommittedComment)
          {
             this.m_UIComment.text = this.m_Comment;

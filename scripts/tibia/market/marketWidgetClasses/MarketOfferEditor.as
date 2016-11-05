@@ -30,6 +30,8 @@ package tibia.market.marketWidgetClasses
    public class MarketOfferEditor extends MarketComponent
    {
       
+      private static const BUNDLE_TIBIA:String = "Tibia";
+      
       private static const BUNDLE:String = "MarketWidget";
        
       
@@ -50,8 +52,6 @@ package tibia.market.marketWidgetClasses
       private var m_PiecePrice:uint = 1;
       
       private var m_UIConstructed:Boolean = false;
-      
-      private var m_UIAccountBalance:Label = null;
       
       private var m_UICumulativePriceEdit:TextInput = null;
       
@@ -74,6 +74,8 @@ package tibia.market.marketWidgetClasses
       private var m_UIKind:ComboBox = null;
       
       private var m_UIAmountDecrease:Button = null;
+      
+      private var m_UIGoldBalance:Label = null;
       
       private var m_UIAnonymous:CheckBox = null;
       
@@ -289,9 +291,9 @@ package tibia.market.marketWidgetClasses
             _Label = new Label();
             _Label.text = resourceManager.getString(BUNDLE,"MARKET_EDIT_ACCOUNTBALANCE_LABEL");
             _FirstLine.addChild(_Label);
-            this.m_UIAccountBalance = new Label();
-            this.m_UIAccountBalance.setStyle("fontWeight","bold");
-            _FirstLine.addChild(this.m_UIAccountBalance);
+            this.m_UIGoldBalance = new Label();
+            this.m_UIGoldBalance.setStyle("fontWeight","bold");
+            _FirstLine.addChild(this.m_UIGoldBalance);
             _Spacer = new Spacer();
             _Spacer.percentWidth = 100;
             _FirstLine.addChild(_Spacer);
@@ -440,7 +442,8 @@ package tibia.market.marketWidgetClasses
             this.m_UIAmountDecrease.enabled = _loc1_;
             this.m_UIAmountIncrease.enabled = _loc1_;
             this.m_UIAnonymous.enabled = _loc1_;
-            this.m_UIAccountBalance.text = i18nFormatNumber(market.accountBalance);
+            this.m_UIGoldBalance.text = i18nFormatNumber(market.accountBalance);
+            this.m_UIGoldBalance.toolTip = resourceManager.getString(BUNDLE_TIBIA,"TOOLTIP_CURRENCY_GOLD_BALANCE",[i18nFormatNumber(Tibia.s_GetPlayer().inventoryGoldBalance),i18nFormatNumber(Tibia.s_GetPlayer().bankGoldBalance)]);
             this.m_UITotalPrice.text = null;
             this.m_UncommittedKind = false;
          }
@@ -523,6 +526,18 @@ package tibia.market.marketWidgetClasses
          }
       }
       
+      override public function set selectedType(param1:*) : void
+      {
+         if(selectedType != param1)
+         {
+            super.selectedType = param1;
+            this.m_UncommittedSelectedType = true;
+            this.invalidateKind();
+            invalidateProperties();
+            this.invalidateOffer();
+         }
+      }
+      
       private function set offerPiecePrice(param1:uint) : void
       {
          var _loc2_:uint = MarketWidget.OFFER_MAX_TOTALPRICE;
@@ -569,18 +584,6 @@ package tibia.market.marketWidgetClasses
       private function get offerAnonymous() : Boolean
       {
          return this.m_Anonymous;
-      }
-      
-      override public function set selectedType(param1:*) : void
-      {
-         if(selectedType != param1)
-         {
-            super.selectedType = param1;
-            this.m_UncommittedSelectedType = true;
-            this.invalidateKind();
-            invalidateProperties();
-            this.invalidateOffer();
-         }
       }
       
       private function onCoinBalanceChange(param1:IngameShopEvent) : void

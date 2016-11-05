@@ -7,7 +7,7 @@ package
    public class _FormItemStyle
    {
       
-      private static var _embed_css_Assets_swf_mx_containers_FormItem_Required_1757197398:Class = _FormItemStyle__embed_css_Assets_swf_mx_containers_FormItem_Required_1757197398;
+      private static var _embed_css_Assets_swf_mx_containers_FormItem_Required_916996704:Class = _FormItemStyle__embed_css_Assets_swf_mx_containers_FormItem_Required_916996704;
        
       
       public function _FormItemStyle()
@@ -28,7 +28,7 @@ package
          {
             style.defaultFactory = function():void
             {
-               this.indicatorSkin = _embed_css_Assets_swf_mx_containers_FormItem_Required_1757197398;
+               this.indicatorSkin = _embed_css_Assets_swf_mx_containers_FormItem_Required_916996704;
             };
          }
       }

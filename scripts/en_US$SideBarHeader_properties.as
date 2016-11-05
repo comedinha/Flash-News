@@ -22,7 +22,8 @@ package
             "TIP_MINIMAP":"Minimap",
             "TIP_CONTAINER":"Containers",
             "TIP_BUDDYLIST":"VIP List",
-            "TIP_COMBAT":"Combat Controls"
+            "TIP_COMBAT":"Combat Controls",
+            "TIP_PREY":"Prey"
          };
          return _loc1_;
       }

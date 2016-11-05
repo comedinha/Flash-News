@@ -15,6 +15,8 @@ package tibia.ingameshop
       
       public static const SERVICE_TYPE_MOUNTS:int = 4;
       
+      public static const SERVICE_TYPE_PREY:int = 7;
+      
       public static const SERVICE_TYPE_OUTFITS:int = 3;
        
       

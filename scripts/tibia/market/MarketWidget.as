@@ -52,6 +52,8 @@ package tibia.market
       
       public static const CATEGORY_VALUABLES:int = 15;
       
+      public static const DETAIL_FIELD_IMBUEMENT_SLOTS:int = 15;
+      
       public static const DETAIL_FIELD_EXPIRE:int = 5;
       
       public static const OFFER_MAX_ACTIVE:int = 100;

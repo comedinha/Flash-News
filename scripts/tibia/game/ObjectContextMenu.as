@@ -606,6 +606,10 @@ package tibia.game
             {
                StaticActionList.PLAYER_MOUNT.perform();
             });
+            createTextItem(resourceManager.getString(BUNDLE,"CTX_PLAYER_OPEN_PREY_DIALOG"),function(param1:*):void
+            {
+               StaticActionList.MISC_SHOW_PREY_DIALOG.perform();
+            });
             if(_Player.isPartyLeader && !_Player.isFighting)
             {
                if(_Player.isPartySharedExperienceActive)

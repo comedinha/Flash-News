@@ -57,6 +57,8 @@ package tibia.network
       
       protected static const SCREDITBALANCE:int = 223;
       
+      protected static const SPREYDATA:int = 232;
+      
       protected static const CGETQUESTLOG:int = 240;
       
       protected static const CENTERWORLD:int = 15;
@@ -67,7 +69,7 @@ package tibia.network
       
       protected static const CBUYOBJECT:int = 122;
       
-      public static const CLIENT_VERSION:uint = 2357;
+      public static const CLIENT_VERSION:uint = 2370;
       
       protected static const SPING:int = 29;
       
@@ -95,7 +97,13 @@ package tibia.network
       
       public static const LATENCY_HIGH:Number = 1000;
       
+      protected static const SPREYTIMELEFT:int = 231;
+      
       protected static const CBROWSEFIELD:int = 203;
+      
+      protected static const CPREYACTION:int = 235;
+      
+      public static const RESULTDIALOG_IMBUEMENT_ERROR:int = 1;
       
       protected static const SCREATUREPARTY:int = 145;
       
@@ -109,6 +117,8 @@ package tibia.network
       
       protected static const CREMOVEBUDDY:int = 221;
       
+      protected static const CAPPLYIMBUEMENT:int = 213;
+      
       private static const BUNDLE:String = "Connection";
       
       protected static const CCLOSECONTAINER:int = 135;
@@ -120,6 +130,8 @@ package tibia.network
       protected static const SLEFTROW:int = 104;
       
       protected static const SFULLMAP:int = 100;
+      
+      protected static const CREQUESTRESOURCEBALANCE:int = 237;
       
       protected static const SMISSILEEFFECT:int = 133;
       
@@ -145,6 +157,8 @@ package tibia.network
       
       protected static const SCREATUREMARKS:int = 147;
       
+      protected static const SPREYFREELISTREROLLAVAILABILITY:int = 230;
+      
       protected static const CREJECTTRADE:int = 128;
       
       protected static const CLOGIN:int = 10;
@@ -159,6 +173,8 @@ package tibia.network
       
       protected static const SUNJUSTIFIEDPOINTS:int = 183;
       
+      public static const RESULTDIALOG_CLEARING_CHARM_ERROR:int = 11;
+      
       protected static const SPLAYERDATACURRENT:int = 160;
       
       protected static const STRAPPERS:int = 135;
@@ -169,13 +185,15 @@ package tibia.network
       
       protected static const SSNAPBACK:int = 181;
       
-      protected static const ERR_CONNECTION_LOST:int = 6;
+      public static const RESULTDIALOG_CLEARING_CHARM_SUCCESS:int = 10;
       
       protected static const CROTATESOUTH:int = 113;
       
       protected static const CACCEPTTRADE:int = 127;
       
       protected static const SCHANNELS:int = 171;
+      
+      protected static const ERR_CONNECTION_LOST:int = 6;
       
       protected static const SOPENCHANNEL:int = 172;
       
@@ -199,13 +217,17 @@ package tibia.network
       
       protected static const SLOGINWAIT:int = 22;
       
+      public static const RESOURCETYPE_BANK_GOLD:int = 0;
+      
       protected static const SCREATEONMAP:int = 106;
       
-      protected static const PAYLOADLENGTH_POS:int = PAYLOAD_POS;
+      protected static const SPREYREROLLPRICE:int = 233;
       
       public static const PREVIEW_STATE_REGULAR:uint = 0;
       
       protected static const CTRADEOBJECT:int = 125;
+      
+      protected static const PAYLOADLENGTH_POS:int = PAYLOAD_POS;
       
       protected static const CLOOK:int = 140;
       
@@ -216,6 +238,8 @@ package tibia.network
       protected static const SNPCOFFER:int = 122;
       
       protected static const CMARKETCANCEL:int = 247;
+      
+      protected static const SSHOWRESULTDIALOG:int = 237;
       
       protected static const SWORLDENTERED:int = 15;
       
@@ -233,6 +257,8 @@ package tibia.network
       
       protected static const SMARKETBROWSE:int = 249;
       
+      public static const RESULTDIALOG_IMBUEMENT_SUCCESS:int = 0;
+      
       protected static const CMARKETBROWSE:int = 245;
       
       protected static const SMARKETLEAVE:int = 247;
@@ -241,21 +267,23 @@ package tibia.network
       
       protected static const CFOLLOW:int = 162;
       
-      protected static const CANSWERMODALDIALOG:int = 249;
+      protected static const HEADER_POS:int = 0;
       
       protected static const SMARKETENTER:int = 246;
       
       protected static const CONNECTION_STATE_CONNECTING_STAGE1:int = 1;
       
-      protected static const CONNECTION_STATE_CONNECTING_STAGE2:int = 2;
-      
       protected static const SCREATURESPEED:int = 143;
       
       protected static const CREQUESTSHOPOFFERS:int = 251;
       
-      protected static const SSPELLDELAY:int = 164;
+      protected static const CONNECTION_STATE_CONNECTING_STAGE2:int = 2;
       
-      protected static const HEADER_POS:int = 0;
+      protected static const CANSWERMODALDIALOG:int = 249;
+      
+      protected static const CCLOSEDIMBUINGDIALOG:int = 215;
+      
+      protected static const SSPELLDELAY:int = 164;
       
       protected static const CEDITBUDDY:int = 222;
       
@@ -265,13 +293,15 @@ package tibia.network
       
       public static const LATENCY_MEDIUM:Number = 500;
       
+      public static const RESULTDIALOG_IMBUING_STATION_NOT_FOUND:int = 3;
+      
       protected static const CROTATEWEST:int = 114;
       
       protected static const SEDITGUILDMESSAGE:int = 174;
       
       protected static const SCREATUREOUTFIT:int = 142;
       
-      public static const PROTOCOL_VERSION:int = 1099;
+      public static const PROTOCOL_VERSION:int = 10990;
       
       protected static const SAMBIENTE:int = 130;
       
@@ -287,6 +317,8 @@ package tibia.network
       
       protected static const CTHANKYOU:int = 231;
       
+      protected static const SRESOURCEBALANCE:int = 238;
+      
       protected static const SCREATUREUNPASS:int = 146;
       
       protected static const SSHOWMODALDIALOG:int = 250;
@@ -298,6 +330,8 @@ package tibia.network
       protected static const RECONNECT_DELAY:int = 3000;
       
       protected static const SDELETEINCONTAINER:int = 114;
+      
+      public static const RESOURCETYPE_INVENTORY_GOLD:int = 1;
       
       protected static const SCREATEINCONTAINER:int = 112;
       
@@ -316,6 +350,8 @@ package tibia.network
       protected static const CTURNOBJECT:int = 133;
       
       protected static const COPENPREMIUMSHOP:int = 250;
+      
+      public static const RESULTDIALOG_IMBUEMENT_ROLL_FAILED:int = 2;
       
       protected static const CUSEOBJECT:int = 130;
       
@@ -379,11 +415,11 @@ package tibia.network
       
       protected static const CGOPATH:int = 100;
       
-      protected static const CLEAVEPARTY:int = 167;
-      
       protected static const SCHANGEONMAP:int = 107;
       
       protected static const CGOSOUTHEAST:int = 107;
+      
+      protected static const CLEAVEPARTY:int = 167;
       
       private static const PING_RETRY_INTERVAL:uint = 5;
       
@@ -399,6 +435,8 @@ package tibia.network
       
       protected static const SCHANGEINCONTAINER:int = 113;
       
+      protected static const SIMBUINGDIALOGREFRESH:int = 235;
+      
       protected static const SDELETEINVENTORY:int = 121;
       
       protected static const CTRANSFERCURRENCY:int = 239;
@@ -410,6 +448,8 @@ package tibia.network
       protected static const SLOGINADVICE:int = 21;
       
       protected static const SPVPSITUATIONS:int = 184;
+      
+      protected static const CAPPLYCLEARINGCHARM:int = 214;
       
       protected static const CGONORTH:int = 101;
       
@@ -447,6 +487,8 @@ package tibia.network
       
       protected static const PAYLOADDATA_POSITION:int = PAYLOADLENGTH_POS + PAYLOADLENGTH_SIZE;
       
+      protected static const SCLOSEIMBUINGDIALOG:int = 236;
+      
       protected static const CMARKETLEAVE:int = 244;
       
       protected static const COPENTRANSACTIONHISTORY:int = 253;
@@ -472,6 +514,8 @@ package tibia.network
       protected static const SOWNOFFER:int = 125;
       
       protected static const PAYLOAD_POS:int = HEADER_POS + HEADER_SIZE;
+      
+      public static const RESOURCETYPE_PREY_BONUS_REROLLS:int = 10;
       
       protected static const SSETSTOREDEEPLINK:int = 168;
       

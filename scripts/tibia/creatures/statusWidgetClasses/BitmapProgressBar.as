@@ -235,7 +235,23 @@ package tibia.creatures.statusWidgetClasses
          graphics.endFill();
          this.cacheBarLabel();
          this.m_UILabel.visible = this.m_LabelEnabled;
-         this.m_UILabel.x = this.direction == DIRECTION_RIGHT_TO_LEFT?Number(param1 - _loc4_.right - this.m_UILabel.width):Number(_loc4_.left);
+         var _loc10_:String = getStyle("labelHorizontalAlign");
+         if(_loc10_ == "center")
+         {
+            this.m_UILabel.x = (param1 - _loc4_.right) / 2 - this.m_UILabel.width / 2;
+         }
+         else if(_loc10_ == "left")
+         {
+            this.m_UILabel.x = _loc4_.left;
+         }
+         else if(_loc10_ == "right")
+         {
+            this.m_UILabel.x = param1 - _loc4_.right - this.m_UILabel.width;
+         }
+         else
+         {
+            this.m_UILabel.x = this.direction == DIRECTION_RIGHT_TO_LEFT?Number(param1 - _loc4_.right - this.m_UILabel.width):Number(_loc4_.left);
+         }
          this.m_UILabel.y = _loc4_.top + (param2 - _loc4_.top - _loc4_.bottom - this.m_UILabel.height) / 2;
       }
       

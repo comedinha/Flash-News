@@ -24,6 +24,9 @@ package tibia.market.marketWidgetClasses
          "index":MarketWidget.DETAIL_FIELD_WEIGHT,
          "name":"DETAIL_FIELD_WEIGHT"
       },{
+         "index":MarketWidget.DETAIL_FIELD_IMBUEMENT_SLOTS,
+         "name":"DETAIL_FIELD_IMBUEMENT_SLOTS"
+      },{
          "index":MarketWidget.DETAIL_FIELD_WEAPON_TYPE,
          "name":"DETAIL_FIELD_WEAPON_TYPE"
       },{

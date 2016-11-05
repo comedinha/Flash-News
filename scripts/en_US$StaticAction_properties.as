@@ -34,6 +34,7 @@ package
             "PLAYER_MOVE_UP_LEFT":"Move Character North-West",
             "PLAYER_MOVE_DOWN_RIGHT":"Move Character South-East",
             "CHAT_CHANNEL_CLOSE_PRIMARY":"Close Current Channel",
+            "MISC_SHOW_PREY_DIALOG":"Open Prey",
             "PLAYER_MOVE_DOWN":"Move Character South",
             "MISC_ROOT_CONTAINER":"Open / Close Root Container",
             "MISC_SHOW_WIDGET_COMBATCONTROL":"Open / Close Combat Controls",

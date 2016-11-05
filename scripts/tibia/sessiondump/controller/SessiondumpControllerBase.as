@@ -48,6 +48,8 @@ package tibia.sessiondump.controller
       
       protected static const CHECKSUM_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
       
+      protected static const SPREYDATA:int = 232;
+      
       protected static const CGETQUESTLOG:int = 240;
       
       protected static const CENTERWORLD:int = 15;
@@ -78,6 +80,10 @@ package tibia.sessiondump.controller
       
       protected static const CBROWSEFIELD:int = 203;
       
+      protected static const CPREYACTION:int = 235;
+      
+      public static const RESULTDIALOG_IMBUEMENT_ERROR:int = 1;
+      
       protected static const SCREATUREPARTY:int = 145;
       
       protected static const SQUESTLOG:int = 240;
@@ -87,6 +93,10 @@ package tibia.sessiondump.controller
       protected static const CCANCEL:int = 190;
       
       protected static const CGUILDMESSAGE:int = 155;
+      
+      protected static const SPREYTIMELEFT:int = 231;
+      
+      protected static const CAPPLYIMBUEMENT:int = 213;
       
       protected static const CREMOVEBUDDY:int = 221;
       
@@ -99,6 +109,8 @@ package tibia.sessiondump.controller
       protected static const SLEFTROW:int = 104;
       
       protected static const SFULLMAP:int = 100;
+      
+      protected static const CREQUESTRESOURCEBALANCE:int = 237;
       
       protected static const SMISSILEEFFECT:int = 133;
       
@@ -124,6 +136,8 @@ package tibia.sessiondump.controller
       
       protected static const SCREATUREMARKS:int = 147;
       
+      protected static const SPREYFREELISTREROLLAVAILABILITY:int = 230;
+      
       protected static const CREJECTTRADE:int = 128;
       
       protected static const SREQUESTPURCHASEDATA:int = 225;
@@ -138,6 +152,8 @@ package tibia.sessiondump.controller
       
       protected static const SUNJUSTIFIEDPOINTS:int = 183;
       
+      public static const RESULTDIALOG_CLEARING_CHARM_ERROR:int = 11;
+      
       protected static const SPLAYERDATACURRENT:int = 160;
       
       protected static const STRAPPERS:int = 135;
@@ -147,6 +163,8 @@ package tibia.sessiondump.controller
       protected static const CGETQUESTLINE:int = 241;
       
       protected static const SSNAPBACK:int = 181;
+      
+      public static const RESULTDIALOG_CLEARING_CHARM_SUCCESS:int = 10;
       
       protected static const CROTATESOUTH:int = 113;
       
@@ -176,11 +194,15 @@ package tibia.sessiondump.controller
       
       protected static const SLOGINWAIT:int = 22;
       
+      public static const RESOURCETYPE_BANK_GOLD:int = 0;
+      
       protected static const SCREATEONMAP:int = 106;
       
-      protected static const CGETTRANSACTIONHISTORY:int = 254;
+      protected static const SPREYREROLLPRICE:int = 233;
       
       protected static const CTRADEOBJECT:int = 125;
+      
+      protected static const CGETTRANSACTIONHISTORY:int = 254;
       
       protected static const CLOOK:int = 140;
       
@@ -191,6 +213,8 @@ package tibia.sessiondump.controller
       protected static const SNPCOFFER:int = 122;
       
       protected static const CMARKETCANCEL:int = 247;
+      
+      protected static const SSHOWRESULTDIALOG:int = 237;
       
       protected static const SWORLDENTERED:int = 15;
       
@@ -208,6 +232,8 @@ package tibia.sessiondump.controller
       
       protected static const SMARKETBROWSE:int = 249;
       
+      public static const RESULTDIALOG_IMBUEMENT_SUCCESS:int = 0;
+      
       protected static const CMARKETBROWSE:int = 245;
       
       protected static const SMARKETLEAVE:int = 247;
@@ -215,8 +241,6 @@ package tibia.sessiondump.controller
       protected static const SCOUNTEROFFER:int = 126;
       
       protected static const CFOLLOW:int = 162;
-      
-      protected static const CANSWERMODALDIALOG:int = 249;
       
       protected static const CEXCLUDEFROMCHANNEL:int = 172;
       
@@ -230,6 +254,10 @@ package tibia.sessiondump.controller
       
       protected static const CREQUESTSHOPOFFERS:int = 251;
       
+      protected static const CANSWERMODALDIALOG:int = 249;
+      
+      protected static const CCLOSEDIMBUINGDIALOG:int = 215;
+      
       protected static const SSPELLDELAY:int = 164;
       
       protected static const CEDITBUDDY:int = 222;
@@ -238,9 +266,11 @@ package tibia.sessiondump.controller
       
       protected static const CEDITGUILDMESSAGE:int = 156;
       
+      public static const RESULTDIALOG_IMBUING_STATION_NOT_FOUND:int = 3;
+      
       protected static const CROTATEWEST:int = 114;
       
-      public static const PROTOCOL_VERSION:int = 1099;
+      public static const PROTOCOL_VERSION:int = 10990;
       
       protected static const SCREATUREOUTFIT:int = 142;
       
@@ -258,6 +288,8 @@ package tibia.sessiondump.controller
       
       protected static const CTHANKYOU:int = 231;
       
+      protected static const SRESOURCEBALANCE:int = 238;
+      
       protected static const SCREATUREUNPASS:int = 146;
       
       protected static const SSHOWMODALDIALOG:int = 250;
@@ -267,6 +299,8 @@ package tibia.sessiondump.controller
       protected static const CGONORTHEAST:int = 106;
       
       protected static const SDELETEINCONTAINER:int = 114;
+      
+      public static const RESOURCETYPE_INVENTORY_GOLD:int = 1;
       
       protected static const SCREATEINCONTAINER:int = 112;
       
@@ -285,6 +319,8 @@ package tibia.sessiondump.controller
       protected static const CTURNOBJECT:int = 133;
       
       protected static const COPENPREMIUMSHOP:int = 250;
+      
+      public static const RESULTDIALOG_IMBUEMENT_ROLL_FAILED:int = 2;
       
       protected static const CUSEOBJECT:int = 130;
       
@@ -364,6 +400,8 @@ package tibia.sessiondump.controller
       
       protected static const SCHANGEINCONTAINER:int = 113;
       
+      protected static const SIMBUINGDIALOGREFRESH:int = 235;
+      
       protected static const SDELETEINVENTORY:int = 121;
       
       protected static const CTRANSFERCURRENCY:int = 239;
@@ -375,6 +413,8 @@ package tibia.sessiondump.controller
       protected static const SPVPSITUATIONS:int = 184;
       
       protected static const SLOGINADVICE:int = 21;
+      
+      protected static const CAPPLYCLEARINGCHARM:int = 214;
       
       protected static const CGONORTH:int = 101;
       
@@ -408,6 +448,8 @@ package tibia.sessiondump.controller
       
       protected static const CBUGREPORT:int = 230;
       
+      protected static const SCLOSEIMBUINGDIALOG:int = 236;
+      
       private static const CALCULATED_PLAYSPEED_FACTOR_SAMPLE_SIZE:uint = 3;
       
       protected static const CMARKETLEAVE:int = 244;
@@ -435,6 +477,8 @@ package tibia.sessiondump.controller
       protected static const SOWNOFFER:int = 125;
       
       protected static const PAYLOAD_POS:int = HEADER_POS + HEADER_SIZE;
+      
+      public static const RESOURCETYPE_PREY_BONUS_REROLLS:int = 10;
       
       protected static const SSETSTOREDEEPLINK:int = 168;
       

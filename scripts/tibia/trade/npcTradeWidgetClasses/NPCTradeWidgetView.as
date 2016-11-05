@@ -14,6 +14,7 @@ package tibia.trade.npcTradeWidgetClasses
    import tibia.appearances.ObjectInstance;
    import tibia.§sidebar:ns_sidebar_internal§.options;
    import tibia.trade.NPCTradeWidget;
+   import shared.utility.i18n.i18nFormatNumber;
    import mx.controls.TabBar;
    import mx.containers.HBox;
    import mx.containers.Form;
@@ -103,6 +104,8 @@ package tibia.trade.npcTradeWidgetClasses
       
       protected static const SKILL_FISHING:int = 14;
       
+      private static const BUNDLE_TIBIA:String = "Tibia";
+      
       protected static const SKILL_HITPOINTS_PERCENT:int = 3;
       
       protected static const STATE_BLEEDING:int = 15;
@@ -119,8 +122,6 @@ package tibia.trade.npcTradeWidgetClasses
       
       protected static const NPC_SPEECH_TRADER:uint = 2;
       
-      public static const MODE_SELL:int = 1;
-      
       private static const BUNDLE:String = "NPCTradeWidget";
       
       protected static const GUILD_MEMBER:int = 4;
@@ -132,6 +133,8 @@ package tibia.trade.npcTradeWidgetClasses
       protected static const PARTY_LEADER:int = 1;
       
       protected static const STATE_PZ_ENTERED:int = 14;
+      
+      public static const MODE_SELL:int = 1;
       
       protected static const SKILL_CARRYSTRENGTH:int = 7;
       
@@ -443,70 +446,78 @@ package tibia.trade.npcTradeWidgetClasses
       
       private function updateObjectSummary() : void
       {
-         var _loc6_:int = 0;
-         var _loc7_:int = 0;
-         var _loc8_:uint = 0;
-         var _loc9_:Number = NaN;
-         var _loc10_:AppearanceStorage = null;
-         var _loc11_:AppearanceType = null;
-         var _loc12_:int = 0;
-         var _loc13_:int = 0;
+         var _loc8_:int = 0;
+         var _loc9_:int = 0;
+         var _loc10_:uint = 0;
+         var _loc11_:Number = NaN;
+         var _loc12_:AppearanceStorage = null;
+         var _loc13_:AppearanceType = null;
+         var _loc14_:int = 0;
+         var _loc15_:int = 0;
          var _loc1_:Number = 0;
+         var _loc2_:Number = 0;
+         var _loc3_:Number = 0;
+         if(this.m_Player != null)
+         {
+            _loc2_ = Tibia.s_GetPlayer().inventoryGoldBalance;
+            _loc3_ = Tibia.s_GetPlayer().bankGoldBalance;
+         }
          if(this.m_ContainerStorage != null)
          {
             _loc1_ = this.m_ContainerStorage.getPlayerMoney();
-            this.m_UILabelBudget.text = resourceManager.getString(BUNDLE,"LBL_MONEY_FORMAT",[_loc1_.toFixed(0)]);
+            this.m_UILabelBudget.text = resourceManager.getString(BUNDLE,"LBL_MONEY_FORMAT",[_loc1_]);
+            this.m_UILabelBudget.toolTip = resourceManager.getString(BUNDLE_TIBIA,"TOOLTIP_CURRENCY_GOLD_BALANCE",[i18nFormatNumber(_loc2_),i18nFormatNumber(_loc3_)]);
          }
          else
          {
             this.m_UILabelBudget.text = null;
          }
-         var _loc2_:Number = NaN;
+         var _loc4_:Number = NaN;
          if(this.m_Player != null)
          {
-            _loc2_ = this.m_Player.getSkillValue(SKILL_CARRYSTRENGTH);
-            this.m_UILabelCapacity.text = resourceManager.getString(BUNDLE,"LBL_WEIGHT_FORMAT",[(_loc2_ / 100).toFixed(2)]);
+            _loc4_ = this.m_Player.getSkillValue(SKILL_CARRYSTRENGTH);
+            this.m_UILabelCapacity.text = resourceManager.getString(BUNDLE,"LBL_WEIGHT_FORMAT",[(_loc4_ / 100).toFixed(2)]);
          }
          else
          {
             this.m_UILabelCapacity.text = null;
          }
-         var _loc3_:* = this.m_TradeMode == MODE_BUY;
-         var _loc4_:uint = getStyle("color");
-         var _loc5_:uint = getStyle("errorColor");
+         var _loc5_:* = this.m_TradeMode == MODE_BUY;
+         var _loc6_:uint = getStyle("color");
+         var _loc7_:uint = getStyle("errorColor");
          if(this.m_TradeObject != null)
          {
-            _loc6_ = Math.max(1,this.m_TradeAmount);
-            _loc7_ = Math.max(1,this.m_TradeObject.amount);
-            _loc8_ = 0;
-            _loc9_ = 0;
-            if(_loc3_ && (options == null || options.npcTradeBuyWithBackpacks))
+            _loc8_ = Math.max(1,this.m_TradeAmount);
+            _loc9_ = Math.max(1,this.m_TradeObject.amount);
+            _loc10_ = 0;
+            _loc11_ = 0;
+            if(_loc5_ && (options == null || options.npcTradeBuyWithBackpacks))
             {
-               _loc10_ = Tibia.s_GetAppearanceStorage();
-               _loc11_ = null;
-               _loc12_ = _loc6_;
-               if(_loc10_ != null && (_loc11_ = _loc10_.getObjectType(this.m_TradeObject.ID)) != null && _loc11_.isCumulative)
+               _loc12_ = Tibia.s_GetAppearanceStorage();
+               _loc13_ = null;
+               _loc14_ = _loc8_;
+               if(_loc12_ != null && (_loc13_ = _loc12_.getObjectType(this.m_TradeObject.ID)) != null && _loc13_.isCumulative)
                {
-                  _loc12_ = Math.ceil(_loc6_ / 100);
+                  _loc14_ = Math.ceil(_loc8_ / 100);
                }
-               _loc13_ = Math.ceil(_loc12_ / NPCTradeWidget.TRADE_BACKPACK_CAPACITY);
-               _loc8_ = _loc13_ * NPCTradeWidget.TRADE_BACKPACK_PRICE + _loc6_ * this.m_TradeObject.price;
-               _loc9_ = _loc13_ * NPCTradeWidget.TRADE_BACKPACK_WEIGHT + _loc6_ * this.m_TradeObject.weight;
+               _loc15_ = Math.ceil(_loc14_ / NPCTradeWidget.TRADE_BACKPACK_CAPACITY);
+               _loc10_ = _loc15_ * NPCTradeWidget.TRADE_BACKPACK_PRICE + _loc8_ * this.m_TradeObject.price;
+               _loc11_ = _loc15_ * NPCTradeWidget.TRADE_BACKPACK_WEIGHT + _loc8_ * this.m_TradeObject.weight;
             }
             else
             {
-               _loc8_ = _loc6_ * this.m_TradeObject.price;
-               _loc9_ = _loc6_ * this.m_TradeObject.weight;
+               _loc10_ = _loc8_ * this.m_TradeObject.price;
+               _loc11_ = _loc8_ * this.m_TradeObject.weight;
             }
             this.m_UIAmountSelector.minimum = 1;
-            this.m_UIAmountSelector.maximum = _loc7_;
-            this.m_UIAmountSelector.value = _loc6_;
+            this.m_UIAmountSelector.maximum = _loc9_;
+            this.m_UIAmountSelector.value = _loc8_;
             this.m_UIButtonCommit.enabled = this.m_TradeAmount > 0 && this.m_TradeAmount <= this.m_TradeObject.amount;
-            this.m_UIButtonCommit.label = resourceManager.getString(BUNDLE,!!_loc3_?"TRADE_MODE_BUY":"TRADE_MODE_SELL");
-            this.m_UILabelPrice.text = resourceManager.getString(BUNDLE,"LBL_MONEY_FORMAT",[_loc8_]);
-            this.m_UILabelPrice.setStyle("color",_loc3_ && _loc8_ > _loc1_?_loc5_:_loc4_);
-            this.m_UILabelWeight.text = resourceManager.getString(BUNDLE,"LBL_WEIGHT_FORMAT",[(_loc9_ / 100).toFixed(2)]);
-            this.m_UILabelWeight.setStyle("color",_loc3_ && _loc9_ > _loc2_?_loc5_:_loc4_);
+            this.m_UIButtonCommit.label = resourceManager.getString(BUNDLE,!!_loc5_?"TRADE_MODE_BUY":"TRADE_MODE_SELL");
+            this.m_UILabelPrice.text = resourceManager.getString(BUNDLE,"LBL_MONEY_FORMAT",[_loc10_]);
+            this.m_UILabelPrice.setStyle("color",_loc5_ && _loc10_ > _loc1_?_loc7_:_loc6_);
+            this.m_UILabelWeight.text = resourceManager.getString(BUNDLE,"LBL_WEIGHT_FORMAT",[(_loc11_ / 100).toFixed(2)]);
+            this.m_UILabelWeight.setStyle("color",_loc5_ && _loc11_ > _loc4_?_loc7_:_loc6_);
          }
          else
          {
@@ -514,11 +525,11 @@ package tibia.trade.npcTradeWidgetClasses
             this.m_UIAmountSelector.maximum = 1;
             this.m_UIAmountSelector.value = 1;
             this.m_UIButtonCommit.enabled = false;
-            this.m_UIButtonCommit.label = resourceManager.getString(BUNDLE,!!_loc3_?"TRADE_MODE_BUY":"TRADE_MODE_SELL");
+            this.m_UIButtonCommit.label = resourceManager.getString(BUNDLE,!!_loc5_?"TRADE_MODE_BUY":"TRADE_MODE_SELL");
             this.m_UILabelPrice.text = null;
-            this.m_UILabelPrice.setStyle("color",_loc4_);
+            this.m_UILabelPrice.setStyle("color",_loc6_);
             this.m_UILabelWeight.text = null;
-            this.m_UILabelWeight.setStyle("color",_loc4_);
+            this.m_UILabelWeight.setStyle("color",_loc6_);
          }
       }
       

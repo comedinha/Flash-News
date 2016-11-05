@@ -8,7 +8,7 @@ package
    public class _SWFLoaderStyle
    {
       
-      private static var _embed_css_Assets_swf___brokenImage_783978175:Class = _SWFLoaderStyle__embed_css_Assets_swf___brokenImage_783978175;
+      private static var _embed_css_Assets_swf___brokenImage_122785831:Class = _SWFLoaderStyle__embed_css_Assets_swf___brokenImage_122785831;
        
       
       public function _SWFLoaderStyle()
@@ -30,7 +30,7 @@ package
             style.defaultFactory = function():void
             {
                this.brokenImageBorderSkin = BrokenImageBorderSkin;
-               this.brokenImageSkin = _embed_css_Assets_swf___brokenImage_783978175;
+               this.brokenImageSkin = _embed_css_Assets_swf___brokenImage_122785831;
                this.borderStyle = "none";
             };
          }

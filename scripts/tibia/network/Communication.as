@@ -29,11 +29,13 @@ package tibia.network
    import tibia.chat.ChatStorage;
    import tibia.game.PopUpBase;
    import tibia.container.InventoryTypeInfo;
+   import tibia.imbuing.ImbuingManager;
    import tibia.container.ContainerStorage;
    import tibia.options.OptionsStorage;
    import tibia.creatures.BuddySet;
    import tibia.container.ContainerView;
    import mx.resources.ResourceManager;
+   import tibia.prey.PreyManager;
    import tibia.trade.NPCTradeWidget;
    import tibia.trade.TradeObjectRef;
    import tibia.sidebar.SideBarSet;
@@ -48,6 +50,8 @@ package tibia.network
    import tibia.help.TutorialHint;
    import tibia.chat.log;
    import tibia.magic.SpellStorage;
+   import tibia.imbuing.ImbuementData;
+   import tibia.imbuing.AstralSource;
    import tibia.creatures.Player;
    import tibia.trade.SafeTradeWidget;
    import tibia.appearances.EffectInstance;
@@ -59,6 +63,9 @@ package tibia.network
    import tibia.game.SimpleEditTextWidget;
    import tibia.creatures.CreatureStorage;
    import shared.utility.Colour;
+   import tibia.prey.PreyMonsterInformation;
+   import tibia.prey.PreyData;
+   import tibia.imbuing.ExistingImbuement;
    import tibia.minimap.MiniMapStorage;
    import shared.utility.AccumulatingCounter;
    import tibia.market.OfferStatistics;
@@ -74,6 +81,8 @@ package tibia.network
    
    public class Communication implements IServerCommunication
    {
+      
+      public static const RESOURCETYPE_PREY_BONUS_REROLLS:int = 10;
       
       protected static const RENDERER_DEFAULT_HEIGHT:Number = MAP_WIDTH * FIELD_SIZE;
       
@@ -140,6 +149,8 @@ package tibia.network
       protected static const SKILL_EXPERIENCE:int = 0;
       
       protected static const CGETOUTFIT:int = 210;
+      
+      protected static const SPREYDATA:int = 232;
       
       protected static const SSETTACTICS:int = 167;
       
@@ -209,8 +220,6 @@ package tibia.network
       
       protected static const PROFESSION_MASK_KNIGHT:int = 1 << PROFESSION_KNIGHT;
       
-      protected static const ERR_INTERNAL:int = 0;
-      
       public static const PREVIEW_STATE_PREVIEW_NO_ACTIVE_CHANGE:uint = 1;
       
       protected static const SUMMON_OTHERS:int = 2;
@@ -220,6 +229,8 @@ package tibia.network
       protected static const CBROWSEFIELD:int = 203;
       
       protected static const SKILL_NONE:int = -1;
+      
+      protected static const CAPPLYIMBUEMENT:int = 213;
       
       protected static const GUILD_MEMBER:int = 4;
       
@@ -243,6 +254,8 @@ package tibia.network
       
       protected static const PARTY_LEADER:int = 1;
       
+      protected static const SPREYTIMELEFT:int = 231;
+      
       protected static const SMISSILEEFFECT:int = 133;
       
       protected static const PATH_MATRIX_SIZE:int = 2 * PATH_MAX_DISTANCE + 1;
@@ -257,7 +270,7 @@ package tibia.network
       
       protected static const SKILL_CARRYSTRENGTH:int = 7;
       
-      protected static const OPTIONS_MIN_COMPATIBLE_VERSION:Number = 2;
+      public static const RESULTDIALOG_IMBUEMENT_ERROR:int = 1;
       
       protected static const STATE_PZ_ENTERED:int = 14;
       
@@ -272,8 +285,6 @@ package tibia.network
       protected static const SBOTTOMROW:int = 103;
       
       protected static const CGETOBJECTINFO:int = 243;
-      
-      protected static const CSEEKINCONTAINER:int = 204;
       
       protected static const GUILD_WAR_NEUTRAL:int = 3;
       
@@ -297,9 +308,15 @@ package tibia.network
       
       private static const BUNDLE:String = "Communication";
       
+      protected static const CSEEKINCONTAINER:int = 204;
+      
       protected static const SCREATUREMARKS:int = 147;
       
       protected static const RENDERER_MIN_WIDTH:Number = Math.round(MAP_WIDTH * 2 / 3 * FIELD_SIZE);
+      
+      protected static const SPREYFREELISTREROLLAVAILABILITY:int = 230;
+      
+      protected static const OPTIONS_MIN_COMPATIBLE_VERSION:Number = 2;
       
       protected static const CREJECTTRADE:int = 128;
       
@@ -315,7 +332,11 @@ package tibia.network
       
       protected static const CLOGIN:int = 10;
       
+      protected static const CPREYACTION:int = 235;
+      
       protected static const STRAPPERS:int = 135;
+      
+      public static const RESULTDIALOG_CLEARING_CHARM_ERROR:int = 11;
       
       protected static const PARTY_MEMBER_SEXP_INACTIVE_INNOCENT:int = 9;
       
@@ -345,6 +366,8 @@ package tibia.network
       
       protected static const PATH_SOUTH:int = 7;
       
+      protected static const CREQUESTRESOURCEBALANCE:int = 237;
+      
       protected static const CROTATESOUTH:int = 113;
       
       protected static const CACCEPTTRADE:int = 127;
@@ -353,17 +376,15 @@ package tibia.network
       
       protected static const FIELD_ENTER_POSSIBLE:uint = 0;
       
-      protected static const PATH_NORTH_WEST:int = 4;
+      protected static const ERR_INTERNAL:int = 0;
       
-      protected static const ERR_CONNECTION_LOST:int = 6;
+      protected static const PATH_NORTH_WEST:int = 4;
       
       protected static const CGETQUESTLINE:int = 241;
       
       protected static const PROFESSION_MASK_NONE:int = 1 << PROFESSION_NONE;
       
       protected static const SCHANNELS:int = 171;
-      
-      public static const CLIENT_VERSION:uint = 2357;
       
       protected static const TYPE_SUMMON_OWN:int = 3;
       
@@ -393,15 +414,19 @@ package tibia.network
       
       protected static const SSTOREBUTTONINDICATORS:int = 25;
       
+      public static const RESOURCETYPE_BANK_GOLD:int = 0;
+      
       protected static const SCREATEONMAP:int = 106;
       
-      protected static const CPRIVATECHANNEL:int = 154;
+      protected static const SPREYREROLLPRICE:int = 233;
       
       protected static const SLOGINWAIT:int = 22;
       
       public static const PREVIEW_STATE_REGULAR:uint = 0;
       
       protected static const PATH_SOUTH_WEST:int = 6;
+      
+      public static const RESULTDIALOG_CLEARING_CHARM_SUCCESS:int = 10;
       
       protected static const PAYLOADLENGTH_POS:int = PAYLOAD_POS;
       
@@ -417,13 +442,15 @@ package tibia.network
       
       protected static const SCONTAINER:int = 110;
       
+      protected static const ERR_CONNECTION_LOST:int = 6;
+      
       protected static const SKILL_MANA_LEECH_AMOUNT:int = 24;
       
       protected static const SNPCOFFER:int = 122;
       
       protected static const SWORLDENTERED:int = 15;
       
-      protected static const PACKETLENGTH_SIZE:int = 2;
+      protected static const SSHOWRESULTDIALOG:int = 237;
       
       protected static const PAYLOAD_POS:int = HEADER_POS + HEADER_SIZE;
       
@@ -435,13 +462,15 @@ package tibia.network
       
       protected static const MAP_HEIGHT:int = 11;
       
+      public static const CLIENT_VERSION:uint = 2370;
+      
       protected static const SKILL_OFFLINETRAINING:int = 18;
       
       protected static const SPREMIUMSHOPOFFERS:int = 252;
       
       protected static const STATE_MANA_SHIELD:int = 4;
       
-      protected static const CMOUNT:int = 212;
+      protected static const CPRIVATECHANNEL:int = 154;
       
       protected static const STRANSACTIONHISTORY:int = 253;
       
@@ -453,11 +482,15 @@ package tibia.network
       
       protected static const STATE_FREEZING:int = 9;
       
+      protected static const CMOUNT:int = 212;
+      
       protected static const STATE_CURSED:int = 11;
       
       protected static const PARTY_LEADER_SEXP_INACTIVE_INNOCENT:int = 10;
       
       protected static const CMARKETBROWSE:int = 245;
+      
+      public static const RESULTDIALOG_IMBUEMENT_SUCCESS:int = 0;
       
       protected static const SMARKETLEAVE:int = 247;
       
@@ -499,6 +532,8 @@ package tibia.network
       
       protected static const NPC_SPEECH_NORMAL:uint = 1;
       
+      protected static const CCLOSEDIMBUINGDIALOG:int = 215;
+      
       protected static const SCREATURESPEED:int = 143;
       
       protected static const SSPELLDELAY:int = 164;
@@ -511,13 +546,15 @@ package tibia.network
       
       protected static const STATE_PZ_BLOCK:int = 13;
       
+      public static const RESULTDIALOG_IMBUING_STATION_NOT_FOUND:int = 3;
+      
       protected static const RISKINESS_NONE:int = 0;
       
       protected static const SEDITGUILDMESSAGE:int = 174;
       
       protected static const SCREATUREOUTFIT:int = 142;
       
-      public static const PROTOCOL_VERSION:int = 1099;
+      public static const PROTOCOL_VERSION:int = 10990;
       
       protected static const CEDITGUILDMESSAGE:int = 156;
       
@@ -547,6 +584,8 @@ package tibia.network
       
       protected static const SKILL_STAMINA:int = 17;
       
+      protected static const SRESOURCEBALANCE:int = 238;
+      
       protected static const SSHOWMODALDIALOG:int = 250;
       
       protected static const FIELD_ENTER_POSSIBLE_NO_ANIMATION:uint = 1;
@@ -556,6 +595,8 @@ package tibia.network
       protected static const SKILL_FIGHTSHIELD:int = 8;
       
       protected static const STATE_NONE:int = -1;
+      
+      protected static const PACKETLENGTH_SIZE:int = 2;
       
       protected static const SKILL_FIGHTDISTANCE:int = 9;
       
@@ -577,8 +618,6 @@ package tibia.network
       
       protected static const CERRORFILEENTRY:int = 232;
       
-      protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + CHECKSUM_SIZE;
-      
       protected static const CINSPECTNPCTRADE:int = 121;
       
       protected static const SCREATUREHEALTH:int = 140;
@@ -593,9 +632,11 @@ package tibia.network
       
       protected static const STATE_DAZZLED:int = 10;
       
-      protected static const CHECKSUM_SIZE:int = 4;
+      public static const RESULTDIALOG_IMBUEMENT_ROLL_FAILED:int = 2;
       
-      protected static const ERR_INVALID_MESSAGE:int = 3;
+      protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + CHECKSUM_SIZE;
+      
+      protected static const CHECKSUM_SIZE:int = 4;
       
       protected static const CUSEOBJECT:int = 130;
       
@@ -606,6 +647,8 @@ package tibia.network
       protected static const PATH_ERROR_INTERNAL:int = -5;
       
       protected static const COPENPREMIUMSHOP:int = 250;
+      
+      public static const RESOURCETYPE_INVENTORY_GOLD:int = 1;
       
       protected static const PATH_COST_UNDEFINED:int = 254;
       
@@ -620,6 +663,8 @@ package tibia.network
       protected static const CPINGBACK:int = 30;
       
       protected static const SPINGBACK:int = 30;
+      
+      protected static const ERR_INVALID_MESSAGE:int = 3;
       
       protected static const PK_ATTACKER:int = 1;
       
@@ -703,6 +748,8 @@ package tibia.network
       
       protected static const SDELETEINVENTORY:int = 121;
       
+      protected static const SIMBUINGDIALOGREFRESH:int = 235;
+      
       protected static const CTRANSFERCURRENCY:int = 239;
       
       protected static const PROFESSION_PALADIN:int = 2;
@@ -732,6 +779,8 @@ package tibia.network
       protected static const MAP_MAX_Y:int = MAP_MIN_Y + (1 << 14 - 1);
       
       protected static const MAP_MAX_Z:int = 15;
+      
+      protected static const CAPPLYCLEARINGCHARM:int = 214;
       
       protected static const SMARKETDETAIL:int = 248;
       
@@ -802,6 +851,8 @@ package tibia.network
       protected static const SCLEARTARGET:int = 163;
       
       protected static const CSHAREEXPERIENCE:int = 168;
+      
+      protected static const SCLOSEIMBUINGDIALOG:int = 236;
       
       protected static const PK_AGGRESSOR:int = 3;
       
@@ -1298,6 +1349,25 @@ package tibia.network
                _loc9_ = StringHelper.s_ReadLongStringFromByteArray(param1);
          }
          return new Offer(new OfferID(_loc4_,_loc5_),param2,_loc6_,_loc7_,_loc8_,_loc9_,_loc10_);
+      }
+      
+      public function sendCREQUESTRESOURCEBALANCE(param1:int) : void
+      {
+         var b:ByteArray = null;
+         var a_ResourceType:int = param1;
+         try
+         {
+            b = this.m_ServerConnection.messageWriter.createMessage();
+            b.writeByte(CREQUESTRESOURCEBALANCE);
+            b.writeByte(a_ResourceType);
+            this.m_ServerConnection.messageWriter.finishMessage();
+            return;
+         }
+         catch(e:Error)
+         {
+            handleSendError(CSTOREEVENT,e);
+            return;
+         }
       }
       
       public function dispose() : void
@@ -1918,36 +1988,9 @@ package tibia.network
          this.m_ContainerStorage.setPlayerInventory(_loc2_);
       }
       
-      protected function readSMARKETENTER(param1:ByteArray) : void
+      protected function readSCLOSEIMBUINGDIALOG(param1:ByteArray) : void
       {
-         var _loc2_:Number = NaN;
-         var _loc3_:uint = 0;
-         var _loc4_:Array = null;
-         var _loc5_:int = 0;
-         var _loc6_:MarketWidget = null;
-         var _loc7_:int = 0;
-         var _loc8_:int = 0;
-         _loc2_ = this.readSigned64BitValue(param1);
-         _loc3_ = param1.readUnsignedByte();
-         _loc4_ = [];
-         _loc5_ = param1.readUnsignedShort() - 1;
-         while(_loc5_ >= 0)
-         {
-            _loc7_ = param1.readUnsignedShort();
-            _loc8_ = param1.readUnsignedShort();
-            _loc4_.push(new InventoryTypeInfo(_loc7_,0,_loc8_));
-            _loc5_--;
-         }
-         _loc6_ = PopUpBase.getCurrent() as MarketWidget;
-         if(_loc6_ == null)
-         {
-            _loc6_ = new MarketWidget();
-            _loc6_.show();
-         }
-         _loc6_.serverResponsePending = false;
-         _loc6_.accountBalance = _loc2_;
-         _loc6_.activeOffers = _loc3_;
-         _loc6_.depotContent = _loc4_;
+         ImbuingManager.getInstance().closeImbuingWindow();
       }
       
       protected function readSPLAYERSKILLS(param1:ByteArray) : void
@@ -2061,6 +2104,38 @@ package tibia.network
             handleSendError(CGETCHANNELS,e);
             return;
          }
+      }
+      
+      protected function readSMARKETENTER(param1:ByteArray) : void
+      {
+         var _loc2_:Number = NaN;
+         var _loc3_:uint = 0;
+         var _loc4_:Array = null;
+         var _loc5_:int = 0;
+         var _loc6_:MarketWidget = null;
+         var _loc7_:int = 0;
+         var _loc8_:int = 0;
+         _loc2_ = this.readSigned64BitValue(param1);
+         _loc3_ = param1.readUnsignedByte();
+         _loc4_ = [];
+         _loc5_ = param1.readUnsignedShort() - 1;
+         while(_loc5_ >= 0)
+         {
+            _loc7_ = param1.readUnsignedShort();
+            _loc8_ = param1.readUnsignedShort();
+            _loc4_.push(new InventoryTypeInfo(_loc7_,0,_loc8_));
+            _loc5_--;
+         }
+         _loc6_ = PopUpBase.getCurrent() as MarketWidget;
+         if(_loc6_ == null)
+         {
+            _loc6_ = new MarketWidget();
+            _loc6_.show();
+         }
+         _loc6_.serverResponsePending = false;
+         _loc6_.accountBalance = _loc2_;
+         _loc6_.activeOffers = _loc3_;
+         _loc6_.depotContent = _loc4_;
       }
       
       protected function readSWAIT(param1:ByteArray) : void
@@ -2253,6 +2328,24 @@ package tibia.network
          {
             _loc5_.addObject(_loc3_,_loc4_);
          }
+      }
+      
+      protected function readSPREYTIMELEFT(param1:ByteArray) : void
+      {
+         var _loc2_:uint = 0;
+         var _loc3_:Number = NaN;
+         _loc2_ = param1.readUnsignedByte();
+         _loc3_ = param1.readUnsignedShort();
+         PreyManager.getInstance().setPreyTimeLeft(_loc2_,_loc3_);
+      }
+      
+      protected function readSPREYFREELISTREROLLAVAILABILITY(param1:ByteArray) : void
+      {
+         var _loc2_:uint = 0;
+         var _loc3_:Number = NaN;
+         _loc2_ = param1.readUnsignedByte();
+         _loc3_ = param1.readUnsignedShort();
+         PreyManager.getInstance().setTimeUntilFreeListReroll(_loc2_,_loc3_);
       }
       
       public function sendCLEAVEPARTY() : void
@@ -2489,6 +2582,18 @@ package tibia.network
          }
       }
       
+      protected function readSSHOWRESULTDIALOG(param1:ByteArray) : void
+      {
+         var _loc2_:uint = 0;
+         var _loc3_:String = null;
+         _loc2_ = param1.readUnsignedByte();
+         _loc3_ = StringHelper.s_ReadLongStringFromByteArray(param1);
+         if(_loc2_ == RESULTDIALOG_IMBUEMENT_SUCCESS || _loc2_ == RESULTDIALOG_IMBUEMENT_ERROR || _loc2_ == RESULTDIALOG_IMBUEMENT_ROLL_FAILED || _loc2_ == RESULTDIALOG_IMBUING_STATION_NOT_FOUND || _loc2_ == RESULTDIALOG_CLEARING_CHARM_SUCCESS || _loc2_ == RESULTDIALOG_CLEARING_CHARM_ERROR)
+         {
+            ImbuingManager.getInstance().showImbuingResultDialog(_loc3_);
+         }
+      }
+      
       public function sendCBUYPREMIUMOFFER(param1:int, param2:int, ... rest) : void
       {
          var b:ByteArray = null;
@@ -2606,6 +2711,25 @@ package tibia.network
       {
          var _loc3_:int = param2 != null?int(param2.errorID):-1;
          this.handleConnectionError(256 + param1,_loc3_,param2);
+      }
+      
+      public function sendCAPPLYCLEARINGCHARM(param1:uint) : void
+      {
+         var b:ByteArray = null;
+         var a_SlotNumber:uint = param1;
+         try
+         {
+            b = this.m_ServerConnection.messageWriter.createMessage();
+            b.writeByte(CAPPLYCLEARINGCHARM);
+            b.writeByte(a_SlotNumber);
+            this.m_ServerConnection.messageWriter.finishMessage();
+            return;
+         }
+         catch(e:Error)
+         {
+            handleSendError(CAPPLYCLEARINGCHARM,e);
+            return;
+         }
       }
       
       public function sendCGETTRANSACTIONHISTORY(param1:int, param2:int) : void
@@ -2760,6 +2884,11 @@ package tibia.network
          _loc3_.perform();
       }
       
+      protected function readSPREYREROLLPRICE(param1:ByteArray) : void
+      {
+         PreyManager.getInstance().listRerollPrice = param1.readUnsignedInt();
+      }
+      
       public function sendCTALK(param1:int, ... rest) : void
       {
          var b:ByteArray = null;
@@ -2907,6 +3036,61 @@ package tibia.network
             handleSendError(CEXCLUDEFROMCHANNEL,e);
             return;
          }
+      }
+      
+      protected function readImbuementData(param1:ByteArray) : ImbuementData
+      {
+         var _loc2_:uint = 0;
+         var _loc3_:String = null;
+         var _loc4_:String = null;
+         var _loc5_:String = null;
+         var _loc6_:uint = 0;
+         var _loc7_:uint = 0;
+         var _loc8_:* = false;
+         var _loc9_:uint = 0;
+         var _loc10_:Vector.<AstralSource> = null;
+         var _loc11_:uint = 0;
+         var _loc12_:uint = 0;
+         var _loc13_:uint = 0;
+         var _loc14_:uint = 0;
+         var _loc15_:ImbuementData = null;
+         var _loc16_:uint = 0;
+         var _loc17_:String = null;
+         var _loc18_:uint = 0;
+         var _loc19_:AstralSource = null;
+         _loc2_ = param1.readUnsignedInt();
+         _loc3_ = StringHelper.s_ReadLongStringFromByteArray(param1);
+         _loc4_ = StringHelper.s_ReadLongStringFromByteArray(param1);
+         _loc5_ = StringHelper.s_ReadLongStringFromByteArray(param1);
+         _loc6_ = param1.readUnsignedShort();
+         _loc7_ = param1.readUnsignedInt();
+         _loc8_ = param1.readUnsignedByte() != 0;
+         _loc9_ = param1.readUnsignedByte();
+         _loc10_ = new Vector.<AstralSource>();
+         _loc11_ = 0;
+         while(_loc11_ < _loc9_)
+         {
+            _loc16_ = param1.readUnsignedShort();
+            _loc17_ = StringHelper.s_ReadLongStringFromByteArray(param1);
+            _loc18_ = param1.readUnsignedShort();
+            _loc19_ = new AstralSource(_loc16_,_loc18_,_loc17_);
+            _loc10_.push(_loc19_);
+            _loc11_++;
+         }
+         _loc12_ = param1.readUnsignedInt();
+         _loc13_ = param1.readUnsignedByte();
+         _loc14_ = param1.readUnsignedInt();
+         _loc15_ = new ImbuementData(_loc2_,_loc3_);
+         _loc15_.description = _loc4_;
+         _loc15_.category = _loc5_;
+         _loc15_.iconID = _loc6_;
+         _loc15_.durationInSeconds = _loc7_;
+         _loc15_.premiumOnly = _loc8_;
+         _loc15_.goldCost = _loc12_;
+         _loc15_.protectionGoldCost = _loc14_;
+         _loc15_.successRatePercent = _loc13_;
+         _loc15_.astralSources = _loc10_;
+         return _loc15_;
       }
       
       public function sendCMARKETBROWSE(param1:int) : void
@@ -3068,10 +3252,16 @@ package tibia.network
       
       protected function readSPLAYERDATACURRENT(param1:ByteArray) : void
       {
+         var _loc3_:Number = NaN;
+         var _loc4_:Number = NaN;
+         var _loc5_:Number = NaN;
+         var _loc10_:Number = NaN;
+         var _loc11_:uint = 0;
+         var _loc12_:Boolean = false;
          var _loc2_:Number = Tibia.s_FrameTibiaTimestamp;
-         var _loc3_:Number = 0;
-         var _loc4_:Number = 0;
-         var _loc5_:Number = 0;
+         _loc3_ = 0;
+         _loc4_ = 0;
+         _loc5_ = 0;
          _loc3_ = Math.max(0,param1.readShort());
          _loc4_ = Math.max(0,param1.readShort());
          _loc5_ = 0;
@@ -3092,7 +3282,7 @@ package tibia.network
          var _loc7_:Number = param1.readUnsignedShort() / 100;
          var _loc8_:Number = param1.readUnsignedShort() / 100;
          var _loc9_:Number = param1.readUnsignedShort() / 100;
-         var _loc10_:Number = param1.readUnsignedShort() / 100;
+         _loc10_ = param1.readUnsignedShort() / 100;
          this.m_Player.experienceGainInfo.updateGainInfo(_loc6_,_loc7_,_loc8_,_loc9_,_loc10_);
          _loc3_ = Math.max(0,param1.readShort());
          _loc4_ = Math.max(0,param1.readShort());
@@ -3122,8 +3312,8 @@ package tibia.network
          _loc4_ = _loc2_;
          _loc5_ = 0;
          this.m_Player.setSkill(SKILL_OFFLINETRAINING,_loc3_,_loc4_,_loc5_);
-         var _loc11_:uint = param1.readUnsignedShort();
-         var _loc12_:Boolean = param1.readBoolean();
+         _loc11_ = param1.readUnsignedShort();
+         _loc12_ = param1.readBoolean();
          this.m_Player.experienceGainInfo.updateStoreXpBoost(_loc11_,_loc12_);
       }
       
@@ -3771,6 +3961,71 @@ package tibia.network
          IngameShopManager.getInstance().setCreditBalance(_loc4_,_loc5_);
       }
       
+      protected function readSPREYDATA(param1:ByteArray) : void
+      {
+         var _loc2_:PreyManager = null;
+         var _loc3_:uint = 0;
+         var _loc4_:uint = 0;
+         var _loc5_:String = null;
+         var _loc6_:AppearanceInstance = null;
+         var _loc7_:uint = 0;
+         var _loc8_:uint = 0;
+         var _loc9_:uint = 0;
+         var _loc10_:Vector.<PreyMonsterInformation> = null;
+         var _loc11_:uint = 0;
+         _loc2_ = PreyManager.getInstance();
+         _loc3_ = param1.readUnsignedByte();
+         _loc4_ = param1.readUnsignedByte();
+         if(_loc4_ == PreyData.STATE_LOCKED)
+         {
+            _loc2_.changeStateToLocked(_loc3_,param1.readUnsignedByte());
+         }
+         else if(_loc4_ == PreyData.STATE_INACTIVE)
+         {
+            _loc2_.changeStateToInactive(_loc3_);
+         }
+         else if(_loc4_ == PreyData.STATE_ACTIVE)
+         {
+            _loc5_ = StringHelper.s_ReadLongStringFromByteArray(param1);
+            _loc6_ = this.readCreatureOutfit(param1,null);
+            _loc7_ = param1.readUnsignedByte();
+            _loc8_ = param1.readUnsignedShort();
+            _loc2_.changeStateToActive(_loc3_,_loc7_,_loc8_,new PreyMonsterInformation(_loc5_,_loc6_));
+            _loc2_.setPreyTimeLeft(_loc3_,param1.readUnsignedShort());
+         }
+         else if(_loc4_ == PreyData.STATE_SELECTION)
+         {
+            _loc9_ = param1.readUnsignedByte();
+            _loc10_ = new Vector.<PreyMonsterInformation>();
+            _loc11_ = 0;
+            while(_loc11_ < _loc9_)
+            {
+               _loc5_ = StringHelper.s_ReadLongStringFromByteArray(param1);
+               _loc6_ = this.readCreatureOutfit(param1,null);
+               _loc10_.push(new PreyMonsterInformation(_loc5_,_loc6_));
+               _loc11_++;
+            }
+            _loc2_.changeStateToSelection(_loc3_,_loc10_);
+         }
+         else if(_loc4_ == PreyData.STATE_SELECTION_CHANGE_MONSTER)
+         {
+            _loc7_ = param1.readUnsignedByte();
+            _loc8_ = param1.readUnsignedShort();
+            _loc9_ = param1.readUnsignedByte();
+            _loc10_ = new Vector.<PreyMonsterInformation>();
+            _loc11_ = 0;
+            while(_loc11_ < _loc9_)
+            {
+               _loc5_ = StringHelper.s_ReadLongStringFromByteArray(param1);
+               _loc6_ = this.readCreatureOutfit(param1,null);
+               _loc10_.push(new PreyMonsterInformation(_loc5_,_loc6_));
+               _loc11_++;
+            }
+            _loc2_.changeStateToSelectionChangeMonster(_loc3_,_loc7_,_loc8_,_loc10_);
+         }
+         _loc2_.setTimeUntilFreeListReroll(_loc3_,param1.readUnsignedShort());
+      }
+      
       public function sendCGETOUTFIT() : void
       {
          var b:ByteArray = null;
@@ -3813,6 +4068,74 @@ package tibia.network
          var _loc2_:* = false;
          _loc2_ = param1.readUnsignedByte() == 1;
          IngameShopManager.getInstance().setCreditBalanceUpdating(_loc2_);
+      }
+      
+      protected function readSIMBUINGDIALOGREFRESH(param1:ByteArray) : void
+      {
+         var _loc2_:ImbuingManager = null;
+         var _loc3_:ImbuementData = null;
+         var _loc4_:uint = 0;
+         var _loc5_:uint = 0;
+         var _loc6_:Vector.<ExistingImbuement> = null;
+         var _loc7_:uint = 0;
+         var _loc8_:Vector.<ImbuementData> = null;
+         var _loc9_:uint = 0;
+         var _loc10_:uint = 0;
+         var _loc11_:Vector.<AstralSource> = null;
+         var _loc12_:uint = 0;
+         var _loc13_:uint = 0;
+         var _loc14_:ExistingImbuement = null;
+         var _loc15_:* = false;
+         var _loc16_:uint = 0;
+         var _loc17_:uint = 0;
+         var _loc18_:uint = 0;
+         var _loc19_:uint = 0;
+         var _loc20_:AstralSource = null;
+         _loc2_ = ImbuingManager.getInstance();
+         _loc3_ = null;
+         _loc4_ = param1.readUnsignedShort();
+         _loc5_ = param1.readUnsignedByte();
+         _loc6_ = new Vector.<ExistingImbuement>();
+         _loc7_ = 0;
+         while(_loc7_ < _loc5_)
+         {
+            _loc15_ = param1.readUnsignedByte() != 0;
+            if(_loc15_)
+            {
+               _loc3_ = this.readImbuementData(param1);
+               _loc16_ = param1.readUnsignedInt();
+               _loc17_ = param1.readUnsignedInt();
+               _loc14_ = new ExistingImbuement(_loc3_,_loc16_,_loc17_);
+            }
+            else
+            {
+               _loc14_ = new ExistingImbuement();
+            }
+            _loc6_.push(_loc14_);
+            _loc7_++;
+         }
+         _loc8_ = new Vector.<ImbuementData>();
+         _loc9_ = param1.readUnsignedShort();
+         _loc10_ = 0;
+         while(_loc10_ < _loc9_)
+         {
+            _loc3_ = this.readImbuementData(param1);
+            _loc8_.push(_loc3_);
+            _loc10_++;
+         }
+         _loc11_ = new Vector.<AstralSource>();
+         _loc12_ = param1.readUnsignedInt();
+         _loc13_ = 0;
+         while(_loc13_ < _loc12_)
+         {
+            _loc18_ = param1.readUnsignedShort();
+            _loc19_ = param1.readUnsignedShort();
+            _loc20_ = new AstralSource(_loc18_,_loc19_);
+            _loc11_.push(_loc20_);
+            _loc13_++;
+         }
+         _loc2_.openImbuingWindow();
+         _loc2_.refreshImbuingData(_loc4_,_loc6_,_loc8_,_loc11_);
       }
       
       public function sendCSETOUTFIT(param1:int, param2:int, param3:int, param4:int, param5:int, param6:int, param7:int) : void
@@ -3970,6 +4293,23 @@ package tibia.network
          catch(e:Error)
          {
             handleSendError(CPRIVATECHANNEL,e);
+            return;
+         }
+      }
+      
+      public function sendCCLOSEDIMBUINGDIALOG() : void
+      {
+         var b:ByteArray = null;
+         try
+         {
+            b = this.m_ServerConnection.messageWriter.createMessage();
+            b.writeByte(CCLOSEDIMBUINGDIALOG);
+            this.m_ServerConnection.messageWriter.finishMessage();
+            return;
+         }
+         catch(e:Error)
+         {
+            handleSendError(CCLOSEDIMBUINGDIALOG,e);
             return;
          }
       }
@@ -4509,6 +4849,38 @@ package tibia.network
                   this.readSREQUESTPURCHASEDATA(CommunicationData);
                   a_MessageReader.finishMessage();
                   break;
+               case SPREYFREELISTREROLLAVAILABILITY:
+                  this.readSPREYFREELISTREROLLAVAILABILITY(CommunicationData);
+                  a_MessageReader.finishMessage();
+                  break;
+               case SPREYTIMELEFT:
+                  this.readSPREYTIMELEFT(CommunicationData);
+                  a_MessageReader.finishMessage();
+                  break;
+               case SPREYDATA:
+                  this.readSPREYDATA(CommunicationData);
+                  a_MessageReader.finishMessage();
+                  break;
+               case SPREYREROLLPRICE:
+                  this.readSPREYREROLLPRICE(CommunicationData);
+                  a_MessageReader.finishMessage();
+                  break;
+               case SIMBUINGDIALOGREFRESH:
+                  this.readSIMBUINGDIALOGREFRESH(CommunicationData);
+                  a_MessageReader.finishMessage();
+                  break;
+               case SSHOWRESULTDIALOG:
+                  this.readSSHOWRESULTDIALOG(CommunicationData);
+                  a_MessageReader.finishMessage();
+                  break;
+               case SCLOSEIMBUINGDIALOG:
+                  this.readSCLOSEIMBUINGDIALOG(CommunicationData);
+                  a_MessageReader.finishMessage();
+                  break;
+               case SRESOURCEBALANCE:
+                  this.readSRESOURCEBALANCE(CommunicationData);
+                  a_MessageReader.finishMessage();
+                  break;
                case SQUESTLOG:
                   this.readSQUESTLOG(CommunicationData);
                   a_MessageReader.finishMessage();
@@ -4652,7 +5024,7 @@ package tibia.network
          _loc3_ = [];
          _loc4_ = 0;
          _loc4_ = 0;
-         while(_loc4_ <= MarketWidget.DETAIL_FIELD_WEIGHT)
+         while(_loc4_ <= MarketWidget.DETAIL_FIELD_IMBUEMENT_SLOTS)
          {
             _loc13_ = StringHelper.s_ReadLongStringFromByteArray(param1);
             _loc3_.push(_loc13_);
@@ -5312,6 +5684,7 @@ package tibia.network
          this.m_Player.premiumUntil = param1.readUnsignedInt();
          this.m_Player.premium = _loc2_;
          this.m_Player.profession = param1.readUnsignedByte();
+         this.m_Player.hasReachedMain = param1.readBoolean();
          var _loc3_:Array = [];
          var _loc4_:int = param1.readUnsignedShort() - 1;
          while(_loc4_ >= 0)
@@ -5770,6 +6143,26 @@ package tibia.network
          }
       }
       
+      protected function readSRESOURCEBALANCE(param1:ByteArray) : void
+      {
+         var _loc2_:uint = 0;
+         var _loc3_:Number = NaN;
+         _loc2_ = param1.readUnsignedByte();
+         _loc3_ = this.readSigned64BitValue(param1);
+         if(_loc2_ == RESOURCETYPE_BANK_GOLD)
+         {
+            this.m_Player.bankGoldBalance = _loc3_;
+         }
+         else if(_loc2_ == RESOURCETYPE_INVENTORY_GOLD)
+         {
+            this.m_Player.inventoryGoldBalance = _loc3_;
+         }
+         else if(_loc2_ == RESOURCETYPE_PREY_BONUS_REROLLS)
+         {
+            PreyManager.getInstance().bonusRerollAmount = _loc3_;
+         }
+      }
+      
       public function get isGameRunning() : Boolean
       {
          return this.m_ServerConnection.isGameRunning;
@@ -5832,6 +6225,116 @@ package tibia.network
          if(_loc4_ != null)
          {
             _loc4_.isUnpassable = _loc3_;
+         }
+      }
+      
+      public function sendCPREYACTION(param1:int, param2:int, param3:int) : void
+      {
+         var b:ByteArray = null;
+         var a_PreyID:int = param1;
+         var a_PreyAction:int = param2;
+         var a_MonsterIndex:int = param3;
+         try
+         {
+            b = this.m_ServerConnection.messageWriter.createMessage();
+            b.writeByte(CPREYACTION);
+            b.writeByte(a_PreyID);
+            b.writeByte(a_PreyAction);
+            if(a_PreyAction == 2)
+            {
+               b.writeByte(a_MonsterIndex);
+            }
+            this.m_ServerConnection.messageWriter.finishMessage();
+            return;
+         }
+         catch(e:Error)
+         {
+            handleSendError(CSTOREEVENT,e);
+            return;
+         }
+      }
+      
+      protected function readSCREATUREMARKS(param1:ByteArray) : void
+      {
+         var _loc2_:int = 0;
+         _loc2_ = param1.readUnsignedInt();
+         var _loc3_:uint = param1.readUnsignedByte();
+         var _loc4_:uint = param1.readUnsignedByte();
+         var _loc5_:Creature = this.m_CreatureStorage.getCreature(_loc2_);
+         if(_loc5_ != null)
+         {
+            if(_loc3_ == 1)
+            {
+               _loc5_.marks.setMark(Marks.MARK_TYPE_ONE_SECOND_TEMP,_loc4_);
+            }
+            else
+            {
+               _loc5_.marks.setMark(Marks.MARK_TYPE_PERMANENT,_loc4_);
+            }
+         }
+         this.m_CreatureStorage.invalidateOpponents();
+      }
+      
+      protected function readSBUDDYSTATUSCHANGE(param1:ByteArray) : void
+      {
+         var _loc2_:int = 0;
+         var _loc3_:uint = 0;
+         var _loc4_:OptionsStorage = null;
+         var _loc5_:BuddySet = null;
+         _loc2_ = param1.readUnsignedInt();
+         _loc3_ = param1.readByte();
+         _loc4_ = Tibia.s_GetOptions();
+         _loc5_ = null;
+         if(_loc4_ != null && (_loc5_ = _loc4_.getBuddySet(BuddySet.DEFAULT_SET)) != null)
+         {
+            _loc5_.updateBuddy(_loc2_,_loc3_);
+         }
+      }
+      
+      public function sendCGUILDMESSAGE() : void
+      {
+         var b:ByteArray = null;
+         try
+         {
+            b = this.m_ServerConnection.messageWriter.createMessage();
+            b.writeByte(CGUILDMESSAGE);
+            this.m_ServerConnection.messageWriter.finishMessage();
+            return;
+         }
+         catch(e:Error)
+         {
+            handleSendError(CPRIVATECHANNEL,e);
+            return;
+         }
+      }
+      
+      public function sendCUSEONCREATURE(param1:int, param2:int, param3:int, param4:int, param5:int, param6:int) : void
+      {
+         var b:ByteArray = null;
+         var a_X:int = param1;
+         var a_Y:int = param2;
+         var a_Z:int = param3;
+         var a_TypeID:int = param4;
+         var a_PositionOrData:int = param5;
+         var a_CreatureID:int = param6;
+         try
+         {
+            this.m_Player.stopAutowalk(false);
+            b = this.m_ServerConnection.messageWriter.createMessage();
+            b.writeByte(CUSEONCREATURE);
+            b.writeShort(a_X);
+            b.writeShort(a_Y);
+            b.writeByte(a_Z);
+            b.writeShort(a_TypeID);
+            b.writeByte(a_PositionOrData);
+            b.writeUnsignedInt(a_CreatureID);
+            this.m_ServerConnection.messageWriter.finishMessage();
+            return;
+         }
+         catch(e:Error)
+         {
+            handleSendError(CUSEONCREATURE,e);
+            return;
          }
       }
       
@@ -5902,69 +6405,6 @@ package tibia.network
          }
       }
       
-      protected function readSBUDDYSTATUSCHANGE(param1:ByteArray) : void
-      {
-         var _loc2_:int = 0;
-         var _loc3_:uint = 0;
-         var _loc4_:OptionsStorage = null;
-         var _loc5_:BuddySet = null;
-         _loc2_ = param1.readUnsignedInt();
-         _loc3_ = param1.readByte();
-         _loc4_ = Tibia.s_GetOptions();
-         _loc5_ = null;
-         if(_loc4_ != null && (_loc5_ = _loc4_.getBuddySet(BuddySet.DEFAULT_SET)) != null)
-         {
-            _loc5_.updateBuddy(_loc2_,_loc3_);
-         }
-      }
-      
-      public function sendCGUILDMESSAGE() : void
-      {
-         var b:ByteArray = null;
-         try
-         {
-            b = this.m_ServerConnection.messageWriter.createMessage();
-            b.writeByte(CGUILDMESSAGE);
-            this.m_ServerConnection.messageWriter.finishMessage();
-            return;
-         }
-         catch(e:Error)
-         {
-            handleSendError(CPRIVATECHANNEL,e);
-            return;
-         }
-      }
-      
-      public function sendCUSEONCREATURE(param1:int, param2:int, param3:int, param4:int, param5:int, param6:int) : void
-      {
-         var b:ByteArray = null;
-         var a_X:int = param1;
-         var a_Y:int = param2;
-         var a_Z:int = param3;
-         var a_TypeID:int = param4;
-         var a_PositionOrData:int = param5;
-         var a_CreatureID:int = param6;
-         try
-         {
-            this.m_Player.stopAutowalk(false);
-            b = this.m_ServerConnection.messageWriter.createMessage();
-            b.writeByte(CUSEONCREATURE);
-            b.writeShort(a_X);
-            b.writeShort(a_Y);
-            b.writeByte(a_Z);
-            b.writeShort(a_TypeID);
-            b.writeByte(a_PositionOrData);
-            b.writeUnsignedInt(a_CreatureID);
-            this.m_ServerConnection.messageWriter.finishMessage();
-            return;
-         }
-         catch(e:Error)
-         {
-            handleSendError(CUSEONCREATURE,e);
-            return;
-         }
-      }
-      
       public function sendCBROWSEFIELD(param1:int, param2:int, param3:int) : void
       {
          var b:ByteArray = null;
@@ -6028,25 +6468,27 @@ package tibia.network
          }
       }
       
-      protected function readSCREATUREMARKS(param1:ByteArray) : void
+      public function sendCAPPLYIMBUEMENT(param1:uint, param2:uint, param3:Boolean) : void
       {
-         var _loc2_:int = 0;
-         _loc2_ = param1.readUnsignedInt();
-         var _loc3_:uint = param1.readUnsignedByte();
-         var _loc4_:uint = param1.readUnsignedByte();
-         var _loc5_:Creature = this.m_CreatureStorage.getCreature(_loc2_);
-         if(_loc5_ != null)
+         var b:ByteArray = null;
+         var a_SlotNumber:uint = param1;
+         var a_ImbuementID:uint = param2;
+         var a_UseProtectionCharm:Boolean = param3;
+         try
          {
-            if(_loc3_ == 1)
-            {
-               _loc5_.marks.setMark(Marks.MARK_TYPE_ONE_SECOND_TEMP,_loc4_);
-            }
-            else
-            {
-               _loc5_.marks.setMark(Marks.MARK_TYPE_PERMANENT,_loc4_);
-            }
+            b = this.m_ServerConnection.messageWriter.createMessage();
+            b.writeByte(CAPPLYIMBUEMENT);
+            b.writeByte(a_SlotNumber);
+            b.writeUnsignedInt(a_ImbuementID);
+            b.writeBoolean(a_UseProtectionCharm);
+            this.m_ServerConnection.messageWriter.finishMessage();
+            return;
          }
-         this.m_CreatureStorage.invalidateOpponents();
+         catch(e:Error)
+         {
+            handleSendError(CAPPLYIMBUEMENT,e);
+            return;
+         }
       }
       
       public function sendCINSPECTNPCTRADE(param1:int, param2:int) : void

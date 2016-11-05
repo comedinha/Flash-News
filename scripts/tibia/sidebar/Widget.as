@@ -11,6 +11,7 @@ package tibia.sidebar
    import tibia.magic.SpellListWidget;
    import tibia.premium.PremiumWidget;
    import tibia.creatures.UnjustPointsWidget;
+   import tibia.prey.PreySidebarWidget;
    import tibia.creatures.battlelistWidgetClasses.BattlelistWidgetView;
    import tibia.creatures.buddylistWidgetClasses.BuddylistWidgetView;
    import tibia.container.containerViewWidgetClasses.ContainerViewWidgetView;
@@ -23,6 +24,7 @@ package tibia.sidebar
    import tibia.magic.spellListWidgetClasses.SpellListWidgetView;
    import tibia.premium.premiumWidgetClasses.PremiumWidgetView;
    import tibia.creatures.unjustPointsWidgetClasses.UnjustPointsWidgetView;
+   import tibia.prey.preyWidgetClasses.PreySidebarView;
    import tibia.options.OptionsStorage;
    import tibia.sidebar.sideBarWidgetClasses.WidgetView;
    import mx.events.PropertyChangeEvent;
@@ -41,15 +43,13 @@ package tibia.sidebar
       
       protected static const OPTIONS_MAX_COMPATIBLE_VERSION:Number = 5;
       
-      public static const TYPES_BEYONDLAST:int = 12;
+      public static const TYPES_BEYONDLAST:int = 13;
       
       public static const TYPE_UNJUSTPOINTS:int = 11;
       
       public static const EVENT_CLOSE:String = "close";
       
       public static const TYPE_NPCTRADE:int = 7;
-      
-      public static const EVENT_OPTIONS_CHANGE:String = "optionsChange";
       
       public static const TYPE_SAFETRADE:int = 8;
       
@@ -153,9 +153,21 @@ package tibia.sidebar
          "collapsible":true,
          "resizable":false,
          "viewClass":UnjustPointsWidgetView
+      },{
+         "type":TYPE_PREY,
+         "unique":true,
+         "restorable":true,
+         "closable":true,
+         "collapsible":true,
+         "resizable":false,
+         "viewClass":PreySidebarView
       }];
       
       public static const TYPE_SPELLLIST:int = 9;
+      
+      public static const EVENT_OPTIONS_CHANGE:String = "optionsChange";
+      
+      public static const TYPE_PREY:int = 12;
       
       public static const TYPE_PREMIUM:int = 10;
       
@@ -181,6 +193,15 @@ package tibia.sidebar
       public function Widget()
       {
          super();
+      }
+      
+      public static function s_GetRestorable(param1:int) : int
+      {
+         if(!Widget.s_CheckType(param1))
+         {
+            throw new ArgumentError("Widget.s_GetLimit: Invalid type.");
+         }
+         return TYPE_DATA[param1].restorable;
       }
       
       static function s_CreateInstance(param1:int, param2:int) : Widget
@@ -227,6 +248,9 @@ package tibia.sidebar
                break;
             case TYPE_UNJUSTPOINTS:
                _loc3_ = new UnjustPointsWidget();
+               break;
+            case TYPE_PREY:
+               _loc3_ = new PreySidebarWidget();
          }
          _loc3_.initialise(param1,param2);
          return _loc3_;
@@ -253,15 +277,6 @@ package tibia.sidebar
             throw new ArgumentError("Widget.s_GetLimit: Invalid type.");
          }
          return TYPE_DATA[param1].unique;
-      }
-      
-      public static function s_GetRestorable(param1:int) : int
-      {
-         if(!Widget.s_CheckType(param1))
-         {
-            throw new ArgumentError("Widget.s_GetLimit: Invalid type.");
-         }
-         return TYPE_DATA[param1].restorable;
       }
       
       public static function s_Unmarshall(param1:XML, param2:int) : Widget

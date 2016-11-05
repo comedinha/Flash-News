@@ -336,6 +336,7 @@ package tibia.market.marketWidgetClasses
             this.m_UILevel.setStyle("fontSize",9);
             this.m_UILevel.setStyle("paddingLeft",0);
             this.m_UILevel.setStyle("paddingRight",0);
+            this.m_UILevel.percentWidth = 50;
             _Box.addChild(this.m_UILevel);
             this.m_UIProfession = new CustomButton();
             this.m_UIProfession.label = resourceManager.getString(BUNDLE,"RESTRICT_PROFESSION_LABEL");
@@ -348,6 +349,7 @@ package tibia.market.marketWidgetClasses
             this.m_UIProfession.setStyle("fontSize",9);
             this.m_UIProfession.setStyle("paddingLeft",0);
             this.m_UIProfession.setStyle("paddingRight",0);
+            this.m_UIProfession.percentWidth = 50;
             _Box.addChild(this.m_UIProfession);
             this.m_UIBodyPosition = new ComboBox();
             this.m_UIBodyPosition.dataProvider = [{
