@@ -27,6 +27,8 @@ package tibia.prey
       
       public static const STATE_SELECTION_CHANGE_MONSTER:uint = 4;
       
+      public static const PREY_MAXIMUM_GRADE:uint = 10;
+      
       public static const BONUS_DAMAGE_BOOST:uint = 0;
       
       public static const BONUS_XP_BONUS:uint = 2;
@@ -54,6 +56,8 @@ package tibia.prey
       
       private var m_Monster:tibia.prey.PreyMonsterInformation = null;
       
+      private var m_BonusGrade:uint = 0;
+      
       private var m_SecondsLeftRunning:Number = 0;
       
       public function PreyData(param1:uint)
@@ -77,20 +81,35 @@ package tibia.prey
          }
       }
       
-      public function changeStateToActive(param1:uint, param2:uint, param3:tibia.prey.PreyMonsterInformation) : void
+      public function changeStateToActive(param1:uint, param2:uint, param3:uint, param4:tibia.prey.PreyMonsterInformation) : void
       {
          if(param1 != BONUS_NONE)
          {
             this.clear();
             this.bonusType = param1;
             this.bonusValue = param2;
-            this.monster = param3;
+            this.bonusGrade = param3;
+            this.monster = param4;
             this.state = STATE_ACTIVE;
          }
          else
          {
             this.changeStateToInactive();
          }
+      }
+      
+      public function generateBonusGradeString() : String
+      {
+         var _loc1_:String = "☆";
+         var _loc2_:String = "★";
+         var _loc3_:String = "";
+         var _loc4_:uint = 0;
+         while(_loc4_ < PREY_MAXIMUM_GRADE)
+         {
+            _loc3_ = _loc3_ + (_loc4_ < this.bonusGrade?_loc2_:_loc1_);
+            _loc4_++;
+         }
+         return _loc3_;
       }
       
       public function changeStateToLocked(param1:uint) : void
@@ -117,13 +136,31 @@ package tibia.prey
          return this.m_State;
       }
       
-      public function set preyTimeLeft(param1:Number) : void
+      public function generateBonusDescription() : String
       {
-         if(this.m_SecondsLeftRunning != param1)
+         var _loc1_:String = "PreyWidget";
+         var _loc2_:IResourceManager = ResourceManager.getInstance();
+         if(_loc2_ == null)
          {
-            this.m_SecondsLeftRunning = param1;
-            this.dispatchChangeEvent("preyTimeLeft");
+            return "";
          }
+         if(this.m_BonusType == PreyData.BONUS_DAMAGE_BOOST)
+         {
+            return _loc2_.getString(_loc1_,"BONUS_DESCRIPTION_DAMAGE_BOOST",[this.m_BonusValue]);
+         }
+         if(this.m_BonusType == PreyData.BONUS_DAMAGE_REDUCTION)
+         {
+            return _loc2_.getString(_loc1_,"BONUS_DESCRIPTION_DAMAGE_REDUCTION",[this.m_BonusValue]);
+         }
+         if(this.m_BonusType == PreyData.BONUS_IMPROVED_LOOT)
+         {
+            return _loc2_.getString(_loc1_,"BONUS_DESCRIPTION_IMPROVED_LOOT",[this.m_BonusValue]);
+         }
+         if(this.m_BonusType == PreyData.BONUS_XP_BONUS)
+         {
+            return _loc2_.getString(_loc1_,"BONUS_DESCRIPTION_XP_BONUS",[this.m_BonusValue]);
+         }
+         return "";
       }
       
       public function changeStateToSelection(param1:Vector.<tibia.prey.PreyMonsterInformation>) : void
@@ -160,6 +197,7 @@ package tibia.prey
          this.unlockOption = UNLOCK_NONE;
          this.bonusType = BONUS_NONE;
          this.bonusValue = 0;
+         this.bonusGrade = 0;
          this.monster = null;
          this.monsterList = new Vector.<tibia.prey.PreyMonsterInformation>();
          this.preyTimeLeft = 0;
@@ -176,6 +214,15 @@ package tibia.prey
          {
             this.m_State = param1;
             this.dispatchChangeEvent("state");
+         }
+      }
+      
+      public function set preyTimeLeft(param1:Number) : void
+      {
+         if(this.m_SecondsLeftRunning != param1)
+         {
+            this.m_SecondsLeftRunning = param1;
+            this.dispatchChangeEvent("preyTimeLeft");
          }
       }
       
@@ -197,6 +244,80 @@ package tibia.prey
       public function get monster() : tibia.prey.PreyMonsterInformation
       {
          return this.m_Monster;
+      }
+      
+      public function set timeUntilFreeListReroll(param1:Number) : void
+      {
+         if(this.m_MinutesUntilFreeListReroll != param1)
+         {
+            this.m_MinutesUntilFreeListReroll = param1;
+            this.dispatchChangeEvent("timeUntilFreeListReroll");
+         }
+      }
+      
+      public function set bonusGrade(param1:uint) : void
+      {
+         if(this.m_BonusGrade != param1)
+         {
+            this.m_BonusGrade = param1;
+            this.dispatchChangeEvent("bonusGrade");
+         }
+      }
+      
+      public function set unlockOption(param1:uint) : void
+      {
+         if(param1 != this.m_UnlockOption)
+         {
+            this.m_UnlockOption = param1;
+            this.dispatchChangeEvent("unlockOption");
+         }
+      }
+      
+      public function set monster(param1:tibia.prey.PreyMonsterInformation) : void
+      {
+         if(param1 != null && !param1.equals(this.m_Monster) || param1 == null && this.m_Monster != null)
+         {
+            this.m_Monster = param1;
+            this.dispatchChangeEvent("monster");
+         }
+      }
+      
+      public function set monsterList(param1:Vector.<tibia.prey.PreyMonsterInformation>) : void
+      {
+         this.m_MonsterList = param1;
+         this.dispatchChangeEvent("monsterList");
+      }
+      
+      public function get bonusGrade() : uint
+      {
+         return this.m_BonusGrade;
+      }
+      
+      public function get bonusType() : uint
+      {
+         return this.m_BonusType;
+      }
+      
+      public function get timeUntilFreeListReroll() : Number
+      {
+         return this.m_MinutesUntilFreeListReroll;
+      }
+      
+      public function changeStateToSelectionChangeMonster(param1:uint, param2:uint, param3:uint, param4:Vector.<tibia.prey.PreyMonsterInformation>) : void
+      {
+         if(param4.length > 0)
+         {
+            this.clear();
+            this.bonusType = param1;
+            this.bonusValue = param2;
+            this.bonusGrade = param3;
+            this.monsterList = param4;
+            this.state = STATE_SELECTION_CHANGE_MONSTER;
+         }
+         else
+         {
+            this.changeStateToInactive();
+         }
       }
       
       public function generateBonusString() : String
@@ -226,98 +347,12 @@ package tibia.prey
          return _loc2_.getString(_loc1_,"BONUS_NONE");
       }
       
-      public function set timeUntilFreeListReroll(param1:Number) : void
-      {
-         if(this.m_MinutesUntilFreeListReroll != param1)
-         {
-            this.m_MinutesUntilFreeListReroll = param1;
-            this.dispatchChangeEvent("timeUntilFreeListReroll");
-         }
-      }
-      
-      public function set monsterList(param1:Vector.<tibia.prey.PreyMonsterInformation>) : void
-      {
-         this.m_MonsterList = param1;
-         this.dispatchChangeEvent("monsterList");
-      }
-      
-      public function set unlockOption(param1:uint) : void
-      {
-         if(param1 != this.m_UnlockOption)
-         {
-            this.m_UnlockOption = param1;
-            this.dispatchChangeEvent("unlockOption");
-         }
-      }
-      
-      public function set monster(param1:tibia.prey.PreyMonsterInformation) : void
-      {
-         if(param1 != null && !param1.equals(this.m_Monster) || param1 == null && this.m_Monster != null)
-         {
-            this.m_Monster = param1;
-            this.dispatchChangeEvent("monster");
-         }
-      }
-      
       private function dispatchChangeEvent(param1:String) : void
       {
          var _loc2_:PropertyChangeEvent = new PropertyChangeEvent(PropertyChangeEvent.PROPERTY_CHANGE);
          _loc2_.kind = PropertyChangeEventKind.UPDATE;
          _loc2_.property = param1;
          dispatchEvent(_loc2_);
-      }
-      
-      public function generateBonusDescription() : String
-      {
-         var _loc1_:String = "PreyWidget";
-         var _loc2_:IResourceManager = ResourceManager.getInstance();
-         if(_loc2_ == null)
-         {
-            return "";
-         }
-         if(this.m_BonusType == PreyData.BONUS_DAMAGE_BOOST)
-         {
-            return _loc2_.getString(_loc1_,"BONUS_DESCRIPTION_DAMAGE_BOOST",[this.m_BonusValue]);
-         }
-         if(this.m_BonusType == PreyData.BONUS_DAMAGE_REDUCTION)
-         {
-            return _loc2_.getString(_loc1_,"BONUS_DESCRIPTION_DAMAGE_REDUCTION",[this.m_BonusValue]);
-         }
-         if(this.m_BonusType == PreyData.BONUS_IMPROVED_LOOT)
-         {
-            return _loc2_.getString(_loc1_,"BONUS_DESCRIPTION_IMPROVED_LOOT",[this.m_BonusValue]);
-         }
-         if(this.m_BonusType == PreyData.BONUS_XP_BONUS)
-         {
-            return _loc2_.getString(_loc1_,"BONUS_DESCRIPTION_XP_BONUS",[this.m_BonusValue]);
-         }
-         return "";
-      }
-      
-      public function get bonusType() : uint
-      {
-         return this.m_BonusType;
-      }
-      
-      public function get timeUntilFreeListReroll() : Number
-      {
-         return this.m_MinutesUntilFreeListReroll;
-      }
-      
-      public function changeStateToSelectionChangeMonster(param1:uint, param2:uint, param3:Vector.<tibia.prey.PreyMonsterInformation>) : void
-      {
-         if(param3.length > 0)
-         {
-            this.clear();
-            this.bonusType = param1;
-            this.bonusValue = param2;
-            this.monsterList = param3;
-            this.state = STATE_SELECTION_CHANGE_MONSTER;
-         }
-         else
-         {
-            this.changeStateToInactive();
-         }
       }
    }
 }

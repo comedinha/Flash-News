@@ -8,19 +8,19 @@ package
    public class _MenuStyle
    {
       
-      private static var _embed_css_Assets_swf_MenuSeparator_722247079:Class = _MenuStyle__embed_css_Assets_swf_MenuSeparator_722247079;
+      private static var _embed_css_Assets_swf_MenuCheckEnabled_910602333:Class = _MenuStyle__embed_css_Assets_swf_MenuCheckEnabled_910602333;
       
-      private static var _embed_css_Assets_swf_MenuCheckEnabled_1860024709:Class = _MenuStyle__embed_css_Assets_swf_MenuCheckEnabled_1860024709;
+      private static var _embed_css_Assets_swf_MenuCheckDisabled_732240386:Class = _MenuStyle__embed_css_Assets_swf_MenuCheckDisabled_732240386;
       
-      private static var _embed_css_Assets_swf_MenuRadioEnabled_321847576:Class = _MenuStyle__embed_css_Assets_swf_MenuRadioEnabled_321847576;
+      private static var _embed_css_Assets_swf_MenuSeparator_1251447871:Class = _MenuStyle__embed_css_Assets_swf_MenuSeparator_1251447871;
       
-      private static var _embed_css_Assets_swf_MenuBranchDisabled_1969289088:Class = _MenuStyle__embed_css_Assets_swf_MenuBranchDisabled_1969289088;
+      private static var _embed_css_Assets_swf_MenuRadioEnabled_1271141506:Class = _MenuStyle__embed_css_Assets_swf_MenuRadioEnabled_1271141506;
       
-      private static var _embed_css_Assets_swf_MenuCheckDisabled_1943007896:Class = _MenuStyle__embed_css_Assets_swf_MenuCheckDisabled_1943007896;
+      private static var _embed_css_Assets_swf_MenuBranchDisabled_1017897974:Class = _MenuStyle__embed_css_Assets_swf_MenuBranchDisabled_1017897974;
       
-      private static var _embed_css_Assets_swf_MenuBranchEnabled_6478451:Class = _MenuStyle__embed_css_Assets_swf_MenuBranchEnabled_6478451;
+      private static var _embed_css_Assets_swf_MenuRadioDisabled_372013117:Class = _MenuStyle__embed_css_Assets_swf_MenuRadioDisabled_372013117;
       
-      private static var _embed_css_Assets_swf_MenuRadioDisabled_1323786661:Class = _MenuStyle__embed_css_Assets_swf_MenuRadioDisabled_1323786661;
+      private static var _embed_css_Assets_swf_MenuBranchEnabled_1492763579:Class = _MenuStyle__embed_css_Assets_swf_MenuBranchEnabled_1492763579;
        
       
       public function _MenuStyle()
@@ -44,20 +44,20 @@ package
                this.verticalAlign = "middle";
                this.paddingRight = 0;
                this.dropIndicatorSkin = ListDropIndicator;
-               this.separatorSkin = _embed_css_Assets_swf_MenuSeparator_722247079;
+               this.separatorSkin = _embed_css_Assets_swf_MenuSeparator_1251447871;
                this.dropShadowEnabled = true;
                this.leftIconGap = 18;
                this.rightIconGap = 15;
-               this.radioDisabledIcon = _embed_css_Assets_swf_MenuRadioDisabled_1323786661;
+               this.radioDisabledIcon = _embed_css_Assets_swf_MenuRadioDisabled_372013117;
                this.horizontalGap = 6;
-               this.radioIcon = _embed_css_Assets_swf_MenuRadioEnabled_321847576;
-               this.branchDisabledIcon = _embed_css_Assets_swf_MenuBranchDisabled_1969289088;
+               this.radioIcon = _embed_css_Assets_swf_MenuRadioEnabled_1271141506;
+               this.branchDisabledIcon = _embed_css_Assets_swf_MenuBranchDisabled_1017897974;
                this.paddingBottom = 1;
-               this.branchIcon = _embed_css_Assets_swf_MenuBranchEnabled_6478451;
-               this.checkDisabledIcon = _embed_css_Assets_swf_MenuCheckDisabled_1943007896;
+               this.branchIcon = _embed_css_Assets_swf_MenuBranchEnabled_1492763579;
+               this.checkDisabledIcon = _embed_css_Assets_swf_MenuCheckDisabled_732240386;
                this.paddingTop = 1;
                this.borderStyle = "menuBorder";
-               this.checkIcon = _embed_css_Assets_swf_MenuCheckEnabled_1860024709;
+               this.checkIcon = _embed_css_Assets_swf_MenuCheckEnabled_910602333;
                this.paddingLeft = 1;
             };
          }

@@ -179,7 +179,7 @@ package tibia.prey.preyWidgetClasses
                this.m_UIBonusImage.height = _loc2_.height;
                if(_loc1_.state == PreyData.STATE_ACTIVE)
                {
-                  toolTip = resourceManager.getString(BUNDLE,"TOOLTIP_PREY_ACTIVE",[_loc1_.monster.monsterName,StringHelper.s_MillisecondsToTimeString(_loc1_.preyTimeLeft * 60 * 1000,false).slice(0,-3),_loc1_.bonusValue,_loc1_.generateBonusString(),_loc1_.generateBonusDescription()]);
+                  toolTip = resourceManager.getString(BUNDLE,"TOOLTIP_PREY_ACTIVE",[_loc1_.monster.monsterName,StringHelper.s_MillisecondsToTimeString(_loc1_.preyTimeLeft * 60 * 1000,false).slice(0,-3),_loc1_.bonusGrade,PreyData.PREY_MAXIMUM_GRADE,_loc1_.generateBonusString(),_loc1_.generateBonusDescription()]);
                }
                else
                {

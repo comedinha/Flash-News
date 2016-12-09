@@ -20,6 +20,8 @@ package tibia.network
    import tibia.appearances.Marks;
    import tibia.appearances.FrameGroup;
    import tibia.appearances.AppearanceAnimator;
+   import tibia.prey.PreyWidget;
+   import tibia.imbuing.ImbuingManager;
    import tibia.ingameshop.IngameShopHistoryEntry;
    import tibia.appearances.AppearanceTypeRef;
    import mx.collections.IList;
@@ -29,7 +31,6 @@ package tibia.network
    import tibia.chat.ChatStorage;
    import tibia.game.PopUpBase;
    import tibia.container.InventoryTypeInfo;
-   import tibia.imbuing.ImbuingManager;
    import tibia.container.ContainerStorage;
    import tibia.options.OptionsStorage;
    import tibia.creatures.BuddySet;
@@ -82,59 +83,31 @@ package tibia.network
    public class Communication implements IServerCommunication
    {
       
-      public static const RESOURCETYPE_PREY_BONUS_REROLLS:int = 10;
-      
       protected static const RENDERER_DEFAULT_HEIGHT:Number = MAP_WIDTH * FIELD_SIZE;
       
       protected static const CUPCONTAINER:int = 136;
       
-      protected static const CQUITGAME:int = 20;
-      
-      protected static const PARTY_LEADER_SEXP_ACTIVE:int = 6;
-      
-      protected static const PARTY_MAX_FLASHING_TIME:uint = 5000;
+      protected static const SPLAYERSTATE:int = 162;
       
       protected static const CMARKETACCEPT:int = 248;
       
-      protected static const SAUTOMAPFLAG:int = 221;
-      
-      protected static const PK_REVENGE:int = 6;
-      
-      protected static const SBUDDYSTATUSCHANGE:int = 211;
+      protected static const OPTIONS_MAX_COMPATIBLE_VERSION:Number = 5;
       
       protected static const PARTY_MEMBER_SEXP_ACTIVE:int = 5;
       
-      protected static const CGONORTHWEST:int = 109;
-      
-      protected static const SCREATURETYPE:int = 149;
-      
-      protected static const SOUTFIT:int = 200;
-      
       protected static const SKILL_FIGHTCLUB:int = 10;
-      
-      protected static const NPC_SPEECH_TRAVEL:uint = 5;
       
       protected static const RISKINESS_DANGEROUS:int = 1;
       
-      protected static const CPERFORMANCEMETRICS:int = 31;
+      protected static const CONNECTION_STATE_PENDING:int = 3;
       
-      protected static const CSETTACTICS:int = 160;
+      protected static const CGOSOUTH:int = 103;
       
       protected static const GUILD_NONE:int = 0;
       
       protected static const PK_PARTYMODE:int = 2;
       
-      protected static const PATH_COST_OBSTACLE:int = 255;
-      
-      protected static const CMARKETCREATE:int = 246;
-      
-      protected static const CGOSOUTH:int = 103;
-      
-      protected static const OPTIONS_MAX_COMPATIBLE_VERSION:Number = 5;
-      
       protected static const FIELD_HEIGHT:int = 24;
-      
-      protected static const ERR_COULD_NOT_CONNECT:int = 5;
       
       protected static const ONSCREEN_MESSAGE_HEIGHT:int = 195;
       
@@ -142,27 +115,19 @@ package tibia.network
       
       protected static const CPING:int = 29;
       
-      protected static const STATE_DRUNK:int = 3;
-      
       protected static const PARTY_OTHER:int = 11;
       
       protected static const SKILL_EXPERIENCE:int = 0;
       
-      protected static const CGETOUTFIT:int = 210;
-      
-      protected static const SPREYDATA:int = 232;
-      
       protected static const SSETTACTICS:int = 167;
       
-      protected static const SKILL_GOSTRENGTH:int = 6;
+      protected static const TYPE_NPC:int = 2;
       
-      protected static const BLESSING_FIRE_OF_SUNS:int = BLESSING_EMBRACE_OF_TIBIA << 1;
+      protected static const CENTERWORLD:int = 15;
       
       protected static const PARTY_MEMBER_SEXP_INACTIVE_GUILTY:int = 7;
       
       protected static const CBUYOBJECT:int = 122;
-      
-      protected static const TYPE_NPC:int = 2;
       
       protected static const SPING:int = 29;
       
@@ -170,125 +135,75 @@ package tibia.network
       
       protected static const CROTATENORTH:int = 111;
       
-      protected static const TYPE_SUMMON_OTHERS:int = 4;
-      
-      protected static const SKILL_MANA_LEECH_CHANCE:int = 23;
-      
-      protected static const SLOGINSUCCESS:int = 23;
+      protected static const PATH_NORTH:int = 3;
       
       protected static const SWAIT:int = 182;
       
-      protected static const PATH_NORTH:int = 3;
-      
-      protected static const CLOOKATCREATURE:int = 141;
-      
-      protected static const CENTERWORLD:int = 15;
+      protected static const SCREDITBALANCE:int = 223;
       
       protected static const CJOINCHANNEL:int = 152;
       
       protected static const SKILL_FED:int = 15;
       
+      protected static const CHECKSUM_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
+      
       protected static const CROTATEEAST:int = 112;
-      
-      protected static const NUM_TRAPPERS:int = 8;
-      
-      protected static const SPLAYERDATABASIC:int = 159;
       
       protected static const SKILL_MAGLEVEL:int = 2;
       
       protected static const CUSEONCREATURE:int = 132;
       
-      protected static const CATTACK:int = 161;
-      
-      protected static const SBUDDYDATA:int = 210;
-      
-      protected static const CHECKSUM_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
-      
-      protected static const SCREDITBALANCE:int = 223;
-      
-      protected static const CADDBUDDY:int = 220;
-      
-      protected static const SKILL_HITPOINTS_PERCENT:int = 3;
-      
-      protected static const SCREATUREPARTY:int = 145;
-      
-      protected static const CGUILDMESSAGE:int = 155;
-      
-      protected static const GROUND_LAYER:int = 7;
-      
-      protected static const CGETQUESTLOG:int = 240;
-      
-      protected static const PROFESSION_MASK_KNIGHT:int = 1 << PROFESSION_KNIGHT;
+      protected static const CCLOSENPCCHANNEL:int = 158;
       
       public static const PREVIEW_STATE_PREVIEW_NO_ACTIVE_CHANGE:uint = 1;
       
+      protected static const SKILL_HITPOINTS_PERCENT:int = 3;
+      
+      protected static const CGUILDMESSAGE:int = 155;
+      
+      protected static const PROFESSION_MASK_KNIGHT:int = 1 << PROFESSION_KNIGHT;
+      
+      protected static const ERR_INTERNAL:int = 0;
+      
       protected static const SUMMON_OTHERS:int = 2;
-      
-      protected static const SQUESTLOG:int = 240;
-      
-      protected static const CBROWSEFIELD:int = 203;
-      
-      protected static const SKILL_NONE:int = -1;
       
       protected static const CAPPLYIMBUEMENT:int = 213;
       
-      protected static const GUILD_MEMBER:int = 4;
+      protected static const NPC_SPEECH_TRADER:uint = 2;
       
       protected static const SFIELDDATA:int = 105;
       
-      protected static const PATH_EMPTY:int = 0;
+      protected static const CCLOSECONTAINER:int = 135;
       
-      protected static const NPC_SPEECH_TRADER:uint = 2;
+      protected static const CREMOVEBUDDY:int = 221;
       
-      protected static const CCANCEL:int = 190;
+      protected static const CPASSLEADERSHIP:int = 166;
       
-      protected static const SCLOSECONTAINER:int = 111;
-      
-      protected static const CONNECTION_STATE_PENDING:int = 3;
+      protected static const PROFESSION_NONE:int = 0;
       
       protected static const MAX_NAME_LENGTH:int = 29;
       
       protected static const SLEFTROW:int = 104;
       
-      protected static const SFULLMAP:int = 100;
+      protected static const CGOWEST:int = 104;
       
       protected static const PARTY_LEADER:int = 1;
       
-      protected static const SPREYTIMELEFT:int = 231;
-      
-      protected static const SMISSILEEFFECT:int = 133;
-      
       protected static const PATH_MATRIX_SIZE:int = 2 * PATH_MAX_DISTANCE + 1;
-      
-      protected static const CGOWEST:int = 104;
-      
-      protected static const PROFESSION_NONE:int = 0;
-      
-      protected static const PATH_ERROR_GO_UPSTAIRS:int = -2;
       
       protected static const PATH_COST_MAX:int = 250;
       
       protected static const SKILL_CARRYSTRENGTH:int = 7;
       
-      public static const RESULTDIALOG_IMBUEMENT_ERROR:int = 1;
-      
       protected static const STATE_PZ_ENTERED:int = 14;
-      
-      protected static const CPASSLEADERSHIP:int = 166;
       
       protected static const PATH_MAX_STEPS:int = 128;
       
-      protected static const SSPELLGROUPDELAY:int = 165;
-      
-      protected static const CCLOSENPCCHANNEL:int = 158;
-      
       protected static const SBOTTOMROW:int = 103;
       
-      protected static const CGETOBJECTINFO:int = 243;
-      
-      protected static const GUILD_WAR_NEUTRAL:int = 3;
-      
       protected static const STATE_DROWNING:int = 8;
+      
+      protected static const CGETOBJECTINFO:int = 243;
       
       protected static const MAP_MIN_X:int = 24576;
       
@@ -302,177 +217,85 @@ package tibia.network
       
       protected static const CGOSOUTHWEST:int = 108;
       
-      protected static const SLOGINERROR:int = 20;
-      
-      protected static const CREMOVEBUDDY:int = 221;
-      
-      private static const BUNDLE:String = "Communication";
-      
-      protected static const CSEEKINCONTAINER:int = 204;
-      
-      protected static const SCREATUREMARKS:int = 147;
-      
       protected static const RENDERER_MIN_WIDTH:Number = Math.round(MAP_WIDTH * 2 / 3 * FIELD_SIZE);
       
       protected static const SPREYFREELISTREROLLAVAILABILITY:int = 230;
       
-      protected static const OPTIONS_MIN_COMPATIBLE_VERSION:Number = 2;
-      
-      protected static const CREJECTTRADE:int = 128;
-      
-      protected static const MAP_WIDTH:int = 15;
-      
-      protected static const SQUESTLINE:int = 241;
-      
-      protected static const PARTY_MEMBER_SEXP_OFF:int = 3;
-      
-      protected static const SREQUESTPURCHASEDATA:int = 225;
-      
       protected static const CREVOKEINVITATION:int = 165;
-      
-      protected static const CLOGIN:int = 10;
-      
-      protected static const CPREYACTION:int = 235;
-      
-      protected static const STRAPPERS:int = 135;
-      
-      public static const RESULTDIALOG_CLEARING_CHARM_ERROR:int = 11;
-      
-      protected static const PARTY_MEMBER_SEXP_INACTIVE_INNOCENT:int = 9;
-      
-      protected static const GUILD_WAR_ALLY:int = 1;
-      
-      protected static const SUNJUSTIFIEDPOINTS:int = 183;
-      
-      protected static const CCLOSECONTAINER:int = 135;
-      
-      protected static const PROFESSION_MASK_DRUID:int = 1 << PROFESSION_DRUID;
-      
-      protected static const SCREATURESKULL:int = 144;
-      
-      protected static const SSNAPBACK:int = 181;
       
       protected static const CGETCHANNELS:int = 151;
       
+      protected static const PARTY_MEMBER_SEXP_OFF:int = 3;
+      
+      protected static const SCREATURESKULL:int = 144;
+      
+      protected static const CLOGIN:int = 10;
+      
+      protected static const PROFESSION_MASK_DRUID:int = 1 << PROFESSION_DRUID;
+      
+      protected static const SPLAYERDATACURRENT:int = 160;
+      
       protected static const SOBJECTINFO:int = 244;
       
-      protected static const NUM_EFFECTS:int = 200;
+      protected static const ERR_CONNECTION_LOST:int = 6;
       
       protected static const PROFESSION_SORCERER:int = 3;
       
-      protected static const STATE_SLOW:int = 5;
+      protected static const CROTATESOUTH:int = 113;
       
       protected static const PARTY_NONE:int = 0;
       
       protected static const PATH_SOUTH:int = 7;
       
-      protected static const CREQUESTRESOURCEBALANCE:int = 237;
-      
-      protected static const CROTATESOUTH:int = 113;
-      
-      protected static const CACCEPTTRADE:int = 127;
-      
       protected static const ONSCREEN_MESSAGE_WIDTH:int = 295;
       
       protected static const FIELD_ENTER_POSSIBLE:uint = 0;
       
-      protected static const ERR_INTERNAL:int = 0;
-      
       protected static const PATH_NORTH_WEST:int = 4;
-      
-      protected static const CGETQUESTLINE:int = 241;
       
       protected static const PROFESSION_MASK_NONE:int = 1 << PROFESSION_NONE;
       
       protected static const SCHANNELS:int = 171;
       
-      protected static const TYPE_SUMMON_OWN:int = 3;
+      protected static const SOPENCHANNEL:int = 172;
       
-      protected static const NPC_SPEECH_QUESTTRADER:uint = 4;
+      public static const MESSAGEDIALOG_PREY_MESSAGE:int = 20;
       
       protected static const PARTY_LEADER_SEXP_INACTIVE_GUILTY:int = 8;
       
-      protected static const SPRIVATECHANNEL:int = 173;
-      
-      protected static const SOPENCHANNEL:int = 172;
-      
-      protected static const CBUYPREMIUMOFFER:int = 252;
-      
-      protected static const SBLESSINGS:int = 156;
-      
-      protected static const BLESSING_WISDOM_OF_SOLITUDE:int = BLESSING_FIRE_OF_SUNS << 1;
-      
       protected static const FIELD_CACHESIZE:int = FIELD_SIZE;
-      
-      protected static const SPLAYERDATACURRENT:int = 160;
-      
-      protected static const STOPFLOOR:int = 190;
       
       protected static const PATH_ERROR_UNREACHABLE:int = -4;
       
       protected static const CGETTRANSACTIONHISTORY:int = 254;
       
-      protected static const SSTOREBUTTONINDICATORS:int = 25;
-      
-      public static const RESOURCETYPE_BANK_GOLD:int = 0;
-      
-      protected static const SCREATEONMAP:int = 106;
-      
-      protected static const SPREYREROLLPRICE:int = 233;
-      
       protected static const SLOGINWAIT:int = 22;
       
-      public static const PREVIEW_STATE_REGULAR:uint = 0;
-      
-      protected static const PATH_SOUTH_WEST:int = 6;
-      
-      public static const RESULTDIALOG_CLEARING_CHARM_SUCCESS:int = 10;
-      
-      protected static const PAYLOADLENGTH_POS:int = PAYLOAD_POS;
-      
-      protected static const CLOOK:int = 140;
+      protected static const CPRIVATECHANNEL:int = 154;
       
       protected static const SINGAMESHOPSUCCESS:int = 254;
       
-      protected static const CTRADEOBJECT:int = 125;
-      
-      protected static const BLESSING_EMBRACE_OF_TIBIA:int = BLESSING_SPIRITUAL_SHIELDING << 1;
+      public static const PREVIEW_STATE_REGULAR:uint = 0;
       
       protected static const ERR_INVALID_CHECKSUM:int = 2;
       
       protected static const SCONTAINER:int = 110;
       
-      protected static const ERR_CONNECTION_LOST:int = 6;
-      
       protected static const SKILL_MANA_LEECH_AMOUNT:int = 24;
       
       protected static const SNPCOFFER:int = 122;
       
-      protected static const SWORLDENTERED:int = 15;
-      
-      protected static const SSHOWRESULTDIALOG:int = 237;
-      
-      protected static const PAYLOAD_POS:int = HEADER_POS + HEADER_SIZE;
+      protected static const CMARKETCANCEL:int = 247;
       
       protected static const CEXCLUDEFROMCHANNEL:int = 172;
       
       protected static const SKILL_HITPOINTS:int = 4;
       
-      protected static const PATH_WEST:int = 5;
-      
-      protected static const MAP_HEIGHT:int = 11;
-      
-      public static const CLIENT_VERSION:uint = 2370;
-      
-      protected static const SKILL_OFFLINETRAINING:int = 18;
+      protected static const STRANSACTIONHISTORY:int = 253;
       
       protected static const SPREMIUMSHOPOFFERS:int = 252;
       
-      protected static const STATE_MANA_SHIELD:int = 4;
-      
-      protected static const CPRIVATECHANNEL:int = 154;
-      
-      protected static const STRANSACTIONHISTORY:int = 253;
+      protected static const CMARKETBROWSE:int = 245;
       
       protected static const SMARKETBROWSE:int = 249;
       
@@ -482,107 +305,41 @@ package tibia.network
       
       protected static const STATE_FREEZING:int = 9;
       
-      protected static const CMOUNT:int = 212;
-      
-      protected static const STATE_CURSED:int = 11;
-      
-      protected static const PARTY_LEADER_SEXP_INACTIVE_INNOCENT:int = 10;
-      
-      protected static const CMARKETBROWSE:int = 245;
-      
-      public static const RESULTDIALOG_IMBUEMENT_SUCCESS:int = 0;
-      
       protected static const SMARKETLEAVE:int = 247;
-      
-      protected static const CCLOSENPCTRADE:int = 124;
       
       protected static const NUM_FIELDS:int = MAPSIZE_Z * MAPSIZE_Y * MAPSIZE_X;
       
-      protected static const SCOUNTEROFFER:int = 126;
-      
       protected static const CFOLLOW:int = 162;
       
-      protected static const STATE_POISONED:int = 0;
-      
-      protected static const PATH_EXISTS:int = 1;
-      
       protected static const SKILL_LIFE_LEECH_CHANCE:int = 21;
-      
-      protected static const CMARKETCANCEL:int = 247;
-      
-      protected static const STATE_BURNING:int = 1;
-      
-      protected static const HEADER_POS:int = 0;
       
       protected static const SMARKETENTER:int = 246;
       
       protected static const SKILL_FIGHTFIST:int = 13;
       
-      protected static const CONNECTION_STATE_CONNECTING_STAGE1:int = 1;
-      
-      protected static const GUILD_WAR_ENEMY:int = 2;
-      
-      protected static const CREQUESTSHOPOFFERS:int = 251;
-      
-      protected static const PROFESSION_MASK_ANY:int = PROFESSION_MASK_DRUID | PROFESSION_MASK_KNIGHT | PROFESSION_MASK_PALADIN | PROFESSION_MASK_SORCERER;
+      protected static const SCREATURESPEED:int = 143;
       
       protected static const STATE_FIGHTING:int = 7;
       
-      protected static const CANSWERMODALDIALOG:int = 249;
-      
       protected static const NPC_SPEECH_NORMAL:uint = 1;
-      
-      protected static const CCLOSEDIMBUINGDIALOG:int = 215;
-      
-      protected static const SCREATURESPEED:int = 143;
       
       protected static const SSPELLDELAY:int = 164;
       
       protected static const BLESSING_SPIRITUAL_SHIELDING:int = BLESSING_ADVENTURER << 1;
       
-      protected static const SDELETEONMAP:int = 108;
-      
       protected static const BLESSING_SPARK_OF_PHOENIX:int = BLESSING_WISDOM_OF_SOLITUDE << 1;
-      
-      protected static const STATE_PZ_BLOCK:int = 13;
-      
-      public static const RESULTDIALOG_IMBUING_STATION_NOT_FOUND:int = 3;
       
       protected static const RISKINESS_NONE:int = 0;
       
-      protected static const SEDITGUILDMESSAGE:int = 174;
-      
       protected static const SCREATUREOUTFIT:int = 142;
-      
-      public static const PROTOCOL_VERSION:int = 10990;
-      
-      protected static const CEDITGUILDMESSAGE:int = 156;
-      
-      protected static const CEDITBUDDY:int = 222;
-      
-      protected static const CROTATEWEST:int = 114;
       
       protected static const NUM_PVP_HELPERS_FOR_RISKINESS_DANGEROUS:uint = 5;
       
-      protected static const SAMBIENTE:int = 130;
-      
-      protected static const ERR_INVALID_SIZE:int = 1;
-      
       protected static const SLOGINCHALLENGE:int = 31;
-      
-      protected static const CLEAVECHANNEL:int = 153;
-      
-      protected static const PARTY_MEMBER:int = 2;
       
       protected static const SPLAYERSKILLS:int = 161;
       
       protected static const CTHANKYOU:int = 231;
-      
-      protected static const SCREATUREUNPASS:int = 146;
-      
-      protected static const CONNECTION_STATE_CONNECTING_STAGE2:int = 2;
-      
-      protected static const SKILL_STAMINA:int = 17;
       
       protected static const SRESOURCEBALANCE:int = 238;
       
@@ -590,13 +347,417 @@ package tibia.network
       
       protected static const FIELD_ENTER_POSSIBLE_NO_ANIMATION:uint = 1;
       
+      protected static const STATE_NONE:int = -1;
+      
+      protected static const SDELETEINCONTAINER:int = 114;
+      
+      protected static const PATH_MAX_DISTANCE:int = 110;
+      
+      protected static const SCREATEINCONTAINER:int = 112;
+      
+      protected static const SCREATUREHEALTH:int = 140;
+      
+      protected static const CERRORFILEENTRY:int = 232;
+      
+      protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + CHECKSUM_SIZE;
+      
+      protected static const STATE_BLEEDING:int = 15;
+      
+      protected static const STATE_DAZZLED:int = 10;
+      
+      protected static const CUSEOBJECT:int = 130;
+      
+      protected static const ERR_INVALID_MESSAGE:int = 3;
+      
+      protected static const COPENPREMIUMSHOP:int = 250;
+      
+      protected static const CUSETWOOBJECTS:int = 131;
+      
+      protected static const ERR_INVALID_STATE:int = 4;
+      
+      protected static const PATH_COST_UNDEFINED:int = 254;
+      
+      protected static const CINVITETOPARTY:int = 163;
+      
+      protected static const CPINGBACK:int = 30;
+      
+      protected static const SPINGBACK:int = 30;
+      
+      protected static const PK_ATTACKER:int = 1;
+      
+      protected static const STATE_ELECTRIFIED:int = 2;
+      
+      protected static const SPLAYERGOODS:int = 123;
+      
+      protected static const CMOVEOBJECT:int = 120;
+      
+      public static const MESSAGEDIALOG_CLEARING_CHARM_ERROR:int = 11;
+      
+      protected static const CGOEAST:int = 102;
+      
+      protected static const SMOVECREATURE:int = 109;
+      
+      protected static const CSTOREEVENT:int = 233;
+      
+      protected static const CTOGGLEWRAPSTATE:int = 139;
+      
+      protected static const CJOINPARTY:int = 164;
+      
+      protected static const PK_NONE:int = 0;
+      
+      protected static const CONNECTION_STATE_GAME:int = 4;
+      
+      protected static const SMULTIUSEDELAY:int = 166;
+      
+      protected static const CGOPATH:int = 100;
+      
+      protected static const SCHANGEONMAP:int = 107;
+      
+      protected static const CGOSOUTHEAST:int = 107;
+      
+      protected static const CLEAVEPARTY:int = 167;
+      
+      protected static const CEQUIPOBJECT:int = 119;
+      
+      protected static const PROFESSION_MASK_SORCERER:int = 1 << PROFESSION_SORCERER;
+      
+      protected static const UNDERGROUND_LAYER:int = 2;
+      
+      protected static const COPENCHANNEL:int = 170;
+      
+      protected static const SDEAD:int = 40;
+      
+      protected static const PROFESSION_PALADIN:int = 2;
+      
+      protected static const PLAYER_OFFSET_X:int = 8;
+      
+      protected static const PLAYER_OFFSET_Y:int = 6;
+      
+      protected static const SPVPSITUATIONS:int = 184;
+      
+      protected static const SLOGINADVICE:int = 21;
+      
+      protected static const SCHANNELEVENT:int = 243;
+      
+      protected static const PARTY_LEADER_SEXP_OFF:int = 4;
+      
+      protected static const MAP_MAX_X:int = MAP_MIN_X + (1 << 14 - 1);
+      
+      protected static const MAP_MAX_Y:int = MAP_MIN_Y + (1 << 14 - 1);
+      
+      protected static const MAP_MAX_Z:int = 15;
+      
+      protected static const SMARKETDETAIL:int = 248;
+      
+      public static const MESSAGEDIALOG_IMBUEMENT_SUCCESS:int = 0;
+      
+      protected static const STATE_FAST:int = 6;
+      
+      protected static const CTALK:int = 150;
+      
+      protected static const BLESSING_NONE:int = 0;
+      
+      protected static const PATH_NORTH_EAST:int = 2;
+      
+      protected static const CEDITTEXT:int = 137;
+      
+      protected static const PATH_ERROR_TOO_FAR:int = -3;
+      
+      protected static const STALK:int = 170;
+      
+      protected static const GUILD_OTHER:int = 5;
+      
+      protected static const PROFESSION_MASK_PALADIN:int = 1 << PROFESSION_PALADIN;
+      
+      protected static const SKILL_MANA:int = 5;
+      
+      protected static const SEDITTEXT:int = 150;
+      
+      protected static const SOPENOWNCHANNEL:int = 178;
+      
+      public static const PREVIEW_STATE_PREVIEW_WITH_ACTIVE_CHANGE:uint = 2;
+      
+      protected static const PAYLOADLENGTH_SIZE:int = 2;
+      
+      public static const CLIENT_PREVIEW_STATE:uint = 0;
+      
+      protected static const SCLOSEIMBUINGDIALOG:int = 236;
+      
+      protected static const CMARKETLEAVE:int = 244;
+      
+      protected static const COPENTRANSACTIONHISTORY:int = 253;
+      
+      protected static const CSHAREEXPERIENCE:int = 168;
+      
+      protected static const SCLEARTARGET:int = 163;
+      
+      protected static const PK_AGGRESSOR:int = 3;
+      
+      protected static const MAPSIZE_W:int = 10;
+      
+      protected static const CGETOUTFIT:int = 210;
+      
+      protected static const MAPSIZE_Y:int = MAP_HEIGHT + 3;
+      
+      protected static const MAPSIZE_Z:int = 8;
+      
+      protected static const STATE_HUNGRY:int = 31;
+      
+      protected static const MAPSIZE_X:int = MAP_WIDTH + 3;
+      
+      protected static const SCLOSECHANNEL:int = 179;
+      
+      protected static const PAYLOAD_POS:int = HEADER_POS + HEADER_SIZE;
+      
+      protected static const SOWNOFFER:int = 125;
+      
+      protected static const NPC_SPEECH_QUEST:uint = 3;
+      
+      protected static const SKILL_GOSTRENGTH:int = 6;
+      
+      protected static const SSETSTOREDEEPLINK:int = 168;
+      
+      protected static const PATH_ERROR_GO_DOWNSTAIRS:int = -1;
+      
+      protected static const CMARKETCREATE:int = 246;
+      
+      protected static const PARTY_LEADER_SEXP_ACTIVE:int = 6;
+      
+      protected static const CQUITGAME:int = 20;
+      
+      protected static const PARTY_MAX_FLASHING_TIME:uint = 5000;
+      
+      protected static const CADDBUDDY:int = 220;
+      
+      protected static const CGONORTHWEST:int = 109;
+      
+      protected static const PK_REVENGE:int = 6;
+      
+      protected static const NPC_SPEECH_NONE:uint = 0;
+      
+      protected static const SOUTFIT:int = 200;
+      
+      protected static const NPC_SPEECH_TRAVEL:uint = 5;
+      
+      protected static const CSETTACTICS:int = 160;
+      
+      protected static const CPERFORMANCEMETRICS:int = 31;
+      
+      protected static const SSHOWMESSAGEDIALOG:int = 237;
+      
+      protected static const ERR_COULD_NOT_CONNECT:int = 5;
+      
+      protected static const PATH_COST_OBSTACLE:int = 255;
+      
+      protected static const SPLAYERDATABASIC:int = 159;
+      
+      protected static const PACKETLENGTH_SIZE:int = 2;
+      
+      protected static const SPREYDATA:int = 232;
+      
+      protected static const CGETQUESTLOG:int = 240;
+      
+      protected static const STATE_DRUNK:int = 3;
+      
+      protected static const BLESSING_FIRE_OF_SUNS:int = BLESSING_EMBRACE_OF_TIBIA << 1;
+      
+      protected static const TYPE_SUMMON_OTHERS:int = 4;
+      
+      public static const CLIENT_VERSION:uint = 2388;
+      
+      protected static const CATTACK:int = 161;
+      
+      protected static const SKILL_MANA_LEECH_CHANCE:int = 23;
+      
+      protected static const SLOGINSUCCESS:int = 23;
+      
+      protected static const CLOOKATCREATURE:int = 141;
+      
+      protected static const OPTIONS_MIN_COMPATIBLE_VERSION:Number = 2;
+      
+      protected static const NUM_TRAPPERS:int = 8;
+      
+      protected static const SBUDDYDATA:int = 210;
+      
+      protected static const SPREYTIMELEFT:int = 231;
+      
+      protected static const CBROWSEFIELD:int = 203;
+      
+      protected static const CPREYACTION:int = 235;
+      
+      protected static const SCREATUREPARTY:int = 145;
+      
+      protected static const SQUESTLOG:int = 240;
+      
+      protected static const GROUND_LAYER:int = 7;
+      
+      protected static const CCANCEL:int = 190;
+      
+      protected static const SKILL_NONE:int = -1;
+      
+      private static const BUNDLE:String = "Communication";
+      
+      protected static const GUILD_MEMBER:int = 4;
+      
+      protected static const PATH_EMPTY:int = 0;
+      
+      protected static const SFULLMAP:int = 100;
+      
+      protected static const SCLOSECONTAINER:int = 111;
+      
+      protected static const CREQUESTRESOURCEBALANCE:int = 237;
+      
+      protected static const SMISSILEEFFECT:int = 133;
+      
+      public static const MESSAGEDIALOG_IMBUEMENT_ERROR:int = 1;
+      
+      protected static const PATH_ERROR_GO_UPSTAIRS:int = -2;
+      
+      protected static const SSPELLGROUPDELAY:int = 165;
+      
+      protected static const CSEEKINCONTAINER:int = 204;
+      
+      protected static const SQUESTLINE:int = 241;
+      
+      protected static const GUILD_WAR_NEUTRAL:int = 3;
+      
+      protected static const SLOGINERROR:int = 20;
+      
+      protected static const SCREATUREMARKS:int = 147;
+      
+      protected static const CREJECTTRADE:int = 128;
+      
+      protected static const MAP_WIDTH:int = 15;
+      
+      protected static const SREQUESTPURCHASEDATA:int = 225;
+      
+      public static const MESSAGEDIALOG_PREY_ERROR:int = 21;
+      
+      protected static const STRAPPERS:int = 135;
+      
+      protected static const PARTY_MEMBER_SEXP_INACTIVE_INNOCENT:int = 9;
+      
+      protected static const GUILD_WAR_ALLY:int = 1;
+      
+      protected static const SUNJUSTIFIEDPOINTS:int = 183;
+      
+      protected static const CGETQUESTLINE:int = 241;
+      
+      protected static const SSNAPBACK:int = 181;
+      
+      protected static const NUM_EFFECTS:int = 200;
+      
+      protected static const STATE_SLOW:int = 5;
+      
+      protected static const CACCEPTTRADE:int = 127;
+      
+      protected static const STOPFLOOR:int = 190;
+      
+      protected static const TYPE_SUMMON_OWN:int = 3;
+      
+      protected static const CBUYPREMIUMOFFER:int = 252;
+      
+      protected static const NPC_SPEECH_QUESTTRADER:uint = 4;
+      
+      protected static const SPRIVATECHANNEL:int = 173;
+      
+      protected static const SBLESSINGS:int = 156;
+      
+      protected static const BLESSING_WISDOM_OF_SOLITUDE:int = BLESSING_FIRE_OF_SUNS << 1;
+      
+      protected static const SSTOREBUTTONINDICATORS:int = 25;
+      
+      protected static const PAYLOADLENGTH_POS:int = PAYLOAD_POS;
+      
+      public static const RESOURCETYPE_BANK_GOLD:int = 0;
+      
+      protected static const SCREATEONMAP:int = 106;
+      
+      protected static const SPREYREROLLPRICE:int = 233;
+      
+      protected static const PATH_SOUTH_WEST:int = 6;
+      
+      protected static const CTRADEOBJECT:int = 125;
+      
+      public static const MESSAGEDIALOG_CLEARING_CHARM_SUCCESS:int = 10;
+      
+      protected static const CLOOK:int = 140;
+      
+      protected static const BLESSING_EMBRACE_OF_TIBIA:int = BLESSING_SPIRITUAL_SHIELDING << 1;
+      
+      protected static const SWORLDENTERED:int = 15;
+      
+      protected static const HEADER_POS:int = 0;
+      
+      protected static const PATH_WEST:int = 5;
+      
+      protected static const MAP_HEIGHT:int = 11;
+      
+      protected static const SKILL_OFFLINETRAINING:int = 18;
+      
+      protected static const STATE_MANA_SHIELD:int = 4;
+      
+      protected static const CMOUNT:int = 212;
+      
+      protected static const CCLOSENPCTRADE:int = 124;
+      
+      protected static const STATE_CURSED:int = 11;
+      
+      protected static const PARTY_LEADER_SEXP_INACTIVE_INNOCENT:int = 10;
+      
+      protected static const SCOUNTEROFFER:int = 126;
+      
+      protected static const STATE_POISONED:int = 0;
+      
+      protected static const PATH_EXISTS:int = 1;
+      
+      protected static const CANSWERMODALDIALOG:int = 249;
+      
+      protected static const STATE_BURNING:int = 1;
+      
+      public static const MESSAGEDIALOG_IMBUING_STATION_NOT_FOUND:int = 3;
+      
+      protected static const CONNECTION_STATE_CONNECTING_STAGE1:int = 1;
+      
+      protected static const GUILD_WAR_ENEMY:int = 2;
+      
+      protected static const CREQUESTSHOPOFFERS:int = 251;
+      
+      protected static const CONNECTION_STATE_CONNECTING_STAGE2:int = 2;
+      
+      protected static const PROFESSION_MASK_ANY:int = PROFESSION_MASK_DRUID | PROFESSION_MASK_KNIGHT | PROFESSION_MASK_PALADIN | PROFESSION_MASK_SORCERER;
+      
+      protected static const CCLOSEDIMBUINGDIALOG:int = 215;
+      
+      protected static const CEDITBUDDY:int = 222;
+      
+      protected static const SDELETEONMAP:int = 108;
+      
+      protected static const CEDITGUILDMESSAGE:int = 156;
+      
+      protected static const STATE_PZ_BLOCK:int = 13;
+      
+      protected static const CROTATEWEST:int = 114;
+      
+      protected static const SEDITGUILDMESSAGE:int = 174;
+      
+      public static const PROTOCOL_VERSION:int = 1100;
+      
+      protected static const SAMBIENTE:int = 130;
+      
+      protected static const ERR_INVALID_SIZE:int = 1;
+      
+      protected static const CLEAVECHANNEL:int = 153;
+      
+      protected static const PARTY_MEMBER:int = 2;
+      
+      protected static const SCREATUREUNPASS:int = 146;
+      
+      protected static const SKILL_STAMINA:int = 17;
+      
       protected static const CONNECTION_STATE_DISCONNECTED:int = 0;
       
       protected static const SKILL_FIGHTSHIELD:int = 8;
-      
-      protected static const STATE_NONE:int = -1;
-      
-      protected static const PACKETLENGTH_SIZE:int = 2;
       
       protected static const SKILL_FIGHTDISTANCE:int = 9;
       
@@ -606,79 +767,35 @@ package tibia.network
       
       protected static const SKILL_FISHING:int = 14;
       
-      protected static const SDELETEINCONTAINER:int = 114;
-      
-      protected static const PATH_MAX_DISTANCE:int = 110;
-      
-      protected static const SCREATEINCONTAINER:int = 112;
-      
       protected static const CGONORTHEAST:int = 106;
-      
-      protected static const PK_PLAYERKILLER:int = 4;
-      
-      protected static const CERRORFILEENTRY:int = 232;
-      
-      protected static const CINSPECTNPCTRADE:int = 121;
-      
-      protected static const SCREATUREHEALTH:int = 140;
-      
-      protected static const STATE_BLEEDING:int = 15;
-      
-      protected static const STOPROW:int = 101;
-      
-      protected static const SBOTTOMFLOOR:int = 191;
-      
-      protected static const CTURNOBJECT:int = 133;
-      
-      protected static const STATE_DAZZLED:int = 10;
-      
-      public static const RESULTDIALOG_IMBUEMENT_ROLL_FAILED:int = 2;
-      
-      protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + CHECKSUM_SIZE;
-      
-      protected static const CHECKSUM_SIZE:int = 4;
-      
-      protected static const CUSEOBJECT:int = 130;
-      
-      protected static const CINVITETOCHANNEL:int = 171;
-      
-      protected static const CUSETWOOBJECTS:int = 131;
-      
-      protected static const PATH_ERROR_INTERNAL:int = -5;
-      
-      protected static const COPENPREMIUMSHOP:int = 250;
       
       public static const RESOURCETYPE_INVENTORY_GOLD:int = 1;
       
-      protected static const PATH_COST_UNDEFINED:int = 254;
+      protected static const PK_PLAYERKILLER:int = 4;
+      
+      protected static const CINSPECTNPCTRADE:int = 121;
+      
+      protected static const SBOTTOMFLOOR:int = 191;
+      
+      protected static const STOPROW:int = 101;
+      
+      protected static const CHECKSUM_SIZE:int = 4;
+      
+      protected static const CTURNOBJECT:int = 133;
+      
+      protected static const CINVITETOCHANNEL:int = 171;
+      
+      protected static const PATH_ERROR_INTERNAL:int = -5;
       
       protected static const SPREMIUMTRIGGER:int = 158;
       
-      protected static const ERR_INVALID_STATE:int = 4;
-      
       protected static const SCREATURELIGHT:int = 141;
-      
-      protected static const CINVITETOPARTY:int = 163;
-      
-      protected static const CPINGBACK:int = 30;
-      
-      protected static const SPINGBACK:int = 30;
-      
-      protected static const ERR_INVALID_MESSAGE:int = 3;
-      
-      protected static const PK_ATTACKER:int = 1;
-      
-      protected static const STATE_ELECTRIFIED:int = 2;
       
       protected static const SKILL_FIGHTSWORD:int = 11;
       
       protected static const STUTORIALHINT:int = 220;
       
-      protected static const SPLAYERGOODS:int = 123;
-      
       protected static const CSTOP:int = 105;
-      
-      protected static const CMOVEOBJECT:int = 120;
       
       protected static const SPLAYERINVENTORY:int = 245;
       
@@ -690,27 +807,11 @@ package tibia.network
       
       protected static const SSWITCHPRESET:int = 157;
       
-      protected static const CGOEAST:int = 102;
-      
-      protected static const SMOVECREATURE:int = 109;
-      
       protected static const CEDITLIST:int = 138;
-      
-      protected static const CTOGGLEWRAPSTATE:int = 139;
-      
-      protected static const CJOINPARTY:int = 164;
       
       protected static const SEDITLIST:int = 151;
       
-      protected static const PK_NONE:int = 0;
-      
       protected static const SCLOSETRADE:int = 127;
-      
-      protected static const CONNECTION_STATE_GAME:int = 4;
-      
-      protected static const SMULTIUSEDELAY:int = 166;
-      
-      protected static const CSTOREEVENT:int = 233;
       
       protected static const SSETINVENTORY:int = 120;
       
@@ -718,187 +819,91 @@ package tibia.network
       
       protected static const SKILL_CRITICAL_HIT_CHANCE:int = 19;
       
-      protected static const SCHANGEONMAP:int = 107;
-      
-      protected static const CGOPATH:int = 100;
-      
       protected static const SKILL_EXPERIENCE_GAIN:int = -2;
       
       protected static const FIELD_ENTER_NOT_POSSIBLE:uint = 2;
       
-      protected static const CEQUIPOBJECT:int = 119;
-      
-      protected static const CGOSOUTHEAST:int = 107;
-      
-      protected static const PROFESSION_MASK_SORCERER:int = 1 << PROFESSION_SORCERER;
+      public static const CLIENT_TYPE:uint = 3;
       
       protected static const PROFESSION_KNIGHT:int = 1;
       
-      protected static const UNDERGROUND_LAYER:int = 2;
-      
-      protected static const COPENCHANNEL:int = 170;
-      
-      protected static const SDEAD:int = 40;
-      
       protected static const SCHANGEINCONTAINER:int = 113;
-      
-      protected static const SCREATUREPVPHELPERS:int = 148;
-      
-      public static const CLIENT_TYPE:uint = 3;
-      
-      protected static const SDELETEINVENTORY:int = 121;
       
       protected static const SIMBUINGDIALOGREFRESH:int = 235;
       
+      protected static const SCREATUREPVPHELPERS:int = 148;
+      
+      protected static const SDELETEINVENTORY:int = 121;
+      
       protected static const CTRANSFERCURRENCY:int = 239;
       
-      protected static const PROFESSION_PALADIN:int = 2;
+      public static const MESSAGEDIALOG_IMBUEMENT_ROLL_FAILED:int = 2;
       
       protected static const SINGAMESHOPERROR:int = 224;
-      
-      protected static const PLAYER_OFFSET_X:int = 8;
-      
-      protected static const PLAYER_OFFSET_Y:int = 6;
       
       protected static const SKILL_FIGHTAXE:int = 12;
       
       protected static const SKILL_CRITICAL_HIT_DAMAGE:int = 20;
       
-      protected static const SLOGINADVICE:int = 21;
-      
-      protected static const SCHANNELEVENT:int = 243;
-      
-      protected static const SPVPSITUATIONS:int = 184;
-      
-      protected static const PARTY_LEADER_SEXP_OFF:int = 4;
-      
-      protected static const CLEAVEPARTY:int = 167;
-      
-      protected static const MAP_MAX_X:int = MAP_MIN_X + (1 << 14 - 1);
-      
-      protected static const MAP_MAX_Y:int = MAP_MIN_Y + (1 << 14 - 1);
-      
-      protected static const MAP_MAX_Z:int = 15;
-      
       protected static const CAPPLYCLEARINGCHARM:int = 214;
-      
-      protected static const SMARKETDETAIL:int = 248;
       
       protected static const CGONORTH:int = 101;
       
-      protected static const NUM_ONSCREEN_MESSAGES:int = 16;
-      
-      protected static const STATE_FAST:int = 6;
-      
       protected static const SKILL_SOULPOINTS:int = 16;
       
-      protected static const CTALK:int = 150;
-      
-      protected static const BLESSING_NONE:int = 0;
-      
-      protected static const PATH_NORTH_EAST:int = 2;
+      protected static const NUM_ONSCREEN_MESSAGES:int = 16;
       
       protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_SPARK_OF_PHOENIX << 1;
       
+      protected static const PAYLOADDATA_POSITION:int = PAYLOADLENGTH_POS + PAYLOADLENGTH_SIZE;
+      
       protected static const SPREMIUMSHOP:int = 251;
-      
-      protected static const PATH_ERROR_TOO_FAR:int = -3;
-      
-      protected static const STALK:int = 170;
-      
-      protected static const CEDITTEXT:int = 137;
-      
-      protected static const GUILD_OTHER:int = 5;
       
       protected static const TYPE_PLAYER:int = 0;
       
       protected static const SCLOSENPCTRADE:int = 124;
       
+      protected static const SPENDINGSTATEENTERED:int = 10;
+      
       protected static const RENDERER_DEFAULT_WIDTH:Number = MAP_WIDTH * FIELD_SIZE;
       
       protected static const SRIGHTROW:int = 102;
       
-      protected static const SKILL_MANA:int = 5;
-      
       protected static const SGRAPHICALEFFECT:int = 131;
       
-      protected static const PROFESSION_MASK_PALADIN:int = 1 << PROFESSION_PALADIN;
-      
-      protected static const SOPENOWNCHANNEL:int = 178;
-      
-      protected static const SPENDINGSTATEENTERED:int = 10;
-      
-      public static const PREVIEW_STATE_PREVIEW_WITH_ACTIVE_CHANGE:uint = 2;
+      protected static const CINSPECTTRADE:int = 126;
       
       protected static const CBUGREPORT:int = 230;
       
       protected static const PATH_SOUTH_EAST:int = 8;
       
-      protected static const CINSPECTTRADE:int = 126;
-      
-      public static const CLIENT_PREVIEW_STATE:uint = 0;
-      
-      protected static const SEDITTEXT:int = 150;
-      
       protected static const TYPE_MONSTER:int = 1;
       
-      protected static const CMARKETLEAVE:int = 244;
+      protected static const SCREATURETYPE:int = 149;
       
-      protected static const PAYLOADLENGTH_SIZE:int = 2;
-      
-      protected static const COPENTRANSACTIONHISTORY:int = 253;
-      
-      protected static const SCLEARTARGET:int = 163;
-      
-      protected static const CSHAREEXPERIENCE:int = 168;
-      
-      protected static const SCLOSEIMBUINGDIALOG:int = 236;
-      
-      protected static const PK_AGGRESSOR:int = 3;
-      
-      protected static const MAPSIZE_W:int = 10;
-      
-      protected static const MAPSIZE_X:int = MAP_WIDTH + 3;
-      
-      protected static const MAPSIZE_Y:int = MAP_HEIGHT + 3;
-      
-      protected static const MAPSIZE_Z:int = 8;
-      
-      protected static const STATE_HUNGRY:int = 31;
+      protected static const SBUDDYSTATUSCHANGE:int = 211;
       
       protected static const SKILL_LEVEL:int = 1;
       
       protected static const PATH_EAST:int = 1;
       
-      protected static const PROFESSION_DRUID:int = 4;
-      
-      protected static const NPC_SPEECH_QUEST:uint = 3;
-      
       protected static const SUMMON_NONE:int = 0;
       
       protected static const STATE_STRENGTHENED:int = 12;
       
-      protected static const SOWNOFFER:int = 125;
+      protected static const PROFESSION_DRUID:int = 4;
       
       protected static const PACKETLENGTH_POS:int = HEADER_POS;
       
-      protected static const SCLOSECHANNEL:int = 179;
+      protected static const SAUTOMAPFLAG:int = 221;
       
       protected static const CSETOUTFIT:int = 211;
       
-      protected static const PATH_ERROR_GO_DOWNSTAIRS:int = -1;
-      
-      protected static const PAYLOADDATA_POSITION:int = PAYLOADLENGTH_POS + PAYLOADLENGTH_SIZE;
-      
-      protected static const NPC_SPEECH_NONE:uint = 0;
-      
-      protected static const SSETSTOREDEEPLINK:int = 168;
+      public static const RESOURCETYPE_PREY_BONUS_REROLLS:int = 10;
       
       protected static const PATH_MATRIX_CENTER:int = PATH_MAX_DISTANCE;
       
       protected static const PK_MAX_FLASHING_TIME:uint = 5000;
-      
-      protected static const SPLAYERSTATE:int = 162;
        
       
       private var m_AppearanceStorage:AppearanceStorage = null;
@@ -1567,6 +1572,27 @@ package tibia.network
          this.m_WorldMapStorage.setPosition(_loc2_.x,_loc2_.y,_loc2_.z);
          this.readArea(param1,0,0,MAPSIZE_X - 1,MAPSIZE_Y - 1);
          this.m_WorldMapStorage.valid = true;
+      }
+      
+      protected function readSSHOWMESSAGEDIALOG(param1:ByteArray) : void
+      {
+         var _loc2_:uint = 0;
+         var _loc3_:String = null;
+         var _loc4_:PreyWidget = null;
+         _loc2_ = param1.readUnsignedByte();
+         _loc3_ = StringHelper.s_ReadLongStringFromByteArray(param1);
+         if(_loc2_ == MESSAGEDIALOG_IMBUEMENT_SUCCESS || _loc2_ == MESSAGEDIALOG_IMBUEMENT_ERROR || _loc2_ == MESSAGEDIALOG_IMBUEMENT_ROLL_FAILED || _loc2_ == MESSAGEDIALOG_IMBUING_STATION_NOT_FOUND || _loc2_ == MESSAGEDIALOG_CLEARING_CHARM_SUCCESS || _loc2_ == MESSAGEDIALOG_CLEARING_CHARM_ERROR)
+         {
+            ImbuingManager.getInstance().showImbuingResultDialog(_loc3_);
+         }
+         else if(_loc2_ == MESSAGEDIALOG_PREY_MESSAGE || _loc2_ == MESSAGEDIALOG_PREY_ERROR)
+         {
+            _loc4_ = PreyWidget.s_GetCurrentInstance();
+            if(_loc4_ != null)
+            {
+               _loc4_.showMessageDialog(_loc3_);
+            }
+         }
       }
       
       protected function readSLEFTROW(param1:ByteArray) : void
@@ -2582,18 +2608,6 @@ package tibia.network
          }
       }
       
-      protected function readSSHOWRESULTDIALOG(param1:ByteArray) : void
-      {
-         var _loc2_:uint = 0;
-         var _loc3_:String = null;
-         _loc2_ = param1.readUnsignedByte();
-         _loc3_ = StringHelper.s_ReadLongStringFromByteArray(param1);
-         if(_loc2_ == RESULTDIALOG_IMBUEMENT_SUCCESS || _loc2_ == RESULTDIALOG_IMBUEMENT_ERROR || _loc2_ == RESULTDIALOG_IMBUEMENT_ROLL_FAILED || _loc2_ == RESULTDIALOG_IMBUING_STATION_NOT_FOUND || _loc2_ == RESULTDIALOG_CLEARING_CHARM_SUCCESS || _loc2_ == RESULTDIALOG_CLEARING_CHARM_ERROR)
-         {
-            ImbuingManager.getInstance().showImbuingResultDialog(_loc3_);
-         }
-      }
-      
       public function sendCBUYPREMIUMOFFER(param1:int, param2:int, ... rest) : void
       {
          var b:ByteArray = null;
@@ -3255,6 +3269,8 @@ package tibia.network
          var _loc3_:Number = NaN;
          var _loc4_:Number = NaN;
          var _loc5_:Number = NaN;
+         var _loc8_:Number = NaN;
+         var _loc9_:Number = NaN;
          var _loc10_:Number = NaN;
          var _loc11_:uint = 0;
          var _loc12_:Boolean = false;
@@ -3280,8 +3296,8 @@ package tibia.network
          this.m_Player.setSkill(SKILL_LEVEL,_loc3_,_loc4_,_loc5_);
          var _loc6_:Number = param1.readUnsignedShort() / 100;
          var _loc7_:Number = param1.readUnsignedShort() / 100;
-         var _loc8_:Number = param1.readUnsignedShort() / 100;
-         var _loc9_:Number = param1.readUnsignedShort() / 100;
+         _loc8_ = param1.readUnsignedShort() / 100;
+         _loc9_ = param1.readUnsignedShort() / 100;
          _loc10_ = param1.readUnsignedShort() / 100;
          this.m_Player.experienceGainInfo.updateGainInfo(_loc6_,_loc7_,_loc8_,_loc9_,_loc10_);
          _loc3_ = Math.max(0,param1.readShort());
@@ -3971,8 +3987,9 @@ package tibia.network
          var _loc7_:uint = 0;
          var _loc8_:uint = 0;
          var _loc9_:uint = 0;
-         var _loc10_:Vector.<PreyMonsterInformation> = null;
-         var _loc11_:uint = 0;
+         var _loc10_:uint = 0;
+         var _loc11_:Vector.<PreyMonsterInformation> = null;
+         var _loc12_:uint = 0;
          _loc2_ = PreyManager.getInstance();
          _loc3_ = param1.readUnsignedByte();
          _loc4_ = param1.readUnsignedByte();
@@ -3990,38 +4007,40 @@ package tibia.network
             _loc6_ = this.readCreatureOutfit(param1,null);
             _loc7_ = param1.readUnsignedByte();
             _loc8_ = param1.readUnsignedShort();
-            _loc2_.changeStateToActive(_loc3_,_loc7_,_loc8_,new PreyMonsterInformation(_loc5_,_loc6_));
+            _loc9_ = param1.readUnsignedByte();
+            _loc2_.changeStateToActive(_loc3_,_loc7_,_loc8_,_loc9_,new PreyMonsterInformation(_loc5_,_loc6_));
             _loc2_.setPreyTimeLeft(_loc3_,param1.readUnsignedShort());
          }
          else if(_loc4_ == PreyData.STATE_SELECTION)
          {
-            _loc9_ = param1.readUnsignedByte();
-            _loc10_ = new Vector.<PreyMonsterInformation>();
-            _loc11_ = 0;
-            while(_loc11_ < _loc9_)
+            _loc10_ = param1.readUnsignedByte();
+            _loc11_ = new Vector.<PreyMonsterInformation>();
+            _loc12_ = 0;
+            while(_loc12_ < _loc10_)
             {
                _loc5_ = StringHelper.s_ReadLongStringFromByteArray(param1);
                _loc6_ = this.readCreatureOutfit(param1,null);
-               _loc10_.push(new PreyMonsterInformation(_loc5_,_loc6_));
-               _loc11_++;
+               _loc11_.push(new PreyMonsterInformation(_loc5_,_loc6_));
+               _loc12_++;
             }
-            _loc2_.changeStateToSelection(_loc3_,_loc10_);
+            _loc2_.changeStateToSelection(_loc3_,_loc11_);
          }
          else if(_loc4_ == PreyData.STATE_SELECTION_CHANGE_MONSTER)
          {
             _loc7_ = param1.readUnsignedByte();
             _loc8_ = param1.readUnsignedShort();
             _loc9_ = param1.readUnsignedByte();
-            _loc10_ = new Vector.<PreyMonsterInformation>();
-            _loc11_ = 0;
-            while(_loc11_ < _loc9_)
+            _loc10_ = param1.readUnsignedByte();
+            _loc11_ = new Vector.<PreyMonsterInformation>();
+            _loc12_ = 0;
+            while(_loc12_ < _loc10_)
             {
                _loc5_ = StringHelper.s_ReadLongStringFromByteArray(param1);
                _loc6_ = this.readCreatureOutfit(param1,null);
-               _loc10_.push(new PreyMonsterInformation(_loc5_,_loc6_));
-               _loc11_++;
+               _loc11_.push(new PreyMonsterInformation(_loc5_,_loc6_));
+               _loc12_++;
             }
-            _loc2_.changeStateToSelectionChangeMonster(_loc3_,_loc7_,_loc8_,_loc10_);
+            _loc2_.changeStateToSelectionChangeMonster(_loc3_,_loc7_,_loc8_,_loc9_,_loc11_);
          }
          _loc2_.setTimeUntilFreeListReroll(_loc3_,param1.readUnsignedShort());
       }
@@ -4869,8 +4888,8 @@ package tibia.network
                   this.readSIMBUINGDIALOGREFRESH(CommunicationData);
                   a_MessageReader.finishMessage();
                   break;
-               case SSHOWRESULTDIALOG:
-                  this.readSSHOWRESULTDIALOG(CommunicationData);
+               case SSHOWMESSAGEDIALOG:
+                  this.readSSHOWMESSAGEDIALOG(CommunicationData);
                   a_MessageReader.finishMessage();
                   break;
                case SCLOSEIMBUINGDIALOG:
@@ -5386,9 +5405,7 @@ package tibia.network
             {
                IngameShopWidget.s_GetCurrentInstance().selectCategory(_loc6_);
             }
-            return;
          }
-         throw new Error("Communication.readSPREMIUMSHOPOFFERS: Invalid category \'" + _loc2_ + "\' for offers",0);
       }
       
       protected function readSCHANGEONMAP(param1:ByteArray) : void

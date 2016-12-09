@@ -4,14 +4,15 @@ package tibia.prey
    import mx.resources.IResourceManager;
    import tibia.game.MessageWidget;
    import mx.resources.ResourceManager;
-   import tibia.prey.preyWidgetClasses.PreyView;
    import mx.events.PropertyChangeEvent;
+   import tibia.prey.preyWidgetClasses.PreyView;
    import tibia.creatures.Player;
    import shared.utility.i18n.i18nFormatNumber;
    import tibia.controls.TibiaCurrencyView;
    import flash.events.MouseEvent;
    import tibia.ingameshop.IngameShopManager;
    import tibia.ingameshop.IngameShopProduct;
+   import shared.controls.EmbeddedDialog;
    import mx.containers.HBox;
    import mx.controls.Button;
    import shared.controls.CustomButton;
@@ -75,6 +76,15 @@ package tibia.prey
          }
       }
       
+      protected function onPreyManagerDataChanged(param1:PropertyChangeEvent) : void
+      {
+         if(param1.property == "*" || param1.property == "bonusRerollAmount")
+         {
+            this.m_UncommittedResources = true;
+            invalidateProperties();
+         }
+      }
+      
       override public function hide(param1:Boolean = false) : void
       {
          var _loc2_:PreyView = null;
@@ -116,13 +126,14 @@ package tibia.prey
          IngameShopManager.getInstance().openShopWindow(true,IngameShopProduct.SERVICE_TYPE_PREY);
       }
       
-      protected function onPreyManagerDataChanged(param1:PropertyChangeEvent) : void
+      public function showMessageDialog(param1:String) : void
       {
-         if(param1.property == "*" || param1.property == "bonusRerollAmount")
-         {
-            this.m_UncommittedResources = true;
-            invalidateProperties();
-         }
+         var _loc2_:EmbeddedDialog = null;
+         _loc2_ = new EmbeddedDialog();
+         _loc2_.title = resourceManager.getString(BUNDLE,"PREY_TITLE");
+         _loc2_.text = param1;
+         _loc2_.buttonFlags = EmbeddedDialog.OKAY;
+         embeddedDialog = _loc2_;
       }
       
       override protected function createChildren() : void

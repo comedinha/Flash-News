@@ -5,7 +5,6 @@ package tibia.imbuing.imbuingWidgetClasses
    import flash.display.Bitmap;
    import tibia.imbuing.AstralSource;
    import tibia.imbuing.ImbuingManager;
-   import shared.utility.i18n.i18nFormatMinutesToCompactDayHourMinutesTimeString;
    import tibia.imbuing.ImbuementData;
    import mx.controls.ComboBox;
    import flash.events.MouseEvent;
@@ -31,6 +30,7 @@ package tibia.imbuing.imbuingWidgetClasses
    import tibia.ingameshop.IngameShopProduct;
    import tibia.appearances.widgetClasses.SimpleAppearanceRenderer;
    import tibia.imbuing.ExistingImbuement;
+   import shared.utility.i18n.i18nFormatMinutesToCompactDayHourMinutesTimeString;
    
    public class ImbuementInformationPane extends HBox
    {
@@ -104,18 +104,16 @@ package tibia.imbuing.imbuingWidgetClasses
       
       protected function updateEmptySlotImbuingInfos() : void
       {
-         var _loc2_:String = null;
-         var _loc3_:Boolean = false;
-         var _loc4_:uint = 0;
+         var _loc2_:Boolean = false;
+         var _loc3_:uint = 0;
+         var _loc4_:AstralSource = null;
          var _loc5_:AstralSource = null;
-         var _loc6_:AstralSource = null;
-         var _loc7_:uint = 0;
+         var _loc6_:uint = 0;
          var _loc1_:ImbuingManager = ImbuingManager.getInstance();
          this.m_UITitleLabel.text = resourceManager.getString(BUNDLE,"LBL_IMBUE_EMPTY_SLOT");
          if(this.m_ImbuementData != null)
          {
-            _loc2_ = resourceManager.getString(BUNDLE,"LBL_IMBUEMENT_DURATION",[i18nFormatMinutesToCompactDayHourMinutesTimeString(this.m_ImbuementData.durationInSeconds / 60)]);
-            this.m_UIDescriptionLabel.text = this.m_ImbuementData.description + "\n" + _loc2_;
+            this.m_UIDescriptionLabel.text = this.m_ImbuementData.description;
             this.m_UIDescriptionLabel.toolTip = this.m_UIDescriptionLabel.text;
             if(this.m_ImbuementData.protectionGoldCost > this.m_CurrentBalance)
             {
@@ -128,26 +126,26 @@ package tibia.imbuing.imbuingWidgetClasses
                this.m_UIProtectionCharmButton.currencyView.notEnoughCurrency = false;
             }
             this.m_UIProtectionCharmButton.currencyView.currentCurrency = this.m_ImbuementData.protectionGoldCost;
-            _loc3_ = true;
-            _loc4_ = 0;
-            while(_loc4_ < this.m_UIAstralSourceAmountWidgets.length)
+            _loc2_ = true;
+            _loc3_ = 0;
+            while(_loc3_ < this.m_UIAstralSourceAmountWidgets.length)
             {
-               if(_loc4_ < this.m_ImbuementData.astralSources.length)
+               if(_loc3_ < this.m_ImbuementData.astralSources.length)
                {
-                  _loc5_ = this.m_ImbuementData.astralSources[_loc4_];
-                  _loc6_ = _loc1_.getAvailableAstralSource(_loc5_.apperanceTypeID);
-                  _loc7_ = _loc6_ == null?uint(0):uint(_loc6_.objectCount);
-                  if(_loc7_ < _loc5_.objectCount)
+                  _loc4_ = this.m_ImbuementData.astralSources[_loc3_];
+                  _loc5_ = _loc1_.getAvailableAstralSource(_loc4_.apperanceTypeID);
+                  _loc6_ = _loc5_ == null?uint(0):uint(_loc5_.objectCount);
+                  if(_loc6_ < _loc4_.objectCount)
                   {
-                     _loc3_ = false;
+                     _loc2_ = false;
                   }
-                  this.m_UIAstralSourceAmountWidgets[_loc4_].refreshData(_loc5_.apperanceTypeID,_loc7_,_loc5_.objectCount);
+                  this.m_UIAstralSourceAmountWidgets[_loc3_].refreshData(_loc4_.apperanceTypeID,_loc6_,_loc4_.objectCount);
                }
                else
                {
-                  this.m_UIAstralSourceAmountWidgets[_loc4_].clear();
+                  this.m_UIAstralSourceAmountWidgets[_loc3_].clear();
                }
-               _loc4_++;
+               _loc3_++;
             }
             this.m_UISuccessRate.text = resourceManager.getString(BUNDLE,"SUCCESS_RATE_VALUE",[this.successRatePercent]);
             if(this.successRatePercent == 100)
@@ -162,7 +160,9 @@ package tibia.imbuing.imbuingWidgetClasses
             {
                this.m_UISuccessRate.styleName = "successRate";
             }
-            this.m_UIImbueButton.button.enabled = this.m_CurrentBalance >= this.completeGoldCost && _loc3_ && (this.m_ImbuementData.premiumOnly == false || this.m_ImbuementData.premiumOnly == true && this.playerIsPremium);
+            this.m_UIImbueButton.visible = true;
+            this.m_UIImbueButton.includeInLayout = true;
+            this.m_UIImbueButton.button.enabled = this.m_CurrentBalance >= this.completeGoldCost && _loc2_ && (this.m_ImbuementData.premiumOnly == false || this.m_ImbuementData.premiumOnly == true && this.playerIsPremium);
             this.m_UIImbueButton.currencyView.notEnoughCurrency = this.completeGoldCost > this.m_CurrentBalance;
             this.m_UIImbueButton.currencyView.currentCurrency = this.completeGoldCost;
             this.m_UIPremiumOnly.visible = this.m_ImbuementData.premiumOnly;
@@ -250,30 +250,7 @@ package tibia.imbuing.imbuingWidgetClasses
          var _loc2_:Vector.<String> = null;
          var _loc3_:Array = null;
          var _loc4_:String = null;
-         if(this.m_ExistingImbuement == null || this.m_ExistingImbuement.empty)
-         {
-            _loc1_ = ImbuingManager.getInstance();
-            _loc2_ = _loc1_.imbuementCategories;
-            _loc3_ = [];
-            for each(_loc4_ in _loc2_)
-            {
-               _loc3_.push({
-                  "value":_loc4_,
-                  "label":_loc4_
-               });
-            }
-            this.m_UICategorySelection.dataProvider = _loc3_;
-            if(this.m_ImbuementData != null)
-            {
-               this.selectItemInComboBoxes(this.m_ImbuementData);
-            }
-            else
-            {
-               this.updateImbuementsForCategory(_loc2_[0]);
-               this.updateViewWithSelectedImbuement();
-            }
-         }
-         else
+         if(this.m_ExistingImbuement != null && this.m_ExistingImbuement.empty == false)
          {
             this.m_UICategorySelection.dataProvider = [{
                "value":this.m_ExistingImbuement.imbuementData.category,
@@ -283,6 +260,43 @@ package tibia.imbuing.imbuingWidgetClasses
                "value":this.m_ExistingImbuement.imbuementData.imbuementID,
                "label":this.m_ExistingImbuement.imbuementData.name
             }];
+         }
+         else
+         {
+            _loc1_ = ImbuingManager.getInstance();
+            _loc2_ = _loc1_.imbuementCategories;
+            if(_loc2_.length == 0)
+            {
+               this.m_UICategorySelection.dataProvider = [{
+                  "value":"-",
+                  "label":"-"
+               }];
+               this.m_UIImbuementSelection.dataProvider = [{
+                  "value":0,
+                  "label":"-"
+               }];
+            }
+            else
+            {
+               _loc3_ = [];
+               for each(_loc4_ in _loc2_)
+               {
+                  _loc3_.push({
+                     "value":_loc4_,
+                     "label":_loc4_
+                  });
+               }
+               this.m_UICategorySelection.dataProvider = _loc3_;
+               if(this.m_ImbuementData != null)
+               {
+                  this.selectItemInComboBoxes(this.m_ImbuementData);
+               }
+               else
+               {
+                  this.updateImbuementsForCategory(_loc2_[0]);
+               }
+               this.updateViewWithSelectedImbuement();
+            }
          }
       }
       
@@ -525,9 +539,13 @@ package tibia.imbuing.imbuingWidgetClasses
          {
             this.m_ImbuementData = _loc1_.getAvailableImbuementWithID(uint(this.m_UIImbuementSelection.selectedItem.value));
             this.m_UIProtectionCharmButton.button.selected = false;
-            this.m_UncommittedImbuementData = true;
-            invalidateProperties();
          }
+         else
+         {
+            this.m_ImbuementData = null;
+         }
+         this.m_UncommittedImbuementData = true;
+         invalidateProperties();
       }
       
       protected function onPremiumOnlyButtonClicked(param1:MouseEvent) : void
@@ -563,6 +581,11 @@ package tibia.imbuing.imbuingWidgetClasses
             {
                if(param1.currentTarget == this.m_UIAstralSourceAmountWidgets[_loc3_])
                {
+                  if(this.m_ImbuementData == null)
+                  {
+                     this.sendTooltipEvent(null);
+                     return;
+                  }
                   if(_loc3_ < this.m_ImbuementData.astralSources.length)
                   {
                      _loc4_ = this.m_ImbuementData.astralSources[_loc3_];
@@ -631,6 +654,25 @@ package tibia.imbuing.imbuingWidgetClasses
          }
       }
       
+      protected function updateNoImbuementImbuingInfos() : void
+      {
+         this.m_UITitleLabel.text = resourceManager.getString(BUNDLE,"LBL_IMBUE_EMPTY_SLOT");
+         this.m_UIDescriptionLabel.text = resourceManager.getString(BUNDLE,"NO_IMBUEMENT_AVAILABLE");
+         this.m_UIDescriptionLabel.toolTip = "";
+         this.m_UIPremiumOnly.visible = false;
+         this.m_UICategorySelection.enabled = false;
+         this.m_UIImbuementSelection.enabled = false;
+         this.m_UIAstralSourcesBox.visible = false;
+         this.m_UIAstralSourcesBox.includeInLayout = false;
+         this.m_UIArrowImageBox.visible = false;
+         this.m_UIProgressBarBox.visible = false;
+         this.m_UIProgressBarBox.includeInLayout = false;
+         this.m_UIImbueButton.visible = false;
+         this.m_UIImbueButton.includeInLayout = false;
+         this.m_UILeftTitleLabel.visible = false;
+         this.m_UIRightTitleLabel.visible = false;
+      }
+      
       protected function updateImbuementsForCategory(param1:String) : void
       {
          var _loc2_:ImbuingManager = null;
@@ -697,13 +739,17 @@ package tibia.imbuing.imbuingWidgetClasses
          super.commitProperties();
          if(this.m_UncommittedImbuementData)
          {
-            if(this.m_ExistingImbuement == null || this.m_ExistingImbuement.imbuementData == null)
+            if(this.m_ExistingImbuement != null && this.m_ExistingImbuement.imbuementData != null)
+            {
+               this.updateImbuedSlotImbuingInfos();
+            }
+            else if(this.m_ImbuementData != null)
             {
                this.updateEmptySlotImbuingInfos();
             }
             else
             {
-               this.updateImbuedSlotImbuingInfos();
+               this.updateNoImbuementImbuingInfos();
             }
          }
          if(this.m_UncommittedCurrentCurrency)
@@ -739,12 +785,13 @@ package tibia.imbuing.imbuingWidgetClasses
       {
          var _loc1_:ImbuingManager = ImbuingManager.getInstance();
          this.m_UITitleLabel.text = resourceManager.getString(BUNDLE,"LBL_CLEAR_IMBUED_SLOT",[this.m_ExistingImbuement.imbuementData.name]);
-         var _loc2_:String = resourceManager.getString(BUNDLE,"LBL_IMBUEMENT_DURATION",[i18nFormatMinutesToCompactDayHourMinutesTimeString(this.m_ExistingImbuement.imbuementData.durationInSeconds / 60)]);
-         this.m_UIDescriptionLabel.text = this.m_ExistingImbuement.imbuementData.description + "\n" + _loc2_;
+         this.m_UIDescriptionLabel.text = this.m_ExistingImbuement.imbuementData.description;
          this.m_UIDescriptionLabel.toolTip = this.m_UIDescriptionLabel.text;
          this.m_UIPremiumOnly.visible = false;
          this.m_UICategorySelection.enabled = false;
          this.m_UIImbuementSelection.enabled = false;
+         this.m_UIImbueButton.visible = true;
+         this.m_UIImbueButton.includeInLayout = true;
          this.m_UIImbueButton.currencyView.currentCurrency = this.m_ExistingImbuement.clearingGoldCost;
          if(this.m_UIImbueButton.currencyView.currentCurrency > this.m_CurrentBalance)
          {

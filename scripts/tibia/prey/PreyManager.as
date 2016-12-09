@@ -49,20 +49,20 @@ package tibia.prey
          return s_Instance;
       }
       
-      public function changeStateToSelectionChangeMonster(param1:uint, param2:uint, param3:uint, param4:Vector.<PreyMonsterInformation>) : void
+      public function changeStateToSelectionChangeMonster(param1:uint, param2:uint, param3:uint, param4:uint, param5:Vector.<PreyMonsterInformation>) : void
       {
          if(param1 < this.m_Preys.length)
          {
-            this.m_Preys[param1].changeStateToSelectionChangeMonster(param2,param3,param4);
+            this.m_Preys[param1].changeStateToSelectionChangeMonster(param2,param3,param4,param5);
             this.setInformationAvailable(param1);
          }
       }
       
-      public function changeStateToActive(param1:uint, param2:uint, param3:uint, param4:PreyMonsterInformation) : void
+      public function changeStateToActive(param1:uint, param2:uint, param3:uint, param4:uint, param5:PreyMonsterInformation) : void
       {
          if(param1 < this.m_Preys.length)
          {
-            this.m_Preys[param1].changeStateToActive(param2,param3,param4);
+            this.m_Preys[param1].changeStateToActive(param2,param3,param4,param5);
             this.setInformationAvailable(param1);
          }
       }

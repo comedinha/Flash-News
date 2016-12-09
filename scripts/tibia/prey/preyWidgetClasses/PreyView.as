@@ -299,7 +299,7 @@ package tibia.prey.preyWidgetClasses
          {
             this.m_UncommittedState = true;
          }
-         else if(param1.property == "bonusType" || param1.property == "bonusValue")
+         else if(param1.property == "bonusType" || param1.property == "bonusValue" || param1.property == "bonusGrade")
          {
             this.m_UncommittedBonus = true;
          }
@@ -372,7 +372,7 @@ package tibia.prey.preyWidgetClasses
       
       protected function updatePreyBonus() : void
       {
-         this.m_UIMonsterDisplay.setBonus(this.prey.bonusType,this.prey.bonusValue);
+         this.m_UIMonsterDisplay.setBonus(this.prey.bonusType,this.prey.bonusValue,this.prey.bonusGrade);
       }
       
       protected function updatePreyState() : void
@@ -398,6 +398,7 @@ package tibia.prey.preyWidgetClasses
          this.m_UIUnlockWithPremiumButton.includeInLayout = _loc1_.state == PreyData.STATE_LOCKED;
          this.m_UILockedSpacer.visible = this.m_UILockedSpacer.includeInLayout = this.m_UIUnlockWithCoinsButton.visible;
          this.updateTitleString();
+         this.updateResourceDisplayElements();
          this.m_UIRerollMonsterListButton.styleName = !this.isInactive?"preyRerollListButton":"preyRerollListButtonReactivate";
          this.m_UIRerollMonsterListButtonSmall.styleName = !this.isInactive?"preyRerollListButtonSmall":"preyRerollListButtonReactivateSmall";
       }
@@ -537,7 +538,7 @@ package tibia.prey.preyWidgetClasses
             }
             else
             {
-               _loc2_ = resourceManager.getString(BUNDLE,"HELP_PREYDESCRIPTION",[this.prey.monster.monsterName,StringHelper.s_MillisecondsToTimeString(this.prey.preyTimeLeft * 60 * 1000,false).slice(0,-3),this.prey.bonusValue,this.prey.generateBonusString(),this.prey.generateBonusDescription()]);
+               _loc2_ = resourceManager.getString(BUNDLE,"HELP_PREYDESCRIPTION",[this.prey.monster.monsterName,StringHelper.s_MillisecondsToTimeString(this.prey.preyTimeLeft * 60 * 1000,false).slice(0,-3),this.prey.generateBonusGradeString(),this.prey.generateBonusString(),this.prey.generateBonusDescription()]);
             }
          }
          else if(param1.currentTarget == this.m_UIUnlockWithCoinsButton)
