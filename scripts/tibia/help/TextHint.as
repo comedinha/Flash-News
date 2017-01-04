@@ -1,20 +1,20 @@
 package tibia.help
 {
-   import mx.core.UIComponent;
-   import shared.utility.Colour;
-   import mx.effects.Fade;
-   import flash.text.TextField;
-   import mx.events.EffectEvent;
    import flash.events.Event;
-   import mx.effects.Pause;
-   import flash.geom.Point;
-   import mx.effects.Parallel;
-   import mx.effects.SetPropertyAction;
-   import mx.effects.Sequence;
-   import flash.text.TextFieldAutoSize;
-   import flash.filters.GlowFilter;
    import flash.filters.BitmapFilterQuality;
+   import flash.filters.GlowFilter;
+   import flash.geom.Point;
+   import flash.text.TextField;
+   import flash.text.TextFieldAutoSize;
    import flash.text.TextFormat;
+   import mx.core.UIComponent;
+   import mx.effects.Fade;
+   import mx.effects.Parallel;
+   import mx.effects.Pause;
+   import mx.effects.Sequence;
+   import mx.effects.SetPropertyAction;
+   import mx.events.EffectEvent;
+   import shared.utility.Colour;
    
    public class TextHint extends UIComponent
    {

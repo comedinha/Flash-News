@@ -14,7 +14,7 @@ package shared.utility
       
       private var m_ItemSequenceNumber:int = -2.147483647E9;
       
-      private var m_ItemQueue:shared.utility.Heap = null;
+      private var m_ItemQueue:Heap = null;
       
       private var m_SlotList:Vector.<int> = null;
       
@@ -33,7 +33,7 @@ package shared.utility
          this.m_SlotRows = Math.ceil(param3 / this.m_SlotColumns);
          super(this.m_SlotColumns * this.m_SlotWidth,this.m_SlotRows * this.m_SlotHeight,true,0);
          this.m_ItemDictionary = new Dictionary(true);
-         this.m_ItemQueue = new shared.utility.Heap();
+         this.m_ItemQueue = new Heap();
          this.m_SlotList = new Vector.<int>(this.m_SlotColumns * this.m_SlotRows);
          var _loc4_:int = 0;
          var _loc5_:int = this.m_SlotList.length;

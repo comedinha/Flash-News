@@ -1,11 +1,11 @@
 package tibia.chat
 {
-   import shared.utility.XMLHelper;
-   import tibia.options.ns_options_internal;
-   import mx.collections.IList;
-   import tibia.options.OptionsStorage;
-   import tibia.creatures.BuddySet;
    import mx.collections.ArrayCollection;
+   import mx.collections.IList;
+   import shared.utility.XMLHelper;
+   import tibia.creatures.BuddySet;
+   import tibia.options.OptionsStorage;
+   import tibia.options.ns_options_internal;
    
    public class NameFilterSet
    {

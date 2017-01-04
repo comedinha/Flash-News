@@ -1,28 +1,28 @@
 package mx.resources
 {
+   import flash.events.Event;
    import flash.events.EventDispatcher;
-   import mx.core.mx_internal;
-   import mx.utils.StringUtil;
-   import flash.system.ApplicationDomain;
    import flash.events.IEventDispatcher;
+   import flash.events.TimerEvent;
+   import flash.system.ApplicationDomain;
+   import flash.system.Capabilities;
    import flash.system.SecurityDomain;
    import flash.utils.Timer;
-   import mx.modules.IModuleInfo;
-   import mx.modules.ModuleManager;
+   import mx.core.mx_internal;
    import mx.events.ModuleEvent;
    import mx.events.ResourceEvent;
-   import flash.events.TimerEvent;
-   import flash.events.Event;
-   import flash.system.Capabilities;
+   import mx.modules.IModuleInfo;
+   import mx.modules.ModuleManager;
+   import mx.utils.StringUtil;
    
    use namespace mx_internal;
    
-   public class ResourceManagerImpl extends EventDispatcher implements mx.resources.IResourceManager
+   public class ResourceManagerImpl extends EventDispatcher implements IResourceManager
    {
       
       mx_internal static const VERSION:String = "3.6.0.21751";
       
-      private static var instance:mx.resources.IResourceManager;
+      private static var instance:IResourceManager;
        
       
       private var resourceModules:Object;
@@ -40,7 +40,7 @@ package mx.resources
          super();
       }
       
-      public static function getInstance() : mx.resources.IResourceManager
+      public static function getInstance() : IResourceManager
       {
          if(!instance)
          {
@@ -488,8 +488,8 @@ package mx.resources
    }
 }
 
-import mx.resources.IResourceModule;
 import mx.modules.IModuleInfo;
+import mx.resources.IResourceModule;
 
 class ResourceModuleInfo
 {

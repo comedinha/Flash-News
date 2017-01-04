@@ -1,25 +1,25 @@
 package tibia.market
 {
+   import flash.display.DisplayObjectContainer;
+   import flash.events.Event;
+   import flash.events.TimerEvent;
+   import flash.utils.Timer;
+   import mx.containers.TabNavigator;
+   import mx.events.IndexChangedEvent;
+   import shared.controls.EmbeddedDialog;
+   import shared.controls.SimpleTabNavigator;
+   import tibia.appearances.AppearanceStorage;
+   import tibia.appearances.AppearanceType;
+   import tibia.container.InventoryTypeInfo;
    import tibia.game.PopUpBase;
+   import tibia.ingameshop.IngameShopEvent;
+   import tibia.ingameshop.IngameShopManager;
    import tibia.market.marketWidgetClasses.ITypeComponent;
    import tibia.market.marketWidgetClasses.IViewContainer;
-   import tibia.appearances.AppearanceStorage;
-   import tibia.ingameshop.IngameShopEvent;
-   import flash.events.Event;
-   import tibia.network.Communication;
-   import mx.containers.TabNavigator;
-   import tibia.appearances.AppearanceType;
-   import shared.controls.SimpleTabNavigator;
-   import mx.events.IndexChangedEvent;
    import tibia.market.marketWidgetClasses.MarketTab;
    import tibia.market.marketWidgetClasses.OwnTab;
-   import shared.controls.EmbeddedDialog;
+   import tibia.network.Communication;
    import tibia.options.OptionsStorage;
-   import flash.utils.Timer;
-   import flash.display.DisplayObjectContainer;
-   import flash.events.TimerEvent;
-   import tibia.container.InventoryTypeInfo;
-   import tibia.ingameshop.IngameShopManager;
    
    public class MarketWidget extends PopUpBase implements ITypeComponent, IViewContainer
    {

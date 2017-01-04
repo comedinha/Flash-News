@@ -1,8 +1,8 @@
 package mx.effects.effectClasses
 {
-   import mx.core.mx_internal;
    import flash.events.Event;
    import flash.filters.BlurFilter;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

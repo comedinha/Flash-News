@@ -1,12 +1,12 @@
 package loader.asset
 {
    import flash.events.IEventDispatcher;
-   import tibia.game.GameBinaryAsset;
    import tibia.appearances.AppearancesAsset;
    import tibia.game.AssetBase;
+   import tibia.game.GameBinaryAsset;
+   import tibia.game.SpritesAsset;
    import tibia.options.OptionsAsset;
    import tibia.sessiondump.SessiondumpAsset;
-   import tibia.game.SpritesAsset;
    
    public interface IAssetProvider extends IEventDispatcher
    {

@@ -1,10 +1,10 @@
 package tibia.controls
 {
    import flash.events.MouseEvent;
-   import tibia.options.OptionsStorage;
-   import mx.events.PropertyChangeEvent;
    import mx.controls.Button;
+   import mx.events.PropertyChangeEvent;
    import shared.controls.CustomButton;
+   import tibia.options.OptionsStorage;
    
    public class GameWindowContainer extends GridContainer
    {

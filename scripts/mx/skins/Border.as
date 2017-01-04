@@ -1,8 +1,8 @@
 package mx.skins
 {
+   import mx.core.EdgeMetrics;
    import mx.core.IBorder;
    import mx.core.mx_internal;
-   import mx.core.EdgeMetrics;
    
    use namespace mx_internal;
    

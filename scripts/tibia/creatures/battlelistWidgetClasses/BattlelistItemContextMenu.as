@@ -1,19 +1,19 @@
 package tibia.creatures.battlelistWidgetClasses
 {
-   import tibia.game.ContextMenuBase;
-   import tibia.creatures.CreatureStorage;
    import flash.events.MouseEvent;
-   import tibia.creatures.Creature;
+   import flash.system.System;
    import mx.core.IUIComponent;
-   import tibia.input.gameaction.PartyActionImpl;
-   import tibia.input.gameaction.PrivateChatActionImpl;
+   import shared.utility.closure;
+   import tibia.creatures.Creature;
+   import tibia.creatures.CreatureStorage;
+   import tibia.game.ContextMenuBase;
    import tibia.input.gameaction.BuddylistActionImpl;
    import tibia.input.gameaction.NameFilterActionImpl;
-   import tibia.reporting.reportType.Type;
-   import tibia.reporting.ReportWidget;
-   import flash.system.System;
-   import shared.utility.closure;
+   import tibia.input.gameaction.PartyActionImpl;
+   import tibia.input.gameaction.PrivateChatActionImpl;
    import tibia.options.OptionsStorage;
+   import tibia.reporting.ReportWidget;
+   import tibia.reporting.reportType.Type;
    
    public class BattlelistItemContextMenu extends ContextMenuBase
    {

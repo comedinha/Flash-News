@@ -1,7 +1,7 @@
 package mx.controls.dataGridClasses
 {
-   import mx.controls.listClasses.ListBaseContentHolder;
    import mx.controls.listClasses.ListBase;
+   import mx.controls.listClasses.ListBaseContentHolder;
    
    public class DataGridLockedRowContentHolder extends ListBaseContentHolder
    {

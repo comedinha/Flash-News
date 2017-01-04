@@ -1,30 +1,30 @@
 package mx.managers.dragClasses
 {
-   import mx.core.UIComponent;
-   import mx.core.mx_internal;
    import flash.display.DisplayObject;
-   import flash.geom.Point;
    import flash.display.DisplayObjectContainer;
    import flash.display.InteractiveObject;
+   import flash.events.Event;
    import flash.events.IEventDispatcher;
+   import flash.events.KeyboardEvent;
    import flash.events.MouseEvent;
-   import mx.events.DragEvent;
+   import flash.geom.Point;
+   import mx.core.DragSource;
+   import mx.core.IUIComponent;
+   import mx.core.UIComponent;
+   import mx.core.mx_internal;
    import mx.effects.Move;
    import mx.effects.Zoom;
-   import mx.managers.ISystemManager;
-   import flash.events.KeyboardEvent;
-   import mx.events.SandboxMouseEvent;
-   import mx.managers.DragManager;
+   import mx.events.DragEvent;
    import mx.events.EffectEvent;
-   import mx.managers.CursorManager;
-   import mx.managers.SystemManager;
-   import mx.events.InterManagerRequest;
-   import mx.styles.StyleManager;
-   import mx.styles.CSSStyleDeclaration;
-   import mx.core.IUIComponent;
-   import flash.events.Event;
    import mx.events.InterDragManagerEvent;
-   import mx.core.DragSource;
+   import mx.events.InterManagerRequest;
+   import mx.events.SandboxMouseEvent;
+   import mx.managers.CursorManager;
+   import mx.managers.DragManager;
+   import mx.managers.ISystemManager;
+   import mx.managers.SystemManager;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.StyleManager;
    
    use namespace mx_internal;
    

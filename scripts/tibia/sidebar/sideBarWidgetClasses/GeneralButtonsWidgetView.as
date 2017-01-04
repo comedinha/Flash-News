@@ -1,11 +1,11 @@
 package tibia.sidebar.sideBarWidgetClasses
 {
-   import mx.controls.Button;
    import flash.events.MouseEvent;
+   import mx.controls.Button;
+   import mx.core.ScrollPolicy;
+   import shared.controls.CustomButton;
    import tibia.input.staticaction.StaticActionList;
    import tibia.premium.PremiumManager;
-   import shared.controls.CustomButton;
-   import mx.core.ScrollPolicy;
    
    public class GeneralButtonsWidgetView extends WidgetView
    {

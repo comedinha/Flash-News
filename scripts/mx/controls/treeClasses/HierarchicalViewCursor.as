@@ -1,13 +1,13 @@
 package mx.controls.treeClasses
 {
    import flash.events.EventDispatcher;
+   import flash.utils.Dictionary;
+   import mx.collections.CursorBookmark;
+   import mx.collections.ICollectionView;
    import mx.collections.IViewCursor;
    import mx.core.mx_internal;
-   import mx.collections.ICollectionView;
    import mx.events.CollectionEvent;
-   import flash.utils.Dictionary;
    import mx.events.CollectionEventKind;
-   import mx.collections.CursorBookmark;
    
    use namespace mx_internal;
    
@@ -21,7 +21,7 @@ package mx.controls.treeClasses
       
       private var openNodes:Object;
       
-      private var collection:mx.controls.treeClasses.HierarchicalCollectionView;
+      private var collection:HierarchicalCollectionView;
       
       private var childIndexStack:Array;
       
@@ -31,7 +31,7 @@ package mx.controls.treeClasses
       
       private var model:ICollectionView;
       
-      private var dataDescriptor:mx.controls.treeClasses.ITreeDataDescriptor;
+      private var dataDescriptor:ITreeDataDescriptor;
       
       private var more:Boolean;
       
@@ -43,7 +43,7 @@ package mx.controls.treeClasses
       
       private var currentChildIndex:int = 0;
       
-      public function HierarchicalViewCursor(param1:mx.controls.treeClasses.HierarchicalCollectionView, param2:ICollectionView, param3:mx.controls.treeClasses.ITreeDataDescriptor, param4:Function, param5:Object)
+      public function HierarchicalViewCursor(param1:HierarchicalCollectionView, param2:ICollectionView, param3:ITreeDataDescriptor, param4:Function, param5:Object)
       {
          childNodes = [];
          parentNodes = [];

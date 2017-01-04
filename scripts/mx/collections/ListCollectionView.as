@@ -1,25 +1,25 @@
 package mx.collections
 {
+   import flash.events.Event;
+   import flash.events.EventDispatcher;
    import flash.utils.Proxy;
+   import flash.utils.flash_proxy;
+   import flash.utils.getQualifiedClassName;
+   import mx.collections.errors.CollectionViewError;
+   import mx.collections.errors.ItemPendingError;
+   import mx.collections.errors.SortError;
    import mx.core.IMXMLObject;
    import mx.core.mx_internal;
    import mx.events.CollectionEvent;
    import mx.events.CollectionEventKind;
    import mx.events.PropertyChangeEvent;
-   import mx.collections.errors.CollectionViewError;
-   import flash.utils.flash_proxy;
-   import flash.events.Event;
    import mx.resources.IResourceManager;
-   import flash.events.EventDispatcher;
-   import mx.collections.errors.ItemPendingError;
-   import mx.collections.errors.SortError;
-   import mx.utils.ObjectUtil;
-   import flash.utils.getQualifiedClassName;
    import mx.resources.ResourceManager;
+   import mx.utils.ObjectUtil;
    
    use namespace mx_internal;
    
-   public class ListCollectionView extends Proxy implements ICollectionView, mx.collections.IList, IMXMLObject
+   public class ListCollectionView extends Proxy implements ICollectionView, IList, IMXMLObject
    {
       
       mx_internal static const VERSION:String = "3.6.0.21751";
@@ -27,7 +27,7 @@ package mx.collections
       
       private var autoUpdateCounter:int;
       
-      private var _list:mx.collections.IList;
+      private var _list:IList;
       
       private var _filterFunction:Function;
       
@@ -43,9 +43,9 @@ package mx.collections
       
       private var revision:int;
       
-      private var _sort:mx.collections.Sort;
+      private var _sort:Sort;
       
-      public function ListCollectionView(param1:mx.collections.IList = null)
+      public function ListCollectionView(param1:IList = null)
       {
          resourceManager = ResourceManager.getInstance();
          super();
@@ -242,7 +242,7 @@ package mx.collections
          return index >= 0 && index < length;
       }
       
-      public function addAllAt(param1:mx.collections.IList, param2:int) : void
+      public function addAllAt(param1:IList, param2:int) : void
       {
          var _loc3_:int = param1.length;
          var _loc4_:int = 0;
@@ -340,7 +340,7 @@ package mx.collections
       }
       
       [Bindable("sortChanged")]
-      public function get sort() : mx.collections.Sort
+      public function get sort() : Sort
       {
          return _sort;
       }
@@ -380,7 +380,7 @@ package mx.collections
       }
       
       [Bindable("listChanged")]
-      public function get list() : mx.collections.IList
+      public function get list() : IList
       {
          return _list;
       }
@@ -540,7 +540,7 @@ package mx.collections
          }
       }
       
-      public function set sort(param1:mx.collections.Sort) : void
+      public function set sort(param1:Sort) : void
       {
          _sort = param1;
          dispatchEvent(new Event("sortChanged"));
@@ -618,7 +618,7 @@ package mx.collections
                {
                   if(sort)
                   {
-                     _loc7_ = findItem(_loc9_,mx.collections.Sort.ANY_INDEX_MODE,true);
+                     _loc7_ = findItem(_loc9_,Sort.ANY_INDEX_MODE,true);
                      if(_loc6_)
                      {
                         _loc5_ = _loc7_;
@@ -664,12 +664,12 @@ package mx.collections
          return _loc5_;
       }
       
-      public function addAll(param1:mx.collections.IList) : void
+      public function addAll(param1:IList) : void
       {
          addAllAt(param1,length);
       }
       
-      public function set list(param1:mx.collections.IList) : void
+      public function set list(param1:IList) : void
       {
          var _loc2_:* = false;
          var _loc3_:* = false;
@@ -712,12 +712,12 @@ package mx.collections
          var _loc5_:int = 0;
          if(sort)
          {
-            _loc3_ = sort.findItem(localIndex,param1,mx.collections.Sort.FIRST_INDEX_MODE);
+            _loc3_ = sort.findItem(localIndex,param1,Sort.FIRST_INDEX_MODE);
             if(_loc3_ == -1)
             {
                return -1;
             }
-            _loc4_ = sort.findItem(localIndex,param1,mx.collections.Sort.LAST_INDEX_MODE);
+            _loc4_ = sort.findItem(localIndex,param1,Sort.LAST_INDEX_MODE);
             _loc2_ = _loc3_;
             while(_loc2_ <= _loc4_)
             {
@@ -1084,8 +1084,8 @@ package mx.collections
 }
 
 import mx.collections.CursorBookmark;
-import mx.core.mx_internal;
 import mx.collections.ListCollectionView;
+import mx.core.mx_internal;
 
 use namespace mx_internal;
 
@@ -1114,20 +1114,20 @@ class ListCollectionViewBookmark extends CursorBookmark
 }
 
 import flash.events.EventDispatcher;
+import mx.collections.CursorBookmark;
+import mx.collections.ICollectionView;
 import mx.collections.IViewCursor;
 import mx.collections.ListCollectionView;
-import mx.collections.errors.SortError;
 import mx.collections.Sort;
-import mx.core.mx_internal;
+import mx.collections.errors.CollectionViewError;
 import mx.collections.errors.CursorError;
 import mx.collections.errors.ItemPendingError;
-import mx.resources.IResourceManager;
-import mx.events.FlexEvent;
-import mx.collections.CursorBookmark;
-import mx.collections.errors.CollectionViewError;
+import mx.collections.errors.SortError;
+import mx.core.mx_internal;
 import mx.events.CollectionEvent;
 import mx.events.CollectionEventKind;
-import mx.collections.ICollectionView;
+import mx.events.FlexEvent;
+import mx.resources.IResourceManager;
 import mx.resources.ResourceManager;
 
 use namespace mx_internal;

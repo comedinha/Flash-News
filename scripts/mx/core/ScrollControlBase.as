@@ -1,20 +1,20 @@
 package mx.core
 {
-   import flash.events.Event;
-   import mx.controls.ToolTip;
    import flash.display.DisplayObject;
-   import flash.display.Shape;
-   import mx.events.ScrollEvent;
-   import mx.controls.scrollClasses.ScrollBar;
-   import mx.controls.HScrollBar;
    import flash.display.Graphics;
-   import mx.controls.VScrollBar;
-   import mx.styles.ISimpleStyleClient;
+   import flash.display.Shape;
+   import flash.events.Event;
    import flash.events.MouseEvent;
-   import mx.events.ScrollEventDirection;
    import flash.geom.Point;
+   import mx.controls.HScrollBar;
+   import mx.controls.ToolTip;
+   import mx.controls.VScrollBar;
+   import mx.controls.scrollClasses.ScrollBar;
+   import mx.events.ScrollEvent;
    import mx.events.ScrollEventDetail;
+   import mx.events.ScrollEventDirection;
    import mx.managers.ToolTipManager;
+   import mx.styles.ISimpleStyleClient;
    
    use namespace mx_internal;
    
@@ -40,9 +40,9 @@ package mx.core
       
       mx_internal var _maxHorizontalScrollPosition:Number;
       
-      protected var border:mx.core.IFlexDisplayObject;
+      protected var border:IFlexDisplayObject;
       
-      private var _viewMetrics:mx.core.EdgeMetrics;
+      private var _viewMetrics:EdgeMetrics;
       
       mx_internal var _maxVerticalScrollPosition:Number;
       
@@ -75,7 +75,7 @@ package mx.core
       public function ScrollControlBase()
       {
          super();
-         _viewMetrics = mx.core.EdgeMetrics.EMPTY;
+         _viewMetrics = EdgeMetrics.EMPTY;
          addEventListener(MouseEvent.MOUSE_WHEEL,mouseWheelHandler);
       }
       
@@ -111,7 +111,7 @@ package mx.core
          var _loc3_:Number = param1;
          var _loc4_:Number = param2;
          invLayout = false;
-         var _loc5_:mx.core.EdgeMetrics = _viewMetrics = viewMetrics;
+         var _loc5_:EdgeMetrics = _viewMetrics = viewMetrics;
          if(horizontalScrollBar && horizontalScrollBar.visible)
          {
             horizontalScrollBar.setActualSize(_loc3_ - _loc5_.left - _loc5_.right,horizontalScrollBar.minHeight);
@@ -254,7 +254,7 @@ package mx.core
       
       protected function roomForScrollBar(param1:ScrollBar, param2:Number, param3:Number) : Boolean
       {
-         var _loc4_:mx.core.EdgeMetrics = borderMetrics;
+         var _loc4_:EdgeMetrics = borderMetrics;
          return param2 >= param1.minWidth + _loc4_.left + _loc4_.right && param3 >= param1.minHeight + _loc4_.top + _loc4_.bottom;
       }
       
@@ -565,7 +565,7 @@ package mx.core
          }
       }
       
-      public function get viewMetrics() : mx.core.EdgeMetrics
+      public function get viewMetrics() : EdgeMetrics
       {
          _viewMetrics = borderMetrics.clone();
          if(!horizontalScrollBar && horizontalScrollPolicy == ScrollPolicy.ON)
@@ -601,9 +601,9 @@ package mx.core
          return _verticalScrollPolicy;
       }
       
-      public function get borderMetrics() : mx.core.EdgeMetrics
+      public function get borderMetrics() : EdgeMetrics
       {
-         return border && border is IRectangularBorder?IRectangularBorder(border).borderMetrics:mx.core.EdgeMetrics.EMPTY;
+         return border && border is IRectangularBorder?IRectangularBorder(border).borderMetrics:EdgeMetrics.EMPTY;
       }
    }
 }

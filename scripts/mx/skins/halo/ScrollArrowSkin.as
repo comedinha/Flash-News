@@ -1,14 +1,14 @@
 package mx.skins.halo
 {
-   import mx.skins.Border;
-   import mx.core.mx_internal;
-   import mx.utils.ColorUtil;
-   import mx.controls.scrollClasses.ScrollBar;
-   import mx.styles.StyleManager;
-   import flash.display.Graphics;
-   import mx.core.FlexVersion;
    import flash.display.GradientType;
+   import flash.display.Graphics;
    import flash.geom.Matrix;
+   import mx.controls.scrollClasses.ScrollBar;
+   import mx.core.FlexVersion;
+   import mx.core.mx_internal;
+   import mx.skins.Border;
+   import mx.styles.StyleManager;
+   import mx.utils.ColorUtil;
    
    use namespace mx_internal;
    

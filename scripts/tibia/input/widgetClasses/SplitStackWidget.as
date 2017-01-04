@@ -1,16 +1,16 @@
 package tibia.input.widgetClasses
 {
-   import tibia.game.PopUpBase;
    import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
    import flash.ui.Keyboard;
-   import tibia.appearances.AppearanceType;
+   import mx.events.SliderEvent;
    import shared.controls.ShapeWrapper;
+   import tibia.appearances.AppearanceStorage;
+   import tibia.appearances.AppearanceType;
+   import tibia.appearances.ObjectInstance;
    import tibia.appearances.widgetClasses.SimpleAppearanceRenderer;
    import tibia.controls.CustomSlider;
-   import mx.events.SliderEvent;
-   import tibia.appearances.AppearanceStorage;
-   import tibia.appearances.ObjectInstance;
-   import flash.events.MouseEvent;
+   import tibia.game.PopUpBase;
    
    public class SplitStackWidget extends PopUpBase
    {

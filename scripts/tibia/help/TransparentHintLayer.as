@@ -1,14 +1,14 @@
 package tibia.help
 {
-   import mx.core.Container;
    import flash.events.Event;
-   import mx.managers.ISystemManager;
    import mx.containers.Box;
+   import mx.core.Container;
+   import mx.managers.ISystemManager;
    
    public class TransparentHintLayer extends Container
    {
       
-      private static var s_Instance:tibia.help.TransparentHintLayer = null;
+      private static var s_Instance:TransparentHintLayer = null;
        
       
       public function TransparentHintLayer()
@@ -18,11 +18,11 @@ package tibia.help
          this.mouseChildren = false;
       }
       
-      public static function getInstance() : tibia.help.TransparentHintLayer
+      public static function getInstance() : TransparentHintLayer
       {
          if(s_Instance == null)
          {
-            s_Instance = new tibia.help.TransparentHintLayer();
+            s_Instance = new TransparentHintLayer();
          }
          return s_Instance;
       }

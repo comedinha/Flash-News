@@ -1,44 +1,44 @@
 package tibia.worldmap
 {
-   import mx.core.UIComponent;
-   import tibia.game.IUseWidget;
-   import tibia.game.IMoveWidget;
+   import build.ObjectDragImplFactory;
    import flash.display.Bitmap;
-   import flash.geom.Point;
-   import tibia.game.ObjectDragImpl;
-   import tibia.help.UIEffectsRetrieveComponentCommandEvent;
-   import tibia.worldmap.widgetClasses.RendererImpl;
-   import flash.events.MouseEvent;
-   import tibia.game.ContextMenuBase;
-   import tibia.game.PopUpBase;
-   import tibia.creatures.Player;
-   import mx.core.FlexShape;
-   import shared.controls.ShapeWrapper;
-   import mx.controls.Label;
-   import flash.events.Event;
-   import tibia.options.OptionsStorage;
-   import shared.utility.Vector3D;
-   import tibia.network.IServerConnection;
-   import flash.utils.getTimer;
-   import tibia.network.Connection;
-   import mx.events.PropertyChangeEvent;
-   import tibia.creatures.CreatureStorage;
-   import tibia.cursors.CursorHelper;
-   import flash.geom.Rectangle;
-   import tibia.creatures.Creature;
-   import tibia.appearances.AppearanceInstance;
-   import tibia.appearances.ObjectInstance;
-   import tibia.input.gameaction.AutowalkActionImpl;
-   import tibia.network.Communication;
-   import tibia.input.mapping.MouseBinding;
-   import tibia.input.MouseActionHelper;
-   import tibia.input.gameaction.UseActionImpl;
-   import tibia.input.gameaction.LookActionImpl;
-   import tibia.game.ObjectContextMenu;
    import flash.display.Graphics;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import flash.utils.getTimer;
+   import mx.controls.Label;
+   import mx.core.FlexShape;
+   import mx.core.UIComponent;
+   import mx.events.PropertyChangeEvent;
    import mx.events.ResizeEvent;
    import mx.managers.CursorManagerPriority;
-   import build.ObjectDragImplFactory;
+   import shared.controls.ShapeWrapper;
+   import shared.utility.Vector3D;
+   import tibia.appearances.AppearanceInstance;
+   import tibia.appearances.ObjectInstance;
+   import tibia.creatures.Creature;
+   import tibia.creatures.CreatureStorage;
+   import tibia.creatures.Player;
+   import tibia.cursors.CursorHelper;
+   import tibia.game.ContextMenuBase;
+   import tibia.game.IMoveWidget;
+   import tibia.game.IUseWidget;
+   import tibia.game.ObjectContextMenu;
+   import tibia.game.ObjectDragImpl;
+   import tibia.game.PopUpBase;
+   import tibia.help.UIEffectsRetrieveComponentCommandEvent;
+   import tibia.input.MouseActionHelper;
+   import tibia.input.gameaction.AutowalkActionImpl;
+   import tibia.input.gameaction.LookActionImpl;
+   import tibia.input.gameaction.UseActionImpl;
+   import tibia.input.mapping.MouseBinding;
+   import tibia.network.Communication;
+   import tibia.network.Connection;
+   import tibia.network.IServerConnection;
+   import tibia.options.OptionsStorage;
+   import tibia.worldmap.widgetClasses.RendererImpl;
    
    public class WorldMapWidget extends UIComponent implements IUseWidget, IMoveWidget
    {
@@ -186,7 +186,7 @@ package tibia.worldmap
       
       private var m_UIInfoFramerate:Label = null;
       
-      private var m_WorldMapStorage:tibia.worldmap.WorldMapStorage = null;
+      private var m_WorldMapStorage:WorldMapStorage = null;
       
       private var m_MouseCursorOverRenderer:Boolean = false;
       
@@ -402,7 +402,7 @@ package tibia.worldmap
          }
       }
       
-      public function get worldMapStorage() : tibia.worldmap.WorldMapStorage
+      public function get worldMapStorage() : WorldMapStorage
       {
          return this.m_WorldMapStorage;
       }
@@ -511,7 +511,7 @@ package tibia.worldmap
          return this.m_Player;
       }
       
-      public function set worldMapStorage(param1:tibia.worldmap.WorldMapStorage) : void
+      public function set worldMapStorage(param1:WorldMapStorage) : void
       {
          if(this.m_WorldMapStorage != param1)
          {

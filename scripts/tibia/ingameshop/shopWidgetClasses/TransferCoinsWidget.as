@@ -1,16 +1,16 @@
 package tibia.ingameshop.shopWidgetClasses
 {
-   import shared.controls.EmbeddedDialog;
-   import mx.controls.TextInput;
-   import mx.events.SliderEvent;
-   import tibia.ingameshop.IngameShopManager;
-   import mx.containers.GridRow;
    import mx.containers.Grid;
    import mx.containers.GridItem;
-   import mx.controls.Label;
-   import tibia.creatures.Creature;
+   import mx.containers.GridRow;
    import mx.containers.HBox;
+   import mx.controls.Label;
+   import mx.controls.TextInput;
+   import mx.events.SliderEvent;
+   import shared.controls.EmbeddedDialog;
    import tibia.controls.CustomSlider;
+   import tibia.creatures.Creature;
+   import tibia.ingameshop.IngameShopManager;
    import tibia.ingameshop.IngameShopWidget;
    
    public class TransferCoinsWidget extends EmbeddedDialog
@@ -23,7 +23,7 @@ package tibia.ingameshop.shopWidgetClasses
       
       private var m_UITargetName:TextInput;
       
-      private var m_UICoinText:tibia.ingameshop.shopWidgetClasses.CoinWidget;
+      private var m_UICoinText:CoinWidget;
       
       private var m_UIAmountSlider:CustomSlider;
       
@@ -123,7 +123,7 @@ package tibia.ingameshop.shopWidgetClasses
          this.m_UIAmountSlider.addEventListener(SliderEvent.CHANGE,this.onCoinsSliderChanged);
          this.m_UIAmountSlider.addEventListener(SliderEvent.THUMB_DRAG,this.onCoinsSliderChanged);
          _loc8_.addChild(this.m_UIAmountSlider);
-         this.m_UICoinText = new tibia.ingameshop.shopWidgetClasses.CoinWidget();
+         this.m_UICoinText = new CoinWidget();
          this.m_UICoinText.minWidth = 60;
          _loc8_.addChild(this.m_UICoinText);
          _loc5_.addChild(_loc8_);
@@ -135,7 +135,7 @@ package tibia.ingameshop.shopWidgetClasses
          _loc4_.addChild(_loc5_);
          _loc5_ = new GridItem();
          _loc5_.percentWidth = 100;
-         var _loc11_:tibia.ingameshop.shopWidgetClasses.CoinWidget = new tibia.ingameshop.shopWidgetClasses.CoinWidget();
+         var _loc11_:CoinWidget = new CoinWidget();
          _loc11_.coins = this.getMaximumTransferableCoins();
          _loc5_.addChild(_loc11_);
          _loc4_.addChild(_loc5_);

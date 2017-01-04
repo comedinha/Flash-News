@@ -1,8 +1,8 @@
 package mx.core
 {
-   import flash.display.Sprite;
-   import flash.display.DisplayObjectContainer;
    import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
+   import flash.display.Sprite;
    import mx.managers.ISystemManager;
    
    public interface IUIComponent extends IFlexDisplayObject

@@ -1,9 +1,9 @@
 package mx.utils
 {
-   import mx.core.mx_internal;
    import flash.display.DisplayObject;
-   import mx.core.IRepeaterClient;
    import flash.utils.getQualifiedClassName;
+   import mx.core.IRepeaterClient;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

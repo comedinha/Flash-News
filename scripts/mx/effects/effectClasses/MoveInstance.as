@@ -1,12 +1,12 @@
 package mx.effects.effectClasses
 {
-   import mx.core.mx_internal;
    import flash.events.Event;
-   import mx.events.MoveEvent;
-   import mx.core.EdgeMetrics;
-   import mx.effects.EffectManager;
-   import mx.core.IUIComponent;
    import mx.core.Container;
+   import mx.core.EdgeMetrics;
+   import mx.core.IUIComponent;
+   import mx.core.mx_internal;
+   import mx.effects.EffectManager;
+   import mx.events.MoveEvent;
    import mx.styles.IStyleClient;
    
    use namespace mx_internal;

@@ -1,7 +1,7 @@
 package mx.containers.utilityClasses
 {
-   import mx.core.mx_internal;
    import mx.core.Container;
+   import mx.core.mx_internal;
    import mx.resources.IResourceManager;
    import mx.resources.ResourceManager;
    

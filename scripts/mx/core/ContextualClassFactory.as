@@ -10,9 +10,9 @@ package mx.core
       mx_internal static const VERSION:String = "3.6.0.21751";
        
       
-      public var moduleFactory:mx.core.IFlexModuleFactory;
+      public var moduleFactory:IFlexModuleFactory;
       
-      public function ContextualClassFactory(param1:Class = null, param2:mx.core.IFlexModuleFactory = null)
+      public function ContextualClassFactory(param1:Class = null, param2:IFlexModuleFactory = null)
       {
          super(param1);
          this.moduleFactory = param2;

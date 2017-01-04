@@ -1,10 +1,10 @@
 package shared.controls
 {
-   import mx.core.UIComponent;
-   import mx.core.FlexShape;
    import flash.display.DisplayObject;
-   import mx.core.IFlexDisplayObject;
    import flash.display.Graphics;
+   import mx.core.FlexShape;
+   import mx.core.IFlexDisplayObject;
+   import mx.core.UIComponent;
    
    public class IconRendererBase extends UIComponent
    {

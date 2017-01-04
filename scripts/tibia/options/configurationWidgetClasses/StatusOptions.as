@@ -1,21 +1,21 @@
 package tibia.options.configurationWidgetClasses
 {
+   import flash.events.Event;
+   import mx.containers.Form;
+   import mx.containers.FormHeading;
+   import mx.containers.FormItem;
    import mx.containers.VBox;
-   import tibia.worldmap.widgetClasses.RendererImpl;
-   import tibia.creatures.StatusWidget;
    import mx.controls.CheckBox;
    import mx.controls.ComboBox;
-   import mx.containers.Form;
-   import mx.containers.FormItem;
-   import mx.containers.FormHeading;
-   import tibia.options.ConfigurationWidget;
    import mx.core.ClassFactory;
-   import shared.controls.CustomList;
    import mx.events.DropdownEvent;
    import mx.events.ListEvent;
-   import flash.events.Event;
-   import tibia.options.OptionsStorage;
+   import shared.controls.CustomList;
    import shared.utility.ArrayHelper;
+   import tibia.creatures.StatusWidget;
+   import tibia.options.ConfigurationWidget;
+   import tibia.options.OptionsStorage;
+   import tibia.worldmap.widgetClasses.RendererImpl;
    
    public class StatusOptions extends VBox implements IOptionsEditor
    {

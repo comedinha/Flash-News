@@ -1,8 +1,8 @@
 package shared.controls
 {
-   import mx.core.UIComponent;
    import flash.display.DisplayObject;
    import flash.geom.Rectangle;
+   import mx.core.UIComponent;
    
    public class ShapeWrapper extends UIComponent
    {

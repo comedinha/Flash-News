@@ -12,9 +12,9 @@ package tibia.premium
       
       protected var m_HighlightExpiry:int = 0;
       
-      protected var m_Messages:Vector.<tibia.premium.PremiumMessage> = null;
+      protected var m_Messages:Vector.<PremiumMessage> = null;
       
-      public function PremiumEvent(param1:String, param2:Boolean = false, param3:Boolean = false, param4:Vector.<tibia.premium.PremiumMessage> = null, param5:int = 0)
+      public function PremiumEvent(param1:String, param2:Boolean = false, param3:Boolean = false, param4:Vector.<PremiumMessage> = null, param5:int = 0)
       {
          super(param1,param2,param3);
          this.m_Messages = param4;
@@ -31,12 +31,12 @@ package tibia.premium
          return this.m_HighlightExpiry;
       }
       
-      public function set messages(param1:Vector.<tibia.premium.PremiumMessage>) : void
+      public function set messages(param1:Vector.<PremiumMessage>) : void
       {
          this.m_Messages = param1;
       }
       
-      public function get messages() : Vector.<tibia.premium.PremiumMessage>
+      public function get messages() : Vector.<PremiumMessage>
       {
          return this.m_Messages;
       }

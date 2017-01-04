@@ -1,8 +1,8 @@
 package tibia.game
 {
    import flash.events.IEventDispatcher;
-   import tibia.network.IConnectionData;
    import loader.asset.IAssetProvider;
+   import tibia.network.IConnectionData;
    
    public interface IGameClient extends IEventDispatcher
    {

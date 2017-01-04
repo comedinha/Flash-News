@@ -1,9 +1,9 @@
 package shared.skins
 {
-   import mx.skins.Border;
-   import mx.core.UIComponent;
    import flash.display.DisplayObjectContainer;
    import mx.core.EdgeMetrics;
+   import mx.core.UIComponent;
+   import mx.skins.Border;
    
    public class VectorTabSkin extends Border
    {

@@ -1,22 +1,22 @@
 package tibia.creatures.buddylistWidgetClasses
 {
-   import mx.core.UIComponent;
+   import flash.display.Graphics;
+   import flash.events.TimerEvent;
+   import flash.geom.Matrix;
+   import flash.geom.Rectangle;
    import mx.controls.listClasses.IListItemRenderer;
+   import mx.core.EdgeMetrics;
+   import mx.core.FlexShape;
    import mx.core.IDataRenderer;
+   import mx.core.UIComponent;
+   import mx.events.PropertyChangeEvent;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
    import shared.utility.TextFieldCache;
-   import flash.geom.Matrix;
+   import tibia.creatures.buddylistClasses.Buddy;
+   import tibia.creatures.buddylistClasses.BuddyIcon;
    import tibia.§creatures:ns_creature_internal§.s_NameCache;
    import tibia.§creatures:ns_creature_internal§.s_Trans;
-   import flash.geom.Rectangle;
-   import mx.core.EdgeMetrics;
-   import tibia.creatures.buddylistClasses.BuddyIcon;
-   import flash.display.Graphics;
-   import tibia.creatures.buddylistClasses.Buddy;
-   import mx.core.FlexShape;
-   import flash.events.TimerEvent;
-   import mx.events.PropertyChangeEvent;
    
    public class BuddylistItemRenderer extends UIComponent implements IListItemRenderer, IDataRenderer
    {
@@ -43,7 +43,7 @@ package tibia.creatures.buddylistWidgetClasses
       
       private var m_UncommittedBuddy:Boolean = false;
       
-      protected var m_UIIcon:tibia.creatures.buddylistWidgetClasses.BuddyIconRenderer = null;
+      protected var m_UIIcon:BuddyIconRenderer = null;
       
       public function BuddylistItemRenderer()
       {
@@ -170,7 +170,7 @@ package tibia.creatures.buddylistWidgetClasses
          if(!this.m_UIConstructed)
          {
             super.createChildren();
-            this.m_UIIcon = new tibia.creatures.buddylistWidgetClasses.BuddyIconRenderer();
+            this.m_UIIcon = new BuddyIconRenderer();
             this.m_UIIcon.styleName = "noBackground";
             addChild(this.m_UIIcon);
             this.m_UIName = new FlexShape();
@@ -185,8 +185,8 @@ package tibia.creatures.buddylistWidgetClasses
          var _loc3_:Number = NaN;
          super.measure();
          _loc1_ = this.viewMetricsAndPadding;
-         var _loc2_:Number = tibia.creatures.buddylistWidgetClasses.BuddyIconRenderer.ICON_WIDTH + getStyle("horizontalGap") + s_NameCache.slotWidth;
-         _loc3_ = Math.max(tibia.creatures.buddylistWidgetClasses.BuddyIconRenderer.ICON_HEIGHT,s_NameCache.slotHeight);
+         var _loc2_:Number = BuddyIconRenderer.ICON_WIDTH + getStyle("horizontalGap") + s_NameCache.slotWidth;
+         _loc3_ = Math.max(BuddyIconRenderer.ICON_HEIGHT,s_NameCache.slotHeight);
          measuredMinWidth = measuredWidth = _loc1_.left + _loc2_ + _loc1_.right;
          measuredMinHeight = measuredHeight = _loc1_.top + _loc3_ + _loc1_.bottom;
       }

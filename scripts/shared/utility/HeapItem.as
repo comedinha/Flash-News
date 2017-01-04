@@ -8,7 +8,7 @@ package shared.utility
       
       var m_HeapPosition:int = 0;
       
-      var m_HeapParent:shared.utility.Heap = null;
+      var m_HeapParent:Heap = null;
       
       public function HeapItem()
       {

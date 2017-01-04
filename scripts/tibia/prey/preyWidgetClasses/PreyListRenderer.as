@@ -1,22 +1,22 @@
 package tibia.prey.preyWidgetClasses
 {
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.filters.BitmapFilterQuality;
+   import flash.filters.GlowFilter;
+   import mx.containers.Box;
    import mx.containers.HBox;
+   import mx.containers.VBox;
+   import mx.controls.Image;
+   import mx.controls.Label;
    import mx.controls.listClasses.IListItemRenderer;
    import mx.core.IDataRenderer;
-   import flash.display.BitmapData;
-   import flash.display.Bitmap;
-   import mx.controls.Image;
-   import tibia.prey.PreyData;
-   import shared.controls.ShapeWrapper;
-   import mx.containers.VBox;
-   import tibia.appearances.widgetClasses.SimpleAppearanceRenderer;
-   import mx.controls.Label;
-   import flash.filters.GlowFilter;
-   import flash.filters.BitmapFilterQuality;
-   import tibia.creatures.statusWidgetClasses.BitmapProgressBar;
-   import shared.utility.StringHelper;
-   import mx.containers.Box;
    import mx.events.PropertyChangeEvent;
+   import shared.controls.ShapeWrapper;
+   import shared.utility.StringHelper;
+   import tibia.appearances.widgetClasses.SimpleAppearanceRenderer;
+   import tibia.creatures.statusWidgetClasses.BitmapProgressBar;
+   import tibia.prey.PreyData;
    
    public class PreyListRenderer extends HBox implements IListItemRenderer, IDataRenderer
    {

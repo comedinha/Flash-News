@@ -1,13 +1,13 @@
 package tibia.sessiondump.controller
 {
-   import tibia.sessiondump.Sessiondump;
-   import flash.utils.Timer;
-   import flash.events.TimerEvent;
-   import flash.utils.getTimer;
-   import tibia.sessiondump.SessiondumpReader;
-   import tibia.sessiondump.SessiondumpEvent;
    import flash.events.Event;
+   import flash.events.TimerEvent;
+   import flash.utils.Timer;
+   import flash.utils.getTimer;
    import shared.utility.nextPowerOfTwo;
+   import tibia.sessiondump.Sessiondump;
+   import tibia.sessiondump.SessiondumpEvent;
+   import tibia.sessiondump.SessiondumpReader;
    
    public class SessiondumpControllerBase implements ISessiondumpRemoteControl
    {
@@ -270,7 +270,7 @@ package tibia.sessiondump.controller
       
       protected static const CROTATEWEST:int = 114;
       
-      public static const PROTOCOL_VERSION:int = 1100;
+      public static const PROTOCOL_VERSION:int = 1101;
       
       protected static const SCREATUREOUTFIT:int = 142;
       

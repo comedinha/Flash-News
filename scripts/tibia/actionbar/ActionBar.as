@@ -1,18 +1,18 @@
 package tibia.actionbar
 {
    import flash.events.EventDispatcher;
+   import mx.events.PropertyChangeEvent;
+   import mx.events.PropertyChangeEventKind;
+   import mx.resources.ResourceManager;
    import tibia.input.IAction;
+   import tibia.input.MappingSet;
    import tibia.input.gameaction.EquipAction;
    import tibia.input.gameaction.SpellAction;
    import tibia.input.gameaction.TalkAction;
    import tibia.input.gameaction.UseAction;
-   import tibia.options.OptionsStorage;
-   import tibia.input.MappingSet;
    import tibia.input.mapping.Mapping;
    import tibia.input.staticaction.StaticActionList;
-   import mx.resources.ResourceManager;
-   import mx.events.PropertyChangeEvent;
-   import mx.events.PropertyChangeEventKind;
+   import tibia.options.OptionsStorage;
    
    public class ActionBar extends EventDispatcher
    {

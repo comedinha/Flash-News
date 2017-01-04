@@ -1,8 +1,8 @@
 package mx.events
 {
+   import flash.display.DisplayObject;
    import flash.events.Event;
    import mx.core.mx_internal;
-   import flash.display.DisplayObject;
    
    use namespace mx_internal;
    

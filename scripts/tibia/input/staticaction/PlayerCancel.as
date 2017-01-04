@@ -1,8 +1,8 @@
 package tibia.input.staticaction
 {
-   import tibia.network.Communication;
    import tibia.creatures.CreatureStorage;
    import tibia.creatures.Player;
+   import tibia.network.Communication;
    
    public class PlayerCancel extends StaticAction
    {

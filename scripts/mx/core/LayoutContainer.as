@@ -1,13 +1,13 @@
 package mx.core
 {
+   import flash.events.Event;
+   import mx.containers.BoxDirection;
+   import mx.containers.utilityClasses.BoxLayout;
+   import mx.containers.utilityClasses.CanvasLayout;
+   import mx.containers.utilityClasses.ConstraintColumn;
+   import mx.containers.utilityClasses.ConstraintRow;
    import mx.containers.utilityClasses.IConstraintLayout;
    import mx.containers.utilityClasses.Layout;
-   import mx.containers.utilityClasses.ConstraintColumn;
-   import mx.containers.utilityClasses.BoxLayout;
-   import mx.containers.BoxDirection;
-   import flash.events.Event;
-   import mx.containers.utilityClasses.ConstraintRow;
-   import mx.containers.utilityClasses.CanvasLayout;
    
    use namespace mx_internal;
    

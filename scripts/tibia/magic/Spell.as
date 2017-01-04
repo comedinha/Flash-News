@@ -1,9 +1,9 @@
 package tibia.magic
 {
    import flash.display.BitmapData;
-   import mx.core.BitmapAsset;
    import flash.geom.Point;
    import flash.geom.Rectangle;
+   import mx.core.BitmapAsset;
    import tibia.chat.ChatWidget;
    
    public class Spell extends Magic

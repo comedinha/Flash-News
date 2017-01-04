@@ -1,10 +1,10 @@
 package
 {
    import mx.core.IFlexModuleFactory;
-   import mx.styles.CSSStyleDeclaration;
-   import mx.styles.StyleManager;
    import mx.skins.halo.HaloBorder;
    import mx.skins.halo.HaloFocusRect;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.StyleManager;
    
    public class _globalStyle
    {

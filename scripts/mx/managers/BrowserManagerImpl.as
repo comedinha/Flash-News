@@ -1,23 +1,23 @@
 package mx.managers
 {
+   import flash.display.Stage;
+   import flash.events.Event;
    import flash.events.EventDispatcher;
-   import mx.core.mx_internal;
    import flash.external.ExternalInterface;
-   import mx.events.BrowserChangeEvent;
    import flash.net.URLRequest;
    import flash.net.navigateToURL;
    import mx.core.ApplicationGlobals;
-   import flash.events.Event;
-   import flash.display.Stage;
+   import mx.core.mx_internal;
+   import mx.events.BrowserChangeEvent;
    
    use namespace mx_internal;
    
-   public class BrowserManagerImpl extends EventDispatcher implements mx.managers.IBrowserManager
+   public class BrowserManagerImpl extends EventDispatcher implements IBrowserManager
    {
       
       mx_internal static const VERSION:String = "3.6.0.21751";
       
-      private static var instance:mx.managers.IBrowserManager;
+      private static var instance:IBrowserManager;
        
       
       private var _title:String;
@@ -88,7 +88,7 @@ package mx.managers
          }
       }
       
-      public static function getInstance() : mx.managers.IBrowserManager
+      public static function getInstance() : IBrowserManager
       {
          if(!instance)
          {

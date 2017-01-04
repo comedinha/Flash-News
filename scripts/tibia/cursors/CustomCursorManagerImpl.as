@@ -1,8 +1,8 @@
 package tibia.cursors
 {
-   import mx.managers.ICursorManager;
-   import mx.managers.CursorManagerPriority;
    import flash.ui.Mouse;
+   import mx.managers.CursorManagerPriority;
+   import mx.managers.ICursorManager;
    
    public class CustomCursorManagerImpl implements ICursorManager
    {
@@ -10,7 +10,7 @@ package tibia.cursors
       private static var s_Instance:ICursorManager = null;
        
       
-      private var m_CursorList:Vector.<CursorQueueItem>;
+      private var m_CursorList:Vector.<CursorQueueItem#19>;
       
       protected var m_CursorPriority:int = -1;
       
@@ -20,7 +20,7 @@ package tibia.cursors
       
       public function CustomCursorManagerImpl()
       {
-         this.m_CursorList = new Vector.<CursorQueueItem>();
+         this.m_CursorList = new Vector.<CursorQueueItem#19>();
          super();
       }
       
@@ -141,7 +141,7 @@ package tibia.cursors
       public function setCursor(param1:Class, param2:int = 2, param3:Number = 0, param4:Number = 0) : int
       {
          var _loc5_:int = ++this.m_NextCursorID;
-         var _loc6_:CursorQueueItem = new CursorQueueItem();
+         var _loc6_:CursorQueueItem = new CursorQueueItem#19();
          _loc6_.m_CursorID = _loc5_;
          _loc6_.m_CursorName = this.cursorClassToCursorName(param1);
          if(_loc6_.m_CursorName.substr(0,4) == "drag")
@@ -164,7 +164,7 @@ package tibia.cursors
          this.showCurrentCursor();
       }
       
-      private function priorityCompare(param1:CursorQueueItem, param2:CursorQueueItem) : int
+      private function priorityCompare(param1:CursorQueueItem#19, param2:CursorQueueItem#19) : int
       {
          if(param1.m_Priority < param2.m_Priority)
          {
@@ -218,7 +218,7 @@ package tibia.cursors
    }
 }
 
-class CursorQueueItem
+class CursorQueueItem#19
 {
     
    
@@ -228,7 +228,7 @@ class CursorQueueItem
    
    public var m_Priority:int = 2.0;
    
-   function CursorQueueItem()
+   function CursorQueueItem#19()
    {
       super();
    }

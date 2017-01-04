@@ -1,19 +1,19 @@
 package mx.controls
 {
-   import mx.core.UIComponent;
-   import mx.core.IToolTip;
-   import mx.core.IFontContextComponent;
-   import mx.core.mx_internal;
-   import mx.core.IFlexModuleFactory;
-   import flash.text.TextFormat;
    import flash.display.DisplayObject;
-   import mx.core.IUITextField;
-   import mx.styles.ISimpleStyleClient;
-   import mx.core.EdgeMetrics;
-   import mx.core.UITextField;
    import flash.text.TextFieldAutoSize;
+   import flash.text.TextFormat;
+   import mx.core.EdgeMetrics;
    import mx.core.IFlexDisplayObject;
+   import mx.core.IFlexModuleFactory;
+   import mx.core.IFontContextComponent;
    import mx.core.IRectangularBorder;
+   import mx.core.IToolTip;
+   import mx.core.IUITextField;
+   import mx.core.UIComponent;
+   import mx.core.UITextField;
+   import mx.core.mx_internal;
+   import mx.styles.ISimpleStyleClient;
    
    use namespace mx_internal;
    

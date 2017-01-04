@@ -1,9 +1,9 @@
 package tibia.worldmap.widgetClasses
 {
-   import flash.geom.Point;
-   import flash.geom.Rectangle;
    import flash.display.BitmapData;
    import flash.geom.ColorTransform;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
    
    public class TileCursor
    {

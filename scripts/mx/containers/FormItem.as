@@ -1,20 +1,20 @@
 package mx.containers
 {
+   import flash.display.DisplayObject;
+   import flash.events.Event;
+   import mx.containers.utilityClasses.BoxLayout;
+   import mx.containers.utilityClasses.Flex;
+   import mx.controls.FormItemLabel;
+   import mx.controls.Label;
    import mx.core.Container;
+   import mx.core.EdgeMetrics;
+   import mx.core.FlexVersion;
+   import mx.core.IFlexDisplayObject;
+   import mx.core.IUIComponent;
+   import mx.core.ScrollPolicy;
    import mx.core.mx_internal;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
-   import mx.core.IUIComponent;
-   import mx.core.EdgeMetrics;
-   import mx.containers.utilityClasses.Flex;
-   import mx.controls.FormItemLabel;
-   import flash.events.Event;
-   import mx.core.FlexVersion;
-   import mx.containers.utilityClasses.BoxLayout;
-   import mx.controls.Label;
-   import mx.core.IFlexDisplayObject;
-   import flash.display.DisplayObject;
-   import mx.core.ScrollPolicy;
    
    use namespace mx_internal;
    

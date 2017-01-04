@@ -1,8 +1,8 @@
 package mx.events
 {
    import flash.events.Event;
-   import mx.core.mx_internal;
    import mx.controls.listClasses.IListItemRenderer;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

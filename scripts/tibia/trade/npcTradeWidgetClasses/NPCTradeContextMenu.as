@@ -1,9 +1,9 @@
 package tibia.trade.npcTradeWidgetClasses
 {
-   import tibia.game.ContextMenuBase;
-   import tibia.appearances.AppearanceTypeRef;
    import mx.core.IUIComponent;
    import shared.utility.closure;
+   import tibia.appearances.AppearanceTypeRef;
+   import tibia.game.ContextMenuBase;
    import tibia.input.gameaction.InspectNPCTradeActionImpl;
    import tibia.options.OptionsStorage;
    

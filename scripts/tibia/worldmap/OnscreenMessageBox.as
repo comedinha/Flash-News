@@ -1,10 +1,10 @@
 package tibia.worldmap
 {
-   import shared.utility.RingBuffer;
-   import mx.collections.IList;
-   import shared.utility.Vector3D;
    import flash.display.BitmapData;
    import flash.geom.Rectangle;
+   import mx.collections.IList;
+   import shared.utility.RingBuffer;
+   import shared.utility.Vector3D;
    import tibia.chat.MessageMode;
    
    public class OnscreenMessageBox

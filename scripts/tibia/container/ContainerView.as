@@ -1,9 +1,9 @@
 package tibia.container
 {
    import flash.events.EventDispatcher;
-   import tibia.appearances.ObjectInstance;
    import mx.events.PropertyChangeEvent;
    import mx.events.PropertyChangeEventKind;
+   import tibia.appearances.ObjectInstance;
    
    public class ContainerView extends EventDispatcher
    {

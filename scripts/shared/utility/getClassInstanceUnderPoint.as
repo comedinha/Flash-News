@@ -1,8 +1,8 @@
 package shared.utility
 {
+   import flash.display.DisplayObject;
    import flash.display.Stage;
    import flash.geom.Point;
-   import flash.display.DisplayObject;
    
    public function getClassInstanceUnderPoint(param1:Stage, param2:Point, param3:Class) : *
    {

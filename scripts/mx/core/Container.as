@@ -1,42 +1,42 @@
 package mx.core
 {
-   import mx.managers.IFocusManagerContainer;
-   import mx.controls.listClasses.IListItemRenderer;
-   import flash.events.Event;
-   import flash.geom.Rectangle;
-   import flash.geom.Point;
-   import flash.display.InteractiveObject;
-   import mx.styles.ISimpleStyleClient;
-   import mx.styles.IStyleClient;
    import flash.display.DisplayObject;
-   import mx.controls.scrollClasses.ScrollBar;
-   import mx.managers.ILayoutManagerClient;
-   import flash.events.MouseEvent;
-   import flash.display.Sprite;
-   import mx.managers.IFocusManager;
+   import flash.display.DisplayObjectContainer;
    import flash.display.Graphics;
-   import mx.controls.HScrollBar;
-   import mx.events.ScrollEvent;
+   import flash.display.InteractiveObject;
+   import flash.display.Loader;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
    import flash.events.KeyboardEvent;
-   import mx.controls.VScrollBar;
+   import flash.events.MouseEvent;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
    import flash.text.TextField;
-   import mx.events.ScrollEventDirection;
-   import mx.events.ScrollEventDetail;
+   import flash.text.TextLineMetrics;
    import flash.ui.Keyboard;
+   import flash.utils.getDefinitionByName;
+   import mx.binding.BindingManager;
+   import mx.controls.HScrollBar;
+   import mx.controls.VScrollBar;
+   import mx.controls.listClasses.IListItemRenderer;
+   import mx.controls.scrollClasses.ScrollBar;
+   import mx.events.ChildExistenceChangedEvent;
+   import mx.events.FlexEvent;
+   import mx.events.IndexChangedEvent;
+   import mx.events.ScrollEvent;
+   import mx.events.ScrollEventDetail;
+   import mx.events.ScrollEventDirection;
+   import mx.graphics.RoundedRectangle;
+   import mx.managers.IFocusManager;
+   import mx.managers.IFocusManagerContainer;
+   import mx.managers.ILayoutManagerClient;
    import mx.managers.ISystemManager;
    import mx.styles.CSSStyleDeclaration;
-   import mx.events.FlexEvent;
-   import flash.text.TextLineMetrics;
-   import flash.display.Shape;
-   import mx.binding.BindingManager;
-   import mx.styles.StyleProtoChain;
-   import mx.events.IndexChangedEvent;
-   import mx.events.ChildExistenceChangedEvent;
-   import mx.graphics.RoundedRectangle;
-   import flash.utils.getDefinitionByName;
-   import flash.display.DisplayObjectContainer;
-   import flash.display.Loader;
+   import mx.styles.ISimpleStyleClient;
+   import mx.styles.IStyleClient;
    import mx.styles.StyleManager;
+   import mx.styles.StyleProtoChain;
    
    use namespace mx_internal;
    
@@ -54,11 +54,11 @@ package mx.core
       
       private var _horizontalLineScrollSize:Number = 5;
       
-      mx_internal var border:mx.core.IFlexDisplayObject;
+      mx_internal var border:IFlexDisplayObject;
       
       protected var actualCreationPolicy:String;
       
-      private var _viewMetricsAndPadding:mx.core.EdgeMetrics;
+      private var _viewMetricsAndPadding:EdgeMetrics;
       
       private var _creatingContentPane:Boolean = false;
       
@@ -68,13 +68,13 @@ package mx.core
       
       private var _childDescriptors:Array;
       
-      private var _rawChildren:mx.core.ContainerRawChildrenList;
+      private var _rawChildren:ContainerRawChildrenList;
       
       private var _data:Object;
       
       private var _verticalPageScrollSize:Number = 0;
       
-      private var _viewMetrics:mx.core.EdgeMetrics;
+      private var _viewMetrics:EdgeMetrics;
       
       private var _verticalScrollBar:ScrollBar;
       
@@ -84,7 +84,7 @@ package mx.core
       
       private var scrollPositionChanged:Boolean = true;
       
-      private var _defaultButton:mx.core.IFlexDisplayObject;
+      private var _defaultButton:IFlexDisplayObject;
       
       private var mouseEventReferenceCount:int = 0;
       
@@ -218,7 +218,7 @@ package mx.core
          {
             return;
          }
-         var _loc1_:mx.core.EdgeMetrics = viewMetrics;
+         var _loc1_:EdgeMetrics = viewMetrics;
          var _loc2_:Number = 0;
          var _loc3_:Number = 0;
          var _loc4_:Number = unscaledWidth - _loc1_.left - _loc1_.right;
@@ -397,7 +397,7 @@ package mx.core
       {
          if(!_rawChildren)
          {
-            _rawChildren = new mx.core.ContainerRawChildrenList(this);
+            _rawChildren = new ContainerRawChildrenList(this);
          }
          return _rawChildren;
       }
@@ -526,9 +526,9 @@ package mx.core
          _creationIndex = param1;
       }
       
-      public function get viewMetrics() : mx.core.EdgeMetrics
+      public function get viewMetrics() : EdgeMetrics
       {
-         var _loc1_:mx.core.EdgeMetrics = borderMetrics;
+         var _loc1_:EdgeMetrics = borderMetrics;
          var _loc2_:Boolean = verticalScrollBar != null && (doingLayout || verticalScrollPolicy == ScrollPolicy.ON);
          var _loc3_:Boolean = horizontalScrollBar != null && (doingLayout || horizontalScrollPolicy == ScrollPolicy.ON);
          if(!_loc2_ && !_loc3_)
@@ -833,7 +833,7 @@ package mx.core
          }
       }
       
-      public function createComponentFromDescriptor(param1:ComponentDescriptor, param2:Boolean) : mx.core.IFlexDisplayObject
+      public function createComponentFromDescriptor(param1:ComponentDescriptor, param2:Boolean) : IFlexDisplayObject
       {
          var _loc7_:* = null;
          var _loc10_:IRepeaterClient = null;
@@ -1097,7 +1097,7 @@ package mx.core
             _loc1_.backgroundImageBounds = null;
             return;
          }
-         var _loc2_:mx.core.EdgeMetrics = viewMetrics;
+         var _loc2_:EdgeMetrics = viewMetrics;
          var _loc3_:Number = !!viewableWidth?Number(viewableWidth):Number(unscaledWidth - _loc2_.left - _loc2_.right);
          var _loc4_:Number = !!viewableHeight?Number(viewableHeight):Number(unscaledHeight - _loc2_.top - _loc2_.bottom);
          if(getStyle("backgroundAttachment") == "fixed")
@@ -1133,7 +1133,7 @@ package mx.core
          }
       }
       
-      public function get defaultButton() : mx.core.IFlexDisplayObject
+      public function get defaultButton() : IFlexDisplayObject
       {
          return _defaultButton;
       }
@@ -1252,9 +1252,9 @@ package mx.core
          return _verticalScrollPolicy;
       }
       
-      public function get borderMetrics() : mx.core.EdgeMetrics
+      public function get borderMetrics() : EdgeMetrics
       {
-         return border && border is IRectangularBorder?IRectangularBorder(border).borderMetrics:mx.core.EdgeMetrics.EMPTY;
+         return border && border is IRectangularBorder?IRectangularBorder(border).borderMetrics:EdgeMetrics.EMPTY;
       }
       
       private function creationCompleteHandler(param1:FlexEvent) : void
@@ -1415,7 +1415,7 @@ package mx.core
             }
             _loc6_++;
          }
-         var _loc7_:mx.core.EdgeMetrics = viewMetrics;
+         var _loc7_:EdgeMetrics = viewMetrics;
          var _loc8_:Rectangle = new Rectangle();
          _loc8_.left = _loc1_;
          _loc8_.top = _loc2_;
@@ -1567,7 +1567,7 @@ package mx.core
          return _verticalScrollBar;
       }
       
-      public function get viewMetricsAndPadding() : mx.core.EdgeMetrics
+      public function get viewMetricsAndPadding() : EdgeMetrics
       {
          if(_viewMetricsAndPadding && (!horizontalScrollBar || horizontalScrollPolicy == ScrollPolicy.ON) && (!verticalScrollBar || verticalScrollPolicy == ScrollPolicy.ON))
          {
@@ -1575,10 +1575,10 @@ package mx.core
          }
          if(!_viewMetricsAndPadding)
          {
-            _viewMetricsAndPadding = new mx.core.EdgeMetrics();
+            _viewMetricsAndPadding = new EdgeMetrics();
          }
-         var _loc1_:mx.core.EdgeMetrics = _viewMetricsAndPadding;
-         var _loc2_:mx.core.EdgeMetrics = viewMetrics;
+         var _loc1_:EdgeMetrics = _viewMetricsAndPadding;
+         var _loc2_:EdgeMetrics = viewMetrics;
          _loc1_.left = _loc2_.left + getStyle("paddingLeft");
          _loc1_.right = _loc2_.right + getStyle("paddingRight");
          _loc1_.top = _loc2_.top + getStyle("paddingTop");
@@ -1668,7 +1668,7 @@ package mx.core
       
       public function createComponentsFromDescriptors(param1:Boolean = true) : void
       {
-         var _loc4_:mx.core.IFlexDisplayObject = null;
+         var _loc4_:IFlexDisplayObject = null;
          numChildrenBefore = numChildren;
          createdComponents = [];
          var _loc2_:int = !!childDescriptors?int(childDescriptors.length):0;
@@ -1689,7 +1689,7 @@ package mx.core
       
       override mx_internal function fillOverlay(param1:UIComponent, param2:uint, param3:RoundedRectangle = null) : void
       {
-         var _loc4_:mx.core.EdgeMetrics = viewMetrics;
+         var _loc4_:EdgeMetrics = viewMetrics;
          var _loc5_:Number = 0;
          if(!param3)
          {
@@ -1854,7 +1854,7 @@ package mx.core
          var _loc4_:Number = unscaledWidth;
          var _loc5_:Number = unscaledHeight;
          var _loc6_:Boolean = param1.left < 0 || param1.top < 0;
-         var _loc7_:mx.core.EdgeMetrics = viewMetrics;
+         var _loc7_:EdgeMetrics = viewMetrics;
          if(scaleX != 1)
          {
             _loc4_ = _loc4_ + 1 / Math.abs(scaleX);
@@ -1985,7 +1985,7 @@ package mx.core
       
       override public function validateDisplayList() : void
       {
-         var _loc1_:mx.core.EdgeMetrics = null;
+         var _loc1_:EdgeMetrics = null;
          var _loc2_:Number = NaN;
          var _loc3_:Number = NaN;
          var _loc4_:Object = null;
@@ -2208,7 +2208,7 @@ package mx.core
          dispatchEvent(new Event("childrenChanged"));
       }
       
-      public function set defaultButton(param1:mx.core.IFlexDisplayObject) : void
+      public function set defaultButton(param1:IFlexDisplayObject) : void
       {
          _defaultButton = param1;
          ContainerGlobals.focusedContainer = null;
@@ -2288,7 +2288,7 @@ package mx.core
          createOrDestroyBlocker();
       }
       
-      override public function finishPrint(param1:Object, param2:mx.core.IFlexDisplayObject) : void
+      override public function finishPrint(param1:Object, param2:IFlexDisplayObject) : void
       {
          if(param1)
          {
@@ -2348,7 +2348,7 @@ package mx.core
          return _loc1_;
       }
       
-      override public function prepareToPrint(param1:mx.core.IFlexDisplayObject) : Object
+      override public function prepareToPrint(param1:IFlexDisplayObject) : Object
       {
          var _loc2_:Rectangle = contentPane && contentPane.scrollRect?contentPane.scrollRect:null;
          if(_loc2_)
@@ -2451,7 +2451,7 @@ package mx.core
       
       mx_internal function setActualCreationPolicies(param1:String) : void
       {
-         var _loc5_:mx.core.IFlexDisplayObject = null;
+         var _loc5_:IFlexDisplayObject = null;
          var _loc6_:Container = null;
          actualCreationPolicy = param1;
          var _loc2_:String = param1;

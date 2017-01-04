@@ -1,14 +1,14 @@
 package tibia.creatures
 {
+   import tibia.creatures.battlelistWidgetClasses.BattlelistWidgetView;
    import tibia.sidebar.Widget;
    import tibia.sidebar.sideBarWidgetClasses.WidgetView;
-   import tibia.creatures.battlelistWidgetClasses.BattlelistWidgetView;
    
    public class BattlelistWidget extends Widget
    {
        
       
-      protected var m_CreatureStorage:tibia.creatures.CreatureStorage = null;
+      protected var m_CreatureStorage:CreatureStorage = null;
       
       public function BattlelistWidget()
       {
@@ -42,7 +42,7 @@ package tibia.creatures
          super.releaseViewInstance();
       }
       
-      public function set creatureStorage(param1:tibia.creatures.CreatureStorage) : void
+      public function set creatureStorage(param1:CreatureStorage) : void
       {
          if(this.m_CreatureStorage != param1)
          {
@@ -54,7 +54,7 @@ package tibia.creatures
          }
       }
       
-      public function get creatureStorage() : tibia.creatures.CreatureStorage
+      public function get creatureStorage() : CreatureStorage
       {
          return this.m_CreatureStorage;
       }

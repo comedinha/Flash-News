@@ -1,50 +1,50 @@
 package tibia.chat
 {
-   import mx.containers.VBox;
-   import mx.events.PropertyChangeEvent;
-   import mx.events.CollectionEvent;
+   import flash.display.DisplayObject;
+   import flash.display.InteractiveObject;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
    import flash.system.System;
    import flash.ui.Keyboard;
-   import tibia.chat.chatWidgetClasses.ChannelView;
-   import tibia.input.MappingSet;
-   import mx.events.DividerEvent;
-   import mx.containers.HBox;
-   import tibia.chat.chatWidgetClasses.ChannelTabBar;
-   import tibia.controls.DynamicTabBar;
-   import mx.core.ScrollPolicy;
-   import tibia.controls.dynamicTabBarClasses.TabBarEvent;
-   import tibia.chat.chatWidgetClasses.ChannelEvent;
-   import shared.controls.CustomButton;
-   import flash.events.MouseEvent;
-   import tibia.input.staticaction.StaticActionList;
-   import mx.events.DragEvent;
-   import tibia.chat.chatWidgetClasses.ChannelTab;
-   import flash.events.Event;
-   import shared.controls.CustomDividedBox;
-   import mx.containers.BoxDirection;
-   import tibia.chat.chatWidgetClasses.PassiveTextField;
-   import flash.display.DisplayObject;
-   import tibia.chat.chatWidgetClasses.CycleButtonSkin;
-   import mx.containers.Box;
-   import mx.controls.Button;
-   import tibia.options.OptionsStorage;
-   import mx.core.DragSource;
-   import mx.managers.DragManager;
-   import mx.containers.DividedBox;
-   import mx.core.UIComponent;
-   import mx.core.EdgeMetrics;
-   import mx.core.Container;
-   import mx.collections.IList;
-   import tibia.network.Communication;
    import flash.utils.getTimer;
-   import mx.events.CollectionEventKind;
-   import flash.display.InteractiveObject;
-   import tibia.chat.chatWidgetClasses.ChannelContextMenu;
-   import tibia.chat.chatWidgetClasses.ChannelTabContextMenu;
-   import mx.core.mx_internal;
+   import mx.collections.IList;
+   import mx.containers.Box;
+   import mx.containers.BoxDirection;
+   import mx.containers.DividedBox;
+   import mx.containers.HBox;
+   import mx.containers.VBox;
+   import mx.controls.Button;
+   import mx.core.Container;
+   import mx.core.DragSource;
+   import mx.core.EdgeMetrics;
    import mx.core.IBorder;
-   import shared.utility.StringHelper;
+   import mx.core.ScrollPolicy;
+   import mx.core.UIComponent;
+   import mx.core.mx_internal;
+   import mx.events.CollectionEvent;
+   import mx.events.CollectionEventKind;
+   import mx.events.DividerEvent;
+   import mx.events.DragEvent;
+   import mx.events.PropertyChangeEvent;
+   import mx.managers.DragManager;
+   import shared.controls.CustomButton;
+   import shared.controls.CustomDividedBox;
    import shared.utility.RingBuffer;
+   import shared.utility.StringHelper;
+   import tibia.chat.chatWidgetClasses.ChannelContextMenu;
+   import tibia.chat.chatWidgetClasses.ChannelEvent;
+   import tibia.chat.chatWidgetClasses.ChannelTab;
+   import tibia.chat.chatWidgetClasses.ChannelTabBar;
+   import tibia.chat.chatWidgetClasses.ChannelTabContextMenu;
+   import tibia.chat.chatWidgetClasses.ChannelView;
+   import tibia.chat.chatWidgetClasses.CycleButtonSkin;
+   import tibia.chat.chatWidgetClasses.PassiveTextField;
+   import tibia.controls.DynamicTabBar;
+   import tibia.controls.dynamicTabBarClasses.TabBarEvent;
+   import tibia.input.MappingSet;
+   import tibia.input.staticaction.StaticActionList;
+   import tibia.network.Communication;
+   import tibia.options.OptionsStorage;
    
    public class ChatWidget extends VBox
    {
@@ -67,13 +67,13 @@ package tibia.chat
       
       private var m_UncommittedRightChannel:Boolean = false;
       
-      protected var m_LeftChannel:tibia.chat.Channel = null;
+      protected var m_LeftChannel:Channel = null;
       
-      protected var m_ChatStorage:tibia.chat.ChatStorage = null;
+      protected var m_ChatStorage:ChatStorage = null;
       
       protected var m_UILeftView:ChannelView = null;
       
-      protected var m_RightChannel:tibia.chat.Channel = null;
+      protected var m_RightChannel:Channel = null;
       
       protected var m_UITitleRow:Box = null;
       
@@ -140,15 +140,15 @@ package tibia.chat
          addEventListener(MouseEvent.RIGHT_MOUSE_DOWN,this.onMouseDown);
       }
       
-      public function get chatStorage() : tibia.chat.ChatStorage
+      public function get chatStorage() : ChatStorage
       {
          return this.m_ChatStorage;
       }
       
-      public function set chatStorage(param1:tibia.chat.ChatStorage) : void
+      public function set chatStorage(param1:ChatStorage) : void
       {
          var _loc2_:int = 0;
-         var _loc3_:tibia.chat.Channel = null;
+         var _loc3_:Channel = null;
          if(this.m_ChatStorage != param1)
          {
             _loc2_ = 0;
@@ -182,7 +182,7 @@ package tibia.chat
          }
       }
       
-      public function get leftChannel() : tibia.chat.Channel
+      public function get leftChannel() : Channel
       {
          return this.m_LeftChannel;
       }
@@ -237,7 +237,7 @@ package tibia.chat
       
       private function getVolumeEnabled() : Boolean
       {
-         return this.m_MappingMode != MappingSet.CHAT_MODE_OFF && this.m_LeftChannel != null && (this.m_LeftChannel.ID === tibia.chat.ChatStorage.LOCAL_CHANNEL_ID || this.m_LeftChannel.ID == tibia.chat.ChatStorage.SERVER_CHANNEL_ID || !this.m_LeftChannel.sendAllowed);
+         return this.m_MappingMode != MappingSet.CHAT_MODE_OFF && this.m_LeftChannel != null && (this.m_LeftChannel.ID === ChatStorage.LOCAL_CHANNEL_ID || this.m_LeftChannel.ID == ChatStorage.SERVER_CHANNEL_ID || !this.m_LeftChannel.sendAllowed);
       }
       
       protected function onRightChannelResize(param1:DividerEvent) : void
@@ -368,7 +368,7 @@ package tibia.chat
             this.m_UIInput.percentHeight = NaN;
             this.m_UIInput.percentWidth = 100;
             this.m_UIInput.styleName = getStyle("inputBarTextFieldStyle");
-            this.m_UIInput.maxLength = tibia.chat.ChatStorage.MAX_TALK_LENGTH;
+            this.m_UIInput.maxLength = ChatStorage.MAX_TALK_LENGTH;
             this.m_UIInput.addEventListener(MouseEvent.MOUSE_DOWN,this.onInputMouseDown);
             this.m_UIInput.addEventListener(MouseEvent.RIGHT_MOUSE_DOWN,this.onInputMouseDown);
             this.m_UIInputRow.addChild(this.m_UIInput);
@@ -480,7 +480,7 @@ package tibia.chat
          {
             param1 = MessageMode.MESSAGE_SAY;
          }
-         if(this.m_LeftChannel == null || this.m_LeftChannel.ID !== tibia.chat.ChatStorage.LOCAL_CHANNEL_ID && this.m_LeftChannel.ID !== tibia.chat.ChatStorage.SERVER_CHANNEL_ID && this.m_LeftChannel.sendAllowed)
+         if(this.m_LeftChannel == null || this.m_LeftChannel.ID !== ChatStorage.LOCAL_CHANNEL_ID && this.m_LeftChannel.ID !== ChatStorage.SERVER_CHANNEL_ID && this.m_LeftChannel.sendAllowed)
          {
             param1 = MessageMode.MESSAGE_SAY;
          }
@@ -509,7 +509,7 @@ package tibia.chat
       
       protected function onChannelClose(param1:TabBarEvent) : void
       {
-         var _loc2_:tibia.chat.Channel = null;
+         var _loc2_:Channel = null;
          if(param1 != null)
          {
             param1.preventDefault();
@@ -548,7 +548,7 @@ package tibia.chat
          }
       }
       
-      public function get rightChannel() : tibia.chat.Channel
+      public function get rightChannel() : Channel
       {
          return this.m_RightChannel;
       }
@@ -590,7 +590,7 @@ package tibia.chat
       {
          var _loc2_:DragSource = null;
          var _loc3_:int = 0;
-         var _loc4_:tibia.chat.Channel = null;
+         var _loc4_:Channel = null;
          if(param1 != null)
          {
             _loc2_ = param1.dragSource;
@@ -683,7 +683,7 @@ package tibia.chat
          }
       }
       
-      public function set rightChannel(param1:tibia.chat.Channel) : void
+      public function set rightChannel(param1:Channel) : void
       {
          if(this.m_RightChannel != param1)
          {
@@ -772,7 +772,7 @@ package tibia.chat
       {
          var i:int = 0;
          var n:int = 0;
-         var c:tibia.chat.Channel = null;
+         var c:Channel = null;
          var _Communication:Communication = null;
          var AutoSwitch:Boolean = false;
          var a_Event:CollectionEvent = param1;
@@ -832,7 +832,7 @@ package tibia.chat
                   n = a_Event.items.length;
                   while(i < n)
                   {
-                     if(AutoSwitch && (c = a_Event.items[i] as tibia.chat.Channel) != null)
+                     if(AutoSwitch && (c = a_Event.items[i] as Channel) != null)
                      {
                         this.leftChannel = c;
                      }
@@ -883,7 +883,7 @@ package tibia.chat
             this.volume = MessageMode.MESSAGE_SAY;
             if(this.m_ChatStorage != null)
             {
-               this.leftChannel = this.m_ChatStorage.getChannel(tibia.chat.ChatStorage.LOCAL_CHANNEL_ID);
+               this.leftChannel = this.m_ChatStorage.getChannel(ChatStorage.LOCAL_CHANNEL_ID);
                this.rightChannel = null;
                this.m_UITabBar.dataProvider = this.m_ChatStorage.channels;
             }
@@ -1016,7 +1016,7 @@ package tibia.chat
          }
       }
       
-      private function getChannelTextColor(param1:tibia.chat.Channel) : uint
+      private function getChannelTextColor(param1:Channel) : uint
       {
          if(this.m_Options != null && this.m_Options.getMessageFilterSet(MessageFilterSet.DEFAULT_SET) != null)
          {
@@ -1024,7 +1024,7 @@ package tibia.chat
             {
                if(this.m_ChatStorage != null)
                {
-                  param1 = this.m_ChatStorage.getChannel(tibia.chat.ChatStorage.LOCAL_CHANNEL_ID);
+                  param1 = this.m_ChatStorage.getChannel(ChatStorage.LOCAL_CHANNEL_ID);
                }
                else
                {
@@ -1057,11 +1057,11 @@ package tibia.chat
       
       protected function onChannelHighlight(param1:ChannelEvent) : void
       {
-         var _loc2_:tibia.chat.Channel = null;
+         var _loc2_:Channel = null;
          if(param1 != null)
          {
             _loc2_ = param1.channel;
-            if(_loc2_.ID == tibia.chat.ChatStorage.NPC_CHANNEL_ID)
+            if(_loc2_.ID == ChatStorage.NPC_CHANNEL_ID)
             {
                this.leftChannel = _loc2_;
             }
@@ -1072,7 +1072,7 @@ package tibia.chat
          }
       }
       
-      public function set leftChannel(param1:tibia.chat.Channel) : void
+      public function set leftChannel(param1:Channel) : void
       {
          if(this.m_LeftChannel != param1)
          {
@@ -1106,7 +1106,7 @@ package tibia.chat
          if(this.m_ChatStorage != null && this.m_LeftChannel != null)
          {
             _loc1_ = MessageMode.MESSAGE_NONE;
-            if(this.m_LeftChannel.ID === tibia.chat.ChatStorage.LOCAL_CHANNEL_ID || this.m_LeftChannel.ID === tibia.chat.ChatStorage.SERVER_CHANNEL_ID || !this.m_LeftChannel.sendAllowed)
+            if(this.m_LeftChannel.ID === ChatStorage.LOCAL_CHANNEL_ID || this.m_LeftChannel.ID === ChatStorage.SERVER_CHANNEL_ID || !this.m_LeftChannel.sendAllowed)
             {
                _loc1_ = this.volume;
                this.volume = MessageMode.MESSAGE_SAY;

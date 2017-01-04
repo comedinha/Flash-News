@@ -1,27 +1,27 @@
 package tibia.worldmap.widgetClasses
 {
-   import shared.utility.Colour;
    import flash.display.BitmapData;
-   import flash.utils.ByteArray;
-   import tibia.appearances.ObjectInstance;
-   import flash.display3D.VertexBuffer3D;
-   import flash.geom.Rectangle;
-   import tibia.creatures.Creature;
-   import tibia.options.OptionsStorage;
-   import shared.stage3D.Tibia3D;
-   import shared.stage3D.events.Tibia3DEvent;
-   import mx.events.PropertyChangeEvent;
-   import tibia.worldmap.WorldMapStorage;
-   import flash.display3D.IndexBuffer3D;
+   import flash.display3D.Context3D;
    import flash.display3D.Context3DBlendFactor;
-   import flash.geom.Matrix3D;
    import flash.display3D.Context3DProgramType;
    import flash.display3D.Context3DVertexBufferFormat;
-   import flash.utils.Endian;
+   import flash.display3D.IndexBuffer3D;
    import flash.display3D.Program3D;
-   import flash.display3D.Context3D;
+   import flash.display3D.VertexBuffer3D;
+   import flash.geom.Matrix3D;
+   import flash.geom.Rectangle;
+   import flash.utils.ByteArray;
+   import flash.utils.Endian;
+   import mx.events.PropertyChangeEvent;
    import shared.stage3D.Camera2D;
+   import shared.stage3D.Tibia3D;
+   import shared.stage3D.events.Tibia3DEvent;
+   import shared.utility.Colour;
    import shared.utility.Vector3D;
+   import tibia.appearances.ObjectInstance;
+   import tibia.creatures.Creature;
+   import tibia.options.OptionsStorage;
+   import tibia.worldmap.WorldMapStorage;
    
    public class TiledLightmapRenderer
    {

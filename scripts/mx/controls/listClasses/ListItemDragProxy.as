@@ -1,8 +1,8 @@
 package mx.controls.listClasses
 {
+   import flash.display.DisplayObject;
    import mx.core.UIComponent;
    import mx.core.mx_internal;
-   import flash.display.DisplayObject;
    
    use namespace mx_internal;
    

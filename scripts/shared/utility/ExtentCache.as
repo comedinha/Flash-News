@@ -1,8 +1,8 @@
 package shared.utility
 {
    import shared.§utility:ns_extent_cache_internal§.CHUNK_BITS;
-   import shared.§utility:ns_extent_cache_internal§.CHUNK_SIZE;
    import shared.§utility:ns_extent_cache_internal§.CHUNK_MASK;
+   import shared.§utility:ns_extent_cache_internal§.CHUNK_SIZE;
    
    public class ExtentCache
    {

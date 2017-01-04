@@ -1,8 +1,8 @@
 package tibia.input.mapping
 {
    import flash.ui.Keyboard;
-   import mx.resources.ResourceManager;
    import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
    
    public class MouseBinding
    {

@@ -1,34 +1,34 @@
 package tibia.sidebar
 {
+   import flash.events.Event;
    import flash.events.EventDispatcher;
+   import mx.events.PropertyChangeEvent;
+   import tibia.container.BodyContainerViewWidget;
+   import tibia.container.ContainerViewWidget;
+   import tibia.container.bodyContainerViewWigdetClasses.BodyContainerViewWidgetView;
+   import tibia.container.containerViewWidgetClasses.ContainerViewWidgetView;
    import tibia.creatures.BattlelistWidget;
    import tibia.creatures.BuddylistWidget;
-   import tibia.container.ContainerViewWidget;
-   import tibia.container.BodyContainerViewWidget;
-   import tibia.minimap.MiniMapWidget;
-   import tibia.trade.NPCTradeWidget;
-   import tibia.trade.SafeTradeWidget;
-   import tibia.magic.SpellListWidget;
-   import tibia.premium.PremiumWidget;
    import tibia.creatures.UnjustPointsWidget;
-   import tibia.prey.PreySidebarWidget;
    import tibia.creatures.battlelistWidgetClasses.BattlelistWidgetView;
    import tibia.creatures.buddylistWidgetClasses.BuddylistWidgetView;
-   import tibia.container.containerViewWidgetClasses.ContainerViewWidgetView;
-   import tibia.sidebar.sideBarWidgetClasses.GeneralButtonsWidgetView;
-   import tibia.container.bodyContainerViewWigdetClasses.BodyContainerViewWidgetView;
+   import tibia.creatures.unjustPointsWidgetClasses.UnjustPointsWidgetView;
+   import tibia.magic.SpellListWidget;
+   import tibia.magic.spellListWidgetClasses.SpellListWidgetView;
+   import tibia.minimap.MiniMapWidget;
    import tibia.minimap.miniMapWidgetClasses.MiniMapWidgetView;
+   import tibia.options.OptionsStorage;
+   import tibia.premium.PremiumWidget;
+   import tibia.premium.premiumWidgetClasses.PremiumWidgetView;
+   import tibia.prey.PreySidebarWidget;
+   import tibia.prey.preyWidgetClasses.PreySidebarView;
    import tibia.sidebar.sideBarWidgetClasses.CombatControlWidgetView;
+   import tibia.sidebar.sideBarWidgetClasses.GeneralButtonsWidgetView;
+   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
+   import tibia.trade.NPCTradeWidget;
+   import tibia.trade.SafeTradeWidget;
    import tibia.trade.npcTradeWidgetClasses.NPCTradeWidgetView;
    import tibia.trade.safeTradeWidgetClasses.SafeTradeWidgetView;
-   import tibia.magic.spellListWidgetClasses.SpellListWidgetView;
-   import tibia.premium.premiumWidgetClasses.PremiumWidgetView;
-   import tibia.creatures.unjustPointsWidgetClasses.UnjustPointsWidgetView;
-   import tibia.prey.preyWidgetClasses.PreySidebarView;
-   import tibia.options.OptionsStorage;
-   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
-   import mx.events.PropertyChangeEvent;
-   import flash.events.Event;
    
    public class Widget extends EventDispatcher
    {

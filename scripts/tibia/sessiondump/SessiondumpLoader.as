@@ -1,16 +1,16 @@
 package tibia.sessiondump
 {
-   import flash.events.EventDispatcher;
-   import flash.utils.ByteArray;
+   import flash.events.ErrorEvent;
    import flash.events.Event;
-   import flash.utils.Endian;
-   import flash.net.URLStream;
-   import flash.events.ProgressEvent;
+   import flash.events.EventDispatcher;
    import flash.events.IOErrorEvent;
+   import flash.events.ProgressEvent;
    import flash.events.SecurityErrorEvent;
    import flash.net.URLRequest;
+   import flash.net.URLStream;
+   import flash.utils.ByteArray;
+   import flash.utils.Endian;
    import shared.utility.URLHelper;
-   import flash.events.ErrorEvent;
    
    public class SessiondumpLoader extends EventDispatcher
    {

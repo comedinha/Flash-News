@@ -1,10 +1,10 @@
 package tibia.cursors
 {
-   import flash.ui.MouseCursorData;
-   import flash.display.BitmapData;
    import flash.display.Bitmap;
+   import flash.display.BitmapData;
    import flash.geom.Point;
    import flash.ui.Mouse;
+   import flash.ui.MouseCursorData;
    
    public class DefaultCursor
    {

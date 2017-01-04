@@ -52,7 +52,7 @@ package tibia.appearances
       
       private var m_NextFrameStrategy:NextFrameStrategy;
       
-      private var m_FrameDurations:Vector.<tibia.appearances.FrameDuration>;
+      private var m_FrameDurations:Vector.<FrameDuration>;
       
       private var m_CurrentPhaseDuration:uint;
       
@@ -64,7 +64,7 @@ package tibia.appearances
       
       private var m_CurrentPhase:uint;
       
-      public function AppearanceAnimator(param1:uint, param2:int, param3:int, param4:int, param5:Vector.<tibia.appearances.FrameDuration>)
+      public function AppearanceAnimator(param1:uint, param2:int, param3:int, param4:int, param5:Vector.<FrameDuration>)
       {
          super();
          if(param4 != ANIMATION_ASYNCHRON && param4 != ANIMATION_SYNCHRON)
@@ -95,7 +95,7 @@ package tibia.appearances
          this.phase = PHASE_AUTOMATIC;
       }
       
-      public function get frameDurations() : Vector.<tibia.appearances.FrameDuration>
+      public function get frameDurations() : Vector.<FrameDuration>
       {
          return this.m_FrameDurations;
       }
@@ -214,7 +214,7 @@ package tibia.appearances
       
       private function calculateSynchronousPhase() : void
       {
-         var _loc6_:tibia.appearances.FrameDuration = null;
+         var _loc6_:FrameDuration = null;
          var _loc7_:Number = NaN;
          var _loc8_:Number = NaN;
          var _loc1_:Number = 0;

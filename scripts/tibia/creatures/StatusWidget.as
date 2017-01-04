@@ -1,34 +1,34 @@
 package tibia.creatures
 {
-   import mx.containers.Box;
-   import mx.resources.ResourceManager;
-   import tibia.creatures.statusWidgetClasses.StateRenderer;
-   import tibia.creatures.statusWidgetClasses.BitmapProgressBar;
-   import mx.core.EdgeMetrics;
-   import mx.core.mx_internal;
-   import mx.core.IBorder;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
    import flash.geom.Matrix;
-   import tibia.options.OptionsStorage;
-   import mx.events.DragEvent;
    import flash.geom.Point;
    import flash.geom.Rectangle;
-   import mx.managers.dragClasses.DragProxy;
-   import mx.core.IFlexDisplayObject;
+   import mx.containers.Box;
    import mx.core.DragSource;
+   import mx.core.EdgeMetrics;
+   import mx.core.IBorder;
+   import mx.core.IFlexDisplayObject;
    import mx.core.IUIComponent;
-   import mx.managers.DragManager;
-   import mx.events.PropertyChangeEvent;
-   import flash.events.MouseEvent;
-   import tibia.creatures.statusWidgetClasses.StatusWidgetContextMenu;
-   import mx.events.ToolTipEvent;
-   import tibia.creatures.statusWidgetClasses.SkillProgressBar;
-   import tibia.controls.GridContainer;
-   import tibia.creatures.statusWidgetClasses.DefaultStatusWidgetStyle;
-   import tibia.creatures.statusWidgetClasses.CompactStatusWidgetStyle;
-   import tibia.creatures.statusWidgetClasses.ParallelStatusWidgetStyle;
-   import flash.events.Event;
-   import mx.events.SandboxMouseEvent;
    import mx.core.ScrollPolicy;
+   import mx.core.mx_internal;
+   import mx.events.DragEvent;
+   import mx.events.PropertyChangeEvent;
+   import mx.events.SandboxMouseEvent;
+   import mx.events.ToolTipEvent;
+   import mx.managers.DragManager;
+   import mx.managers.dragClasses.DragProxy;
+   import mx.resources.ResourceManager;
+   import tibia.controls.GridContainer;
+   import tibia.creatures.statusWidgetClasses.BitmapProgressBar;
+   import tibia.creatures.statusWidgetClasses.CompactStatusWidgetStyle;
+   import tibia.creatures.statusWidgetClasses.DefaultStatusWidgetStyle;
+   import tibia.creatures.statusWidgetClasses.ParallelStatusWidgetStyle;
+   import tibia.creatures.statusWidgetClasses.SkillProgressBar;
+   import tibia.creatures.statusWidgetClasses.StateRenderer;
+   import tibia.creatures.statusWidgetClasses.StatusWidgetContextMenu;
+   import tibia.options.OptionsStorage;
    
    public class StatusWidget extends Box
    {
@@ -310,7 +310,7 @@ package tibia.creatures
       
       private var m_UIMana:BitmapProgressBar = null;
       
-      protected var m_Player:tibia.creatures.Player = null;
+      protected var m_Player:Player = null;
       
       private var m_UncommittedStyle:Boolean = true;
       
@@ -718,7 +718,7 @@ package tibia.creatures
          }
       }
       
-      public function set player(param1:tibia.creatures.Player) : void
+      public function set player(param1:Player) : void
       {
          if(this.m_Player != param1)
          {
@@ -913,7 +913,7 @@ package tibia.creatures
          }
       }
       
-      public function get player() : tibia.creatures.Player
+      public function get player() : Player
       {
          return this.m_Player;
       }

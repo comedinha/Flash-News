@@ -1,20 +1,20 @@
 package mx.controls.menuClasses
 {
-   import mx.core.UIComponent;
-   import mx.core.IFontContextComponent;
-   import mx.core.mx_internal;
-   import mx.core.IFlexDisplayObject;
-   import mx.styles.CSSStyleDeclaration;
-   import mx.core.FlexVersion;
-   import mx.controls.MenuBar;
-   import mx.core.IUITextField;
-   import mx.core.IFlexModuleFactory;
    import flash.display.DisplayObject;
+   import mx.controls.MenuBar;
+   import mx.core.FlexVersion;
+   import mx.core.IFlexDisplayObject;
+   import mx.core.IFlexModuleFactory;
+   import mx.core.IFontContextComponent;
    import mx.core.IProgrammaticSkin;
    import mx.core.IStateClient;
-   import mx.styles.ISimpleStyleClient;
-   import mx.events.FlexEvent;
+   import mx.core.IUITextField;
+   import mx.core.UIComponent;
    import mx.core.UITextField;
+   import mx.core.mx_internal;
+   import mx.events.FlexEvent;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.ISimpleStyleClient;
    
    use namespace mx_internal;
    

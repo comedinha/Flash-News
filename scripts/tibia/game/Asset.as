@@ -1,17 +1,17 @@
 package tibia.game
 {
+   import flash.events.Event;
+   import flash.net.SharedObject;
+   import flash.net.URLLoader;
+   import flash.system.System;
+   import flash.utils.ByteArray;
+   import flash.utils.setTimeout;
+   import shared.utility.SharedObjectManager;
    import tibia.appearances.AppearancesAsset;
    import tibia.options.OptionsAsset;
    import tibia.sessiondump.SessiondumpAsset;
    import tibia.sessiondump.hints.SessiondumpHintsAsset;
    import tibia.tutorial.TutorialProgressServiceAsset;
-   import flash.system.System;
-   import flash.utils.ByteArray;
-   import shared.utility.SharedObjectManager;
-   import flash.net.SharedObject;
-   import flash.utils.setTimeout;
-   import flash.events.Event;
-   import flash.net.URLLoader;
    
    public class Asset extends AssetBase
    {

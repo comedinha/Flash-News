@@ -1,11 +1,11 @@
 package tibia.trade.npcTradeWidgetClasses
 {
-   import mx.containers.HBox;
-   import tibia.controls.CustomSlider;
    import flash.events.Event;
+   import mx.containers.HBox;
    import mx.controls.Label;
-   import tibia.trade.NPCTradeWidget;
    import mx.core.ScrollPolicy;
+   import tibia.controls.CustomSlider;
+   import tibia.trade.NPCTradeWidget;
    
    public class AmountSelector extends HBox
    {

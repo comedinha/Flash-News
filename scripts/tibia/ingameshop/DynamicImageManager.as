@@ -1,18 +1,18 @@
 package tibia.ingameshop
 {
-   import flash.net.SharedObject;
+   import flash.display.Bitmap;
    import flash.display.Loader;
-   import flash.utils.ByteArray;
+   import flash.display.LoaderInfo;
+   import flash.display.PNGEncoderOptions;
+   import flash.events.ErrorEvent;
    import flash.events.Event;
    import flash.events.IOErrorEvent;
    import flash.events.SecurityErrorEvent;
-   import flash.events.ErrorEvent;
-   import flash.display.LoaderInfo;
+   import flash.net.SharedObject;
    import flash.net.URLRequest;
+   import flash.utils.ByteArray;
    import flash.utils.Dictionary;
    import shared.utility.BrowserHelper;
-   import flash.display.Bitmap;
-   import flash.display.PNGEncoderOptions;
    
    public class DynamicImageManager
    {

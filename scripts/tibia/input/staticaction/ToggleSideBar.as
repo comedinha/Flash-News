@@ -1,8 +1,8 @@
 package tibia.input.staticaction
 {
    import tibia.options.OptionsStorage;
-   import tibia.sidebar.SideBarSet;
    import tibia.sidebar.SideBar;
+   import tibia.sidebar.SideBarSet;
    
    public class ToggleSideBar extends StaticAction
    {

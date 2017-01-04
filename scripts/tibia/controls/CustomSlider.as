@@ -1,25 +1,25 @@
 package tibia.controls
 {
-   import mx.containers.Canvas;
-   import mx.styles.CSSStyleDeclaration;
-   import mx.styles.StyleManager;
-   import mx.skins.halo.SliderThumbSkin;
-   import mx.skins.halo.SliderHighlightSkin;
-   import mx.skins.halo.SliderTrackSkin;
-   import mx.controls.Button;
    import flash.events.MouseEvent;
-   import tibia.input.MouseRepeatEvent;
-   import mx.styles.StyleProxy;
-   import mx.events.SliderEvent;
+   import flash.geom.Point;
+   import mx.containers.Canvas;
+   import mx.controls.Button;
+   import mx.controls.HSlider;
    import mx.controls.sliderClasses.Slider;
+   import mx.controls.sliderClasses.SliderDirection;
+   import mx.controls.sliderClasses.SliderThumb;
    import mx.core.EdgeMetrics;
    import mx.core.UIComponent;
-   import mx.controls.sliderClasses.SliderDirection;
    import mx.core.mx_internal;
-   import flash.geom.Point;
-   import mx.controls.sliderClasses.SliderThumb;
-   import mx.controls.HSlider;
+   import mx.events.SliderEvent;
+   import mx.skins.halo.SliderHighlightSkin;
+   import mx.skins.halo.SliderThumbSkin;
+   import mx.skins.halo.SliderTrackSkin;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.StyleManager;
+   import mx.styles.StyleProxy;
    import shared.controls.CustomButton;
+   import tibia.input.MouseRepeatEvent;
    
    public class CustomSlider extends Canvas
    {
@@ -517,8 +517,8 @@ package tibia.controls
    }
 }
 
-import mx.controls.sliderClasses.SliderThumb;
 import flash.events.KeyboardEvent;
+import mx.controls.sliderClasses.SliderThumb;
 
 class SliderThumbNoKeyboard extends SliderThumb
 {

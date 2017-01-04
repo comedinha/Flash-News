@@ -1,38 +1,38 @@
 package tibia.controls
 {
-   import mx.core.UIComponent;
-   import mx.styles.CSSStyleDeclaration;
-   import mx.styles.StyleManager;
-   import mx.controls.Button;
-   import mx.core.Container;
-   import shared.controls.CustomButton;
-   import flash.events.MouseEvent;
-   import tibia.input.MouseRepeatEvent;
-   import tibia.controls.dynamicTabBarClasses.DynamicTab;
+   import flash.display.DisplayObject;
    import flash.events.Event;
-   import tibia.controls.dynamicTabBarClasses.TabBarEvent;
+   import flash.events.MouseEvent;
+   import flash.events.TimerEvent;
+   import flash.utils.Timer;
+   import mx.collections.ArrayCollection;
    import mx.collections.IList;
    import mx.containers.ViewStack;
-   import flash.display.DisplayObject;
-   import mx.collections.ArrayCollection;
+   import mx.controls.Button;
+   import mx.controls.Menu;
    import mx.core.ClassFactory;
-   import mx.events.MenuEvent;
-   import mx.core.ScrollPolicy;
-   import mx.events.CollectionEvent;
-   import mx.events.ChildExistenceChangedEvent;
-   import mx.events.IndexChangedEvent;
+   import mx.core.Container;
    import mx.core.DragSource;
    import mx.core.EventPriority;
+   import mx.core.ScrollPolicy;
+   import mx.core.UIComponent;
+   import mx.core.mx_internal;
+   import mx.events.ChildExistenceChangedEvent;
+   import mx.events.CollectionEvent;
+   import mx.events.CollectionEventKind;
+   import mx.events.DragEvent;
+   import mx.events.IndexChangedEvent;
+   import mx.events.MenuEvent;
+   import mx.events.PropertyChangeEvent;
    import mx.events.SandboxMouseEvent;
    import mx.managers.DragManager;
-   import flash.utils.Timer;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.StyleManager;
+   import shared.controls.CustomButton;
+   import tibia.controls.dynamicTabBarClasses.DynamicTab;
+   import tibia.controls.dynamicTabBarClasses.TabBarEvent;
    import tibia.controls.dynamicTabBarClasses.TabBarMenu;
-   import mx.events.DragEvent;
-   import mx.events.PropertyChangeEvent;
-   import mx.events.CollectionEventKind;
-   import mx.controls.Menu;
-   import flash.events.TimerEvent;
-   import mx.core.mx_internal;
+   import tibia.input.MouseRepeatEvent;
    
    public class DynamicTabBar extends UIComponent
    {
@@ -1405,11 +1405,12 @@ package tibia.controls
       
       override protected function updateDisplayList(param1:Number, param2:Number) : void
       {
+         var _loc4_:Number = NaN;
          var _loc20_:Number = NaN;
          var _loc21_:* = false;
          super.updateDisplayList(param1,param2);
          var _loc3_:Number = getStyle("paddingLeft");
-         var _loc4_:Number = param1;
+         _loc4_ = param1;
          var _loc5_:Number = getStyle("paddingTop");
          var _loc6_:Number = param1 - _loc3_ - getStyle("paddingRight");
          var _loc7_:Number = param2 - _loc5_ - getStyle("paddingBottom");

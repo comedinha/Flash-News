@@ -1,8 +1,8 @@
 package shared.controls
 {
-   import mx.core.UIComponent;
    import flash.events.MouseEvent;
    import mx.core.EventPriority;
+   import mx.core.UIComponent;
    
    public class ColourRenderer extends UIComponent
    {

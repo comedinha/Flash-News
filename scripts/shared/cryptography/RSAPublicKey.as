@@ -12,24 +12,24 @@ package shared.cryptography
       public static const BLOCKSIZE:uint = 128;
        
       
-      private var m_Exponent:shared.cryptography.BigInt;
+      private var m_Exponent:BigInt;
       
-      private var m_Modulus:shared.cryptography.BigInt;
+      private var m_Modulus:BigInt;
       
-      private var m_PRNG:shared.cryptography.Random;
+      private var m_PRNG:Random;
       
       public function RSAPublicKey()
       {
-         this.m_Exponent = new shared.cryptography.BigInt(PUBLIC_EXPONENT);
-         this.m_Modulus = shared.cryptography.BigInt.s_FromString(PUBLIC_MODULUS,10);
-         this.m_PRNG = new shared.cryptography.Random();
+         this.m_Exponent = new BigInt(PUBLIC_EXPONENT);
+         this.m_Modulus = BigInt.s_FromString(PUBLIC_MODULUS,10);
+         this.m_PRNG = new Random();
          super();
       }
       
       public function encrypt(param1:ByteArray, param2:uint = 0, param3:uint = 2147483647) : uint
       {
-         var _loc6_:shared.cryptography.BigInt = null;
-         var _loc7_:shared.cryptography.BigInt = null;
+         var _loc6_:BigInt = null;
+         var _loc7_:BigInt = null;
          param3 = Math.min(param3,param1.length - param2);
          param1.position = param2 + param3;
          var _loc4_:uint = Math.floor((param3 + BLOCKSIZE - 1) / BLOCKSIZE) * BLOCKSIZE;
@@ -41,8 +41,8 @@ package shared.cryptography
          var _loc5_:int = param2;
          while(_loc5_ < param2 + param3)
          {
-            _loc6_ = shared.cryptography.BigInt.s_FromByteArray(param1,_loc5_,BLOCKSIZE);
-            _loc7_ = shared.cryptography.BigInt.s_ImplModExp(_loc6_,this.m_Exponent,this.m_Modulus);
+            _loc6_ = BigInt.s_FromByteArray(param1,_loc5_,BLOCKSIZE);
+            _loc7_ = BigInt.s_ImplModExp(_loc6_,this.m_Exponent,this.m_Modulus);
             _loc7_.toByteArray(param1,_loc5_,BLOCKSIZE);
             _loc5_ = _loc5_ + BLOCKSIZE;
          }

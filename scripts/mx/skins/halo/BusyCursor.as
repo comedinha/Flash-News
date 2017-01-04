@@ -1,15 +1,15 @@
 package mx.skins.halo
 {
-   import mx.core.FlexSprite;
-   import mx.core.mx_internal;
+   import flash.display.DisplayObject;
+   import flash.display.Graphics;
+   import flash.display.InteractiveObject;
    import flash.display.Shape;
    import flash.events.Event;
-   import flash.display.Graphics;
-   import mx.styles.StyleManager;
-   import mx.styles.CSSStyleDeclaration;
-   import flash.display.DisplayObject;
-   import flash.display.InteractiveObject;
    import mx.core.FlexShape;
+   import mx.core.FlexSprite;
+   import mx.core.mx_internal;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.StyleManager;
    
    use namespace mx_internal;
    

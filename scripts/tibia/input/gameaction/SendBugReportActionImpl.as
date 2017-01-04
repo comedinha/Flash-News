@@ -1,13 +1,13 @@
 package tibia.input.gameaction
 {
-   import tibia.input.IActionImpl;
-   import tibia.game.BugReportWidget;
-   import tibia.worldmap.WorldMapStorage;
-   import tibia.chat.ChatStorage;
-   import tibia.network.Communication;
    import mx.events.CloseEvent;
    import mx.resources.ResourceManager;
+   import tibia.chat.ChatStorage;
    import tibia.chat.MessageMode;
+   import tibia.game.BugReportWidget;
+   import tibia.input.IActionImpl;
+   import tibia.network.Communication;
+   import tibia.worldmap.WorldMapStorage;
    
    public class SendBugReportActionImpl implements IActionImpl
    {
@@ -15,7 +15,7 @@ package tibia.input.gameaction
       private static const BUNDLE:String = "BugReportWidget";
        
       
-      protected var m_BugCategory:int = 3;
+      protected var m_BugCategory:int;
       
       protected var m_SystemMessage = null;
       
@@ -25,6 +25,7 @@ package tibia.input.gameaction
       
       public function SendBugReportActionImpl(param1:String = null, param2:* = null, param3:Function = null, param4:int = -1)
       {
+         this.m_BugCategory = BugReportWidget.BUG_CATEGORY_OTHER;
          super();
          this.m_UserMessage = param1;
          this.m_SystemMessage = param2;

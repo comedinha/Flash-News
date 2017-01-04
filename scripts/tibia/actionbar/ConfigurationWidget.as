@@ -1,19 +1,19 @@
 package tibia.actionbar
 {
-   import tibia.game.PopUpBase;
-   import mx.controls.Label;
-   import tibia.actionbar.configurationWidgetClasses.IActionEditor;
-   import tibia.input.IAction;
    import flash.display.DisplayObject;
-   import tibia.input.gameaction.EquipAction;
-   import tibia.input.gameaction.UseAction;
-   import tibia.actionbar.configurationWidgetClasses.ObjectEditor;
-   import tibia.actionbar.configurationWidgetClasses.TextEditor;
-   import mx.controls.HRule;
    import mx.containers.Form;
    import mx.containers.FormHeading;
    import mx.containers.FormItem;
+   import mx.controls.HRule;
+   import mx.controls.Label;
    import shared.controls.CustomLabel;
+   import tibia.actionbar.configurationWidgetClasses.IActionEditor;
+   import tibia.actionbar.configurationWidgetClasses.ObjectEditor;
+   import tibia.actionbar.configurationWidgetClasses.TextEditor;
+   import tibia.game.PopUpBase;
+   import tibia.input.IAction;
+   import tibia.input.gameaction.EquipAction;
+   import tibia.input.gameaction.UseAction;
    
    public class ConfigurationWidget extends PopUpBase
    {
@@ -35,7 +35,7 @@ package tibia.actionbar
       
       private var m_UIInfoBindings:Label = null;
       
-      private var m_ActionBar:tibia.actionbar.ActionBar = null;
+      private var m_ActionBar:ActionBar = null;
       
       public function ConfigurationWidget()
       {
@@ -44,7 +44,7 @@ package tibia.actionbar
          minWidth = 256;
       }
       
-      public function set actionBar(param1:tibia.actionbar.ActionBar) : void
+      public function set actionBar(param1:ActionBar) : void
       {
          if(this.m_ActionBar != param1)
          {
@@ -57,7 +57,7 @@ package tibia.actionbar
       
       public function set slotIndex(param1:int) : void
       {
-         if(param1 < 0 || param1 >= tibia.actionbar.ActionBar.NUM_ACTIONS)
+         if(param1 < 0 || param1 >= ActionBar.NUM_ACTIONS)
          {
             param1 = -1;
          }
@@ -88,7 +88,7 @@ package tibia.actionbar
                removeChild(this.m_UIActionEditor as DisplayObject);
                this.m_UIActionEditor = null;
             }
-            if(this.actionBar != null && this.slotIndex >= 0 && this.slotIndex < tibia.actionbar.ActionBar.NUM_ACTIONS)
+            if(this.actionBar != null && this.slotIndex >= 0 && this.slotIndex < ActionBar.NUM_ACTIONS)
             {
                _loc2_ = this.actionBar.getAction(this.slotIndex);
                if(_loc2_ is EquipAction || _loc2_ is UseAction)
@@ -112,7 +112,7 @@ package tibia.actionbar
          {
             _loc3_ = null;
             _loc4_ = null;
-            if(this.actionBar != null && this.slotIndex >= 0 && this.slotIndex < tibia.actionbar.ActionBar.NUM_ACTIONS)
+            if(this.actionBar != null && this.slotIndex >= 0 && this.slotIndex < ActionBar.NUM_ACTIONS)
             {
                _loc5_ = this.actionBar.getBindings(this.slotIndex);
                if(_loc5_ != null && _loc5_.length > 0)
@@ -139,14 +139,14 @@ package tibia.actionbar
       
       override public function hide(param1:Boolean = false) : void
       {
-         if(param1 && this.actionBar != null && this.slotIndex >= 0 && this.slotIndex < tibia.actionbar.ActionBar.NUM_ACTIONS)
+         if(param1 && this.actionBar != null && this.slotIndex >= 0 && this.slotIndex < ActionBar.NUM_ACTIONS)
          {
             this.m_ActionBar.setAction(this.slotIndex,this.m_UIActionEditor.action);
          }
          super.hide(param1);
       }
       
-      public function get actionBar() : tibia.actionbar.ActionBar
+      public function get actionBar() : ActionBar
       {
          return this.m_ActionBar;
       }

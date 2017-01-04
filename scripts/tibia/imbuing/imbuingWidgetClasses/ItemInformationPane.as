@@ -1,14 +1,14 @@
 package tibia.imbuing.imbuingWidgetClasses
 {
-   import mx.containers.HBox;
    import flash.events.MouseEvent;
-   import tibia.imbuing.ImbuingEvent;
-   import shared.controls.ShapeWrapper;
-   import tibia.appearances.widgetClasses.SimpleAppearanceRenderer;
+   import mx.containers.HBox;
    import mx.containers.VBox;
    import mx.controls.Label;
    import mx.controls.Spacer;
+   import shared.controls.ShapeWrapper;
+   import tibia.appearances.widgetClasses.SimpleAppearanceRenderer;
    import tibia.game.ExtendedTooltipEvent;
+   import tibia.imbuing.ImbuingEvent;
    
    public class ItemInformationPane extends HBox
    {
@@ -28,7 +28,7 @@ package tibia.imbuing.imbuingWidgetClasses
       
       private var m_TooltipText:String = "";
       
-      private var m_ImbuementSlots:Vector.<tibia.imbuing.imbuingWidgetClasses.ImbuementSlotWidget>;
+      private var m_ImbuementSlots:Vector.<ImbuementSlotWidget>;
       
       private var m_SelectedExistingImbuementIndex:int = -1;
       
@@ -39,7 +39,7 @@ package tibia.imbuing.imbuingWidgetClasses
       public function ItemInformationPane()
       {
          this.m_ImbuingSlotImages = new Vector.<int>();
-         this.m_ImbuementSlots = new Vector.<tibia.imbuing.imbuingWidgetClasses.ImbuementSlotWidget>();
+         this.m_ImbuementSlots = new Vector.<ImbuementSlotWidget>();
          super();
       }
       
@@ -51,7 +51,7 @@ package tibia.imbuing.imbuingWidgetClasses
       private function onImbuementSlotMouseEvent(param1:MouseEvent) : void
       {
          var _loc5_:ImbuingEvent = null;
-         var _loc2_:tibia.imbuing.imbuingWidgetClasses.ImbuementSlotWidget = null;
+         var _loc2_:ImbuementSlotWidget = null;
          var _loc3_:int = -1;
          var _loc4_:uint = 0;
          while(_loc4_ < this.m_ImbuementSlots.length)
@@ -146,15 +146,15 @@ package tibia.imbuing.imbuingWidgetClasses
             {
                if(_loc1_ == this.m_SelectedExistingImbuementIndex)
                {
-                  this.m_ImbuementSlots[this.m_SelectedExistingImbuementIndex].borderStyle = tibia.imbuing.imbuingWidgetClasses.ImbuementSlotWidget.BORDER_STYLE_SELECTED;
+                  this.m_ImbuementSlots[this.m_SelectedExistingImbuementIndex].borderStyle = ImbuementSlotWidget.BORDER_STYLE_SELECTED;
                }
                else if(_loc1_ == this.m_CurrentlyHoveredImbuementSlotIndex)
                {
-                  this.m_ImbuementSlots[this.m_CurrentlyHoveredImbuementSlotIndex].borderStyle = tibia.imbuing.imbuingWidgetClasses.ImbuementSlotWidget.BORDER_STYLE_HOVER;
+                  this.m_ImbuementSlots[this.m_CurrentlyHoveredImbuementSlotIndex].borderStyle = ImbuementSlotWidget.BORDER_STYLE_HOVER;
                }
                else
                {
-                  this.m_ImbuementSlots[_loc1_].borderStyle = tibia.imbuing.imbuingWidgetClasses.ImbuementSlotWidget.BORDER_STYLE_NONE;
+                  this.m_ImbuementSlots[_loc1_].borderStyle = ImbuementSlotWidget.BORDER_STYLE_NONE;
                }
                _loc1_++;
             }
@@ -179,7 +179,7 @@ package tibia.imbuing.imbuingWidgetClasses
       
       override protected function createChildren() : void
       {
-         var _loc9_:tibia.imbuing.imbuingWidgetClasses.ImbuementSlotWidget = null;
+         var _loc9_:ImbuementSlotWidget = null;
          super.createChildren();
          var _loc1_:VBox = new VBox();
          _loc1_.percentWidth = 100;
@@ -199,7 +199,7 @@ package tibia.imbuing.imbuingWidgetClasses
          var _loc7_:uint = 0;
          while(_loc7_ < 3)
          {
-            _loc9_ = new tibia.imbuing.imbuingWidgetClasses.ImbuementSlotWidget();
+            _loc9_ = new ImbuementSlotWidget();
             _loc5_.addChild(_loc9_);
             _loc9_.addEventListener(MouseEvent.MOUSE_OVER,this.onImbuementSlotMouseEvent);
             _loc9_.addEventListener(MouseEvent.MOUSE_OUT,this.onImbuementSlotMouseEvent);
@@ -230,7 +230,7 @@ package tibia.imbuing.imbuingWidgetClasses
       
       public function dispose() : void
       {
-         var _loc1_:tibia.imbuing.imbuingWidgetClasses.ImbuementSlotWidget = null;
+         var _loc1_:ImbuementSlotWidget = null;
          for each(_loc1_ in this.m_ImbuementSlots)
          {
             _loc1_.removeEventListener(MouseEvent.MOUSE_OVER,this.onImbuementSlotMouseEvent);

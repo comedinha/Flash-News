@@ -1,9 +1,9 @@
 package mx.managers
 {
-   import mx.core.IChildList;
-   import mx.core.mx_internal;
    import flash.display.DisplayObject;
    import flash.geom.Point;
+   import mx.core.IChildList;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    
@@ -17,9 +17,9 @@ package mx.managers
       
       private var upperBoundReference:QName;
       
-      private var owner:mx.managers.SystemManager;
+      private var owner:SystemManager;
       
-      public function SystemChildrenList(param1:mx.managers.SystemManager, param2:QName, param3:QName)
+      public function SystemChildrenList(param1:SystemManager, param2:QName, param3:QName)
       {
          super();
          this.owner = param1;

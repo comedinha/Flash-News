@@ -1,13 +1,13 @@
 package mx.controls.listClasses
 {
+   import flash.display.Graphics;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import mx.collections.IViewCursor;
+   import mx.core.FlexShape;
+   import mx.core.FlexSprite;
    import mx.core.UIComponent;
    import mx.core.mx_internal;
-   import flash.display.Sprite;
-   import flash.display.Graphics;
-   import mx.core.FlexShape;
-   import flash.display.Shape;
-   import mx.collections.IViewCursor;
-   import mx.core.FlexSprite;
    
    use namespace mx_internal;
    
@@ -27,7 +27,7 @@ package mx.controls.listClasses
       
       public var selectionLayer:Sprite;
       
-      private var parentList:mx.controls.listClasses.ListBase;
+      private var parentList:ListBase;
       
       public var iterator:IViewCursor;
       
@@ -41,7 +41,7 @@ package mx.controls.listClasses
       
       mx_internal var allowItemSizeChangeNotification:Boolean = true;
       
-      public function ListBaseContentHolder(param1:mx.controls.listClasses.ListBase)
+      public function ListBaseContentHolder(param1:ListBase)
       {
          var _loc2_:Graphics = null;
          visibleData = {};
@@ -109,7 +109,7 @@ package mx.controls.listClasses
          }
       }
       
-      mx_internal function getParentList() : mx.controls.listClasses.ListBase
+      mx_internal function getParentList() : ListBase
       {
          return parentList;
       }

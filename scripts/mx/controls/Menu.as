@@ -1,48 +1,48 @@
 package mx.controls
 {
-   import mx.managers.IFocusManagerContainer;
-   import mx.core.mx_internal;
-   import mx.events.MenuEvent;
-   import mx.managers.PopUpManager;
-   import flash.display.DisplayObjectContainer;
    import flash.display.DisplayObject;
-   import mx.core.Application;
-   import mx.controls.listClasses.IListItemRenderer;
-   import mx.collections.CursorBookmark;
-   import mx.controls.menuClasses.MenuListData;
-   import mx.controls.menuClasses.IMenuItemRenderer;
-   import flash.events.MouseEvent;
+   import flash.display.DisplayObjectContainer;
+   import flash.events.Event;
    import flash.events.FocusEvent;
+   import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
    import flash.geom.Point;
    import flash.geom.Rectangle;
-   import flash.utils.clearInterval;
-   import mx.effects.Tween;
-   import flash.events.Event;
-   import mx.events.ListEvent;
-   import mx.events.SandboxMouseEvent;
-   import mx.controls.menuClasses.IMenuBarItemRenderer;
-   import mx.events.FlexEvent;
-   import mx.core.EdgeMetrics;
-   import flash.events.KeyboardEvent;
    import flash.ui.Keyboard;
-   import mx.core.UIComponent;
-   import mx.controls.menuClasses.IMenuDataDescriptor;
+   import flash.utils.clearInterval;
+   import flash.utils.setTimeout;
    import flash.xml.XMLNode;
-   import mx.collections.XMLListCollection;
-   import mx.collections.ICollectionView;
    import mx.collections.ArrayCollection;
+   import mx.collections.CursorBookmark;
+   import mx.collections.ICollectionView;
+   import mx.collections.XMLListCollection;
+   import mx.controls.listClasses.BaseListData;
+   import mx.controls.listClasses.IListItemRenderer;
+   import mx.controls.menuClasses.IMenuBarItemRenderer;
+   import mx.controls.menuClasses.IMenuDataDescriptor;
+   import mx.controls.menuClasses.IMenuItemRenderer;
+   import mx.controls.menuClasses.MenuItemRenderer;
+   import mx.controls.menuClasses.MenuListData;
+   import mx.controls.treeClasses.DefaultDataDescriptor;
+   import mx.core.Application;
+   import mx.core.ClassFactory;
+   import mx.core.EdgeMetrics;
+   import mx.core.EventPriority;
+   import mx.core.ScrollPolicy;
+   import mx.core.UIComponent;
+   import mx.core.UIComponentGlobals;
+   import mx.core.mx_internal;
+   import mx.effects.Tween;
    import mx.events.CollectionEvent;
    import mx.events.CollectionEventKind;
-   import mx.core.UIComponentGlobals;
-   import mx.controls.listClasses.BaseListData;
-   import mx.core.ScrollPolicy;
-   import mx.core.EventPriority;
-   import flash.utils.setTimeout;
+   import mx.events.FlexEvent;
    import mx.events.InterManagerRequest;
+   import mx.events.ListEvent;
+   import mx.events.MenuEvent;
+   import mx.events.SandboxMouseEvent;
+   import mx.managers.IFocusManagerContainer;
    import mx.managers.ISystemManager;
-   import mx.controls.treeClasses.DefaultDataDescriptor;
-   import mx.core.ClassFactory;
-   import mx.controls.menuClasses.MenuItemRenderer;
+   import mx.managers.PopUpManager;
    
    use namespace mx_internal;
    
@@ -74,15 +74,15 @@ package mx.controls
       
       private var maxMeasuredTypeIconWidth:Number = 0;
       
-      mx_internal var sourceMenuBar:mx.controls.MenuBar;
+      mx_internal var sourceMenuBar:MenuBar;
       
       private var maxMeasuredBranchIconWidth:Number = 0;
       
       private var maxMeasuredIconWidth:Number = 0;
       
-      private var subMenu:mx.controls.Menu;
+      private var subMenu:Menu;
       
-      mx_internal var _parentMenu:mx.controls.Menu;
+      mx_internal var _parentMenu:Menu;
       
       mx_internal var _dataDescriptor:IMenuDataDescriptor;
       
@@ -112,7 +112,7 @@ package mx.controls
       
       private static function menuHideHandler(param1:MenuEvent) : void
       {
-         var _loc2_:mx.controls.Menu = mx.controls.Menu(param1.target);
+         var _loc2_:Menu = Menu(param1.target);
          if(!param1.isDefaultPrevented() && param1.menu == _loc2_)
          {
             _loc2_.supposedToLoseFocus = true;
@@ -121,7 +121,7 @@ package mx.controls
          }
       }
       
-      public static function popUpMenu(param1:mx.controls.Menu, param2:DisplayObjectContainer, param3:Object) : void
+      public static function popUpMenu(param1:Menu, param2:DisplayObjectContainer, param3:Object) : void
       {
          param1.parentDisplayObject = !!param2?param2:DisplayObject(Application.application);
          if(!param3)
@@ -132,10 +132,10 @@ package mx.controls
          param1.dataProvider = param3;
       }
       
-      public static function createMenu(param1:DisplayObjectContainer, param2:Object, param3:Boolean = true) : mx.controls.Menu
+      public static function createMenu(param1:DisplayObjectContainer, param2:Object, param3:Boolean = true) : Menu
       {
-         var _loc4_:mx.controls.Menu = null;
-         _loc4_ = new mx.controls.Menu();
+         var _loc4_:Menu = null;
+         _loc4_ = new Menu();
          _loc4_.tabEnabled = false;
          _loc4_.owner = DisplayObjectContainer(Application.application);
          _loc4_.showRoot = param3;
@@ -337,7 +337,7 @@ package mx.controls
          var _loc2_:DisplayObject = DisplayObject(param1.target);
          while(_loc2_)
          {
-            if(_loc2_ is mx.controls.Menu)
+            if(_loc2_ is Menu)
             {
                return true;
             }
@@ -358,14 +358,14 @@ package mx.controls
       
       mx_internal function openSubMenu(param1:IListItemRenderer) : void
       {
-         var _loc3_:mx.controls.Menu = null;
+         var _loc3_:Menu = null;
          var _loc7_:Number = NaN;
          var _loc12_:Number = NaN;
          supposedToLoseFocus = true;
-         var _loc2_:mx.controls.Menu = getRootMenu();
+         var _loc2_:Menu = getRootMenu();
          if(!IMenuItemRenderer(param1).menu)
          {
-            _loc3_ = new mx.controls.Menu();
+            _loc3_ = new Menu();
             _loc3_.parentMenu = this;
             _loc3_.owner = this;
             _loc3_.showRoot = showRoot;
@@ -437,7 +437,7 @@ package mx.controls
          openSubMenuTimer = 0;
       }
       
-      public function get parentMenu() : mx.controls.Menu
+      public function get parentMenu() : Menu
       {
          return _parentMenu;
       }
@@ -472,7 +472,7 @@ package mx.controls
       
       mx_internal function deleteDependentSubMenus() : void
       {
-         var _loc3_:mx.controls.Menu = null;
+         var _loc3_:Menu = null;
          var _loc1_:int = listItems.length;
          var _loc2_:int = 0;
          while(_loc2_ < _loc1_)
@@ -522,7 +522,7 @@ package mx.controls
       {
       }
       
-      public function set parentMenu(param1:mx.controls.Menu) : void
+      public function set parentMenu(param1:Menu) : void
       {
          _parentMenu = param1;
          param1.addEventListener(FlexEvent.HIDE,parentHideHandler,false,0,true);
@@ -618,7 +618,7 @@ package mx.controls
          var _loc5_:MenuEvent = null;
          var _loc2_:IListItemRenderer = selectedIndex == -1?null:listItems[selectedIndex - verticalScrollPosition][0];
          var _loc3_:Object = !!_loc2_?_loc2_.data:null;
-         var _loc4_:mx.controls.Menu = !!_loc2_?IMenuItemRenderer(_loc2_).menu:null;
+         var _loc4_:Menu = !!_loc2_?IMenuItemRenderer(_loc2_).menu:null;
          if(param1.keyCode == Keyboard.UP)
          {
             if(_loc3_ && _dataDescriptor.isBranch(_loc3_) && _loc4_ && _loc4_.visible)
@@ -947,7 +947,7 @@ package mx.controls
          }
       }
       
-      private function closeSubMenu(param1:mx.controls.Menu) : void
+      private function closeSubMenu(param1:Menu) : void
       {
          param1.hide();
          clearInterval(param1.closeTimer);
@@ -1093,9 +1093,9 @@ package mx.controls
          iconField = parentMenu.iconField;
       }
       
-      mx_internal function getRootMenu() : mx.controls.Menu
+      mx_internal function getRootMenu() : Menu
       {
-         var _loc1_:mx.controls.Menu = this;
+         var _loc1_:Menu = this;
          while(_loc1_.parentMenu)
          {
             _loc1_ = _loc1_.parentMenu;

@@ -1,13 +1,13 @@
 package
 {
-   import mx.managers.SystemManager;
-   import mx.core.IFlexModuleFactory;
-   import mx.core.IFlexModule;
-   import flash.system.Security;
    import flash.system.ApplicationDomain;
-   import tibia.controls.CustomDownloadProgressBar;
+   import flash.system.Security;
    import flash.utils.Dictionary;
    import mx.core.FlexVersion;
+   import mx.core.IFlexModule;
+   import mx.core.IFlexModuleFactory;
+   import mx.managers.SystemManager;
+   import tibia.controls.CustomDownloadProgressBar;
    
    public class _Tibia_mx_managers_SystemManager extends SystemManager implements IFlexModuleFactory
    {

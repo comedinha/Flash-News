@@ -1,10 +1,10 @@
 package tibia.market.marketWidgetClasses
 {
+   import flash.events.Event;
    import mx.containers.Box;
+   import tibia.appearances.AppearanceStorage;
    import tibia.appearances.AppearanceType;
    import tibia.market.MarketWidget;
-   import tibia.appearances.AppearanceStorage;
-   import flash.events.Event;
    
    public class MarketComponent extends Box implements ITypeComponent
    {

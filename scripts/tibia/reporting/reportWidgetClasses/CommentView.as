@@ -1,16 +1,16 @@
 package tibia.reporting.reportWidgetClasses
 {
-   import mx.controls.Label;
-   import tibia.reporting.ReportWidget;
-   import mx.controls.TextArea;
-   import tibia.reporting.reportType.Type;
-   import tibia.chat.ChannelMessage;
    import flash.events.Event;
    import flash.events.KeyboardEvent;
-   import tibia.input.PreventWhitespaceInput;
    import flash.events.TextEvent;
+   import mx.controls.Label;
+   import mx.controls.TextArea;
    import shared.utility.StringHelper;
+   import tibia.chat.ChannelMessage;
+   import tibia.input.PreventWhitespaceInput;
    import tibia.reporting.IReportable;
+   import tibia.reporting.ReportWidget;
+   import tibia.reporting.reportType.Type;
    
    public class CommentView extends ViewBase
    {

@@ -1,7 +1,7 @@
 package tibia.options.configurationWidgetClasses
 {
-   import mx.core.UIComponent;
    import mx.controls.listClasses.IListItemRenderer;
+   import mx.core.UIComponent;
    import tibia.chat.MessageMode;
    
    public class ColorItemRenderer extends UIComponent implements IListItemRenderer

@@ -1,31 +1,31 @@
 package tibia.market.marketWidgetClasses
 {
-   import mx.controls.Button;
-   import mx.collections.ArrayCollection;
-   import tibia.ingameshop.shopWidgetClasses.CoinWidget;
-   import mx.containers.VBox;
-   import mx.containers.HBox;
-   import mx.controls.Spacer;
-   import mx.controls.Label;
-   import shared.controls.CustomButton;
-   import flash.events.MouseEvent;
-   import mx.controls.ComboBox;
-   import mx.events.DropdownEvent;
-   import mx.events.ListEvent;
-   import mx.controls.TextInput;
    import flash.events.Event;
    import flash.events.FocusEvent;
    import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
    import flash.events.TextEvent;
-   import tibia.input.MouseRepeatEvent;
+   import mx.collections.ArrayCollection;
+   import mx.containers.BoxDirection;
+   import mx.containers.HBox;
+   import mx.containers.VBox;
+   import mx.controls.Button;
    import mx.controls.CheckBox;
-   import tibia.market.Offer;
-   import tibia.market.MarketWidget;
-   import tibia.ingameshop.IngameShopManager;
+   import mx.controls.ComboBox;
+   import mx.controls.Label;
+   import mx.controls.Spacer;
+   import mx.controls.TextInput;
+   import mx.core.EventPriority;
+   import mx.events.DropdownEvent;
+   import mx.events.ListEvent;
+   import shared.controls.CustomButton;
    import shared.utility.i18n.i18nFormatNumber;
    import tibia.ingameshop.IngameShopEvent;
-   import mx.containers.BoxDirection;
-   import mx.core.EventPriority;
+   import tibia.ingameshop.IngameShopManager;
+   import tibia.ingameshop.shopWidgetClasses.CoinWidget;
+   import tibia.input.MouseRepeatEvent;
+   import tibia.market.MarketWidget;
+   import tibia.market.Offer;
    
    public class MarketOfferEditor extends MarketComponent
    {

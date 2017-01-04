@@ -1,9 +1,9 @@
 package shared.skins
 {
-   import mx.skins.ProgrammaticSkin;
+   import mx.core.EdgeMetrics;
    import mx.core.IBorder;
    import mx.core.UIComponent;
-   import mx.core.EdgeMetrics;
+   import mx.skins.ProgrammaticSkin;
    
    public class VectorBorderSkin extends ProgrammaticSkin implements IBorder
    {

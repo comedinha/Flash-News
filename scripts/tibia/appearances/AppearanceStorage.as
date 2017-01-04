@@ -1,18 +1,18 @@
 package tibia.appearances
 {
-   import flash.events.EventDispatcher;
-   import flash.utils.Dictionary;
-   import tibia.market.MarketWidget;
-   import loader.asset.IAssetProvider;
-   import flash.events.Event;
-   import tibia.appearances.widgetClasses.AsyncCompressedSpriteProvider;
-   import tibia.appearances.widgetClasses.AsyncSpriteCache;
-   import flash.system.System;
    import flash.events.ErrorEvent;
+   import flash.events.Event;
+   import flash.events.EventDispatcher;
+   import flash.system.System;
    import flash.utils.ByteArray;
+   import flash.utils.Dictionary;
    import flash.utils.Endian;
+   import loader.asset.IAssetProvider;
    import shared.utility.StringHelper;
    import shared.utility.Vector3D;
+   import tibia.appearances.widgetClasses.AsyncCompressedSpriteProvider;
+   import tibia.appearances.widgetClasses.AsyncSpriteCache;
+   import tibia.market.MarketWidget;
    
    public class AppearanceStorage extends EventDispatcher
    {
@@ -238,44 +238,44 @@ package tibia.appearances
       public static const ANIMATION_SYNCHRON:int = 1;
        
       
-      private var m_OutfitTypes:Vector.<tibia.appearances.AppearanceType>;
+      private var m_OutfitTypes:Vector.<AppearanceType>;
       
-      private var m_ObjectTypes:Vector.<tibia.appearances.AppearanceType>;
+      private var m_ObjectTypes:Vector.<AppearanceType>;
       
       public var m_AsyncSpriteCache:AsyncSpriteCache = null;
       
       private var m_AsyncCompressedSpriteProvider:AsyncCompressedSpriteProvider = null;
       
-      private var m_MissileTypes:Vector.<tibia.appearances.AppearanceType>;
+      private var m_MissileTypes:Vector.<AppearanceType>;
       
-      private var m_ObjectTypeInfoCache:Vector.<tibia.appearances.AppearanceTypeInfo>;
+      private var m_ObjectTypeInfoCache:Vector.<AppearanceTypeInfo>;
       
       private var m_MarketObjectTypes:Array;
       
       private var m_AppearancesContentRevision:int;
       
-      private var m_SpritesInformation:tibia.appearances.SpritesInformation = null;
+      private var m_SpritesInformation:SpritesInformation = null;
       
-      private var m_EffectTypes:Vector.<tibia.appearances.AppearanceType>;
+      private var m_EffectTypes:Vector.<AppearanceType>;
       
       public function AppearanceStorage()
       {
-         this.m_ObjectTypes = new Vector.<tibia.appearances.AppearanceType>();
-         this.m_OutfitTypes = new Vector.<tibia.appearances.AppearanceType>();
-         this.m_MissileTypes = new Vector.<tibia.appearances.AppearanceType>();
-         this.m_EffectTypes = new Vector.<tibia.appearances.AppearanceType>();
+         this.m_ObjectTypes = new Vector.<AppearanceType>();
+         this.m_OutfitTypes = new Vector.<AppearanceType>();
+         this.m_MissileTypes = new Vector.<AppearanceType>();
+         this.m_EffectTypes = new Vector.<AppearanceType>();
          this.m_MarketObjectTypes = [];
-         this.m_ObjectTypeInfoCache = new Vector.<tibia.appearances.AppearanceTypeInfo>();
+         this.m_ObjectTypeInfoCache = new Vector.<AppearanceTypeInfo>();
          super();
       }
       
       private function postprocessAppearances() : Boolean
       {
          var CachedSpriteInformations:Dictionary = null;
-         var _Type:tibia.appearances.AppearanceType = null;
+         var _Type:AppearanceType = null;
          var i:int = 0;
          var j:int = 0;
-         _Type = new tibia.appearances.AppearanceType(AppearanceInstance.CREATURE);
+         _Type = new AppearanceType(AppearanceInstance.CREATURE);
          _Type.isAvoid = true;
          _Type.isCachable = false;
          _Type.FrameGroups[FrameGroup.FRAME_GROUP_DEFAULT] = new FrameGroup();
@@ -283,8 +283,8 @@ package tibia.appearances
          _Type = this.m_ObjectTypes[AppearanceInstance.PURSE];
          _Type.isUnmoveable = true;
          _Type.isTakeable = false;
-         var BlueStars:tibia.appearances.AppearanceType = this.m_EffectTypes[13];
-         _Type = new tibia.appearances.AppearanceType(OutfitInstance.INVISIBLE_OUTFIT_ID);
+         var BlueStars:AppearanceType = this.m_EffectTypes[13];
+         _Type = new AppearanceType(OutfitInstance.INVISIBLE_OUTFIT_ID);
          var _FrameGroup:FrameGroup = new FrameGroup();
          _Type.FrameGroups[FRAME_GROUP_IDLE] = _Type.FrameGroups[FRAME_GROUP_WALKING] = _FrameGroup;
          _FrameGroup.width = BlueStars.FrameGroups[FRAME_GROUP_DEFAULT].width;
@@ -308,12 +308,12 @@ package tibia.appearances
             _FrameGroup.spriteIDs = BlueStars.FrameGroups[FRAME_GROUP_DEFAULT].spriteIDs;
             this.m_OutfitTypes[OutfitInstance.INVISIBLE_OUTFIT_ID] = _Type;
          }
-         _Type = new tibia.appearances.AppearanceType(MarketWidget.REQUEST_OWN_OFFERS);
+         _Type = new AppearanceType(MarketWidget.REQUEST_OWN_OFFERS);
          _Type.marketCategory = -1;
          _Type.marketShowAs = -1;
          _Type.marketTradeAs = MarketWidget.REQUEST_OWN_OFFERS;
          this.m_MarketObjectTypes.push(_Type);
-         _Type = new tibia.appearances.AppearanceType(MarketWidget.REQUEST_OWN_HISTORY);
+         _Type = new AppearanceType(MarketWidget.REQUEST_OWN_HISTORY);
          _Type.marketCategory = -1;
          _Type.marketShowAs = -1;
          _Type.marketTradeAs = MarketWidget.REQUEST_OWN_HISTORY;
@@ -366,7 +366,7 @@ package tibia.appearances
             throw new ArgumentError("AppearanceStorage.setAssetProvider: asset provider must not be null");
          }
          var _loc2_:Boolean = false;
-         this.m_SpritesInformation = new tibia.appearances.SpritesInformation(param1.getSpriteAssets());
+         this.m_SpritesInformation = new SpritesInformation(param1.getSpriteAssets());
          this.m_AsyncCompressedSpriteProvider = new AsyncCompressedSpriteProvider(param1,this.m_SpritesInformation,COMPRESSED_IMAGES_CACHE_MEMORY);
          this.m_AsyncSpriteCache = new AsyncSpriteCache(this.m_AsyncCompressedSpriteProvider,this.m_SpritesInformation.cachedSpriteInformations);
          var _loc3_:AppearancesAsset = param1.getAppearances();
@@ -455,7 +455,7 @@ package tibia.appearances
          this.m_AppearancesContentRevision = 0;
       }
       
-      private function setTypeInfo(param1:Vector.<tibia.appearances.AppearanceTypeInfo>, param2:int, param3:int, param4:String) : void
+      private function setTypeInfo(param1:Vector.<AppearanceTypeInfo>, param2:int, param3:int, param4:String) : void
       {
          var _loc5_:int = 0;
          var _loc6_:int = param1.length - 1;
@@ -481,7 +481,7 @@ package tibia.appearances
          }
          if(_loc9_ < 0)
          {
-            param1.splice(_loc5_,0,new tibia.appearances.AppearanceTypeInfo(param2,param3,param4));
+            param1.splice(_loc5_,0,new AppearanceTypeInfo(param2,param3,param4));
          }
          else
          {
@@ -498,7 +498,7 @@ package tibia.appearances
          return null;
       }
       
-      public function getObjectType(param1:int) : tibia.appearances.AppearanceType
+      public function getObjectType(param1:int) : AppearanceType
       {
          if(param1 >= AppearanceInstance.CREATURE && param1 < this.m_ObjectTypes.length)
          {
@@ -507,7 +507,7 @@ package tibia.appearances
          return null;
       }
       
-      public function getOutfitType(param1:int) : tibia.appearances.AppearanceType
+      public function getOutfitType(param1:int) : AppearanceType
       {
          if(param1 >= 1 && param1 < this.m_OutfitTypes.length)
          {
@@ -558,11 +558,11 @@ package tibia.appearances
          this.setTypeInfo(this.m_ObjectTypeInfoCache,param1,param2,param3);
       }
       
-      public function getMarketObjectType(param1:*) : tibia.appearances.AppearanceType
+      public function getMarketObjectType(param1:*) : AppearanceType
       {
-         var _loc6_:tibia.appearances.AppearanceType = null;
+         var _loc6_:AppearanceType = null;
          var _loc2_:int = -1;
-         if(param1 is tibia.appearances.AppearanceType && AppearanceType(param1).isMarket)
+         if(param1 is AppearanceType && AppearanceType(param1).isMarket)
          {
             _loc2_ = AppearanceType(param1).marketTradeAs;
          }
@@ -637,7 +637,7 @@ package tibia.appearances
          return param1 >= 1 && param1 < this.m_OutfitTypes.length;
       }
       
-      private function readAppearanceType(param1:ByteArray, param2:uint, param3:Vector.<tibia.appearances.AppearanceType>, param4:int, param5:int = 0) : Boolean
+      private function readAppearanceType(param1:ByteArray, param2:uint, param3:Vector.<AppearanceType>, param4:int, param5:int = 0) : Boolean
       {
          var _loc13_:int = 0;
          var _loc14_:uint = 0;
@@ -655,7 +655,7 @@ package tibia.appearances
          {
             return false;
          }
-         var _loc6_:tibia.appearances.AppearanceType = new tibia.appearances.AppearanceType(param4);
+         var _loc6_:AppearanceType = new AppearanceType(param4);
          var _loc7_:int = 0;
          var _loc8_:int = 0;
          loop0:
@@ -915,7 +915,7 @@ package tibia.appearances
       
       public function getCachedObjectTypeName(param1:int, param2:int) : String
       {
-         var _loc3_:tibia.appearances.AppearanceTypeInfo = this.getTypeInfo(this.m_ObjectTypeInfoCache,param1,param2);
+         var _loc3_:AppearanceTypeInfo = this.getTypeInfo(this.m_ObjectTypeInfoCache,param1,param2);
          if(_loc3_ != null)
          {
             return _loc3_.name;
@@ -923,7 +923,7 @@ package tibia.appearances
          return null;
       }
       
-      private function getTypeInfo(param1:Vector.<tibia.appearances.AppearanceTypeInfo>, param2:int, param3:int) : tibia.appearances.AppearanceTypeInfo
+      private function getTypeInfo(param1:Vector.<AppearanceTypeInfo>, param2:int, param3:int) : AppearanceTypeInfo
       {
          var _loc4_:int = 0;
          var _loc5_:int = param1.length - 1;

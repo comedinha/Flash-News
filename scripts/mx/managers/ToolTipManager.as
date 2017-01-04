@@ -1,23 +1,23 @@
 package mx.managers
 {
-   import flash.events.EventDispatcher;
-   import mx.core.mx_internal;
    import flash.display.DisplayObject;
+   import flash.events.EventDispatcher;
    import mx.core.IToolTip;
    import mx.core.IUIComponent;
-   import mx.effects.IAbstractEffect;
    import mx.core.Singleton;
+   import mx.core.mx_internal;
+   import mx.effects.IAbstractEffect;
    
    use namespace mx_internal;
    
    public class ToolTipManager extends EventDispatcher
    {
       
-      private static var implClassDependency:mx.managers.ToolTipManagerImpl;
+      private static var implClassDependency:ToolTipManagerImpl;
       
       mx_internal static const VERSION:String = "3.6.0.21751";
       
-      private static var _impl:mx.managers.IToolTipManager2;
+      private static var _impl:IToolTipManager2;
        
       
       public function ToolTipManager()
@@ -95,7 +95,7 @@ package mx.managers
          impl.showEffect = param1;
       }
       
-      private static function get impl() : mx.managers.IToolTipManager2
+      private static function get impl() : IToolTipManager2
       {
          if(!_impl)
          {

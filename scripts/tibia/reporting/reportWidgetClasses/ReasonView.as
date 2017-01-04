@@ -1,12 +1,12 @@
 package tibia.reporting.reportWidgetClasses
 {
    import mx.controls.Label;
-   import tibia.reporting.reportType.Reason;
    import mx.controls.List;
    import mx.controls.TextArea;
-   import shared.controls.CustomList;
    import mx.events.ListEvent;
+   import shared.controls.CustomList;
    import tibia.reporting.IReportable;
+   import tibia.reporting.reportType.Reason;
    import tibia.reporting.reportType.Type;
    
    public class ReasonView extends ViewBase

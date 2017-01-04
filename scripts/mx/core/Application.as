@@ -1,25 +1,25 @@
 package mx.core
 {
    import flash.display.DisplayObject;
-   import flash.events.Event;
-   import mx.managers.ISystemManager;
-   import mx.managers.FocusManager;
-   import flash.system.Capabilities;
-   import flash.utils.setInterval;
-   import flash.external.ExternalInterface;
-   import mx.events.FlexEvent;
-   import flash.net.navigateToURL;
-   import flash.net.URLRequest;
-   import mx.styles.CSSStyleDeclaration;
-   import mx.styles.StyleManager;
-   import mx.effects.EffectManager;
    import flash.display.InteractiveObject;
+   import flash.events.ContextMenuEvent;
+   import flash.events.Event;
+   import flash.external.ExternalInterface;
+   import flash.net.URLRequest;
+   import flash.net.navigateToURL;
+   import flash.system.Capabilities;
    import flash.ui.ContextMenu;
    import flash.ui.ContextMenuItem;
-   import flash.events.ContextMenuEvent;
-   import mx.styles.IStyleClient;
-   import mx.managers.ILayoutManager;
+   import flash.utils.setInterval;
    import mx.containers.utilityClasses.ApplicationLayout;
+   import mx.effects.EffectManager;
+   import mx.events.FlexEvent;
+   import mx.managers.FocusManager;
+   import mx.managers.ILayoutManager;
+   import mx.managers.ISystemManager;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.IStyleClient;
+   import mx.styles.StyleManager;
    
    use namespace mx_internal;
    
@@ -37,7 +37,7 @@ package mx.core
       
       private var resizeWidth:Boolean = true;
       
-      private var _applicationViewMetrics:mx.core.EdgeMetrics;
+      private var _applicationViewMetrics:EdgeMetrics;
       
       mx_internal var _parameters:Object;
       
@@ -67,7 +67,7 @@ package mx.core
       
       private var resizeHeight:Boolean = true;
       
-      public var controlBar:mx.core.IUIComponent;
+      public var controlBar:IUIComponent;
       
       private var viewSourceCMI:ContextMenuItem;
       
@@ -144,7 +144,7 @@ package mx.core
       {
          var _loc2_:Number = NaN;
          super.measure();
-         var _loc1_:mx.core.EdgeMetrics = borderMetrics;
+         var _loc1_:EdgeMetrics = borderMetrics;
          if(controlBar && controlBar.includeInLayout)
          {
             _loc2_ = controlBar.getExplicitOrMeasuredWidth() + _loc1_.left + _loc1_.right;
@@ -350,9 +350,9 @@ package mx.core
          {
             createBorder();
          }
-         var _loc3_:mx.core.EdgeMetrics = borderMetrics;
+         var _loc3_:EdgeMetrics = borderMetrics;
          var _loc4_:Number = getStyle("borderThickness");
-         var _loc5_:mx.core.EdgeMetrics = new mx.core.EdgeMetrics();
+         var _loc5_:EdgeMetrics = new EdgeMetrics();
          _loc5_.left = _loc3_.left - _loc4_;
          _loc5_.top = _loc3_.top - _loc4_;
          _loc5_.right = _loc3_.right - _loc4_;
@@ -500,9 +500,9 @@ package mx.core
          return _loc1_;
       }
       
-      mx_internal function dockControlBar(param1:mx.core.IUIComponent, param2:Boolean) : void
+      mx_internal function dockControlBar(param1:IUIComponent, param2:Boolean) : void
       {
-         var controlBar:mx.core.IUIComponent = param1;
+         var controlBar:IUIComponent = param1;
          var dock:Boolean = param2;
          if(dock)
          {
@@ -532,14 +532,14 @@ package mx.core
          }
       }
       
-      override public function get viewMetrics() : mx.core.EdgeMetrics
+      override public function get viewMetrics() : EdgeMetrics
       {
          if(!_applicationViewMetrics)
          {
-            _applicationViewMetrics = new mx.core.EdgeMetrics();
+            _applicationViewMetrics = new EdgeMetrics();
          }
-         var _loc1_:mx.core.EdgeMetrics = _applicationViewMetrics;
-         var _loc2_:mx.core.EdgeMetrics = super.viewMetrics;
+         var _loc1_:EdgeMetrics = _applicationViewMetrics;
+         var _loc2_:EdgeMetrics = super.viewMetrics;
          var _loc3_:Number = getStyle("borderThickness");
          _loc1_.left = _loc2_.left;
          _loc1_.top = _loc2_.top;
@@ -580,7 +580,7 @@ package mx.core
       private function processNextQueueItem() : void
       {
          var queueItem:Object = null;
-         var nextChild:mx.core.IUIComponent = null;
+         var nextChild:IUIComponent = null;
          if(EffectManager.effectsPlaying.length > 0)
          {
             callLater(processNextQueueItem);
@@ -668,7 +668,7 @@ package mx.core
          createBorder();
       }
       
-      private function setControlBar(param1:mx.core.IUIComponent) : void
+      private function setControlBar(param1:IUIComponent) : void
       {
          if(param1 == controlBar)
          {

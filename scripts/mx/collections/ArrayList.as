@@ -1,20 +1,20 @@
 package mx.collections
 {
    import flash.events.EventDispatcher;
+   import flash.events.IEventDispatcher;
+   import flash.utils.IDataInput;
+   import flash.utils.IDataOutput;
    import flash.utils.IExternalizable;
+   import flash.utils.getQualifiedClassName;
    import mx.core.IPropertyChangeNotifier;
    import mx.core.mx_internal;
-   import flash.utils.IDataInput;
    import mx.events.CollectionEvent;
-   import mx.events.PropertyChangeEvent;
    import mx.events.CollectionEventKind;
-   import mx.utils.ArrayUtil;
+   import mx.events.PropertyChangeEvent;
    import mx.events.PropertyChangeEventKind;
-   import flash.utils.IDataOutput;
-   import flash.events.IEventDispatcher;
-   import flash.utils.getQualifiedClassName;
    import mx.resources.IResourceManager;
    import mx.resources.ResourceManager;
+   import mx.utils.ArrayUtil;
    import mx.utils.UIDUtil;
    
    use namespace mx_internal;

@@ -1,26 +1,26 @@
 package shared.stage3D
 {
-   import flash.events.EventDispatcher;
+   import flash.display.Stage3D;
    import flash.display3D.Context3D;
-   import flash.geom.Rectangle;
-   import flash.geom.Matrix3D;
+   import flash.display3D.Context3DRenderMode;
    import flash.events.ErrorEvent;
    import flash.events.Event;
+   import flash.events.EventDispatcher;
+   import flash.geom.Matrix3D;
+   import flash.geom.Rectangle;
    import shared.stage3D.events.Tibia3DEvent;
-   import flash.display.Stage3D;
-   import flash.display3D.Context3DRenderMode;
    
    public class Tibia3D extends EventDispatcher
    {
       
-      private static var s_Instance:shared.stage3D.Tibia3D = null;
+      private static var s_Instance:Tibia3D = null;
        
       
       private var m_AntiAliasing:int = 0;
       
       private var m_RenderMode:String = "auto";
       
-      private var m_Camera:shared.stage3D.Camera2D;
+      private var m_Camera:Camera2D;
       
       private var m_Context3D:Context3D = null;
       
@@ -31,7 +31,7 @@ package shared.stage3D
       public function Tibia3D(param1:Stage3D, param2:Rectangle = null, param3:String = null)
       {
          this.m_ViewPort = new Rectangle(0,0);
-         this.m_Camera = new shared.stage3D.Camera2D(1,1);
+         this.m_Camera = new Camera2D(1,1);
          super();
          if(s_Instance == null)
          {
@@ -62,7 +62,7 @@ package shared.stage3D
          return !!isReady?s_Instance.context3D:null;
       }
       
-      public static function get instance() : shared.stage3D.Tibia3D
+      public static function get instance() : Tibia3D
       {
          return s_Instance;
       }
@@ -77,7 +77,7 @@ package shared.stage3D
          throw new Error(param1);
       }
       
-      public function set camera(param1:shared.stage3D.Camera2D) : void
+      public function set camera(param1:Camera2D) : void
       {
          this.m_Camera = param1;
       }
@@ -145,7 +145,7 @@ package shared.stage3D
          this.m_Stage3D.visible = param1;
       }
       
-      public function get camera() : shared.stage3D.Camera2D
+      public function get camera() : Camera2D
       {
          return this.m_Camera;
       }

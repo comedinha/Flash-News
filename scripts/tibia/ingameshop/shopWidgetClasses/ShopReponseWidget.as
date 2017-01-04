@@ -1,20 +1,20 @@
 package tibia.ingameshop.shopWidgetClasses
 {
-   import shared.controls.EmbeddedDialog;
    import flash.display.BitmapData;
-   import mx.core.BitmapAsset;
-   import flash.utils.Timer;
-   import mx.controls.Button;
-   import flash.events.TimerEvent;
-   import mx.events.CloseEvent;
-   import tibia.appearances.widgetClasses.SimpleAnimationRenderer;
    import flash.events.MouseEvent;
-   import tibia.appearances.FrameDuration;
-   import tibia.appearances.AppearanceAnimator;
-   import tibia.ingameshop.IngameShopEvent;
+   import flash.events.TimerEvent;
+   import flash.utils.Timer;
    import mx.containers.HBox;
+   import mx.controls.Button;
    import mx.controls.Text;
    import mx.controls.TextArea;
+   import mx.core.BitmapAsset;
+   import mx.events.CloseEvent;
+   import shared.controls.EmbeddedDialog;
+   import tibia.appearances.AppearanceAnimator;
+   import tibia.appearances.FrameDuration;
+   import tibia.appearances.widgetClasses.SimpleAnimationRenderer;
+   import tibia.ingameshop.IngameShopEvent;
    import tibia.ingameshop.IngameShopWidget;
    
    public class ShopReponseWidget extends EmbeddedDialog

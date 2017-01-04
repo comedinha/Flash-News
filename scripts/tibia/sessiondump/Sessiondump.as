@@ -1,26 +1,26 @@
 package tibia.sessiondump
 {
-   import flash.events.EventDispatcher;
-   import tibia.network.IServerConnection;
-   import flash.utils.ByteArray;
-   import shared.utility.StringHelper;
-   import tibia.network.ConnectionEvent;
-   import mx.resources.ResourceManager;
-   import tibia.appearances.AppearanceInstance;
-   import tibia.appearances.AppearanceStorage;
-   import tibia.appearances.OutfitInstance;
-   import tibia.network.IMessageReader;
-   import tibia.network.IServerCommunication;
-   import tibia.network.IConnectionData;
-   import tibia.sessiondump.controller.SessiondumpControllerBase;
-   import tibia.appearances.ObjectInstance;
    import flash.events.ErrorEvent;
+   import flash.events.EventDispatcher;
    import flash.events.IOErrorEvent;
    import flash.events.SecurityErrorEvent;
-   import tibia.network.IMessageWriter;
-   import tibia.creatures.Creature;
+   import flash.utils.ByteArray;
+   import mx.resources.ResourceManager;
    import shared.utility.Colour;
+   import shared.utility.StringHelper;
+   import tibia.appearances.AppearanceInstance;
+   import tibia.appearances.AppearanceStorage;
    import tibia.appearances.Marks;
+   import tibia.appearances.ObjectInstance;
+   import tibia.appearances.OutfitInstance;
+   import tibia.creatures.Creature;
+   import tibia.network.ConnectionEvent;
+   import tibia.network.IConnectionData;
+   import tibia.network.IMessageReader;
+   import tibia.network.IMessageWriter;
+   import tibia.network.IServerCommunication;
+   import tibia.network.IServerConnection;
+   import tibia.sessiondump.controller.SessiondumpControllerBase;
    
    public class Sessiondump extends EventDispatcher implements IServerConnection
    {
@@ -435,7 +435,7 @@ package tibia.sessiondump
       
       protected static const CROTATEWEST:int = 114;
       
-      public static const PROTOCOL_VERSION:int = 1100;
+      public static const PROTOCOL_VERSION:int = 1101;
       
       protected static const SCREATUREOUTFIT:int = 142;
       
@@ -760,28 +760,28 @@ package tibia.sessiondump
       
       private var m_State:uint = 0;
       
-      private var m_SessiondumpLoader:tibia.sessiondump.SessiondumpLoader = null;
+      private var m_SessiondumpLoader:SessiondumpLoader = null;
       
       private var m_KeyframeState:uint = 0;
       
       private var m_SessiondumpController:SessiondumpControllerBase = null;
       
-      private var m_ConnectionData:tibia.sessiondump.SessiondumpConnectionData = null;
+      private var m_ConnectionData:SessiondumpConnectionData = null;
       
       private var m_ConnectionState:int = 0;
       
       private var m_Communication:IServerCommunication = null;
       
-      private var m_MessageWriter:tibia.sessiondump.DummyMessageWriter = null;
+      private var m_MessageWriter:DummyMessageWriter = null;
       
       private var m_InputStream:ByteArray = null;
       
-      private var m_SessiondumpReader:tibia.sessiondump.SessiondumpReader = null;
+      private var m_SessiondumpReader:SessiondumpReader = null;
       
       public function Sessiondump(param1:SessiondumpControllerBase)
       {
          super();
-         this.m_MessageWriter = new tibia.sessiondump.DummyMessageWriter();
+         this.m_MessageWriter = new DummyMessageWriter();
          this.m_SessiondumpController = param1;
       }
       
@@ -1064,7 +1064,7 @@ package tibia.sessiondump
          return this.m_SessiondumpLoader.isLoadingFinished && this.m_InputStream.position == this.m_InputStream.length;
       }
       
-      public function get sessiondumpLoader() : tibia.sessiondump.SessiondumpLoader
+      public function get sessiondumpLoader() : SessiondumpLoader
       {
          return this.m_SessiondumpLoader;
       }
@@ -1167,12 +1167,12 @@ package tibia.sessiondump
                this.m_SessiondumpLoader.removeEventListener(IOErrorEvent.IO_ERROR,this.onLoaderError);
                this.m_SessiondumpLoader.removeEventListener(SecurityErrorEvent.SECURITY_ERROR,this.onLoaderError);
             }
-            this.m_SessiondumpLoader = new tibia.sessiondump.SessiondumpLoader();
+            this.m_SessiondumpLoader = new SessiondumpLoader();
             this.m_SessiondumpLoader.addEventListener(IOErrorEvent.IO_ERROR,this.onLoaderError);
             this.m_SessiondumpLoader.addEventListener(SecurityErrorEvent.SECURITY_ERROR,this.onLoaderError);
             this.m_SessiondumpLoader.load(this.m_ConnectionData.url);
             this.m_InputStream = this.m_SessiondumpLoader.inputStream;
-            this.m_SessiondumpReader = new tibia.sessiondump.SessiondumpReader(this.m_InputStream);
+            this.m_SessiondumpReader = new SessiondumpReader(this.m_InputStream);
          }
       }
       
@@ -1258,11 +1258,11 @@ package tibia.sessiondump
       
       public function connect(param1:IConnectionData) : void
       {
-         if(!(param1 is tibia.sessiondump.SessiondumpConnectionData))
+         if(!(param1 is SessiondumpConnectionData))
          {
             throw new Error("Sessiondump.connect: Invalid connection data.",2147483639);
          }
-         this.m_ConnectionData = param1 as tibia.sessiondump.SessiondumpConnectionData;
+         this.m_ConnectionData = param1 as SessiondumpConnectionData;
          if(this.m_ConnectionData.url == null || this.m_ConnectionData.url.length < 1)
          {
             throw new Error("Connection.connect: Invalid url.",2147483638);

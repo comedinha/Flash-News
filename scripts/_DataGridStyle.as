@@ -1,13 +1,13 @@
 package
 {
    import mx.core.IFlexModuleFactory;
-   import mx.styles.CSSStyleDeclaration;
-   import mx.styles.StyleManager;
-   import mx.skins.halo.DataGridSortArrow;
    import mx.skins.halo.DataGridColumnDropIndicator;
-   import mx.skins.halo.DataGridHeaderSeparator;
    import mx.skins.halo.DataGridColumnResizeSkin;
    import mx.skins.halo.DataGridHeaderBackgroundSkin;
+   import mx.skins.halo.DataGridHeaderSeparator;
+   import mx.skins.halo.DataGridSortArrow;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.StyleManager;
    
    public class _DataGridStyle
    {

@@ -1,9 +1,9 @@
 package tibia.input.mapping
 {
+   import flash.events.MouseEvent;
    import flash.ui.Keyboard;
    import mx.collections.IList;
    import tibia.input.InputHandler;
-   import flash.events.MouseEvent;
    import tibia.input.MouseClickBothEvent;
    
    public class MouseMapping
@@ -11,7 +11,7 @@ package tibia.input.mapping
       
       protected static const RENDERER_DEFAULT_HEIGHT:Number = MAP_WIDTH * FIELD_SIZE;
       
-      private static const KEYMODIFIED_LEFT_CLICK_BINDINGS:Array = [new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_LEFT,0,ACTION_AUTOWALK),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_MIDDLE,0,ACTION_ATTACK_OR_TALK),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_RIGHT,0,ACTION_CONTEXT_MENU),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.SHIFT,ACTION_LOOK),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.SHIFT,ACTION_LOOK),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.CONTROL,ACTION_USE_OR_OPEN),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.CONTROL,ACTION_USE_OR_OPEN),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.ALTERNATE,ACTION_ATTACK_OR_TALK),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.ALTERNATE,ACTION_ATTACK_OR_TALK)];
+      private static const KEYMODIFIED_LEFT_CLICK_BINDINGS:Array = [new MouseBinding(MOUSE_BUTTON_LEFT,0,ACTION_AUTOWALK),new MouseBinding(MOUSE_BUTTON_MIDDLE,0,ACTION_ATTACK_OR_TALK),new MouseBinding(MOUSE_BUTTON_RIGHT,0,ACTION_CONTEXT_MENU),new MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.SHIFT,ACTION_LOOK),new MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.SHIFT,ACTION_LOOK),new MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.CONTROL,ACTION_USE_OR_OPEN),new MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.CONTROL,ACTION_USE_OR_OPEN),new MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.ALTERNATE,ACTION_ATTACK_OR_TALK),new MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.ALTERNATE,ACTION_ATTACK_OR_TALK)];
       
       private static const ACTION_LOOK:int = 6;
       
@@ -29,13 +29,13 @@ package tibia.input.mapping
       
       private static const MOUSE_BUTTON_MIDDLE:int = 3;
       
-      private static const SMART_LEFT_CLICK_BINDINGS:Array = [new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_LEFT,0,ACTION_SMARTCLICK),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_MIDDLE,0,ACTION_AUTOWALK),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_RIGHT,0,ACTION_CONTEXT_MENU),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.SHIFT,ACTION_LOOK),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.CONTROL,ACTION_AUTOWALK)];
+      private static const SMART_LEFT_CLICK_BINDINGS:Array = [new MouseBinding(MOUSE_BUTTON_LEFT,0,ACTION_SMARTCLICK),new MouseBinding(MOUSE_BUTTON_MIDDLE,0,ACTION_AUTOWALK),new MouseBinding(MOUSE_BUTTON_RIGHT,0,ACTION_CONTEXT_MENU),new MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.SHIFT,ACTION_LOOK),new MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.CONTROL,ACTION_AUTOWALK)];
       
       protected static const FIELD_ENTER_NOT_POSSIBLE:uint = 2;
       
       protected static const FIELD_HEIGHT:int = 24;
       
-      public static const PRESET_KEYMODIFIED_LEFT_CLICK:tibia.input.mapping.MouseMapping = new tibia.input.mapping.MouseMapping(KEYMODIFIED_LEFT_CLICK_BINDINGS);
+      public static const PRESET_KEYMODIFIED_LEFT_CLICK:MouseMapping = new MouseMapping(KEYMODIFIED_LEFT_CLICK_BINDINGS);
       
       private static const MOUSE_BUTTON_RIGHT:int = 2;
       
@@ -55,7 +55,7 @@ package tibia.input.mapping
       
       protected static const PLAYER_OFFSET_Y:int = 6;
       
-      private static const EMPTY_BINDING:Array = [new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_LEFT,0,0),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_MIDDLE,0,0),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_RIGHT,0,0),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.SHIFT,0),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_MIDDLE,Keyboard.SHIFT,0),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.SHIFT,0),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.CONTROL,0),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_MIDDLE,Keyboard.CONTROL,0),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.CONTROL,0),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.ALTERNATE,0),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_MIDDLE,Keyboard.ALTERNATE,0),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.ALTERNATE,0),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_BOTH,0,0)];
+      private static const EMPTY_BINDING:Array = [new MouseBinding(MOUSE_BUTTON_LEFT,0,0),new MouseBinding(MOUSE_BUTTON_MIDDLE,0,0),new MouseBinding(MOUSE_BUTTON_RIGHT,0,0),new MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.SHIFT,0),new MouseBinding(MOUSE_BUTTON_MIDDLE,Keyboard.SHIFT,0),new MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.SHIFT,0),new MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.CONTROL,0),new MouseBinding(MOUSE_BUTTON_MIDDLE,Keyboard.CONTROL,0),new MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.CONTROL,0),new MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.ALTERNATE,0),new MouseBinding(MOUSE_BUTTON_MIDDLE,Keyboard.ALTERNATE,0),new MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.ALTERNATE,0),new MouseBinding(MOUSE_BUTTON_BOTH,0,0)];
       
       protected static const MAP_MAX_X:int = MAP_MIN_X + (1 << 14 - 1);
       
@@ -67,7 +67,7 @@ package tibia.input.mapping
       
       protected static const MAP_MAX_Y:int = MAP_MIN_Y + (1 << 14 - 1);
       
-      public static const PRESET_SMART_RIGHT_CLICK:tibia.input.mapping.MouseMapping = new tibia.input.mapping.MouseMapping(SMART_RIGHT_CLICK_BINDINGS);
+      public static const PRESET_SMART_RIGHT_CLICK:MouseMapping = new MouseMapping(SMART_RIGHT_CLICK_BINDINGS);
       
       private static const ACTION_ATTACK:int = 1;
       
@@ -119,18 +119,18 @@ package tibia.input.mapping
       
       protected static const MAP_WIDTH:int = 15;
       
-      public static const PRESET_SMART_LEFT_CLICK:tibia.input.mapping.MouseMapping = new tibia.input.mapping.MouseMapping(SMART_LEFT_CLICK_BINDINGS);
+      public static const PRESET_SMART_LEFT_CLICK:MouseMapping = new MouseMapping(SMART_LEFT_CLICK_BINDINGS);
       
-      private static const SMART_RIGHT_CLICK_BINDINGS:Array = [new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_LEFT,0,ACTION_AUTOWALK),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_MIDDLE,0,ACTION_LOOK),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_RIGHT,0,ACTION_SMARTCLICK),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.SHIFT,ACTION_LOOK),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.SHIFT,ACTION_LOOK),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.CONTROL,ACTION_CONTEXT_MENU),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.CONTROL,ACTION_CONTEXT_MENU),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.ALTERNATE,ACTION_SMARTCLICK),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.ALTERNATE,ACTION_SMARTCLICK),new tibia.input.mapping.MouseBinding(MOUSE_BUTTON_BOTH,0,ACTION_LOOK)];
+      private static const SMART_RIGHT_CLICK_BINDINGS:Array = [new MouseBinding(MOUSE_BUTTON_LEFT,0,ACTION_AUTOWALK),new MouseBinding(MOUSE_BUTTON_MIDDLE,0,ACTION_LOOK),new MouseBinding(MOUSE_BUTTON_RIGHT,0,ACTION_SMARTCLICK),new MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.SHIFT,ACTION_LOOK),new MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.SHIFT,ACTION_LOOK),new MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.CONTROL,ACTION_CONTEXT_MENU),new MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.CONTROL,ACTION_CONTEXT_MENU),new MouseBinding(MOUSE_BUTTON_LEFT,Keyboard.ALTERNATE,ACTION_SMARTCLICK),new MouseBinding(MOUSE_BUTTON_RIGHT,Keyboard.ALTERNATE,ACTION_SMARTCLICK),new MouseBinding(MOUSE_BUTTON_BOTH,0,ACTION_LOOK)];
        
       
-      protected var m_MouseBindings:Vector.<tibia.input.mapping.MouseBinding>;
+      protected var m_MouseBindings:Vector.<MouseBinding>;
       
       private var m_ShowMouseCursorForAction:Boolean = true;
       
       public function MouseMapping(param1:* = null)
       {
-         this.m_MouseBindings = new Vector.<tibia.input.mapping.MouseBinding>(EMPTY_BINDING.length,true);
+         this.m_MouseBindings = new Vector.<MouseBinding>(EMPTY_BINDING.length,true);
          super();
          var _loc2_:int = 0;
          while(_loc2_ < EMPTY_BINDING.length)
@@ -144,10 +144,10 @@ package tibia.input.mapping
          }
       }
       
-      public static function s_Unmarshall(param1:XML, param2:Number, param3:tibia.input.mapping.MouseMapping) : tibia.input.mapping.MouseMapping
+      public static function s_Unmarshall(param1:XML, param2:Number, param3:MouseMapping) : MouseMapping
       {
          var _loc5_:XML = null;
-         var _loc6_:tibia.input.mapping.MouseBinding = null;
+         var _loc6_:MouseBinding = null;
          if(param1 == null || param1.localName() != "mousemapping" || param2 < OPTIONS_MIN_COMPATIBLE_VERSION || param2 > OPTIONS_MAX_COMPATIBLE_VERSION)
          {
             throw new Error("MouseMapping.s_Unmarshall: Invalid input.");
@@ -164,7 +164,7 @@ package tibia.input.mapping
          param3.showMouseCursorForAction = _loc4_[0].toString() == "true";
          for each(_loc5_ in param1.elements("mousebinding"))
          {
-            _loc6_ = tibia.input.mapping.MouseBinding.s_Unmarshall(_loc5_,param2);
+            _loc6_ = MouseBinding.s_Unmarshall(_loc5_,param2);
             if(_loc6_ != null)
             {
                param3.setBinding(_loc6_);
@@ -175,7 +175,7 @@ package tibia.input.mapping
       
       public function addAll(param1:*) : void
       {
-         if(!(param1 is Array) && !(param1 is Vector.<tibia.input.mapping.MouseBinding>) && !(param1 is IList))
+         if(!(param1 is Array) && !(param1 is Vector.<MouseBinding>) && !(param1 is IList))
          {
             throw new ArgumentError("MouseMapping.addAll: Invalid input(1).");
          }
@@ -198,13 +198,13 @@ package tibia.input.mapping
          return this.m_ShowMouseCursorForAction;
       }
       
-      public function setBinding(param1:tibia.input.mapping.MouseBinding) : void
+      public function setBinding(param1:MouseBinding) : void
       {
          if(param1 == null)
          {
             throw new ArgumentError("MouseMapping.setBinding: Invalid input.");
          }
-         var _loc2_:tibia.input.mapping.MouseBinding = this.findBinding(param1.mouseButton,param1.modifierKey);
+         var _loc2_:MouseBinding = this.findBinding(param1.mouseButton,param1.modifierKey);
          if(_loc2_ != null)
          {
             _loc2_.action = param1.action;
@@ -216,19 +216,19 @@ package tibia.input.mapping
          this.m_ShowMouseCursorForAction = param1;
       }
       
-      public function findBindingForLeftMouseButtonAndPressedModifierKey() : tibia.input.mapping.MouseBinding
+      public function findBindingForLeftMouseButtonAndPressedModifierKey() : MouseBinding
       {
          return this.findBinding(MOUSE_BUTTON_LEFT,this.internalGetModifierKey());
       }
       
-      public function get mouseBindings() : Vector.<tibia.input.mapping.MouseBinding>
+      public function get mouseBindings() : Vector.<MouseBinding>
       {
          return this.m_MouseBindings;
       }
       
-      public function findBinding(param1:uint, param2:uint) : tibia.input.mapping.MouseBinding
+      public function findBinding(param1:uint, param2:uint) : MouseBinding
       {
-         var _loc3_:tibia.input.mapping.MouseBinding = null;
+         var _loc3_:MouseBinding = null;
          for each(_loc3_ in this.m_MouseBindings)
          {
             if(_loc3_.appliesTo(param1,param2))
@@ -241,7 +241,7 @@ package tibia.input.mapping
       
       public function replaceAll(param1:*) : void
       {
-         if(!(param1 is Array) && !(param1 is Vector.<tibia.input.mapping.MouseBinding>) && !(param1 is IList))
+         if(!(param1 is Array) && !(param1 is Vector.<MouseBinding>) && !(param1 is IList))
          {
             throw new ArgumentError("MouseMapping.addAll: Invalid input(1).");
          }
@@ -251,7 +251,7 @@ package tibia.input.mapping
       
       public function marshall() : XML
       {
-         var _loc2_:tibia.input.mapping.MouseBinding = null;
+         var _loc2_:MouseBinding = null;
          var _loc1_:XML = <mousemapping showMouseCursorForAction="{this.m_ShowMouseCursorForAction}"></mousemapping>;
          for each(_loc2_ in this.m_MouseBindings)
          {
@@ -278,9 +278,9 @@ package tibia.input.mapping
          return 0;
       }
       
-      public function equals(param1:tibia.input.mapping.MouseMapping) : Boolean
+      public function equals(param1:MouseMapping) : Boolean
       {
-         var _loc2_:tibia.input.mapping.MouseBinding = null;
+         var _loc2_:MouseBinding = null;
          for each(_loc2_ in this.m_MouseBindings)
          {
             if(!_loc2_.equals(param1.findBinding(_loc2_.mouseButton,_loc2_.modifierKey)))
@@ -297,7 +297,7 @@ package tibia.input.mapping
          this.addAll(SMART_LEFT_CLICK_BINDINGS);
       }
       
-      public function findBindingByMouseEvent(param1:MouseEvent) : tibia.input.mapping.MouseBinding
+      public function findBindingByMouseEvent(param1:MouseEvent) : MouseBinding
       {
          if(param1 == null)
          {

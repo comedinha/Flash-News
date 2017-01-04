@@ -1,20 +1,20 @@
 package mx.controls.treeClasses
 {
    import flash.events.EventDispatcher;
+   import flash.utils.Dictionary;
    import mx.collections.ICollectionView;
-   import mx.utils.IXMLNotifiable;
+   import mx.collections.IViewCursor;
+   import mx.collections.Sort;
+   import mx.collections.XMLListAdapter;
+   import mx.collections.XMLListCollection;
+   import mx.collections.errors.ItemPendingError;
+   import mx.core.EventPriority;
    import mx.core.mx_internal;
    import mx.events.CollectionEvent;
    import mx.events.CollectionEventKind;
-   import mx.collections.IViewCursor;
-   import mx.utils.XMLNotifier;
-   import mx.collections.Sort;
-   import mx.collections.XMLListCollection;
-   import mx.collections.XMLListAdapter;
    import mx.events.PropertyChangeEvent;
-   import flash.utils.Dictionary;
-   import mx.collections.errors.ItemPendingError;
-   import mx.core.EventPriority;
+   import mx.utils.IXMLNotifiable;
+   import mx.utils.XMLNotifier;
    
    use namespace mx_internal;
    
@@ -28,7 +28,7 @@ package mx.controls.treeClasses
       
       public var openNodes:Object;
       
-      private var dataDescriptor:mx.controls.treeClasses.ITreeDataDescriptor;
+      private var dataDescriptor:ITreeDataDescriptor;
       
       private var currentLength:int;
       
@@ -36,13 +36,13 @@ package mx.controls.treeClasses
       
       public var parentMap:Object;
       
-      private var cursor:mx.controls.treeClasses.HierarchicalViewCursor;
+      private var cursor:HierarchicalViewCursor;
       
       private var childrenMap:Dictionary;
       
       private var treeData:ICollectionView;
       
-      public function HierarchicalCollectionView(param1:ICollectionView, param2:mx.controls.treeClasses.ITreeDataDescriptor, param3:Function, param4:Object = null)
+      public function HierarchicalCollectionView(param1:ICollectionView, param2:ITreeDataDescriptor, param3:Function, param4:Object = null)
       {
          super();
          parentMap = {};
@@ -559,7 +559,7 @@ package mx.controls.treeClasses
       
       public function createCursor() : IViewCursor
       {
-         return new mx.controls.treeClasses.HierarchicalViewCursor(this,treeData,dataDescriptor,itemToUID,openNodes);
+         return new HierarchicalViewCursor(this,treeData,dataDescriptor,itemToUID,openNodes);
       }
       
       private function getChildren(param1:Object) : ICollectionView

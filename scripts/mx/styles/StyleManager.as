@@ -1,19 +1,19 @@
 package mx.styles
 {
-   import mx.core.mx_internal;
    import flash.events.IEventDispatcher;
    import flash.system.ApplicationDomain;
    import flash.system.SecurityDomain;
    import mx.core.Singleton;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    
    public class StyleManager
    {
       
-      private static var _impl:mx.styles.IStyleManager2;
+      private static var _impl:IStyleManager2;
       
-      private static var implClassDependency:mx.styles.StyleManagerImpl;
+      private static var implClassDependency:StyleManagerImpl;
       
       mx_internal static const VERSION:String = "3.6.0.21751";
       
@@ -110,7 +110,7 @@ package mx.styles
          return impl.loadStyleDeclarations2(param1,param2,param4,param5);
       }
       
-      private static function get impl() : mx.styles.IStyleManager2
+      private static function get impl() : IStyleManager2
       {
          if(!_impl)
          {

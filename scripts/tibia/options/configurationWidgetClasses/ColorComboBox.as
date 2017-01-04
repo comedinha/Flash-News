@@ -1,17 +1,17 @@
 package tibia.options.configurationWidgetClasses
 {
-   import mx.controls.ComboBox;
    import flash.events.MouseEvent;
-   import mx.core.mx_internal;
-   import mx.core.EdgeMetrics;
-   import tibia.chat.MessageMode;
+   import mx.controls.ComboBox;
    import mx.core.ClassFactory;
+   import mx.core.EdgeMetrics;
+   import mx.core.mx_internal;
+   import tibia.chat.MessageMode;
    
    public class ColorComboBox extends ComboBox
    {
        
       
-      private var m_UIColorRenderer:tibia.options.configurationWidgetClasses.ColorItemRenderer = null;
+      private var m_UIColorRenderer:ColorItemRenderer = null;
       
       private var m_UncommittedSelectedItem:Boolean = false;
       
@@ -25,7 +25,7 @@ package tibia.options.configurationWidgetClasses
             _loc1_.push(_loc1_.length);
          }
          dataProvider = _loc1_;
-         itemRenderer = new ClassFactory(tibia.options.configurationWidgetClasses.ColorItemRenderer);
+         itemRenderer = new ClassFactory(ColorItemRenderer);
       }
       
       private function onMouseEvent(param1:MouseEvent) : void
@@ -55,7 +55,7 @@ package tibia.options.configurationWidgetClasses
       override protected function createChildren() : void
       {
          super.createChildren();
-         this.m_UIColorRenderer = new tibia.options.configurationWidgetClasses.ColorItemRenderer();
+         this.m_UIColorRenderer = new ColorItemRenderer();
          this.m_UIColorRenderer.setStyle("cornerRadius",5);
          this.m_UIColorRenderer.addEventListener(MouseEvent.MOUSE_DOWN,this.onMouseEvent);
          this.m_UIColorRenderer.addEventListener(MouseEvent.MOUSE_UP,this.onMouseEvent);

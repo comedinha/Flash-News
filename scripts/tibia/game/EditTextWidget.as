@@ -1,18 +1,18 @@
 package tibia.game
 {
-   import tibia.appearances.widgetClasses.SkinnedAppearanceRenderer;
    import flash.events.Event;
+   import flash.events.KeyboardEvent;
+   import flash.events.TextEvent;
    import mx.containers.HBox;
    import mx.controls.Text;
    import mx.controls.TextArea;
-   import flash.events.KeyboardEvent;
-   import tibia.input.PreventWhitespaceInput;
-   import flash.events.TextEvent;
    import shared.utility.StringHelper;
-   import tibia.appearances.AppearanceTypeRef;
-   import tibia.network.Communication;
    import tibia.appearances.AppearanceStorage;
    import tibia.appearances.AppearanceType;
+   import tibia.appearances.AppearanceTypeRef;
+   import tibia.appearances.widgetClasses.SkinnedAppearanceRenderer;
+   import tibia.input.PreventWhitespaceInput;
+   import tibia.network.Communication;
    
    public class EditTextWidget extends PopUpBase
    {

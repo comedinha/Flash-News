@@ -1,7 +1,7 @@
 package tibia.sessiondump
 {
-   import tibia.network.IMessageWriter;
    import flash.utils.ByteArray;
+   import tibia.network.IMessageWriter;
    
    public class DummyMessageWriter implements IMessageWriter
    {
@@ -22,7 +22,7 @@ package tibia.sessiondump
       
       protected static const ERR_INVALID_STATE:int = 4;
       
-      public static const PROTOCOL_VERSION:int = 1100;
+      public static const PROTOCOL_VERSION:int = 1101;
       
       protected static const PAYLOADLENGTH_SIZE:int = 2;
       

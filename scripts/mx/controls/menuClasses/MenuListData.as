@@ -1,8 +1,8 @@
 package mx.controls.menuClasses
 {
    import mx.controls.listClasses.ListData;
-   import mx.core.mx_internal;
    import mx.core.IUIComponent;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

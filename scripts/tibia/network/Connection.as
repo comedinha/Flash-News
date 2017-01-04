@@ -1,24 +1,24 @@
 package tibia.network
 {
-   import flash.events.EventDispatcher;
-   import flash.utils.ByteArray;
-   import flash.utils.Endian;
-   import flash.net.Socket;
-   import flash.utils.Timer;
-   import flash.events.ProgressEvent;
+   import flash.events.ErrorEvent;
    import flash.events.Event;
+   import flash.events.EventDispatcher;
    import flash.events.IOErrorEvent;
+   import flash.events.ProgressEvent;
    import flash.events.SecurityErrorEvent;
    import flash.events.TimerEvent;
-   import shared.cryptography.XTEA;
+   import flash.net.Socket;
+   import flash.system.Security;
+   import flash.utils.ByteArray;
+   import flash.utils.Endian;
+   import flash.utils.Timer;
    import flash.utils.getTimer;
+   import mx.resources.ResourceManager;
+   import shared.cryptography.RSAPublicKey;
+   import shared.cryptography.XTEA;
    import shared.utility.StringHelper;
    import tibia.creatures.Creature;
-   import shared.cryptography.RSAPublicKey;
-   import mx.resources.ResourceManager;
    import tibia.game.AccountCharacter;
-   import flash.system.Security;
-   import flash.events.ErrorEvent;
    
    public class Connection extends EventDispatcher implements IServerConnection
    {
@@ -69,7 +69,7 @@ package tibia.network
       
       protected static const CBUYOBJECT:int = 122;
       
-      public static const CLIENT_VERSION:uint = 2388;
+      public static const CLIENT_VERSION:uint = 2399;
       
       protected static const SPING:int = 29;
       
@@ -301,7 +301,7 @@ package tibia.network
       
       protected static const SCREATUREOUTFIT:int = 142;
       
-      public static const PROTOCOL_VERSION:int = 1100;
+      public static const PROTOCOL_VERSION:int = 1101;
       
       protected static const SAMBIENTE:int = 130;
       
@@ -532,11 +532,11 @@ package tibia.network
       
       private var m_PingEarliestTime:uint = 0;
       
-      private var m_CurrentConnectionData:tibia.network.IConnectionData = null;
+      private var m_CurrentConnectionData:IConnectionData = null;
       
       private var m_SessionKey:String = null;
       
-      private var m_PacketReader:tibia.network.NetworkPacketReader = null;
+      private var m_PacketReader:NetworkPacketReader = null;
       
       private var m_XTEA:XTEA = null;
       
@@ -550,7 +550,7 @@ package tibia.network
       
       private var m_PingLatency:uint = 0;
       
-      private var m_MessageReader:tibia.network.NetworkMessageReader = null;
+      private var m_MessageReader:NetworkMessageReader = null;
       
       private var m_PingCount:int = 0;
       
@@ -558,7 +558,7 @@ package tibia.network
       
       private var m_ConnectionState:int = 0;
       
-      private var m_Communication:tibia.network.IServerCommunication = null;
+      private var m_Communication:IServerCommunication = null;
       
       private var m_ConnectionWasLost:Boolean = false;
       
@@ -572,11 +572,13 @@ package tibia.network
       
       private var m_InputBuffer:ByteArray = null;
       
+      private var m_WorldName:String = null;
+      
       private var m_PingSent:uint = 0;
       
       private var m_CharacterName:String = null;
       
-      private var m_MessageWriter:tibia.network.NetworkMessageWriter = null;
+      private var m_MessageWriter:NetworkMessageWriter = null;
       
       private var m_ConnectedSince:int = 0;
       
@@ -586,7 +588,7 @@ package tibia.network
          this.setConnectionState(CONNECTION_STATE_DISCONNECTED,false);
          this.m_Socket = null;
          this.createNewInputBuffer();
-         this.m_MessageWriter = new tibia.network.NetworkMessageWriter();
+         this.m_MessageWriter = new NetworkMessageWriter();
          this.m_RSAPublicKey = new RSAPublicKey();
          this.m_XTEA = new XTEA();
       }
@@ -600,30 +602,13 @@ package tibia.network
       {
          this.m_InputBuffer = new ByteArray();
          this.m_InputBuffer.endian = Endian.LITTLE_ENDIAN;
-         this.m_PacketReader = new tibia.network.NetworkPacketReader(this.m_InputBuffer);
-         this.m_MessageReader = new tibia.network.NetworkMessageReader(this.m_InputBuffer);
+         this.m_PacketReader = new NetworkPacketReader(this.m_InputBuffer);
+         this.m_MessageReader = new NetworkMessageReader(this.m_InputBuffer);
       }
       
       public function get isPending() : Boolean
       {
          return this.m_ConnectionState == CONNECTION_STATE_PENDING;
-      }
-      
-      protected function sendCPINGBACK() : void
-      {
-         var b:ByteArray = null;
-         try
-         {
-            b = this.m_MessageWriter.createMessage();
-            b.writeByte(CPINGBACK);
-            this.m_MessageWriter.finishMessage();
-            return;
-         }
-         catch(e:Error)
-         {
-            handleSendError(CPINGBACK,e);
-            return;
-         }
       }
       
       private function handleSendError(param1:int, param2:Error) : void
@@ -649,6 +634,23 @@ package tibia.network
             param1.removeEventListener(SecurityErrorEvent.SECURITY_ERROR,this.onSocketError);
             _loc2_ = Tibia.s_GetSecondaryTimer();
             _loc2_.removeEventListener(TimerEvent.TIMER,this.onSecondaryTimer);
+         }
+      }
+      
+      protected function sendCPINGBACK() : void
+      {
+         var b:ByteArray = null;
+         try
+         {
+            b = this.m_MessageWriter.createMessage();
+            b.writeByte(CPINGBACK);
+            this.m_MessageWriter.finishMessage();
+            return;
+         }
+         catch(e:Error)
+         {
+            handleSendError(CPINGBACK,e);
+            return;
          }
       }
       
@@ -688,11 +690,25 @@ package tibia.network
          {
             this.handleConnectionError(ERR_INVALID_STATE,1,param1);
          }
+         else
+         {
+            this.sendProxyWorldNameIdentification();
+         }
       }
       
       public function get connectionState() : uint
       {
          return this.m_ConnectionState;
+      }
+      
+      private function sendProxyWorldNameIdentification() : void
+      {
+         var _loc1_:* = null;
+         if(this.m_WorldName != null)
+         {
+            _loc1_ = this.m_WorldName + "\n";
+            this.m_Socket.writeUTFBytes(_loc1_);
+         }
       }
       
       public function get messageWriter() : IMessageWriter
@@ -872,6 +888,7 @@ package tibia.network
          this.m_CharacterName = null;
          this.m_Address = null;
          this.m_Port = int.MAX_VALUE;
+         this.m_WorldName = null;
          this.m_PingEarliestTime = 0;
          this.m_PingLatestTime = 0;
          this.m_PingTimeout = 0;
@@ -903,7 +920,7 @@ package tibia.network
          }
       }
       
-      public function get connectionData() : tibia.network.IConnectionData
+      public function get connectionData() : IConnectionData
       {
          return this.m_CurrentConnectionData;
       }
@@ -913,7 +930,7 @@ package tibia.network
          return this.m_MessageReader;
       }
       
-      public function set communication(param1:tibia.network.IServerCommunication) : void
+      public function set communication(param1:IServerCommunication) : void
       {
          this.m_Communication = param1;
       }
@@ -1056,7 +1073,7 @@ package tibia.network
          this.handleConnectionError(256 + param1,_loc3_,param2);
       }
       
-      public function get communication() : tibia.network.IServerCommunication
+      public function get communication() : IServerCommunication
       {
          return this.m_Communication;
       }
@@ -1068,6 +1085,8 @@ package tibia.network
          param1.position = param1.position + param1.bytesAvailable;
          this.sendCLOGIN(_loc2_,_loc3_);
          this.setConnectionState(CONNECTION_STATE_CONNECTING_STAGE2,false);
+         var _loc4_:ConnectionEvent = new ConnectionEvent(ConnectionEvent.LOGINCHALLENGE);
+         dispatchEvent(_loc4_);
       }
       
       private function onCheckAlive(param1:TimerEvent) : void
@@ -1145,7 +1164,7 @@ package tibia.network
          this.m_SecondaryTimestamp = _loc2_;
       }
       
-      public function connect(param1:tibia.network.IConnectionData) : void
+      public function connect(param1:IConnectionData) : void
       {
          var _loc4_:* = null;
          if(!(param1 is AccountCharacter))
@@ -1198,6 +1217,7 @@ package tibia.network
          this.m_CharacterName = _loc2_.name;
          this.m_Address = _loc2_.address;
          this.m_Port = _loc2_.port;
+         this.m_WorldName = _loc2_.world;
          this.m_ConnectedSince = 0;
          this.setConnectionState(CONNECTION_STATE_CONNECTING_STAGE1);
          this.m_PingEarliestTime = 0;

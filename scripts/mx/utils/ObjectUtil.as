@@ -1,10 +1,10 @@
 package mx.utils
 {
-   import flash.utils.Dictionary;
-   import flash.xml.XMLNode;
-   import flash.utils.getQualifiedClassName;
-   import mx.collections.IList;
    import flash.utils.ByteArray;
+   import flash.utils.Dictionary;
+   import flash.utils.getQualifiedClassName;
+   import flash.xml.XMLNode;
+   import mx.collections.IList;
    import mx.core.mx_internal;
    
    use namespace mx_internal;

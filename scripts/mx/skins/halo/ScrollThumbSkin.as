@@ -1,11 +1,11 @@
 package mx.skins.halo
 {
-   import mx.skins.Border;
-   import mx.core.mx_internal;
-   import mx.utils.ColorUtil;
-   import mx.styles.StyleManager;
    import flash.display.GradientType;
    import flash.geom.Matrix;
+   import mx.core.mx_internal;
+   import mx.skins.Border;
+   import mx.styles.StyleManager;
+   import mx.utils.ColorUtil;
    
    use namespace mx_internal;
    

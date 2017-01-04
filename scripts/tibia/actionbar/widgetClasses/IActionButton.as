@@ -1,9 +1,9 @@
 package tibia.actionbar.widgetClasses
 {
    import mx.core.IFlexDisplayObject;
+   import mx.core.IInvalidating;
    import mx.core.IUIComponent;
    import mx.managers.IToolTipManagerClient;
-   import mx.core.IInvalidating;
    import tibia.input.IAction;
    
    public interface IActionButton extends IFlexDisplayObject, IUIComponent, IToolTipManagerClient, IInvalidating

@@ -1,8 +1,8 @@
 package tibia.input.gameaction
 {
    import shared.utility.Vector3D;
-   import tibia.creatures.Creature;
    import tibia.appearances.ObjectInstance;
+   import tibia.creatures.Creature;
    
    public class GameActionFactory
    {

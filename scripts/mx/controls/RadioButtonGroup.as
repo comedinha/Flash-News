@@ -1,12 +1,12 @@
 package mx.controls
 {
+   import flash.events.Event;
    import flash.events.EventDispatcher;
+   import mx.core.Application;
+   import mx.core.IFlexDisplayObject;
    import mx.core.IMXMLObject;
    import mx.core.mx_internal;
-   import flash.events.Event;
    import mx.events.FlexEvent;
-   import mx.core.IFlexDisplayObject;
-   import mx.core.Application;
    
    use namespace mx_internal;
    
@@ -18,7 +18,7 @@ package mx.controls
       
       private var radioButtons:Array;
       
-      private var _selection:mx.controls.RadioButton;
+      private var _selection:RadioButton;
       
       private var _selectedValue:Object;
       
@@ -70,7 +70,7 @@ package mx.controls
       
       private function radioButton_removedHandler(param1:Event) : void
       {
-         var _loc2_:mx.controls.RadioButton = param1.target as mx.controls.RadioButton;
+         var _loc2_:RadioButton = param1.target as RadioButton;
          if(_loc2_)
          {
             _loc2_.removeEventListener(Event.REMOVED,radioButton_removedHandler);
@@ -80,7 +80,7 @@ package mx.controls
       
       public function set selectedValue(param1:Object) : void
       {
-         var _loc4_:mx.controls.RadioButton = null;
+         var _loc4_:RadioButton = null;
          _selectedValue = param1;
          var _loc2_:int = numRadioButtons;
          var _loc3_:int = 0;
@@ -114,7 +114,7 @@ package mx.controls
       
       [Bindable("valueCommit")]
       [Bindable("change")]
-      public function get selection() : mx.controls.RadioButton
+      public function get selection() : RadioButton
       {
          return _selection;
       }
@@ -130,12 +130,12 @@ package mx.controls
          return null;
       }
       
-      public function set selection(param1:mx.controls.RadioButton) : void
+      public function set selection(param1:RadioButton) : void
       {
          setSelection(param1,false);
       }
       
-      mx_internal function setSelection(param1:mx.controls.RadioButton, param2:Boolean = true) : void
+      mx_internal function setSelection(param1:RadioButton, param2:Boolean = true) : void
       {
          var _loc3_:int = 0;
          var _loc4_:int = 0;
@@ -170,7 +170,7 @@ package mx.controls
          this.document = !!param1?IFlexDisplayObject(param1):IFlexDisplayObject(Application.application);
       }
       
-      mx_internal function addInstance(param1:mx.controls.RadioButton) : void
+      mx_internal function addInstance(param1:RadioButton) : void
       {
          param1.indexNumber = indexNumber++;
          param1.addEventListener(Event.REMOVED,radioButton_removedHandler);
@@ -200,16 +200,16 @@ package mx.controls
          return radioButtons.length;
       }
       
-      public function getRadioButtonAt(param1:int) : mx.controls.RadioButton
+      public function getRadioButtonAt(param1:int) : RadioButton
       {
          return RadioButton(radioButtons[param1]);
       }
       
-      mx_internal function removeInstance(param1:mx.controls.RadioButton) : void
+      mx_internal function removeInstance(param1:RadioButton) : void
       {
          var _loc2_:Boolean = false;
          var _loc3_:int = 0;
-         var _loc4_:mx.controls.RadioButton = null;
+         var _loc4_:RadioButton = null;
          if(param1)
          {
             _loc2_ = false;

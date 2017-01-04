@@ -1,9 +1,9 @@
 package mx.managers
 {
-   import mx.core.IChildList;
-   import mx.core.mx_internal;
    import flash.display.DisplayObject;
    import flash.geom.Point;
+   import mx.core.IChildList;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    
@@ -13,9 +13,9 @@ package mx.managers
       mx_internal static const VERSION:String = "3.6.0.21751";
        
       
-      private var owner:mx.managers.SystemManager;
+      private var owner:SystemManager;
       
-      public function SystemRawChildrenList(param1:mx.managers.SystemManager)
+      public function SystemRawChildrenList(param1:SystemManager)
       {
          super();
          this.owner = param1;

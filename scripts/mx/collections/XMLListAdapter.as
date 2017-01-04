@@ -1,17 +1,17 @@
 package mx.collections
 {
    import flash.events.EventDispatcher;
-   import mx.utils.IXMLNotifiable;
+   import flash.utils.getQualifiedClassName;
    import mx.core.mx_internal;
    import mx.events.CollectionEvent;
-   import mx.events.PropertyChangeEvent;
    import mx.events.CollectionEventKind;
+   import mx.events.PropertyChangeEvent;
    import mx.events.PropertyChangeEventKind;
-   import mx.utils.XMLNotifier;
-   import flash.utils.getQualifiedClassName;
-   import mx.utils.UIDUtil;
    import mx.resources.IResourceManager;
    import mx.resources.ResourceManager;
+   import mx.utils.IXMLNotifiable;
+   import mx.utils.UIDUtil;
+   import mx.utils.XMLNotifier;
    
    use namespace mx_internal;
    

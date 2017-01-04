@@ -1,30 +1,30 @@
 package tibia.prey.preyWidgetClasses
 {
+   import flash.display.DisplayObject;
+   import flash.events.MouseEvent;
+   import mx.containers.Box;
+   import mx.containers.HBox;
    import mx.containers.VBox;
    import mx.controls.Button;
-   import tibia.controls.TibiaCurrencyView;
-   import mx.controls.Text;
-   import tibia.prey.PreyData;
-   import mx.containers.Box;
-   import flash.events.MouseEvent;
-   import shared.controls.EmbeddedDialog;
-   import tibia.prey.PreyManager;
-   import mx.events.CloseEvent;
-   import mx.events.PropertyChangeEvent;
-   import mx.events.ListEvent;
    import mx.controls.Label;
-   import mx.containers.HBox;
-   import shared.controls.CustomButton;
-   import tibia.creatures.statusWidgetClasses.BitmapProgressBar;
    import mx.controls.Spacer;
-   import tibia.network.Communication;
-   import shared.utility.i18n.i18nFormatNumber;
-   import tibia.ingameshop.IngameShopProduct;
-   import tibia.ingameshop.IngameShopManager;
-   import flash.display.DisplayObject;
-   import tibia.game.PopUpBase;
+   import mx.controls.Text;
+   import mx.events.CloseEvent;
+   import mx.events.ListEvent;
+   import mx.events.PropertyChangeEvent;
+   import shared.controls.CustomButton;
+   import shared.controls.EmbeddedDialog;
    import shared.utility.StringHelper;
+   import shared.utility.i18n.i18nFormatNumber;
    import shared.utility.i18n.i18nFormatTime;
+   import tibia.controls.TibiaCurrencyView;
+   import tibia.creatures.statusWidgetClasses.BitmapProgressBar;
+   import tibia.game.PopUpBase;
+   import tibia.ingameshop.IngameShopManager;
+   import tibia.ingameshop.IngameShopProduct;
+   import tibia.network.Communication;
+   import tibia.prey.PreyData;
+   import tibia.prey.PreyManager;
    
    public class PreyView extends VBox
    {
@@ -34,7 +34,7 @@ package tibia.prey.preyWidgetClasses
       
       private var m_UncommittedMonsterSelection:Boolean = false;
       
-      private var m_UIMonsterSelectionGrid:tibia.prey.preyWidgetClasses.PreyMonsterSelection = null;
+      private var m_UIMonsterSelectionGrid:PreyMonsterSelection = null;
       
       private var m_UncommittedState:Boolean = false;
       
@@ -74,7 +74,7 @@ package tibia.prey.preyWidgetClasses
       
       private var m_UIUnlockWithCoinsButton:Button = null;
       
-      private var m_UIMonsterDisplay:tibia.prey.preyWidgetClasses.PreyMonsterDisplay = null;
+      private var m_UIMonsterDisplay:PreyMonsterDisplay = null;
       
       private var m_UIRerollMonsterListButtonSmall:Button = null;
       
@@ -164,7 +164,7 @@ package tibia.prey.preyWidgetClasses
             this.m_UITitleLabel.styleName = "preyTitle";
             this.m_UITitleLabel.percentWidth = 100;
             addChild(this.m_UITitleLabel);
-            this.m_UIMonsterSelectionGrid = new tibia.prey.preyWidgetClasses.PreyMonsterSelection();
+            this.m_UIMonsterSelectionGrid = new PreyMonsterSelection();
             this.m_UIMonsterSelectionGrid.width = this.m_UIMonsterSelectionGrid.height = this.m_UIMonsterSelectionGrid.maxColumns * 64 + 3;
             this.m_UIMonsterSelectionGrid.addEventListener(ListEvent.CHANGE,this.onPreyMonsterSelected);
             this.m_UIMonsterSelectionGrid.addEventListener(MouseEvent.MOUSE_OVER,this.onHelpTextRequested);
@@ -209,7 +209,7 @@ package tibia.prey.preyWidgetClasses
             this.m_UISelectMonsterButton.addEventListener(MouseEvent.MOUSE_OVER,this.onHelpTextRequested);
             this.m_UISelectMonsterButton.addEventListener(MouseEvent.MOUSE_OUT,this.onClearHelpTextRequested);
             this.m_UIMonsterSelectionActionBox.addChild(this.m_UISelectMonsterButton);
-            this.m_UIMonsterDisplay = new tibia.prey.preyWidgetClasses.PreyMonsterDisplay();
+            this.m_UIMonsterDisplay = new PreyMonsterDisplay();
             this.m_UIMonsterDisplay.addEventListener(MouseEvent.MOUSE_OVER,this.onHelpTextRequested);
             this.m_UIMonsterDisplay.addEventListener(MouseEvent.MOUSE_OUT,this.onClearHelpTextRequested);
             addChild(this.m_UIMonsterDisplay);

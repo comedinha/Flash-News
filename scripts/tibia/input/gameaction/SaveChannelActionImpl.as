@@ -1,20 +1,20 @@
 package tibia.input.gameaction
 {
-   import tibia.input.IActionImpl;
-   import mx.formatters.DateFormatter;
-   import mx.resources.IResourceManager;
-   import mx.collections.IList;
    import flash.errors.IllegalOperationError;
-   import flash.system.Capabilities;
-   import tibia.chat.ChannelMessage;
-   import mx.resources.ResourceManager;
-   import shared.utility.FileReferenceWrapper;
    import flash.events.Event;
    import flash.events.IOErrorEvent;
-   import tibia.chat.Channel;
-   import tibia.chat.MessageMode;
-   import tibia.chat.ChatStorage;
    import flash.net.FileReference;
+   import flash.system.Capabilities;
+   import mx.collections.IList;
+   import mx.formatters.DateFormatter;
+   import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
+   import shared.utility.FileReferenceWrapper;
+   import tibia.chat.Channel;
+   import tibia.chat.ChannelMessage;
+   import tibia.chat.ChatStorage;
+   import tibia.chat.MessageMode;
+   import tibia.input.IActionImpl;
    
    public class SaveChannelActionImpl implements IActionImpl
    {

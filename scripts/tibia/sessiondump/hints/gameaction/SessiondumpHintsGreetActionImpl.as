@@ -1,10 +1,10 @@
 package tibia.sessiondump.hints.gameaction
 {
+   import shared.utility.StringHelper;
+   import tibia.creatures.Creature;
    import tibia.input.gameaction.GreetAction;
    import tibia.sessiondump.controller.SessiondumpHintActionsController;
    import tibia.sessiondump.hints.condition.HintConditionGreet;
-   import shared.utility.StringHelper;
-   import tibia.creatures.Creature;
    
    public class SessiondumpHintsGreetActionImpl extends GreetAction
    {

@@ -1,16 +1,16 @@
 package tibia.questlog
 {
-   import tibia.game.PopUpBase;
+   import flash.events.Event;
    import flash.events.MouseEvent;
+   import mx.containers.ViewStack;
    import mx.controls.Button;
    import mx.events.CloseEvent;
-   import tibia.questlog.questLogWidgetClasses.QuestLogView;
-   import flash.events.Event;
-   import tibia.network.Communication;
-   import shared.controls.CustomButton;
    import mx.events.ListEvent;
+   import shared.controls.CustomButton;
+   import tibia.game.PopUpBase;
+   import tibia.network.Communication;
    import tibia.questlog.questLogWidgetClasses.QuestLineView;
-   import mx.containers.ViewStack;
+   import tibia.questlog.questLogWidgetClasses.QuestLogView;
    
    public class QuestLogWidget extends PopUpBase
    {

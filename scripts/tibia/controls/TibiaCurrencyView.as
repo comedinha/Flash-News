@@ -1,12 +1,12 @@
 package tibia.controls
 {
-   import mx.containers.HBox;
-   import flash.display.BitmapData;
    import flash.display.Bitmap;
-   import mx.controls.Image;
-   import shared.utility.i18n.i18nFormatNumber;
-   import mx.controls.Label;
+   import flash.display.BitmapData;
    import flash.text.TextLineMetrics;
+   import mx.containers.HBox;
+   import mx.controls.Image;
+   import mx.controls.Label;
+   import shared.utility.i18n.i18nFormatNumber;
    
    public class TibiaCurrencyView extends HBox
    {

@@ -1,9 +1,9 @@
 package tibia.prey.preyWidgetClasses
 {
-   import shared.controls.CustomTileList;
-   import tibia.prey.PreyMonsterInformation;
    import mx.collections.ArrayCollection;
    import mx.core.ClassFactory;
+   import shared.controls.CustomTileList;
+   import tibia.prey.PreyMonsterInformation;
    
    public class PreyMonsterSelection extends CustomTileList
    {
@@ -64,8 +64,8 @@ package tibia.prey.preyWidgetClasses
    }
 }
 
-import shared.controls.ShapeWrapper;
 import mx.controls.listClasses.IListItemRenderer;
+import shared.controls.ShapeWrapper;
 import tibia.appearances.widgetClasses.SimpleAppearanceRenderer;
 import tibia.prey.PreyMonsterInformation;
 

@@ -1,12 +1,12 @@
 package tibia.game
 {
    import flash.events.Event;
-   import tibia.network.Communication;
-   import shared.utility.StringHelper;
-   import mx.controls.TextArea;
    import flash.events.KeyboardEvent;
-   import tibia.input.PreventWhitespaceInput;
    import flash.events.TextEvent;
+   import mx.controls.TextArea;
+   import shared.utility.StringHelper;
+   import tibia.input.PreventWhitespaceInput;
+   import tibia.network.Communication;
    
    public class EditListWidget extends PopUpBase
    {

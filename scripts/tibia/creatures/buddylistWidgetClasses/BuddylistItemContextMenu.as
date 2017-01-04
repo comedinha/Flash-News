@@ -1,17 +1,17 @@
 package tibia.creatures.buddylistWidgetClasses
 {
-   import tibia.game.ContextMenuBase;
-   import tibia.creatures.BuddylistWidget;
-   import mx.core.IUIComponent;
-   import tibia.creatures.EditBuddyWidget;
-   import tibia.input.gameaction.BuddylistActionImpl;
-   import tibia.creatures.buddylistClasses.Buddy;
-   import tibia.input.gameaction.PrivateChatActionImpl;
-   import shared.utility.closure;
-   import tibia.reporting.reportType.Type;
-   import tibia.reporting.ReportWidget;
    import flash.system.System;
+   import mx.core.IUIComponent;
+   import shared.utility.closure;
    import tibia.creatures.BuddySet;
+   import tibia.creatures.BuddylistWidget;
+   import tibia.creatures.EditBuddyWidget;
+   import tibia.creatures.buddylistClasses.Buddy;
+   import tibia.game.ContextMenuBase;
+   import tibia.input.gameaction.BuddylistActionImpl;
+   import tibia.input.gameaction.PrivateChatActionImpl;
+   import tibia.reporting.ReportWidget;
+   import tibia.reporting.reportType.Type;
    
    public class BuddylistItemContextMenu extends ContextMenuBase
    {

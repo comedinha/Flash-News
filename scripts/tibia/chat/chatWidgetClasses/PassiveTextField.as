@@ -1,20 +1,20 @@
 package tibia.chat.chatWidgetClasses
 {
-   import mx.controls.Label;
-   import tibia.input.InputEvent;
-   import flash.ui.Keyboard;
-   import mx.core.EdgeMetrics;
-   import mx.core.IBorder;
-   import flash.text.TextLineMetrics;
-   import flash.events.MouseEvent;
-   import mx.styles.ISimpleStyleClient;
    import flash.display.DisplayObject;
-   import mx.core.FlexSprite;
-   import flash.geom.Rectangle;
    import flash.display.Graphics;
-   import flash.utils.Timer;
-   import mx.core.IFlexDisplayObject;
+   import flash.events.MouseEvent;
    import flash.events.TimerEvent;
+   import flash.geom.Rectangle;
+   import flash.text.TextLineMetrics;
+   import flash.ui.Keyboard;
+   import flash.utils.Timer;
+   import mx.controls.Label;
+   import mx.core.EdgeMetrics;
+   import mx.core.FlexSprite;
+   import mx.core.IBorder;
+   import mx.core.IFlexDisplayObject;
+   import mx.styles.ISimpleStyleClient;
+   import tibia.input.InputEvent;
    
    public class PassiveTextField extends Label
    {

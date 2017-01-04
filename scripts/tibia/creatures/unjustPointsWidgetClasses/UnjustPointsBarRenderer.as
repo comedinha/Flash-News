@@ -1,18 +1,18 @@
 package tibia.creatures.unjustPointsWidgetClasses
 {
-   import mx.core.UIComponent;
-   import mx.core.IDataRenderer;
-   import flash.geom.Rectangle;
-   import flash.geom.Point;
    import flash.display.BitmapData;
+   import flash.display.Graphics;
+   import flash.geom.Matrix;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import mx.core.BitmapAsset;
+   import mx.core.EdgeMetrics;
+   import mx.core.IDataRenderer;
+   import mx.core.UIComponent;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
-   import flash.geom.Matrix;
-   import mx.core.BitmapAsset;
-   import tibia.creatures.Player;
-   import flash.display.Graphics;
-   import mx.core.EdgeMetrics;
    import tibia.creatures.CreatureStorage;
+   import tibia.creatures.Player;
    
    public class UnjustPointsBarRenderer extends UIComponent implements IDataRenderer
    {

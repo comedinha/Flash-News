@@ -1,7 +1,7 @@
 package mx.effects.effectClasses
 {
-   import mx.effects.EffectInstance;
    import mx.core.mx_internal;
+   import mx.effects.EffectInstance;
    
    use namespace mx_internal;
    

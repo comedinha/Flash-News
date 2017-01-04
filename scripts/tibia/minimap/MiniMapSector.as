@@ -1,15 +1,15 @@
 package tibia.minimap
 {
+   import flash.display.BitmapData;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
    import flash.net.SharedObject;
    import flash.utils.ByteArray;
-   import flash.geom.Rectangle;
-   import flash.geom.Point;
-   import flash.display.BitmapData;
-   import tibia.§minimap:ns_minimap_internal§.s_GetWaypointsSafe;
-   import shared.utility.SharedObjectManager;
-   import tibia.§minimap:ns_minimap_internal§.s_GetSectorName;
    import shared.utility.Colour;
+   import shared.utility.SharedObjectManager;
    import shared.utility.StringHelper;
+   import tibia.§minimap:ns_minimap_internal§.s_GetSectorName;
+   import tibia.§minimap:ns_minimap_internal§.s_GetWaypointsSafe;
    
    public class MiniMapSector
    {

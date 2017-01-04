@@ -1,37 +1,37 @@
 package tibia.actionbar.configurationWidgetClasses
 {
-   import mx.containers.VBox;
-   import mx.controls.RadioButtonGroup;
-   import flash.events.MouseEvent;
-   import mx.events.ItemClickEvent;
-   import mx.events.ListEvent;
-   import tibia.magic.Spell;
-   import mx.containers.Form;
-   import mx.controls.RadioButton;
-   import mx.containers.FormItem;
-   import mx.controls.ComboBox;
-   import mx.core.ClassFactory;
-   import shared.controls.CustomList;
-   import mx.containers.FormItemDirection;
-   import tibia.magic.spellListWidgetClasses.SpellIconRenderer;
-   import mx.controls.Text;
-   import mx.controls.TextInput;
+   import flash.display.DisplayObject;
    import flash.events.Event;
    import flash.events.KeyboardEvent;
-   import tibia.input.PreventWhitespaceInput;
+   import flash.events.MouseEvent;
    import flash.events.TextEvent;
-   import mx.controls.TextArea;
-   import mx.core.ScrollPolicy;
-   import mx.controls.CheckBox;
-   import flash.display.DisplayObject;
-   import tibia.input.IAction;
-   import tibia.input.gameaction.SpellAction;
-   import tibia.input.gameaction.TalkAction;
    import mx.collections.ArrayCollection;
    import mx.collections.Sort;
    import mx.collections.SortField;
-   import tibia.magic.SpellStorage;
+   import mx.containers.Form;
+   import mx.containers.FormItem;
+   import mx.containers.FormItemDirection;
+   import mx.containers.VBox;
+   import mx.controls.CheckBox;
+   import mx.controls.ComboBox;
+   import mx.controls.RadioButton;
+   import mx.controls.RadioButtonGroup;
+   import mx.controls.Text;
+   import mx.controls.TextArea;
+   import mx.controls.TextInput;
+   import mx.core.ClassFactory;
    import mx.core.EventPriority;
+   import mx.core.ScrollPolicy;
+   import mx.events.ItemClickEvent;
+   import mx.events.ListEvent;
+   import shared.controls.CustomList;
+   import tibia.input.IAction;
+   import tibia.input.PreventWhitespaceInput;
+   import tibia.input.gameaction.SpellAction;
+   import tibia.input.gameaction.TalkAction;
+   import tibia.magic.Spell;
+   import tibia.magic.SpellStorage;
+   import tibia.magic.spellListWidgetClasses.SpellIconRenderer;
    
    public class TextEditor extends VBox implements IActionEditor
    {

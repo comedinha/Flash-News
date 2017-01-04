@@ -1,25 +1,25 @@
 package mx.containers
 {
-   import mx.core.Container;
-   import mx.managers.IHistoryManagerClient;
-   import mx.core.mx_internal;
-   import mx.core.EdgeMetrics;
    import flash.display.DisplayObject;
+   import flash.events.Event;
+   import mx.automation.IAutomationObject;
+   import mx.core.Container;
    import mx.core.ContainerCreationPolicy;
-   import mx.events.IndexChangedEvent;
+   import mx.core.EdgeMetrics;
+   import mx.core.IInvalidating;
+   import mx.core.IUIComponent;
+   import mx.core.ScrollPolicy;
+   import mx.core.UIComponent;
+   import mx.core.mx_internal;
    import mx.effects.Effect;
    import mx.effects.EffectManager;
+   import mx.events.ChildExistenceChangedEvent;
    import mx.events.EffectEvent;
    import mx.events.FlexEvent;
-   import mx.core.IInvalidating;
-   import mx.core.UIComponent;
-   import mx.core.ScrollPolicy;
-   import mx.events.ChildExistenceChangedEvent;
-   import mx.core.IUIComponent;
-   import mx.automation.IAutomationObject;
-   import flash.events.Event;
-   import mx.managers.HistoryManager;
+   import mx.events.IndexChangedEvent;
    import mx.graphics.RoundedRectangle;
+   import mx.managers.HistoryManager;
+   import mx.managers.IHistoryManagerClient;
    
    use namespace mx_internal;
    

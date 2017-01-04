@@ -8,7 +8,7 @@ package tibia.imbuing
       
       private var m_Description:String;
       
-      private var m_AstralSources:Vector.<tibia.imbuing.AstralSource>;
+      private var m_AstralSources:Vector.<AstralSource>;
       
       private var m_ID:uint = 0;
       
@@ -28,7 +28,7 @@ package tibia.imbuing
       
       public function ImbuementData(param1:uint, param2:String)
       {
-         this.m_AstralSources = new Vector.<tibia.imbuing.AstralSource>();
+         this.m_AstralSources = new Vector.<AstralSource>();
          super();
          this.m_ID = param1;
          this.m_Name = param2;
@@ -39,7 +39,7 @@ package tibia.imbuing
          this.m_IconID = param1;
       }
       
-      public function set astralSources(param1:Vector.<tibia.imbuing.AstralSource>) : void
+      public function set astralSources(param1:Vector.<AstralSource>) : void
       {
          this.m_AstralSources = param1;
       }
@@ -99,7 +99,7 @@ package tibia.imbuing
          return this.m_IconID;
       }
       
-      public function get astralSources() : Vector.<tibia.imbuing.AstralSource>
+      public function get astralSources() : Vector.<AstralSource>
       {
          return this.m_AstralSources;
       }

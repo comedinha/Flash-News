@@ -1,25 +1,25 @@
 package tibia.market.marketWidgetClasses
 {
-   import mx.collections.ArrayCollection;
-   import mx.events.ListEvent;
-   import tibia.market.Offer;
-   import tibia.market.MarketWidget;
-   import mx.events.CloseEvent;
-   import shared.controls.EmbeddedDialog;
-   import mx.controls.dataGridClasses.DataGridColumn;
    import flash.events.Event;
-   import mx.controls.DataGrid;
+   import flash.events.MouseEvent;
+   import mx.collections.ArrayCollection;
    import mx.collections.Sort;
    import mx.collections.SortField;
-   import mx.controls.Button;
-   import flash.events.MouseEvent;
-   import mx.core.EventPriority;
+   import mx.containers.BoxDirection;
    import mx.containers.HBox;
+   import mx.controls.Button;
+   import mx.controls.DataGrid;
    import mx.controls.Label;
+   import mx.controls.dataGridClasses.DataGridColumn;
+   import mx.core.EventPriority;
+   import mx.core.ScrollPolicy;
+   import mx.events.CloseEvent;
+   import mx.events.ListEvent;
    import shared.controls.CustomButton;
    import shared.controls.CustomDataGrid;
-   import mx.core.ScrollPolicy;
-   import mx.containers.BoxDirection;
+   import shared.controls.EmbeddedDialog;
+   import tibia.market.MarketWidget;
+   import tibia.market.Offer;
    
    public class OwnOffersView extends MarketComponent
    {

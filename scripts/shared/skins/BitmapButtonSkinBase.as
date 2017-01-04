@@ -8,11 +8,11 @@ package shared.skins
       
       private var m_InvalidStyle:Boolean = false;
       
-      private var m_Grid:shared.skins.BitmapGrid;
+      private var m_Grid:BitmapGrid;
       
       function BitmapButtonSkinBase()
       {
-         this.m_Grid = new shared.skins.BitmapGrid();
+         this.m_Grid = new BitmapGrid();
          super();
       }
       

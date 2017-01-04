@@ -1,7 +1,7 @@
 package mx.collections
 {
-   import mx.rpc.IResponder;
    import mx.core.mx_internal;
+   import mx.rpc.IResponder;
    
    use namespace mx_internal;
    

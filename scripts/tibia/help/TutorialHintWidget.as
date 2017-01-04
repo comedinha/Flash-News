@@ -1,11 +1,11 @@
 package tibia.help
 {
-   import tibia.game.PopUpBase;
-   import mx.core.Container;
+   import mx.containers.HBox;
+   import mx.containers.VBox;
    import mx.controls.Image;
    import mx.controls.Text;
-   import mx.containers.VBox;
-   import mx.containers.HBox;
+   import mx.core.Container;
+   import tibia.game.PopUpBase;
    
    public class TutorialHintWidget extends PopUpBase
    {

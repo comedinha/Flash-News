@@ -1,45 +1,45 @@
 package tibia.container.containerViewWidgetClasses
 {
-   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
-   import tibia.game.IUseWidget;
-   import tibia.game.IMoveWidget;
-   import tibia.container.ContainerView;
-   import mx.events.PropertyChangeEvent;
-   import tibia.game.ObjectDragImpl;
-   import flash.events.MouseEvent;
-   import tibia.network.Communication;
-   import tibia.appearances.ObjectInstance;
-   import flash.display.DisplayObject;
-   import mx.containers.HBox;
-   import shared.controls.CustomButton;
-   import tibia.input.MouseRepeatEvent;
-   import shared.controls.CustomLabel;
-   import mx.core.ScrollPolicy;
-   import mx.styles.StyleProxy;
-   import mx.events.DragEvent;
-   import mx.core.EventPriority;
-   import shared.skins.VectorBorderSkin;
-   import mx.controls.Label;
-   import flash.geom.Point;
-   import shared.utility.getClassInstanceUnderPoint;
-   import shared.utility.Vector3D;
-   import mx.core.UIComponent;
-   import tibia.input.ModifierKeyEvent;
-   import tibia.help.UIEffectsRetrieveComponentCommandEvent;
-   import tibia.appearances.widgetClasses.SimpleAppearanceRenderer;
-   import shared.utility.StringHelper;
-   import mx.controls.Button;
-   import tibia.cursors.CursorHelper;
-   import mx.core.EdgeMetrics;
-   import tibia.appearances.AppearanceInstance;
-   import tibia.input.mapping.MouseBinding;
-   import tibia.input.MouseActionHelper;
-   import tibia.input.gameaction.UseActionImpl;
-   import tibia.input.gameaction.LookActionImpl;
-   import tibia.game.ObjectContextMenu;
    import build.ObjectDragImplFactory;
-   import mx.managers.CursorManagerPriority;
+   import flash.display.DisplayObject;
+   import flash.events.MouseEvent;
+   import flash.geom.Point;
    import mx.containers.BoxDirection;
+   import mx.containers.HBox;
+   import mx.controls.Button;
+   import mx.controls.Label;
+   import mx.core.EdgeMetrics;
+   import mx.core.EventPriority;
+   import mx.core.ScrollPolicy;
+   import mx.core.UIComponent;
+   import mx.events.DragEvent;
+   import mx.events.PropertyChangeEvent;
+   import mx.managers.CursorManagerPriority;
+   import mx.styles.StyleProxy;
+   import shared.controls.CustomButton;
+   import shared.controls.CustomLabel;
+   import shared.skins.VectorBorderSkin;
+   import shared.utility.StringHelper;
+   import shared.utility.Vector3D;
+   import shared.utility.getClassInstanceUnderPoint;
+   import tibia.appearances.AppearanceInstance;
+   import tibia.appearances.ObjectInstance;
+   import tibia.appearances.widgetClasses.SimpleAppearanceRenderer;
+   import tibia.container.ContainerView;
+   import tibia.cursors.CursorHelper;
+   import tibia.game.IMoveWidget;
+   import tibia.game.IUseWidget;
+   import tibia.game.ObjectContextMenu;
+   import tibia.game.ObjectDragImpl;
+   import tibia.help.UIEffectsRetrieveComponentCommandEvent;
+   import tibia.input.ModifierKeyEvent;
+   import tibia.input.MouseActionHelper;
+   import tibia.input.MouseRepeatEvent;
+   import tibia.input.gameaction.LookActionImpl;
+   import tibia.input.gameaction.UseActionImpl;
+   import tibia.input.mapping.MouseBinding;
+   import tibia.network.Communication;
+   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
    
    public class ContainerViewWidgetView extends WidgetView implements IUseWidget, IMoveWidget
    {
@@ -116,11 +116,11 @@ package tibia.container.containerViewWidgetClasses
       
       private var m_Container:ContainerView = null;
       
-      private var m_UISlotHolder:tibia.container.containerViewWidgetClasses.ContainerSlotHolder = null;
+      private var m_UISlotHolder:ContainerSlotHolder = null;
       
       private var m_UIPageLabel:Label = null;
       
-      private var m_RolloverSlot:tibia.container.containerViewWidgetClasses.ContainerSlot = null;
+      private var m_RolloverSlot:ContainerSlot = null;
       
       private var m_UIPageLeftButton:Button = null;
       
@@ -175,8 +175,8 @@ package tibia.container.containerViewWidgetClasses
       
       private function onSlotClick(param1:MouseEvent) : void
       {
-         var _loc2_:tibia.container.containerViewWidgetClasses.ContainerSlot = null;
-         if(this.container != null && (_loc2_ = param1.target as tibia.container.containerViewWidgetClasses.ContainerSlot) != null)
+         var _loc2_:ContainerSlot = null;
+         if(this.container != null && (_loc2_ = param1.target as ContainerSlot) != null)
          {
             this.determineAction(param1,true,false);
          }
@@ -184,8 +184,8 @@ package tibia.container.containerViewWidgetClasses
       
       protected function onSlotRollOver(param1:MouseEvent) : void
       {
-         var _loc2_:tibia.container.containerViewWidgetClasses.ContainerSlot = null;
-         if(this.container != null && (_loc2_ = param1.target as tibia.container.containerViewWidgetClasses.ContainerSlot) != null)
+         var _loc2_:ContainerSlot = null;
+         if(this.container != null && (_loc2_ = param1.target as ContainerSlot) != null)
          {
             this.m_RolloverSlot = _loc2_;
             this.determineAction(param1,false,true);
@@ -210,16 +210,16 @@ package tibia.container.containerViewWidgetClasses
       
       private function destroySlot(param1:int) : void
       {
-         var _loc2_:tibia.container.containerViewWidgetClasses.ContainerSlot = ContainerSlot(this.m_UISlotHolder.removeChildAt(param1));
+         var _loc2_:ContainerSlot = ContainerSlot(this.m_UISlotHolder.removeChildAt(param1));
          _loc2_.appearance = null;
          _loc2_.removeEventListener(MouseEvent.CLICK,this.onSlotClick);
          _loc2_.removeEventListener(MouseEvent.MIDDLE_CLICK,this.onSlotClick);
          _loc2_.removeEventListener(MouseEvent.RIGHT_CLICK,this.onSlotClick);
       }
       
-      private function createSlot(param1:ObjectInstance = null, param2:int = -1) : tibia.container.containerViewWidgetClasses.ContainerSlot
+      private function createSlot(param1:ObjectInstance = null, param2:int = -1) : ContainerSlot
       {
-         var _loc3_:tibia.container.containerViewWidgetClasses.ContainerSlot = new tibia.container.containerViewWidgetClasses.ContainerSlot();
+         var _loc3_:ContainerSlot = new ContainerSlot();
          _loc3_.appearance = param1;
          _loc3_.position = param2;
          _loc3_.styleName = getStyle("slotStyleName");
@@ -257,7 +257,7 @@ package tibia.container.containerViewWidgetClasses
          this.m_UIPageRightButton.addEventListener(MouseRepeatEvent.REPEAT_MOUSE_DOWN,this.onPageButtonClick);
          this.m_UIPageRightButton.setStyle("repeatDelay",500);
          this.m_UIPageFooter.addChild(this.m_UIPageRightButton);
-         this.m_UISlotHolder = new tibia.container.containerViewWidgetClasses.ContainerSlotHolder();
+         this.m_UISlotHolder = new ContainerSlotHolder();
          this.m_UISlotHolder.height = NaN;
          this.m_UISlotHolder.horizontalScrollPolicy = ScrollPolicy.OFF;
          this.m_UISlotHolder.percentWidth = NaN;
@@ -296,8 +296,8 @@ package tibia.container.containerViewWidgetClasses
       
       public function getUseObjectUnderPoint(param1:Point) : Object
       {
-         var _loc2_:tibia.container.containerViewWidgetClasses.ContainerSlot = null;
-         if(this.container != null && (_loc2_ = getClassInstanceUnderPoint(stage,param1,tibia.container.containerViewWidgetClasses.ContainerSlot)) != null)
+         var _loc2_:ContainerSlot = null;
+         if(this.container != null && (_loc2_ = getClassInstanceUnderPoint(stage,param1,ContainerSlot)) != null)
          {
             return {
                "object":_loc2_.appearance,
@@ -373,12 +373,12 @@ package tibia.container.containerViewWidgetClasses
       
       public function pointToAbsolute(param1:Point) : Vector3D
       {
-         var _loc2_:tibia.container.containerViewWidgetClasses.ContainerSlot = null;
-         if(this.container != null && (_loc2_ = getClassInstanceUnderPoint(stage,param1,tibia.container.containerViewWidgetClasses.ContainerSlot)) != null)
+         var _loc2_:ContainerSlot = null;
+         if(this.container != null && (_loc2_ = getClassInstanceUnderPoint(stage,param1,ContainerSlot)) != null)
          {
             return new Vector3D(65535,64 + this.container.ID,_loc2_.position);
          }
-         if(this.container != null && getClassInstanceUnderPoint(stage,param1,tibia.container.containerViewWidgetClasses.ContainerSlotHolder) != null)
+         if(this.container != null && getClassInstanceUnderPoint(stage,param1,ContainerSlotHolder) != null)
          {
             return new Vector3D(65535,64 + this.container.ID,255);
          }
@@ -494,7 +494,7 @@ package tibia.container.containerViewWidgetClasses
          var _loc1_:int = 0;
          var _loc2_:int = 0;
          var _loc3_:int = 0;
-         var _loc4_:tibia.container.containerViewWidgetClasses.ContainerSlot = null;
+         var _loc4_:ContainerSlot = null;
          var _loc5_:int = 0;
          if(this.container != null)
          {
@@ -567,7 +567,7 @@ package tibia.container.containerViewWidgetClasses
          var _loc6_:AppearanceInstance = null;
          var _loc8_:Vector3D = null;
          var _loc9_:Object = null;
-         var _loc4_:tibia.container.containerViewWidgetClasses.ContainerSlot = null;
+         var _loc4_:ContainerSlot = null;
          var _loc5_:MouseBinding = null;
          _loc6_ = null;
          var _loc7_:uint = ACTION_NONE;
@@ -579,7 +579,7 @@ package tibia.container.containerViewWidgetClasses
          if(param1 != null)
          {
             _loc5_ = m_Options.mouseMapping.findBindingByMouseEvent(param1);
-            _loc4_ = param1.target as tibia.container.containerViewWidgetClasses.ContainerSlot;
+            _loc4_ = param1.target as ContainerSlot;
          }
          else
          {
@@ -653,7 +653,7 @@ package tibia.container.containerViewWidgetClasses
                _loc4_ = _loc2_["slot"] as uint;
                if(_loc3_ == this.container.ID)
                {
-                  param1.resultUIComponent = this.m_UISlotHolder.getChildAt(_loc4_) as tibia.container.containerViewWidgetClasses.ContainerSlot;
+                  param1.resultUIComponent = this.m_UISlotHolder.getChildAt(_loc4_) as ContainerSlot;
                }
             }
          }

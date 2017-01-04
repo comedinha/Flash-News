@@ -1,18 +1,18 @@
 package shared.utility
 {
-   import flash.net.FileReference;
-   import flash.net.URLRequest;
+   import flash.errors.IllegalOperationError;
+   import flash.events.DataEvent;
    import flash.events.Event;
+   import flash.events.HTTPStatusEvent;
    import flash.events.IOErrorEvent;
    import flash.events.SecurityErrorEvent;
-   import flash.events.DataEvent;
-   import flash.events.HTTPStatusEvent;
-   import flash.errors.IllegalOperationError;
+   import flash.net.FileReference;
+   import flash.net.URLRequest;
    
    public class FileReferenceWrapper extends FileReference
    {
       
-      private static var s_Instance:shared.utility.FileReferenceWrapper = null;
+      private static var s_Instance:FileReferenceWrapper = null;
        
       
       public function FileReferenceWrapper()

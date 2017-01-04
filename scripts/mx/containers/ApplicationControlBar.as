@@ -1,8 +1,8 @@
 package mx.containers
 {
-   import mx.core.mx_internal;
    import flash.events.Event;
    import mx.core.Application;
+   import mx.core.mx_internal;
    import mx.styles.IStyleClient;
    
    use namespace mx_internal;

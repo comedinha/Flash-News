@@ -1,25 +1,25 @@
 package tibia.market.marketWidgetClasses
 {
-   import mx.containers.VBox;
-   import mx.controls.ComboBox;
-   import mx.controls.Button;
-   import tibia.container.BodyContainerView;
    import flash.events.Event;
-   import tibia.market.MarketWidget;
-   import tibia.options.OptionsStorage;
    import mx.collections.ArrayCollection;
-   import shared.utility.ArrayHelper;
    import mx.containers.HBox;
+   import mx.containers.VBox;
+   import mx.controls.Button;
+   import mx.controls.ComboBox;
    import mx.core.ClassFactory;
-   import shared.controls.CustomList;
+   import mx.core.EventPriority;
    import mx.events.DropdownEvent;
    import mx.events.ListEvent;
-   import shared.controls.CustomButton;
-   import tibia.appearances.AppearanceType;
-   import tibia.creatures.Player;
    import mx.events.PropertyChangeEvent;
+   import shared.controls.CustomButton;
+   import shared.controls.CustomList;
+   import shared.utility.ArrayHelper;
    import shared.utility.closure;
-   import mx.core.EventPriority;
+   import tibia.appearances.AppearanceType;
+   import tibia.container.BodyContainerView;
+   import tibia.creatures.Player;
+   import tibia.market.MarketWidget;
+   import tibia.options.OptionsStorage;
    
    class AppearanceTypeCategoryFilterEditor extends VBox implements IAppearanceTypeFilterEditor
    {

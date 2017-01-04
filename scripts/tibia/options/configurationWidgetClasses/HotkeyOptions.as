@@ -1,43 +1,43 @@
 package tibia.options.configurationWidgetClasses
 {
-   import mx.containers.VBox;
-   import mx.events.CloseEvent;
-   import tibia.game.PopUpBase;
-   import shared.controls.EmbeddedDialog;
-   import mx.events.ListEvent;
-   import tibia.input.IAction;
-   import mx.controls.TextInput;
-   import tibia.input.MappingSet;
-   import tibia.input.mapping.Mapping;
-   import tibia.input.mapping.Binding;
-   import flash.events.MouseEvent;
-   import tibia.options.ConfigurationWidget;
-   import mx.core.EventPriority;
-   import tibia.actionbar.ActionBarSet;
-   import tibia.options.OptionsStorage;
-   import mx.containers.Form;
-   import mx.containers.FormItem;
-   import mx.controls.Spacer;
-   import mx.controls.dataGridClasses.DataGridColumn;
-   import mx.containers.FormItemDirection;
-   import shared.controls.CustomButton;
-   import tibia.input.MouseRepeatEvent;
    import flash.events.Event;
    import flash.events.KeyboardEvent;
-   import tibia.input.PreventWhitespaceInput;
+   import flash.events.MouseEvent;
    import flash.events.TextEvent;
-   import shared.controls.CustomDataGrid;
-   import mx.core.ClassFactory;
-   import mx.controls.Button;
-   import mx.events.FlexEvent;
-   import mx.containers.ViewStack;
-   import mx.events.IndexChangedEvent;
-   import tibia.input.staticaction.StaticAction;
-   import mx.controls.DataGrid;
-   import mx.collections.ICollectionView;
    import mx.collections.ArrayCollection;
+   import mx.collections.ICollectionView;
    import mx.collections.IList;
+   import mx.containers.Form;
+   import mx.containers.FormItem;
+   import mx.containers.FormItemDirection;
+   import mx.containers.VBox;
+   import mx.containers.ViewStack;
+   import mx.controls.Button;
+   import mx.controls.DataGrid;
+   import mx.controls.Spacer;
+   import mx.controls.TextInput;
+   import mx.controls.dataGridClasses.DataGridColumn;
+   import mx.core.ClassFactory;
+   import mx.core.EventPriority;
    import mx.core.ScrollPolicy;
+   import mx.events.CloseEvent;
+   import mx.events.FlexEvent;
+   import mx.events.IndexChangedEvent;
+   import mx.events.ListEvent;
+   import shared.controls.CustomButton;
+   import shared.controls.CustomDataGrid;
+   import shared.controls.EmbeddedDialog;
+   import tibia.actionbar.ActionBarSet;
+   import tibia.game.PopUpBase;
+   import tibia.input.IAction;
+   import tibia.input.MappingSet;
+   import tibia.input.MouseRepeatEvent;
+   import tibia.input.PreventWhitespaceInput;
+   import tibia.input.mapping.Binding;
+   import tibia.input.mapping.Mapping;
+   import tibia.input.staticaction.StaticAction;
+   import tibia.options.ConfigurationWidget;
+   import tibia.options.OptionsStorage;
    
    public class HotkeyOptions extends VBox implements IOptionsEditor
    {
@@ -410,7 +410,7 @@ package tibia.options.configurationWidgetClasses
             _loc6_.headerText = resourceManager.getString(ConfigurationWidget.BUNDLE,"HOTKEY_COLUMN_FIRST_BINDING");
             _loc6_.dataField = "firstBinding";
             _loc6_.editable = false;
-            _loc6_.itemRenderer = new ClassFactory(CustomItemRenderer);
+            _loc6_.itemRenderer = new ClassFactory(CustomItemRenderer#1628);
             _loc6_.sortable = false;
             _loc6_.width = 126;
             _loc6_.setStyle("textAlign","center");
@@ -419,7 +419,7 @@ package tibia.options.configurationWidgetClasses
             _loc6_.headerText = resourceManager.getString(ConfigurationWidget.BUNDLE,"HOTKEY_COLUMN_SECOND_BINDING");
             _loc6_.dataField = "secondBinding";
             _loc6_.editable = false;
-            _loc6_.itemRenderer = new ClassFactory(CustomItemRenderer);
+            _loc6_.itemRenderer = new ClassFactory(CustomItemRenderer#1628);
             _loc6_.sortable = false;
             _loc6_.width = 126;
             _loc6_.setStyle("textAlign","center");
@@ -991,14 +991,14 @@ package tibia.options.configurationWidgetClasses
 }
 
 import mx.controls.dataGridClasses.DataGridItemRenderer;
-import tibia.input.mapping.Binding;
 import mx.controls.dataGridClasses.DataGridListData;
+import tibia.input.mapping.Binding;
 
-class CustomItemRenderer extends DataGridItemRenderer
+class CustomItemRenderer#1628 extends DataGridItemRenderer
 {
     
    
-   function CustomItemRenderer()
+   function CustomItemRenderer#1628()
    {
       super();
    }

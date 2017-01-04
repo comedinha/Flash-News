@@ -1,47 +1,47 @@
 package mx.managers
 {
    import flash.display.DisplayObject;
-   import flash.events.MouseEvent;
-   import mx.core.IUIComponent;
-   import mx.events.FlexMouseEvent;
-   import flash.geom.Point;
-   import flash.display.InteractiveObject;
-   import mx.core.mx_internal;
-   import flash.geom.Rectangle;
-   import flash.display.Sprite;
-   import mx.core.ISWFLoader;
-   import mx.styles.IStyleClient;
-   import mx.events.SWFBridgeRequest;
-   import mx.events.FlexEvent;
-   import mx.core.IFlexDisplayObject;
-   import mx.events.InterManagerRequest;
-   import mx.core.IInvalidating;
-   import mx.core.UIComponent;
-   import flash.events.Event;
-   import mx.core.ApplicationGlobals;
-   import mx.events.EffectEvent;
-   import mx.events.SandboxMouseEvent;
    import flash.display.DisplayObjectContainer;
-   import flash.display.Stage;
-   import mx.effects.Fade;
-   import mx.effects.Blur;
-   import flash.events.IEventDispatcher;
-   import mx.events.MoveEvent;
-   import mx.effects.IEffect;
-   import mx.core.IChildList;
-   import mx.core.FlexSprite;
-   import mx.automation.IAutomationObject;
    import flash.display.Graphics;
-   import mx.utils.NameUtil;
+   import flash.display.InteractiveObject;
+   import flash.display.Sprite;
+   import flash.display.Stage;
+   import flash.events.Event;
+   import flash.events.IEventDispatcher;
+   import flash.events.MouseEvent;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import mx.automation.IAutomationObject;
+   import mx.core.ApplicationGlobals;
+   import mx.core.FlexSprite;
+   import mx.core.IChildList;
+   import mx.core.IFlexDisplayObject;
    import mx.core.IFlexModule;
+   import mx.core.IInvalidating;
+   import mx.core.ISWFLoader;
+   import mx.core.IUIComponent;
+   import mx.core.UIComponent;
    import mx.core.UIComponentGlobals;
+   import mx.core.mx_internal;
+   import mx.effects.Blur;
+   import mx.effects.Fade;
+   import mx.effects.IEffect;
+   import mx.events.EffectEvent;
+   import mx.events.FlexEvent;
+   import mx.events.FlexMouseEvent;
+   import mx.events.InterManagerRequest;
+   import mx.events.MoveEvent;
+   import mx.events.SWFBridgeRequest;
+   import mx.events.SandboxMouseEvent;
+   import mx.styles.IStyleClient;
+   import mx.utils.NameUtil;
    
    use namespace mx_internal;
    
-   public class PopUpManagerImpl implements mx.managers.IPopUpManager
+   public class PopUpManagerImpl implements IPopUpManager
    {
       
-      private static var instance:mx.managers.IPopUpManager;
+      private static var instance:IPopUpManager;
       
       mx_internal static const VERSION:String = "3.6.0.21751";
        
@@ -162,7 +162,7 @@ package mx.managers
          param1.dispatchEvent(_loc3_);
       }
       
-      public static function getInstance() : mx.managers.IPopUpManager
+      public static function getInstance() : IPopUpManager
       {
          if(!instance)
          {
@@ -1182,17 +1182,17 @@ package mx.managers
    }
 }
 
-import flash.events.Event;
-import mx.events.SandboxMouseEvent;
-import mx.effects.Effect;
-import flash.events.MouseEvent;
-import mx.core.IUIComponent;
-import flash.geom.Rectangle;
 import flash.display.DisplayObject;
-import mx.managers.PopUpManagerImpl;
-import mx.core.mx_internal;
 import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.geom.Rectangle;
+import mx.core.IUIComponent;
+import mx.core.mx_internal;
+import mx.effects.Effect;
+import mx.events.SandboxMouseEvent;
 import mx.managers.ISystemManager;
+import mx.managers.PopUpManagerImpl;
 
 use namespace mx_internal;
 

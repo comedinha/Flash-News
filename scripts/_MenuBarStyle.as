@@ -1,10 +1,10 @@
 package
 {
    import mx.core.IFlexModuleFactory;
+   import mx.skins.halo.ActivatorSkin;
+   import mx.skins.halo.MenuBarBackgroundSkin;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
-   import mx.skins.halo.MenuBarBackgroundSkin;
-   import mx.skins.halo.ActivatorSkin;
    
    public class _MenuBarStyle
    {

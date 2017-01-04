@@ -1,14 +1,14 @@
 package tibia.premium
 {
    import flash.events.EventDispatcher;
-   import tibia.sidebar.SideBarSet;
-   import tibia.sidebar.Widget;
-   import tibia.options.OptionsStorage;
+   import flash.net.URLRequest;
+   import flash.net.navigateToURL;
    import mx.events.PropertyChangeEvent;
    import mx.events.PropertyChangeEventKind;
    import tibia.creatures.Player;
-   import flash.net.URLRequest;
-   import flash.net.navigateToURL;
+   import tibia.options.OptionsStorage;
+   import tibia.sidebar.SideBarSet;
+   import tibia.sidebar.Widget;
    
    public class PremiumManager extends EventDispatcher
    {
@@ -58,7 +58,7 @@ package tibia.premium
       protected static const PREMIUM_TRIGGER_TRAIN_OFFLINE:uint = 1;
        
       
-      protected var m_PremiumMessages:Vector.<tibia.premium.PremiumMessage> = null;
+      protected var m_PremiumMessages:Vector.<PremiumMessage> = null;
       
       protected var m_Player:Player = null;
       
@@ -69,7 +69,7 @@ package tibia.premium
          {
             throw new ArgumentError("PremiumManager: Player instance is null");
          }
-         this.m_PremiumMessages = new Vector.<tibia.premium.PremiumMessage>();
+         this.m_PremiumMessages = new Vector.<PremiumMessage>();
          this.m_Player = param1;
          this.m_Player.addEventListener(PropertyChangeEvent.PROPERTY_CHANGE,this.onPlayerPropertyChange);
       }
@@ -80,7 +80,7 @@ package tibia.premium
          return _loc1_ / (60 * 60 * 24) + 1;
       }
       
-      public function get premiumMessages() : Vector.<tibia.premium.PremiumMessage>
+      public function get premiumMessages() : Vector.<PremiumMessage>
       {
          return this.m_PremiumMessages;
       }
@@ -141,42 +141,42 @@ package tibia.premium
          }
       }
       
-      private function translateMessageId(param1:uint) : tibia.premium.PremiumMessage
+      private function translateMessageId(param1:uint) : PremiumMessage
       {
          switch(param1)
          {
             case PREMIUM_TRIGGER_ALL_AREAS:
-               return tibia.premium.PremiumMessage.ALL_AREAS;
+               return PremiumMessage.ALL_AREAS;
             case PREMIUM_TRIGGER_TRAIN_OFFLINE:
-               return tibia.premium.PremiumMessage.TRAIN_OFFLINE;
+               return PremiumMessage.TRAIN_OFFLINE;
             case PREMIUM_TRIGGER_ALL_SPELLS:
-               return tibia.premium.PremiumMessage.ALL_SPELLS;
+               return PremiumMessage.ALL_SPELLS;
             case PREMIUM_TRIGGER_TRAVEL_FASTER:
-               return tibia.premium.PremiumMessage.TRAVEL_FASTER;
+               return PremiumMessage.TRAVEL_FASTER;
             case PREMIUM_TRIGGER_RIDE_MOUNTS:
-               return tibia.premium.PremiumMessage.RIDE_MOUNTS;
+               return PremiumMessage.RIDE_MOUNTS;
             case PREMIUM_TRIGGER_ALL_OUTFITS:
-               return tibia.premium.PremiumMessage.ALL_OUTFITS;
+               return PremiumMessage.ALL_OUTFITS;
             case PREMIUM_TRIGGER_XP_BOOST:
-               return tibia.premium.PremiumMessage.XP_BOOST;
+               return PremiumMessage.XP_BOOST;
             case PREMIUM_TRIGGER_DEATH_PENALTY:
-               return tibia.premium.PremiumMessage.DEATH_PENALTY;
+               return PremiumMessage.DEATH_PENALTY;
             case PREMIUM_TRIGGER_MARKET:
-               return tibia.premium.PremiumMessage.MARKET;
+               return PremiumMessage.MARKET;
             case PREMIUM_TRIGGER_RENT_HOUSES:
-               return tibia.premium.PremiumMessage.RENT_HOUSES;
+               return PremiumMessage.RENT_HOUSES;
             case PREMIUM_TRIGGER_VIP_LIST:
-               return tibia.premium.PremiumMessage.VIP_LIST;
+               return PremiumMessage.VIP_LIST;
             case PREMIUM_TRIGGER_DEPOT_SPACE:
-               return tibia.premium.PremiumMessage.DEPOT_SPACE;
+               return PremiumMessage.DEPOT_SPACE;
             case PREMIUM_TRIGGER_INVITE_PRIVCHAT:
-               return tibia.premium.PremiumMessage.INVITE_PRIVCHAT;
+               return PremiumMessage.INVITE_PRIVCHAT;
             case PREMIUM_TRIGGER_CLASS_PROMOTION:
-               return tibia.premium.PremiumMessage.CLASS_PROMOTION;
+               return PremiumMessage.CLASS_PROMOTION;
             case PREMIUM_TRIGGER_RENEW_PREMIUM:
-               return tibia.premium.PremiumMessage.RENEW_PREMIUM;
+               return PremiumMessage.RENEW_PREMIUM;
             case PREMIUM_TRIGGER_ACCESS_ARENAS:
-               return tibia.premium.PremiumMessage.ACCESS_ARENAS;
+               return PremiumMessage.ACCESS_ARENAS;
             default:
                throw new ArgumentError("Invalid premium trigger ID: " + param1);
          }

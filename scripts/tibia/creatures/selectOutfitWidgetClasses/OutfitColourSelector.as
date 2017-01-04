@@ -1,13 +1,13 @@
 package tibia.creatures.selectOutfitWidgetClasses
 {
+   import flash.events.MouseEvent;
+   import mx.core.EdgeMetrics;
    import mx.core.UIComponent;
+   import mx.events.PropertyChangeEvent;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
-   import flash.events.MouseEvent;
    import shared.controls.ColourRenderer;
-   import mx.core.EdgeMetrics;
    import shared.utility.Colour;
-   import mx.events.PropertyChangeEvent;
    
    public class OutfitColourSelector extends UIComponent
    {

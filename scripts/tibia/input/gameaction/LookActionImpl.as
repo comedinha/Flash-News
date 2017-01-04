@@ -1,11 +1,11 @@
 package tibia.input.gameaction
 {
+   import shared.utility.Vector3D;
+   import tibia.appearances.AppearanceInstance;
+   import tibia.appearances.AppearanceStorage;
+   import tibia.appearances.AppearanceType;
    import tibia.input.IActionImpl;
    import tibia.network.Communication;
-   import shared.utility.Vector3D;
-   import tibia.appearances.AppearanceType;
-   import tibia.appearances.AppearanceStorage;
-   import tibia.appearances.AppearanceInstance;
    
    public class LookActionImpl implements IActionImpl
    {

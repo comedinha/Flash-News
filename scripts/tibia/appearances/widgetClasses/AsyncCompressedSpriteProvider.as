@@ -1,15 +1,15 @@
 package tibia.appearances.widgetClasses
 {
-   import loader.asset.AssetProviderEvent;
-   import flash.geom.Rectangle;
-   import tibia.game.SpritesAsset;
-   import flash.utils.Dictionary;
-   import loader.asset.IAssetProvider;
-   import tibia.appearances.SpritesInformation;
-   import shared.utility.AsyncCompressedImageCache;
-   import tibia.appearances.AppearanceType;
    import flash.display.BitmapData;
+   import flash.geom.Rectangle;
+   import flash.utils.Dictionary;
+   import loader.asset.AssetProviderEvent;
+   import loader.asset.IAssetProvider;
+   import shared.utility.AsyncCompressedImageCache;
    import shared.utility.AsyncCompressedImageCacheEvent;
+   import tibia.appearances.AppearanceType;
+   import tibia.appearances.SpritesInformation;
+   import tibia.game.SpritesAsset;
    
    public class AsyncCompressedSpriteProvider implements ISpriteProvider
    {
@@ -77,7 +77,7 @@ package tibia.appearances.widgetClasses
       protected static const GROUND_LAYER:int = 7;
        
       
-      private var m_TempSpriteInformation:tibia.appearances.widgetClasses.CachedSpriteInformation = null;
+      private var m_TempSpriteInformation:CachedSpriteInformation = null;
       
       private var m_TempRectangle:Rectangle;
       
@@ -106,7 +106,7 @@ package tibia.appearances.widgetClasses
          this.m_SpritesInformation = param2;
          this.m_AsyncCompressedImageCache = new AsyncCompressedImageCache(param3);
          this.m_AsyncCompressedImageCache.addEventListener(AsyncCompressedImageCacheEvent.UNCOMPRESS,this.onAsyncCompressedImageCacheUncompressed);
-         this.m_TempSpriteInformation = new tibia.appearances.widgetClasses.CachedSpriteInformation();
+         this.m_TempSpriteInformation = new CachedSpriteInformation();
          var _loc4_:Vector.<SpritesAsset> = this.m_AssetProvider.getSpriteAssets();
          this.m_SpriteAssetKeys = new Dictionary();
          for each(_loc5_ in _loc4_)
@@ -149,9 +149,9 @@ package tibia.appearances.widgetClasses
          }
       }
       
-      public function getSprite(param1:uint, param2:tibia.appearances.widgetClasses.CachedSpriteInformation = null, param3:AppearanceType = null) : tibia.appearances.widgetClasses.CachedSpriteInformation
+      public function getSprite(param1:uint, param2:CachedSpriteInformation = null, param3:AppearanceType = null) : CachedSpriteInformation
       {
-         var _loc4_:tibia.appearances.widgetClasses.CachedSpriteInformation = null;
+         var _loc4_:CachedSpriteInformation = null;
          if(param2 != null)
          {
             _loc4_ = param2;

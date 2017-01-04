@@ -6,15 +6,15 @@ package shared.utility
       
       private var m_Length:int = 0;
       
-      private var m_Heap:Vector.<shared.utility.HeapItem> = null;
+      private var m_Heap:Vector.<HeapItem> = null;
       
       public function Heap(param1:int = 0)
       {
          super();
-         this.m_Heap = new Vector.<shared.utility.HeapItem>(param1);
+         this.m_Heap = new Vector.<HeapItem>(param1);
       }
       
-      public function addItem(param1:shared.utility.HeapItem, param2:int) : shared.utility.HeapItem
+      public function addItem(param1:HeapItem, param2:int) : HeapItem
       {
          var _loc3_:int = 0;
          if(param1 != null)
@@ -30,7 +30,7 @@ package shared.utility
          return param1;
       }
       
-      public function updateKey(param1:shared.utility.HeapItem, param2:int) : shared.utility.HeapItem
+      public function updateKey(param1:HeapItem, param2:int) : HeapItem
       {
          if(param1 != null && param1.m_HeapParent == this && param1.m_HeapPosition < this.m_Length && param1.m_HeapKey != param2)
          {
@@ -52,7 +52,7 @@ package shared.utility
          var _loc5_:int = 0;
          var _loc6_:int = 0;
          var _loc7_:int = 0;
-         var _loc8_:shared.utility.HeapItem = null;
+         var _loc8_:HeapItem = null;
          while(param2 && _loc3_ > 0)
          {
             _loc4_ = _loc3_ + 1 >>> 1 - 1;
@@ -97,18 +97,18 @@ package shared.utility
          }
       }
       
-      public function peekMinItem() : shared.utility.HeapItem
+      public function peekMinItem() : HeapItem
       {
          return this.m_Length > 0?this.m_Heap[0]:null;
       }
       
-      public function extractMinItem() : shared.utility.HeapItem
+      public function extractMinItem() : HeapItem
       {
          if(this.m_Length <= 0)
          {
             return null;
          }
-         var _loc1_:shared.utility.HeapItem = this.m_Heap[0];
+         var _loc1_:HeapItem = this.m_Heap[0];
          _loc1_.m_HeapParent = null;
          _loc1_.m_HeapPosition = -1;
          this.m_Length--;
@@ -120,7 +120,7 @@ package shared.utility
       
       public function clear(param1:Boolean = true) : void
       {
-         var _loc2_:shared.utility.HeapItem = null;
+         var _loc2_:HeapItem = null;
          var _loc3_:int = 0;
          while(_loc3_ < this.m_Length)
          {

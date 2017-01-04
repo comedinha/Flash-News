@@ -1,33 +1,33 @@
 package mx.controls
 {
-   import mx.core.UIComponent;
-   import mx.core.IIMESupport;
-   import mx.managers.IFocusManagerComponent;
-   import mx.core.mx_internal;
+   import flash.display.DisplayObject;
    import flash.events.Event;
+   import flash.events.FocusEvent;
+   import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
+   import mx.collections.ArrayCollection;
+   import mx.collections.CursorBookmark;
+   import mx.collections.ICollectionView;
+   import mx.collections.IList;
+   import mx.collections.IViewCursor;
+   import mx.collections.ListCollectionView;
+   import mx.collections.XMLListCollection;
+   import mx.core.EdgeMetrics;
+   import mx.core.FlexVersion;
+   import mx.core.IFlexDisplayObject;
+   import mx.core.IIMESupport;
+   import mx.core.IRectangularBorder;
+   import mx.core.UIComponent;
+   import mx.core.UITextField;
+   import mx.core.mx_internal;
    import mx.events.CollectionEvent;
    import mx.events.CollectionEventKind;
    import mx.events.FlexEvent;
-   import flash.events.FocusEvent;
    import mx.managers.IFocusManager;
-   import mx.core.FlexVersion;
-   import mx.utils.UIDUtil;
-   import mx.collections.ICollectionView;
+   import mx.managers.IFocusManagerComponent;
    import mx.styles.ISimpleStyleClient;
-   import flash.display.DisplayObject;
    import mx.styles.StyleProxy;
-   import mx.core.IFlexDisplayObject;
-   import mx.collections.IViewCursor;
-   import flash.events.MouseEvent;
-   import flash.events.KeyboardEvent;
-   import mx.core.EdgeMetrics;
-   import mx.core.UITextField;
-   import mx.collections.CursorBookmark;
-   import mx.collections.ArrayCollection;
-   import mx.collections.IList;
-   import mx.collections.ListCollectionView;
-   import mx.collections.XMLListCollection;
-   import mx.core.IRectangularBorder;
+   import mx.utils.UIDUtil;
    
    use namespace mx_internal;
    
@@ -74,7 +74,7 @@ package mx.controls
       
       mx_internal var selectionChanged:Boolean = false;
       
-      mx_internal var downArrowButton:mx.controls.Button;
+      mx_internal var downArrowButton:Button;
       
       private var _restrict:String;
       
@@ -96,7 +96,7 @@ package mx.controls
       
       mx_internal var oldBorderStyle:String;
       
-      protected var textInput:mx.controls.TextInput;
+      protected var textInput:TextInput;
       
       private var _editable:Boolean = false;
       
@@ -266,7 +266,7 @@ package mx.controls
          }
          if(!downArrowButton)
          {
-            downArrowButton = new mx.controls.Button();
+            downArrowButton = new Button();
             downArrowButton.styleName = new StyleProxy(this,arrowButtonStyleFilters);
             downArrowButton.focusEnabled = false;
             addChild(downArrowButton);
@@ -279,7 +279,7 @@ package mx.controls
             {
                _loc2_ = new StyleProxy(this,textInputStyleFilters);
             }
-            textInput = new mx.controls.TextInput();
+            textInput = new TextInput();
             textInput.editable = _editable;
             editableChanged = true;
             textInput.restrict = "^\x1b";
@@ -396,7 +396,7 @@ package mx.controls
          return _selectedItem;
       }
       
-      mx_internal function get ComboDownArrowButton() : mx.controls.Button
+      mx_internal function get ComboDownArrowButton() : Button
       {
          return downArrowButton;
       }
@@ -576,7 +576,7 @@ package mx.controls
          }
       }
       
-      mx_internal function getTextInput() : mx.controls.TextInput
+      mx_internal function getTextInput() : TextInput
       {
          return textInput;
       }

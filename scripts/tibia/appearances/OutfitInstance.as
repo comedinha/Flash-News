@@ -1,17 +1,17 @@
 package tibia.appearances
 {
    import flash.display.BitmapData;
-   import flash.filters.BitmapFilter;
-   import flash.display.Shader;
-   import flash.geom.ColorTransform;
-   import flash.filters.ColorMatrixFilter;
-   import flash.geom.Rectangle;
-   import tibia.§appearances:ns_appearance_internal§.m_Type;
-   import tibia.appearances.widgetClasses.CachedSpriteInformation;
-   import shared.utility.Colour;
    import flash.display.BitmapDataChannel;
-   import flash.geom.Point;
+   import flash.display.Shader;
    import flash.display.ShaderJob;
+   import flash.filters.BitmapFilter;
+   import flash.filters.ColorMatrixFilter;
+   import flash.geom.ColorTransform;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import shared.utility.Colour;
+   import tibia.appearances.widgetClasses.CachedSpriteInformation;
+   import tibia.§appearances:ns_appearance_internal§.m_Type;
    
    public class OutfitInstance extends AppearanceInstance
    {
@@ -414,9 +414,9 @@ package tibia.appearances
    }
 }
 
-import tibia.appearances.widgetClasses.ISpriteProvider;
-import flash.geom.Rectangle;
 import flash.display.BitmapData;
+import flash.geom.Rectangle;
+import tibia.appearances.widgetClasses.ISpriteProvider;
 
 class SpriteCacheContainer
 {

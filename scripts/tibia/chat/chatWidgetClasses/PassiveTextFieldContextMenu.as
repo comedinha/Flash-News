@@ -1,8 +1,8 @@
 package tibia.chat.chatWidgetClasses
 {
-   import tibia.game.ContextMenuBase;
-   import mx.core.IUIComponent;
    import flash.system.System;
+   import mx.core.IUIComponent;
+   import tibia.game.ContextMenuBase;
    
    public class PassiveTextFieldContextMenu extends ContextMenuBase
    {
@@ -10,9 +10,9 @@ package tibia.chat.chatWidgetClasses
       private static const BUNDLE:String = "Global";
        
       
-      protected var m_TextField:tibia.chat.chatWidgetClasses.PassiveTextField = null;
+      protected var m_TextField:PassiveTextField = null;
       
-      public function PassiveTextFieldContextMenu(param1:tibia.chat.chatWidgetClasses.PassiveTextField)
+      public function PassiveTextFieldContextMenu(param1:PassiveTextField)
       {
          super();
          if(param1 == null)

@@ -1,7 +1,7 @@
 package tibia.appearances
 {
-   import tibia.appearances.widgetClasses.ISpriteProvider;
    import tibia.appearances.widgetClasses.CachedSpriteInformation;
+   import tibia.appearances.widgetClasses.ISpriteProvider;
    
    public class FrameGroup
    {
@@ -67,7 +67,7 @@ package tibia.appearances
       
       public var exactSize:int = 0;
       
-      public var animator:tibia.appearances.AppearanceAnimator = null;
+      public var animator:AppearanceAnimator = null;
       
       public var numSprites:int = 0;
       

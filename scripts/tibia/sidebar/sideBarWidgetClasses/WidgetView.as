@@ -1,28 +1,28 @@
 package tibia.sidebar.sideBarWidgetClasses
 {
-   import mx.containers.Box;
-   import mx.styles.CSSStyleDeclaration;
-   import mx.styles.StyleManager;
-   import mx.core.mx_internal;
-   import mx.containers.HBox;
-   import mx.core.ScrollPolicy;
-   import mx.styles.StyleProxy;
+   import flash.display.DisplayObject;
    import flash.events.MouseEvent;
-   import shared.controls.CustomLabel;
-   import shared.controls.CustomButton;
    import flash.geom.Point;
-   import tibia.sidebar.Widget;
-   import tibia.options.OptionsStorage;
-   import mx.events.PropertyChangeEvent;
-   import mx.core.EdgeMetrics;
-   import mx.core.UIComponent;
+   import mx.containers.Box;
    import mx.containers.BoxDirection;
+   import mx.containers.HBox;
    import mx.controls.Button;
    import mx.core.Container;
-   import mx.core.IFlexDisplayObject;
-   import mx.styles.IStyleClient;
-   import flash.display.DisplayObject;
+   import mx.core.EdgeMetrics;
    import mx.core.IBorder;
+   import mx.core.IFlexDisplayObject;
+   import mx.core.ScrollPolicy;
+   import mx.core.UIComponent;
+   import mx.core.mx_internal;
+   import mx.events.PropertyChangeEvent;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.IStyleClient;
+   import mx.styles.StyleManager;
+   import mx.styles.StyleProxy;
+   import shared.controls.CustomButton;
+   import shared.controls.CustomLabel;
+   import tibia.options.OptionsStorage;
+   import tibia.sidebar.Widget;
    
    public class WidgetView extends Box
    {

@@ -1,20 +1,20 @@
 package tibia.ingameshop
 {
-   import tibia.game.PopUpBase;
-   import tibia.ingameshop.shopWidgetClasses.OfferList;
-   import tibia.ingameshop.shopWidgetClasses.Header;
-   import tibia.ingameshop.shopWidgetClasses.MainContentPane;
-   import shared.controls.EmbeddedDialog;
-   import mx.events.CloseEvent;
-   import tibia.premium.PremiumManager;
-   import tibia.ingameshop.shopWidgetClasses.Sidebar;
    import mx.containers.HBox;
    import mx.containers.VBox;
+   import mx.events.CloseEvent;
+   import shared.controls.EmbeddedDialog;
+   import tibia.game.PopUpBase;
+   import tibia.ingameshop.shopWidgetClasses.Header;
+   import tibia.ingameshop.shopWidgetClasses.MainContentPane;
+   import tibia.ingameshop.shopWidgetClasses.OfferList;
+   import tibia.ingameshop.shopWidgetClasses.Sidebar;
+   import tibia.premium.PremiumManager;
    
    public class IngameShopWidget extends PopUpBase
    {
       
-      private static var s_CurrentInstance:tibia.ingameshop.IngameShopWidget = null;
+      private static var s_CurrentInstance:IngameShopWidget = null;
       
       private static const BUNDLE:String = "IngameShopWidget";
       
@@ -38,7 +38,7 @@ package tibia.ingameshop
          stretchEmbeddedDialog = false;
       }
       
-      public static function s_GetCurrentInstance() : tibia.ingameshop.IngameShopWidget
+      public static function s_GetCurrentInstance() : IngameShopWidget
       {
          return s_CurrentInstance;
       }
@@ -75,7 +75,7 @@ package tibia.ingameshop
       {
          var _loc1_:EmbeddedDialog = null;
          _loc1_ = new EmbeddedDialog();
-         _loc1_.width = tibia.ingameshop.IngameShopWidget.EMBEDDED_DIALOG_WIDTH;
+         _loc1_.width = IngameShopWidget.EMBEDDED_DIALOG_WIDTH;
          _loc1_.title = resourceManager.getString(BUNDLE,"TITLE_GET_COINS");
          _loc1_.text = resourceManager.getString(BUNDLE,"LBL_GET_COINS");
          _loc1_.buttonFlags = EmbeddedDialog.YES | EmbeddedDialog.NO;

@@ -1,7 +1,7 @@
 package mx.graphics.codec
 {
-   import flash.utils.ByteArray;
    import flash.display.BitmapData;
+   import flash.utils.ByteArray;
    
    public interface IImageEncoder
    {

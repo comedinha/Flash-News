@@ -1,18 +1,18 @@
 package tibia.ingameshop.shopWidgetClasses
 {
-   import shared.controls.CustomTileList;
-   import mx.core.IDataRenderer;
-   import flash.events.MouseEvent;
-   import tibia.ingameshop.IngameShopOffer;
-   import mx.events.ListEvent;
-   import tibia.ingameshop.IngameShopCategory;
-   import mx.collections.ArrayCollection;
-   import tibia.ingameshop.IngameShopManager;
-   import tibia.ingameshop.IngameShopEvent;
-   import tibia.ingameshop.IngameShopWidget;
    import flash.errors.IllegalOperationError;
    import flash.events.Event;
+   import flash.events.MouseEvent;
+   import mx.collections.ArrayCollection;
    import mx.core.ClassFactory;
+   import mx.core.IDataRenderer;
+   import mx.events.ListEvent;
+   import shared.controls.CustomTileList;
+   import tibia.ingameshop.IngameShopCategory;
+   import tibia.ingameshop.IngameShopEvent;
+   import tibia.ingameshop.IngameShopManager;
+   import tibia.ingameshop.IngameShopOffer;
+   import tibia.ingameshop.IngameShopWidget;
    
    public class OfferList extends CustomTileList implements IIngameShopWidgetComponent, IDataRenderer
    {

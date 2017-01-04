@@ -1,10 +1,10 @@
 package mx.containers.utilityClasses
 {
+   import flash.events.Event;
    import flash.events.EventDispatcher;
+   import mx.core.IInvalidating;
    import mx.core.IMXMLObject;
    import mx.core.mx_internal;
-   import mx.core.IInvalidating;
-   import flash.events.Event;
    
    use namespace mx_internal;
    

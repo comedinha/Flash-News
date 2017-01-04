@@ -1,22 +1,22 @@
 package mx.controls.listClasses
 {
-   import mx.core.UIComponent;
-   import mx.core.IDataRenderer;
-   import mx.core.IFontContextComponent;
-   import mx.core.mx_internal;
-   import mx.core.IFlexModuleFactory;
-   import mx.core.IUITextField;
    import flash.display.DisplayObject;
-   import mx.core.UITextField;
-   import mx.events.ToolTipEvent;
-   import flash.geom.Rectangle;
-   import mx.events.InterManagerRequest;
-   import mx.core.IToolTip;
-   import mx.managers.ISystemManager;
    import flash.geom.Point;
-   import mx.events.FlexEvent;
+   import flash.geom.Rectangle;
    import mx.core.FlexVersion;
+   import mx.core.IDataRenderer;
    import mx.core.IFlexDisplayObject;
+   import mx.core.IFlexModuleFactory;
+   import mx.core.IFontContextComponent;
+   import mx.core.IToolTip;
+   import mx.core.IUITextField;
+   import mx.core.UIComponent;
+   import mx.core.UITextField;
+   import mx.core.mx_internal;
+   import mx.events.FlexEvent;
+   import mx.events.InterManagerRequest;
+   import mx.events.ToolTipEvent;
+   import mx.managers.ISystemManager;
    
    use namespace mx_internal;
    
@@ -26,13 +26,13 @@ package mx.controls.listClasses
       mx_internal static const VERSION:String = "3.6.0.21751";
        
       
-      private var _listData:mx.controls.listClasses.ListData;
+      private var _listData:ListData;
       
       private var _data:Object;
       
       protected var label:IUITextField;
       
-      private var listOwner:mx.controls.listClasses.ListBase;
+      private var listOwner:ListBase;
       
       protected var icon:IFlexDisplayObject;
       

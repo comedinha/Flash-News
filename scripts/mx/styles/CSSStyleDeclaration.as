@@ -1,11 +1,11 @@
 package mx.styles
 {
-   import flash.events.EventDispatcher;
-   import mx.core.mx_internal;
    import flash.display.DisplayObject;
-   import mx.managers.SystemManagerGlobals;
+   import flash.events.EventDispatcher;
    import flash.utils.Dictionary;
    import mx.core.Singleton;
+   import mx.core.mx_internal;
+   import mx.managers.SystemManagerGlobals;
    
    use namespace mx_internal;
    
@@ -29,7 +29,7 @@ package mx.styles
       
       mx_internal var selectorRefCount:int = 0;
       
-      private var styleManager:mx.styles.IStyleManager2;
+      private var styleManager:IStyleManager2;
       
       private var clones:Dictionary;
       
@@ -39,7 +39,7 @@ package mx.styles
          super();
          if(param1)
          {
-            styleManager = Singleton.getInstance("mx.styles::IStyleManager2") as mx.styles.IStyleManager2;
+            styleManager = Singleton.getInstance("mx.styles::IStyleManager2") as IStyleManager2;
             styleManager.setStyleDeclaration(param1,this,false);
          }
       }
@@ -268,7 +268,7 @@ package mx.styles
          {
             if(!styleManager)
             {
-               styleManager = Singleton.getInstance("mx.styles::IStyleManager2") as mx.styles.IStyleManager2;
+               styleManager = Singleton.getInstance("mx.styles::IStyleManager2") as IStyleManager2;
             }
             _loc5_ = styleManager.getColorName(param2);
             if(_loc5_ != NOT_A_COLOR)

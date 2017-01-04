@@ -1,36 +1,36 @@
 package tibia.imbuing.imbuingWidgetClasses
 {
-   import mx.containers.HBox;
-   import flash.display.BitmapData;
    import flash.display.Bitmap;
-   import tibia.imbuing.AstralSource;
-   import tibia.imbuing.ImbuingManager;
-   import tibia.imbuing.ImbuementData;
-   import mx.controls.ComboBox;
+   import flash.display.BitmapData;
+   import flash.events.Event;
    import flash.events.MouseEvent;
-   import tibia.game.PopUpBase;
-   import shared.controls.EmbeddedDialog;
-   import tibia.imbuing.ImbuingWidget;
-   import mx.events.CloseEvent;
-   import mx.core.EventPriority;
-   import tibia.game.ExtendedTooltipEvent;
-   import mx.containers.VBox;
    import flash.text.TextLineMetrics;
+   import mx.containers.HBox;
+   import mx.containers.VBox;
+   import mx.controls.ComboBox;
    import mx.controls.Image;
-   import mx.core.UIComponent;
    import mx.controls.Label;
+   import mx.controls.Text;
+   import mx.core.EventPriority;
+   import mx.core.UIComponent;
+   import mx.events.CloseEvent;
    import mx.events.DropdownEvent;
    import mx.events.ListEvent;
-   import mx.controls.Text;
    import shared.controls.CustomButton;
+   import shared.controls.EmbeddedDialog;
+   import shared.utility.i18n.i18nFormatMinutesToCompactDayHourMinutesTimeString;
+   import tibia.appearances.widgetClasses.SimpleAppearanceRenderer;
    import tibia.controls.TibiaCurrencyView;
    import tibia.creatures.statusWidgetClasses.BitmapProgressBar;
-   import flash.events.Event;
+   import tibia.game.ExtendedTooltipEvent;
+   import tibia.game.PopUpBase;
+   import tibia.imbuing.AstralSource;
+   import tibia.imbuing.ExistingImbuement;
+   import tibia.imbuing.ImbuementData;
+   import tibia.imbuing.ImbuingManager;
+   import tibia.imbuing.ImbuingWidget;
    import tibia.ingameshop.IngameShopManager;
    import tibia.ingameshop.IngameShopProduct;
-   import tibia.appearances.widgetClasses.SimpleAppearanceRenderer;
-   import tibia.imbuing.ExistingImbuement;
-   import shared.utility.i18n.i18nFormatMinutesToCompactDayHourMinutesTimeString;
    
    public class ImbuementInformationPane extends HBox
    {
@@ -42,7 +42,7 @@ package tibia.imbuing.imbuingWidgetClasses
       private static const ICON_ARROW_CLASS:Class = ImbuementInformationPane_ICON_ARROW_CLASS;
        
       
-      protected var m_UIAstralSourceAmountWidgets:Vector.<tibia.imbuing.imbuingWidgetClasses.AstralSourceAmountWidget>;
+      protected var m_UIAstralSourceAmountWidgets:Vector.<AstralSourceAmountWidget>;
       
       protected var m_UIImbuementSelection:ComboBox = null;
       
@@ -52,7 +52,7 @@ package tibia.imbuing.imbuingWidgetClasses
       
       protected var m_UIArrowImageBox:HBox = null;
       
-      protected var m_UIImbueButton:tibia.imbuing.imbuingWidgetClasses.ImbuementButtonWidget;
+      protected var m_UIImbueButton:ImbuementButtonWidget;
       
       private var m_SelectedImbuingSlot:int = -1;
       
@@ -76,7 +76,7 @@ package tibia.imbuing.imbuingWidgetClasses
       
       private var m_UIImbuingItemAppearance:SimpleAppearanceRenderer = null;
       
-      protected var m_UIProtectionCharmButton:tibia.imbuing.imbuingWidgetClasses.ImbuementButtonWidget;
+      protected var m_UIProtectionCharmButton:ImbuementButtonWidget;
       
       private var m_CurrentBalance:Number = NaN;
       
@@ -96,7 +96,7 @@ package tibia.imbuing.imbuingWidgetClasses
       
       public function ImbuementInformationPane()
       {
-         this.m_UIAstralSourceAmountWidgets = new Vector.<tibia.imbuing.imbuingWidgetClasses.AstralSourceAmountWidget>();
+         this.m_UIAstralSourceAmountWidgets = new Vector.<AstralSourceAmountWidget>();
          this.m_ImbuementData = new ImbuementData(uint.MAX_VALUE,"");
          this.m_TooltipUIElements = new Vector.<UIComponent>();
          super();
@@ -335,7 +335,7 @@ package tibia.imbuing.imbuingWidgetClasses
          var _loc8_:uint = 0;
          var _loc9_:Image = null;
          var _loc10_:UIComponent = null;
-         var _loc11_:tibia.imbuing.imbuingWidgetClasses.AstralSourceAmountWidget = null;
+         var _loc11_:AstralSourceAmountWidget = null;
          super.createChildren();
          if(!this.m_UIConstructed)
          {
@@ -390,13 +390,13 @@ package tibia.imbuing.imbuingWidgetClasses
             _loc8_ = 0;
             while(_loc8_ < 3)
             {
-               _loc11_ = new tibia.imbuing.imbuingWidgetClasses.AstralSourceAmountWidget();
+               _loc11_ = new AstralSourceAmountWidget();
                _loc11_.clear();
                this.m_UIAstralSourceAmountWidgets.push(_loc11_);
                this.m_UIAstralSourcesBox.addChild(_loc11_);
                _loc8_++;
             }
-            this.m_UIProtectionCharmButton = new tibia.imbuing.imbuingWidgetClasses.ImbuementButtonWidget();
+            this.m_UIProtectionCharmButton = new ImbuementButtonWidget();
             this.m_UIProtectionCharmButton.width = 70 + 2;
             this.m_UIProtectionCharmButton.percentHeight = 100;
             this.m_UIProtectionCharmButton.button.toggle = true;
@@ -415,7 +415,7 @@ package tibia.imbuing.imbuingWidgetClasses
             this.m_UIRemainingTimeProgress.percentWidth = 100;
             this.m_UIRemainingTimeProgress.labelEnabled = true;
             this.m_UIProgressBarBox.addChild(this.m_UIRemainingTimeProgress);
-            this.m_UIImbueButton = new tibia.imbuing.imbuingWidgetClasses.ImbuementButtonWidget();
+            this.m_UIImbueButton = new ImbuementButtonWidget();
             this.m_UIImbueButton.width = this.m_UIPremiumOnly.width;
             this.m_UIImbueButton.percentHeight = 100;
             this.m_UIImbueButton.currencyView.currencyIcon = TibiaCurrencyView.CURRENCY_ICON_GOLD_COIN;

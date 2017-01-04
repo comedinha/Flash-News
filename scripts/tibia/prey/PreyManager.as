@@ -7,7 +7,7 @@ package tibia.prey
    public class PreyManager extends EventDispatcher
    {
       
-      private static var s_Instance:tibia.prey.PreyManager = null;
+      private static var s_Instance:PreyManager = null;
       
       public static var PREY_ACTION_MONSTERSELECTION:uint = 2;
       
@@ -20,7 +20,7 @@ package tibia.prey
       
       private var m_ListRerollPrice:Number = 0;
       
-      private var m_Preys:Vector.<tibia.prey.PreyData> = null;
+      private var m_Preys:Vector.<PreyData> = null;
       
       private var m_BonusRerollAmount:uint = 0;
       
@@ -29,22 +29,22 @@ package tibia.prey
       public function PreyManager()
       {
          super();
-         this.m_Preys = new Vector.<tibia.prey.PreyData>();
+         this.m_Preys = new Vector.<PreyData>();
          this.m_StillNeedsInformationForPrey = new Vector.<uint>();
          var _loc1_:uint = 0;
          while(_loc1_ < MAXIMUM_NUMBER_OF_PREYS)
          {
-            this.m_Preys.push(new tibia.prey.PreyData(_loc1_));
+            this.m_Preys.push(new PreyData(_loc1_));
             this.m_StillNeedsInformationForPrey.push(_loc1_);
             _loc1_++;
          }
       }
       
-      public static function getInstance() : tibia.prey.PreyManager
+      public static function getInstance() : PreyManager
       {
          if(s_Instance == null)
          {
-            s_Instance = new tibia.prey.PreyManager();
+            s_Instance = new PreyManager();
          }
          return s_Instance;
       }
@@ -67,7 +67,7 @@ package tibia.prey
          }
       }
       
-      public function get preys() : Vector.<tibia.prey.PreyData>
+      public function get preys() : Vector.<PreyData>
       {
          return this.m_Preys;
       }

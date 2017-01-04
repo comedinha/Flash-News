@@ -1,23 +1,23 @@
 package mx.styles
 {
-   import mx.core.mx_internal;
-   import mx.resources.IResourceManager;
-   import mx.managers.SystemManagerGlobals;
    import flash.events.IEventDispatcher;
-   import mx.modules.IModuleInfo;
-   import mx.events.ModuleEvent;
-   import mx.core.FlexVersion;
+   import flash.events.TimerEvent;
    import flash.system.ApplicationDomain;
    import flash.system.SecurityDomain;
    import flash.utils.Timer;
-   import mx.modules.ModuleManager;
+   import mx.core.FlexVersion;
+   import mx.core.mx_internal;
+   import mx.events.ModuleEvent;
    import mx.events.StyleEvent;
-   import flash.events.TimerEvent;
+   import mx.managers.SystemManagerGlobals;
+   import mx.modules.IModuleInfo;
+   import mx.modules.ModuleManager;
+   import mx.resources.IResourceManager;
    import mx.resources.ResourceManager;
    
    use namespace mx_internal;
    
-   public class StyleManagerImpl implements mx.styles.IStyleManager2
+   public class StyleManagerImpl implements IStyleManager2
    {
       
       private static var parentSizeInvalidatingStyles:Object = {
@@ -66,7 +66,7 @@ package mx.styles
          "size":true
       };
       
-      private static var instance:mx.styles.IStyleManager2;
+      private static var instance:IStyleManager2;
       
       private static var parentDisplayListInvalidatingStyles:Object = {
          "bottom":true,
@@ -131,7 +131,7 @@ package mx.styles
          super();
       }
       
-      public static function getInstance() : mx.styles.IStyleManager2
+      public static function getInstance() : IStyleManager2
       {
          if(!instance)
          {

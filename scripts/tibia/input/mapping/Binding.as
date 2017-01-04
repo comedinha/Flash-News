@@ -1,11 +1,11 @@
 package tibia.input.mapping
 {
    import flash.ui.Keyboard;
-   import tibia.input.staticaction.StaticAction;
-   import tibia.input.IAction;
-   import mx.resources.ResourceManager;
    import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
+   import tibia.input.IAction;
    import tibia.input.InputEvent;
+   import tibia.input.staticaction.StaticAction;
    
    public class Binding
    {

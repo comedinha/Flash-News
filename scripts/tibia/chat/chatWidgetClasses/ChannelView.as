@@ -1,18 +1,18 @@
 package tibia.chat.chatWidgetClasses
 {
-   import shared.controls.CustomDividedBox;
-   import flash.utils.Dictionary;
-   import tibia.chat.Channel;
-   import shared.controls.SmoothList;
-   import mx.collections.Sort;
-   import mx.collections.ListCollectionView;
-   import tibia.chat.ChatStorage;
-   import mx.collections.ICollectionView;
    import flash.events.MouseEvent;
-   import mx.controls.listClasses.IListItemRenderer;
+   import flash.utils.Dictionary;
+   import mx.collections.ICollectionView;
    import mx.collections.IList;
-   import tibia.chat.ChannelMessage;
+   import mx.collections.ListCollectionView;
+   import mx.collections.Sort;
    import mx.containers.BoxDirection;
+   import mx.controls.listClasses.IListItemRenderer;
+   import shared.controls.CustomDividedBox;
+   import shared.controls.SmoothList;
+   import tibia.chat.Channel;
+   import tibia.chat.ChannelMessage;
+   import tibia.chat.ChatStorage;
    
    public class ChannelView extends CustomDividedBox
    {
@@ -33,7 +33,7 @@ package tibia.chat.chatWidgetClasses
       
       private var m_UncommittedChannel:Boolean = false;
       
-      protected var m_UIChannel:tibia.chat.chatWidgetClasses.ChannelMessageList = null;
+      protected var m_UIChannel:ChannelMessageList = null;
       
       protected var m_UINicklistItemView:IList = null;
       
@@ -232,7 +232,7 @@ package tibia.chat.chatWidgetClasses
          if(!this.m_UIConstructed)
          {
             super.createChildren();
-            this.m_UIChannel = new tibia.chat.chatWidgetClasses.ChannelMessageList();
+            this.m_UIChannel = new ChannelMessageList();
             this.m_UIChannel.name = "ChannelMessageList";
             this.m_UIChannel.dataProvider = null;
             this.m_UIChannel.followTailPolicy = SmoothList.FOLLOW_TAIL_AUTO;

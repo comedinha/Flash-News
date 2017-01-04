@@ -1,15 +1,15 @@
 package mx.graphics
 {
-   import mx.core.mx_internal;
    import flash.display.BitmapData;
    import flash.display.Graphics;
-   import flash.geom.Matrix;
-   import mx.core.FlexShape;
    import flash.display.Shape;
-   import mx.utils.GraphicsUtil;
    import flash.filters.DropShadowFilter;
-   import flash.geom.Rectangle;
+   import flash.geom.Matrix;
    import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import mx.core.FlexShape;
+   import mx.core.mx_internal;
+   import mx.utils.GraphicsUtil;
    
    use namespace mx_internal;
    

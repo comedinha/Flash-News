@@ -1,7 +1,7 @@
 package mx.managers
 {
-   import flash.events.IEventDispatcher;
    import flash.display.DisplayObject;
+   import flash.events.IEventDispatcher;
    
    public interface IFocusManagerContainer extends IEventDispatcher
    {

@@ -1,30 +1,30 @@
 package mx.preloaders
 {
-   import flash.display.Sprite;
-   import mx.core.mx_internal;
-   import mx.graphics.RoundedRectangle;
-   import flash.geom.Rectangle;
-   import flash.text.TextFormat;
-   import flash.text.TextField;
-   import flash.utils.getTimer;
-   import flash.display.Loader;
    import flash.display.DisplayObject;
-   import flash.system.LoaderContext;
-   import flash.utils.getDefinitionByName;
+   import flash.display.GradientType;
+   import flash.display.Graphics;
+   import flash.display.Loader;
+   import flash.display.LoaderInfo;
+   import flash.display.Sprite;
    import flash.events.Event;
    import flash.events.IOErrorEvent;
-   import flash.system.ApplicationDomain;
-   import flash.net.URLRequest;
-   import mx.events.RSLEvent;
    import flash.events.ProgressEvent;
-   import mx.events.FlexEvent;
-   import flash.display.Graphics;
-   import flash.geom.Matrix;
-   import flash.display.GradientType;
-   import mx.graphics.RectangularDropShadow;
-   import flash.utils.Timer;
    import flash.events.TimerEvent;
-   import flash.display.LoaderInfo;
+   import flash.geom.Matrix;
+   import flash.geom.Rectangle;
+   import flash.net.URLRequest;
+   import flash.system.ApplicationDomain;
+   import flash.system.LoaderContext;
+   import flash.text.TextField;
+   import flash.text.TextFormat;
+   import flash.utils.Timer;
+   import flash.utils.getDefinitionByName;
+   import flash.utils.getTimer;
+   import mx.core.mx_internal;
+   import mx.events.FlexEvent;
+   import mx.events.RSLEvent;
+   import mx.graphics.RectangularDropShadow;
+   import mx.graphics.RoundedRectangle;
    
    use namespace mx_internal;
    
@@ -757,10 +757,10 @@ package mx.preloaders
 }
 
 import flash.display.Sprite;
-import flash.text.TextFormat;
+import flash.system.Capabilities;
 import flash.text.TextField;
 import flash.text.TextFieldAutoSize;
-import flash.system.Capabilities;
+import flash.text.TextFormat;
 import mx.preloaders.DownloadProgressBar;
 
 class ErrorField extends Sprite

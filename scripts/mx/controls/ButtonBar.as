@@ -1,21 +1,21 @@
 package mx.controls
 {
-   import mx.managers.IFocusManagerComponent;
-   import mx.core.mx_internal;
-   import mx.core.EdgeMetrics;
+   import flash.display.DisplayObject;
    import flash.events.Event;
-   import flash.events.KeyboardEvent;
    import flash.events.EventPhase;
+   import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
    import flash.ui.Keyboard;
    import mx.containers.BoxDirection;
-   import mx.core.IUIComponent;
-   import flash.events.MouseEvent;
-   import flash.display.DisplayObject;
-   import mx.core.IFlexDisplayObject;
-   import mx.styles.StyleManager;
-   import mx.events.ChildExistenceChangedEvent;
-   import mx.core.ClassFactory;
    import mx.controls.buttonBarClasses.ButtonBarButton;
+   import mx.core.ClassFactory;
+   import mx.core.EdgeMetrics;
+   import mx.core.IFlexDisplayObject;
+   import mx.core.IUIComponent;
+   import mx.core.mx_internal;
+   import mx.events.ChildExistenceChangedEvent;
+   import mx.managers.IFocusManagerComponent;
+   import mx.styles.StyleManager;
    
    use namespace mx_internal;
    

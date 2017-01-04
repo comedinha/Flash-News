@@ -1,12 +1,12 @@
 package shared.utility
 {
+   import flash.filters.BitmapFilterQuality;
+   import flash.filters.GlowFilter;
    import flash.geom.Matrix;
-   import flash.text.TextFormat;
    import flash.geom.Rectangle;
    import flash.text.TextField;
    import flash.text.TextFieldAutoSize;
-   import flash.filters.GlowFilter;
-   import flash.filters.BitmapFilterQuality;
+   import flash.text.TextFormat;
    
    public class TextFieldCache extends BitmapCache
    {

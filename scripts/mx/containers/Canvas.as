@@ -1,11 +1,11 @@
 package mx.containers
 {
-   import mx.core.Container;
-   import mx.containers.utilityClasses.IConstraintLayout;
-   import mx.core.mx_internal;
    import mx.containers.utilityClasses.CanvasLayout;
-   import mx.containers.utilityClasses.ConstraintRow;
    import mx.containers.utilityClasses.ConstraintColumn;
+   import mx.containers.utilityClasses.ConstraintRow;
+   import mx.containers.utilityClasses.IConstraintLayout;
+   import mx.core.Container;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

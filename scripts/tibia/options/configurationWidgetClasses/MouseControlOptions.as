@@ -1,30 +1,30 @@
 package tibia.options.configurationWidgetClasses
 {
-   import mx.containers.VBox;
    import flash.events.Event;
-   import tibia.input.mapping.MouseMapping;
-   import mx.controls.CheckBox;
-   import tibia.input.mapping.MouseBinding;
    import flash.utils.Dictionary;
-   import tibia.options.ConfigurationWidget;
+   import mx.collections.ArrayCollection;
+   import mx.collections.IList;
+   import mx.containers.Form;
+   import mx.containers.FormItem;
+   import mx.containers.VBox;
+   import mx.controls.CheckBox;
+   import mx.controls.ComboBox;
    import mx.controls.DataGrid;
+   import mx.controls.dataGridClasses.DataGridColumn;
+   import mx.core.ClassFactory;
+   import mx.core.ScrollPolicy;
    import mx.events.DataGridEvent;
    import mx.events.DataGridEventReason;
-   import mx.containers.Form;
-   import mx.controls.dataGridClasses.DataGridColumn;
-   import mx.containers.FormItem;
-   import mx.core.ClassFactory;
-   import mx.styles.StyleManager;
-   import mx.controls.ComboBox;
-   import shared.controls.CustomList;
    import mx.events.DropdownEvent;
-   import mx.events.ListEvent;
-   import shared.controls.CustomDataGrid;
-   import mx.collections.IList;
-   import tibia.options.OptionsStorage;
    import mx.events.FlexEvent;
-   import mx.core.ScrollPolicy;
-   import mx.collections.ArrayCollection;
+   import mx.events.ListEvent;
+   import mx.styles.StyleManager;
+   import shared.controls.CustomDataGrid;
+   import shared.controls.CustomList;
+   import tibia.input.mapping.MouseBinding;
+   import tibia.input.mapping.MouseMapping;
+   import tibia.options.ConfigurationWidget;
+   import tibia.options.OptionsStorage;
    
    public class MouseControlOptions extends VBox implements IOptionsEditor
    {

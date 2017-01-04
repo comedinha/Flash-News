@@ -1,8 +1,8 @@
 package mx.controls.dataGridClasses
 {
+   import flash.display.Sprite;
    import mx.core.UIComponent;
    import mx.core.mx_internal;
-   import flash.display.Sprite;
    
    public class DataGridHeaderBase extends UIComponent
    {

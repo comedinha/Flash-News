@@ -1,15 +1,15 @@
 package mx.effects
 {
-   import flash.events.EventDispatcher;
-   import mx.core.mx_internal;
-   import mx.effects.effectClasses.PropertyChanges;
-   import flash.utils.getQualifiedClassName;
-   import mx.managers.LayoutManager;
-   import mx.events.EffectEvent;
    import flash.events.Event;
+   import flash.events.EventDispatcher;
+   import flash.utils.getQualifiedClassName;
    import mx.core.IFlexDisplayObject;
+   import mx.core.mx_internal;
    import mx.effects.effectClasses.AddRemoveEffectTargetFilter;
    import mx.effects.effectClasses.HideShowEffectTargetFilter;
+   import mx.effects.effectClasses.PropertyChanges;
+   import mx.events.EffectEvent;
+   import mx.managers.LayoutManager;
    
    use namespace mx_internal;
    
@@ -23,7 +23,7 @@ package mx.effects
       
       private var _hideFocusRing:Boolean = false;
       
-      private var _customFilter:mx.effects.EffectTargetFilter;
+      private var _customFilter:EffectTargetFilter;
       
       public var repeatCount:int = 1;
       
@@ -41,7 +41,7 @@ package mx.effects
       
       private var _triggerEvent:Event;
       
-      private var _effectTargetHost:mx.effects.IEffectTargetHost;
+      private var _effectTargetHost:IEffectTargetHost;
       
       mx_internal var durationExplicitlySet:Boolean = false;
       
@@ -51,7 +51,7 @@ package mx.effects
       
       mx_internal var propertyChangesArray:Array;
       
-      mx_internal var filterObject:mx.effects.EffectTargetFilter;
+      mx_internal var filterObject:EffectTargetFilter;
       
       protected var endValuesCaptured:Boolean = false;
       
@@ -342,12 +342,12 @@ package mx.effects
          return true;
       }
       
-      public function get customFilter() : mx.effects.EffectTargetFilter
+      public function get customFilter() : EffectTargetFilter
       {
          return _customFilter;
       }
       
-      public function get effectTargetHost() : mx.effects.IEffectTargetHost
+      public function get effectTargetHost() : IEffectTargetHost
       {
          return _effectTargetHost;
       }
@@ -407,7 +407,7 @@ package mx.effects
          return _duration;
       }
       
-      public function set customFilter(param1:mx.effects.EffectTargetFilter) : void
+      public function set customFilter(param1:EffectTargetFilter) : void
       {
          _customFilter = param1;
          filterObject = param1;
@@ -418,7 +418,7 @@ package mx.effects
          return _perElementOffset;
       }
       
-      public function set effectTargetHost(param1:mx.effects.IEffectTargetHost) : void
+      public function set effectTargetHost(param1:IEffectTargetHost) : void
       {
          _effectTargetHost = param1;
       }
@@ -695,27 +695,27 @@ package mx.effects
                   HideShowEffectTargetFilter(filterObject).show = param1 == "show";
                   break;
                case "move":
-                  filterObject = new mx.effects.EffectTargetFilter();
+                  filterObject = new EffectTargetFilter();
                   filterObject.filterProperties = ["x","y"];
                   break;
                case "resize":
-                  filterObject = new mx.effects.EffectTargetFilter();
+                  filterObject = new EffectTargetFilter();
                   filterObject.filterProperties = ["width","height"];
                   break;
                case "addItem":
-                  filterObject = new mx.effects.EffectTargetFilter();
+                  filterObject = new EffectTargetFilter();
                   filterObject.requiredSemantics = {"added":true};
                   break;
                case "removeItem":
-                  filterObject = new mx.effects.EffectTargetFilter();
+                  filterObject = new EffectTargetFilter();
                   filterObject.requiredSemantics = {"removed":true};
                   break;
                case "replacedItem":
-                  filterObject = new mx.effects.EffectTargetFilter();
+                  filterObject = new EffectTargetFilter();
                   filterObject.requiredSemantics = {"replaced":true};
                   break;
                case "replacementItem":
-                  filterObject = new mx.effects.EffectTargetFilter();
+                  filterObject = new EffectTargetFilter();
                   filterObject.requiredSemantics = {"replacement":true};
                   break;
                default:

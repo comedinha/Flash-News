@@ -1,17 +1,17 @@
 package tibia.game
 {
-   import mx.core.UIComponent;
    import flash.display.DisplayObject;
-   import mx.managers.ISystemManager;
-   import flash.utils.setTimeout;
    import flash.events.Event;
    import flash.events.MouseEvent;
+   import flash.utils.setTimeout;
    import mx.controls.Label;
+   import mx.core.UIComponent;
+   import mx.managers.ISystemManager;
    
    public class FocusNotifier extends UIComponent
    {
       
-      private static var s_Instance:tibia.game.FocusNotifier = null;
+      private static var s_Instance:FocusNotifier = null;
       
       private static const BUNDLE:String = "Global";
        
@@ -28,11 +28,11 @@ package tibia.game
          mouseEnabled = false;
       }
       
-      public static function getInstance() : tibia.game.FocusNotifier
+      public static function getInstance() : FocusNotifier
       {
          if(s_Instance == null)
          {
-            s_Instance = new tibia.game.FocusNotifier();
+            s_Instance = new FocusNotifier();
          }
          return s_Instance;
       }

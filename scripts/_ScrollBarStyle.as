@@ -1,11 +1,11 @@
 package
 {
    import mx.core.IFlexModuleFactory;
-   import mx.styles.CSSStyleDeclaration;
-   import mx.styles.StyleManager;
+   import mx.skins.halo.ScrollArrowSkin;
    import mx.skins.halo.ScrollThumbSkin;
    import mx.skins.halo.ScrollTrackSkin;
-   import mx.skins.halo.ScrollArrowSkin;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.StyleManager;
    
    public class _ScrollBarStyle
    {

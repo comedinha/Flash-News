@@ -1,16 +1,16 @@
 package mx.managers
 {
-   import mx.core.mx_internal;
-   import mx.core.IFlexModuleFactory;
-   import mx.events.SWFBridgeEvent;
-   import flash.events.IEventDispatcher;
-   import mx.utils.SecurityUtil;
-   import mx.core.ISWFBridgeProvider;
-   import mx.utils.NameUtil;
-   import mx.core.ISWFBridgeGroup;
    import flash.display.DisplayObject;
-   import flash.geom.Rectangle;
+   import flash.events.IEventDispatcher;
    import flash.events.MouseEvent;
+   import flash.geom.Rectangle;
+   import mx.core.IFlexModuleFactory;
+   import mx.core.ISWFBridgeGroup;
+   import mx.core.ISWFBridgeProvider;
+   import mx.core.mx_internal;
+   import mx.events.SWFBridgeEvent;
+   import mx.utils.NameUtil;
+   import mx.utils.SecurityUtil;
    
    use namespace mx_internal;
    
@@ -20,9 +20,9 @@ package mx.managers
       mx_internal static const VERSION:String = "3.6.0.21751";
        
       
-      private var _systemManager:mx.managers.ISystemManager;
+      private var _systemManager:ISystemManager;
       
-      public function SystemManagerProxy(param1:mx.managers.ISystemManager)
+      public function SystemManagerProxy(param1:ISystemManager)
       {
          super();
          _systemManager = param1;
@@ -35,7 +35,7 @@ package mx.managers
          return IFlexModuleFactory(_systemManager).create.apply(this,rest);
       }
       
-      public function get systemManager() : mx.managers.ISystemManager
+      public function get systemManager() : ISystemManager
       {
          return _systemManager;
       }
@@ -127,7 +127,7 @@ package mx.managers
       {
          var _loc4_:Boolean = false;
          var _loc5_:SWFBridgeEvent = null;
-         var _loc2_:mx.managers.ISystemManager = _systemManager;
+         var _loc2_:ISystemManager = _systemManager;
          var _loc3_:IEventDispatcher = !!_loc2_.swfBridgeGroup?_loc2_.swfBridgeGroup.parentBridge:null;
          if(_loc3_)
          {

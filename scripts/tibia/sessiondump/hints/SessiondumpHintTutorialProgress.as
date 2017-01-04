@@ -1,8 +1,8 @@
 package tibia.sessiondump.hints
 {
-   import tibia.tutorial.TutorialProgressServiceAsset;
    import tibia.sessiondump.Sessiondump;
    import tibia.sessiondump.controller.SessiondumpControllerHints;
+   import tibia.tutorial.TutorialProgressServiceAsset;
    
    public class SessiondumpHintTutorialProgress extends SessiondumpHintBase
    {

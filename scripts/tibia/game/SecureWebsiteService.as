@@ -1,11 +1,11 @@
 package tibia.game
 {
-   import flash.events.EventDispatcher;
-   import flash.net.URLLoader;
    import flash.events.ErrorEvent;
    import flash.events.Event;
+   import flash.events.EventDispatcher;
    import flash.events.IOErrorEvent;
    import flash.events.SecurityErrorEvent;
+   import flash.net.URLLoader;
    import flash.net.URLRequest;
    import flash.net.URLRequestMethod;
    

@@ -1,8 +1,8 @@
 package tibia.ingameshop
 {
-   import flash.events.EventDispatcher;
-   import flash.display.BitmapData;
    import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.events.EventDispatcher;
    
    public class DynamicImage extends EventDispatcher
    {

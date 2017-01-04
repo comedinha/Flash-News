@@ -1,8 +1,8 @@
 package tibia.magic
 {
-   import tibia.sidebar.Widget;
    import tibia.creatures.Player;
    import tibia.magic.spellListWidgetClasses.SpellListWidgetView;
+   import tibia.sidebar.Widget;
    import tibia.sidebar.sideBarWidgetClasses.WidgetView;
    
    public class SpellListWidget extends Widget
@@ -275,7 +275,7 @@ package tibia.magic
       
       private var m_Player:Player = null;
       
-      private var m_SpellStorage:tibia.magic.SpellStorage = null;
+      private var m_SpellStorage:SpellStorage = null;
       
       private var m_FilterGroup:int = -1;
       

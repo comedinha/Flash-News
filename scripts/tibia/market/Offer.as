@@ -16,7 +16,7 @@ package tibia.market
       public static const CANCELLED:int = 1;
        
       
-      private var m_OfferID:tibia.market.OfferID = null;
+      private var m_OfferID:OfferID = null;
       
       private var m_Kind:int = 0;
       
@@ -32,7 +32,7 @@ package tibia.market
       
       private var m_Character:String = null;
       
-      public function Offer(param1:tibia.market.OfferID, param2:int, param3:int, param4:int, param5:int, param6:String, param7:int)
+      public function Offer(param1:OfferID, param2:int, param3:int, param4:int, param5:int, param6:String, param7:int)
       {
          super();
          if(param1 == null)
@@ -106,7 +106,7 @@ package tibia.market
          return this.m_PiecePrice;
       }
       
-      public function get offerID() : tibia.market.OfferID
+      public function get offerID() : OfferID
       {
          return this.m_OfferID;
       }

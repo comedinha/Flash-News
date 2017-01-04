@@ -1,10 +1,10 @@
 package tibia.prey
 {
    import flash.events.EventDispatcher;
-   import mx.resources.ResourceManager;
-   import mx.resources.IResourceManager;
    import mx.events.PropertyChangeEvent;
    import mx.events.PropertyChangeEventKind;
+   import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
    
    public class PreyData extends EventDispatcher
    {
@@ -52,9 +52,9 @@ package tibia.prey
       
       private var m_State:uint = 1;
       
-      private var m_MonsterList:Vector.<tibia.prey.PreyMonsterInformation>;
+      private var m_MonsterList:Vector.<PreyMonsterInformation>;
       
-      private var m_Monster:tibia.prey.PreyMonsterInformation = null;
+      private var m_Monster:PreyMonsterInformation = null;
       
       private var m_BonusGrade:uint = 0;
       
@@ -62,7 +62,7 @@ package tibia.prey
       
       public function PreyData(param1:uint)
       {
-         this.m_MonsterList = new Vector.<tibia.prey.PreyMonsterInformation>();
+         this.m_MonsterList = new Vector.<PreyMonsterInformation>();
          super();
          this.m_Id = param1;
       }
@@ -81,7 +81,7 @@ package tibia.prey
          }
       }
       
-      public function changeStateToActive(param1:uint, param2:uint, param3:uint, param4:tibia.prey.PreyMonsterInformation) : void
+      public function changeStateToActive(param1:uint, param2:uint, param3:uint, param4:PreyMonsterInformation) : void
       {
          if(param1 != BONUS_NONE)
          {
@@ -163,7 +163,7 @@ package tibia.prey
          return "";
       }
       
-      public function changeStateToSelection(param1:Vector.<tibia.prey.PreyMonsterInformation>) : void
+      public function changeStateToSelection(param1:Vector.<PreyMonsterInformation>) : void
       {
          if(param1.length > 0)
          {
@@ -177,7 +177,7 @@ package tibia.prey
          }
       }
       
-      public function get monsterList() : Vector.<tibia.prey.PreyMonsterInformation>
+      public function get monsterList() : Vector.<PreyMonsterInformation>
       {
          return this.m_MonsterList;
       }
@@ -199,7 +199,7 @@ package tibia.prey
          this.bonusValue = 0;
          this.bonusGrade = 0;
          this.monster = null;
-         this.monsterList = new Vector.<tibia.prey.PreyMonsterInformation>();
+         this.monsterList = new Vector.<PreyMonsterInformation>();
          this.preyTimeLeft = 0;
       }
       
@@ -241,7 +241,7 @@ package tibia.prey
          this.state = STATE_INACTIVE;
       }
       
-      public function get monster() : tibia.prey.PreyMonsterInformation
+      public function get monster() : PreyMonsterInformation
       {
          return this.m_Monster;
       }
@@ -273,7 +273,7 @@ package tibia.prey
          }
       }
       
-      public function set monster(param1:tibia.prey.PreyMonsterInformation) : void
+      public function set monster(param1:PreyMonsterInformation) : void
       {
          if(param1 != null && !param1.equals(this.m_Monster) || param1 == null && this.m_Monster != null)
          {
@@ -282,7 +282,7 @@ package tibia.prey
          }
       }
       
-      public function set monsterList(param1:Vector.<tibia.prey.PreyMonsterInformation>) : void
+      public function set monsterList(param1:Vector.<PreyMonsterInformation>) : void
       {
          this.m_MonsterList = param1;
          this.dispatchChangeEvent("monsterList");
@@ -303,7 +303,7 @@ package tibia.prey
          return this.m_MinutesUntilFreeListReroll;
       }
       
-      public function changeStateToSelectionChangeMonster(param1:uint, param2:uint, param3:uint, param4:Vector.<tibia.prey.PreyMonsterInformation>) : void
+      public function changeStateToSelectionChangeMonster(param1:uint, param2:uint, param3:uint, param4:Vector.<PreyMonsterInformation>) : void
       {
          if(param4.length > 0)
          {

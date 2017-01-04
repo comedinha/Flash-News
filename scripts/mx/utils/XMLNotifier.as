@@ -1,14 +1,14 @@
 package mx.utils
 {
-   import mx.core.mx_internal;
    import flash.utils.Dictionary;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    
    public class XMLNotifier
    {
       
-      private static var instance:mx.utils.XMLNotifier;
+      private static var instance:XMLNotifier;
       
       mx_internal static const VERSION:String = "3.6.0.21751";
        
@@ -18,11 +18,11 @@ package mx.utils
          super();
       }
       
-      public static function getInstance() : mx.utils.XMLNotifier
+      public static function getInstance() : XMLNotifier
       {
          if(!instance)
          {
-            instance = new mx.utils.XMLNotifier(new XMLNotifierSingleton());
+            instance = new XMLNotifier(new XMLNotifierSingleton());
          }
          return instance;
       }

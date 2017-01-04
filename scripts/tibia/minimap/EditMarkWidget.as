@@ -1,15 +1,15 @@
 package tibia.minimap
 {
-   import tibia.game.PopUpBase;
-   import tibia.minimap.editMarkWidgetClasses.MarkIconChooser;
-   import mx.events.PropertyChangeEvent;
+   import flash.events.Event;
+   import flash.events.KeyboardEvent;
+   import flash.events.TextEvent;
    import mx.containers.Form;
    import mx.containers.FormItem;
    import mx.controls.TextInput;
-   import flash.events.Event;
-   import flash.events.KeyboardEvent;
+   import mx.events.PropertyChangeEvent;
+   import tibia.game.PopUpBase;
    import tibia.input.PreventWhitespaceInput;
-   import flash.events.TextEvent;
+   import tibia.minimap.editMarkWidgetClasses.MarkIconChooser;
    
    public class EditMarkWidget extends PopUpBase
    {
@@ -55,7 +55,7 @@ package tibia.minimap
       
       private var m_UncommittedMiniMapStorage:Boolean = false;
       
-      protected var m_MiniMapStorage:tibia.minimap.MiniMapStorage;
+      protected var m_MiniMapStorage:MiniMapStorage;
       
       private var m_UIConstructed:Boolean = false;
       
@@ -191,7 +191,7 @@ package tibia.minimap
          }
       }
       
-      public function getMiniMapStorage() : tibia.minimap.MiniMapStorage
+      public function getMiniMapStorage() : MiniMapStorage
       {
          return this.m_MiniMapStorage;
       }
@@ -204,7 +204,7 @@ package tibia.minimap
          }
       }
       
-      public function setMiniMapStorage(param1:tibia.minimap.MiniMapStorage) : void
+      public function setMiniMapStorage(param1:MiniMapStorage) : void
       {
          if(this.m_MiniMapStorage != param1)
          {

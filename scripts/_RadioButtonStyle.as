@@ -1,9 +1,9 @@
 package
 {
    import mx.core.IFlexModuleFactory;
+   import mx.skins.halo.RadioButtonIcon;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
-   import mx.skins.halo.RadioButtonIcon;
    
    public class _RadioButtonStyle
    {

@@ -1,7 +1,7 @@
 package mx.effects.effectClasses
 {
-   import mx.effects.EffectTargetFilter;
    import mx.core.mx_internal;
+   import mx.effects.EffectTargetFilter;
    
    use namespace mx_internal;
    

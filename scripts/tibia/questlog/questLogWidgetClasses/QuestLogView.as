@@ -1,10 +1,10 @@
 package tibia.questlog.questLogWidgetClasses
 {
    import mx.containers.VBox;
-   import shared.controls.CustomList;
-   import mx.events.ListEvent;
-   import tibia.questlog.QuestLine;
    import mx.controls.List;
+   import mx.events.ListEvent;
+   import shared.controls.CustomList;
+   import tibia.questlog.QuestLine;
    
    public class QuestLogView extends VBox
    {

@@ -1,7 +1,7 @@
 package tibia.controls
 {
-   import mx.preloaders.DownloadProgressBar;
    import mx.core.Singleton;
+   import mx.preloaders.DownloadProgressBar;
    import tibia.cursors.CustomCursorManagerImpl;
    
    public class CustomDownloadProgressBar extends DownloadProgressBar

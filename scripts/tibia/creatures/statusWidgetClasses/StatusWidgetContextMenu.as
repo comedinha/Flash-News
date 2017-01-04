@@ -1,11 +1,11 @@
 package tibia.creatures.statusWidgetClasses
 {
-   import tibia.game.ContextMenuBase;
-   import tibia.creatures.StatusWidget;
-   import shared.utility.cacheStyleInstance;
    import mx.core.IUIComponent;
-   import tibia.game.contextMenuClasses.TextItem;
+   import shared.utility.cacheStyleInstance;
    import shared.utility.closure;
+   import tibia.creatures.StatusWidget;
+   import tibia.game.ContextMenuBase;
+   import tibia.game.contextMenuClasses.TextItem;
    import tibia.options.OptionsStorage;
    
    public class StatusWidgetContextMenu extends ContextMenuBase

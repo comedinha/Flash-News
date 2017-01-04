@@ -1,27 +1,27 @@
 package tibia.prey
 {
-   import tibia.game.PopUpBase;
-   import mx.resources.IResourceManager;
-   import tibia.game.MessageWidget;
-   import mx.resources.ResourceManager;
-   import mx.events.PropertyChangeEvent;
-   import tibia.prey.preyWidgetClasses.PreyView;
-   import tibia.creatures.Player;
-   import shared.utility.i18n.i18nFormatNumber;
-   import tibia.controls.TibiaCurrencyView;
    import flash.events.MouseEvent;
-   import tibia.ingameshop.IngameShopManager;
-   import tibia.ingameshop.IngameShopProduct;
-   import shared.controls.EmbeddedDialog;
    import mx.containers.HBox;
    import mx.controls.Button;
+   import mx.events.PropertyChangeEvent;
+   import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
    import shared.controls.CustomButton;
+   import shared.controls.EmbeddedDialog;
+   import shared.utility.i18n.i18nFormatNumber;
+   import tibia.controls.TibiaCurrencyView;
+   import tibia.creatures.Player;
+   import tibia.game.MessageWidget;
+   import tibia.game.PopUpBase;
+   import tibia.ingameshop.IngameShopManager;
+   import tibia.ingameshop.IngameShopProduct;
    import tibia.network.Communication;
+   import tibia.prey.preyWidgetClasses.PreyView;
    
    public class PreyWidget extends PopUpBase
    {
       
-      private static var s_CurrentInstance:tibia.prey.PreyWidget = null;
+      private static var s_CurrentInstance:PreyWidget = null;
       
       private static const BUNDLE:String = "PreyWidget";
        
@@ -47,7 +47,7 @@ package tibia.prey
          stretchEmbeddedDialog = true;
       }
       
-      public static function s_GetCurrentInstance() : tibia.prey.PreyWidget
+      public static function s_GetCurrentInstance() : PreyWidget
       {
          return s_CurrentInstance;
       }
@@ -58,7 +58,7 @@ package tibia.prey
          var _loc2_:MessageWidget = null;
          if(Tibia.s_GetPlayer().hasReachedMain)
          {
-            new tibia.prey.PreyWidget().show();
+            new PreyWidget().show();
          }
          else
          {

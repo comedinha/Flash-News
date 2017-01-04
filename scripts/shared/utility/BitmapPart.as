@@ -1,7 +1,7 @@
 package shared.utility
 {
-   import flash.geom.Rectangle;
    import flash.display.BitmapData;
+   import flash.geom.Rectangle;
    
    public class BitmapPart
    {

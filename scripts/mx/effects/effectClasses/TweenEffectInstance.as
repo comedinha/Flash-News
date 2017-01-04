@@ -1,10 +1,10 @@
 package mx.effects.effectClasses
 {
-   import mx.effects.EffectInstance;
+   import mx.core.UIComponentGlobals;
    import mx.core.mx_internal;
+   import mx.effects.EffectInstance;
    import mx.effects.Tween;
    import mx.events.TweenEvent;
-   import mx.core.UIComponentGlobals;
    
    use namespace mx_internal;
    

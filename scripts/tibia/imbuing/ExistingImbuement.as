@@ -6,11 +6,11 @@ package tibia.imbuing
       
       private var m_RemainingDurationInSeconds:uint = 0;
       
-      private var m_ImbuementData:tibia.imbuing.ImbuementData = null;
+      private var m_ImbuementData:ImbuementData = null;
       
       private var m_ClearingGoldCost:uint = 0;
       
-      public function ExistingImbuement(param1:tibia.imbuing.ImbuementData = null, param2:uint = 0, param3:uint = 0)
+      public function ExistingImbuement(param1:ImbuementData = null, param2:uint = 0, param3:uint = 0)
       {
          super();
          this.m_ImbuementData = param1;
@@ -28,7 +28,7 @@ package tibia.imbuing
          return this.m_ClearingGoldCost;
       }
       
-      public function set imbuementData(param1:tibia.imbuing.ImbuementData) : void
+      public function set imbuementData(param1:ImbuementData) : void
       {
          this.m_ImbuementData = param1;
       }
@@ -43,7 +43,7 @@ package tibia.imbuing
          return this.m_RemainingDurationInSeconds;
       }
       
-      public function get imbuementData() : tibia.imbuing.ImbuementData
+      public function get imbuementData() : ImbuementData
       {
          return this.m_ImbuementData;
       }

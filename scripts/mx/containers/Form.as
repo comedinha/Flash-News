@@ -1,13 +1,13 @@
 package mx.containers
 {
-   import mx.core.Container;
-   import mx.core.mx_internal;
-   import mx.styles.StyleManager;
    import flash.display.DisplayObject;
    import mx.containers.utilityClasses.BoxLayout;
-   import mx.core.IUIComponent;
-   import mx.core.IInvalidating;
    import mx.controls.Label;
+   import mx.core.Container;
+   import mx.core.IInvalidating;
+   import mx.core.IUIComponent;
+   import mx.core.mx_internal;
+   import mx.styles.StyleManager;
    
    use namespace mx_internal;
    

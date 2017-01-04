@@ -1,17 +1,17 @@
 package tibia.input.gameaction
 {
-   import tibia.input.IActionImpl;
-   import tibia.worldmap.WorldMapStorage;
-   import mx.resources.IResourceManager;
-   import tibia.input.widgetClasses.SplitStackWidget;
-   import mx.resources.ResourceManager;
-   import tibia.chat.MessageMode;
    import mx.events.CloseEvent;
+   import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
    import shared.utility.Vector3D;
-   import tibia.game.PopUpBase;
    import tibia.appearances.AppearanceType;
-   import tibia.network.Communication;
    import tibia.appearances.ObjectInstance;
+   import tibia.chat.MessageMode;
+   import tibia.game.PopUpBase;
+   import tibia.input.IActionImpl;
+   import tibia.input.widgetClasses.SplitStackWidget;
+   import tibia.network.Communication;
+   import tibia.worldmap.WorldMapStorage;
    
    public class MoveActionImpl implements IActionImpl
    {

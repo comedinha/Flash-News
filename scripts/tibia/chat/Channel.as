@@ -1,14 +1,14 @@
 package tibia.chat
 {
    import flash.events.EventDispatcher;
-   import tibia.chat.chatWidgetClasses.NicklistItem;
-   import mx.collections.IList;
    import mx.collections.ArrayCollection;
+   import mx.collections.IList;
+   import mx.core.EventPriority;
+   import mx.events.CollectionEvent;
    import mx.events.PropertyChangeEvent;
    import mx.events.PropertyChangeEventKind;
-   import mx.events.CollectionEvent;
    import shared.utility.RingBuffer;
-   import mx.core.EventPriority;
+   import tibia.chat.chatWidgetClasses.NicklistItem;
    
    public class Channel extends EventDispatcher
    {

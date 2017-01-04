@@ -1,22 +1,22 @@
 package mx.controls.scrollClasses
 {
+   import flash.display.DisplayObject;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.events.TimerEvent;
+   import flash.geom.Point;
+   import flash.ui.Keyboard;
+   import flash.utils.Timer;
+   import mx.controls.Button;
+   import mx.core.FlexVersion;
    import mx.core.UIComponent;
    import mx.core.mx_internal;
-   import mx.controls.Button;
-   import mx.events.ScrollEvent;
    import mx.events.FlexEvent;
-   import flash.events.MouseEvent;
-   import flash.display.DisplayObject;
    import mx.events.SandboxMouseEvent;
-   import flash.geom.Point;
-   import flash.utils.Timer;
-   import flash.events.TimerEvent;
+   import mx.events.ScrollEvent;
    import mx.events.ScrollEventDetail;
    import mx.styles.ISimpleStyleClient;
    import mx.styles.StyleProxy;
-   import flash.ui.Keyboard;
-   import flash.events.Event;
-   import mx.core.FlexVersion;
    
    use namespace mx_internal;
    
@@ -36,7 +36,7 @@ package mx.controls.scrollClasses
       
       mx_internal var downArrow:Button;
       
-      mx_internal var scrollThumb:mx.controls.scrollClasses.ScrollThumb;
+      mx_internal var scrollThumb:ScrollThumb;
       
       private var trackScrollRepeatDirection:int;
       
@@ -464,7 +464,7 @@ package mx.controls.scrollClasses
             addEventListener(MouseEvent.MOUSE_OUT,scrollTrack_mouseOutHandler);
             if(!scrollThumb)
             {
-               scrollThumb = new mx.controls.scrollClasses.ScrollThumb();
+               scrollThumb = new ScrollThumb();
                scrollThumb.focusEnabled = false;
                addChildAt(scrollThumb,getChildIndex(downArrow));
                scrollThumb.styleName = new StyleProxy(this,thumbStyleFilters);

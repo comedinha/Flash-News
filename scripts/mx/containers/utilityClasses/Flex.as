@@ -1,8 +1,8 @@
 package mx.containers.utilityClasses
 {
    import mx.core.Container;
-   import mx.core.IUIComponent;
    import mx.core.FlexVersion;
+   import mx.core.IUIComponent;
    import mx.core.mx_internal;
    
    use namespace mx_internal;

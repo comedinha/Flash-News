@@ -13,13 +13,13 @@ package tibia.sessiondump
       
       private var m_HeaderLength:uint = 0;
       
-      private var m_MessageReader:tibia.sessiondump.SessiondumpMessageReader = null;
+      private var m_MessageReader:SessiondumpMessageReader = null;
       
       private var m_HeaderRead:Boolean = false;
       
       private var m_InputBuffer:ByteArray = null;
       
-      private var m_PacketReader:tibia.sessiondump.SessiondumpPacketReader = null;
+      private var m_PacketReader:SessiondumpPacketReader = null;
       
       public function SessiondumpReader(param1:ByteArray)
       {
@@ -68,8 +68,8 @@ package tibia.sessiondump
             if(this.m_HeaderLength > 0 && this.m_InputBuffer.bytesAvailable >= this.m_HeaderLength)
             {
                this.m_InputBuffer.position = this.m_InputBuffer.position + this.m_HeaderLength;
-               this.m_PacketReader = new tibia.sessiondump.SessiondumpPacketReader(this.m_InputBuffer);
-               this.m_MessageReader = new tibia.sessiondump.SessiondumpMessageReader(this.m_InputBuffer);
+               this.m_PacketReader = new SessiondumpPacketReader(this.m_InputBuffer);
+               this.m_MessageReader = new SessiondumpMessageReader(this.m_InputBuffer);
                this.m_HeaderRead = true;
                _loc3_ = new SessiondumpEvent(SessiondumpEvent.HEADER_READ);
                dispatchEvent(_loc3_);
@@ -77,7 +77,7 @@ package tibia.sessiondump
          }
       }
       
-      public function get messageReader() : tibia.sessiondump.SessiondumpMessageReader
+      public function get messageReader() : SessiondumpMessageReader
       {
          return this.m_MessageReader;
       }
@@ -87,7 +87,7 @@ package tibia.sessiondump
          return this.m_HeaderRead;
       }
       
-      public function get packetReader() : tibia.sessiondump.SessiondumpPacketReader
+      public function get packetReader() : SessiondumpPacketReader
       {
          return this.m_PacketReader;
       }

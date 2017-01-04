@@ -1,26 +1,26 @@
 package tibia.options.configurationWidgetClasses
 {
-   import mx.containers.HBox;
-   import mx.controls.listClasses.IDropInListItemRenderer;
-   import mx.managers.IFocusManagerComponent;
    import flash.events.Event;
    import flash.events.KeyboardEvent;
-   import flash.ui.Keyboard;
    import flash.events.TextEvent;
+   import flash.ui.Keyboard;
+   import mx.containers.HBox;
+   import mx.controls.DataGrid;
+   import mx.controls.List;
+   import mx.controls.TextInput;
+   import mx.controls.Tree;
+   import mx.controls.dataGridClasses.DataGridListData;
+   import mx.controls.listClasses.BaseListData;
+   import mx.controls.listClasses.IDropInListItemRenderer;
+   import mx.controls.listClasses.ListData;
+   import mx.events.DataGridEvent;
+   import mx.events.DataGridEventReason;
+   import mx.events.ListEvent;
+   import mx.events.ListEventReason;
+   import mx.managers.IFocusManagerComponent;
    import shared.utility.StringHelper;
    import tibia.options.ConfigurationWidget;
    import tibia.options.ns_options_internal;
-   import mx.controls.listClasses.BaseListData;
-   import mx.controls.dataGridClasses.DataGridListData;
-   import mx.events.DataGridEvent;
-   import mx.events.ListEvent;
-   import mx.controls.listClasses.ListData;
-   import mx.controls.List;
-   import mx.events.ListEventReason;
-   import mx.controls.Tree;
-   import mx.controls.DataGrid;
-   import mx.events.DataGridEventReason;
-   import mx.controls.TextInput;
    
    public class NameFilterPatternEditor extends HBox implements IDropInListItemRenderer, IFocusManagerComponent
    {

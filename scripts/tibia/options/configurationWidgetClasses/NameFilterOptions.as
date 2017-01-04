@@ -1,15 +1,15 @@
 package tibia.options.configurationWidgetClasses
 {
-   import mx.containers.HBox;
-   import mx.controls.CheckBox;
-   import tibia.chat.NameFilterSet;
-   import mx.collections.ArrayCollection;
-   import mx.controls.Label;
-   import mx.containers.VBox;
-   import tibia.options.ConfigurationWidget;
    import flash.events.Event;
-   import tibia.options.OptionsStorage;
+   import mx.collections.ArrayCollection;
    import mx.collections.IList;
+   import mx.containers.HBox;
+   import mx.containers.VBox;
+   import mx.controls.CheckBox;
+   import mx.controls.Label;
+   import tibia.chat.NameFilterSet;
+   import tibia.options.ConfigurationWidget;
+   import tibia.options.OptionsStorage;
    
    public class NameFilterOptions extends HBox implements IOptionsEditor
    {
@@ -19,7 +19,7 @@ package tibia.options.configurationWidgetClasses
       
       protected var m_UIWhiteEnable:CheckBox = null;
       
-      protected var m_UIBlackItems:tibia.options.configurationWidgetClasses.NameFilterListEditor = null;
+      protected var m_UIBlackItems:NameFilterListEditor = null;
       
       protected var m_UIBlackPrivate:CheckBox = null;
       
@@ -29,7 +29,7 @@ package tibia.options.configurationWidgetClasses
       
       protected var m_UIBlackEnable:CheckBox = null;
       
-      protected var m_UIWhiteItems:tibia.options.configurationWidgetClasses.NameFilterListEditor = null;
+      protected var m_UIWhiteItems:NameFilterListEditor = null;
       
       protected var m_UIBlackYelling:CheckBox = null;
       
@@ -109,7 +109,7 @@ package tibia.options.configurationWidgetClasses
             Lbl.text = resourceManager.getString(ConfigurationWidget.BUNDLE,"IGNORE_LBL_IGNORE_LIST_CHARACTERS");
             Lbl.setStyle("fontWeight","bold");
             Bx.addChild(Lbl);
-            this.m_UIBlackItems = new tibia.options.configurationWidgetClasses.NameFilterListEditor();
+            this.m_UIBlackItems = new NameFilterListEditor();
             this.m_UIBlackItems.height = 250;
             this.m_UIBlackItems.percentHeight = NaN;
             this.m_UIBlackItems.percentWidth = 100;
@@ -149,7 +149,7 @@ package tibia.options.configurationWidgetClasses
             Lbl.text = resourceManager.getString(ConfigurationWidget.BUNDLE,"IGNORE_LBL_WHITE_LIST_CHARACTERS");
             Lbl.setStyle("fontWeight","bold");
             Bx.addChild(Lbl);
-            this.m_UIWhiteItems = new tibia.options.configurationWidgetClasses.NameFilterListEditor();
+            this.m_UIWhiteItems = new NameFilterListEditor();
             this.m_UIWhiteItems.height = 250;
             this.m_UIWhiteItems.percentHeight = NaN;
             this.m_UIWhiteItems.percentWidth = 100;

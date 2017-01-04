@@ -26,7 +26,7 @@ package tibia.ingameshop
       
       private var m_Description:String;
       
-      private var m_Products:Vector.<tibia.ingameshop.IngameShopProduct>;
+      private var m_Products:Vector.<IngameShopProduct>;
       
       private var m_DisabledReason:String;
       
@@ -46,7 +46,7 @@ package tibia.ingameshop
          this.m_OfferID = param1;
          this.m_Name = param2;
          this.m_Description = param3;
-         this.m_Products = new Vector.<tibia.ingameshop.IngameShopProduct>();
+         this.m_Products = new Vector.<IngameShopProduct>();
          this.m_IconIdentifiers = new Vector.<String>();
          this.m_ActualPrice = 0;
          this.m_BasePrice = NaN;
@@ -71,7 +71,7 @@ package tibia.ingameshop
          return this.m_HighlightState;
       }
       
-      public function set products(param1:Vector.<tibia.ingameshop.IngameShopProduct>) : void
+      public function set products(param1:Vector.<IngameShopProduct>) : void
       {
          this.m_Products = param1;
       }
@@ -152,7 +152,7 @@ package tibia.ingameshop
          this.m_DisabledState = param1;
       }
       
-      public function get products() : Vector.<tibia.ingameshop.IngameShopProduct>
+      public function get products() : Vector.<IngameShopProduct>
       {
          return this.m_Products;
       }

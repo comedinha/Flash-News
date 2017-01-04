@@ -1,10 +1,10 @@
 package mx.utils
 {
-   import flash.utils.getQualifiedClassName;
-   import flash.utils.getDefinitionByName;
    import flash.utils.describeType;
-   import mx.core.mx_internal;
+   import flash.utils.getDefinitionByName;
+   import flash.utils.getQualifiedClassName;
    import mx.binding.BindabilityInfo;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

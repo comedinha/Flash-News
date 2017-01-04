@@ -1,17 +1,17 @@
 package tibia.market.marketWidgetClasses
 {
-   import tibia.market.Offer;
-   import shared.utility.i18n.i18nFormatNumber;
-   import mx.resources.ResourceManager;
-   import mx.resources.IResourceManager;
-   import tibia.appearances.AppearanceStorage;
-   import tibia.appearances.AppearanceType;
    import flash.events.Event;
-   import mx.controls.TextInput;
    import flash.events.KeyboardEvent;
    import flash.events.TextEvent;
+   import mx.controls.TextInput;
+   import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
    import shared.utility.closure;
    import shared.utility.i18n.i18nFormatDate;
+   import shared.utility.i18n.i18nFormatNumber;
+   import tibia.appearances.AppearanceStorage;
+   import tibia.appearances.AppearanceType;
+   import tibia.market.Offer;
    
    class Utility
    {

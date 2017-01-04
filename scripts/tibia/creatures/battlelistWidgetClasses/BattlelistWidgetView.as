@@ -1,35 +1,35 @@
 package tibia.creatures.battlelistWidgetClasses
 {
-   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
-   import tibia.game.IUseWidget;
-   import tibia.creatures.CreatureStorage;
-   import mx.controls.Button;
    import flash.events.MouseEvent;
-   import tibia.help.UIEffectsRetrieveComponentCommandEvent;
-   import tibia.input.ModifierKeyEvent;
-   import mx.events.ListEvent;
-   import mx.collections.IList;
-   import tibia.cursors.CursorHelper;
    import flash.geom.Point;
+   import mx.collections.IList;
+   import mx.containers.HBox;
+   import mx.controls.Button;
+   import mx.controls.listClasses.IListItemRenderer;
+   import mx.core.ScrollPolicy;
+   import mx.events.ListEvent;
    import mx.events.PropertyChangeEvent;
-   import tibia.creatures.Creature;
+   import shared.controls.CustomButton;
    import shared.controls.SmoothList;
+   import shared.utility.Vector3D;
+   import tibia.appearances.AppearanceInstance;
    import tibia.appearances.AppearanceStorage;
    import tibia.appearances.ObjectInstance;
-   import tibia.appearances.AppearanceInstance;
-   import mx.controls.listClasses.IListItemRenderer;
-   import tibia.input.mapping.MouseBinding;
-   import tibia.input.InputHandler;
-   import tibia.network.Communication;
-   import tibia.§sidebar:ns_sidebar_internal§.widgetCollapsed;
    import tibia.container.containerViewWidgetClasses.ContainerSlot;
-   import shared.utility.Vector3D;
-   import tibia.options.OptionsStorage;
-   import tibia.input.MouseClickBothEvent;
+   import tibia.creatures.Creature;
+   import tibia.creatures.CreatureStorage;
+   import tibia.cursors.CursorHelper;
+   import tibia.game.IUseWidget;
+   import tibia.help.UIEffectsRetrieveComponentCommandEvent;
+   import tibia.input.InputHandler;
+   import tibia.input.ModifierKeyEvent;
    import tibia.input.MouseActionHelper;
-   import mx.containers.HBox;
-   import shared.controls.CustomButton;
-   import mx.core.ScrollPolicy;
+   import tibia.input.MouseClickBothEvent;
+   import tibia.input.mapping.MouseBinding;
+   import tibia.network.Communication;
+   import tibia.options.OptionsStorage;
+   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
+   import tibia.§sidebar:ns_sidebar_internal§.widgetCollapsed;
    
    public class BattlelistWidgetView extends WidgetView implements IUseWidget
    {

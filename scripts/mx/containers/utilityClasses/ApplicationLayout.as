@@ -1,8 +1,8 @@
 package mx.containers.utilityClasses
 {
-   import mx.core.mx_internal;
-   import mx.core.IFlexDisplayObject;
    import mx.core.Container;
+   import mx.core.IFlexDisplayObject;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

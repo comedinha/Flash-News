@@ -1,15 +1,15 @@
 package tibia.game
 {
-   import flash.events.EventDispatcher;
-   import flash.net.URLLoaderDataFormat;
-   import flash.net.URLLoader;
-   import flash.events.Event;
    import flash.events.ErrorEvent;
+   import flash.events.Event;
+   import flash.events.EventDispatcher;
+   import flash.events.IOErrorEvent;
+   import flash.events.ProgressEvent;
+   import flash.events.SecurityErrorEvent;
+   import flash.net.URLLoader;
+   import flash.net.URLLoaderDataFormat;
    import flash.net.URLRequest;
    import shared.utility.URLHelper;
-   import flash.events.ProgressEvent;
-   import flash.events.IOErrorEvent;
-   import flash.events.SecurityErrorEvent;
    
    public class AssetBase extends EventDispatcher
    {

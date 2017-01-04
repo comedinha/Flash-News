@@ -1,11 +1,11 @@
 package mx.effects.effectClasses
 {
-   import mx.core.mx_internal;
-   import flash.utils.Timer;
    import flash.events.TimerEvent;
+   import flash.utils.Timer;
+   import mx.core.UIComponent;
+   import mx.core.mx_internal;
    import mx.effects.EffectInstance;
    import mx.effects.IEffectInstance;
-   import mx.core.UIComponent;
    
    use namespace mx_internal;
    

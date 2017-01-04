@@ -1,84 +1,84 @@
 package tibia.network
 {
+   import flash.system.Capabilities;
    import flash.utils.ByteArray;
-   import tibia.creatures.Creature;
-   import tibia.appearances.AppearanceStorage;
-   import tibia.appearances.AppearanceInstance;
-   import tibia.appearances.OutfitInstance;
-   import shared.utility.StringHelper;
-   import tibia.ingameshop.IngameShopManager;
-   import tibia.ingameshop.IngameShopCategory;
-   import tibia.ingameshop.IngameShopProduct;
-   import shared.utility.Vector3D;
-   import tibia.market.Offer;
-   import tibia.market.MarketWidget;
-   import tibia.market.OfferID;
-   import tibia.reporting.reportType.Type;
-   import tibia.reporting.ReportWidget;
-   import tibia.game.EditListWidget;
-   import tibia.appearances.ObjectInstance;
-   import tibia.appearances.Marks;
-   import tibia.appearances.FrameGroup;
-   import tibia.appearances.AppearanceAnimator;
-   import tibia.prey.PreyWidget;
-   import tibia.imbuing.ImbuingManager;
-   import tibia.ingameshop.IngameShopHistoryEntry;
-   import tibia.appearances.AppearanceTypeRef;
-   import mx.collections.IList;
-   import tibia.chat.ChannelSelectionWidget;
    import mx.collections.ArrayCollection;
-   import tibia.chat.Channel;
-   import tibia.chat.ChatStorage;
-   import tibia.game.PopUpBase;
-   import tibia.container.InventoryTypeInfo;
-   import tibia.container.ContainerStorage;
-   import tibia.options.OptionsStorage;
-   import tibia.creatures.BuddySet;
-   import tibia.container.ContainerView;
+   import mx.collections.IList;
    import mx.resources.ResourceManager;
+   import shared.utility.AccumulatingCounter;
+   import shared.utility.BrowserHelper;
+   import shared.utility.Colour;
+   import shared.utility.StringHelper;
+   import shared.utility.Vector3D;
+   import tibia.appearances.AppearanceAnimator;
+   import tibia.appearances.AppearanceInstance;
+   import tibia.appearances.AppearanceStorage;
+   import tibia.appearances.AppearanceType;
+   import tibia.appearances.AppearanceTypeRef;
+   import tibia.appearances.EffectInstance;
+   import tibia.appearances.FrameGroup;
+   import tibia.appearances.Marks;
+   import tibia.appearances.MissileInstance;
+   import tibia.appearances.ObjectInstance;
+   import tibia.appearances.OutfitInstance;
+   import tibia.chat.Channel;
+   import tibia.chat.ChannelSelectionWidget;
+   import tibia.chat.ChatStorage;
+   import tibia.chat.MessageMode;
+   import tibia.chat.MessageStorage;
+   import tibia.chat.NameFilterSet;
+   import tibia.chat.log;
+   import tibia.container.BodyContainerView;
+   import tibia.container.ContainerStorage;
+   import tibia.container.ContainerView;
+   import tibia.container.InventoryTypeInfo;
+   import tibia.creatures.BuddySet;
+   import tibia.creatures.Creature;
+   import tibia.creatures.CreatureStorage;
+   import tibia.creatures.Player;
+   import tibia.creatures.SelectOutfitWidget;
+   import tibia.creatures.UnjustPointsInfo;
+   import tibia.game.BugReportTypo;
+   import tibia.game.BugReportWidget;
+   import tibia.game.EditListWidget;
+   import tibia.game.EditTextWidget;
+   import tibia.game.PopUpBase;
+   import tibia.game.ServerModalDialog;
+   import tibia.game.SimpleEditTextWidget;
+   import tibia.game.serverModalDialogClasses.Choice;
+   import tibia.help.TutorialHint;
+   import tibia.imbuing.AstralSource;
+   import tibia.imbuing.ExistingImbuement;
+   import tibia.imbuing.ImbuementData;
+   import tibia.imbuing.ImbuingManager;
+   import tibia.ingameshop.IngameShopCategory;
+   import tibia.ingameshop.IngameShopHistoryEntry;
+   import tibia.ingameshop.IngameShopManager;
+   import tibia.ingameshop.IngameShopOffer;
+   import tibia.ingameshop.IngameShopProduct;
+   import tibia.ingameshop.IngameShopWidget;
+   import tibia.magic.SpellStorage;
+   import tibia.market.MarketWidget;
+   import tibia.market.Offer;
+   import tibia.market.OfferID;
+   import tibia.market.OfferStatistics;
+   import tibia.minimap.MiniMapStorage;
+   import tibia.options.OptionsStorage;
+   import tibia.prey.PreyData;
    import tibia.prey.PreyManager;
-   import tibia.trade.NPCTradeWidget;
-   import tibia.trade.TradeObjectRef;
+   import tibia.prey.PreyMonsterInformation;
+   import tibia.prey.PreyWidget;
+   import tibia.questlog.QuestFlag;
+   import tibia.questlog.QuestLine;
+   import tibia.questlog.QuestLogWidget;
+   import tibia.reporting.ReportWidget;
+   import tibia.reporting.reportType.Type;
    import tibia.sidebar.SideBarSet;
    import tibia.sidebar.Widget;
-   import tibia.chat.MessageStorage;
-   import tibia.worldmap.WorldMapStorage;
-   import tibia.game.EditTextWidget;
-   import tibia.container.BodyContainerView;
-   import tibia.chat.MessageMode;
-   import tibia.questlog.QuestLogWidget;
-   import tibia.questlog.QuestFlag;
-   import tibia.help.TutorialHint;
-   import tibia.chat.log;
-   import tibia.magic.SpellStorage;
-   import tibia.imbuing.ImbuementData;
-   import tibia.imbuing.AstralSource;
-   import tibia.creatures.Player;
+   import tibia.trade.NPCTradeWidget;
    import tibia.trade.SafeTradeWidget;
-   import tibia.appearances.EffectInstance;
-   import tibia.game.BugReportWidget;
-   import shared.utility.BrowserHelper;
-   import flash.system.Capabilities;
-   import tibia.game.BugReportTypo;
-   import tibia.creatures.UnjustPointsInfo;
-   import tibia.game.SimpleEditTextWidget;
-   import tibia.creatures.CreatureStorage;
-   import shared.utility.Colour;
-   import tibia.prey.PreyMonsterInformation;
-   import tibia.prey.PreyData;
-   import tibia.imbuing.ExistingImbuement;
-   import tibia.minimap.MiniMapStorage;
-   import shared.utility.AccumulatingCounter;
-   import tibia.market.OfferStatistics;
-   import tibia.questlog.QuestLine;
-   import tibia.ingameshop.IngameShopOffer;
-   import tibia.ingameshop.IngameShopWidget;
-   import tibia.appearances.MissileInstance;
-   import tibia.appearances.AppearanceType;
-   import tibia.creatures.SelectOutfitWidget;
-   import tibia.chat.NameFilterSet;
-   import tibia.game.serverModalDialogClasses.Choice;
-   import tibia.game.ServerModalDialog;
+   import tibia.trade.TradeObjectRef;
+   import tibia.worldmap.WorldMapStorage;
    
    public class Communication implements IServerCommunication
    {
@@ -563,7 +563,7 @@ package tibia.network
       
       protected static const TYPE_SUMMON_OTHERS:int = 4;
       
-      public static const CLIENT_VERSION:uint = 2388;
+      public static const CLIENT_VERSION:uint = 2399;
       
       protected static const CATTACK:int = 161;
       
@@ -741,7 +741,7 @@ package tibia.network
       
       protected static const SEDITGUILDMESSAGE:int = 174;
       
-      public static const PROTOCOL_VERSION:int = 1100;
+      public static const PROTOCOL_VERSION:int = 1101;
       
       protected static const SAMBIENTE:int = 130;
       
@@ -910,7 +910,7 @@ package tibia.network
       
       private var m_BeatDuration:int = 0;
       
-      private var m_ServerConnection:tibia.network.IServerConnection = null;
+      private var m_ServerConnection:IServerConnection = null;
       
       private var m_ContainerStorage:ContainerStorage = null;
       
@@ -938,7 +938,7 @@ package tibia.network
       
       private var m_PendingQuestLine:int = -1;
       
-      public function Communication(param1:tibia.network.IServerConnection, param2:AppearanceStorage, param3:ChatStorage, param4:ContainerStorage, param5:CreatureStorage, param6:MiniMapStorage, param7:Player, param8:SpellStorage, param9:WorldMapStorage)
+      public function Communication(param1:IServerConnection, param2:AppearanceStorage, param3:ChatStorage, param4:ContainerStorage, param5:CreatureStorage, param6:MiniMapStorage, param7:Player, param8:SpellStorage, param9:WorldMapStorage)
       {
          this.m_LastSnapback = new Vector3D();
          super();

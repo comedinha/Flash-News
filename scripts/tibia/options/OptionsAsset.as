@@ -1,16 +1,16 @@
 package tibia.options
 {
-   import tibia.game.AssetBase;
-   import tibia.game.SecureWebsiteServiceEvent;
-   import flash.utils.ByteArray;
-   import mx.utils.Base64Encoder;
-   import flash.net.URLLoader;
-   import mx.utils.Base64Decoder;
    import flash.errors.IOError;
-   import tibia.game.SecureWebsiteService;
    import flash.events.ErrorEvent;
    import flash.events.Event;
    import flash.events.IOErrorEvent;
+   import flash.net.URLLoader;
+   import flash.utils.ByteArray;
+   import mx.utils.Base64Decoder;
+   import mx.utils.Base64Encoder;
+   import tibia.game.AssetBase;
+   import tibia.game.SecureWebsiteService;
+   import tibia.game.SecureWebsiteServiceEvent;
    
    public class OptionsAsset extends AssetBase
    {

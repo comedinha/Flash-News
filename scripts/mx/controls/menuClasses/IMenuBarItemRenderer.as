@@ -1,10 +1,10 @@
 package mx.controls.menuClasses
 {
+   import mx.controls.MenuBar;
+   import mx.controls.listClasses.IListItemRenderer;
    import mx.core.IDataRenderer;
    import mx.core.IUIComponent;
    import mx.styles.ISimpleStyleClient;
-   import mx.controls.listClasses.IListItemRenderer;
-   import mx.controls.MenuBar;
    
    public interface IMenuBarItemRenderer extends IDataRenderer, IUIComponent, ISimpleStyleClient, IListItemRenderer
    {

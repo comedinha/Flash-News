@@ -1,9 +1,9 @@
 package tibia.input.staticaction
 {
-   import tibia.container.ContainerStorage;
-   import tibia.container.BodyContainerView;
-   import tibia.appearances.AppearanceInstance;
    import shared.utility.Vector3D;
+   import tibia.appearances.AppearanceInstance;
+   import tibia.container.BodyContainerView;
+   import tibia.container.ContainerStorage;
    import tibia.input.gameaction.UseActionImpl;
    
    public class OpenRootContainer extends StaticAction

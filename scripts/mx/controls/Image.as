@@ -1,12 +1,12 @@
 package mx.controls
 {
-   import mx.core.IDataRenderer;
+   import flash.display.DisplayObject;
+   import flash.events.Event;
+   import mx.controls.listClasses.BaseListData;
    import mx.controls.listClasses.IDropInListItemRenderer;
    import mx.controls.listClasses.IListItemRenderer;
+   import mx.core.IDataRenderer;
    import mx.core.mx_internal;
-   import mx.controls.listClasses.BaseListData;
-   import flash.events.Event;
-   import flash.display.DisplayObject;
    import mx.events.FlexEvent;
    
    use namespace mx_internal;

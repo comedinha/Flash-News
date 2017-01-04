@@ -1,9 +1,9 @@
 package mx.effects
 {
-   import mx.core.mx_internal;
-   import mx.events.TweenEvent;
-   import mx.effects.effectClasses.TweenEffectInstance;
    import flash.events.EventDispatcher;
+   import mx.core.mx_internal;
+   import mx.effects.effectClasses.TweenEffectInstance;
+   import mx.events.TweenEvent;
    
    use namespace mx_internal;
    

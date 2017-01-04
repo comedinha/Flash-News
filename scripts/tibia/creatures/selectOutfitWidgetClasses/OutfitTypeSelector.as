@@ -1,19 +1,19 @@
 package tibia.creatures.selectOutfitWidgetClasses
 {
+   import flash.events.MouseEvent;
+   import mx.collections.IList;
+   import mx.containers.HBox;
    import mx.containers.VBox;
+   import mx.controls.Button;
+   import mx.controls.Label;
+   import mx.core.EventPriority;
+   import mx.events.CollectionEvent;
+   import mx.events.PropertyChangeEvent;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
-   import mx.events.CollectionEvent;
-   import mx.controls.Button;
-   import flash.events.MouseEvent;
-   import shared.controls.ShapeWrapper;
-   import mx.containers.HBox;
-   import tibia.appearances.widgetClasses.SimpleAppearanceRenderer;
    import shared.controls.CustomButton;
-   import mx.controls.Label;
-   import mx.collections.IList;
-   import mx.core.EventPriority;
-   import mx.events.PropertyChangeEvent;
+   import shared.controls.ShapeWrapper;
+   import tibia.appearances.widgetClasses.SimpleAppearanceRenderer;
    
    public class OutfitTypeSelector extends VBox
    {

@@ -1,11 +1,11 @@
 package mx.effects.effectClasses
 {
-   import mx.effects.EffectInstance;
-   import mx.core.mx_internal;
-   import mx.effects.Tween;
    import flash.events.Event;
-   import mx.events.EffectEvent;
+   import mx.core.mx_internal;
+   import mx.effects.EffectInstance;
    import mx.effects.IEffectInstance;
+   import mx.effects.Tween;
+   import mx.events.EffectEvent;
    
    use namespace mx_internal;
    

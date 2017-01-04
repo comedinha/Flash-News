@@ -1,19 +1,19 @@
 package tibia.appearances.widgetClasses
 {
+   import flash.display.BitmapData;
+   import flash.events.TimerEvent;
+   import flash.geom.Matrix;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import flash.utils.Timer;
    import mx.core.FlexShape;
    import mx.core.IFlexDisplayObject;
-   import flash.geom.Rectangle;
-   import flash.geom.Point;
    import shared.utility.TextFieldCache;
-   import flash.geom.Matrix;
-   import flash.display.BitmapData;
    import tibia.appearances.AppearanceInstance;
    import tibia.appearances.AppearanceType;
    import tibia.appearances.FrameGroup;
-   import tibia.appearances.OutfitInstance;
    import tibia.appearances.ObjectInstance;
-   import flash.events.TimerEvent;
-   import flash.utils.Timer;
+   import tibia.appearances.OutfitInstance;
    
    public class SimpleAppearanceRenderer extends FlexShape implements IFlexDisplayObject
    {

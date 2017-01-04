@@ -1,11 +1,11 @@
 package tibia.input.staticaction
 {
-   import tibia.actionbar.ActionBarSet;
+   import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
    import tibia.actionbar.ActionBar;
+   import tibia.actionbar.ActionBarSet;
    import tibia.input.IAction;
    import tibia.options.OptionsStorage;
-   import mx.resources.ResourceManager;
-   import mx.resources.IResourceManager;
    
    public class TriggerSlot extends StaticAction
    {

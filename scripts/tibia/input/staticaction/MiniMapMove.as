@@ -1,8 +1,8 @@
 package tibia.input.staticaction
 {
+   import tibia.minimap.MiniMapWidget;
    import tibia.options.OptionsStorage;
    import tibia.sidebar.SideBarSet;
-   import tibia.minimap.MiniMapWidget;
    import tibia.sidebar.Widget;
    
    public class MiniMapMove extends StaticAction

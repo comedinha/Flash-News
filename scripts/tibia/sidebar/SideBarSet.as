@@ -1,11 +1,11 @@
 package tibia.sidebar
 {
-   import flash.events.EventDispatcher;
    import flash.events.Event;
+   import flash.events.EventDispatcher;
+   import mx.core.EventPriority;
+   import mx.events.CollectionEvent;
    import mx.events.PropertyChangeEvent;
    import mx.events.PropertyChangeEventKind;
-   import mx.events.CollectionEvent;
-   import mx.core.EventPriority;
    
    public class SideBarSet extends EventDispatcher
    {
@@ -31,19 +31,19 @@ package tibia.sidebar
       
       protected var m_DefaultLocations:Vector.<int> = null;
       
-      protected var m_SideBars:Vector.<tibia.sidebar.SideBar> = null;
+      protected var m_SideBars:Vector.<SideBar> = null;
       
       protected var m_ID:int = -1;
       
       private var m_PoolFreeID:int = 0;
       
-      protected var m_Widgets:Vector.<tibia.sidebar.Widget> = null;
+      protected var m_Widgets:Vector.<Widget> = null;
       
       public function SideBarSet(param1:int)
       {
          super();
          this.m_ID = param1;
-         this.m_DefaultLocations = new Vector.<int>(tibia.sidebar.Widget.TYPES_BEYONDLAST,true);
+         this.m_DefaultLocations = new Vector.<int>(Widget.TYPES_BEYONDLAST,true);
          var _loc2_:int = 0;
          _loc2_ = this.m_DefaultLocations.length - 1;
          while(_loc2_ >= 0)
@@ -51,16 +51,16 @@ package tibia.sidebar
             this.m_DefaultLocations[_loc2_] = SideBarSet.LOCATION_C;
             _loc2_--;
          }
-         this.m_SideBars = new Vector.<tibia.sidebar.SideBar>(SideBarSet.NUM_LOCATIONS,true);
+         this.m_SideBars = new Vector.<SideBar>(SideBarSet.NUM_LOCATIONS,true);
          _loc2_ = this.m_SideBars.length - 1;
          while(_loc2_ >= 0)
          {
-            this.m_SideBars[_loc2_] = new tibia.sidebar.SideBar(this,_loc2_);
+            this.m_SideBars[_loc2_] = new SideBar(this,_loc2_);
             this.m_SideBars[_loc2_].addEventListener(CollectionEvent.COLLECTION_CHANGE,this.onSideBarEvent,false,EventPriority.DEFAULT_HANDLER,false);
             this.m_SideBars[_loc2_].addEventListener(PropertyChangeEvent.PROPERTY_CHANGE,this.onSideBarEvent,false,EventPriority.DEFAULT_HANDLER,false);
             _loc2_--;
          }
-         this.m_Widgets = new Vector.<tibia.sidebar.Widget>();
+         this.m_Widgets = new Vector.<Widget>();
       }
       
       public static function s_CheckLocation(param1:int) : Boolean
@@ -77,7 +77,7 @@ package tibia.sidebar
          var _loc9_:int = 0;
          var _loc10_:int = 0;
          var _loc11_:XML = null;
-         var _loc12_:tibia.sidebar.Widget = null;
+         var _loc12_:Widget = null;
          var _loc13_:int = 0;
          var _loc14_:XML = null;
          var _loc15_:int = 0;
@@ -99,7 +99,7 @@ package tibia.sidebar
             while(_loc9_ >= 0)
             {
                _loc10_ = parseInt(_loc8_[_loc9_]);
-               if(tibia.sidebar.Widget.s_CheckType(_loc9_) && SideBarSet.s_CheckLocation(_loc10_))
+               if(Widget.s_CheckType(_loc9_) && SideBarSet.s_CheckLocation(_loc10_))
                {
                   _loc5_.setDefaultLocation(_loc9_,_loc10_);
                }
@@ -110,7 +110,7 @@ package tibia.sidebar
          {
             for each(_loc11_ in _loc6_.elements("widget"))
             {
-               _loc12_ = tibia.sidebar.Widget.s_Unmarshall(_loc11_,param2);
+               _loc12_ = Widget.s_Unmarshall(_loc11_,param2);
                if(_loc12_ != null)
                {
                   _loc5_.poolAddWidget(_loc12_);
@@ -154,7 +154,7 @@ package tibia.sidebar
          return this.m_Widgets.length;
       }
       
-      public function showWidgetByID(param1:int, param2:int, param3:int) : tibia.sidebar.Widget
+      public function showWidgetByID(param1:int, param2:int, param3:int) : Widget
       {
          var _loc5_:Boolean = false;
          var _loc6_:Boolean = false;
@@ -164,7 +164,7 @@ package tibia.sidebar
          {
             return null;
          }
-         var _loc4_:tibia.sidebar.Widget = this.poolGetWidget(param1);
+         var _loc4_:Widget = this.poolGetWidget(param1);
          if(_loc4_ != null)
          {
             _loc5_ = false;
@@ -192,7 +192,7 @@ package tibia.sidebar
                }
                _loc7_--;
             }
-            if(tibia.sidebar.Widget.s_GetUnique(_loc4_.type))
+            if(Widget.s_GetUnique(_loc4_.type))
             {
                this.setDefaultLocation(_loc4_.type,param2);
             }
@@ -255,11 +255,11 @@ package tibia.sidebar
             _loc1_--;
          }
          this.getSideBar(LOCATION_C).visible = true;
-         this.showWidgetType(tibia.sidebar.Widget.TYPE_GENERALBUTTONS,LOCATION_C,-1);
-         this.showWidgetType(tibia.sidebar.Widget.TYPE_MINIMAP,LOCATION_C,-1);
+         this.showWidgetType(Widget.TYPE_GENERALBUTTONS,LOCATION_C,-1);
+         this.showWidgetType(Widget.TYPE_MINIMAP,LOCATION_C,-1);
       }
       
-      public function getSideBar(param1:int) : tibia.sidebar.SideBar
+      public function getSideBar(param1:int) : SideBar
       {
          if(!SideBarSet.s_CheckLocation(param1))
          {
@@ -271,8 +271,8 @@ package tibia.sidebar
       public function hideWidgetType(param1:int, param2:int) : void
       {
          var _loc4_:int = 0;
-         var _loc5_:tibia.sidebar.Widget = null;
-         if(!tibia.sidebar.Widget.s_CheckType(param1))
+         var _loc5_:Widget = null;
+         if(!Widget.s_CheckType(param1))
          {
             return;
          }
@@ -291,7 +291,7 @@ package tibia.sidebar
                {
                   _loc5_.releaseViewInstance();
                   this.m_SideBars[_loc3_].removeWidgetAt(_loc4_);
-                  if(!tibia.sidebar.Widget.s_GetUnique(_loc5_.type) || !tibia.sidebar.Widget.s_GetRestorable(_loc5_.type))
+                  if(!Widget.s_GetUnique(_loc5_.type) || !Widget.s_GetRestorable(_loc5_.type))
                   {
                      this.poolRemoveWidget(_loc5_.ID);
                   }
@@ -302,14 +302,14 @@ package tibia.sidebar
          }
       }
       
-      private function poolAddWidget(param1:tibia.sidebar.Widget) : tibia.sidebar.Widget
+      private function poolAddWidget(param1:Widget) : Widget
       {
          var _loc2_:int = 0;
          if(param1 == null)
          {
             return null;
          }
-         if(tibia.sidebar.Widget.s_GetUnique(param1.type))
+         if(Widget.s_GetUnique(param1.type))
          {
             _loc2_ = this.m_Widgets.length - 1;
             while(_loc2_ >= 0)
@@ -327,14 +327,14 @@ package tibia.sidebar
             return null;
          }
          this.m_Widgets.splice(-_loc2_ - 1,0,param1);
-         param1.addEventListener(tibia.sidebar.Widget.EVENT_CLOSE,this.onWidgetEvent,false,EventPriority.DEFAULT_HANDLER,false);
-         param1.addEventListener(tibia.sidebar.Widget.EVENT_OPTIONS_CHANGE,this.onWidgetEvent,false,EventPriority.DEFAULT_HANDLER,false);
+         param1.addEventListener(Widget.EVENT_CLOSE,this.onWidgetEvent,false,EventPriority.DEFAULT_HANDLER,false);
+         param1.addEventListener(Widget.EVENT_OPTIONS_CHANGE,this.onWidgetEvent,false,EventPriority.DEFAULT_HANDLER,false);
          return param1;
       }
       
-      public function getWidgetByType(param1:int) : tibia.sidebar.Widget
+      public function getWidgetByType(param1:int) : Widget
       {
-         if(!tibia.sidebar.Widget.s_CheckType(param1))
+         if(!Widget.s_CheckType(param1))
          {
             return null;
          }
@@ -350,17 +350,17 @@ package tibia.sidebar
          return null;
       }
       
-      public function getWidgetByID(param1:int) : tibia.sidebar.Widget
+      public function getWidgetByID(param1:int) : Widget
       {
          return this.poolGetWidget(param1);
       }
       
       public function countWidgetType(param1:int, param2:int) : int
       {
-         var _loc5_:tibia.sidebar.SideBar = null;
+         var _loc5_:SideBar = null;
          var _loc6_:int = 0;
-         var _loc7_:tibia.sidebar.Widget = null;
-         if(!tibia.sidebar.Widget.s_CheckType(param1))
+         var _loc7_:Widget = null;
+         if(!Widget.s_CheckType(param1))
          {
             return 0;
          }
@@ -403,7 +403,7 @@ package tibia.sidebar
          _loc4_ = this.m_Widgets.length;
          while(_loc2_ < _loc4_)
          {
-            if(tibia.sidebar.Widget.s_GetRestorable(this.m_Widgets[_loc2_].type))
+            if(Widget.s_GetRestorable(this.m_Widgets[_loc2_].type))
             {
                _loc6_.appendChild(this.m_Widgets[_loc2_].marshall());
             }
@@ -422,7 +422,7 @@ package tibia.sidebar
             while(_loc3_ < _loc5_)
             {
                _loc8_ = this.m_SideBars[_loc2_].getWidgetIDAt(_loc3_);
-               if(tibia.sidebar.Widget.s_GetRestorable(this.poolGetWidget(_loc8_).type))
+               if(Widget.s_GetRestorable(this.poolGetWidget(_loc8_).type))
                {
                   _loc7_.appendChild(<widgetref id="{_loc8_}"/>);
                }
@@ -442,7 +442,7 @@ package tibia.sidebar
       public function setDefaultLocation(param1:int, param2:int) : void
       {
          var _loc3_:PropertyChangeEvent = null;
-         if(!tibia.sidebar.Widget.s_CheckType(param1))
+         if(!Widget.s_CheckType(param1))
          {
             return;
          }
@@ -457,31 +457,31 @@ package tibia.sidebar
             _loc3_.property = "defaultLocation";
             _loc3_.kind = PropertyChangeEventKind.UPDATE;
             dispatchEvent(_loc3_);
-            if(param1 == tibia.sidebar.Widget.TYPE_NPCTRADE)
+            if(param1 == Widget.TYPE_NPCTRADE)
             {
-               this.setDefaultLocation(tibia.sidebar.Widget.TYPE_SAFETRADE,param2);
+               this.setDefaultLocation(Widget.TYPE_SAFETRADE,param2);
             }
-            if(param1 == tibia.sidebar.Widget.TYPE_SAFETRADE)
+            if(param1 == Widget.TYPE_SAFETRADE)
             {
-               this.setDefaultLocation(tibia.sidebar.Widget.TYPE_NPCTRADE,param2);
+               this.setDefaultLocation(Widget.TYPE_NPCTRADE,param2);
             }
          }
       }
       
       protected function onWidgetEvent(param1:Event) : void
       {
-         var _loc2_:tibia.sidebar.Widget = null;
+         var _loc2_:Widget = null;
          var _loc3_:PropertyChangeEvent = null;
          if(param1 != null && (!param1.cancelable || !param1.isDefaultPrevented()))
          {
             _loc2_ = Widget(param1.currentTarget);
             switch(param1.type)
             {
-               case tibia.sidebar.Widget.EVENT_CLOSE:
+               case Widget.EVENT_CLOSE:
                   this.hideWidgetByID(_loc2_.ID);
                   break;
-               case tibia.sidebar.Widget.EVENT_OPTIONS_CHANGE:
-                  if(tibia.sidebar.Widget.s_GetUnique(_loc2_.type) && tibia.sidebar.Widget.s_GetRestorable(_loc2_.type))
+               case Widget.EVENT_OPTIONS_CHANGE:
+                  if(Widget.s_GetUnique(_loc2_.type) && Widget.s_GetRestorable(_loc2_.type))
                   {
                      _loc3_ = new PropertyChangeEvent(PropertyChangeEvent.PROPERTY_CHANGE);
                      _loc3_.kind = PropertyChangeEventKind.UPDATE;
@@ -521,12 +521,12 @@ package tibia.sidebar
       
       public function closeVolatileWidgets() : void
       {
-         var _loc2_:tibia.sidebar.Widget = null;
+         var _loc2_:Widget = null;
          var _loc1_:int = this.m_Widgets.length - 1;
          while(_loc1_ >= 0)
          {
             _loc2_ = this.m_Widgets[_loc1_];
-            if(_loc2_ != null && (!tibia.sidebar.Widget.s_GetUnique(_loc2_.type) || !tibia.sidebar.Widget.s_GetRestorable(_loc2_.type)))
+            if(_loc2_ != null && (!Widget.s_GetUnique(_loc2_.type) || !Widget.s_GetRestorable(_loc2_.type)))
             {
                this.hideWidgetByID(_loc2_.ID);
             }
@@ -534,7 +534,7 @@ package tibia.sidebar
          }
       }
       
-      public function insertOrphanWidget(param1:tibia.sidebar.Widget, param2:int, param3:int) : void
+      public function insertOrphanWidget(param1:Widget, param2:int, param3:int) : void
       {
          if(param1 == null)
          {
@@ -554,15 +554,15 @@ package tibia.sidebar
          return this.m_ID;
       }
       
-      private function poolRemoveWidget(param1:int) : tibia.sidebar.Widget
+      private function poolRemoveWidget(param1:int) : Widget
       {
-         var _loc2_:tibia.sidebar.Widget = null;
+         var _loc2_:Widget = null;
          var _loc3_:int = this.poolGetIndex(param1);
          if(_loc3_ > -1)
          {
             _loc2_ = this.m_Widgets.splice(_loc3_,1)[0];
-            _loc2_.removeEventListener(tibia.sidebar.Widget.EVENT_CLOSE,this.onWidgetEvent);
-            _loc2_.removeEventListener(tibia.sidebar.Widget.EVENT_OPTIONS_CHANGE,this.onWidgetEvent);
+            _loc2_.removeEventListener(Widget.EVENT_CLOSE,this.onWidgetEvent);
+            _loc2_.removeEventListener(Widget.EVENT_OPTIONS_CHANGE,this.onWidgetEvent);
          }
          if(_loc2_ != null)
          {
@@ -588,7 +588,7 @@ package tibia.sidebar
       public function hideWidgetByID(param1:int) : void
       {
          var _loc3_:int = 0;
-         var _loc4_:tibia.sidebar.Widget = null;
+         var _loc4_:Widget = null;
          var _loc2_:int = this.m_SideBars.length - 1;
          while(_loc2_ >= 0)
          {
@@ -600,7 +600,7 @@ package tibia.sidebar
                {
                   _loc4_.releaseViewInstance();
                   this.m_SideBars[_loc2_].removeWidgetAt(_loc3_);
-                  if(!tibia.sidebar.Widget.s_GetUnique(_loc4_.type) || !tibia.sidebar.Widget.s_GetRestorable(_loc4_.type))
+                  if(!Widget.s_GetUnique(_loc4_.type) || !Widget.s_GetRestorable(_loc4_.type))
                   {
                      this.poolRemoveWidget(param1);
                   }
@@ -612,12 +612,12 @@ package tibia.sidebar
          }
       }
       
-      public function showWidgetType(param1:int, param2:int, param3:int) : tibia.sidebar.Widget
+      public function showWidgetType(param1:int, param2:int, param3:int) : Widget
       {
          var _loc6_:int = 0;
          var _loc7_:int = 0;
          var _loc8_:* = false;
-         if(!tibia.sidebar.Widget.s_CheckType(param1))
+         if(!Widget.s_CheckType(param1))
          {
             return null;
          }
@@ -629,9 +629,9 @@ package tibia.sidebar
          {
             return null;
          }
-         var _loc4_:tibia.sidebar.Widget = null;
+         var _loc4_:Widget = null;
          var _loc5_:Boolean = false;
-         if(tibia.sidebar.Widget.s_GetUnique(param1))
+         if(Widget.s_GetUnique(param1))
          {
             _loc6_ = 0;
             _loc7_ = 0;
@@ -673,7 +673,7 @@ package tibia.sidebar
          }
          if(_loc4_ == null)
          {
-            _loc4_ = this.poolAddWidget(tibia.sidebar.Widget.s_CreateInstance(param1,this.poolFreeID()));
+            _loc4_ = this.poolAddWidget(Widget.s_CreateInstance(param1,this.poolFreeID()));
          }
          if(_loc5_)
          {
@@ -682,7 +682,7 @@ package tibia.sidebar
          return this.m_SideBars[param2].addWidgetAt(_loc4_,param3);
       }
       
-      private function poolGetWidget(param1:int) : tibia.sidebar.Widget
+      private function poolGetWidget(param1:int) : Widget
       {
          var _loc2_:int = this.poolGetIndex(param1);
          if(_loc2_ > -1)

@@ -1,35 +1,35 @@
 package tibia.input.gameaction
 {
-   import tibia.input.IActionImpl;
-   import flash.events.MouseEvent;
-   import tibia.creatures.Creature;
-   import tibia.network.Communication;
-   import tibia.container.ContainerStorage;
-   import tibia.creatures.CreatureStorage;
    import flash.display.DisplayObject;
-   import flash.geom.Point;
-   import tibia.game.IUseWidget;
-   import shared.utility.Vector3D;
-   import tibia.appearances.ObjectInstance;
-   import tibia.appearances.AppearanceInstance;
-   import tibia.creatures.Player;
-   import tibia.magic.SpellStorage;
-   import tibia.container.BodyContainerView;
    import flash.events.Event;
-   import tibia.cursors.CursorHelper;
+   import flash.events.MouseEvent;
+   import flash.geom.Point;
    import mx.core.EventPriority;
    import mx.events.SandboxMouseEvent;
-   import tibia.appearances.AppearanceType;
-   import tibia.cursors.CrosshairCursor;
-   import tibia.appearances.AppearanceStorage;
    import mx.managers.CursorManagerPriority;
+   import shared.utility.Vector3D;
+   import tibia.appearances.AppearanceInstance;
+   import tibia.appearances.AppearanceStorage;
+   import tibia.appearances.AppearanceType;
+   import tibia.appearances.ObjectInstance;
+   import tibia.container.BodyContainerView;
+   import tibia.container.ContainerStorage;
+   import tibia.creatures.Creature;
+   import tibia.creatures.CreatureStorage;
+   import tibia.creatures.Player;
+   import tibia.cursors.CrosshairCursor;
+   import tibia.cursors.CursorHelper;
+   import tibia.game.IUseWidget;
+   import tibia.input.IActionImpl;
+   import tibia.magic.SpellStorage;
+   import tibia.network.Communication;
    
    public class UseActionImpl implements IActionImpl
    {
       
       public static const TARGET_NEW_WINDOW:int = 1;
       
-      protected static var concurrentMultiUse:tibia.input.gameaction.UseActionImpl = null;
+      protected static var concurrentMultiUse:UseActionImpl = null;
       
       public static const TARGET_CROSSHAIR:int = 4;
       

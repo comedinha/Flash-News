@@ -1,16 +1,16 @@
 package tibia.options.configurationWidgetClasses
 {
-   import shared.controls.EmbeddedDialog;
-   import tibia.input.mapping.Binding;
+   import flash.events.Event;
+   import flash.events.FocusEvent;
    import flash.events.KeyboardEvent;
    import flash.events.TextEvent;
-   import mx.events.CloseEvent;
    import mx.containers.Box;
-   import mx.controls.Text;
    import mx.containers.HBox;
-   import flash.events.FocusEvent;
-   import flash.events.Event;
+   import mx.controls.Text;
    import mx.core.EventPriority;
+   import mx.events.CloseEvent;
+   import shared.controls.EmbeddedDialog;
+   import tibia.input.mapping.Binding;
    
    public class EditBindingDialog extends EmbeddedDialog
    {

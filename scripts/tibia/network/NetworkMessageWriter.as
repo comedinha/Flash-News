@@ -1,9 +1,9 @@
 package tibia.network
 {
    import flash.utils.ByteArray;
+   import flash.utils.Endian;
    import shared.cryptography.XTEA;
    import shared.cryptography.calculateAdler32Checksum;
-   import flash.utils.Endian;
    
    public class NetworkMessageWriter implements IMessageWriter
    {
@@ -24,7 +24,7 @@ package tibia.network
       
       protected static const ERR_INVALID_STATE:int = 4;
       
-      public static const PROTOCOL_VERSION:int = 1100;
+      public static const PROTOCOL_VERSION:int = 1101;
       
       protected static const PAYLOADLENGTH_SIZE:int = 2;
       

@@ -1,7 +1,7 @@
 package tibia.game
 {
-   import flash.utils.getTimer;
    import flash.events.TimerEvent;
+   import flash.utils.getTimer;
    import mx.events.CloseEvent;
    
    public class TimeoutWaitWidget extends MessageWidget

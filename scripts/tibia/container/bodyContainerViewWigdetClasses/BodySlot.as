@@ -1,11 +1,11 @@
 package tibia.container.bodyContainerViewWigdetClasses
 {
-   import tibia.container.containerViewWidgetClasses.ContainerSlot;
-   import flash.display.Graphics;
-   import flash.display.BitmapData;
    import flash.display.Bitmap;
-   import flash.geom.ColorTransform;
+   import flash.display.BitmapData;
+   import flash.display.Graphics;
    import flash.events.MouseEvent;
+   import flash.geom.ColorTransform;
+   import tibia.container.containerViewWidgetClasses.ContainerSlot;
    
    public class BodySlot extends ContainerSlot
    {

@@ -1,7 +1,7 @@
 package tibia.sessiondump.hints
 {
-   import tibia.chat.ChatWidget;
    import tibia.chat.ChatStorage;
+   import tibia.chat.ChatWidget;
    
    public class SessiondumpHintSwitchChannel extends SessiondumpHintBase
    {

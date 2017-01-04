@@ -1,8 +1,8 @@
 package tibia.actionbar
 {
    import flash.events.EventDispatcher;
-   import mx.events.PropertyChangeEvent;
    import mx.core.EventPriority;
+   import mx.events.PropertyChangeEvent;
    
    public class ActionBarSet extends EventDispatcher
    {
@@ -26,14 +26,14 @@ package tibia.actionbar
       protected static const OPTIONS_MIN_COMPATIBLE_VERSION:Number = 2;
        
       
-      protected var m_ActionBars:Vector.<tibia.actionbar.ActionBar> = null;
+      protected var m_ActionBars:Vector.<ActionBar> = null;
       
       protected var m_ID:int = 0;
       
       public function ActionBarSet(param1:int)
       {
          super();
-         this.m_ActionBars = new Vector.<tibia.actionbar.ActionBar>(LOCATION_RIGHT + 1,true);
+         this.m_ActionBars = new Vector.<ActionBar>(LOCATION_RIGHT + 1,true);
          this.m_ID = param1;
       }
       
@@ -41,7 +41,7 @@ package tibia.actionbar
       {
          var _loc4_:int = 0;
          var _loc6_:XML = null;
-         var _loc7_:tibia.actionbar.ActionBar = null;
+         var _loc7_:ActionBar = null;
          if(param1 == null || param1.localName() != "actionbarset" || param2 < OPTIONS_MIN_COMPATIBLE_VERSION || param2 > OPTIONS_MAX_COMPATIBLE_VERSION)
          {
             throw new Error("ActionBarSet.s_Unmarshall: Invalid input.");
@@ -55,7 +55,7 @@ package tibia.actionbar
          var _loc5_:ActionBarSet = new ActionBarSet(_loc4_);
          for each(_loc6_ in param1.elements("actionbar"))
          {
-            _loc7_ = tibia.actionbar.ActionBar.s_Unmarshall(_loc6_,param2);
+            _loc7_ = ActionBar.s_Unmarshall(_loc6_,param2);
             if(_loc7_ != null)
             {
                _loc5_.setActionBar(_loc7_);
@@ -66,14 +66,14 @@ package tibia.actionbar
       
       public function initialiseDefaultActionBars() : void
       {
-         var _loc1_:tibia.actionbar.ActionBar = new tibia.actionbar.ActionBar(LOCATION_BOTTOM);
+         var _loc1_:ActionBar = new ActionBar(LOCATION_BOTTOM);
          _loc1_.visible = true;
          this.setActionBar(_loc1_);
-         var _loc2_:tibia.actionbar.ActionBar = new tibia.actionbar.ActionBar(LOCATION_LEFT);
+         var _loc2_:ActionBar = new ActionBar(LOCATION_LEFT);
          this.setActionBar(_loc2_);
-         var _loc3_:tibia.actionbar.ActionBar = new tibia.actionbar.ActionBar(LOCATION_RIGHT);
+         var _loc3_:ActionBar = new ActionBar(LOCATION_RIGHT);
          this.setActionBar(_loc3_);
-         var _loc4_:tibia.actionbar.ActionBar = new tibia.actionbar.ActionBar(LOCATION_TOP);
+         var _loc4_:ActionBar = new ActionBar(LOCATION_TOP);
          this.setActionBar(_loc4_);
       }
       
@@ -82,7 +82,7 @@ package tibia.actionbar
          return this.m_ID;
       }
       
-      public function getActionBar(param1:int) : tibia.actionbar.ActionBar
+      public function getActionBar(param1:int) : ActionBar
       {
          return this.m_ActionBars[param1];
       }
@@ -118,7 +118,7 @@ package tibia.actionbar
          return _loc1_;
       }
       
-      public function setActionBar(param1:tibia.actionbar.ActionBar) : void
+      public function setActionBar(param1:ActionBar) : void
       {
          if(param1 == null)
          {

@@ -1,79 +1,79 @@
 package mx.managers
 {
+   import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
+   import flash.display.Graphics;
+   import flash.display.InteractiveObject;
+   import flash.display.Loader;
+   import flash.display.LoaderInfo;
    import flash.display.MovieClip;
+   import flash.display.Sprite;
+   import flash.display.Stage;
+   import flash.display.StageAlign;
+   import flash.display.StageScaleMode;
+   import flash.events.Event;
+   import flash.events.IEventDispatcher;
+   import flash.events.MouseEvent;
+   import flash.events.TimerEvent;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import flash.system.ApplicationDomain;
+   import flash.text.Font;
+   import flash.text.TextFormat;
+   import flash.utils.Dictionary;
+   import flash.utils.Timer;
+   import flash.utils.getQualifiedClassName;
+   import mx.core.EmbeddedFontRegistry;
+   import mx.core.EventPriority;
+   import mx.core.FlexSprite;
    import mx.core.IChildList;
    import mx.core.IFlexDisplayObject;
    import mx.core.IFlexModuleFactory;
+   import mx.core.IInvalidating;
+   import mx.core.IRawChildrenContainer;
+   import mx.core.ISWFBridgeGroup;
    import mx.core.ISWFBridgeProvider;
-   import mx.core.mx_internal;
-   import flash.display.DisplayObject;
-   import flash.system.ApplicationDomain;
-   import flash.utils.getQualifiedClassName;
-   import mx.managers.systemClasses.RemotePopUp;
-   import flash.utils.Dictionary;
-   import flash.events.IEventDispatcher;
-   import mx.events.EventListenerRequest;
-   import flash.display.DisplayObjectContainer;
+   import mx.core.ISWFLoader;
    import mx.core.IUIComponent;
-   import flash.display.InteractiveObject;
-   import mx.styles.IStyleClient;
-   import mx.styles.ISimpleStyleClient;
-   import flash.display.Stage;
-   import flash.events.Event;
-   import flash.events.TimerEvent;
+   import mx.core.RSLItem;
+   import mx.core.SWFBridgeGroup;
+   import mx.core.Singleton;
+   import mx.core.TextFieldFactory;
+   import mx.core.mx_internal;
+   import mx.events.EventListenerRequest;
+   import mx.events.FlexChangeEvent;
    import mx.events.FlexEvent;
    import mx.events.InterManagerRequest;
-   import mx.core.Singleton;
-   import flash.geom.Point;
-   import flash.geom.Rectangle;
-   import mx.events.SWFBridgeRequest;
-   import mx.core.ISWFLoader;
+   import mx.events.InvalidateRequestData;
+   import mx.events.RSLEvent;
    import mx.events.SWFBridgeEvent;
-   import mx.core.SWFBridgeGroup;
-   import mx.core.IRawChildrenContainer;
-   import flash.display.Loader;
-   import flash.display.Sprite;
-   import flash.events.MouseEvent;
+   import mx.events.SWFBridgeRequest;
    import mx.events.SandboxMouseEvent;
    import mx.managers.systemClasses.EventProxy;
-   import mx.utils.EventUtil;
-   import mx.core.EventPriority;
-   import flash.utils.Timer;
-   import mx.utils.SecurityUtil;
-   import mx.utils.NameUtil;
-   import mx.events.FlexChangeEvent;
-   import mx.events.RSLEvent;
-   import mx.core.TextFieldFactory;
-   import mx.preloaders.Preloader;
-   import mx.core.ISWFBridgeGroup;
-   import flash.display.StageAlign;
    import mx.managers.systemClasses.PlaceholderData;
-   import flash.display.LoaderInfo;
-   import flash.display.Graphics;
-   import flash.text.TextFormat;
-   import flash.text.Font;
-   import mx.resources.ResourceManager;
-   import mx.resources.IResourceManager;
-   import mx.events.InvalidateRequestData;
-   import mx.styles.StyleManager;
-   import mx.core.IInvalidating;
-   import mx.core.EmbeddedFontRegistry;
-   import mx.core.RSLItem;
-   import mx.preloaders.DownloadProgressBar;
-   import mx.utils.LoaderUtil;
-   import mx.core.FlexSprite;
+   import mx.managers.systemClasses.RemotePopUp;
    import mx.messaging.config.LoaderConfig;
-   import flash.display.StageScaleMode;
+   import mx.preloaders.DownloadProgressBar;
+   import mx.preloaders.Preloader;
+   import mx.resources.IResourceManager;
    import mx.resources.ResourceBundle;
+   import mx.resources.ResourceManager;
+   import mx.styles.ISimpleStyleClient;
+   import mx.styles.IStyleClient;
+   import mx.styles.StyleManager;
+   import mx.utils.EventUtil;
+   import mx.utils.LoaderUtil;
+   import mx.utils.NameUtil;
+   import mx.utils.SecurityUtil;
    
    use namespace mx_internal;
    
-   public class SystemManager extends MovieClip implements IChildList, IFlexDisplayObject, IFlexModuleFactory, mx.managers.ISystemManager, ISWFBridgeProvider
+   public class SystemManager extends MovieClip implements IChildList, IFlexDisplayObject, IFlexModuleFactory, ISystemManager, ISWFBridgeProvider
    {
       
       private static const IDLE_THRESHOLD:Number = 1000;
       
-      mx_internal static var lastSystemManager:mx.managers.SystemManager;
+      mx_internal static var lastSystemManager:SystemManager;
       
       private static const IDLE_INTERVAL:Number = 100;
       
@@ -102,9 +102,9 @@ package mx.managers
       
       private var strongReferenceProxies:Dictionary;
       
-      private var _rawChildren:mx.managers.SystemRawChildrenList;
+      private var _rawChildren:SystemRawChildrenList;
       
-      private var _topLevelSystemManager:mx.managers.ISystemManager;
+      private var _topLevelSystemManager:ISystemManager;
       
       private var _toolTipIndex:int = 0;
       
@@ -116,7 +116,7 @@ package mx.managers
       
       private var _swfBridgeGroup:ISWFBridgeGroup;
       
-      private var _toolTipChildren:mx.managers.SystemChildrenList;
+      private var _toolTipChildren:SystemChildrenList;
       
       private var form:Object;
       
@@ -130,7 +130,7 @@ package mx.managers
       
       private var isStageRoot:Boolean = true;
       
-      private var _popUpChildren:mx.managers.SystemChildrenList;
+      private var _popUpChildren:SystemChildrenList;
       
       private var _topMostIndex:int = 0;
       
@@ -154,7 +154,7 @@ package mx.managers
       
       mx_internal var idleCounter:int = 0;
       
-      private var _cursorChildren:mx.managers.SystemChildrenList;
+      private var _cursorChildren:SystemChildrenList;
       
       private var initCallbackFunctions:Array;
       
@@ -216,14 +216,14 @@ package mx.managers
       public static function getSWFRoot(param1:Object) : DisplayObject
       {
          var p:* = undefined;
-         var sm:mx.managers.ISystemManager = null;
+         var sm:ISystemManager = null;
          var domain:ApplicationDomain = null;
          var cls:Class = null;
          var object:Object = param1;
          var className:String = getQualifiedClassName(object);
          for(p in allSystemManagers)
          {
-            sm = p as mx.managers.ISystemManager;
+            sm = p as ISystemManager;
             domain = sm.loaderInfo.applicationDomain;
             try
             {
@@ -281,7 +281,7 @@ package mx.managers
          {
             return;
          }
-         var _loc2_:mx.managers.SystemManager = lastSystemManager;
+         var _loc2_:SystemManager = lastSystemManager;
          if(_loc2_.doneExecutingInitCallbacks)
          {
             param1(_loc2_);
@@ -837,7 +837,7 @@ package mx.managers
       {
          if(!_rawChildren)
          {
-            _rawChildren = new mx.managers.SystemRawChildrenList(this);
+            _rawChildren = new SystemRawChildrenList(this);
          }
          return _rawChildren;
       }
@@ -2038,7 +2038,7 @@ package mx.managers
          }
          if(!_popUpChildren)
          {
-            _popUpChildren = new mx.managers.SystemChildrenList(this,new QName(mx_internal,"noTopMostIndex"),new QName(mx_internal,"topMostIndex"));
+            _popUpChildren = new SystemChildrenList(this,new QName(mx_internal,"noTopMostIndex"),new QName(mx_internal,"topMostIndex"));
          }
          return _popUpChildren;
       }
@@ -2138,7 +2138,7 @@ package mx.managers
          }
          if(!_toolTipChildren)
          {
-            _toolTipChildren = new mx.managers.SystemChildrenList(this,new QName(mx_internal,"topMostIndex"),new QName(mx_internal,"toolTipIndex"));
+            _toolTipChildren = new SystemChildrenList(this,new QName(mx_internal,"topMostIndex"),new QName(mx_internal,"toolTipIndex"));
          }
          return _toolTipChildren;
       }
@@ -2253,7 +2253,7 @@ package mx.managers
          var lastParent:DisplayObject = null;
          var loader:Loader = null;
          var loaderInfo:LoaderInfo = null;
-         var sm:mx.managers.ISystemManager = this;
+         var sm:ISystemManager = this;
          try
          {
             if(sm.topLevelSystemManager)
@@ -2703,7 +2703,7 @@ package mx.managers
       
       public function getTopLevelRoot() : DisplayObject
       {
-         var sm:mx.managers.ISystemManager = null;
+         var sm:ISystemManager = null;
          var parent:DisplayObject = null;
          var lastParent:DisplayObject = null;
          try
@@ -3082,7 +3082,7 @@ package mx.managers
          }
          if(!_cursorChildren)
          {
-            _cursorChildren = new mx.managers.SystemChildrenList(this,new QName(mx_internal,"toolTipIndex"),new QName(mx_internal,"cursorIndex"));
+            _cursorChildren = new SystemChildrenList(this,new QName(mx_internal,"toolTipIndex"),new QName(mx_internal,"cursorIndex"));
          }
          return _cursorChildren;
       }
@@ -3173,7 +3173,7 @@ package mx.managers
          return param1;
       }
       
-      public function get topLevelSystemManager() : mx.managers.ISystemManager
+      public function get topLevelSystemManager() : ISystemManager
       {
          if(topLevel)
          {
@@ -3345,7 +3345,7 @@ package mx.managers
          preloader.addEventListener(RSLEvent.RSL_COMPLETE,preloader_rslCompleteHandler);
          if(!_popUpChildren)
          {
-            _popUpChildren = new mx.managers.SystemChildrenList(this,new QName(mx_internal,"noTopMostIndex"),new QName(mx_internal,"topMostIndex"));
+            _popUpChildren = new SystemChildrenList(this,new QName(mx_internal,"noTopMostIndex"),new QName(mx_internal,"topMostIndex"));
          }
          _popUpChildren.addChild(preloader);
          var _loc1_:Array = info()["rsls"];
@@ -3527,7 +3527,7 @@ package mx.managers
       {
          var _loc2_:IUIComponent = null;
          var _loc3_:DisplayObjectContainer = null;
-         var _loc4_:mx.managers.ISystemManager = null;
+         var _loc4_:ISystemManager = null;
          var _loc5_:DisplayObject = null;
          initialized = true;
          if(!parent && parentAllowsChild)
@@ -3751,15 +3751,15 @@ package mx.managers
          }
       }
       
-      private function getTopLevelSystemManager(param1:DisplayObject) : mx.managers.ISystemManager
+      private function getTopLevelSystemManager(param1:DisplayObject) : ISystemManager
       {
-         var _loc3_:mx.managers.ISystemManager = null;
+         var _loc3_:ISystemManager = null;
          var _loc2_:DisplayObjectContainer = DisplayObjectContainer(param1.root);
          if((!_loc2_ || _loc2_ is Stage) && param1 is IUIComponent)
          {
             _loc2_ = DisplayObjectContainer(IUIComponent(param1).systemManager);
          }
-         if(_loc2_ is mx.managers.ISystemManager)
+         if(_loc2_ is ISystemManager)
          {
             _loc3_ = ISystemManager(_loc2_);
             if(!_loc3_.isTopLevel())

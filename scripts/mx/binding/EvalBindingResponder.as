@@ -1,7 +1,7 @@
 package mx.binding
 {
-   import mx.rpc.IResponder;
    import mx.core.mx_internal;
+   import mx.rpc.IResponder;
    
    use namespace mx_internal;
    
@@ -11,11 +11,11 @@ package mx.binding
       mx_internal static const VERSION:String = "3.6.0.21751";
        
       
-      private var binding:mx.binding.Binding;
+      private var binding:Binding;
       
       private var object:Object;
       
-      public function EvalBindingResponder(param1:mx.binding.Binding, param2:Object)
+      public function EvalBindingResponder(param1:Binding, param2:Object)
       {
          super();
          this.binding = param1;

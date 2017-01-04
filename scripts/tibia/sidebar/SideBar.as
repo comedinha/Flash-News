@@ -1,9 +1,9 @@
 package tibia.sidebar
 {
    import flash.events.EventDispatcher;
-   import mx.events.PropertyChangeEvent;
    import mx.events.CollectionEvent;
    import mx.events.CollectionEventKind;
+   import mx.events.PropertyChangeEvent;
    
    public class SideBar extends EventDispatcher
    {
@@ -21,9 +21,9 @@ package tibia.sidebar
       
       private var m_Location:int = -1;
       
-      private var m_SideBarSet:tibia.sidebar.SideBarSet = null;
+      private var m_SideBarSet:SideBarSet = null;
       
-      public function SideBar(param1:tibia.sidebar.SideBarSet, param2:int)
+      public function SideBar(param1:SideBarSet, param2:int)
       {
          super();
          this.m_SideBarSet = param1;
@@ -41,7 +41,7 @@ package tibia.sidebar
          return this.addWidgetAt(param1,this.m_WidgetID.length);
       }
       
-      public function get sideBarSet() : tibia.sidebar.SideBarSet
+      public function get sideBarSet() : SideBarSet
       {
          return this.m_SideBarSet;
       }

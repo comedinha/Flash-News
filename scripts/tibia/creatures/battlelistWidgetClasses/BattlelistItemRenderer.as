@@ -1,35 +1,35 @@
 package tibia.creatures.battlelistWidgetClasses
 {
-   import mx.core.UIComponent;
-   import mx.controls.listClasses.IListItemRenderer;
-   import mx.core.IDataRenderer;
-   import shared.utility.Colour;
-   import tibia.§creatures:ns_creature_internal§.s_BattlelistMarksView;
-   import tibia.appearances.widgetClasses.MarksView;
-   import tibia.appearances.Marks;
-   import flash.geom.Rectangle;
+   import flash.display.BitmapData;
+   import flash.display.Graphics;
+   import flash.events.TimerEvent;
+   import flash.geom.Matrix;
    import flash.geom.Point;
-   import shared.utility.TextFieldCache;
+   import flash.geom.Rectangle;
+   import mx.controls.listClasses.IListItemRenderer;
+   import mx.core.EdgeMetrics;
+   import mx.core.EventPriority;
+   import mx.core.IDataRenderer;
+   import mx.core.UIComponent;
+   import mx.events.PropertyChangeEvent;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
-   import flash.geom.Matrix;
-   import tibia.§creatures:ns_creature_internal§.s_Trans;
-   import tibia.§creatures:ns_creature_internal§.s_Rect;
-   import tibia.§creatures:ns_creature_internal§.s_Point;
-   import tibia.§creatures:ns_creature_internal§.s_NameCache;
-   import tibia.§creatures:ns_creature_internal§.s_InitialiseMarksView;
-   import flash.events.TimerEvent;
-   import flash.display.BitmapData;
-   import mx.events.PropertyChangeEvent;
-   import tibia.creatures.Creature;
-   import mx.core.EventPriority;
-   import mx.core.EdgeMetrics;
-   import tibia.creatures.CreatureStorage;
-   import flash.display.Graphics;
+   import shared.utility.Colour;
+   import shared.utility.TextFieldCache;
    import tibia.appearances.AppearanceInstance;
-   import tibia.appearances.widgetClasses.CachedSpriteInformation;
-   import tibia.appearances.OutfitInstance;
    import tibia.appearances.FrameGroup;
+   import tibia.appearances.Marks;
+   import tibia.appearances.OutfitInstance;
+   import tibia.appearances.widgetClasses.CachedSpriteInformation;
+   import tibia.appearances.widgetClasses.MarksView;
+   import tibia.creatures.Creature;
+   import tibia.creatures.CreatureStorage;
+   import tibia.§creatures:ns_creature_internal§.s_BattlelistMarksView;
+   import tibia.§creatures:ns_creature_internal§.s_InitialiseMarksView;
+   import tibia.§creatures:ns_creature_internal§.s_NameCache;
+   import tibia.§creatures:ns_creature_internal§.s_Point;
+   import tibia.§creatures:ns_creature_internal§.s_Rect;
+   import tibia.§creatures:ns_creature_internal§.s_Trans;
    
    public class BattlelistItemRenderer extends UIComponent implements IListItemRenderer, IDataRenderer
    {

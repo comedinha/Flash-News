@@ -1,11 +1,11 @@
 package tibia.input.gameaction
 {
    import shared.utility.Vector3D;
-   import tibia.chat.MessageStorage;
-   import tibia.chat.MessageMode;
-   import tibia.worldmap.WorldMapStorage;
-   import tibia.creatures.Creature;
    import tibia.chat.ChatStorage;
+   import tibia.chat.MessageMode;
+   import tibia.chat.MessageStorage;
+   import tibia.creatures.Creature;
+   import tibia.worldmap.WorldMapStorage;
    
    public class GreetAction extends TalkActionImpl
    {

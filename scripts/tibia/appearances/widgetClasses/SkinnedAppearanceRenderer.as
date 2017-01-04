@@ -1,14 +1,14 @@
 package tibia.appearances.widgetClasses
 {
+   import flash.display.DisplayObject;
+   import mx.core.IFlexDisplayObject;
    import mx.core.UIComponent;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
-   import mx.core.IFlexDisplayObject;
+   import tibia.appearances.AppearanceInstance;
    import tibia.appearances.AppearanceStorage;
    import tibia.appearances.AppearanceType;
    import tibia.appearances.AppearanceTypeRef;
-   import tibia.appearances.AppearanceInstance;
-   import flash.display.DisplayObject;
    
    public class SkinnedAppearanceRenderer extends UIComponent
    {
@@ -29,7 +29,7 @@ package tibia.appearances.widgetClasses
       
       private var m_Highlighted:Boolean = false;
       
-      private var m_UIAppearance:tibia.appearances.widgetClasses.SimpleAppearanceRenderer = null;
+      private var m_UIAppearance:SimpleAppearanceRenderer = null;
       
       private var m_UIConstructed:Boolean = false;
       
@@ -137,7 +137,7 @@ package tibia.appearances.widgetClasses
          if(!this.m_UIConstructed)
          {
             super.createChildren();
-            this.m_UIAppearance = new tibia.appearances.widgetClasses.SimpleAppearanceRenderer();
+            this.m_UIAppearance = new SimpleAppearanceRenderer();
             this.m_UIAppearance.overlay = false;
             addChild(this.m_UIAppearance);
             this.m_UISkinBackground = this.updateSkin("backgroundImage");
@@ -159,8 +159,8 @@ package tibia.appearances.widgetClasses
          }
          else
          {
-            _loc1_ = tibia.appearances.widgetClasses.SimpleAppearanceRenderer.ICON_SIZE + getStyle("paddingLeft") + getStyle("paddingRight");
-            _loc2_ = tibia.appearances.widgetClasses.SimpleAppearanceRenderer.ICON_SIZE + getStyle("paddingTop") + getStyle("paddingBottom");
+            _loc1_ = SimpleAppearanceRenderer.ICON_SIZE + getStyle("paddingLeft") + getStyle("paddingRight");
+            _loc2_ = SimpleAppearanceRenderer.ICON_SIZE + getStyle("paddingTop") + getStyle("paddingBottom");
          }
          measuredWidth = measuredMinWidth = _loc1_;
          measuredHeight = measuredMinHeight = _loc2_;

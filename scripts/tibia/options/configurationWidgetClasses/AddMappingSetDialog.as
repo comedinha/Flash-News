@@ -1,11 +1,11 @@
 package tibia.options.configurationWidgetClasses
 {
-   import shared.controls.EmbeddedDialog;
-   import mx.events.ListEvent;
-   import mx.controls.ComboBox;
    import mx.containers.Box;
+   import mx.controls.ComboBox;
    import mx.core.ClassFactory;
+   import mx.events.ListEvent;
    import shared.controls.CustomList;
+   import shared.controls.EmbeddedDialog;
    
    public class AddMappingSetDialog extends EmbeddedDialog
    {

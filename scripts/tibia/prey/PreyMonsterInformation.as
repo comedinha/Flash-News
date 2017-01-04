@@ -1,7 +1,7 @@
 package tibia.prey
 {
-   import tibia.appearances.AppearanceInstance;
    import shared.utility.StringHelper;
+   import tibia.appearances.AppearanceInstance;
    
    public class PreyMonsterInformation
    {

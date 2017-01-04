@@ -1,9 +1,9 @@
 package tibia.creatures
 {
-   import tibia.sidebar.Widget;
    import flash.events.Event;
-   import tibia.creatures.buddylistWidgetClasses.BuddylistWidgetView;
    import mx.events.PropertyChangeEvent;
+   import tibia.creatures.buddylistWidgetClasses.BuddylistWidgetView;
+   import tibia.sidebar.Widget;
    import tibia.sidebar.sideBarWidgetClasses.WidgetView;
    
    public class BuddylistWidget extends Widget
@@ -16,7 +16,7 @@ package tibia.creatures
       public static const SORT_BY_STATUS:int = 2;
        
       
-      private var m_BuddySet:tibia.creatures.BuddySet = null;
+      private var m_BuddySet:BuddySet = null;
       
       private var m_ShowOffline:Boolean = true;
       
@@ -58,7 +58,7 @@ package tibia.creatures
          super.releaseViewInstance();
       }
       
-      public function get buddySet() : tibia.creatures.BuddySet
+      public function get buddySet() : BuddySet
       {
          return this.m_BuddySet;
       }
@@ -67,7 +67,7 @@ package tibia.creatures
       {
          if(m_Options != null)
          {
-            this.buddySet = m_Options.getBuddySet(tibia.creatures.BuddySet.DEFAULT_SET);
+            this.buddySet = m_Options.getBuddySet(BuddySet.DEFAULT_SET);
          }
       }
       
@@ -154,7 +154,7 @@ package tibia.creatures
          return _loc2_;
       }
       
-      public function set buddySet(param1:tibia.creatures.BuddySet) : void
+      public function set buddySet(param1:BuddySet) : void
       {
          if(this.m_BuddySet != param1)
          {

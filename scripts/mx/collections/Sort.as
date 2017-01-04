@@ -1,12 +1,12 @@
 package mx.collections
 {
-   import flash.events.EventDispatcher;
-   import mx.core.mx_internal;
-   import mx.collections.errors.SortError;
    import flash.events.Event;
-   import mx.utils.ObjectUtil;
+   import flash.events.EventDispatcher;
+   import mx.collections.errors.SortError;
+   import mx.core.mx_internal;
    import mx.resources.IResourceManager;
    import mx.resources.ResourceManager;
+   import mx.utils.ObjectUtil;
    
    use namespace mx_internal;
    
@@ -26,7 +26,7 @@ package mx.collections
       
       private var usingCustomCompareFunction:Boolean;
       
-      private var defaultEmptyField:mx.collections.SortField;
+      private var defaultEmptyField:SortField;
       
       private var _fields:Array;
       
@@ -134,7 +134,7 @@ package mx.collections
       
       public function propertyAffectsSort(param1:String) : Boolean
       {
-         var _loc3_:mx.collections.SortField = null;
+         var _loc3_:SortField = null;
          if(usingCustomCompareFunction || !fields)
          {
             return true;
@@ -156,7 +156,7 @@ package mx.collections
       {
          var _loc5_:int = 0;
          var _loc6_:int = 0;
-         var _loc7_:mx.collections.SortField = null;
+         var _loc7_:SortField = null;
          var _loc4_:int = 0;
          if(!_fields)
          {
@@ -199,7 +199,7 @@ package mx.collections
          var fields:Array = param3;
          if(!defaultEmptyField)
          {
-            defaultEmptyField = new mx.collections.SortField();
+            defaultEmptyField = new SortField();
             try
             {
                defaultEmptyField.initCompare(a);
@@ -398,7 +398,7 @@ package mx.collections
       private function initSortFields(param1:Object, param2:Boolean = false) : Object
       {
          var _loc4_:int = 0;
-         var _loc5_:mx.collections.SortField = null;
+         var _loc5_:SortField = null;
          var _loc6_:int = 0;
          var _loc3_:Object = null;
          _loc4_ = 0;
@@ -432,7 +432,7 @@ package mx.collections
       
       public function set fields(param1:Array) : void
       {
-         var _loc2_:mx.collections.SortField = null;
+         var _loc2_:SortField = null;
          var _loc3_:int = 0;
          _fields = param1;
          fieldList = [];

@@ -1,8 +1,8 @@
 package tibia.chat
 {
-   import tibia.reporting.IReportable;
-   import shared.utility.i18n.i18nFormatTime;
    import shared.utility.StringHelper;
+   import shared.utility.i18n.i18nFormatTime;
+   import tibia.reporting.IReportable;
    
    public class ChannelMessage implements IReportable
    {

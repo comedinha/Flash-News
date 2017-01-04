@@ -1,10 +1,10 @@
 package tibia.sessiondump.hints.gameaction
 {
+   import shared.utility.Vector3D;
+   import tibia.appearances.ObjectInstance;
    import tibia.input.gameaction.MoveActionImpl;
    import tibia.sessiondump.controller.SessiondumpHintActionsController;
    import tibia.sessiondump.hints.condition.HintConditionMove;
-   import shared.utility.Vector3D;
-   import tibia.appearances.ObjectInstance;
    
    public class SessiondumpHintsMoveActionImpl extends MoveActionImpl
    {

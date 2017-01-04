@@ -1,9 +1,9 @@
 package tibia.ingameshop.shopWidgetClasses
 {
    import mx.containers.HBox;
-   import tibia.ingameshop.IngameShopOffer;
-   import mx.controls.Text;
    import mx.containers.VBox;
+   import mx.controls.Text;
+   import tibia.ingameshop.IngameShopOffer;
    
    public class OfferDisplayBlock extends HBox
    {
@@ -11,7 +11,7 @@ package tibia.ingameshop.shopWidgetClasses
       private static const BUNDLE:String = "IngameShopWidget";
        
       
-      private var m_UIPrice:tibia.ingameshop.shopWidgetClasses.CoinWidget;
+      private var m_UIPrice:CoinWidget;
       
       private var m_Offer:IngameShopOffer;
       
@@ -19,7 +19,7 @@ package tibia.ingameshop.shopWidgetClasses
       
       private var m_UITitle:Text;
       
-      private var m_UIIcon:tibia.ingameshop.shopWidgetClasses.SliderImage;
+      private var m_UIIcon:SliderImage;
       
       public function OfferDisplayBlock()
       {
@@ -56,7 +56,7 @@ package tibia.ingameshop.shopWidgetClasses
       override protected function createChildren() : void
       {
          super.createChildren();
-         this.m_UIIcon = new tibia.ingameshop.shopWidgetClasses.SliderImage(64);
+         this.m_UIIcon = new SliderImage(64);
          this.m_UIIcon.setStyle("paddingTop",2);
          this.m_UIIcon.setStyle("paddingBottom",12);
          addChild(this.m_UIIcon);
@@ -68,7 +68,7 @@ package tibia.ingameshop.shopWidgetClasses
          this.m_UITitle = new Text();
          this.m_UITitle.styleName = "ingameShopBold";
          _loc1_.addChild(this.m_UITitle);
-         this.m_UIPrice = new tibia.ingameshop.shopWidgetClasses.CoinWidget();
+         this.m_UIPrice = new CoinWidget();
          this.m_UIPrice.percentWidth = 100;
          _loc1_.addChild(this.m_UIPrice);
       }

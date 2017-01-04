@@ -1,15 +1,15 @@
 package mx.skins.halo
 {
-   import mx.skins.Border;
-   import mx.core.mx_internal;
-   import flash.utils.getQualifiedClassName;
-   import flash.utils.describeType;
-   import mx.utils.ColorUtil;
-   import flash.filters.BlurFilter;
-   import mx.styles.IStyleClient;
    import flash.display.DisplayObject;
-   import mx.core.ApplicationGlobals;
    import flash.display.GradientType;
+   import flash.filters.BlurFilter;
+   import flash.utils.describeType;
+   import flash.utils.getQualifiedClassName;
+   import mx.core.ApplicationGlobals;
+   import mx.core.mx_internal;
+   import mx.skins.Border;
+   import mx.styles.IStyleClient;
+   import mx.utils.ColorUtil;
    
    use namespace mx_internal;
    

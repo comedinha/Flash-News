@@ -1,11 +1,11 @@
 package tibia.creatures.statusWidgetClasses
 {
+   import flash.display.DisplayObject;
+   import mx.core.EdgeMetrics;
    import mx.core.UIComponent;
+   import mx.events.PropertyChangeEvent;
    import shared.utility.cacheStyleInstance;
    import tibia.creatures.Player;
-   import mx.events.PropertyChangeEvent;
-   import mx.core.EdgeMetrics;
-   import flash.display.DisplayObject;
    
    public class StateRenderer extends UIComponent
    {
@@ -660,9 +660,9 @@ package tibia.creatures.statusWidgetClasses
    }
 }
 
-import shared.controls.ShapeWrapper;
 import flash.display.DisplayObject;
 import flash.geom.Matrix;
+import shared.controls.ShapeWrapper;
 
 class RotatingShapeWrapper extends ShapeWrapper
 {

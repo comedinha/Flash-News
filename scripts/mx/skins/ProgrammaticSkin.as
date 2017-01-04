@@ -1,16 +1,16 @@
 package mx.skins
 {
+   import flash.display.Graphics;
+   import flash.geom.Matrix;
    import mx.core.FlexShape;
    import mx.core.IFlexDisplayObject;
    import mx.core.IInvalidating;
+   import mx.core.IProgrammaticSkin;
+   import mx.core.UIComponentGlobals;
+   import mx.core.mx_internal;
    import mx.managers.ILayoutManagerClient;
    import mx.styles.ISimpleStyleClient;
-   import mx.core.IProgrammaticSkin;
-   import mx.core.mx_internal;
-   import flash.geom.Matrix;
-   import mx.core.UIComponentGlobals;
    import mx.styles.IStyleClient;
-   import flash.display.Graphics;
    import mx.utils.GraphicsUtil;
    
    use namespace mx_internal;

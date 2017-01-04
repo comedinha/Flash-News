@@ -1,14 +1,14 @@
 package tibia.input.gameaction
 {
-   import tibia.input.IActionImpl;
-   import mx.resources.IResourceManager;
-   import tibia.input.widgetClasses.AskPlayerNameWidget;
-   import mx.resources.ResourceManager;
    import mx.events.CloseEvent;
-   import tibia.game.PopUpBase;
+   import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
    import tibia.chat.Channel;
    import tibia.chat.ChatStorage;
    import tibia.chat.ChatWidget;
+   import tibia.game.PopUpBase;
+   import tibia.input.IActionImpl;
+   import tibia.input.widgetClasses.AskPlayerNameWidget;
    import tibia.network.Communication;
    
    public class PrivateChatActionImpl implements IActionImpl

@@ -1,10 +1,10 @@
 package shared.controls
 {
-   import mx.controls.Button;
-   import flash.events.MouseEvent;
    import flash.events.Event;
-   import flash.utils.getTimer;
    import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
+   import flash.utils.getTimer;
+   import mx.controls.Button;
    
    public class CustomButton extends Button
    {

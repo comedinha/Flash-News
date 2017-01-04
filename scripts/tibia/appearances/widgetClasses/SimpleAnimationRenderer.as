@@ -1,14 +1,14 @@
 package tibia.appearances.widgetClasses
 {
+   import flash.display.BitmapData;
+   import flash.display.DisplayObject;
+   import flash.events.TimerEvent;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import flash.utils.Timer;
    import mx.core.FlexSprite;
    import mx.core.IFlexDisplayObject;
-   import flash.geom.Rectangle;
-   import flash.geom.Point;
-   import flash.display.DisplayObject;
    import tibia.appearances.AppearanceAnimator;
-   import flash.events.TimerEvent;
-   import flash.display.BitmapData;
-   import flash.utils.Timer;
    
    public class SimpleAnimationRenderer extends FlexSprite implements IFlexDisplayObject
    {

@@ -1,9 +1,9 @@
 package
 {
    import mx.core.IFlexModuleFactory;
+   import mx.skins.halo.BusyCursor;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
-   import mx.skins.halo.BusyCursor;
    
    public class _CursorManagerStyle
    {

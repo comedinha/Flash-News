@@ -19,6 +19,8 @@ package tibia.network
       
       public static const DEATH_BLESSED:int = 2;
       
+      public static const LOGINCHALLENGE:String = "LOGINCHALLENGE";
+      
       public static const DEATH_NOPENALTY:int = 3;
       
       public static const DEATH_UNFAIR:int = 1;

@@ -5,12 +5,12 @@ package mx.core
    
    use namespace mx_internal;
    
-   public class EmbeddedFontRegistry implements mx.core.IEmbeddedFontRegistry
+   public class EmbeddedFontRegistry implements IEmbeddedFontRegistry
    {
       
       private static var fonts:Object = {};
       
-      private static var instance:mx.core.IEmbeddedFontRegistry;
+      private static var instance:IEmbeddedFontRegistry;
       
       mx_internal static const VERSION:String = "3.6.0.21751";
        
@@ -27,7 +27,7 @@ package mx.core
          var _loc6_:* = null;
          var _loc7_:Boolean = false;
          var _loc8_:Boolean = false;
-         var _loc3_:mx.core.IEmbeddedFontRegistry = IEmbeddedFontRegistry(Singleton.getInstance("mx.core::IEmbeddedFontRegistry"));
+         var _loc3_:IEmbeddedFontRegistry = IEmbeddedFontRegistry(Singleton.getInstance("mx.core::IEmbeddedFontRegistry"));
          for(_loc4_ in param1)
          {
             _loc5_ = param1[_loc4_];
@@ -61,7 +61,7 @@ package mx.core
          }
       }
       
-      public static function getInstance() : mx.core.IEmbeddedFontRegistry
+      public static function getInstance() : IEmbeddedFontRegistry
       {
          if(!instance)
          {

@@ -1,10 +1,10 @@
 package tibia.input.gameaction
 {
-   import tibia.input.IActionImpl;
-   import tibia.chat.ChatWidget;
    import tibia.chat.ChatStorage;
-   import tibia.network.Communication;
+   import tibia.chat.ChatWidget;
    import tibia.chat.ns_chat_internal;
+   import tibia.input.IActionImpl;
+   import tibia.network.Communication;
    
    public class TalkActionImpl implements IActionImpl
    {

@@ -1,8 +1,8 @@
 package mx.binding
 {
-   import mx.core.mx_internal;
    import flash.utils.Dictionary;
    import mx.collections.errors.ItemPendingError;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    
@@ -28,7 +28,7 @@ package mx.binding
       
       mx_internal var isHandlingEvent:Boolean;
       
-      public var twoWayCounterpart:mx.binding.Binding;
+      public var twoWayCounterpart:Binding;
       
       private var wrappedFunctionSuccessful:Boolean;
       

@@ -1,15 +1,15 @@
 package tibia.input
 {
-   import flash.events.IEventDispatcher;
-   import tibia.input.mapping.Mapping;
-   import shared.utility.StringHelper;
-   import mx.resources.ResourceManager;
-   import tibia.input.mapping.Binding;
-   import tibia.input.staticaction.StaticActionList;
-   import flash.ui.Keyboard;
    import flash.events.Event;
-   import mx.events.PropertyChangeEvent;
    import flash.events.EventDispatcher;
+   import flash.events.IEventDispatcher;
+   import flash.ui.Keyboard;
+   import mx.events.PropertyChangeEvent;
+   import mx.resources.ResourceManager;
+   import shared.utility.StringHelper;
+   import tibia.input.mapping.Binding;
+   import tibia.input.mapping.Mapping;
+   import tibia.input.staticaction.StaticActionList;
    
    public class MappingSet implements IEventDispatcher
    {

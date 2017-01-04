@@ -1,18 +1,18 @@
 package tibia.magic.spellListWidgetClasses
 {
-   import mx.containers.HBox;
-   import tibia.creatures.Player;
-   import mx.events.PropertyChangeEvent;
-   import mx.core.EventPriority;
-   import tibia.magic.Spell;
-   import mx.controls.listClasses.ListBase;
    import flash.display.DisplayObjectContainer;
-   import mx.events.ListEvent;
    import flash.events.Event;
-   import mx.core.DragSource;
    import flash.events.MouseEvent;
+   import mx.containers.HBox;
+   import mx.controls.listClasses.ListBase;
+   import mx.core.DragSource;
+   import mx.core.EventPriority;
+   import mx.events.ListEvent;
+   import mx.events.PropertyChangeEvent;
    import mx.events.SandboxMouseEvent;
    import mx.managers.DragManager;
+   import tibia.creatures.Player;
+   import tibia.magic.Spell;
    
    public class SpellTileRenderer extends HBox
    {
@@ -272,7 +272,7 @@ package tibia.magic.spellListWidgetClasses
       
       private var m_UncommittedAvailable:Boolean = false;
       
-      private var m_UISpellIcon:tibia.magic.spellListWidgetClasses.SpellIconRenderer = null;
+      private var m_UISpellIcon:SpellIconRenderer = null;
       
       public function SpellTileRenderer()
       {
@@ -397,7 +397,7 @@ package tibia.magic.spellListWidgetClasses
          if(!this.m_UIConstructed)
          {
             super.createChildren();
-            this.m_UISpellIcon = new tibia.magic.spellListWidgetClasses.SpellIconRenderer();
+            this.m_UISpellIcon = new SpellIconRenderer();
             this.m_UISpellIcon.styleName = "spellListWidgetSpellIconRenderer";
             addChild(this.m_UISpellIcon);
             this.m_UIConstructed = true;
@@ -423,7 +423,7 @@ package tibia.magic.spellListWidgetClasses
       private function onDragControl(param1:Event) : void
       {
          var _loc2_:DragSource = null;
-         var _loc3_:tibia.magic.spellListWidgetClasses.SpellIconRenderer = null;
+         var _loc3_:SpellIconRenderer = null;
          if(this.spell == null)
          {
             return;
@@ -439,7 +439,7 @@ package tibia.magic.spellListWidgetClasses
                _loc2_ = new DragSource();
                _loc2_.addData(DRAG_TYPE_SPELL,"dragType");
                _loc2_.addData(this.spell,"dragSpell");
-               _loc3_ = new tibia.magic.spellListWidgetClasses.SpellIconRenderer();
+               _loc3_ = new SpellIconRenderer();
                _loc3_.spell = this.spell;
                _loc3_.available = true;
                _loc3_.selected = false;

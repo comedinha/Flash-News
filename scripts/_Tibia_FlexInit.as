@@ -1,15 +1,15 @@
 package
 {
-   import mx.core.IFlexModuleFactory;
-   import mx.effects.EffectManager;
-   import mx.core.mx_internal;
    import flash.net.getClassByAlias;
    import flash.net.registerClassAlias;
    import mx.collections.ArrayCollection;
    import mx.collections.ArrayList;
+   import mx.core.IFlexModuleFactory;
+   import mx.core.mx_internal;
+   import mx.effects.EffectManager;
    import mx.graphics.ImageSnapshot;
-   import mx.utils.ObjectProxy;
    import mx.styles.StyleManager;
+   import mx.utils.ObjectProxy;
    
    public class _Tibia_FlexInit
    {

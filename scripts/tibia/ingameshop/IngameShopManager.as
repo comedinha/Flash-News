@@ -6,7 +6,7 @@ package tibia.ingameshop
    public final class IngameShopManager extends EventDispatcher
    {
       
-      private static var s_Instance:tibia.ingameshop.IngameShopManager = null;
+      private static var s_Instance:IngameShopManager = null;
       
       public static const STORE_EVENT_SELECT_OFFER:int = 0;
       
@@ -15,15 +15,15 @@ package tibia.ingameshop
       
       private var m_CreditPackageSize:Number = 25;
       
-      private var m_ImageManager:tibia.ingameshop.DynamicImageManager;
+      private var m_ImageManager:DynamicImageManager;
       
       private var m_CreditsAreFinal:Boolean = false;
       
       private var m_CurrentlyFeaturedServiceType:int = 0;
       
-      private var m_Categories:Vector.<tibia.ingameshop.IngameShopCategory>;
+      private var m_Categories:Vector.<IngameShopCategory>;
       
-      private var m_History:Vector.<tibia.ingameshop.IngameShopHistoryEntry>;
+      private var m_History:Vector.<IngameShopHistoryEntry>;
       
       private var m_CreditBalance:Number = NaN;
       
@@ -35,16 +35,16 @@ package tibia.ingameshop
       
       public function IngameShopManager()
       {
-         this.m_Categories = new Vector.<tibia.ingameshop.IngameShopCategory>();
-         this.m_History = new Vector.<tibia.ingameshop.IngameShopHistoryEntry>();
+         this.m_Categories = new Vector.<IngameShopCategory>();
+         this.m_History = new Vector.<IngameShopHistoryEntry>();
          super();
       }
       
-      public static function getInstance() : tibia.ingameshop.IngameShopManager
+      public static function getInstance() : IngameShopManager
       {
          if(s_Instance == null)
          {
-            s_Instance = new tibia.ingameshop.IngameShopManager();
+            s_Instance = new IngameShopManager();
          }
          return s_Instance;
       }
@@ -58,11 +58,11 @@ package tibia.ingameshop
          }
       }
       
-      private function recursiveSearchOffer(param1:int, param2:Vector.<tibia.ingameshop.IngameShopCategory>) : IngameShopOffer
+      private function recursiveSearchOffer(param1:int, param2:Vector.<IngameShopCategory>) : IngameShopOffer
       {
          var OfferList:Vector.<IngameShopOffer> = null;
          var a_OfferID:int = param1;
-         var a_Categories:Vector.<tibia.ingameshop.IngameShopCategory> = param2;
+         var a_Categories:Vector.<IngameShopCategory> = param2;
          OfferList = new Vector.<IngameShopOffer>();
          this.recursiveVisitCategory(a_Categories,function(param1:IngameShopCategory):void
          {
@@ -91,7 +91,7 @@ package tibia.ingameshop
       public function setupWithServerSettings(param1:String, param2:Number) : void
       {
          var _loc3_:String = param1.length > 0 && param1.charAt(param1.length - 1) != "/"?param1 + "/":param1;
-         this.m_ImageManager = new tibia.ingameshop.DynamicImageManager(_loc3_,"igs-",60 * 60);
+         this.m_ImageManager = new DynamicImageManager(_loc3_,"igs-",60 * 60);
          this.m_CreditPackageSize = param2;
       }
       
@@ -115,7 +115,7 @@ package tibia.ingameshop
       {
          if(this.getHistory().length > 0)
          {
-            this.setHistory(0,0,new Vector.<tibia.ingameshop.IngameShopHistoryEntry>());
+            this.setHistory(0,0,new Vector.<IngameShopHistoryEntry>());
          }
          var _loc2_:Communication = Tibia.s_GetCommunication();
          if(_loc2_ != null && _loc2_.isGameRunning)
@@ -124,7 +124,7 @@ package tibia.ingameshop
          }
       }
       
-      public function get imageManager() : tibia.ingameshop.DynamicImageManager
+      public function get imageManager() : DynamicImageManager
       {
          return this.m_ImageManager;
       }
@@ -138,9 +138,9 @@ package tibia.ingameshop
          }
       }
       
-      private function recursiveVisitCategory(param1:Vector.<tibia.ingameshop.IngameShopCategory>, param2:Function) : void
+      private function recursiveVisitCategory(param1:Vector.<IngameShopCategory>, param2:Function) : void
       {
-         var _loc3_:tibia.ingameshop.IngameShopCategory = null;
+         var _loc3_:IngameShopCategory = null;
          for each(_loc3_ in param1)
          {
             param2(_loc3_);
@@ -151,7 +151,7 @@ package tibia.ingameshop
          }
       }
       
-      public function setHistory(param1:int, param2:int, param3:Vector.<tibia.ingameshop.IngameShopHistoryEntry>) : void
+      public function setHistory(param1:int, param2:int, param3:Vector.<IngameShopHistoryEntry>) : void
       {
          this.m_History = param3;
          this.m_CurrentTransactionHistoryPage = param1;
@@ -160,12 +160,12 @@ package tibia.ingameshop
          dispatchEvent(_loc4_);
       }
       
-      public function getRootCategories() : Vector.<tibia.ingameshop.IngameShopCategory>
+      public function getRootCategories() : Vector.<IngameShopCategory>
       {
          return this.m_Categories;
       }
       
-      public function getHistory() : Vector.<tibia.ingameshop.IngameShopHistoryEntry>
+      public function getHistory() : Vector.<IngameShopHistoryEntry>
       {
          return this.m_History;
       }
@@ -207,10 +207,10 @@ package tibia.ingameshop
          return this.m_NumberOfTransactionHistoryPages;
       }
       
-      private function recursiveSearchCategory(param1:String, param2:Vector.<tibia.ingameshop.IngameShopCategory>) : tibia.ingameshop.IngameShopCategory
+      private function recursiveSearchCategory(param1:String, param2:Vector.<IngameShopCategory>) : IngameShopCategory
       {
-         var _loc3_:tibia.ingameshop.IngameShopCategory = null;
-         var _loc4_:tibia.ingameshop.IngameShopCategory = null;
+         var _loc3_:IngameShopCategory = null;
+         var _loc4_:IngameShopCategory = null;
          for each(_loc3_ in param2)
          {
             if(_loc3_.name == param1)
@@ -275,7 +275,7 @@ package tibia.ingameshop
          dispatchEvent(_loc2_);
       }
       
-      public function getCategory(param1:String) : tibia.ingameshop.IngameShopCategory
+      public function getCategory(param1:String) : IngameShopCategory
       {
          return this.recursiveSearchCategory(param1,this.m_Categories);
       }
@@ -295,10 +295,10 @@ package tibia.ingameshop
          return this.m_CurrentlyFeaturedServiceType;
       }
       
-      public function addCategory(param1:tibia.ingameshop.IngameShopCategory, param2:String) : void
+      public function addCategory(param1:IngameShopCategory, param2:String) : void
       {
-         var _loc4_:tibia.ingameshop.IngameShopCategory = null;
-         var _loc3_:tibia.ingameshop.IngameShopCategory = this.recursiveSearchCategory(param1.name,this.m_Categories);
+         var _loc4_:IngameShopCategory = null;
+         var _loc3_:IngameShopCategory = this.recursiveSearchCategory(param1.name,this.m_Categories);
          if(_loc3_ != null)
          {
             _loc3_.offers = param1.offers;

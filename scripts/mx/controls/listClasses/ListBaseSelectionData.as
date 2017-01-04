@@ -12,9 +12,9 @@ package mx.controls.listClasses
       
       public var data:Object;
       
-      mx_internal var prevSelectionData:mx.controls.listClasses.ListBaseSelectionData;
+      mx_internal var prevSelectionData:ListBaseSelectionData;
       
-      mx_internal var nextSelectionData:mx.controls.listClasses.ListBaseSelectionData;
+      mx_internal var nextSelectionData:ListBaseSelectionData;
       
       public var approximate:Boolean;
       

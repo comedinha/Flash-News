@@ -1,43 +1,43 @@
 package tibia.worldmap.widgetClasses
 {
-   import mx.core.UIComponent;
-   import flash.display.BitmapData;
-   import shared.utility.Colour;
-   import flash.events.MouseEvent;
-   import tibia.appearances.widgetClasses.MarksView;
-   import tibia.appearances.Marks;
    import flash.display.Bitmap;
-   import flash.geom.Rectangle;
+   import flash.display.BitmapData;
+   import flash.display.BlendMode;
+   import flash.display.GraphicsPathCommand;
+   import flash.display3D.Context3DRenderMode;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
    import flash.geom.Matrix;
-   import tibia.creatures.Player;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import flash.utils.ByteArray;
+   import flash.utils.Dictionary;
+   import flash.utils.getTimer;
+   import mx.core.UIComponent;
+   import mx.events.PropertyChangeEvent;
+   import shared.stage3D.Camera2D;
+   import shared.stage3D.Tibia3D;
+   import shared.utility.Colour;
    import shared.utility.IPerformanceCounter;
-   import tibia.worldmap.Field;
-   import tibia.appearances.ObjectInstance;
+   import shared.utility.SlidingWindowPerformanceCounter;
+   import shared.utility.TextFieldCache;
+   import shared.utility.Vector3D;
    import tibia.appearances.AppearanceInstance;
    import tibia.appearances.AppearanceStorage;
-   import tibia.creatures.Creature;
-   import tibia.appearances.TextualEffectInstance;
-   import tibia.appearances.MissileInstance;
-   import tibia.appearances.FrameGroup;
-   import shared.utility.Vector3D;
    import tibia.appearances.AppearanceType;
-   import flash.geom.Point;
-   import flash.display.GraphicsPathCommand;
+   import tibia.appearances.FrameGroup;
+   import tibia.appearances.Marks;
+   import tibia.appearances.MissileInstance;
+   import tibia.appearances.ObjectInstance;
+   import tibia.appearances.TextualEffectInstance;
+   import tibia.appearances.widgetClasses.MarksView;
+   import tibia.creatures.Creature;
    import tibia.creatures.CreatureStorage;
+   import tibia.creatures.Player;
    import tibia.options.OptionsStorage;
-   import mx.events.PropertyChangeEvent;
-   import tibia.worldmap.WorldMapStorage;
-   import flash.utils.Dictionary;
-   import flash.events.Event;
-   import shared.stage3D.Tibia3D;
+   import tibia.worldmap.Field;
    import tibia.worldmap.OnscreenMessageBox;
-   import shared.utility.TextFieldCache;
-   import flash.display3D.Context3DRenderMode;
-   import shared.stage3D.Camera2D;
-   import flash.utils.getTimer;
-   import flash.utils.ByteArray;
-   import flash.display.BlendMode;
-   import shared.utility.SlidingWindowPerformanceCounter;
+   import tibia.worldmap.WorldMapStorage;
    
    public class RendererImpl extends UIComponent
    {
@@ -452,7 +452,7 @@ package tibia.worldmap.widgetClasses
       
       private var m_OptionsLightEnabled:Boolean = false;
       
-      private var m_ObjectCursor:tibia.worldmap.widgetClasses.ObjectCursor = null;
+      private var m_ObjectCursor:ObjectCursor = null;
       
       private var m_HighlightObject = null;
       
@@ -488,9 +488,9 @@ package tibia.worldmap.widgetClasses
       
       protected var m_DrawnTextualEffectsCount:int = 0;
       
-      protected var m_CreatureField:Vector.<Vector.<tibia.worldmap.widgetClasses.RenderAtom>> = null;
+      protected var m_CreatureField:Vector.<Vector.<RenderAtom>> = null;
       
-      protected var m_TiledLightmapRenderer:tibia.worldmap.widgetClasses.TiledLightmapRenderer = null;
+      protected var m_TiledLightmapRenderer:TiledLightmapRenderer = null;
       
       protected var m_HelperPoint:Point = null;
       
@@ -516,7 +516,7 @@ package tibia.worldmap.widgetClasses
       
       protected var m_PreviousHang:ObjectInstance = null;
       
-      protected var m_DrawnCreatures:Vector.<tibia.worldmap.widgetClasses.RenderAtom> = null;
+      protected var m_DrawnCreatures:Vector.<RenderAtom> = null;
       
       private var m_OptionsAmbientBrightness:Number = NaN;
       
@@ -526,7 +526,7 @@ package tibia.worldmap.widgetClasses
       
       protected var m_CreatureNameCache:TextFieldCache = null;
       
-      protected var m_DrawnTextualEffects:Vector.<tibia.worldmap.widgetClasses.RenderAtom> = null;
+      protected var m_DrawnTextualEffects:Vector.<RenderAtom> = null;
       
       protected var m_HelperRect2:Rectangle = null;
       
@@ -536,7 +536,7 @@ package tibia.worldmap.widgetClasses
       
       private var m_Options:OptionsStorage = null;
       
-      private var m_TileCursor:tibia.worldmap.widgetClasses.TileCursor = null;
+      private var m_TileCursor:TileCursor = null;
       
       protected var m_HelperRect:Rectangle = null;
       
@@ -567,39 +567,39 @@ package tibia.worldmap.widgetClasses
          this.m_ClipRect = new Rectangle(0,0,MAP_WIDTH * FIELD_SIZE,MAP_HEIGHT * FIELD_SIZE);
          this.m_Transform = new Matrix();
          var _loc3_:int = MAPSIZE_X * MAPSIZE_Y;
-         this.m_CreatureField = new Vector.<Vector.<tibia.worldmap.widgetClasses.RenderAtom>>(_loc3_,true);
+         this.m_CreatureField = new Vector.<Vector.<RenderAtom>>(_loc3_,true);
          this.m_CreatureCount = new Vector.<int>(_loc3_,true);
          _loc1_ = 0;
          while(_loc1_ < _loc3_)
          {
-            this.m_CreatureField[_loc1_] = new Vector.<tibia.worldmap.widgetClasses.RenderAtom>(MAPSIZE_W,true);
+            this.m_CreatureField[_loc1_] = new Vector.<RenderAtom>(MAPSIZE_W,true);
             _loc2_ = 0;
             while(_loc2_ < MAPSIZE_W)
             {
-               this.m_CreatureField[_loc1_][_loc2_] = new tibia.worldmap.widgetClasses.RenderAtom();
+               this.m_CreatureField[_loc1_][_loc2_] = new RenderAtom();
                _loc2_++;
             }
             this.m_CreatureCount[_loc1_] = 0;
             _loc1_++;
          }
-         this.m_DrawnCreatures = new Vector.<tibia.worldmap.widgetClasses.RenderAtom>(_loc3_ * MAPSIZE_W,true);
+         this.m_DrawnCreatures = new Vector.<RenderAtom>(_loc3_ * MAPSIZE_W,true);
          _loc1_ = 0;
          while(_loc1_ < _loc3_ * MAPSIZE_W)
          {
-            this.m_DrawnCreatures[_loc1_] = new tibia.worldmap.widgetClasses.RenderAtom();
+            this.m_DrawnCreatures[_loc1_] = new RenderAtom();
             _loc1_++;
          }
          this.m_DrawnCreaturesCount = 0;
          this.m_CreatureNameCache = new TextFieldCache(300,TextFieldCache.DEFAULT_HEIGHT,MAPSIZE_X * MAPSIZE_Y * 3,false);
-         this.m_DrawnTextualEffects = new Vector.<tibia.worldmap.widgetClasses.RenderAtom>(NUM_EFFECTS);
+         this.m_DrawnTextualEffects = new Vector.<RenderAtom>(NUM_EFFECTS);
          _loc1_ = 0;
          while(_loc1_ < this.m_DrawnTextualEffects.length)
          {
-            this.m_DrawnTextualEffects[_loc1_] = new tibia.worldmap.widgetClasses.RenderAtom();
+            this.m_DrawnTextualEffects[_loc1_] = new RenderAtom();
             _loc1_++;
          }
-         this.m_ObjectCursor = tibia.worldmap.widgetClasses.ObjectCursor.createFromColor(OBJECT_CURSOR_COLOR,HIGHLIGHT_MIN_OPACITY,HIGHLIGHT_MAX_OPACITY,8,3 * FIELD_SIZE,100);
-         this.m_TileCursor = new tibia.worldmap.widgetClasses.TileCursor();
+         this.m_ObjectCursor = ObjectCursor.createFromColor(OBJECT_CURSOR_COLOR,HIGHLIGHT_MIN_OPACITY,HIGHLIGHT_MAX_OPACITY,8,3 * FIELD_SIZE,100);
+         this.m_TileCursor = new TileCursor();
          this.m_TileCursor.bitmapData = TILE_CURSOR;
          this.m_TileCursor.frameDuration = 100;
          this.m_HelperCoordinate = new Vector3D();
@@ -716,8 +716,8 @@ package tibia.worldmap.widgetClasses
                this.m_HangPatternZ = param5;
             }
          }
-         var _loc22_:tibia.worldmap.widgetClasses.RenderAtom = null;
-         var _loc23_:Vector.<tibia.worldmap.widgetClasses.RenderAtom> = this.m_CreatureField[param7 * MAPSIZE_X + param6];
+         var _loc22_:RenderAtom = null;
+         var _loc23_:Vector.<RenderAtom> = this.m_CreatureField[param7 * MAPSIZE_X + param6];
          var _loc24_:int = this.m_CreatureCount[param7 * MAPSIZE_X + param6];
          var _loc25_:BitmapData = null;
          var _loc26_:Creature = null;
@@ -1717,10 +1717,10 @@ package tibia.worldmap.widgetClasses
          this.m_Tibia3D.camera = _loc2_;
          if(this.m_TiledLightmapRenderer == null)
          {
-            this.m_TiledLightmapRenderer = new tibia.worldmap.widgetClasses.TiledLightmapRenderer();
+            this.m_TiledLightmapRenderer = new TiledLightmapRenderer();
          }
          this.m_LightTranslate = new Matrix();
-         this.m_LightTranslate.scale(tibia.worldmap.widgetClasses.TiledLightmapRenderer.LIGHTMAP_SHRINK_FACTOR,tibia.worldmap.widgetClasses.TiledLightmapRenderer.LIGHTMAP_SHRINK_FACTOR);
+         this.m_LightTranslate.scale(TiledLightmapRenderer.LIGHTMAP_SHRINK_FACTOR,TiledLightmapRenderer.LIGHTMAP_SHRINK_FACTOR);
          this.m_LightTranslate.translate(-FIELD_SIZE / 2,-FIELD_SIZE / 2);
          this.m_LightClipRect = new Rectangle(0,0,(MAP_WIDTH + 2) * FIELD_SIZE,(MAP_HEIGHT + 2) * FIELD_SIZE);
       }
@@ -1993,9 +1993,9 @@ package tibia.worldmap.widgetClasses
          var _loc30_:int = 0;
          var _loc31_:int = 0;
          var _loc32_:int = 0;
-         var _loc33_:Vector.<tibia.worldmap.widgetClasses.RenderAtom> = null;
+         var _loc33_:Vector.<RenderAtom> = null;
          var _loc34_:int = 0;
-         var _loc35_:tibia.worldmap.widgetClasses.RenderAtom = null;
+         var _loc35_:RenderAtom = null;
          var _loc36_:ObjectInstance = null;
          this.m_StopwatchEnterFrame.stop();
          this.m_StopwatchEnterFrame.start();

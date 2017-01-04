@@ -1,22 +1,22 @@
 package tibia.chat.chatWidgetClasses
 {
-   import tibia.game.ContextMenuBase;
-   import tibia.chat.Channel;
+   import flash.system.System;
    import mx.core.IUIComponent;
-   import tibia.input.gameaction.PrivateChatActionImpl;
+   import tibia.chat.Channel;
+   import tibia.chat.ChannelMessage;
+   import tibia.chat.ChatStorage;
+   import tibia.chat.MessageMode;
+   import tibia.game.BugReportTypo;
+   import tibia.game.BugReportWidget;
+   import tibia.game.ContextMenuBase;
    import tibia.input.gameaction.BuddylistActionImpl;
    import tibia.input.gameaction.NameFilterActionImpl;
-   import flash.system.System;
-   import tibia.reporting.reportType.Type;
-   import tibia.reporting.ReportWidget;
-   import tibia.chat.ChatStorage;
-   import tibia.game.BugReportTypo;
+   import tibia.input.gameaction.PrivateChatActionImpl;
    import tibia.input.gameaction.SendBugReportActionImpl;
-   import tibia.game.BugReportWidget;
    import tibia.network.Communication;
+   import tibia.reporting.ReportWidget;
+   import tibia.reporting.reportType.Type;
    import tibia.worldmap.WorldMapStorage;
-   import tibia.chat.MessageMode;
-   import tibia.chat.ChannelMessage;
    
    public class ChannelContextMenu extends ContextMenuBase
    {
@@ -28,13 +28,13 @@ package tibia.chat.chatWidgetClasses
       
       protected var m_Message:ChannelMessage = null;
       
-      protected var m_View:tibia.chat.chatWidgetClasses.ChannelView = null;
+      protected var m_View:ChannelView = null;
       
       protected var m_ChatStorage:ChatStorage = null;
       
       protected var m_SpeakerName:String = null;
       
-      public function ChannelContextMenu(param1:ChatStorage, param2:Channel, param3:ChannelMessage, param4:String, param5:tibia.chat.chatWidgetClasses.ChannelView)
+      public function ChannelContextMenu(param1:ChatStorage, param2:Channel, param3:ChannelMessage, param4:String, param5:ChannelView)
       {
          super();
          if(param1 == null)

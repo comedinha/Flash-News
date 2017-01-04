@@ -1,113 +1,113 @@
 package
 {
-   import mx.core.Application;
-   import mx.binding.IBindingClient;
-   import tibia.game.IGameClient;
-   import tibia.appearances.AppearanceStorage;
-   import mx.binding.IWatcherSetupUtil;
-   import tibia.chat.ChatStorage;
-   import tibia.input.gameaction.GameActionFactory;
-   import tibia.minimap.MiniMapStorage;
-   import tibia.options.OptionsStorage;
-   import tibia.container.ContainerStorage;
-   import tibia.creatures.StatusWidget;
-   import tibia.premium.PremiumManager;
-   import tibia.help.UIEffectsManager;
-   import tibia.creatures.CreatureStorage;
-   import tibia.network.Communication;
-   import tibia.input.InputHandler;
-   import mx.core.mx_internal;
-   import loader.asset.IAssetProvider;
-   import tibia.magic.SpellStorage;
-   import tibia.chat.ChatWidget;
-   import tibia.worldmap.WorldMapStorage;
-   import tibia.network.IServerConnection;
-   import tibia.creatures.Player;
-   import mx.events.PropertyChangeEvent;
-   import tibia.actionbar.VActionBarWidget;
-   import mx.binding.BindingManager;
-   import tibia.options.OptionsAsset;
-   import mx.events.CloseEvent;
-   import tibia.game.PopUpBase;
-   import tibia.worldmap.WorldMapWidget;
-   import flash.events.Event;
-   import tibia.network.IConnectionData;
-   import tibia.sessiondump.Sessiondump;
-   import mx.containers.HBox;
-   import tibia.network.ConnectionEvent;
-   import tibia.game.MessageWidget;
-   import tibia.actionbar.HActionBarWidget;
-   import tibia.sessiondump.controller.SessiondumpControllerBase;
-   import tibia.game.AccountCharacter;
-   import tibia.network.Connection;
-   import tibia.sessiondump.SessiondumpConnectionData;
-   import tibia.sessiondump.controller.SessiondumpControllerHints;
-   import tibia.network.FailedConnectionRescheduler;
-   import tibia.game.TimeoutWaitWidget;
-   import tibia.sidebar.ToggleBar;
-   import mx.binding.Binding;
-   import mx.containers.BoxDirection;
-   import tibia.sidebar.SideBarSet;
-   import tibia.actionbar.ActionBarSet;
-   import flash.events.ErrorEvent;
-   import tibia.game.GameEvent;
-   import tibia.game.FocusNotifier;
-   import mx.styles.CSSStyleDeclaration;
-   import mx.styles.StyleManager;
-   import shared.skins.VectorDataGridHeaderSeparatorSkin;
-   import shared.skins.VectorDataGridHeaderBackgroundSkin;
-   import shared.skins.BitmapButtonSkin;
-   import shared.skins.StyleSizedBitmapButtonSkin;
-   import shared.skins.BitmapButtonIcon;
-   import shared.skins.BitmapBorderSkin;
-   import tibia.cursors.DragLinkCursor;
-   import tibia.cursors.DragNoneCursor;
-   import tibia.cursors.DragCopyCursor;
-   import tibia.cursors.DragMoveCursor;
-   import shared.skins.VectorBorderSkin;
-   import shared.skins.EmptySkin;
-   import tibia.cursors.ResizeVerticalCursor;
-   import tibia.cursors.ResizeHorizontalCursor;
-   import tibia.sidebar.sideBarWidgetClasses.WidgetViewSkin;
-   import shared.skins.VectorTabSkin;
-   import mx.events.ResizeEvent;
-   import tibia.controls.GridContainer;
-   import mx.events.FlexEvent;
    import build.ApperanceStorageFactory;
-   import flash.utils.*;
-   import flash.events.TimerEvent;
-   import mx.events.DividerEvent;
-   import tibia.sessiondump.hints.gameaction.SessiondumpHintsGameActionFactory;
-   import tibia.sidebar.SideBarWidget;
-   import mx.managers.ToolTipManager;
    import flash.display.StageAlign;
    import flash.display.StageScaleMode;
-   import flash.events.MouseEvent;
-   import flash.net.URLVariables;
-   import flash.net.URLRequest;
-   import shared.utility.URLHelper;
-   import flash.net.navigateToURL;
-   import tibia.game.LoginWaitWidget;
-   import tibia.game.ConnectionLostWidget;
-   import mx.containers.DividedBox;
-   import flash.events.IOErrorEvent;
-   import flash.events.SecurityErrorEvent;
    import flash.errors.IllegalOperationError;
-   import mx.core.IUIComponent;
-   import tibia.controls.GameWindowContainer;
-   import shared.controls.EmbeddedDialog;
-   import tibia.game.CharacterSelectionWidget;
-   import mx.managers.CursorManager;
-   import tibia.game.ContextMenuBase;
-   import tibia.game.PopUpQueue;
+   import flash.events.ErrorEvent;
+   import flash.events.Event;
+   import flash.events.IOErrorEvent;
+   import flash.events.MouseEvent;
+   import flash.events.SecurityErrorEvent;
+   import flash.events.TimerEvent;
+   import flash.net.URLRequest;
+   import flash.net.URLVariables;
+   import flash.net.navigateToURL;
+   import flash.utils.*;
+   import loader.asset.IAssetProvider;
+   import mx.binding.Binding;
+   import mx.binding.BindingManager;
+   import mx.binding.IBindingClient;
+   import mx.binding.IWatcherSetupUtil;
    import mx.collections.ArrayCollection;
+   import mx.containers.BoxDirection;
+   import mx.containers.DividedBox;
+   import mx.containers.HBox;
+   import mx.core.Application;
+   import mx.core.IUIComponent;
+   import mx.core.UIComponentDescriptor;
+   import mx.core.mx_internal;
+   import mx.events.CloseEvent;
+   import mx.events.DividerEvent;
+   import mx.events.FlexEvent;
+   import mx.events.PropertyChangeEvent;
+   import mx.events.ResizeEvent;
+   import mx.managers.CursorManager;
+   import mx.managers.ToolTipManager;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.StyleManager;
    import shared.controls.CustomDividedBox;
-   import tibia.sessiondump.controller.SessiondumpMouseShield;
-   import tibia.sessiondump.SessiondumpCreatureStorage;
+   import shared.controls.EmbeddedDialog;
+   import shared.skins.BitmapBorderSkin;
+   import shared.skins.BitmapButtonIcon;
+   import shared.skins.BitmapButtonSkin;
+   import shared.skins.EmptySkin;
+   import shared.skins.StyleSizedBitmapButtonSkin;
+   import shared.skins.VectorBorderSkin;
+   import shared.skins.VectorDataGridHeaderBackgroundSkin;
+   import shared.skins.VectorDataGridHeaderSeparatorSkin;
+   import shared.skins.VectorTabSkin;
+   import shared.utility.URLHelper;
+   import tibia.actionbar.ActionBarSet;
+   import tibia.actionbar.HActionBarWidget;
+   import tibia.actionbar.VActionBarWidget;
+   import tibia.appearances.AppearanceStorage;
+   import tibia.chat.ChatStorage;
+   import tibia.chat.ChatWidget;
+   import tibia.container.ContainerStorage;
+   import tibia.controls.GameWindowContainer;
+   import tibia.controls.GridContainer;
+   import tibia.creatures.CreatureStorage;
+   import tibia.creatures.Player;
+   import tibia.creatures.StatusWidget;
+   import tibia.cursors.DragCopyCursor;
+   import tibia.cursors.DragLinkCursor;
+   import tibia.cursors.DragMoveCursor;
+   import tibia.cursors.DragNoneCursor;
+   import tibia.cursors.ResizeHorizontalCursor;
+   import tibia.cursors.ResizeVerticalCursor;
+   import tibia.game.AccountCharacter;
+   import tibia.game.CharacterSelectionWidget;
+   import tibia.game.ConnectionLostWidget;
+   import tibia.game.ContextMenuBase;
    import tibia.game.DeathMessageWidget;
+   import tibia.game.FocusNotifier;
+   import tibia.game.GameEvent;
+   import tibia.game.IGameClient;
+   import tibia.game.LoginWaitWidget;
+   import tibia.game.MessageWidget;
+   import tibia.game.PopUpBase;
+   import tibia.game.PopUpQueue;
+   import tibia.game.TimeoutWaitWidget;
+   import tibia.help.UIEffectsManager;
    import tibia.ingameshop.IngameShopManager;
    import tibia.ingameshop.IngameShopProduct;
-   import mx.core.UIComponentDescriptor;
+   import tibia.input.InputHandler;
+   import tibia.input.gameaction.GameActionFactory;
+   import tibia.magic.SpellStorage;
+   import tibia.minimap.MiniMapStorage;
+   import tibia.network.Communication;
+   import tibia.network.Connection;
+   import tibia.network.ConnectionEvent;
+   import tibia.network.FailedConnectionRescheduler;
+   import tibia.network.IConnectionData;
+   import tibia.network.IServerConnection;
+   import tibia.options.OptionsAsset;
+   import tibia.options.OptionsStorage;
+   import tibia.premium.PremiumManager;
+   import tibia.sessiondump.Sessiondump;
+   import tibia.sessiondump.SessiondumpConnectionData;
+   import tibia.sessiondump.SessiondumpCreatureStorage;
+   import tibia.sessiondump.controller.SessiondumpControllerBase;
+   import tibia.sessiondump.controller.SessiondumpControllerHints;
+   import tibia.sessiondump.controller.SessiondumpMouseShield;
+   import tibia.sessiondump.hints.gameaction.SessiondumpHintsGameActionFactory;
+   import tibia.sidebar.SideBarSet;
+   import tibia.sidebar.SideBarWidget;
+   import tibia.sidebar.ToggleBar;
+   import tibia.sidebar.sideBarWidgetClasses.WidgetViewSkin;
+   import tibia.worldmap.WorldMapStorage;
+   import tibia.worldmap.WorldMapWidget;
    
    use namespace mx_internal;
    
@@ -122,7 +122,7 @@ package
       
       public static const BUGGY_FLASH_PLAYER_VERSION:String = "21,0,0,182";
       
-      public static const PROTOCOL_VERSION:int = 1100;
+      public static const PROTOCOL_VERSION:int = 1101;
       
       public static var s_FrameTibiaTimestamp:Number = 0;
       
@@ -144,7 +144,7 @@ package
       
       protected static const CHECKSUM_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
       
-      public static const CLIENT_VERSION:uint = 2388;
+      public static const CLIENT_VERSION:uint = 2399;
       
       public static const PREVIEW_STATE_PREVIEW_NO_ACTIVE_CHANGE:uint = 1;
       
@@ -441,6 +441,8 @@ package
       
       private var _embed_css_images_Icons_Conditions_Hungry_png_758019275:Class;
       
+      private var m_ConnectionEstablishedAndPacketReceived:Boolean = false;
+      
       private var _embed_css_images_Icons_WidgetMenu_Containers_idle_over_png_1806477361:Class;
       
       private var _embed_css_images_Widget_Footer_tileable_png_2102878075:Class;
@@ -641,8 +643,6 @@ package
       
       private var _embed_css_images_Icons_CombatControls_Unmounted_over_png_1144518310:Class;
       
-      private var _embed_css_images_custombutton_Button_Border_tileable_tc_pressed_png_491469499:Class;
-      
       private var _embed_css_images_custombutton_Button_Standard_tileable_bl_over_png_1316684489:Class;
       
       private var _embed_css_images_Button_ChatTabIgnore_pressed_png_922258679:Class;
@@ -652,6 +652,8 @@ package
       private var _embed_css_images_Scrollbar_tileable_png_1885091563:Class;
       
       private var _embed_css_images_Button_Combat_Stop_pressed_png_1195446471:Class;
+      
+      private var _embed_css_images_custombutton_Button_Border_tileable_tc_pressed_png_491469499:Class;
       
       private var _embed_css_images_Slot_InventoryLegs_protected_png_516995939:Class;
       
@@ -2120,14 +2122,6 @@ package
          _loc2_.show();
       }
       
-      public function saveLocalData() : void
-      {
-         if(!(this.m_Connection is Sessiondump))
-         {
-            this.m_MiniMapStorage.saveSectors(true);
-         }
-      }
-      
       private function onConnectionPending(param1:ConnectionEvent) : void
       {
          var _loc2_:int = 0;
@@ -2175,6 +2169,14 @@ package
          _loc1_.show();
       }
       
+      public function saveLocalData() : void
+      {
+         if(!(this.m_Connection is Sessiondump))
+         {
+            this.m_MiniMapStorage.saveSectors(true);
+         }
+      }
+      
       public function get isActive() : Boolean
       {
          return this.m_IsActive;
@@ -2216,6 +2218,7 @@ package
             }
             this.m_Connection = new Sessiondump(_loc3_);
          }
+         this.m_ConnectionEstablishedAndPacketReceived = false;
          this.m_Connection.addEventListener(ConnectionEvent.PENDING,this.onConnectionPending);
          this.m_Connection.addEventListener(ConnectionEvent.GAME,this.onConnectionGame);
          this.m_Connection.addEventListener(ConnectionEvent.CONNECTING,this.onConnectionConnecting);
@@ -2224,6 +2227,7 @@ package
          this.m_Connection.addEventListener(ConnectionEvent.DEAD,this.onConnectionDeath);
          this.m_Connection.addEventListener(ConnectionEvent.DISCONNECTED,this.onConnectionDisconnected);
          this.m_Connection.addEventListener(ConnectionEvent.ERROR,this.onConnectionError);
+         this.m_Connection.addEventListener(ConnectionEvent.LOGINCHALLENGE,this.onConnectionLoginChallenge);
          this.m_Connection.addEventListener(ConnectionEvent.LOGINADVICE,this.onConnectionLoginAdvice);
          this.m_Connection.addEventListener(ConnectionEvent.LOGINERROR,this.onConnectionLoginError);
          this.m_Connection.addEventListener(ConnectionEvent.LOGINWAIT,this.onConnectionLoginWait);
@@ -11456,6 +11460,11 @@ package
       private function onConnectionDisconnected(param1:ConnectionEvent) : void
       {
          visible = false;
+         if(!this.m_ConnectionEstablishedAndPacketReceived && this.m_FailedConnectionRescheduler.shouldAttemptReconnect())
+         {
+            this.onConnectionLoginWait(this.m_FailedConnectionRescheduler.buildEventForReconnectionAndIncreaseRetries());
+            return;
+         }
          this.saveLocalData();
          this.saveOptions();
          if(this.m_TutorialMode)
@@ -11689,6 +11698,7 @@ package
       {
          if(param1.errorType == ERR_COULD_NOT_CONNECT && this.m_FailedConnectionRescheduler.shouldAttemptReconnect())
          {
+            this.m_ConnectionEstablishedAndPacketReceived = true;
             this.onConnectionLoginWait(this.m_FailedConnectionRescheduler.buildEventForReconnectionAndIncreaseRetries());
             return;
          }
@@ -11818,11 +11828,13 @@ package
             this.m_Connection.removeEventListener(ConnectionEvent.DEAD,this.onConnectionDeath);
             this.m_Connection.removeEventListener(ConnectionEvent.DISCONNECTED,this.onConnectionDisconnected);
             this.m_Connection.removeEventListener(ConnectionEvent.ERROR,this.onConnectionError);
+            this.m_Connection.removeEventListener(ConnectionEvent.LOGINCHALLENGE,this.onConnectionLoginChallenge);
             this.m_Connection.removeEventListener(ConnectionEvent.LOGINADVICE,this.onConnectionLoginAdvice);
             this.m_Connection.removeEventListener(ConnectionEvent.LOGINERROR,this.onConnectionLoginError);
             this.m_Connection.removeEventListener(ConnectionEvent.LOGINWAIT,this.onConnectionLoginWait);
             this.m_Connection.disconnect(false);
             this.m_Connection = null;
+            this.m_ConnectionEstablishedAndPacketReceived = false;
          }
       }
       
@@ -11919,6 +11931,11 @@ package
       public function ___Tibia_Application1_preinitialize(param1:FlexEvent) : void
       {
          this.onPreinitialise(param1);
+      }
+      
+      private function onConnectionLoginChallenge(param1:ConnectionEvent) : void
+      {
+         this.m_ConnectionEstablishedAndPacketReceived = true;
       }
       
       public function set m_UIOuterRootContainer(param1:DividedBox) : void

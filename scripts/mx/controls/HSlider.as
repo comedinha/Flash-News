@@ -1,8 +1,8 @@
 package mx.controls
 {
    import mx.controls.sliderClasses.Slider;
-   import mx.core.mx_internal;
    import mx.controls.sliderClasses.SliderDirection;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

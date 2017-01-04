@@ -1,8 +1,8 @@
 package tibia.input.gameaction
 {
+   import shared.utility.Vector3D;
    import tibia.input.IActionImpl;
    import tibia.network.Communication;
-   import shared.utility.Vector3D;
    
    public class BrowseFieldActionImpl implements IActionImpl
    {

@@ -1,16 +1,16 @@
 package tibia.trade.npcTradeWidgetClasses
 {
-   import mx.controls.Label;
-   import mx.events.CollectionEvent;
-   import tibia.trade.TradeObjectRef;
-   import tibia.appearances.widgetClasses.SkinnedAppearanceRenderer;
-   import mx.events.CollectionEventKind;
-   import mx.containers.Tile;
-   import mx.core.ScrollPolicy;
-   import mx.styles.StyleProxy;
-   import mx.containers.VBox;
-   import mx.core.IUIComponent;
    import mx.collections.IList;
+   import mx.containers.Tile;
+   import mx.containers.VBox;
+   import mx.controls.Label;
+   import mx.core.IUIComponent;
+   import mx.core.ScrollPolicy;
+   import mx.events.CollectionEvent;
+   import mx.events.CollectionEventKind;
+   import mx.styles.StyleProxy;
+   import tibia.appearances.widgetClasses.SkinnedAppearanceRenderer;
+   import tibia.trade.TradeObjectRef;
    
    public class GridObjectRefSelector extends ObjectRefSelectorBase
    {

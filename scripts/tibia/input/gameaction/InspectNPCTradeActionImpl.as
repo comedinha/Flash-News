@@ -1,8 +1,8 @@
 package tibia.input.gameaction
 {
+   import tibia.appearances.AppearanceTypeRef;
    import tibia.input.IActionImpl;
    import tibia.network.Communication;
-   import tibia.appearances.AppearanceTypeRef;
    
    public class InspectNPCTradeActionImpl implements IActionImpl
    {

@@ -1,32 +1,32 @@
 package shared.controls
 {
-   import mx.core.ScrollControlBase;
+   import flash.display.DisplayObject;
+   import flash.display.Graphics;
+   import flash.display.Stage;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.events.TimerEvent;
    import flash.geom.Point;
+   import flash.utils.Timer;
+   import mx.collections.IList;
+   import mx.controls.listClasses.IListItemRenderer;
+   import mx.core.ClassFactory;
+   import mx.core.EdgeMetrics;
+   import mx.core.FlexSprite;
+   import mx.core.ScrollControlBase;
+   import mx.core.ScrollPolicy;
+   import mx.core.UIComponent;
+   import mx.events.CollectionEvent;
+   import mx.events.CollectionEventKind;
+   import mx.events.ListEvent;
+   import mx.events.ListEventReason;
+   import mx.events.SandboxMouseEvent;
+   import mx.events.ScrollEvent;
+   import mx.events.ScrollEventDirection;
+   import mx.managers.LayoutManager;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
    import shared.utility.ExtentCache;
-   import flash.events.MouseEvent;
-   import mx.controls.listClasses.IListItemRenderer;
-   import flash.display.DisplayObject;
-   import mx.core.EdgeMetrics;
-   import mx.events.ScrollEvent;
-   import mx.managers.LayoutManager;
-   import mx.events.ScrollEventDirection;
-   import flash.display.Graphics;
-   import flash.utils.Timer;
-   import flash.events.TimerEvent;
-   import mx.events.SandboxMouseEvent;
-   import flash.display.Stage;
-   import mx.core.UIComponent;
-   import mx.events.ListEvent;
-   import mx.events.ListEventReason;
-   import mx.events.CollectionEvent;
-   import mx.events.CollectionEventKind;
-   import mx.collections.IList;
-   import mx.core.ClassFactory;
-   import flash.events.Event;
-   import mx.core.FlexSprite;
-   import mx.core.ScrollPolicy;
    
    public class SmoothList extends ScrollControlBase
    {

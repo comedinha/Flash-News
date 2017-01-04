@@ -1,32 +1,32 @@
 package tibia.options.configurationWidgetClasses
 {
-   import mx.containers.VBox;
-   import mx.controls.CheckBox;
+   import flash.events.Event;
    import flash.events.MouseEvent;
-   import shared.controls.EmbeddedDialog;
-   import tibia.options.ConfigurationWidget;
-   import mx.events.CloseEvent;
-   import tibia.game.PopUpBase;
-   import mx.containers.HBox;
+   import mx.collections.ArrayCollection;
+   import mx.collections.IList;
    import mx.containers.Form;
    import mx.containers.FormItem;
+   import mx.containers.HBox;
+   import mx.containers.VBox;
+   import mx.controls.Button;
+   import mx.controls.CheckBox;
+   import mx.controls.DataGrid;
    import mx.controls.dataGridClasses.DataGridColumn;
-   import flash.events.Event;
+   import mx.core.ClassFactory;
+   import mx.core.ScrollPolicy;
+   import mx.events.CloseEvent;
+   import mx.events.DataGridEvent;
+   import mx.events.DataGridEventReason;
+   import mx.events.FlexEvent;
+   import mx.events.ListEvent;
    import shared.controls.CustomButton;
    import shared.controls.CustomDataGrid;
-   import mx.core.ClassFactory;
-   import mx.events.DataGridEvent;
-   import mx.events.ListEvent;
-   import tibia.options.OptionsStorage;
-   import mx.collections.IList;
+   import shared.controls.EmbeddedDialog;
    import tibia.chat.MessageFilterSet;
    import tibia.chat.MessageMode;
-   import mx.collections.ArrayCollection;
-   import mx.controls.DataGrid;
-   import mx.controls.Button;
-   import mx.events.FlexEvent;
-   import mx.events.DataGridEventReason;
-   import mx.core.ScrollPolicy;
+   import tibia.game.PopUpBase;
+   import tibia.options.ConfigurationWidget;
+   import tibia.options.OptionsStorage;
    
    public class MessageOptions extends VBox implements IOptionsEditor
    {

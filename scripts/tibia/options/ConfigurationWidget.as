@@ -1,21 +1,21 @@
 package tibia.options
 {
-   import tibia.game.PopUpBase;
-   import tibia.§options:ns_options_internal§.BUNDLE;
-   import mx.containers.TabNavigator;
-   import flash.display.DisplayObjectContainer;
-   import shared.controls.SimpleTabNavigator;
-   import mx.core.ContainerCreationPolicy;
-   import tibia.options.configurationWidgetClasses.OptionsEditorEvent;
    import flash.display.DisplayObject;
-   import tibia.options.configurationWidgetClasses.IOptionsEditor;
+   import flash.display.DisplayObjectContainer;
+   import mx.containers.TabNavigator;
+   import mx.core.ContainerCreationPolicy;
+   import shared.controls.SimpleTabNavigator;
+   import tibia.game.PopUpBase;
    import tibia.options.configurationWidgetClasses.GeneralOptions;
-   import tibia.options.configurationWidgetClasses.RendererOptions;
-   import tibia.options.configurationWidgetClasses.StatusOptions;
+   import tibia.options.configurationWidgetClasses.HotkeyOptions;
+   import tibia.options.configurationWidgetClasses.IOptionsEditor;
    import tibia.options.configurationWidgetClasses.MessageOptions;
    import tibia.options.configurationWidgetClasses.MouseControlOptions;
-   import tibia.options.configurationWidgetClasses.HotkeyOptions;
    import tibia.options.configurationWidgetClasses.NameFilterOptions;
+   import tibia.options.configurationWidgetClasses.OptionsEditorEvent;
+   import tibia.options.configurationWidgetClasses.RendererOptions;
+   import tibia.options.configurationWidgetClasses.StatusOptions;
+   import tibia.§options:ns_options_internal§.BUNDLE;
    
    public class ConfigurationWidget extends PopUpBase
    {
@@ -49,7 +49,7 @@ package tibia.options
       
       protected var m_EventHandlerActive:Boolean = false;
       
-      protected var m_Options:tibia.options.OptionsStorage = null;
+      protected var m_Options:OptionsStorage = null;
       
       private var m_UIConstructed:Boolean = false;
       
@@ -141,7 +141,7 @@ package tibia.options
          }
       }
       
-      public function get options() : tibia.options.OptionsStorage
+      public function get options() : OptionsStorage
       {
          return this.m_Options;
       }
@@ -187,7 +187,7 @@ package tibia.options
          return this.m_SelectedIndex;
       }
       
-      public function set options(param1:tibia.options.OptionsStorage) : void
+      public function set options(param1:OptionsStorage) : void
       {
          this.m_Options = param1;
          this.m_UncommittedOptions = true;

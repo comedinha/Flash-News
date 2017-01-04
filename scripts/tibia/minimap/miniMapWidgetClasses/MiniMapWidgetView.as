@@ -1,29 +1,29 @@
 package tibia.minimap.miniMapWidgetClasses
 {
-   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
+   import flash.events.MouseEvent;
    import flash.geom.Point;
    import mx.controls.Button;
-   import flash.events.MouseEvent;
-   import tibia.minimap.MiniMapWidget;
-   import tibia.§sidebar:ns_sidebar_internal§.widgetInstance;
-   import shared.controls.CustomButton;
-   import tibia.minimap.MiniMapStorage;
-   import tibia.game.ContextMenuBase;
-   import tibia.game.PopUpBase;
-   import tibia.input.ModifierKeyEvent;
-   import tibia.cursors.CursorHelper;
    import mx.core.EdgeMetrics;
-   import tibia.creatures.Player;
-   import tibia.input.gameaction.AutowalkActionImpl;
-   import tibia.options.OptionsStorage;
-   import tibia.input.InputHandler;
-   import shared.utility.Vector3D;
-   import tibia.input.mapping.MouseBinding;
-   import tibia.input.MouseClickBothEvent;
-   import tibia.input.MouseActionHelper;
+   import mx.core.ScrollPolicy;
    import mx.core.UIComponent;
    import mx.managers.CursorManagerPriority;
-   import mx.core.ScrollPolicy;
+   import shared.controls.CustomButton;
+   import shared.utility.Vector3D;
+   import tibia.creatures.Player;
+   import tibia.cursors.CursorHelper;
+   import tibia.game.ContextMenuBase;
+   import tibia.game.PopUpBase;
+   import tibia.input.InputHandler;
+   import tibia.input.ModifierKeyEvent;
+   import tibia.input.MouseActionHelper;
+   import tibia.input.MouseClickBothEvent;
+   import tibia.input.gameaction.AutowalkActionImpl;
+   import tibia.input.mapping.MouseBinding;
+   import tibia.minimap.MiniMapStorage;
+   import tibia.minimap.MiniMapWidget;
+   import tibia.options.OptionsStorage;
+   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
+   import tibia.§sidebar:ns_sidebar_internal§.widgetInstance;
    
    public class MiniMapWidgetView extends WidgetView
    {
@@ -163,7 +163,7 @@ package tibia.minimap.miniMapWidgetClasses
       
       protected var m_MiniMapStorage:MiniMapStorage = null;
       
-      protected var m_UIView:tibia.minimap.miniMapWidgetClasses.MiniMapRenderer = null;
+      protected var m_UIView:MiniMapRenderer = null;
       
       protected var m_UIButtonCenter:Button = null;
       
@@ -235,7 +235,7 @@ package tibia.minimap.miniMapWidgetClasses
          if(!this.m_UIConstructed)
          {
             super.createChildren();
-            this.m_UIView = new tibia.minimap.miniMapWidgetClasses.MiniMapRenderer();
+            this.m_UIView = new MiniMapRenderer();
             this.m_UIView.addEventListener(MouseEvent.CLICK,this.onViewClick);
             this.m_UIView.addEventListener(MouseEvent.RIGHT_CLICK,this.onViewClick);
             this.m_UIView.addEventListener(MouseEvent.MOUSE_WHEEL,this.onMouseWheel);

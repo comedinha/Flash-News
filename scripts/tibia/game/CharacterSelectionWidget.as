@@ -1,25 +1,25 @@
 package tibia.game
 {
-   import mx.collections.Sort;
-   import mx.collections.ListCollectionView;
-   import mx.collections.ICollectionView;
-   import flash.events.TimerEvent;
-   import mx.events.CloseEvent;
-   import mx.collections.IList;
-   import flash.events.MouseEvent;
-   import mx.controls.listClasses.IListItemRenderer;
-   import mx.core.mx_internal;
-   import shared.controls.CustomList;
-   import mx.events.ListEvent;
-   import mx.controls.List;
    import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
+   import flash.events.TimerEvent;
    import flash.ui.Keyboard;
    import flash.utils.Timer;
+   import mx.collections.ICollectionView;
+   import mx.collections.IList;
+   import mx.collections.ListCollectionView;
+   import mx.collections.Sort;
+   import mx.controls.List;
+   import mx.controls.listClasses.IListItemRenderer;
+   import mx.core.mx_internal;
+   import mx.events.CloseEvent;
+   import mx.events.ListEvent;
+   import shared.controls.CustomList;
    
    public class CharacterSelectionWidget extends PopUpBase
    {
       
-      public static const CLIENT_VERSION:uint = 2388;
+      public static const CLIENT_VERSION:uint = 2399;
       
       public static const CLIENT_PREVIEW_STATE:uint = 0;
       

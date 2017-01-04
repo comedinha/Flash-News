@@ -1,18 +1,18 @@
 package tibia.sidebar.sideBarWidgetClasses
 {
-   import mx.core.Container;
-   import tibia.sidebar.Widget;
-   import tibia.sidebar.SideBarSet;
    import flash.events.MouseEvent;
    import mx.controls.Button;
-   import mx.events.PropertyChangeEvent;
-   import shared.controls.CustomButton;
-   import mx.core.EventPriority;
-   import mx.core.mx_internal;
-   import tibia.sidebar.SideBar;
+   import mx.core.Container;
    import mx.core.EdgeMetrics;
+   import mx.core.EventPriority;
    import mx.core.IBorder;
    import mx.core.ScrollPolicy;
+   import mx.core.mx_internal;
+   import mx.events.PropertyChangeEvent;
+   import shared.controls.CustomButton;
+   import tibia.sidebar.SideBar;
+   import tibia.sidebar.SideBarSet;
+   import tibia.sidebar.Widget;
    
    public class SideBarHeader extends Container
    {

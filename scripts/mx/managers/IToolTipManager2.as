@@ -1,9 +1,9 @@
 package mx.managers
 {
    import flash.display.DisplayObject;
-   import mx.effects.IAbstractEffect;
    import mx.core.IToolTip;
    import mx.core.IUIComponent;
+   import mx.effects.IAbstractEffect;
    
    public interface IToolTipManager2
    {

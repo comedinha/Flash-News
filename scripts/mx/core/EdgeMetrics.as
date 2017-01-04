@@ -7,7 +7,7 @@ package mx.core
       
       mx_internal static const VERSION:String = "3.6.0.21751";
       
-      public static const EMPTY:mx.core.EdgeMetrics = new mx.core.EdgeMetrics(0,0,0,0);
+      public static const EMPTY:EdgeMetrics = new EdgeMetrics(0,0,0,0);
        
       
       public var top:Number;
@@ -27,9 +27,9 @@ package mx.core
          this.bottom = param4;
       }
       
-      public function clone() : mx.core.EdgeMetrics
+      public function clone() : EdgeMetrics
       {
-         return new mx.core.EdgeMetrics(left,top,right,bottom);
+         return new EdgeMetrics(left,top,right,bottom);
       }
    }
 }

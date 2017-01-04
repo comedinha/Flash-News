@@ -1,15 +1,15 @@
 package tibia.input.gameaction
 {
-   import tibia.input.IAction;
-   import tibia.appearances.AppearanceStorage;
-   import tibia.game.Delay;
-   import tibia.network.IServerConnection;
-   import tibia.container.ContainerStorage;
-   import tibia.magic.SpellStorage;
-   import tibia.appearances.AppearanceType;
-   import mx.resources.ResourceManager;
    import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
+   import tibia.appearances.AppearanceStorage;
+   import tibia.appearances.AppearanceType;
    import tibia.appearances.ObjectInstance;
+   import tibia.container.ContainerStorage;
+   import tibia.game.Delay;
+   import tibia.input.IAction;
+   import tibia.magic.SpellStorage;
+   import tibia.network.IServerConnection;
    
    public class UseAction implements IAction
    {

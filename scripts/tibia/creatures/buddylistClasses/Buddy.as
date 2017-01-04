@@ -1,10 +1,10 @@
 package tibia.creatures.buddylistClasses
 {
    import flash.events.EventDispatcher;
-   import tibia.reporting.IReportable;
    import mx.events.PropertyChangeEvent;
-   import tibia.reporting.reportType.Type;
    import shared.utility.StringHelper;
+   import tibia.reporting.IReportable;
+   import tibia.reporting.reportType.Type;
    
    public class Buddy extends EventDispatcher implements IReportable
    {

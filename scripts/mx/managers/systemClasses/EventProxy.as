@@ -1,11 +1,11 @@
 package mx.managers.systemClasses
 {
-   import flash.events.EventDispatcher;
    import flash.events.Event;
+   import flash.events.EventDispatcher;
    import flash.events.MouseEvent;
    import mx.events.SandboxMouseEvent;
-   import mx.utils.EventUtil;
    import mx.managers.ISystemManager;
+   import mx.utils.EventUtil;
    
    public class EventProxy extends EventDispatcher
    {

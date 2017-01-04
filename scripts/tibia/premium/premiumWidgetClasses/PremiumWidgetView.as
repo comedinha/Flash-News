@@ -1,19 +1,19 @@
 package tibia.premium.premiumWidgetClasses
 {
-   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
+   import flash.display.Bitmap;
    import flash.events.MouseEvent;
    import flash.events.TimerEvent;
-   import tibia.premium.PremiumEvent;
-   import tibia.§sidebar:ns_sidebar_internal§.widgetCollapsed;
    import mx.containers.Grid;
-   import tibia.premium.PremiumMessage;
-   import mx.containers.GridRow;
    import mx.containers.GridItem;
-   import mx.controls.Text;
-   import flash.display.Bitmap;
+   import mx.containers.GridRow;
    import mx.controls.Image;
-   import tibia.premium.PremiumWidget;
+   import mx.controls.Text;
    import mx.core.ScrollPolicy;
+   import tibia.premium.PremiumEvent;
+   import tibia.premium.PremiumMessage;
+   import tibia.premium.PremiumWidget;
+   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
+   import tibia.§sidebar:ns_sidebar_internal§.widgetCollapsed;
    
    public class PremiumWidgetView extends WidgetView
    {

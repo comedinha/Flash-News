@@ -1,16 +1,16 @@
 package tibia.creatures
 {
-   import shared.utility.Vector3D;
-   import tibia.§creatures:ns_creature_internal§.m_Position;
-   import tibia.network.Communication;
-   import tibia.worldmap.WorldMapStorage;
-   import tibia.chat.MessageMode;
    import mx.events.PropertyChangeEvent;
    import mx.events.PropertyChangeEventKind;
+   import shared.utility.Vector3D;
+   import tibia.appearances.ObjectInstance;
+   import tibia.chat.MessageMode;
+   import tibia.§creatures:ns_creature_internal§.m_Position;
    import tibia.magic.Rune;
    import tibia.magic.Spell;
    import tibia.minimap.MiniMapStorage;
-   import tibia.appearances.ObjectInstance;
+   import tibia.network.Communication;
+   import tibia.worldmap.WorldMapStorage;
    
    public class Player extends Creature
    {
@@ -68,7 +68,7 @@ package tibia.creatures
       
       private var m_BankGoldBalance:Number = NaN;
       
-      private var m_ExperienceGainInfo:tibia.creatures.ExperienceGainInfo;
+      private var m_ExperienceGainInfo:ExperienceGainInfo;
       
       private var m_InventoryGoldBalance:Number = NaN;
       
@@ -78,7 +78,7 @@ package tibia.creatures
       
       protected var m_AutowalkTargetDiagonal:Boolean = false;
       
-      protected var m_ExperienceCounter:tibia.creatures.SkillCounter;
+      protected var m_ExperienceCounter:SkillCounter;
       
       protected var m_AutowalkPathAborting:Boolean = false;
       
@@ -98,19 +98,19 @@ package tibia.creatures
       
       private var m_PremiumUntil:uint = 0;
       
-      private var m_UnjustPoints:tibia.creatures.UnjustPointsInfo;
+      private var m_UnjustPoints:UnjustPointsInfo;
       
       private var m_KnownSpells:Array;
       
       public function Player()
       {
-         this.m_ExperienceCounter = new tibia.creatures.SkillCounter();
-         this.m_ExperienceGainInfo = new tibia.creatures.ExperienceGainInfo();
+         this.m_ExperienceCounter = new SkillCounter();
+         this.m_ExperienceGainInfo = new ExperienceGainInfo();
          this.m_AutowalkPathDelta = new Vector3D(0,0,0);
          this.m_AutowalkPathSteps = [];
          this.m_AutowalkTarget = new Vector3D(-1,-1,-1);
          this.m_KnownSpells = [];
-         this.m_UnjustPoints = new tibia.creatures.UnjustPointsInfo(0,0,0,0,0,0,0);
+         this.m_UnjustPoints = new UnjustPointsInfo(0,0,0,0,0,0,0);
          super(0,TYPE_PLAYER,null);
          this.m_ExperienceGainInfo.addEventListener(PropertyChangeEventKind.UPDATE,this.onExperienceGainChanged);
       }
@@ -280,7 +280,7 @@ package tibia.creatures
          }
       }
       
-      public function set unjustPoints(param1:tibia.creatures.UnjustPointsInfo) : void
+      public function set unjustPoints(param1:UnjustPointsInfo) : void
       {
          var _loc2_:PropertyChangeEvent = null;
          if(!this.m_UnjustPoints.equals(param1))
@@ -529,7 +529,7 @@ package tibia.creatures
          return getSkillBase(SKILL_HITPOINTS);
       }
       
-      public function get unjustPoints() : tibia.creatures.UnjustPointsInfo
+      public function get unjustPoints() : UnjustPointsInfo
       {
          return this.m_UnjustPoints;
       }
@@ -612,7 +612,7 @@ package tibia.creatures
          return getSkillBase(SKILL_SOULPOINTS);
       }
       
-      public function get experienceGainInfo() : tibia.creatures.ExperienceGainInfo
+      public function get experienceGainInfo() : ExperienceGainInfo
       {
          return this.m_ExperienceGainInfo;
       }

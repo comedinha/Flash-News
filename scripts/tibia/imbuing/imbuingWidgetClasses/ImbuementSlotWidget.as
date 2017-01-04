@@ -1,10 +1,10 @@
 package tibia.imbuing.imbuingWidgetClasses
 {
-   import mx.containers.HBox;
-   import flash.display.BitmapData;
    import flash.display.Bitmap;
-   import flash.geom.Rectangle;
+   import flash.display.BitmapData;
    import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import mx.containers.HBox;
    import mx.controls.Image;
    
    public class ImbuementSlotWidget extends HBox

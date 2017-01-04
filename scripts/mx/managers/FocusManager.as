@@ -1,31 +1,31 @@
 package mx.managers
 {
-   import mx.core.mx_internal;
-   import flash.events.IEventDispatcher;
-   import mx.events.SWFBridgeRequest;
-   import mx.events.FlexEvent;
    import flash.display.DisplayObject;
-   import mx.core.IChildList;
    import flash.display.DisplayObjectContainer;
-   import mx.core.IRawChildrenContainer;
-   import flash.events.Event;
    import flash.display.InteractiveObject;
-   import flash.events.FocusEvent;
-   import flash.text.TextField;
-   import mx.core.ISWFBridgeProvider;
-   import mx.events.SWFBridgeEvent;
-   import flash.events.KeyboardEvent;
-   import flash.ui.Keyboard;
-   import flash.events.MouseEvent;
-   import mx.core.IUIComponent;
-   import mx.core.ISWFLoader;
-   import mx.events.FocusRequestDirection;
    import flash.display.Sprite;
-   import mx.core.IButton;
-   import mx.core.IToggleButton;
-   import mx.core.SWFBridgeGroup;
+   import flash.events.Event;
+   import flash.events.FocusEvent;
+   import flash.events.IEventDispatcher;
+   import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
    import flash.system.Capabilities;
+   import flash.text.TextField;
+   import flash.ui.Keyboard;
    import mx.core.FlexSprite;
+   import mx.core.IButton;
+   import mx.core.IChildList;
+   import mx.core.IRawChildrenContainer;
+   import mx.core.ISWFBridgeProvider;
+   import mx.core.ISWFLoader;
+   import mx.core.IToggleButton;
+   import mx.core.IUIComponent;
+   import mx.core.SWFBridgeGroup;
+   import mx.core.mx_internal;
+   import mx.events.FlexEvent;
+   import mx.events.FocusRequestDirection;
+   import mx.events.SWFBridgeEvent;
+   import mx.events.SWFBridgeRequest;
    
    use namespace mx_internal;
    
@@ -37,7 +37,7 @@ package mx.managers
       private static const FROM_INDEX_UNSPECIFIED:int = -2;
        
       
-      private var lastActiveFocusManager:mx.managers.FocusManager;
+      private var lastActiveFocusManager:FocusManager;
       
       private var _showFocusIndicator:Boolean = false;
       
@@ -49,7 +49,7 @@ package mx.managers
       
       private var calculateCandidates:Boolean = true;
       
-      private var _lastFocus:mx.managers.IFocusManagerComponent;
+      private var _lastFocus:IFocusManagerComponent;
       
       private var lastAction:String;
       
@@ -61,7 +61,7 @@ package mx.managers
       
       private var defButton:IButton;
       
-      private var _form:mx.managers.IFocusManagerContainer;
+      private var _form:IFocusManagerContainer;
       
       private var popup:Boolean;
       
@@ -81,11 +81,11 @@ package mx.managers
       
       public var browserMode:Boolean;
       
-      public function FocusManager(param1:mx.managers.IFocusManagerContainer, param2:Boolean = false)
+      public function FocusManager(param1:IFocusManagerContainer, param2:Boolean = false)
       {
          var sm:ISystemManager = null;
          var bridge:IEventDispatcher = null;
-         var container:mx.managers.IFocusManagerContainer = param1;
+         var container:IFocusManagerContainer = param1;
          var popup:Boolean = param2;
          super();
          this.popup = popup;
@@ -159,16 +159,16 @@ package mx.managers
       private function addFocusables(param1:DisplayObject, param2:Boolean = false) : void
       {
          var addToFocusables:Boolean = false;
-         var focusable:mx.managers.IFocusManagerComponent = null;
+         var focusable:IFocusManagerComponent = null;
          var doc:DisplayObjectContainer = null;
          var rawChildren:IChildList = null;
          var i:int = 0;
          var o:DisplayObject = param1;
          var skipTopLevel:Boolean = param2;
-         if(o is mx.managers.IFocusManagerComponent && !skipTopLevel)
+         if(o is IFocusManagerComponent && !skipTopLevel)
          {
             addToFocusables = false;
-            if(o is mx.managers.IFocusManagerComponent)
+            if(o is IFocusManagerComponent)
             {
                focusable = IFocusManagerComponent(o);
                if(focusable.focusEnabled)
@@ -461,7 +461,7 @@ package mx.managers
          defButton.dispatchEvent(new MouseEvent("click"));
       }
       
-      public function getFocus() : mx.managers.IFocusManagerComponent
+      public function getFocus() : IFocusManagerComponent
       {
          var _loc1_:InteractiveObject = form.systemManager.stage.focus;
          return findFocusManagerComponent(_loc1_);
@@ -688,7 +688,7 @@ package mx.managers
                IFocusManagerComplexComponent(param1).assignFocus(!!param2?"bottom":"top");
                focusChanged = true;
             }
-            else if(param1 is mx.managers.IFocusManagerComponent)
+            else if(param1 is IFocusManagerComponent)
             {
                setFocus(IFocusManagerComponent(param1));
                focusChanged = true;
@@ -933,7 +933,7 @@ package mx.managers
          {
             while(o)
             {
-               if(o is mx.managers.IFocusManagerComponent && IFocusManagerComponent(o).focusEnabled || o is ISWFLoader)
+               if(o is IFocusManagerComponent && IFocusManagerComponent(o).focusEnabled || o is ISWFLoader)
                {
                   return o;
                }
@@ -1076,20 +1076,20 @@ package mx.managers
          form.systemManager.activate(form);
       }
       
-      mx_internal function set form(param1:mx.managers.IFocusManagerContainer) : void
+      mx_internal function set form(param1:IFocusManagerContainer) : void
       {
          _form = param1;
       }
       
-      public function setFocus(param1:mx.managers.IFocusManagerComponent) : void
+      public function setFocus(param1:IFocusManagerComponent) : void
       {
          param1.setFocus();
          focusSetLocally = true;
       }
       
-      public function findFocusManagerComponent(param1:InteractiveObject) : mx.managers.IFocusManagerComponent
+      public function findFocusManagerComponent(param1:InteractiveObject) : IFocusManagerComponent
       {
-         return findFocusManagerComponent2(param1) as mx.managers.IFocusManagerComponent;
+         return findFocusManagerComponent2(param1) as IFocusManagerComponent;
       }
       
       public function removeSWFBridge(param1:IEventDispatcher) : void
@@ -1116,13 +1116,13 @@ package mx.managers
       
       private function sortFocusableObjectsTabIndex() : void
       {
-         var _loc3_:mx.managers.IFocusManagerComponent = null;
+         var _loc3_:IFocusManagerComponent = null;
          focusableCandidates = [];
          var _loc1_:int = focusableObjects.length;
          var _loc2_:int = 0;
          while(_loc2_ < _loc1_)
          {
-            _loc3_ = focusableObjects[_loc2_] as mx.managers.IFocusManagerComponent;
+            _loc3_ = focusableObjects[_loc2_] as IFocusManagerComponent;
             if(_loc3_ && _loc3_.tabIndex && !isNaN(Number(_loc3_.tabIndex)) || focusableObjects[_loc2_] is ISWFLoader)
             {
                focusableCandidates.push(focusableObjects[_loc2_]);
@@ -1192,7 +1192,7 @@ package mx.managers
          {
             if(param1 != InteractiveObject(form))
             {
-               if(param1 is mx.managers.IFocusManagerComponent && IFocusManagerComponent(param1).focusEnabled && IFocusManagerComponent(param1).mouseFocusEnabled && (param1 is IUIComponent?Boolean(IUIComponent(param1).enabled):Boolean(true)))
+               if(param1 is IFocusManagerComponent && IFocusManagerComponent(param1).focusEnabled && IFocusManagerComponent(param1).mouseFocusEnabled && (param1 is IUIComponent?Boolean(IUIComponent(param1).enabled):Boolean(true)))
                {
                   break;
                }
@@ -1293,7 +1293,7 @@ package mx.managers
          _focusPane = param1;
       }
       
-      mx_internal function get form() : mx.managers.IFocusManagerContainer
+      mx_internal function get form() : IFocusManagerContainer
       {
          return _form;
       }
@@ -1317,7 +1317,7 @@ package mx.managers
                }
             }
          }
-         if(_loc3_ is mx.managers.IFocusManagerComponent)
+         if(_loc3_ is IFocusManagerComponent)
          {
             _loc2_ = 0;
             while(_loc2_ < focusableObjects.length)
@@ -1403,9 +1403,9 @@ package mx.managers
          }
       }
       
-      public function getNextFocusManagerComponent(param1:Boolean = false) : mx.managers.IFocusManagerComponent
+      public function getNextFocusManagerComponent(param1:Boolean = false) : IFocusManagerComponent
       {
-         return getNextFocusManagerComponent2(param1,fauxFocus).displayObject as mx.managers.IFocusManagerComponent;
+         return getNextFocusManagerComponent2(param1,fauxFocus).displayObject as IFocusManagerComponent;
       }
       
       private function setShowFocusIndicatorRequestHandler(param1:Event) : void
@@ -1443,7 +1443,7 @@ package mx.managers
          return true;
       }
       
-      mx_internal function get lastFocus() : mx.managers.IFocusManagerComponent
+      mx_internal function get lastFocus() : IFocusManagerComponent
       {
          return _lastFocus;
       }

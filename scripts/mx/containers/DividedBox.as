@@ -1,21 +1,21 @@
 package mx.containers
 {
-   import mx.styles.StyleManager;
-   import mx.core.mx_internal;
-   import flash.events.Event;
-   import mx.core.UIComponent;
-   import mx.containers.dividedBoxClasses.BoxDivider;
-   import mx.core.IFlexDisplayObject;
-   import mx.managers.CursorManager;
-   import mx.core.IUIComponent;
-   import mx.core.EdgeMetrics;
-   import flash.events.MouseEvent;
-   import mx.events.DividerEvent;
-   import mx.events.ChildExistenceChangedEvent;
    import flash.display.DisplayObject;
-   import mx.managers.CursorManagerPriority;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
    import flash.geom.Point;
+   import mx.containers.dividedBoxClasses.BoxDivider;
+   import mx.core.EdgeMetrics;
+   import mx.core.IFlexDisplayObject;
    import mx.core.IInvalidating;
+   import mx.core.IUIComponent;
+   import mx.core.UIComponent;
+   import mx.core.mx_internal;
+   import mx.events.ChildExistenceChangedEvent;
+   import mx.events.DividerEvent;
+   import mx.managers.CursorManager;
+   import mx.managers.CursorManagerPriority;
+   import mx.styles.StyleManager;
    
    use namespace mx_internal;
    

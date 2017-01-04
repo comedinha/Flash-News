@@ -1,11 +1,11 @@
 package tibia.trade.npcTradeWidgetClasses
 {
-   import mx.core.UIComponent;
+   import mx.controls.Label;
    import mx.controls.listClasses.IListItemRenderer;
+   import mx.core.UIComponent;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
    import tibia.appearances.widgetClasses.SkinnedAppearanceRenderer;
-   import mx.controls.Label;
    import tibia.trade.TradeObjectRef;
    
    public class ListObjectRefItemRenderer extends UIComponent implements IListItemRenderer

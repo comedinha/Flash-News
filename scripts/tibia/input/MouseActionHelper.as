@@ -1,15 +1,15 @@
 package tibia.input
 {
-   import tibia.creatures.Creature;
    import tibia.appearances.AppearanceInstance;
    import tibia.appearances.ObjectInstance;
+   import tibia.creatures.Creature;
+   import tibia.cursors.AttackCursor;
    import tibia.cursors.DefaultCursor;
    import tibia.cursors.LookCursor;
-   import tibia.cursors.UseCursor;
-   import tibia.cursors.AttackCursor;
-   import tibia.cursors.WalkCursor;
    import tibia.cursors.OpenCursor;
    import tibia.cursors.TalkCursor;
+   import tibia.cursors.UseCursor;
+   import tibia.cursors.WalkCursor;
    
    public class MouseActionHelper
    {

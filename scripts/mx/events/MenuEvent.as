@@ -1,10 +1,10 @@
 package mx.events
 {
-   import mx.core.mx_internal;
-   import mx.controls.MenuBar;
    import flash.events.Event;
    import mx.controls.Menu;
+   import mx.controls.MenuBar;
    import mx.controls.listClasses.IListItemRenderer;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

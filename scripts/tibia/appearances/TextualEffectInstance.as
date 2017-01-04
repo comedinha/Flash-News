@@ -1,14 +1,14 @@
 package tibia.appearances
 {
-   import tibia.appearances.widgetClasses.CachedSpriteInformation;
-   import shared.utility.Colour;
    import flash.display.BitmapData;
+   import flash.filters.BitmapFilterQuality;
+   import flash.filters.GlowFilter;
    import flash.geom.Rectangle;
    import flash.text.TextField;
    import flash.text.TextFieldAutoSize;
    import flash.text.TextFormat;
-   import flash.filters.GlowFilter;
-   import flash.filters.BitmapFilterQuality;
+   import shared.utility.Colour;
+   import tibia.appearances.widgetClasses.CachedSpriteInformation;
    
    public class TextualEffectInstance extends AppearanceInstance
    {

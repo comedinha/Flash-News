@@ -1,9 +1,9 @@
 package tibia.sidebar.sideBarWidgetClasses
 {
-   import mx.skins.ProgrammaticSkin;
-   import mx.core.IBorder;
-   import shared.skins.BitmapGrid;
    import mx.core.EdgeMetrics;
+   import mx.core.IBorder;
+   import mx.skins.ProgrammaticSkin;
+   import shared.skins.BitmapGrid;
    
    public class WidgetViewSkin extends ProgrammaticSkin implements IBorder
    {

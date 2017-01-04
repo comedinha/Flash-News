@@ -1,17 +1,17 @@
 package mx.controls
 {
-   import mx.managers.IFocusManagerGroup;
+   import flash.events.Event;
+   import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
+   import flash.ui.Keyboard;
+   import mx.core.FlexVersion;
+   import mx.core.IFlexDisplayObject;
    import mx.core.IToggleButton;
    import mx.core.mx_internal;
    import mx.events.FlexEvent;
-   import mx.managers.IFocusManager;
-   import flash.events.MouseEvent;
    import mx.events.ItemClickEvent;
-   import flash.events.KeyboardEvent;
-   import flash.ui.Keyboard;
-   import flash.events.Event;
-   import mx.core.FlexVersion;
-   import mx.core.IFlexDisplayObject;
+   import mx.managers.IFocusManager;
+   import mx.managers.IFocusManagerGroup;
    
    use namespace mx_internal;
    
@@ -23,7 +23,7 @@ package mx.controls
       mx_internal static var createAccessibilityImplementation:Function;
        
       
-      private var _group:mx.controls.RadioButtonGroup;
+      private var _group:RadioButtonGroup;
       
       mx_internal var _groupName:String;
       
@@ -55,7 +55,7 @@ package mx.controls
       private function setNext(param1:Boolean = true) : void
       {
          var _loc5_:RadioButton = null;
-         var _loc2_:mx.controls.RadioButtonGroup = group;
+         var _loc2_:RadioButtonGroup = group;
          var _loc3_:IFocusManager = focusManager;
          if(_loc3_)
          {
@@ -85,7 +85,7 @@ package mx.controls
       
       private function addToGroup() : Object
       {
-         var _loc1_:mx.controls.RadioButtonGroup = group;
+         var _loc1_:RadioButtonGroup = group;
          if(_loc1_)
          {
             _loc1_.addInstance(this);
@@ -175,7 +175,7 @@ package mx.controls
          {
             addToGroup();
          }
-         var _loc1_:mx.controls.RadioButtonGroup = group;
+         var _loc1_:RadioButtonGroup = group;
          if(_loc1_.selection != this)
          {
             _loc1_.setSelection(this);
@@ -321,7 +321,7 @@ package mx.controls
       private function setPrev(param1:Boolean = true) : void
       {
          var _loc5_:RadioButton = null;
-         var _loc2_:mx.controls.RadioButtonGroup = group;
+         var _loc2_:RadioButtonGroup = group;
          var _loc3_:IFocusManager = focusManager;
          if(_loc3_)
          {
@@ -349,14 +349,14 @@ package mx.controls
          this.drawFocus(true);
       }
       
-      public function set group(param1:mx.controls.RadioButtonGroup) : void
+      public function set group(param1:RadioButtonGroup) : void
       {
          _group = param1;
       }
       
-      public function get group() : mx.controls.RadioButtonGroup
+      public function get group() : RadioButtonGroup
       {
-         var g:mx.controls.RadioButtonGroup = null;
+         var g:RadioButtonGroup = null;
          if(!document)
          {
             return _group;
@@ -378,14 +378,14 @@ package mx.controls
                }
                if(!g)
                {
-                  g = new mx.controls.RadioButtonGroup(IFlexDisplayObject(document));
+                  g = new RadioButtonGroup(IFlexDisplayObject(document));
                   if(!document.automaticRadioButtonGroups)
                   {
                      document.automaticRadioButtonGroups = {};
                   }
                   document.automaticRadioButtonGroups[groupName] = g;
                }
-               else if(!(g is mx.controls.RadioButtonGroup))
+               else if(!(g is RadioButtonGroup))
                {
                   return null;
                }

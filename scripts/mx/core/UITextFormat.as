@@ -1,20 +1,20 @@
 package mx.core
 {
-   import flash.text.TextFormat;
-   import mx.managers.ISystemManager;
-   import flash.text.TextLineMetrics;
    import flash.text.TextField;
+   import flash.text.TextFormat;
+   import flash.text.TextLineMetrics;
+   import mx.managers.ISystemManager;
    
    use namespace mx_internal;
    
    public class UITextFormat extends TextFormat
    {
       
-      private static var _embeddedFontRegistry:mx.core.IEmbeddedFontRegistry;
+      private static var _embeddedFontRegistry:IEmbeddedFontRegistry;
       
       mx_internal static const VERSION:String = "3.6.0.21751";
       
-      private static var _textFieldFactory:mx.core.ITextFieldFactory;
+      private static var _textFieldFactory:ITextFieldFactory;
        
       
       private var systemManager:ISystemManager;
@@ -27,9 +27,9 @@ package mx.core
       
       public var thickness:Number;
       
-      private var cachedEmbeddedFont:mx.core.EmbeddedFont = null;
+      private var cachedEmbeddedFont:EmbeddedFont = null;
       
-      private var _moduleFactory:mx.core.IFlexModuleFactory;
+      private var _moduleFactory:IFlexModuleFactory;
       
       public function UITextFormat(param1:ISystemManager, param2:String = null, param3:Object = null, param4:Object = null, param5:Object = null, param6:Object = null, param7:Object = null, param8:String = null, param9:String = null, param10:String = null, param11:Object = null, param12:Object = null, param13:Object = null, param14:Object = null)
       {
@@ -37,7 +37,7 @@ package mx.core
          super(param2,param3,param4,param5,param6,param7,param8,param9,param10,param11,param12,param13,param14);
       }
       
-      private static function get embeddedFontRegistry() : mx.core.IEmbeddedFontRegistry
+      private static function get embeddedFontRegistry() : IEmbeddedFontRegistry
       {
          if(!_embeddedFontRegistry)
          {
@@ -46,7 +46,7 @@ package mx.core
          return _embeddedFontRegistry;
       }
       
-      private static function get textFieldFactory() : mx.core.ITextFieldFactory
+      private static function get textFieldFactory() : ITextFieldFactory
       {
          if(!_textFieldFactory)
          {
@@ -55,7 +55,7 @@ package mx.core
          return _textFieldFactory;
       }
       
-      public function set moduleFactory(param1:mx.core.IFlexModuleFactory) : void
+      public function set moduleFactory(param1:IFlexModuleFactory) : void
       {
          _moduleFactory = param1;
       }
@@ -84,7 +84,7 @@ package mx.core
          tabStops = param1.tabStops;
       }
       
-      private function getEmbeddedFont(param1:String, param2:Boolean, param3:Boolean) : mx.core.EmbeddedFont
+      private function getEmbeddedFont(param1:String, param2:Boolean, param3:Boolean) : EmbeddedFont
       {
          if(cachedEmbeddedFont)
          {
@@ -93,7 +93,7 @@ package mx.core
                return cachedEmbeddedFont;
             }
          }
-         cachedEmbeddedFont = new mx.core.EmbeddedFont(param1,param2,param3);
+         cachedEmbeddedFont = new EmbeddedFont(param1,param2,param3);
          return cachedEmbeddedFont;
       }
       
@@ -109,7 +109,7 @@ package mx.core
             param1 = "";
          }
          var _loc4_:* = false;
-         var _loc5_:mx.core.IFlexModuleFactory = embeddedFontRegistry.getAssociatedModuleFactory(getEmbeddedFont(font,bold,italic),moduleFactory);
+         var _loc5_:IFlexModuleFactory = embeddedFontRegistry.getAssociatedModuleFactory(getEmbeddedFont(font,bold,italic),moduleFactory);
          _loc4_ = _loc5_ != null;
          if(_loc5_ == null)
          {
@@ -164,7 +164,7 @@ package mx.core
          return measure(param1,true,param2);
       }
       
-      public function get moduleFactory() : mx.core.IFlexModuleFactory
+      public function get moduleFactory() : IFlexModuleFactory
       {
          return _moduleFactory;
       }

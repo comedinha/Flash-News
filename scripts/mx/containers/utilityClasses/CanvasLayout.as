@@ -1,17 +1,17 @@
 package mx.containers.utilityClasses
 {
-   import mx.core.mx_internal;
+   import flash.display.DisplayObject;
    import flash.geom.Rectangle;
-   import mx.core.IUIComponent;
+   import flash.utils.Dictionary;
+   import mx.containers.errors.ConstraintError;
    import mx.core.Container;
    import mx.core.EdgeMetrics;
-   import mx.events.MoveEvent;
-   import mx.core.IConstraintClient;
-   import mx.events.ChildExistenceChangedEvent;
-   import flash.display.DisplayObject;
-   import flash.utils.Dictionary;
    import mx.core.FlexVersion;
-   import mx.containers.errors.ConstraintError;
+   import mx.core.IConstraintClient;
+   import mx.core.IUIComponent;
+   import mx.core.mx_internal;
+   import mx.events.ChildExistenceChangedEvent;
+   import mx.events.MoveEvent;
    
    use namespace mx_internal;
    

@@ -1,13 +1,13 @@
 package tibia.trade
 {
-   import tibia.sidebar.Widget;
-   import tibia.creatures.Player;
-   import tibia.trade.npcTradeWidgetClasses.NPCTradeWidgetView;
    import mx.collections.IList;
    import tibia.appearances.AppearanceStorage;
-   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
    import tibia.container.ContainerStorage;
+   import tibia.creatures.Player;
    import tibia.network.Communication;
+   import tibia.sidebar.Widget;
+   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
+   import tibia.trade.npcTradeWidgetClasses.NPCTradeWidgetView;
    
    public class NPCTradeWidget extends Widget
    {

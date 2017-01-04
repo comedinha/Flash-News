@@ -1,10 +1,10 @@
 package tibia.imbuing.imbuingWidgetClasses
 {
    import mx.containers.Canvas;
-   import tibia.controls.TibiaCurrencyView;
-   import shared.controls.CustomButton;
-   import mx.containers.VBox;
    import mx.containers.HBox;
+   import mx.containers.VBox;
+   import shared.controls.CustomButton;
+   import tibia.controls.TibiaCurrencyView;
    
    public class ImbuementButtonWidget extends Canvas
    {

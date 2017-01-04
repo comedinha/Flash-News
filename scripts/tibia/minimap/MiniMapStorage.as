@@ -1,29 +1,29 @@
 package tibia.minimap
 {
-   import flash.events.EventDispatcher;
    import flash.display.BitmapData;
-   import flash.geom.Rectangle;
-   import flash.geom.Point;
-   import mx.core.BitmapAsset;
-   import flash.events.TimerEvent;
-   import mx.events.PropertyChangeEvent;
-   import shared.utility.BrowserHelper;
-   import mx.events.PropertyChangeEventKind;
-   import shared.utility.SharedObjectManager;
-   import flash.net.SharedObject;
-   import flash.events.ProgressEvent;
+   import flash.errors.MemoryError;
    import flash.events.ErrorEvent;
    import flash.events.Event;
-   import shared.utility.Vector3D;
-   import tibia.worldmap.WorldMapStorage;
-   import flash.utils.Timer;
-   import flash.utils.ByteArray;
-   import flash.errors.MemoryError;
-   import flash.utils.Endian;
+   import flash.events.EventDispatcher;
+   import flash.events.ProgressEvent;
+   import flash.events.TimerEvent;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import flash.net.SharedObject;
    import flash.system.System;
+   import flash.utils.ByteArray;
+   import flash.utils.Endian;
+   import flash.utils.Timer;
+   import mx.core.BitmapAsset;
+   import mx.events.PropertyChangeEvent;
+   import mx.events.PropertyChangeEventKind;
+   import shared.utility.AccumulatingPerformanceCounter;
+   import shared.utility.BrowserHelper;
    import shared.utility.Heap;
    import shared.utility.IPerformanceCounter;
-   import shared.utility.AccumulatingPerformanceCounter;
+   import shared.utility.SharedObjectManager;
+   import shared.utility.Vector3D;
+   import tibia.worldmap.WorldMapStorage;
    
    public class MiniMapStorage extends EventDispatcher
    {
@@ -177,11 +177,11 @@ package tibia.minimap
       
       private var m_IEQueue:Array = null;
       
-      protected var m_SaveQueue:Vector.<tibia.minimap.MiniMapSector> = null;
+      protected var m_SaveQueue:Vector.<MiniMapSector> = null;
       
       private var m_IETimer:Timer = null;
       
-      protected var m_PathDirty:Vector.<tibia.minimap.PathItem> = null;
+      protected var m_PathDirty:Vector.<PathItem> = null;
       
       protected var m_SectorX:int = -1;
       
@@ -191,9 +191,9 @@ package tibia.minimap
       
       protected var m_ChangedSector:Boolean = false;
       
-      protected var m_SectorCache:Vector.<tibia.minimap.MiniMapSector> = null;
+      protected var m_SectorCache:Vector.<MiniMapSector> = null;
       
-      protected var m_LoadQueue:Vector.<tibia.minimap.MiniMapSector> = null;
+      protected var m_LoadQueue:Vector.<MiniMapSector> = null;
       
       protected var m_PositionX:int = -1;
       
@@ -211,7 +211,7 @@ package tibia.minimap
       
       private var m_PerformanceCounterCalculatePath:IPerformanceCounter;
       
-      protected var m_PathMatrix:Vector.<tibia.minimap.PathItem> = null;
+      protected var m_PathMatrix:Vector.<PathItem> = null;
       
       protected var m_FlashEnd:Number = 0;
       
@@ -222,28 +222,28 @@ package tibia.minimap
          var _loc2_:int = 0;
          this.m_PerformanceCounterCalculatePath = new AccumulatingPerformanceCounter();
          super();
-         this.m_SectorCache = new Vector.<tibia.minimap.MiniMapSector>();
-         this.m_LoadQueue = new Vector.<tibia.minimap.MiniMapSector>();
-         this.m_SaveQueue = new Vector.<tibia.minimap.MiniMapSector>();
+         this.m_SectorCache = new Vector.<MiniMapSector>();
+         this.m_LoadQueue = new Vector.<MiniMapSector>();
+         this.m_SaveQueue = new Vector.<MiniMapSector>();
          this.m_IOTimer = new Timer(MM_IO_TIMEOUT);
          this.m_IOTimer.addEventListener(TimerEvent.TIMER,this.onIOTimer);
          this.m_IOTimer.start();
          this.m_PositionX = this.m_PositionY = this.m_PositionZ = -1;
          this.m_SectorX = this.m_SectorY = this.m_SectorZ = -1;
-         this.m_PathMatrix = new Vector.<tibia.minimap.PathItem>(PATH_MATRIX_SIZE * PATH_MATRIX_SIZE,true);
+         this.m_PathMatrix = new Vector.<PathItem>(PATH_MATRIX_SIZE * PATH_MATRIX_SIZE,true);
          var _loc1_:int = 0;
          while(_loc1_ < PATH_MATRIX_SIZE)
          {
             _loc2_ = 0;
             while(_loc2_ < PATH_MATRIX_SIZE)
             {
-               this.m_PathMatrix[_loc1_ * PATH_MATRIX_SIZE + _loc2_] = new tibia.minimap.PathItem(_loc2_ - PATH_MATRIX_CENTER,_loc1_ - PATH_MATRIX_CENTER);
+               this.m_PathMatrix[_loc1_ * PATH_MATRIX_SIZE + _loc2_] = new PathItem(_loc2_ - PATH_MATRIX_CENTER,_loc1_ - PATH_MATRIX_CENTER);
                _loc2_++;
             }
             _loc1_++;
          }
          this.m_PathHeap = new Heap();
-         this.m_PathDirty = new Vector.<tibia.minimap.PathItem>();
+         this.m_PathDirty = new Vector.<PathItem>();
       }
       
       public static function s_GetMarkIcon(param1:int, param2:Boolean, param3:Rectangle) : BitmapData
@@ -272,7 +272,7 @@ package tibia.minimap
       
       private function onIOTimer(param1:TimerEvent) : void
       {
-         var _loc2_:tibia.minimap.MiniMapSector = null;
+         var _loc2_:MiniMapSector = null;
          var _loc3_:PropertyChangeEvent = null;
          if(param1 != null)
          {
@@ -298,7 +298,7 @@ package tibia.minimap
          }
       }
       
-      private function enqueue(param1:Vector.<tibia.minimap.MiniMapSector>, param2:tibia.minimap.MiniMapSector) : void
+      private function enqueue(param1:Vector.<MiniMapSector>, param2:MiniMapSector) : void
       {
          var _loc3_:int = param1.length - 1;
          while(_loc3_ >= 0)
@@ -366,7 +366,7 @@ package tibia.minimap
          var Name:String = null;
          var _SharedObjectManager:SharedObjectManager = null;
          var _SharedObject:SharedObject = null;
-         var _MiniMapSector:tibia.minimap.MiniMapSector = null;
+         var _MiniMapSector:MiniMapSector = null;
          var _ProgressEvent:ProgressEvent = null;
          var a_Event:TimerEvent = param1;
          if(a_Event != null)
@@ -379,7 +379,7 @@ package tibia.minimap
                   _SharedObjectManager = null;
                   _SharedObject = null;
                   _MiniMapSector = null;
-                  if(SharedObjectManager.s_SharedObjectsAvailable() && (_SharedObjectManager = SharedObjectManager.s_GetInstance()) != null && (_SharedObject = _SharedObjectManager.getLocal(Name,false,true)) != null && (_MiniMapSector = tibia.minimap.MiniMapSector.s_LoadSharedObject(_SharedObject)) != null)
+                  if(SharedObjectManager.s_SharedObjectsAvailable() && (_SharedObjectManager = SharedObjectManager.s_GetInstance()) != null && (_SharedObject = _SharedObjectManager.getLocal(Name,false,true)) != null && (_MiniMapSector = MiniMapSector.s_LoadSharedObject(_SharedObject)) != null)
                   {
                      _MiniMapSector.saveByteArray(this.m_IEData);
                      _ProgressEvent = new ProgressEvent(ProgressEvent.PROGRESS);
@@ -518,7 +518,7 @@ package tibia.minimap
             }
             return PATH_EMPTY;
          }
-         var _loc13_:Vector.<tibia.minimap.MiniMapSector> = new Vector.<tibia.minimap.MiniMapSector>(4,true);
+         var _loc13_:Vector.<MiniMapSector> = new Vector.<MiniMapSector>(4,true);
          _loc13_[0] = this.acquireSector(param1 - PATH_MATRIX_CENTER,param2 - PATH_MATRIX_CENTER,param3,false);
          _loc13_[1] = this.acquireSector(param1 - PATH_MATRIX_CENTER,param2 + PATH_MATRIX_CENTER,param3,false);
          _loc13_[2] = this.acquireSector(param1 + PATH_MATRIX_CENTER,param2 + PATH_MATRIX_CENTER,param3,false);
@@ -533,13 +533,13 @@ package tibia.minimap
          }
          var _loc16_:int = _loc13_[0].getSectorX() + MM_SECTOR_SIZE;
          var _loc17_:int = _loc13_[0].getSectorY() + MM_SECTOR_SIZE;
-         var _loc18_:tibia.minimap.PathItem = this.m_PathMatrix[PATH_MATRIX_CENTER * PATH_MATRIX_SIZE + PATH_MATRIX_CENTER];
+         var _loc18_:PathItem = this.m_PathMatrix[PATH_MATRIX_CENTER * PATH_MATRIX_SIZE + PATH_MATRIX_CENTER];
          _loc18_.predecessor = null;
          _loc18_.cost = int.MAX_VALUE;
          _loc18_.pathCost = int.MAX_VALUE;
          _loc18_.pathHeuristic = 0;
          this.m_PathDirty.push(_loc18_);
-         var _loc19_:tibia.minimap.PathItem = this.m_PathMatrix[(PATH_MATRIX_CENTER + _loc11_) * PATH_MATRIX_SIZE + (PATH_MATRIX_CENTER + _loc10_)];
+         var _loc19_:PathItem = this.m_PathMatrix[(PATH_MATRIX_CENTER + _loc11_) * PATH_MATRIX_SIZE + (PATH_MATRIX_CENTER + _loc10_)];
          _loc19_.predecessor = null;
          if(param4 < _loc16_)
          {
@@ -566,15 +566,15 @@ package tibia.minimap
          this.m_PathDirty.push(_loc19_);
          this.m_PathHeap.clear(false);
          this.m_PathHeap.addItem(_loc19_,_loc19_.pathHeuristic);
-         var _loc20_:tibia.minimap.PathItem = null;
-         var _loc21_:tibia.minimap.PathItem = null;
+         var _loc20_:PathItem = null;
+         var _loc21_:PathItem = null;
          var _loc22_:int = 0;
          var _loc23_:int = 0;
          var _loc24_:int = 0;
          var _loc25_:int = 0;
          var _loc26_:int = 0;
-         var _loc27_:tibia.minimap.MiniMapSector = null;
-         while((_loc20_ = this.m_PathHeap.extractMinItem() as tibia.minimap.PathItem) != null)
+         var _loc27_:MiniMapSector = null;
+         while((_loc20_ = this.m_PathHeap.extractMinItem() as PathItem) != null)
          {
             if(_loc20_.m_HeapKey < _loc18_.pathCost)
             {
@@ -786,7 +786,7 @@ package tibia.minimap
          this.m_IOTimer.stop();
          this.m_IEQueue = this.getSectorListing();
          this.m_IEBytesProcessed = 0;
-         this.m_IEBytesTotal = this.m_IEQueue.length * tibia.minimap.MiniMapSector.MIN_BYTES;
+         this.m_IEBytesTotal = this.m_IEQueue.length * MiniMapSector.MIN_BYTES;
          try
          {
             this.m_IEData = new ByteArray();
@@ -806,7 +806,7 @@ package tibia.minimap
          return this.m_IEData;
       }
       
-      private function dequeue(param1:Vector.<tibia.minimap.MiniMapSector>, param2:tibia.minimap.MiniMapSector) : void
+      private function dequeue(param1:Vector.<MiniMapSector>, param2:MiniMapSector) : void
       {
          var _loc3_:int = param1.length - 1;
          while(_loc3_ >= 0)
@@ -828,7 +828,7 @@ package tibia.minimap
       public function updateField(param1:int, param2:int, param3:int, param4:uint, param5:int, param6:Boolean = true) : void
       {
          var _loc8_:PropertyChangeEvent = null;
-         var _loc7_:tibia.minimap.MiniMapSector = this.acquireSector(param1,param2,param3,false);
+         var _loc7_:MiniMapSector = this.acquireSector(param1,param2,param3,false);
          _loc7_.updateField(param1,param2,param3,param4,param5);
          if(param6)
          {
@@ -963,7 +963,7 @@ package tibia.minimap
       public function setMark(param1:int, param2:int, param3:int, param4:int, param5:String, param6:Boolean = true) : void
       {
          var _loc8_:PropertyChangeEvent = null;
-         var _loc7_:tibia.minimap.MiniMapSector = this.acquireSector(param1,param2,param3,false);
+         var _loc7_:MiniMapSector = this.acquireSector(param1,param2,param3,false);
          _loc7_.setMark(param1,param2,param3,param4,param5);
          if(param6)
          {
@@ -979,16 +979,16 @@ package tibia.minimap
          }
       }
       
-      public function acquireSector(param1:int, param2:int, param3:int, param4:Boolean) : tibia.minimap.MiniMapSector
+      public function acquireSector(param1:int, param2:int, param3:int, param4:Boolean) : MiniMapSector
       {
-         var _loc11_:tibia.minimap.MiniMapSector = null;
+         var _loc11_:MiniMapSector = null;
          param1 = Math.max(MAP_MIN_X,Math.min(param1,MAP_MAX_X));
          param2 = Math.max(MAP_MIN_Y,Math.min(param2,MAP_MAX_Y));
          param3 = Math.max(MAP_MIN_Z,Math.min(param3,MAP_MAX_Z));
          var _loc5_:int = int(param1 / MM_SECTOR_SIZE) * MM_SECTOR_SIZE;
          var _loc6_:int = int(param2 / MM_SECTOR_SIZE) * MM_SECTOR_SIZE;
          var _loc7_:int = param3;
-         var _loc8_:tibia.minimap.MiniMapSector = null;
+         var _loc8_:MiniMapSector = null;
          var _loc9_:int = 0;
          var _loc10_:int = 0;
          _loc9_ = this.m_SectorCache.length - 1;
@@ -1017,7 +1017,7 @@ package tibia.minimap
          }
          if(_loc8_ == null)
          {
-            _loc8_ = new tibia.minimap.MiniMapSector(_loc5_,_loc6_,_loc7_);
+            _loc8_ = new MiniMapSector(_loc5_,_loc6_,_loc7_);
             if(BrowserHelper.s_CompareFlashPlayerVersion(Tibia.BUGGY_FLASH_PLAYER_VERSION))
             {
                param4 = false;

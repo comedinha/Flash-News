@@ -1,11 +1,11 @@
 package mx.skins.halo
 {
-   import mx.skins.RectangularBorder;
-   import mx.core.mx_internal;
-   import mx.core.EdgeMetrics;
    import flash.display.Graphics;
    import flash.filters.DropShadowFilter;
+   import mx.core.EdgeMetrics;
+   import mx.core.mx_internal;
    import mx.graphics.RectangularDropShadow;
+   import mx.skins.RectangularBorder;
    
    use namespace mx_internal;
    

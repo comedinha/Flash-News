@@ -1,9 +1,9 @@
 package mx.formatters
 {
    import flash.events.Event;
+   import mx.core.mx_internal;
    import mx.resources.IResourceManager;
    import mx.resources.ResourceManager;
-   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

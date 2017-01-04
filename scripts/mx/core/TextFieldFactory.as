@@ -5,12 +5,12 @@ package mx.core
    
    use namespace mx_internal;
    
-   public class TextFieldFactory implements mx.core.ITextFieldFactory
+   public class TextFieldFactory implements ITextFieldFactory
    {
       
       mx_internal static const VERSION:String = "3.6.0.21751";
       
-      private static var instance:mx.core.ITextFieldFactory;
+      private static var instance:ITextFieldFactory;
        
       
       private var textFields:Dictionary;
@@ -21,7 +21,7 @@ package mx.core
          super();
       }
       
-      public static function getInstance() : mx.core.ITextFieldFactory
+      public static function getInstance() : ITextFieldFactory
       {
          if(!instance)
          {

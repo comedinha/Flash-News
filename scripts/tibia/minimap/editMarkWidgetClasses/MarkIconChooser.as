@@ -1,13 +1,13 @@
 package tibia.minimap.editMarkWidgetClasses
 {
+   import flash.events.Event;
+   import flash.events.MouseEvent;
    import mx.core.UIComponent;
+   import mx.events.PropertyChangeEvent;
+   import mx.events.PropertyChangeEventKind;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
-   import mx.events.PropertyChangeEvent;
    import tibia.minimap.MiniMapStorage;
-   import mx.events.PropertyChangeEventKind;
-   import flash.events.MouseEvent;
-   import flash.events.Event;
    
    public class MarkIconChooser extends UIComponent
    {
@@ -20,7 +20,7 @@ package tibia.minimap.editMarkWidgetClasses
       
       protected var m_SelectedIcon:int = 0;
       
-      protected var m_UIRenderer:Vector.<tibia.minimap.editMarkWidgetClasses.MarkIconRenderer> = null;
+      protected var m_UIRenderer:Vector.<MarkIconRenderer> = null;
       
       public function MarkIconChooser()
       {
@@ -99,7 +99,7 @@ package tibia.minimap.editMarkWidgetClasses
          var _loc9_:int = 0;
          var _loc10_:int = 0;
          var _loc11_:int = 0;
-         var _loc12_:tibia.minimap.editMarkWidgetClasses.MarkIconRenderer = null;
+         var _loc12_:MarkIconRenderer = null;
          _loc9_ = 0;
          _loc10_ = this.m_UIRenderer.length;
          while(_loc9_ < _loc10_)
@@ -127,11 +127,11 @@ package tibia.minimap.editMarkWidgetClasses
          super.createChildren();
          if(this.m_UIRenderer == null)
          {
-            this.m_UIRenderer = new Vector.<tibia.minimap.editMarkWidgetClasses.MarkIconRenderer>(MiniMapStorage.MARK_ICON_COUNT,true);
+            this.m_UIRenderer = new Vector.<MarkIconRenderer>(MiniMapStorage.MARK_ICON_COUNT,true);
             _loc1_ = 0;
             while(_loc1_ < this.m_UIRenderer.length)
             {
-               this.m_UIRenderer[_loc1_] = new tibia.minimap.editMarkWidgetClasses.MarkIconRenderer();
+               this.m_UIRenderer[_loc1_] = new MarkIconRenderer();
                this.m_UIRenderer[_loc1_].ID = _loc1_;
                this.m_UIRenderer[_loc1_].highlight = _loc1_ == this.m_SelectedIcon;
                this.m_UIRenderer[_loc1_].styleName = "withBackground";
@@ -155,7 +155,7 @@ package tibia.minimap.editMarkWidgetClasses
          var _loc2_:Number = NaN;
          var _loc3_:int = 0;
          var _loc4_:int = 0;
-         var _loc5_:tibia.minimap.editMarkWidgetClasses.MarkIconRenderer = null;
+         var _loc5_:MarkIconRenderer = null;
          super.measure();
          var _loc1_:Number = 0;
          _loc2_ = 0;

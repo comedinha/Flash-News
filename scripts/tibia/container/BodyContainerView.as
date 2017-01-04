@@ -1,11 +1,11 @@
 package tibia.container
 {
    import flash.events.EventDispatcher;
-   import tibia.appearances.ObjectInstance;
    import mx.events.PropertyChangeEvent;
    import mx.events.PropertyChangeEventKind;
-   import tibia.appearances.AppearanceType;
    import tibia.appearances.AppearanceStorage;
+   import tibia.appearances.AppearanceType;
+   import tibia.appearances.ObjectInstance;
    
    public class BodyContainerView extends EventDispatcher
    {

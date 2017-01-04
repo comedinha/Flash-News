@@ -1,8 +1,8 @@
 package tibia.input.gameaction
 {
-   import tibia.input.IAction;
-   import mx.resources.ResourceManager;
    import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
+   import tibia.input.IAction;
    
    public class TalkAction extends TalkActionImpl implements IAction
    {

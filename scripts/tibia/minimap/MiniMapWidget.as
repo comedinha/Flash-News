@@ -1,9 +1,9 @@
 package tibia.minimap
 {
-   import tibia.sidebar.Widget;
+   import flash.events.Event;
    import mx.events.PropertyChangeEvent;
    import tibia.minimap.miniMapWidgetClasses.MiniMapWidgetView;
-   import flash.events.Event;
+   import tibia.sidebar.Widget;
    import tibia.sidebar.sideBarWidgetClasses.WidgetView;
    
    public class MiniMapWidget extends Widget
@@ -104,7 +104,7 @@ package tibia.minimap
       
       protected var m_PositionY:int = 0;
       
-      protected var m_MiniMapStorage:tibia.minimap.MiniMapStorage = null;
+      protected var m_MiniMapStorage:MiniMapStorage = null;
       
       protected var m_PositionZ:int = 0;
       
@@ -242,20 +242,20 @@ package tibia.minimap
          }
       }
       
-      public function set miniMapStorage(param1:tibia.minimap.MiniMapStorage) : void
+      public function set miniMapStorage(param1:MiniMapStorage) : void
       {
          if(this.m_MiniMapStorage != param1)
          {
             if(this.m_MiniMapStorage != null)
             {
                this.m_MiniMapStorage.removeEventListener(PropertyChangeEvent.PROPERTY_CHANGE,this.onMiniMapStorageChange);
-               this.m_MiniMapStorage.removeEventListener(tibia.minimap.MiniMapStorage.EVENT_HIGHLIGHT_MARKS,this.onMiniMapStorageEvent);
+               this.m_MiniMapStorage.removeEventListener(MiniMapStorage.EVENT_HIGHLIGHT_MARKS,this.onMiniMapStorageEvent);
             }
             this.m_MiniMapStorage = param1;
             if(this.m_MiniMapStorage != null)
             {
                this.m_MiniMapStorage.addEventListener(PropertyChangeEvent.PROPERTY_CHANGE,this.onMiniMapStorageChange);
-               this.m_MiniMapStorage.addEventListener(tibia.minimap.MiniMapStorage.EVENT_HIGHLIGHT_MARKS,this.onMiniMapStorageEvent);
+               this.m_MiniMapStorage.addEventListener(MiniMapStorage.EVENT_HIGHLIGHT_MARKS,this.onMiniMapStorageEvent);
             }
             if(m_ViewInstance is MiniMapWidgetView)
             {
@@ -276,13 +276,13 @@ package tibia.minimap
          {
             switch(param1.type)
             {
-               case tibia.minimap.MiniMapStorage.EVENT_HIGHLIGHT_MARKS:
+               case MiniMapStorage.EVENT_HIGHLIGHT_MARKS:
                   this.startHighlight();
             }
          }
       }
       
-      public function get miniMapStorage() : tibia.minimap.MiniMapStorage
+      public function get miniMapStorage() : MiniMapStorage
       {
          return this.m_MiniMapStorage;
       }

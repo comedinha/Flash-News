@@ -1,16 +1,16 @@
 package tibia.help
 {
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import mx.core.UIComponent;
+   import shared.controls.UIHyperlinksTextFieldHyperlinkInfo;
    import shared.utility.Vector3D;
+   import tibia.chat.chatWidgetClasses.ChannelMessageRenderer;
    import tibia.container.BodyContainerView;
    import tibia.container.bodyContainerViewWigdetClasses.BodyContainerViewWidgetView;
    import tibia.container.containerViewWidgetClasses.ContainerViewWidgetView;
-   import flash.geom.Rectangle;
-   import flash.geom.Point;
    import tibia.worldmap.WorldMapWidget;
    import tibia.worldmap.widgetClasses.RendererImpl;
-   import mx.core.UIComponent;
-   import shared.controls.UIHyperlinksTextFieldHyperlinkInfo;
-   import tibia.chat.chatWidgetClasses.ChannelMessageRenderer;
    
    public class GUIRectangle
    {

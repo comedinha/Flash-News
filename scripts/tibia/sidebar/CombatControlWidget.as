@@ -1,8 +1,8 @@
 package tibia.sidebar
 {
-   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
-   import tibia.sidebar.sideBarWidgetClasses.CombatControlWidgetView;
    import tibia.creatures.Player;
+   import tibia.sidebar.sideBarWidgetClasses.CombatControlWidgetView;
+   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
    
    public class CombatControlWidget extends Widget
    {

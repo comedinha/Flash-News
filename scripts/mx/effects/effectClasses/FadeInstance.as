@@ -1,7 +1,7 @@
 package mx.effects.effectClasses
 {
-   import mx.core.mx_internal;
    import flash.events.Event;
+   import mx.core.mx_internal;
    import mx.events.FlexEvent;
    
    use namespace mx_internal;

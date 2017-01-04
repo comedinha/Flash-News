@@ -1,28 +1,28 @@
 package tibia.sessiondump.controller
 {
-   import mx.core.Container;
-   import mx.managers.ISystemManager;
-   import flash.utils.setTimeout;
+   import flash.display.BlendMode;
    import flash.events.Event;
+   import flash.events.MouseEvent;
    import flash.events.TimerEvent;
+   import flash.geom.Rectangle;
+   import flash.utils.setTimeout;
+   import mx.containers.Box;
+   import mx.core.Container;
+   import mx.core.UIComponent;
+   import mx.effects.Fade;
+   import mx.effects.Pause;
+   import mx.effects.Sequence;
+   import mx.managers.CursorManagerPriority;
+   import mx.managers.ISystemManager;
+   import tibia.cursors.CursorHelper;
+   import tibia.cursors.DefaultRejectCursor;
    import tibia.game.PopUpBase;
    import tibia.help.GUIRectangle;
-   import flash.events.MouseEvent;
-   import tibia.cursors.DefaultRejectCursor;
-   import mx.core.UIComponent;
-   import mx.effects.Sequence;
-   import flash.geom.Rectangle;
-   import mx.effects.Fade;
-   import tibia.cursors.CursorHelper;
-   import flash.display.BlendMode;
-   import mx.containers.Box;
-   import mx.effects.Pause;
-   import mx.managers.CursorManagerPriority;
    
    public class SessiondumpMouseShield extends Container
    {
       
-      private static var s_Instance:tibia.sessiondump.controller.SessiondumpMouseShield = null;
+      private static var s_Instance:SessiondumpMouseShield = null;
       
       private static const BUNDLE:String = "Global";
        
@@ -58,11 +58,11 @@ package tibia.sessiondump.controller
          mouseChildren = false;
       }
       
-      public static function getInstance() : tibia.sessiondump.controller.SessiondumpMouseShield
+      public static function getInstance() : SessiondumpMouseShield
       {
          if(s_Instance == null)
          {
-            s_Instance = new tibia.sessiondump.controller.SessiondumpMouseShield();
+            s_Instance = new SessiondumpMouseShield();
          }
          return s_Instance;
       }

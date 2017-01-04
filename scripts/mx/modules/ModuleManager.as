@@ -1,7 +1,7 @@
 package mx.modules
 {
-   import mx.core.mx_internal;
    import mx.core.IFlexModuleFactory;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    
@@ -38,12 +38,12 @@ package mx.modules
 }
 
 import flash.events.EventDispatcher;
-import mx.modules.IModuleInfo;
-import mx.core.IFlexModuleFactory;
 import flash.system.ApplicationDomain;
 import flash.system.SecurityDomain;
 import flash.utils.ByteArray;
+import mx.core.IFlexModuleFactory;
 import mx.events.ModuleEvent;
+import mx.modules.IModuleInfo;
 
 class ModuleInfoProxy extends EventDispatcher implements IModuleInfo
 {
@@ -171,10 +171,10 @@ class ModuleInfoProxy extends EventDispatcher implements IModuleInfo
 }
 
 import flash.events.EventDispatcher;
-import mx.modules.IModuleInfo;
-import mx.core.IFlexModuleFactory;
 import flash.system.ApplicationDomain;
 import flash.utils.getQualifiedClassName;
+import mx.core.IFlexModuleFactory;
+import mx.modules.IModuleInfo;
 
 class ModuleManagerImpl extends EventDispatcher
 {
@@ -231,22 +231,22 @@ class ModuleManagerImpl extends EventDispatcher
    }
 }
 
-import flash.events.EventDispatcher;
+import flash.display.Loader;
+import flash.events.ErrorEvent;
 import flash.events.Event;
-import flash.events.ProgressEvent;
+import flash.events.EventDispatcher;
 import flash.events.IOErrorEvent;
+import flash.events.ProgressEvent;
 import flash.events.SecurityErrorEvent;
+import flash.net.URLRequest;
+import flash.system.ApplicationDomain;
+import flash.system.LoaderContext;
+import flash.system.Security;
+import flash.system.SecurityDomain;
+import flash.utils.ByteArray;
 import flash.utils.Dictionary;
 import mx.core.IFlexModuleFactory;
 import mx.events.ModuleEvent;
-import flash.display.Loader;
-import flash.events.ErrorEvent;
-import flash.system.ApplicationDomain;
-import flash.utils.ByteArray;
-import flash.system.LoaderContext;
-import flash.system.SecurityDomain;
-import flash.net.URLRequest;
-import flash.system.Security;
 
 class ModuleInfo extends EventDispatcher
 {
@@ -587,8 +587,8 @@ class ModuleInfo extends EventDispatcher
    }
 }
 
-import mx.core.IFlexModuleFactory;
 import flash.system.ApplicationDomain;
+import mx.core.IFlexModuleFactory;
 
 class FactoryInfo
 {

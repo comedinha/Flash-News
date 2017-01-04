@@ -1,23 +1,23 @@
 package mx.controls.dataGridClasses
 {
-   import mx.styles.CSSStyleDeclaration;
-   import mx.core.IIMESupport;
-   import mx.core.IEmbeddedFontRegistry;
-   import mx.core.Singleton;
-   import mx.core.mx_internal;
-   import mx.controls.listClasses.IListItemRenderer;
-   import mx.core.IFactory;
-   import flash.utils.Dictionary;
-   import flash.events.Event;
-   import mx.core.EmbeddedFont;
    import flash.display.DisplayObject;
-   import mx.styles.StyleManager;
-   import mx.core.IFlexModuleFactory;
-   import mx.utils.StringUtil;
-   import mx.core.EmbeddedFontRegistry;
+   import flash.events.Event;
+   import flash.utils.Dictionary;
+   import mx.controls.TextInput;
+   import mx.controls.listClasses.IListItemRenderer;
    import mx.core.ClassFactory;
    import mx.core.ContextualClassFactory;
-   import mx.controls.TextInput;
+   import mx.core.EmbeddedFont;
+   import mx.core.EmbeddedFontRegistry;
+   import mx.core.IEmbeddedFontRegistry;
+   import mx.core.IFactory;
+   import mx.core.IFlexModuleFactory;
+   import mx.core.IIMESupport;
+   import mx.core.Singleton;
+   import mx.core.mx_internal;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.StyleManager;
+   import mx.utils.StringUtil;
    
    use namespace mx_internal;
    
@@ -81,7 +81,7 @@ package mx.controls.dataGridClasses
       
       private var _headerRenderer:IFactory;
       
-      mx_internal var owner:mx.controls.dataGridClasses.DataGridBase;
+      mx_internal var owner:DataGridBase;
       
       private var _imeMode:String;
       
@@ -254,7 +254,7 @@ package mx.controls.dataGridClasses
          var _loc6_:Object = null;
          var _loc7_:Object = null;
          var _loc8_:Object = null;
-         var _loc4_:mx.controls.dataGridClasses.DataGridBase = owner;
+         var _loc4_:DataGridBase = owner;
          var _loc5_:IListItemRenderer = IListItemRenderer(param2);
          _loc6_ = _loc6_;
          if(_loc6_)

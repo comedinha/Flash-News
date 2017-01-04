@@ -1,9 +1,9 @@
 package tibia.chat
 {
    import flash.events.EventDispatcher;
-   import shared.utility.XMLHelper;
    import mx.events.PropertyChangeEvent;
    import mx.events.PropertyChangeEventKind;
+   import shared.utility.XMLHelper;
    
    public class MessageFilterSet extends EventDispatcher
    {
@@ -17,7 +17,7 @@ package tibia.chat
       protected static const OPTIONS_MIN_COMPATIBLE_VERSION:Number = 2;
        
       
-      protected var m_MessageModes:Vector.<tibia.chat.MessageMode> = null;
+      protected var m_MessageModes:Vector.<MessageMode> = null;
       
       protected var m_ShowTimestamps:Boolean = true;
       
@@ -29,11 +29,11 @@ package tibia.chat
       {
          super();
          this.m_ID = param1;
-         this.m_MessageModes = new Vector.<tibia.chat.MessageMode>(tibia.chat.MessageMode.MESSAGE_BEYOND_LAST,true);
-         var _loc2_:int = tibia.chat.MessageMode.MESSAGE_NONE;
-         while(_loc2_ < tibia.chat.MessageMode.MESSAGE_BEYOND_LAST)
+         this.m_MessageModes = new Vector.<MessageMode>(MessageMode.MESSAGE_BEYOND_LAST,true);
+         var _loc2_:int = MessageMode.MESSAGE_NONE;
+         while(_loc2_ < MessageMode.MESSAGE_BEYOND_LAST)
          {
-            this.addMessageMode(new tibia.chat.MessageMode(_loc2_));
+            this.addMessageMode(new MessageMode(_loc2_));
             _loc2_++;
          }
          this.reset();
@@ -44,7 +44,7 @@ package tibia.chat
          var _loc4_:int = 0;
          var _loc6_:XML = null;
          var _loc7_:XML = null;
-         var _loc8_:tibia.chat.MessageMode = null;
+         var _loc8_:MessageMode = null;
          if(param1 == null || param1.localName() != "messagefilterset" || param2 < OPTIONS_MIN_COMPATIBLE_VERSION || param2 > OPTIONS_MAX_COMPATIBLE_VERSION)
          {
             throw new Error("MessageFilterSet.s_Unmarshall: Invalid input.");
@@ -63,7 +63,7 @@ package tibia.chat
                case "messagemodes":
                   for each(_loc7_ in _loc6_.elements("messagemode"))
                   {
-                     _loc8_ = tibia.chat.MessageMode.s_Unmarshall(_loc7_,param2);
+                     _loc8_ = MessageMode.s_Unmarshall(_loc7_,param2);
                      if(_loc8_ != null && _loc8_.editable)
                      {
                         _loc5_.addMessageMode(_loc8_);
@@ -133,8 +133,8 @@ package tibia.chat
                          <showlevels>{this.m_ShowLevels}</showlevels>
                        </messagefilterset>;
          var _loc2_:XML = <messagemodes/>;
-         var _loc3_:int = tibia.chat.MessageMode.MESSAGE_NONE;
-         while(_loc3_ < tibia.chat.MessageMode.MESSAGE_BEYOND_LAST)
+         var _loc3_:int = MessageMode.MESSAGE_NONE;
+         while(_loc3_ < MessageMode.MESSAGE_BEYOND_LAST)
          {
             if(this.m_MessageModes[_loc3_].editable)
             {
@@ -148,8 +148,8 @@ package tibia.chat
       
       public function reset() : void
       {
-         var _loc1_:int = tibia.chat.MessageMode.MESSAGE_NONE;
-         while(_loc1_ < tibia.chat.MessageMode.MESSAGE_BEYOND_LAST)
+         var _loc1_:int = MessageMode.MESSAGE_NONE;
+         while(_loc1_ < MessageMode.MESSAGE_BEYOND_LAST)
          {
             this.m_MessageModes[_loc1_].initialiseDefaultValues();
             _loc1_++;
@@ -158,7 +158,7 @@ package tibia.chat
          this.m_ShowTimestamps = true;
       }
       
-      public function addMessageMode(param1:tibia.chat.MessageMode) : void
+      public function addMessageMode(param1:MessageMode) : void
       {
          var _loc3_:PropertyChangeEvent = null;
          var _loc2_:int = param1.ID;
@@ -178,9 +178,9 @@ package tibia.chat
          }
       }
       
-      public function getMessageMode(param1:int) : tibia.chat.MessageMode
+      public function getMessageMode(param1:int) : MessageMode
       {
-         if(!tibia.chat.MessageMode.s_CheckMode(param1))
+         if(!MessageMode.s_CheckMode(param1))
          {
             throw new ArgumentError("MessageModeSet.getMessageMode: Invalid mode: " + param1 + ".");
          }

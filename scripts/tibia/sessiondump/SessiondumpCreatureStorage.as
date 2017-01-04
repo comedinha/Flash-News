@@ -1,9 +1,9 @@
 package tibia.sessiondump
 {
-   import tibia.creatures.CreatureStorage;
-   import tibia.creatures.Creature;
    import flash.utils.Dictionary;
    import tibia.appearances.AppearanceStorage;
+   import tibia.creatures.Creature;
+   import tibia.creatures.CreatureStorage;
    
    public class SessiondumpCreatureStorage extends CreatureStorage
    {

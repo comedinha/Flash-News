@@ -10,7 +10,7 @@ package tibia.chat
       public static const MAX_NPC_DISTANCE:uint = 3;
        
       
-      protected var m_CurrentBlock:tibia.chat.MessageBlock = null;
+      protected var m_CurrentBlock:MessageBlock = null;
       
       public function MessageStorage()
       {
@@ -22,7 +22,7 @@ package tibia.chat
          return MESSAGE_BASE_DELAY + (4000 * param1.length / 256 + 3000);
       }
       
-      public function startMessageBlock(param1:String, param2:Vector3D, param3:String) : tibia.chat.MessageBlock
+      public function startMessageBlock(param1:String, param2:Vector3D, param3:String) : MessageBlock
       {
          if(param1 == null)
          {
@@ -36,21 +36,21 @@ package tibia.chat
          {
             this.m_CurrentBlock.dispose(false);
          }
-         this.m_CurrentBlock = new tibia.chat.MessageBlock(param1,param2);
+         this.m_CurrentBlock = new MessageBlock(param1,param2);
          this.m_CurrentBlock.addText(param3);
          return this.m_CurrentBlock;
       }
       
       public function addTextToBlock(param1:String, param2:String) : void
       {
-         var _loc3_:tibia.chat.MessageBlock = this.getMessageBlock(param1);
+         var _loc3_:MessageBlock = this.getMessageBlock(param1);
          if(_loc3_ != null)
          {
             _loc3_.addText(param2);
          }
       }
       
-      public function getMessageBlock(param1:String) : tibia.chat.MessageBlock
+      public function getMessageBlock(param1:String) : MessageBlock
       {
          if(param1 == null)
          {

@@ -1,21 +1,21 @@
 package tibia.market.marketWidgetClasses
 {
-   import mx.containers.HBox;
-   import flash.geom.Rectangle;
-   import shared.utility.TextFieldCache;
-   import flash.geom.Matrix;
-   import mx.core.FlexShape;
-   import tibia.appearances.AppearanceType;
-   import tibia.appearances.AppearanceStorage;
-   import mx.controls.listClasses.ListBase;
-   import tibia.appearances.widgetClasses.SkinnedAppearanceRenderer;
-   import flash.events.Event;
-   import tibia.market.MarketWidget;
    import flash.display.Graphics;
-   import tibia.ingameshop.IngameShopManager;
+   import flash.events.Event;
+   import flash.geom.Matrix;
+   import flash.geom.Rectangle;
+   import mx.containers.HBox;
+   import mx.controls.listClasses.ListBase;
    import mx.core.EventPriority;
+   import mx.core.FlexShape;
    import mx.events.FlexEvent;
+   import shared.utility.TextFieldCache;
+   import tibia.appearances.AppearanceStorage;
+   import tibia.appearances.AppearanceType;
+   import tibia.appearances.widgetClasses.SkinnedAppearanceRenderer;
    import tibia.game.PopUpBase;
+   import tibia.ingameshop.IngameShopManager;
+   import tibia.market.MarketWidget;
    
    public class AppearanceTypeTileRenderer extends HBox
    {

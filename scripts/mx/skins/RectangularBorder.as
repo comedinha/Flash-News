@@ -1,29 +1,29 @@
 package mx.skins
 {
-   import mx.core.IRectangularBorder;
-   import mx.core.mx_internal;
-   import flash.display.Graphics;
    import flash.display.DisplayObject;
-   import mx.core.IContainer;
-   import mx.core.EdgeMetrics;
-   import flash.display.Shape;
-   import flash.geom.Rectangle;
-   import flash.events.Event;
-   import mx.core.IChildList;
-   import mx.core.IRawChildrenContainer;
+   import flash.display.Graphics;
    import flash.display.Loader;
-   import mx.styles.ISimpleStyleClient;
-   import mx.core.FlexShape;
    import flash.display.LoaderInfo;
+   import flash.display.Shape;
+   import flash.events.ErrorEvent;
+   import flash.events.Event;
+   import flash.events.IOErrorEvent;
+   import flash.geom.Rectangle;
+   import flash.net.URLRequest;
+   import flash.system.ApplicationDomain;
    import flash.system.LoaderContext;
    import flash.utils.getDefinitionByName;
+   import mx.core.EdgeMetrics;
    import mx.core.FlexLoader;
-   import flash.events.IOErrorEvent;
-   import flash.events.ErrorEvent;
-   import flash.system.ApplicationDomain;
-   import flash.net.URLRequest;
+   import mx.core.FlexShape;
+   import mx.core.IChildList;
+   import mx.core.IContainer;
+   import mx.core.IRawChildrenContainer;
+   import mx.core.IRectangularBorder;
+   import mx.core.mx_internal;
    import mx.resources.IResourceManager;
    import mx.resources.ResourceManager;
+   import mx.styles.ISimpleStyleClient;
    
    use namespace mx_internal;
    

@@ -1,17 +1,17 @@
 package tibia.reporting.reportWidgetClasses
 {
-   import tibia.reporting.reportType.Reason;
-   import mx.controls.TextArea;
-   import mx.containers.GridRow;
    import mx.containers.Grid;
-   import tibia.reporting.reportType.Type;
-   import tibia.chat.ChannelMessage;
-   import shared.utility.StringHelper;
-   import tibia.reporting.ReportWidget;
-   import mx.core.UIComponent;
    import mx.containers.GridItem;
+   import mx.containers.GridRow;
    import mx.controls.Label;
+   import mx.controls.TextArea;
+   import mx.core.UIComponent;
+   import shared.utility.StringHelper;
+   import tibia.chat.ChannelMessage;
    import tibia.reporting.IReportable;
+   import tibia.reporting.ReportWidget;
+   import tibia.reporting.reportType.Reason;
+   import tibia.reporting.reportType.Type;
    
    public class ConfirmView extends ViewBase
    {

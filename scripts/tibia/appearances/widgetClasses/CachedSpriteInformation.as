@@ -1,8 +1,8 @@
 package tibia.appearances.widgetClasses
 {
-   import shared.utility.BitmapPart;
    import flash.display.BitmapData;
    import flash.geom.Rectangle;
+   import shared.utility.BitmapPart;
    
    public class CachedSpriteInformation extends BitmapPart
    {

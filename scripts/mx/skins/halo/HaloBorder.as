@@ -1,17 +1,17 @@
 package mx.skins.halo
 {
-   import mx.skins.RectangularBorder;
-   import mx.core.mx_internal;
-   import mx.core.IContainer;
-   import mx.core.EdgeMetrics;
+   import flash.display.GradientType;
    import flash.display.Graphics;
-   import mx.utils.ColorUtil;
+   import mx.core.EdgeMetrics;
    import mx.core.FlexVersion;
+   import mx.core.IContainer;
+   import mx.core.IUIComponent;
+   import mx.core.mx_internal;
+   import mx.graphics.RectangularDropShadow;
+   import mx.skins.RectangularBorder;
    import mx.styles.IStyleClient;
    import mx.styles.StyleManager;
-   import flash.display.GradientType;
-   import mx.graphics.RectangularDropShadow;
-   import mx.core.IUIComponent;
+   import mx.utils.ColorUtil;
    
    use namespace mx_internal;
    

@@ -1,12 +1,12 @@
 package tibia.input.gameaction
 {
-   import tibia.input.IActionImpl;
-   import tibia.options.OptionsStorage;
-   import tibia.creatures.BuddySet;
-   import tibia.input.widgetClasses.AskPlayerNameWidget;
-   import mx.resources.ResourceManager;
    import mx.events.CloseEvent;
+   import mx.resources.ResourceManager;
+   import tibia.creatures.BuddySet;
    import tibia.game.PopUpBase;
+   import tibia.input.IActionImpl;
+   import tibia.input.widgetClasses.AskPlayerNameWidget;
+   import tibia.options.OptionsStorage;
    
    public class BuddylistActionImpl implements IActionImpl
    {

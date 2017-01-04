@@ -1,37 +1,37 @@
 package tibia.market.marketWidgetClasses
 {
-   import mx.containers.VBox;
-   import flash.events.Event;
-   import mx.containers.ViewStack;
-   import tibia.appearances.AppearanceType;
-   import mx.controls.Button;
-   import mx.events.FlexEvent;
-   import flash.events.MouseEvent;
-   import mx.controls.listClasses.ListBase;
-   import mx.core.mx_internal;
-   import mx.controls.Spacer;
-   import mx.containers.HBox;
-   import mx.events.IndexChangedEvent;
    import flash.display.DisplayObject;
-   import shared.controls.CustomButton;
-   import mx.events.ListEvent;
-   import shared.controls.SimpleTabBar;
-   import tibia.options.OptionsStorage;
-   import mx.collections.ArrayCollection;
    import flash.display.DisplayObjectContainer;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import mx.collections.ArrayCollection;
+   import mx.collections.Sort;
+   import mx.containers.HBox;
+   import mx.containers.VBox;
+   import mx.containers.ViewStack;
+   import mx.controls.Button;
+   import mx.controls.Spacer;
+   import mx.controls.TabBar;
+   import mx.controls.listClasses.ListBase;
    import mx.core.ClassFactory;
-   import shared.controls.CustomList;
+   import mx.core.EventPriority;
    import mx.core.ScrollPolicy;
+   import mx.core.mx_internal;
+   import mx.events.FlexEvent;
+   import mx.events.IndexChangedEvent;
+   import mx.events.ListEvent;
+   import shared.controls.CustomButton;
+   import shared.controls.CustomList;
    import shared.controls.CustomTileList;
+   import shared.controls.SimpleTabBar;
+   import shared.utility.closure;
+   import tibia.appearances.AppearanceStorage;
+   import tibia.appearances.AppearanceType;
    import tibia.game.PopUpBase;
    import tibia.market.MarketWidget;
-   import mx.controls.TabBar;
-   import shared.utility.closure;
-   import mx.collections.Sort;
-   import tibia.appearances.AppearanceStorage;
-   import mx.core.EventPriority;
+   import tibia.options.OptionsStorage;
    
-   public class AppearanceTypeBrowser extends VBox implements tibia.market.marketWidgetClasses.IAppearanceTypeFilterEditor
+   public class AppearanceTypeBrowser extends VBox implements IAppearanceTypeFilterEditor
    {
       
       private static const ACTION_NONE:int = 0;
@@ -73,7 +73,7 @@ package tibia.market.marketWidgetClasses
       
       private var m_UIConstructed:Boolean = false;
       
-      private var m_UIEditor:Vector.<tibia.market.marketWidgetClasses.IAppearanceTypeFilterEditor>;
+      private var m_UIEditor:Vector.<IAppearanceTypeFilterEditor>;
       
       private var m_UIDepot:Button = null;
       
@@ -95,7 +95,7 @@ package tibia.market.marketWidgetClasses
       
       public function AppearanceTypeBrowser()
       {
-         this.m_UIEditor = new Vector.<tibia.market.marketWidgetClasses.IAppearanceTypeFilterEditor>();
+         this.m_UIEditor = new Vector.<IAppearanceTypeFilterEditor>();
          super();
          var _loc1_:Sort = new Sort();
          _loc1_.compareFunction = Utility.compareAppearanceType;
@@ -354,7 +354,7 @@ package tibia.market.marketWidgetClasses
       
       override protected function commitProperties() : void
       {
-         var _loc3_:tibia.market.marketWidgetClasses.IAppearanceTypeFilterEditor = null;
+         var _loc3_:IAppearanceTypeFilterEditor = null;
          super.commitProperties();
          var _loc1_:OptionsStorage = Tibia.s_GetOptions();
          if(this.m_UncommittedAppearanceTypes)

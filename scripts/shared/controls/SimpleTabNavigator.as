@@ -1,8 +1,8 @@
 package shared.controls
 {
    import mx.containers.TabNavigator;
-   import mx.core.mx_internal;
    import mx.core.ClassFactory;
+   import mx.core.mx_internal;
    
    public class SimpleTabNavigator extends TabNavigator
    {

@@ -1,13 +1,13 @@
 package tibia.creatures.editBuddyWidgetClasses
 {
+   import flash.events.Event;
+   import flash.events.MouseEvent;
    import mx.containers.HBox;
+   import mx.core.ScrollPolicy;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
    import tibia.creatures.buddylistClasses.BuddyIcon;
    import tibia.creatures.buddylistWidgetClasses.BuddyIconRenderer;
-   import flash.events.MouseEvent;
-   import flash.events.Event;
-   import mx.core.ScrollPolicy;
    
    public class BuddyIconChooser extends HBox
    {

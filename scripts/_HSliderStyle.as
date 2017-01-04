@@ -1,11 +1,11 @@
 package
 {
    import mx.core.IFlexModuleFactory;
-   import mx.styles.CSSStyleDeclaration;
-   import mx.styles.StyleManager;
    import mx.skins.halo.SliderHighlightSkin;
    import mx.skins.halo.SliderThumbSkin;
    import mx.skins.halo.SliderTrackSkin;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.StyleManager;
    
    public class _HSliderStyle
    {

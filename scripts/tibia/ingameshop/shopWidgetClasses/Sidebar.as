@@ -1,24 +1,24 @@
 package tibia.ingameshop.shopWidgetClasses
 {
-   import mx.containers.VBox;
-   import tibia.ingameshop.IngameShopCategory;
-   import mx.collections.ArrayCollection;
-   import tibia.ingameshop.IngameShopEvent;
-   import mx.collections.ListCollectionView;
-   import flash.events.MouseEvent;
-   import tibia.network.Communication;
-   import mx.events.ListEvent;
-   import mx.controls.Button;
-   import flash.events.Event;
-   import mx.events.CloseEvent;
-   import mx.controls.List;
-   import shared.controls.EmbeddedDialog;
-   import tibia.ingameshop.IngameShopManager;
-   import mx.controls.Label;
-   import mx.containers.HBox;
-   import mx.core.ClassFactory;
-   import tibia.ingameshop.IngameShopWidget;
    import flash.errors.IllegalOperationError;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import mx.collections.ArrayCollection;
+   import mx.collections.ListCollectionView;
+   import mx.containers.HBox;
+   import mx.containers.VBox;
+   import mx.controls.Button;
+   import mx.controls.Label;
+   import mx.controls.List;
+   import mx.core.ClassFactory;
+   import mx.events.CloseEvent;
+   import mx.events.ListEvent;
+   import shared.controls.EmbeddedDialog;
+   import tibia.ingameshop.IngameShopCategory;
+   import tibia.ingameshop.IngameShopEvent;
+   import tibia.ingameshop.IngameShopManager;
+   import tibia.ingameshop.IngameShopWidget;
+   import tibia.network.Communication;
    
    public class Sidebar extends VBox implements IIngameShopWidgetComponent
    {
@@ -32,7 +32,7 @@ package tibia.ingameshop.shopWidgetClasses
       private static const MAIN_CATEGORIES_FULL_HEIGHT:int = 321;
        
       
-      private var m_UICreditText:tibia.ingameshop.shopWidgetClasses.CoinWidget;
+      private var m_UICreditText:CoinWidget;
       
       private var m_UIHistory:Button;
       
@@ -228,7 +228,7 @@ package tibia.ingameshop.shopWidgetClasses
          var _loc2_:Label = new Label();
          _loc2_.text = resourceManager.getString(BUNDLE,"LBL_CREDITS");
          _loc1_.addChild(_loc2_);
-         this.m_UICreditText = new tibia.ingameshop.shopWidgetClasses.CoinWidget();
+         this.m_UICreditText = new CoinWidget();
          this.m_UncommitedCredits = true;
          _loc1_.addChild(this.m_UICreditText);
          addChild(_loc1_);

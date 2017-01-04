@@ -1,22 +1,22 @@
 package mx.graphics
 {
-   import mx.core.IUIComponent;
-   import flash.display.DisplayObject;
-   import mx.core.UIComponent;
-   import flash.display.Stage;
-   import flash.utils.ByteArray;
-   import mx.utils.Base64Encoder;
-   import flash.display.IBitmapDrawable;
-   import mx.graphics.codec.IImageEncoder;
-   import flash.geom.Matrix;
-   import flash.display.BitmapData;
    import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.DisplayObject;
+   import flash.display.IBitmapDrawable;
+   import flash.display.Stage;
+   import flash.geom.ColorTransform;
+   import flash.geom.Matrix;
    import flash.geom.Rectangle;
    import flash.system.Capabilities;
+   import flash.utils.ByteArray;
    import mx.core.IFlexDisplayObject;
+   import mx.core.IUIComponent;
+   import mx.core.UIComponent;
    import mx.core.mx_internal;
-   import flash.geom.ColorTransform;
+   import mx.graphics.codec.IImageEncoder;
    import mx.graphics.codec.PNGEncoder;
+   import mx.utils.Base64Encoder;
    
    use namespace mx_internal;
    

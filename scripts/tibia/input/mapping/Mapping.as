@@ -1,8 +1,8 @@
 package tibia.input.mapping
 {
    import tibia.input.IAction;
-   import tibia.input.staticaction.StaticAction;
    import tibia.input.InputEvent;
+   import tibia.input.staticaction.StaticAction;
    
    public class Mapping
    {
@@ -12,18 +12,18 @@ package tibia.input.mapping
       protected static const OPTIONS_MIN_COMPATIBLE_VERSION:Number = 2;
        
       
-      protected var m_Binding:Vector.<tibia.input.mapping.Binding>;
+      protected var m_Binding:Vector.<Binding>;
       
       public function Mapping()
       {
-         this.m_Binding = new Vector.<tibia.input.mapping.Binding>();
+         this.m_Binding = new Vector.<Binding>();
          super();
       }
       
       public static function s_Unmarshall(param1:XML, param2:Number, param3:Mapping) : Mapping
       {
          var _loc4_:XML = null;
-         var _loc5_:tibia.input.mapping.Binding = null;
+         var _loc5_:Binding = null;
          if(param1 == null || param1.localName() != "mapping" || param2 < OPTIONS_MIN_COMPATIBLE_VERSION || param2 > OPTIONS_MAX_COMPATIBLE_VERSION)
          {
             throw new Error("Mapping.s_Unmarshall: Invalid input.");
@@ -34,7 +34,7 @@ package tibia.input.mapping
          }
          for each(_loc4_ in param1.elements("binding"))
          {
-            _loc5_ = tibia.input.mapping.Binding.unmarshall(_loc4_,param2);
+            _loc5_ = Binding.unmarshall(_loc4_,param2);
             if(_loc5_ != null)
             {
                param3.addItemInternal(_loc5_);
@@ -45,7 +45,7 @@ package tibia.input.mapping
       
       public function addAll(param1:*) : Boolean
       {
-         if(!(param1 is Array) && !(param1 is Vector.<tibia.input.mapping.Binding>))
+         if(!(param1 is Array) && !(param1 is Vector.<Binding>))
          {
             throw new ArgumentError("Mapping.addAll: Invalid input(1).");
          }
@@ -82,14 +82,14 @@ package tibia.input.mapping
          return _loc1_;
       }
       
-      public function get binding() : Vector.<tibia.input.mapping.Binding>
+      public function get binding() : Vector.<Binding>
       {
          return this.m_Binding;
       }
       
       function onKeyInput(param1:uint, param2:uint, param3:uint, param4:Boolean, param5:Boolean, param6:Boolean) : void
       {
-         var b:tibia.input.mapping.Binding = null;
+         var b:Binding = null;
          var _Action:IAction = null;
          var a_Event:uint = param1;
          var a_Char:uint = param2;
@@ -121,9 +121,9 @@ package tibia.input.mapping
          }
       }
       
-      public function getConflictingBinding(param1:tibia.input.mapping.Binding) : tibia.input.mapping.Binding
+      public function getConflictingBinding(param1:Binding) : Binding
       {
-         var _loc2_:tibia.input.mapping.Binding = null;
+         var _loc2_:Binding = null;
          if(param1 == null)
          {
             throw new ArgumentError("Mapping.getConflictingBinding: Invalid binding.");
@@ -174,7 +174,7 @@ package tibia.input.mapping
          return _loc2_;
       }
       
-      public function addItem(param1:tibia.input.mapping.Binding) : Boolean
+      public function addItem(param1:Binding) : Boolean
       {
          if(param1 == null)
          {
@@ -188,7 +188,7 @@ package tibia.input.mapping
          return true;
       }
       
-      public function removeItem(param1:tibia.input.mapping.Binding) : void
+      public function removeItem(param1:Binding) : void
       {
          var _loc2_:int = this.m_Binding.length - 1;
          while(_loc2_ >= 0)
@@ -202,7 +202,7 @@ package tibia.input.mapping
          }
       }
       
-      private function addItemInternal(param1:tibia.input.mapping.Binding) : Boolean
+      private function addItemInternal(param1:Binding) : Boolean
       {
          if(param1 == null)
          {
@@ -235,7 +235,7 @@ package tibia.input.mapping
       {
          var _loc2_:int = 0;
          var _loc3_:int = 0;
-         var _loc4_:tibia.input.mapping.Binding = null;
+         var _loc4_:Binding = null;
          if(!param1)
          {
             this.m_Binding.length = 0;
@@ -261,7 +261,7 @@ package tibia.input.mapping
       
       function onTextInput(param1:uint, param2:String) : void
       {
-         var b:tibia.input.mapping.Binding = null;
+         var b:Binding = null;
          var a_Event:uint = param1;
          var a_Text:String = param2;
          for each(b in this.m_Binding)

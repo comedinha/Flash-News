@@ -1,12 +1,12 @@
 package mx.containers
 {
-   import mx.core.mx_internal;
+   import flash.display.DisplayObject;
    import mx.containers.gridClasses.GridColumnInfo;
    import mx.containers.gridClasses.GridRowInfo;
-   import mx.core.EdgeMetrics;
    import mx.containers.utilityClasses.Flex;
+   import mx.core.EdgeMetrics;
    import mx.core.ScrollPolicy;
-   import flash.display.DisplayObject;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

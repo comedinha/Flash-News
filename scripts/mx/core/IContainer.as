@@ -1,13 +1,13 @@
 package mx.core
 {
-   import flash.display.Sprite;
    import flash.display.DisplayObject;
    import flash.display.Graphics;
-   import flash.text.TextSnapshot;
+   import flash.display.Sprite;
    import flash.geom.Point;
-   import flash.media.SoundTransform;
-   import mx.managers.IFocusManager;
    import flash.geom.Rectangle;
+   import flash.media.SoundTransform;
+   import flash.text.TextSnapshot;
+   import mx.managers.IFocusManager;
    
    public interface IContainer extends IUIComponent
    {

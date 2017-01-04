@@ -1,31 +1,31 @@
 package mx.controls.dataGridClasses
 {
-   import mx.core.UITextField;
-   import mx.core.IDataRenderer;
-   import mx.controls.listClasses.IDropInListItemRenderer;
-   import mx.managers.ILayoutManagerClient;
-   import mx.controls.listClasses.IListItemRenderer;
-   import mx.styles.IStyleClient;
-   import mx.core.mx_internal;
-   import mx.styles.CSSStyleDeclaration;
-   import flash.utils.getQualifiedClassName;
-   import mx.styles.StyleManager;
-   import flash.utils.getQualifiedSuperclassName;
-   import flash.utils.getDefinitionByName;
-   import mx.core.UIComponentGlobals;
-   import mx.events.ToolTipEvent;
-   import flash.geom.Rectangle;
-   import mx.events.InterManagerRequest;
-   import mx.core.IToolTip;
-   import mx.managers.ISystemManager;
    import flash.display.DisplayObject;
    import flash.geom.Point;
-   import mx.events.FlexEvent;
-   import mx.controls.listClasses.BaseListData;
+   import flash.geom.Rectangle;
+   import flash.utils.getDefinitionByName;
+   import flash.utils.getQualifiedClassName;
+   import flash.utils.getQualifiedSuperclassName;
    import mx.controls.DataGrid;
+   import mx.controls.listClasses.BaseListData;
+   import mx.controls.listClasses.IDropInListItemRenderer;
+   import mx.controls.listClasses.IListItemRenderer;
+   import mx.core.IDataRenderer;
    import mx.core.IFlexDisplayObject;
-   import mx.styles.StyleProtoChain;
+   import mx.core.IToolTip;
    import mx.core.UIComponent;
+   import mx.core.UIComponentGlobals;
+   import mx.core.UITextField;
+   import mx.core.mx_internal;
+   import mx.events.FlexEvent;
+   import mx.events.InterManagerRequest;
+   import mx.events.ToolTipEvent;
+   import mx.managers.ILayoutManagerClient;
+   import mx.managers.ISystemManager;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.IStyleClient;
+   import mx.styles.StyleManager;
+   import mx.styles.StyleProtoChain;
    
    use namespace mx_internal;
    
@@ -39,7 +39,7 @@ package mx.controls.dataGridClasses
       
       private var _data:Object;
       
-      private var _listData:mx.controls.dataGridClasses.DataGridListData;
+      private var _listData:DataGridListData;
       
       private var invalidatePropertiesFlag:Boolean = false;
       

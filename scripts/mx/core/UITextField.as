@@ -1,24 +1,24 @@
 package mx.core
 {
-   import mx.automation.IAutomationObject;
-   import mx.styles.ISimpleStyleClient;
-   import mx.managers.IToolTipManagerClient;
-   import flash.events.Event;
-   import mx.styles.StyleProtoChain;
-   import mx.styles.StyleManager;
-   import mx.styles.IStyleClient;
-   import flash.utils.getQualifiedClassName;
-   import mx.managers.ISystemManager;
-   import flash.text.TextFormat;
-   import flash.display.Sprite;
-   import mx.utils.StringUtil;
    import flash.display.DisplayObject;
-   import flash.text.TextLineMetrics;
    import flash.display.DisplayObjectContainer;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.text.TextFormat;
+   import flash.text.TextLineMetrics;
+   import flash.utils.getQualifiedClassName;
+   import mx.automation.IAutomationObject;
+   import mx.managers.ISystemManager;
+   import mx.managers.IToolTipManagerClient;
    import mx.managers.SystemManager;
-   import mx.resources.IResourceManager;
    import mx.managers.ToolTipManager;
+   import mx.resources.IResourceManager;
    import mx.resources.ResourceManager;
+   import mx.styles.ISimpleStyleClient;
+   import mx.styles.IStyleClient;
+   import mx.styles.StyleManager;
+   import mx.styles.StyleProtoChain;
+   import mx.utils.StringUtil;
    
    use namespace mx_internal;
    
@@ -31,7 +31,7 @@ package mx.core
       
       private static var truncationIndicatorResource:String;
       
-      private static var _embeddedFontRegistry:mx.core.IEmbeddedFontRegistry;
+      private static var _embeddedFontRegistry:IEmbeddedFontRegistry;
       
       mx_internal static const VERSION:String = "3.6.0.21751";
       
@@ -42,7 +42,7 @@ package mx.core
       
       private var untruncatedText:String;
       
-      private var cachedEmbeddedFont:mx.core.EmbeddedFont = null;
+      private var cachedEmbeddedFont:EmbeddedFont = null;
       
       private var cachedTextFormat:TextFormat;
       
@@ -60,7 +60,7 @@ package mx.core
       
       private var _explicitHeight:Number;
       
-      private var _moduleFactory:mx.core.IFlexModuleFactory;
+      private var _moduleFactory:IFlexModuleFactory;
       
       private var _initialized:Boolean = false;
       
@@ -117,7 +117,7 @@ package mx.core
          resourceManager.addEventListener(Event.CHANGE,resourceManager_changeHandler,false,0,true);
       }
       
-      private static function get embeddedFontRegistry() : mx.core.IEmbeddedFontRegistry
+      private static function get embeddedFontRegistry() : IEmbeddedFontRegistry
       {
          if(!_embeddedFontRegistry)
          {
@@ -501,7 +501,7 @@ package mx.core
          return UIComponent.DEFAULT_MAX_WIDTH;
       }
       
-      private function getEmbeddedFont(param1:String, param2:Boolean, param3:Boolean) : mx.core.EmbeddedFont
+      private function getEmbeddedFont(param1:String, param2:Boolean, param3:Boolean) : EmbeddedFont
       {
          if(cachedEmbeddedFont)
          {
@@ -510,7 +510,7 @@ package mx.core
                return cachedEmbeddedFont;
             }
          }
-         cachedEmbeddedFont = new mx.core.EmbeddedFont(param1,param2,param3);
+         cachedEmbeddedFont = new EmbeddedFont(param1,param2,param3);
          return cachedEmbeddedFont;
       }
       
@@ -608,7 +608,7 @@ package mx.core
          return _imeMode;
       }
       
-      public function get moduleFactory() : mx.core.IFlexModuleFactory
+      public function get moduleFactory() : IFlexModuleFactory
       {
          return _moduleFactory;
       }
@@ -855,8 +855,8 @@ package mx.core
       public function validateNow() : void
       {
          var _loc1_:TextFormat = null;
-         var _loc2_:mx.core.EmbeddedFont = null;
-         var _loc3_:mx.core.IFlexModuleFactory = null;
+         var _loc2_:EmbeddedFont = null;
+         var _loc3_:IFlexModuleFactory = null;
          var _loc4_:ISystemManager = null;
          if(!parent)
          {
@@ -957,7 +957,7 @@ package mx.core
          return 0;
       }
       
-      public function set moduleFactory(param1:mx.core.IFlexModuleFactory) : void
+      public function set moduleFactory(param1:IFlexModuleFactory) : void
       {
          _moduleFactory = param1;
       }

@@ -1,11 +1,11 @@
 package tibia.worldmap
 {
-   import shared.utility.BitmapCache;
-   import tibia.worldmap.widgetClasses.OnscreenMessageCache;
+   import flash.display.BitmapData;
    import flash.geom.Rectangle;
+   import shared.utility.BitmapCache;
    import shared.utility.StringHelper;
    import tibia.chat.MessageMode;
-   import flash.display.BitmapData;
+   import tibia.worldmap.widgetClasses.OnscreenMessageCache;
    
    public class OnscreenMessage
    {

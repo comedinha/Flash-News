@@ -1,18 +1,18 @@
 package shared.utility
 {
-   import flash.events.EventDispatcher;
-   import flash.events.Event;
-   import flash.utils.Dictionary;
-   import flash.display.BitmapData;
-   import flash.display.LoaderInfo;
    import flash.display.Bitmap;
-   import flash.system.LoaderContext;
-   import flash.utils.ByteArray;
+   import flash.display.BitmapData;
    import flash.display.Loader;
+   import flash.display.LoaderInfo;
    import flash.events.AsyncErrorEvent;
+   import flash.events.Event;
+   import flash.events.EventDispatcher;
    import flash.events.IOErrorEvent;
    import flash.events.SecurityErrorEvent;
    import flash.system.ImageDecodingPolicy;
+   import flash.system.LoaderContext;
+   import flash.utils.ByteArray;
+   import flash.utils.Dictionary;
    
    public class AsyncCompressedImageCache extends EventDispatcher
    {
@@ -20,7 +20,7 @@ package shared.utility
       private static const LOADER_POOL_SIZE:uint = 4;
        
       
-      private var m_LoaderPool:shared.utility.HeapDictionaryWrapper = null;
+      private var m_LoaderPool:HeapDictionaryWrapper = null;
       
       private const m_CompressedImages:Dictionary = new Dictionary();
       
@@ -30,9 +30,9 @@ package shared.utility
       
       private var m_UncompressQueueAccessKey:int = 2.147483647E9;
       
-      private var m_UncompressedImagesCollection:shared.utility.HeapDictionaryWrapper = null;
+      private var m_UncompressedImagesCollection:HeapDictionaryWrapper = null;
       
-      private var m_UncompressQueue:shared.utility.HeapDictionaryWrapper = null;
+      private var m_UncompressQueue:HeapDictionaryWrapper = null;
       
       private var m_LoaderPoolKeysLoading:Dictionary = null;
       
@@ -44,7 +44,7 @@ package shared.utility
       {
          var _loc3_:LoaderPoolEntry = null;
          super();
-         this.m_LoaderPool = new shared.utility.HeapDictionaryWrapper();
+         this.m_LoaderPool = new HeapDictionaryWrapper();
          this.m_LoaderPoolKeysLoading = new Dictionary();
          var _loc2_:uint = 0;
          while(_loc2_ < LOADER_POOL_SIZE)
@@ -59,8 +59,8 @@ package shared.utility
             _loc2_++;
          }
          this.m_MaxMemory = param1;
-         this.m_UncompressedImagesCollection = new shared.utility.HeapDictionaryWrapper();
-         this.m_UncompressQueue = new shared.utility.HeapDictionaryWrapper();
+         this.m_UncompressedImagesCollection = new HeapDictionaryWrapper();
+         this.m_UncompressQueue = new HeapDictionaryWrapper();
          this.m_LoaderContext = new LoaderContext();
          this.m_LoaderContext.imageDecodingPolicy = ImageDecodingPolicy.ON_LOAD;
       }

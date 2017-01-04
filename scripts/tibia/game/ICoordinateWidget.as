@@ -1,7 +1,7 @@
 package tibia.game
 {
-   import shared.utility.Vector3D;
    import flash.geom.Point;
+   import shared.utility.Vector3D;
    
    public interface ICoordinateWidget
    {

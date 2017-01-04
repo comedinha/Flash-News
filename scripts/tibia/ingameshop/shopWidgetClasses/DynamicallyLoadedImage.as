@@ -1,11 +1,11 @@
 package tibia.ingameshop.shopWidgetClasses
 {
-   import mx.controls.Image;
    import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import mx.controls.Image;
+   import tibia.ingameshop.DynamicImage;
    import tibia.ingameshop.IngameShopEvent;
    import tibia.ingameshop.IngameShopManager;
-   import flash.display.BitmapData;
-   import tibia.ingameshop.DynamicImage;
    
    public class DynamicallyLoadedImage extends Image
    {

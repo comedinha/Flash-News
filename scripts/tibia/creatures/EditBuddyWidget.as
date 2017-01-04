@@ -1,18 +1,18 @@
 package tibia.creatures
 {
-   import tibia.game.PopUpBase;
-   import tibia.network.Communication;
-   import shared.utility.StringHelper;
-   import tibia.creatures.buddylistClasses.Buddy;
-   import mx.controls.CheckBox;
+   import flash.events.KeyboardEvent;
+   import flash.events.TextEvent;
    import mx.collections.IList;
-   import mx.controls.TextArea;
    import mx.containers.Form;
    import mx.containers.FormItem;
+   import mx.controls.CheckBox;
+   import mx.controls.TextArea;
+   import shared.utility.StringHelper;
+   import tibia.creatures.buddylistClasses.Buddy;
    import tibia.creatures.editBuddyWidgetClasses.BuddyIconChooser;
-   import flash.events.KeyboardEvent;
+   import tibia.game.PopUpBase;
    import tibia.input.PreventWhitespaceInput;
-   import flash.events.TextEvent;
+   import tibia.network.Communication;
    
    public class EditBuddyWidget extends PopUpBase
    {
@@ -22,7 +22,7 @@ package tibia.creatures
       
       private var m_UncommittedBuddySet:Boolean = false;
       
-      protected var m_BuddySet:tibia.creatures.BuddySet = null;
+      protected var m_BuddySet:BuddySet = null;
       
       protected var m_UINotify:CheckBox = null;
       
@@ -60,7 +60,7 @@ package tibia.creatures
          super.hide(param1);
       }
       
-      public function get buddySet() : tibia.creatures.BuddySet
+      public function get buddySet() : BuddySet
       {
          return this.m_BuddySet;
       }
@@ -108,7 +108,7 @@ package tibia.creatures
          }
       }
       
-      public function set buddySet(param1:tibia.creatures.BuddySet) : void
+      public function set buddySet(param1:BuddySet) : void
       {
          if(this.m_BuddySet != param1)
          {

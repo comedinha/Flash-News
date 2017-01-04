@@ -1,15 +1,15 @@
 package tibia.creatures
 {
    import flash.events.EventDispatcher;
-   import tibia.network.Communication;
-   import tibia.creatures.buddylistClasses.BuddyIcon;
-   import tibia.creatures.buddylistClasses.Buddy;
-   import mx.collections.IList;
-   import tibia.worldmap.WorldMapStorage;
-   import tibia.chat.ChatStorage;
-   import mx.resources.ResourceManager;
-   import tibia.chat.MessageMode;
    import mx.collections.ArrayList;
+   import mx.collections.IList;
+   import mx.resources.ResourceManager;
+   import tibia.chat.ChatStorage;
+   import tibia.chat.MessageMode;
+   import tibia.creatures.buddylistClasses.Buddy;
+   import tibia.creatures.buddylistClasses.BuddyIcon;
+   import tibia.network.Communication;
+   import tibia.worldmap.WorldMapStorage;
    
    public class BuddySet extends EventDispatcher
    {

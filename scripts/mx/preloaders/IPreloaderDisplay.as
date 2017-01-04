@@ -1,7 +1,7 @@
 package mx.preloaders
 {
-   import flash.events.IEventDispatcher;
    import flash.display.Sprite;
+   import flash.events.IEventDispatcher;
    
    public interface IPreloaderDisplay extends IEventDispatcher
    {

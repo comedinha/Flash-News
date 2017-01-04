@@ -1,21 +1,21 @@
 package mx.managers
 {
+   import flash.events.MouseEvent;
+   import mx.core.DragSource;
+   import mx.core.IFlexDisplayObject;
+   import mx.core.IUIComponent;
    import mx.core.Singleton;
    import mx.core.mx_internal;
    import mx.managers.dragClasses.DragProxy;
-   import mx.core.IUIComponent;
-   import mx.core.DragSource;
-   import flash.events.MouseEvent;
-   import mx.core.IFlexDisplayObject;
    
    use namespace mx_internal;
    
    public class DragManager
    {
       
-      private static var implClassDependency:mx.managers.DragManagerImpl;
+      private static var implClassDependency:DragManagerImpl;
       
-      private static var _impl:mx.managers.IDragManager;
+      private static var _impl:IDragManager;
       
       public static const MOVE:String = "move";
       
@@ -33,7 +33,7 @@ package mx.managers
          super();
       }
       
-      private static function get impl() : mx.managers.IDragManager
+      private static function get impl() : IDragManager
       {
          if(!_impl)
          {

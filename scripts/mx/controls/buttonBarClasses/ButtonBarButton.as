@@ -1,8 +1,8 @@
 package mx.controls.buttonBarClasses
 {
    import mx.controls.Button;
-   import mx.core.mx_internal;
    import mx.core.UITextFormat;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

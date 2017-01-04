@@ -1,10 +1,10 @@
 package tibia.ingameshop.shopWidgetClasses
 {
+   import flash.events.MouseEvent;
    import mx.containers.HBox;
    import mx.controls.Button;
-   import flash.events.MouseEvent;
-   import tibia.ingameshop.DynamicImage;
    import shared.controls.CustomButton;
+   import tibia.ingameshop.DynamicImage;
    
    public class SliderImage extends HBox
    {
@@ -22,7 +22,7 @@ package tibia.ingameshop.shopWidgetClasses
       
       private var m_ImageIdentifierList:Vector.<String>;
       
-      private var m_UIImage:tibia.ingameshop.shopWidgetClasses.DynamicallyLoadedImage;
+      private var m_UIImage:DynamicallyLoadedImage;
       
       private var m_CurrentImageIndex:int = 0;
       
@@ -111,7 +111,7 @@ package tibia.ingameshop.shopWidgetClasses
          this.m_UILeftSliderButton.styleName = "customSliderDecreaseButton";
          this.m_UILeftSliderButton.addEventListener(MouseEvent.CLICK,this.onSliderButtonClicked);
          addChild(this.m_UILeftSliderButton);
-         this.m_UIImage = new tibia.ingameshop.shopWidgetClasses.DynamicallyLoadedImage(this.m_MaximumImageSize);
+         this.m_UIImage = new DynamicallyLoadedImage(this.m_MaximumImageSize);
          this.m_UIImage.resizeToImage = false;
          addChild(this.m_UIImage);
          this.m_UIRightSliderButton = new CustomButton();

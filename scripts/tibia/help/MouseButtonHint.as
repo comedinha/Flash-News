@@ -1,25 +1,25 @@
 package tibia.help
 {
-   import mx.core.UIComponent;
-   import flash.display.BitmapData;
-   import shared.utility.Colour;
    import flash.display.Bitmap;
-   import flash.text.TextField;
-   import mx.effects.Fade;
-   import flash.geom.Point;
-   import mx.effects.Move;
-   import mx.effects.Pause;
-   import mx.events.EffectEvent;
+   import flash.display.BitmapData;
    import flash.events.Event;
-   import mx.effects.Parallel;
-   import mx.effects.SetPropertyAction;
-   import mx.effects.Sequence;
-   import mx.effects.Effect;
-   import flash.geom.Rectangle;
-   import flash.geom.Matrix;
-   import flash.filters.GlowFilter;
    import flash.filters.BitmapFilterQuality;
+   import flash.filters.GlowFilter;
+   import flash.geom.Matrix;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import flash.text.TextField;
    import flash.text.TextFormat;
+   import mx.core.UIComponent;
+   import mx.effects.Effect;
+   import mx.effects.Fade;
+   import mx.effects.Move;
+   import mx.effects.Parallel;
+   import mx.effects.Pause;
+   import mx.effects.Sequence;
+   import mx.effects.SetPropertyAction;
+   import mx.events.EffectEvent;
+   import shared.utility.Colour;
    
    public class MouseButtonHint extends UIComponent
    {

@@ -1,17 +1,17 @@
 package tibia.ingameshop.shopWidgetClasses
 {
-   import shared.controls.CustomDataGrid;
+   import flash.errors.IllegalOperationError;
+   import flash.events.MouseEvent;
+   import mx.collections.ArrayCollection;
    import mx.controls.Button;
    import mx.controls.Label;
-   import flash.events.MouseEvent;
-   import tibia.ingameshop.IngameShopManager;
-   import tibia.ingameshop.IngameShopEvent;
-   import tibia.ingameshop.IngameShopHistoryEntry;
-   import mx.collections.ArrayCollection;
-   import tibia.ingameshop.IngameShopWidget;
-   import flash.errors.IllegalOperationError;
    import mx.controls.dataGridClasses.DataGridColumn;
    import mx.core.ClassFactory;
+   import shared.controls.CustomDataGrid;
+   import tibia.ingameshop.IngameShopEvent;
+   import tibia.ingameshop.IngameShopHistoryEntry;
+   import tibia.ingameshop.IngameShopManager;
+   import tibia.ingameshop.IngameShopWidget;
    
    public class TransactionHistory extends CustomDataGrid implements IIngameShopWidgetComponent
    {
@@ -224,8 +224,8 @@ package tibia.ingameshop.shopWidgetClasses
 
 import mx.controls.Label;
 import mx.core.IDataRenderer;
-import tibia.ingameshop.IngameShopHistoryEntry;
 import mx.formatters.DateFormatter;
+import tibia.ingameshop.IngameShopHistoryEntry;
 
 class DateRenderer extends Label implements IDataRenderer
 {
@@ -273,14 +273,14 @@ class DateRenderer extends Label implements IDataRenderer
    }
 }
 
+import flash.display.Bitmap;
 import mx.containers.HBox;
-import mx.core.IDataRenderer;
-import tibia.ingameshop.IngameShopHistoryEntry;
 import mx.controls.Image;
 import mx.controls.Label;
-import shared.utility.i18n.i18nFormatNumber;
+import mx.core.IDataRenderer;
 import mx.core.ScrollPolicy;
-import flash.display.Bitmap;
+import shared.utility.i18n.i18nFormatNumber;
+import tibia.ingameshop.IngameShopHistoryEntry;
 import tibia.ingameshop.shopWidgetClasses.CoinWidget;
 
 class CreditsRenderer extends HBox implements IDataRenderer

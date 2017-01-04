@@ -1,7 +1,7 @@
 package mx.utils
 {
-   import mx.core.mx_internal;
    import mx.core.ISWFBridgeProvider;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

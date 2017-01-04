@@ -1,14 +1,14 @@
 package tibia.actionbar.configurationWidgetClasses
 {
    import mx.containers.VBox;
-   import tibia.appearances.AppearanceType;
    import mx.controls.RadioButton;
-   import tibia.input.gameaction.UseAction;
-   import tibia.input.gameaction.EquipAction;
    import mx.controls.RadioButtonGroup;
    import mx.events.ItemClickEvent;
-   import tibia.input.IAction;
    import tibia.appearances.AppearanceStorage;
+   import tibia.appearances.AppearanceType;
+   import tibia.input.IAction;
+   import tibia.input.gameaction.EquipAction;
+   import tibia.input.gameaction.UseAction;
    
    public class ObjectEditor extends VBox implements IActionEditor
    {

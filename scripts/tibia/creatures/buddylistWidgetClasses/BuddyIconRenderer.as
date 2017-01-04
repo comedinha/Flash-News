@@ -1,10 +1,10 @@
 package tibia.creatures.buddylistWidgetClasses
 {
-   import shared.controls.IconRendererBase;
-   import flash.display.BitmapData;
    import flash.display.Bitmap;
+   import flash.display.BitmapData;
    import flash.display.Graphics;
    import flash.geom.Matrix;
+   import shared.controls.IconRendererBase;
    import tibia.creatures.buddylistClasses.BuddyIcon;
    
    public class BuddyIconRenderer extends IconRendererBase

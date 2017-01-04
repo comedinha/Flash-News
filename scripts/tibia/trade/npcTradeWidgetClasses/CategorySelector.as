@@ -1,18 +1,18 @@
 package tibia.trade.npcTradeWidgetClasses
 {
+   import flash.events.MouseEvent;
+   import mx.collections.ICollectionView;
+   import mx.collections.IList;
+   import mx.collections.Sort;
+   import mx.collections.SortField;
    import mx.containers.Tile;
+   import mx.core.ScrollPolicy;
+   import mx.events.CollectionEvent;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
-   import mx.events.CollectionEvent;
-   import flash.events.MouseEvent;
-   import tibia.network.Communication;
-   import tibia.appearances.widgetClasses.SkinnedAppearanceRenderer;
-   import mx.collections.Sort;
-   import mx.collections.ICollectionView;
    import tibia.appearances.AppearanceTypeRef;
-   import mx.collections.IList;
-   import mx.core.ScrollPolicy;
-   import mx.collections.SortField;
+   import tibia.appearances.widgetClasses.SkinnedAppearanceRenderer;
+   import tibia.network.Communication;
    
    public class CategorySelector extends Tile
    {

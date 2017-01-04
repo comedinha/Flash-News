@@ -1,10 +1,10 @@
 package mx.controls
 {
    import mx.controls.listClasses.TileBase;
-   import mx.core.mx_internal;
-   import mx.core.ScrollPolicy;
-   import mx.core.ClassFactory;
    import mx.controls.listClasses.TileListItemRenderer;
+   import mx.core.ClassFactory;
+   import mx.core.ScrollPolicy;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

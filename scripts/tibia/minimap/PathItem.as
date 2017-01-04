@@ -10,7 +10,7 @@ package tibia.minimap
       
       public var pathHeuristic:int = 2.147483647E9;
       
-      public var predecessor:tibia.minimap.PathItem = null;
+      public var predecessor:PathItem = null;
       
       public var cost:int = 2.147483647E9;
       

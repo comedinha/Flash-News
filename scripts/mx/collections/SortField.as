@@ -1,12 +1,12 @@
 package mx.collections
 {
-   import flash.events.EventDispatcher;
-   import mx.core.mx_internal;
    import flash.events.Event;
-   import mx.utils.ObjectUtil;
+   import flash.events.EventDispatcher;
    import mx.collections.errors.SortError;
+   import mx.core.mx_internal;
    import mx.resources.IResourceManager;
    import mx.resources.ResourceManager;
+   import mx.utils.ObjectUtil;
    
    use namespace mx_internal;
    

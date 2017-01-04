@@ -1,9 +1,9 @@
 package tibia.ingameshop.shopWidgetClasses
 {
-   import shared.controls.EmbeddedDialog;
-   import mx.controls.TextInput;
    import mx.containers.HBox;
    import mx.controls.Label;
+   import mx.controls.TextInput;
+   import shared.controls.EmbeddedDialog;
    import tibia.creatures.Creature;
    import tibia.ingameshop.IngameShopWidget;
    

@@ -2,17 +2,17 @@ package tibia.creatures
 {
    import flash.display.BitmapData;
    import flash.geom.Rectangle;
-   import mx.core.BitmapAsset;
-   import mx.collections.Sort;
-   import tibia.network.Communication;
-   import shared.utility.Vector3D;
-   import tibia.options.OptionsStorage;
-   import tibia.appearances.Marks;
-   import mx.collections.IList;
-   import mx.events.PropertyChangeEvent;
    import mx.collections.ArrayCollection;
-   import tibia.appearances.ObjectInstance;
+   import mx.collections.IList;
+   import mx.collections.Sort;
+   import mx.core.BitmapAsset;
+   import mx.events.PropertyChangeEvent;
+   import shared.utility.Vector3D;
    import tibia.appearances.AppearanceInstance;
+   import tibia.appearances.Marks;
+   import tibia.appearances.ObjectInstance;
+   import tibia.network.Communication;
+   import tibia.options.OptionsStorage;
    
    public class CreatureStorage
    {
@@ -370,11 +370,11 @@ package tibia.creatures
       
       protected var m_OpponentsSort:Sort = null;
       
-      protected var m_Player:tibia.creatures.Player = null;
+      protected var m_Player:Player = null;
       
       protected var m_CreatureCount:int = 0;
       
-      protected var m_AttackTarget:tibia.creatures.Creature = null;
+      protected var m_AttackTarget:Creature = null;
       
       protected var m_Options:OptionsStorage = null;
       
@@ -382,23 +382,23 @@ package tibia.creatures
       
       protected var m_Opponents:ArrayCollection = null;
       
-      protected var m_Aim:tibia.creatures.Creature = null;
+      protected var m_Aim:Creature = null;
       
-      protected var m_FollowTarget:tibia.creatures.Creature = null;
+      protected var m_FollowTarget:Creature = null;
       
-      protected var m_Trappers:Vector.<tibia.creatures.Creature> = null;
+      protected var m_Trappers:Vector.<Creature> = null;
       
       protected var m_CreatureIndex:int = 0;
       
       protected var m_MaxCreaturesCount:uint = 1300;
       
-      protected var m_Creature:Vector.<tibia.creatures.Creature> = null;
+      protected var m_Creature:Vector.<Creature> = null;
       
       public function CreatureStorage()
       {
          super();
-         this.m_Player = new tibia.creatures.Player();
-         this.m_Creature = new Vector.<tibia.creatures.Creature>();
+         this.m_Player = new Player();
+         this.m_Creature = new Vector.<Creature>();
          this.m_OpponentsSort = new Sort();
          this.m_OpponentsSort.compareFunction = this.opponentComparator;
          this.m_Opponents = new ArrayCollection();
@@ -516,9 +516,9 @@ package tibia.creatures
          return SPEECH_FLAG_BITMAP;
       }
       
-      public function setAim(param1:tibia.creatures.Creature) : void
+      public function setAim(param1:Creature) : void
       {
-         var _loc2_:tibia.creatures.Creature = null;
+         var _loc2_:Creature = null;
          if(this.m_Aim != param1)
          {
             _loc2_ = this.m_Aim;
@@ -528,7 +528,7 @@ package tibia.creatures
          }
       }
       
-      public function getNextAttackTarget(param1:int) : tibia.creatures.Creature
+      public function getNextAttackTarget(param1:int) : Creature
       {
          param1 = param1 < 0?-1:1;
          var _loc2_:int = this.m_Opponents.length;
@@ -542,7 +542,7 @@ package tibia.creatures
          {
             _loc3_ = this.m_Opponents.getItemIndex(this.m_AttackTarget);
          }
-         var _loc5_:tibia.creatures.Creature = null;
+         var _loc5_:Creature = null;
          while(_loc4_++ < _loc2_)
          {
             _loc3_ = _loc3_ + param1;
@@ -563,7 +563,7 @@ package tibia.creatures
          return null;
       }
       
-      public function getAim() : tibia.creatures.Creature
+      public function getAim() : Creature
       {
          return this.m_Aim;
       }
@@ -583,7 +583,7 @@ package tibia.creatures
          }
       }
       
-      public function replaceCreature(param1:tibia.creatures.Creature, param2:int = 0) : tibia.creatures.Creature
+      public function replaceCreature(param1:Creature, param2:int = 0) : Creature
       {
          if(param1 == null)
          {
@@ -601,7 +601,7 @@ package tibia.creatures
          var _loc4_:* = -1;
          var _loc5_:int = 0;
          var _loc6_:int = this.m_CreatureCount - 1;
-         var _loc7_:tibia.creatures.Creature = null;
+         var _loc7_:Creature = null;
          while(_loc5_ <= _loc6_)
          {
             _loc4_ = _loc5_ + _loc6_ >> 1;
@@ -626,13 +626,13 @@ package tibia.creatures
          return param1;
       }
       
-      public function toggleFollowTarget(param1:tibia.creatures.Creature, param2:Boolean) : void
+      public function toggleFollowTarget(param1:Creature, param2:Boolean) : void
       {
          if(param1 == this.m_Player)
          {
             throw new ArgumentError("CreatureStorage.toggleFollowTarget: Cannot follow player.");
          }
-         var _loc3_:tibia.creatures.Creature = this.m_FollowTarget;
+         var _loc3_:Creature = this.m_FollowTarget;
          if(_loc3_ != param1)
          {
             this.m_FollowTarget = param1;
@@ -655,7 +655,7 @@ package tibia.creatures
          }
          this.updateExtendedMark(_loc3_);
          this.updateExtendedMark(this.m_FollowTarget);
-         var _loc5_:tibia.creatures.Creature = this.m_AttackTarget;
+         var _loc5_:Creature = this.m_AttackTarget;
          if(_loc5_ != null)
          {
             this.m_AttackTarget = null;
@@ -663,9 +663,9 @@ package tibia.creatures
          }
       }
       
-      public function getCreatureByName(param1:String) : tibia.creatures.Creature
+      public function getCreatureByName(param1:String) : Creature
       {
-         var _loc2_:tibia.creatures.Creature = null;
+         var _loc2_:Creature = null;
          for each(_loc2_ in this.m_Creature)
          {
             if(_loc2_.name == param1)
@@ -676,12 +676,12 @@ package tibia.creatures
          return null;
       }
       
-      public function getFollowTarget() : tibia.creatures.Creature
+      public function getFollowTarget() : Creature
       {
          return this.m_FollowTarget;
       }
       
-      public function getTrappers() : Vector.<tibia.creatures.Creature>
+      public function getTrappers() : Vector.<Creature>
       {
          return this.m_Trappers;
       }
@@ -718,13 +718,13 @@ package tibia.creatures
       
       protected function opponentComparator(param1:Object, param2:Object, param3:Array = null) : int
       {
-         var _loc4_:tibia.creatures.Creature = null;
-         var _loc5_:tibia.creatures.Creature = null;
+         var _loc4_:Creature = null;
+         var _loc5_:Creature = null;
          var _loc8_:Vector3D = null;
          var _loc9_:Number = NaN;
          var _loc10_:Number = NaN;
-         _loc4_ = param1 as tibia.creatures.Creature;
-         _loc5_ = param2 as tibia.creatures.Creature;
+         _loc4_ = param1 as Creature;
+         _loc5_ = param2 as Creature;
          var _loc6_:int = 0;
          var _loc7_:Boolean = true;
          if(_loc4_ != null && _loc5_ != null && this.m_Options != null)
@@ -793,14 +793,14 @@ package tibia.creatures
          return -_loc6_;
       }
       
-      public function setFollowTarget(param1:tibia.creatures.Creature, param2:Boolean) : void
+      public function setFollowTarget(param1:Creature, param2:Boolean) : void
       {
          var _loc5_:Communication = null;
          if(param1 == this.m_Player)
          {
             throw new ArgumentError("CreatureStorage.setFollowTarget: Cannot follow player.");
          }
-         var _loc3_:tibia.creatures.Creature = this.m_FollowTarget;
+         var _loc3_:Creature = this.m_FollowTarget;
          if(_loc3_ != param1)
          {
             this.m_FollowTarget = param1;
@@ -819,7 +819,7 @@ package tibia.creatures
             this.updateExtendedMark(_loc3_);
             this.updateExtendedMark(this.m_FollowTarget);
          }
-         var _loc4_:tibia.creatures.Creature = this.m_AttackTarget;
+         var _loc4_:Creature = this.m_AttackTarget;
          if(_loc4_ != null)
          {
             this.m_AttackTarget = null;
@@ -832,12 +832,12 @@ package tibia.creatures
          return this.m_Options;
       }
       
-      public function isOpponent(param1:tibia.creatures.Creature) : Boolean
+      public function isOpponent(param1:Creature) : Boolean
       {
          return this.opponentFilter(param1,false);
       }
       
-      protected function updateExtendedMark(param1:tibia.creatures.Creature) : void
+      protected function updateExtendedMark(param1:Creature) : void
       {
          var _loc2_:Marks = null;
          var _loc3_:uint = 0;
@@ -874,7 +874,7 @@ package tibia.creatures
          }
       }
       
-      public function setTrappers(param1:Vector.<tibia.creatures.Creature>) : void
+      public function setTrappers(param1:Vector.<Creature>) : void
       {
          var _loc2_:int = 0;
          _loc2_ = this.m_Trappers != null?this.m_Trappers.length:0 - 1;
@@ -898,12 +898,12 @@ package tibia.creatures
          }
       }
       
-      public function getCreature(param1:int) : tibia.creatures.Creature
+      public function getCreature(param1:int) : Creature
       {
          var _loc2_:* = 0;
          var _loc3_:int = 0;
          var _loc4_:int = this.m_CreatureCount - 1;
-         var _loc5_:tibia.creatures.Creature = null;
+         var _loc5_:Creature = null;
          while(_loc3_ <= _loc4_)
          {
             _loc2_ = _loc3_ + _loc4_ >> 1;
@@ -957,8 +957,8 @@ package tibia.creatures
       
       public function markOpponentVisible(param1:*, param2:Boolean) : void
       {
-         var _loc3_:tibia.creatures.Creature = null;
-         if(param1 is tibia.creatures.Creature)
+         var _loc3_:Creature = null;
+         if(param1 is Creature)
          {
             _loc3_ = Creature(param1);
          }
@@ -983,8 +983,8 @@ package tibia.creatures
       
       protected function opponentFilter(param1:Object, param2:Boolean = true) : Boolean
       {
-         var _loc3_:tibia.creatures.Creature = param1 as tibia.creatures.Creature;
-         if(_loc3_ == null || _loc3_ is tibia.creatures.Player)
+         var _loc3_:Creature = param1 as Creature;
+         if(_loc3_ == null || _loc3_ is Player)
          {
             return false;
          }
@@ -1077,7 +1077,7 @@ package tibia.creatures
          var _loc3_:* = 0;
          var _loc4_:int = 0;
          var _loc5_:int = this.m_CreatureCount - 1;
-         var _loc6_:tibia.creatures.Creature = null;
+         var _loc6_:Creature = null;
          while(_loc4_ <= _loc5_)
          {
             _loc3_ = _loc4_ + _loc5_ >> 1;
@@ -1135,12 +1135,12 @@ package tibia.creatures
          this.m_OpponentsState = OPPONENTS_REBUILD;
       }
       
-      public function get player() : tibia.creatures.Player
+      public function get player() : Player
       {
          return this.m_Player;
       }
       
-      public function getAttackTarget() : tibia.creatures.Creature
+      public function getAttackTarget() : Creature
       {
          return this.m_AttackTarget;
       }
@@ -1160,13 +1160,13 @@ package tibia.creatures
          }
       }
       
-      public function toggleAttackTarget(param1:tibia.creatures.Creature, param2:Boolean) : void
+      public function toggleAttackTarget(param1:Creature, param2:Boolean) : void
       {
          if(param1 == this.m_Player)
          {
             throw new ArgumentError("CreatureStorage.toggleAttackTarget: Cannot attack player.");
          }
-         var _loc3_:tibia.creatures.Creature = this.m_AttackTarget;
+         var _loc3_:Creature = this.m_AttackTarget;
          if(_loc3_ != param1)
          {
             this.m_AttackTarget = param1;
@@ -1189,7 +1189,7 @@ package tibia.creatures
          }
          this.updateExtendedMark(_loc3_);
          this.updateExtendedMark(this.m_AttackTarget);
-         var _loc5_:tibia.creatures.Creature = this.m_FollowTarget;
+         var _loc5_:Creature = this.m_FollowTarget;
          if(this.m_AttackTarget != null && _loc5_ != null)
          {
             this.m_FollowTarget = null;
@@ -1215,14 +1215,14 @@ package tibia.creatures
          }
       }
       
-      public function setAttackTarget(param1:tibia.creatures.Creature, param2:Boolean) : void
+      public function setAttackTarget(param1:Creature, param2:Boolean) : void
       {
          var _loc5_:Communication = null;
          if(param1 == this.m_Player)
          {
             throw new ArgumentError("CreatureStorage.setAttackTarget: Cannot attack player.");
          }
-         var _loc3_:tibia.creatures.Creature = this.m_AttackTarget;
+         var _loc3_:Creature = this.m_AttackTarget;
          if(_loc3_ != param1)
          {
             this.m_AttackTarget = param1;
@@ -1241,7 +1241,7 @@ package tibia.creatures
             this.updateExtendedMark(_loc3_);
             this.updateExtendedMark(this.m_AttackTarget);
          }
-         var _loc4_:tibia.creatures.Creature = this.m_FollowTarget;
+         var _loc4_:Creature = this.m_FollowTarget;
          if(_loc4_ != null)
          {
             this.m_FollowTarget = null;

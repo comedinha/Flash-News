@@ -1,7 +1,7 @@
 package mx.controls
 {
-   import mx.core.mx_internal;
    import mx.core.UITextField;
+   import mx.core.mx_internal;
    import mx.events.FlexEvent;
    
    use namespace mx_internal;

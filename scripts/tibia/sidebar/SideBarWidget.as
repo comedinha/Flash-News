@@ -1,28 +1,28 @@
 package tibia.sidebar
 {
-   import mx.core.Container;
-   import mx.events.DragEvent;
-   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
-   import mx.core.DragSource;
-   import mx.managers.DragManager;
+   import flash.display.DisplayObject;
    import flash.events.Event;
    import flash.events.MouseEvent;
-   import mx.events.SandboxMouseEvent;
-   import mx.events.PropertyChangeEvent;
-   import mx.events.CollectionEvent;
+   import flash.geom.Point;
+   import mx.core.Container;
+   import mx.core.DragSource;
    import mx.core.EdgeMetrics;
-   import flash.display.DisplayObject;
+   import mx.core.IBorder;
+   import mx.core.IUIComponent;
+   import mx.core.ScrollPolicy;
+   import mx.core.UIComponent;
+   import mx.core.mx_internal;
+   import mx.events.CollectionEvent;
    import mx.events.CollectionEventKind;
+   import mx.events.DragEvent;
+   import mx.events.PropertyChangeEvent;
+   import mx.events.SandboxMouseEvent;
+   import mx.managers.CursorManagerPriority;
+   import mx.managers.DragManager;
+   import tibia.cursors.CursorHelper;
    import tibia.options.OptionsStorage;
    import tibia.sidebar.sideBarWidgetClasses.SideBarHeader;
-   import tibia.cursors.CursorHelper;
-   import flash.geom.Point;
-   import mx.core.UIComponent;
-   import mx.core.IUIComponent;
-   import mx.core.mx_internal;
-   import mx.core.IBorder;
-   import mx.managers.CursorManagerPriority;
-   import mx.core.ScrollPolicy;
+   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
    
    public class SideBarWidget extends Container
    {
@@ -62,7 +62,7 @@ package tibia.sidebar
       
       private var m_DropOffset:Number = NaN;
       
-      protected var m_SideBarSet:tibia.sidebar.SideBarSet = null;
+      protected var m_SideBarSet:SideBarSet = null;
       
       private var m_DropIndicatorSkipIndex:int = -1;
       
@@ -174,7 +174,7 @@ package tibia.sidebar
          }
       }
       
-      function get sideBarSet() : tibia.sidebar.SideBarSet
+      function get sideBarSet() : SideBarSet
       {
          return this.m_SideBarSet;
       }
@@ -210,7 +210,7 @@ package tibia.sidebar
          }
       }
       
-      function set sideBarSet(param1:tibia.sidebar.SideBarSet) : void
+      function set sideBarSet(param1:SideBarSet) : void
       {
          if(this.m_SideBarSet != param1)
          {
@@ -593,7 +593,7 @@ package tibia.sidebar
       {
          if(this.m_Options != null)
          {
-            this.sideBarSet = this.m_Options.getSideBarSet(tibia.sidebar.SideBarSet.DEFAULT_SET);
+            this.sideBarSet = this.m_Options.getSideBarSet(SideBarSet.DEFAULT_SET);
          }
          else
          {

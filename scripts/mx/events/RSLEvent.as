@@ -1,10 +1,10 @@
 package mx.events
 {
-   import flash.events.ProgressEvent;
-   import mx.core.mx_internal;
    import flash.display.LoaderInfo;
    import flash.events.Event;
+   import flash.events.ProgressEvent;
    import flash.net.URLRequest;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

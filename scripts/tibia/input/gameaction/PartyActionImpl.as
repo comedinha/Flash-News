@@ -1,8 +1,8 @@
 package tibia.input.gameaction
 {
+   import tibia.creatures.Creature;
    import tibia.input.IActionImpl;
    import tibia.network.Communication;
-   import tibia.creatures.Creature;
    
    public class PartyActionImpl implements IActionImpl
    {

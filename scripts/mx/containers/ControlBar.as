@@ -1,8 +1,8 @@
 package mx.containers
 {
-   import mx.core.mx_internal;
-   import mx.core.ScrollPolicy;
    import mx.core.Container;
+   import mx.core.ScrollPolicy;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

@@ -1,44 +1,44 @@
 package mx.controls.dataGridClasses
 {
-   import mx.controls.listClasses.ListBase;
-   import mx.core.IFontContextComponent;
-   import mx.core.mx_internal;
-   import mx.controls.listClasses.ListBaseContentHolder;
    import flash.display.DisplayObject;
-   import mx.controls.listClasses.ListRowInfo;
-   import mx.core.IUITextField;
-   import flash.events.Event;
-   import flash.display.Sprite;
-   import flash.display.Shape;
-   import mx.controls.listClasses.IListItemRenderer;
-   import flash.geom.Point;
-   import flash.utils.Dictionary;
-   import mx.core.SpriteAsset;
-   import mx.events.ListEvent;
-   import flash.ui.Keyboard;
    import flash.display.Graphics;
-   import mx.core.UIComponentGlobals;
-   import mx.events.DragEvent;
-   import mx.core.EdgeMetrics;
-   import mx.skins.halo.ListDropIndicator;
-   import mx.core.IFlexDisplayObject;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.geom.Point;
+   import flash.ui.Keyboard;
+   import flash.utils.Dictionary;
    import flash.utils.setInterval;
    import mx.collections.CursorBookmark;
-   import mx.events.TweenEvent;
-   import mx.core.IFlexModuleFactory;
-   import mx.core.IInvalidating;
-   import mx.controls.listClasses.BaseListData;
-   import mx.collections.errors.ItemPendingError;
-   import mx.controls.listClasses.ListBaseSeekPending;
+   import mx.collections.IViewCursor;
    import mx.collections.ItemResponder;
+   import mx.collections.errors.ItemPendingError;
+   import mx.controls.listClasses.BaseListData;
+   import mx.controls.listClasses.IDropInListItemRenderer;
+   import mx.controls.listClasses.IListItemRenderer;
+   import mx.controls.listClasses.ListBase;
+   import mx.controls.listClasses.ListBaseContentHolder;
+   import mx.controls.listClasses.ListBaseSeekPending;
+   import mx.controls.listClasses.ListRowInfo;
+   import mx.core.EdgeMetrics;
    import mx.core.IFactory;
+   import mx.core.IFlexDisplayObject;
+   import mx.core.IFlexModuleFactory;
+   import mx.core.IFontContextComponent;
+   import mx.core.IInvalidating;
+   import mx.core.IUIComponent;
+   import mx.core.IUITextField;
+   import mx.core.SpriteAsset;
+   import mx.core.UIComponentGlobals;
+   import mx.core.mx_internal;
+   import mx.events.DragEvent;
+   import mx.events.ListEvent;
    import mx.events.ScrollEvent;
    import mx.events.ScrollEventDetail;
    import mx.events.ScrollEventDirection;
-   import flash.events.MouseEvent;
-   import mx.core.IUIComponent;
-   import mx.controls.listClasses.IDropInListItemRenderer;
-   import mx.collections.IViewCursor;
+   import mx.events.TweenEvent;
+   import mx.skins.halo.ListDropIndicator;
    
    use namespace mx_internal;
    
@@ -78,7 +78,7 @@ package mx.controls.dataGridClasses
       
       mx_internal var _explicitHeaderHeight:Boolean;
       
-      protected var lockedColumnAndRowContent:mx.controls.dataGridClasses.DataGridLockedRowContentHolder;
+      protected var lockedColumnAndRowContent:DataGridLockedRowContentHolder;
       
       protected var lockedColumnContent:ListBaseContentHolder;
       
@@ -86,13 +86,13 @@ package mx.controls.dataGridClasses
       
       private var lockedRowMask:Shape;
       
-      protected var header:mx.controls.dataGridClasses.DataGridHeaderBase;
+      protected var header:DataGridHeaderBase;
       
       mx_internal var _lockedColumnCount:int = 0;
       
       mx_internal var _lockedRowCount:int = 0;
       
-      protected var lockedColumnHeader:mx.controls.dataGridClasses.DataGridHeaderBase;
+      protected var lockedColumnHeader:DataGridHeaderBase;
       
       protected var columnHighlightIndicator:Sprite;
       
@@ -100,7 +100,7 @@ package mx.controls.dataGridClasses
       
       private var lockedColumnCountChanged:Boolean = false;
       
-      protected var lockedRowContent:mx.controls.dataGridClasses.DataGridLockedRowContentHolder;
+      protected var lockedRowContent:DataGridLockedRowContentHolder;
       
       mx_internal var headerClass:Class;
       
@@ -844,7 +844,7 @@ package mx.controls.dataGridClasses
          if(param1.name in rowMap)
          {
             _loc2_ = rowMap[param1.name].rowIndex;
-            if(param1.parent is mx.controls.dataGridClasses.DataGridLockedRowContentHolder)
+            if(param1.parent is DataGridLockedRowContentHolder)
             {
                return _loc2_;
             }
@@ -1775,7 +1775,7 @@ package mx.controls.dataGridClasses
          return param1 - lockedRowCount;
       }
       
-      mx_internal function get dataGridHeader() : mx.controls.dataGridClasses.DataGridHeaderBase
+      mx_internal function get dataGridHeader() : DataGridHeaderBase
       {
          return header;
       }
@@ -2036,7 +2036,7 @@ package mx.controls.dataGridClasses
          invalidateDisplayList();
       }
       
-      mx_internal function get dataGridLockedColumnHeader() : mx.controls.dataGridClasses.DataGridHeaderBase
+      mx_internal function get dataGridLockedColumnHeader() : DataGridHeaderBase
       {
          return lockedColumnHeader;
       }
@@ -2254,7 +2254,7 @@ package mx.controls.dataGridClasses
                   lockedColumnHeader = new headerClass();
                   lockedColumnHeader.styleName = this;
                   addChild(lockedColumnHeader);
-                  lockedColumnAndRowContent = new mx.controls.dataGridClasses.DataGridLockedRowContentHolder(this);
+                  lockedColumnAndRowContent = new DataGridLockedRowContentHolder(this);
                   lockedColumnAndRowContent.styleName = this;
                   addChild(lockedColumnAndRowContent);
                   lockedColumnContent = new ListBaseContentHolder(this);
@@ -2279,7 +2279,7 @@ package mx.controls.dataGridClasses
             {
                if(!lockedRowContent)
                {
-                  lockedRowContent = new mx.controls.dataGridClasses.DataGridLockedRowContentHolder(this);
+                  lockedRowContent = new DataGridLockedRowContentHolder(this);
                   lockedRowContent.styleName = this;
                   addChild(lockedRowContent);
                }

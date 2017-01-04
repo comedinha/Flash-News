@@ -1,14 +1,14 @@
 package tibia.container
 {
    import flash.events.EventDispatcher;
-   import shared.utility.Vector3D;
-   import tibia.game.Delay;
-   import tibia.appearances.AppearanceTypeRef;
-   import tibia.options.OptionsStorage;
-   import tibia.sidebar.SideBarSet;
    import mx.events.PropertyChangeEvent;
    import mx.events.PropertyChangeEventKind;
+   import shared.utility.Vector3D;
+   import tibia.appearances.AppearanceTypeRef;
    import tibia.appearances.ObjectInstance;
+   import tibia.game.Delay;
+   import tibia.options.OptionsStorage;
+   import tibia.sidebar.SideBarSet;
    import tibia.sidebar.Widget;
    
    public class ContainerStorage extends EventDispatcher
@@ -27,25 +27,25 @@ package tibia.container
       
       protected var m_MultiuseDelay:Delay = null;
       
-      protected var m_PlayerInventory:Vector.<tibia.container.InventoryTypeInfo> = null;
+      protected var m_PlayerInventory:Vector.<InventoryTypeInfo> = null;
       
-      protected var m_PlayerGoods:Vector.<tibia.container.InventoryTypeInfo> = null;
+      protected var m_PlayerGoods:Vector.<InventoryTypeInfo> = null;
       
-      protected var m_BodyContainerView:tibia.container.BodyContainerView = null;
+      protected var m_BodyContainerView:BodyContainerView = null;
       
       protected var m_PlayerMoney:Number = 0;
       
-      protected var m_ContainerViews:Vector.<tibia.container.ContainerView> = null;
+      protected var m_ContainerViews:Vector.<ContainerView> = null;
       
       protected var m_ContainerViewWidgets:Vector.<int> = null;
       
       public function ContainerStorage()
       {
          super();
-         this.m_BodyContainerView = new tibia.container.BodyContainerView();
+         this.m_BodyContainerView = new BodyContainerView();
          this.m_BodyContainerView.addEventListener(PropertyChangeEvent.PROPERTY_CHANGE,this.onBodyContainerChange);
          this.m_MultiuseDelay = new Delay(0,0);
-         this.m_ContainerViews = new Vector.<tibia.container.ContainerView>(MAX_CONTAINER_VIEWS,true);
+         this.m_ContainerViews = new Vector.<ContainerView>(MAX_CONTAINER_VIEWS,true);
          this.m_ContainerViewWidgets = new Vector.<int>(MAX_CONTAINER_VIEWS,true);
          var _loc1_:int = 0;
          while(_loc1_ < MAX_CONTAINER_VIEWS)
@@ -53,11 +53,11 @@ package tibia.container
             this.m_ContainerViewWidgets[_loc1_] = -1;
             _loc1_++;
          }
-         this.m_PlayerInventory = new Vector.<tibia.container.InventoryTypeInfo>();
+         this.m_PlayerInventory = new Vector.<InventoryTypeInfo>();
          this.reset();
       }
       
-      public function getPlayerInventory() : Vector.<tibia.container.InventoryTypeInfo>
+      public function getPlayerInventory() : Vector.<InventoryTypeInfo>
       {
          return this.m_PlayerInventory;
       }
@@ -94,7 +94,7 @@ package tibia.container
          return 0;
       }
       
-      public function getBodyContainerView() : tibia.container.BodyContainerView
+      public function getBodyContainerView() : BodyContainerView
       {
          return this.m_BodyContainerView;
       }
@@ -134,7 +134,7 @@ package tibia.container
          this.m_PlayerInventory.length = 0;
       }
       
-      public function getContainerView(param1:int) : tibia.container.ContainerView
+      public function getContainerView(param1:int) : ContainerView
       {
          if(param1 < 0 || param1 >= MAX_CONTAINER_VIEWS)
          {
@@ -218,14 +218,14 @@ package tibia.container
          return this.m_PlayerMoney;
       }
       
-      public function createContainerView(param1:int, param2:ObjectInstance, param3:String, param4:Boolean, param5:Boolean, param6:Boolean, param7:int, param8:int, param9:int) : tibia.container.ContainerView
+      public function createContainerView(param1:int, param2:ObjectInstance, param3:String, param4:Boolean, param5:Boolean, param6:Boolean, param7:int, param8:int, param9:int) : ContainerView
       {
          var _loc13_:ContainerViewWidget = null;
          if(param1 < 0 || param1 >= MAX_CONTAINER_VIEWS)
          {
             throw new RangeError("ContainerStorage.setOpenContainer: Invalid container number: " + param1);
          }
-         var _loc10_:tibia.container.ContainerView = new tibia.container.ContainerView(param1,param2,param3,param4,param5,param6,param7,param8,param9);
+         var _loc10_:ContainerView = new ContainerView(param1,param2,param3,param4,param5,param6,param7,param8,param9);
          this.m_ContainerViews[param1] = _loc10_;
          var _loc11_:OptionsStorage = Tibia.s_GetOptions();
          var _loc12_:SideBarSet = null;
@@ -278,7 +278,7 @@ package tibia.container
          }
       }
       
-      public function setPlayerInventory(param1:Vector.<tibia.container.InventoryTypeInfo>) : void
+      public function setPlayerInventory(param1:Vector.<InventoryTypeInfo>) : void
       {
          var _loc2_:PropertyChangeEvent = null;
          if(param1 == null)
@@ -295,7 +295,7 @@ package tibia.container
          }
       }
       
-      public function setPlayerGoods(param1:Vector.<tibia.container.InventoryTypeInfo>) : void
+      public function setPlayerGoods(param1:Vector.<InventoryTypeInfo>) : void
       {
          var _loc2_:PropertyChangeEvent = null;
          if(param1 == null)
@@ -312,7 +312,7 @@ package tibia.container
          }
       }
       
-      public function getPlayerGoods() : Vector.<tibia.container.InventoryTypeInfo>
+      public function getPlayerGoods() : Vector.<InventoryTypeInfo>
       {
          return this.m_PlayerGoods;
       }

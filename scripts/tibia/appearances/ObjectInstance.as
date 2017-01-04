@@ -1,11 +1,11 @@
 package tibia.appearances
 {
-   import tibia.appearances.widgetClasses.MarksView;
-   import flash.geom.Rectangle;
-   import tibia.§appearances:ns_appearance_internal§.m_Type;
-   import tibia.§appearances:ns_appearance_internal§.m_ID;
    import flash.display.BitmapData;
+   import flash.geom.Rectangle;
    import tibia.appearances.widgetClasses.CachedSpriteInformation;
+   import tibia.appearances.widgetClasses.MarksView;
+   import tibia.§appearances:ns_appearance_internal§.m_ID;
+   import tibia.§appearances:ns_appearance_internal§.m_Type;
    
    public class ObjectInstance extends AppearanceInstance
    {
@@ -22,7 +22,7 @@ package tibia.appearances
       
       protected var m_SpecialPatternY:int = 0;
       
-      protected var m_Marks:tibia.appearances.Marks = null;
+      protected var m_Marks:Marks = null;
       
       protected var m_SpecialPatternX:int = 0;
       
@@ -34,17 +34,17 @@ package tibia.appearances
       {
          super(param1,param2);
          this.m_Data = param3;
-         this.m_Marks = new tibia.appearances.Marks();
+         this.m_Marks = new Marks();
          this.updateSpecialPattern();
       }
       
       private static function s_InitialiseMarksViews() : void
       {
          s_ObjectMarksView = new MarksView(0);
-         s_ObjectMarksView.addMarkToView(tibia.appearances.Marks.MARK_TYPE_PERMANENT,MarksView.MARK_THICKNESS_THIN);
+         s_ObjectMarksView.addMarkToView(Marks.MARK_TYPE_PERMANENT,MarksView.MARK_THICKNESS_THIN);
       }
       
-      public function get marks() : tibia.appearances.Marks
+      public function get marks() : Marks
       {
          return this.m_Marks;
       }
@@ -211,7 +211,7 @@ package tibia.appearances
       
       public function get hasMark() : Boolean
       {
-         return this.marks.isMarkSet(tibia.appearances.Marks.MARK_TYPE_PERMANENT);
+         return this.marks.isMarkSet(Marks.MARK_TYPE_PERMANENT);
       }
       
       override public function drawTo(param1:BitmapData, param2:int, param3:int, param4:int, param5:int, param6:int) : void

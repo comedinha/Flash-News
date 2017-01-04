@@ -1,13 +1,13 @@
 package tibia.worldmap.widgetClasses
 {
-   import shared.utility.BitmapCache;
+   import flash.filters.BitmapFilterQuality;
+   import flash.filters.GlowFilter;
    import flash.geom.Matrix;
-   import flash.text.TextField;
    import flash.geom.Rectangle;
+   import flash.text.TextField;
    import flash.text.TextFieldAutoSize;
    import flash.text.TextFormat;
-   import flash.filters.GlowFilter;
-   import flash.filters.BitmapFilterQuality;
+   import shared.utility.BitmapCache;
    
    public class OnscreenMessageCache extends BitmapCache
    {

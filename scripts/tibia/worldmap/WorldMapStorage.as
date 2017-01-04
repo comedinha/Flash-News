@@ -1,19 +1,19 @@
 package tibia.worldmap
 {
    import mx.resources.ResourceManager;
-   import tibia.appearances.ObjectInstance;
-   import tibia.appearances.AppearanceInstance;
    import shared.utility.Colour;
    import shared.utility.Vector3D;
-   import tibia.options.OptionsStorage;
+   import tibia.appearances.AppearanceInstance;
    import tibia.appearances.AppearanceStorage;
+   import tibia.appearances.MissileInstance;
+   import tibia.appearances.ObjectInstance;
    import tibia.appearances.TextualEffectInstance;
-   import tibia.chat.MessageMode;
    import tibia.chat.MessageFilterSet;
+   import tibia.chat.MessageMode;
    import tibia.chat.NameFilterSet;
    import tibia.creatures.Creature;
    import tibia.creatures.CreatureStorage;
-   import tibia.appearances.MissileInstance;
+   import tibia.options.OptionsStorage;
    
    public class WorldMapStorage
    {
@@ -121,9 +121,9 @@ package tibia.worldmap
       
       var m_EffectCount:int = 0;
       
-      var m_Field:Vector.<tibia.worldmap.Field>;
+      var m_Field:Vector.<Field>;
       
-      var m_MessageBoxes:Vector.<tibia.worldmap.OnscreenMessageBox>;
+      var m_MessageBoxes:Vector.<OnscreenMessageBox>;
       
       var m_AmbientCurrentColour:Colour = null;
       
@@ -155,9 +155,9 @@ package tibia.worldmap
       
       public function WorldMapStorage()
       {
-         this.m_Field = new Vector.<tibia.worldmap.Field>(NUM_FIELDS,true);
+         this.m_Field = new Vector.<Field>(NUM_FIELDS,true);
          this.m_Effect = new Vector.<AppearanceInstance>(NUM_EFFECTS,true);
-         this.m_MessageBoxes = new Vector.<tibia.worldmap.OnscreenMessageBox>();
+         this.m_MessageBoxes = new Vector.<OnscreenMessageBox>();
          this.m_CacheObjectsCount = new Vector.<int>(MAPSIZE_Z);
          this.m_HelperCoordinate = new Vector3D();
          super();
@@ -167,14 +167,14 @@ package tibia.worldmap
          var _loc1_:int = 0;
          while(_loc1_ < NUM_FIELDS)
          {
-            this.m_Field[_loc1_] = new tibia.worldmap.Field();
+            this.m_Field[_loc1_] = new Field();
             _loc1_++;
          }
          this.m_EffectCount = 0;
-         this.m_MessageBoxes[ONSCREEN_TARGET_BOX_BOTTOM] = new tibia.worldmap.OnscreenMessageBox(null,null,0,MessageMode.MESSAGE_NONE,1);
-         this.m_MessageBoxes[ONSCREEN_TARGET_BOX_LOW] = new tibia.worldmap.OnscreenMessageBox(null,null,0,MessageMode.MESSAGE_NONE,NUM_ONSCREEN_MESSAGES);
-         this.m_MessageBoxes[ONSCREEN_TARGET_BOX_HIGH] = new tibia.worldmap.OnscreenMessageBox(null,null,0,MessageMode.MESSAGE_NONE,1);
-         this.m_MessageBoxes[ONSCREEN_TARGET_BOX_TOP] = new tibia.worldmap.OnscreenMessageBox(null,null,0,MessageMode.MESSAGE_NONE,NUM_ONSCREEN_MESSAGES);
+         this.m_MessageBoxes[ONSCREEN_TARGET_BOX_BOTTOM] = new OnscreenMessageBox(null,null,0,MessageMode.MESSAGE_NONE,1);
+         this.m_MessageBoxes[ONSCREEN_TARGET_BOX_LOW] = new OnscreenMessageBox(null,null,0,MessageMode.MESSAGE_NONE,NUM_ONSCREEN_MESSAGES);
+         this.m_MessageBoxes[ONSCREEN_TARGET_BOX_HIGH] = new OnscreenMessageBox(null,null,0,MessageMode.MESSAGE_NONE,1);
+         this.m_MessageBoxes[ONSCREEN_TARGET_BOX_TOP] = new OnscreenMessageBox(null,null,0,MessageMode.MESSAGE_NONE,NUM_ONSCREEN_MESSAGES);
          this.m_AmbientCurrentColour = new Colour(0,0,0);
          this.m_AmbientCurrentBrightness = -1;
          this.m_AmbientTargetColour = new Colour(0,0,0);
@@ -259,7 +259,7 @@ package tibia.worldmap
       public function getFieldHeight(param1:int, param2:int, param3:int) : int
       {
          var _loc7_:ObjectInstance = null;
-         var _loc4_:tibia.worldmap.Field = this.m_Field[this.toIndexInternal(param1,param2,param3)];
+         var _loc4_:Field = this.m_Field[this.toIndexInternal(param1,param2,param3)];
          var _loc5_:int = 0;
          var _loc6_:int = _loc4_.m_ObjectsCount - 1;
          while(_loc6_ >= 0)
@@ -347,9 +347,9 @@ package tibia.worldmap
          }
       }
       
-      public function addOnscreenMessage(... rest) : tibia.worldmap.OnscreenMessageBox
+      public function addOnscreenMessage(... rest) : OnscreenMessageBox
       {
-         var _loc14_:tibia.worldmap.OnscreenMessageBox = null;
+         var _loc14_:OnscreenMessageBox = null;
          var _loc15_:OnscreenMessage = null;
          var _loc16_:Boolean = false;
          var _loc17_:int = 0;
@@ -425,7 +425,7 @@ package tibia.worldmap
                   }
                   if(_loc14_ == null)
                   {
-                     _loc14_ = new tibia.worldmap.OnscreenMessageBox(_loc2_,_loc4_,_loc5_,_loc6_,NUM_ONSCREEN_MESSAGES);
+                     _loc14_ = new OnscreenMessageBox(_loc2_,_loc4_,_loc5_,_loc6_,NUM_ONSCREEN_MESSAGES);
                      _loc14_.visible = _loc16_;
                      _loc18_ = _loc11_.getOnscreenMessageHeader(_loc4_,_loc5_);
                      if(_loc18_ != null)
@@ -581,7 +581,7 @@ package tibia.worldmap
          var _loc4_:uint = 0;
          var _loc5_:uint = 0;
          var _loc6_:uint = 0;
-         var _loc7_:tibia.worldmap.Field = null;
+         var _loc7_:Field = null;
          var _loc8_:ObjectInstance = null;
          if(param1 < 0 || param1 >= MAPSIZE_Z)
          {
@@ -656,7 +656,7 @@ package tibia.worldmap
       public function getEnterPossibleFlag(param1:int, param2:int, param3:int, param4:Boolean) : uint
       {
          var _loc8_:ObjectInstance = null;
-         var _loc5_:tibia.worldmap.Field = this.m_Field[this.toIndexInternal(param1,param2,param3)];
+         var _loc5_:Field = this.m_Field[this.toIndexInternal(param1,param2,param3)];
          if(param4 && param1 < MAPSIZE_X - 1 && param2 < MAPSIZE_Y - 1 && param3 > 0 && _loc5_.m_ObjectsCount > 0 && !_loc5_.m_ObjectsNetwork[0].type.isBank && this.getFieldHeight(param1 + 1,param2 + 1,param3 - 1) > 2)
          {
             return FIELD_ENTER_POSSIBLE;
@@ -773,7 +773,7 @@ package tibia.worldmap
          return _loc5_;
       }
       
-      public function getField(param1:int, param2:int, param3:int) : tibia.worldmap.Field
+      public function getField(param1:int, param2:int, param3:int) : Field
       {
          return this.m_Field[this.toIndexInternal(param1,param2,param3)];
       }
@@ -990,7 +990,7 @@ package tibia.worldmap
          var _loc9_:AppearanceInstance = null;
          var _loc5_:Vector3D = this.toMapInternal(new Vector3D(param1,param2,param3));
          var _loc6_:int = -1;
-         var _loc7_:tibia.worldmap.Field = null;
+         var _loc7_:Field = null;
          if(_loc5_ != null)
          {
             _loc6_ = this.toIndexInternal(_loc5_.x,_loc5_.y,_loc5_.z);
@@ -1054,7 +1054,7 @@ package tibia.worldmap
          var _loc10_:ObjectInstance = null;
          var _loc11_:int = 0;
          var _loc6_:int = this.toIndexInternal(param1,param2,param3);
-         var _loc7_:tibia.worldmap.Field = this.m_Field[_loc6_];
+         var _loc7_:Field = this.m_Field[_loc6_];
          this.m_CacheObjectsCount[(this.m_Origin.z + param3) % MAPSIZE_Z] = this.m_CacheObjectsCount[(this.m_Origin.z + param3) % MAPSIZE_Z] - _loc7_.m_ObjectsCount;
          this.m_CacheFullbank = false;
          if(param4)
@@ -1106,7 +1106,7 @@ package tibia.worldmap
       {
          var _loc4_:AppearanceInstance = null;
          var _loc5_:Vector3D = null;
-         var _loc6_:tibia.worldmap.Field = null;
+         var _loc6_:Field = null;
          var _loc7_:int = 0;
          var _loc1_:Number = Tibia.s_FrameTibiaTimestamp;
          if(_loc1_ < this.m_ObjectNextUpdate)

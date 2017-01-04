@@ -1,9 +1,9 @@
 package mx.collections
 {
-   import flash.utils.IExternalizable;
-   import mx.core.mx_internal;
    import flash.utils.IDataInput;
    import flash.utils.IDataOutput;
+   import flash.utils.IExternalizable;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

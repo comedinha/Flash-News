@@ -1,13 +1,13 @@
 package shared.utility
 {
+   import flash.events.NetStatusEvent;
    import flash.net.SharedObject;
    import flash.net.SharedObjectFlushStatus;
-   import flash.events.NetStatusEvent;
    
    public class SharedObjectManager
    {
       
-      protected static var s_Instance:shared.utility.SharedObjectManager = null;
+      protected static var s_Instance:SharedObjectManager = null;
       
       protected static const LISTING_NAME:String = "listing";
       
@@ -131,11 +131,11 @@ package shared.utility
          }
       }
       
-      public static function s_GetInstance() : shared.utility.SharedObjectManager
+      public static function s_GetInstance() : SharedObjectManager
       {
          if(s_Instance == null)
          {
-            s_Instance = new shared.utility.SharedObjectManager();
+            s_Instance = new SharedObjectManager();
          }
          return s_Instance;
       }

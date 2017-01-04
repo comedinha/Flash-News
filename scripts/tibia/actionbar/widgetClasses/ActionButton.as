@@ -1,42 +1,42 @@
 package tibia.actionbar.widgetClasses
 {
-   import mx.core.UIComponent;
-   import flash.geom.Point;
-   import shared.utility.TextFieldCache;
-   import flash.geom.Rectangle;
-   import mx.styles.CSSStyleDeclaration;
-   import mx.styles.StyleManager;
+   import flash.display.BitmapData;
+   import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
+   import flash.display.Graphics;
+   import flash.events.TimerEvent;
    import flash.geom.Matrix;
-   import tibia.actionbar.ActionBarSet;
-   import tibia.actionbar.ActionBar;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
    import flash.text.TextFormat;
    import flash.utils.Timer;
-   import tibia.appearances.AppearanceStorage;
-   import flash.events.TimerEvent;
-   import tibia.input.gameaction.UseAction;
-   import tibia.appearances.ObjectInstance;
-   import tibia.magic.SpellStorage;
-   import tibia.input.gameaction.EquipAction;
-   import tibia.input.gameaction.SpellAction;
    import mx.core.EventPriority;
-   import mx.core.IFlexDisplayObject;
-   import flash.display.DisplayObject;
-   import flash.display.Graphics;
    import mx.core.FlexShape;
-   import tibia.magic.Spell;
-   import flash.display.BitmapData;
-   import tibia.appearances.widgetClasses.CachedSpriteInformation;
+   import mx.core.IFlexDisplayObject;
+   import mx.core.UIComponent;
+   import mx.events.PropertyChangeEvent;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.StyleManager;
+   import shared.utility.TextFieldCache;
+   import tibia.actionbar.ActionBar;
+   import tibia.actionbar.ActionBarSet;
+   import tibia.appearances.AppearanceStorage;
    import tibia.appearances.AppearanceType;
    import tibia.appearances.FrameGroup;
-   import tibia.input.gameaction.TalkAction;
-   import mx.events.PropertyChangeEvent;
-   import tibia.game.Delay;
-   import tibia.magic.Rune;
-   import tibia.input.IAction;
-   import flash.display.DisplayObjectContainer;
+   import tibia.appearances.ObjectInstance;
+   import tibia.appearances.widgetClasses.CachedSpriteInformation;
    import tibia.container.BodyContainerView;
    import tibia.container.ContainerStorage;
    import tibia.creatures.Player;
+   import tibia.game.Delay;
+   import tibia.input.IAction;
+   import tibia.input.gameaction.EquipAction;
+   import tibia.input.gameaction.SpellAction;
+   import tibia.input.gameaction.TalkAction;
+   import tibia.input.gameaction.UseAction;
+   import tibia.magic.Rune;
+   import tibia.magic.Spell;
+   import tibia.magic.SpellStorage;
    
    public class ActionButton extends UIComponent implements IActionButton
    {
@@ -59,7 +59,7 @@ package tibia.actionbar.widgetClasses
       
       protected static var s_Trans:Matrix = new Matrix();
       
-      protected static var s_TalkTextCache:tibia.actionbar.widgetClasses.TalkActionIconCache = null;
+      protected static var s_TalkTextCache:TalkActionIconCache = null;
       
       {
          initializeStatic();
@@ -163,7 +163,7 @@ package tibia.actionbar.widgetClasses
          s_LabelTextCache = new TextFieldCache(ICON_SIZE,TextFieldCache.DEFAULT_HEIGHT,_loc1_,false);
          s_LabelTextCache.textFormat = new TextFormat("Verdana",8,16777215);
          s_LabelTextCache.textFilters = null;
-         s_TalkTextCache = new tibia.actionbar.widgetClasses.TalkActionIconCache(ICON_SIZE,ICON_SIZE,_loc1_,false);
+         s_TalkTextCache = new TalkActionIconCache(ICON_SIZE,ICON_SIZE,_loc1_,false);
          s_TalkTextCache.textFormat = new TextFormat("Verdana",8,16777215);
          s_TalkTextCache.textFilters = null;
       }

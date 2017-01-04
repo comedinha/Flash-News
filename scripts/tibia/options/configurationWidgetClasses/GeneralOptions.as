@@ -1,19 +1,19 @@
 package tibia.options.configurationWidgetClasses
 {
-   import mx.containers.VBox;
-   import mx.controls.CheckBox;
-   import shared.controls.EmbeddedDialog;
-   import tibia.game.PopUpBase;
-   import mx.events.CloseEvent;
-   import mx.core.EventPriority;
-   import tibia.options.ConfigurationWidget;
+   import flash.events.Event;
    import flash.events.MouseEvent;
    import mx.containers.Form;
-   import mx.containers.FormItem;
    import mx.containers.FormHeading;
-   import flash.events.Event;
+   import mx.containers.FormItem;
    import mx.containers.FormItemDirection;
+   import mx.containers.VBox;
    import mx.controls.Button;
+   import mx.controls.CheckBox;
+   import mx.core.EventPriority;
+   import mx.events.CloseEvent;
+   import shared.controls.EmbeddedDialog;
+   import tibia.game.PopUpBase;
+   import tibia.options.ConfigurationWidget;
    import tibia.options.OptionsStorage;
    
    public class GeneralOptions extends VBox implements IOptionsEditor

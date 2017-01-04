@@ -1,9 +1,9 @@
 package tibia.input.staticaction
 {
    import shared.utility.Vector3D;
+   import tibia.creatures.Player;
    import tibia.input.gameaction.AutowalkActionImpl;
    import tibia.network.Communication;
-   import tibia.creatures.Player;
    
    public class PlayerMove extends StaticAction
    {

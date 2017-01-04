@@ -1,11 +1,11 @@
 package tibia.creatures
 {
-   import tibia.game.PopUpBase;
-   import mx.controls.Label;
-   import mx.events.PropertyChangeEvent;
-   import mx.containers.HBox;
    import mx.containers.Form;
    import mx.containers.FormItem;
+   import mx.containers.HBox;
+   import mx.controls.Label;
+   import mx.events.PropertyChangeEvent;
+   import tibia.game.PopUpBase;
    
    public class CharacterProfileWidget extends PopUpBase
    {
@@ -243,7 +243,7 @@ package tibia.creatures
       
       private var m_UncommittedPlayer:Boolean = false;
       
-      private var m_Player:tibia.creatures.Player = null;
+      private var m_Player:Player = null;
       
       public function CharacterProfileWidget()
       {
@@ -381,7 +381,7 @@ package tibia.creatures
          this.player = Tibia.s_GetPlayer();
       }
       
-      public function get player() : tibia.creatures.Player
+      public function get player() : Player
       {
          return this.m_Player;
       }
@@ -426,7 +426,7 @@ package tibia.creatures
          }
       }
       
-      public function set player(param1:tibia.creatures.Player) : void
+      public function set player(param1:Player) : void
       {
          if(this.m_Player != param1)
          {
@@ -537,7 +537,7 @@ package tibia.creatures
          _loc1_.addChild(_loc3_);
       }
       
-      private function formatSkill(param1:tibia.creatures.Player, param2:int) : String
+      private function formatSkill(param1:Player, param2:int) : String
       {
          var _loc3_:Number = NaN;
          var _loc4_:Number = NaN;

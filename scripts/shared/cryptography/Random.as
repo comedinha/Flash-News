@@ -1,8 +1,8 @@
 package shared.cryptography
 {
+   import flash.crypto.generateRandomBytes;
    import flash.utils.ByteArray;
    import flash.utils.getTimer;
-   import flash.crypto.generateRandomBytes;
    
    public class Random
    {

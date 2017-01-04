@@ -1,32 +1,32 @@
 package mx.managers
 {
-   import mx.core.mx_internal;
+   import flash.display.DisplayObject;
    import flash.events.Event;
-   import mx.events.InterManagerRequest;
-   import flash.events.MouseEvent;
    import flash.events.IEventDispatcher;
-   import mx.managers.dragClasses.DragProxy;
-   import mx.core.IUIComponent;
+   import flash.events.MouseEvent;
+   import flash.geom.Point;
    import mx.core.DragSource;
    import mx.core.IFlexDisplayObject;
+   import mx.core.IUIComponent;
+   import mx.core.UIComponentGlobals;
+   import mx.core.mx_internal;
+   import mx.events.DragEvent;
+   import mx.events.InterDragManagerEvent;
+   import mx.events.InterManagerRequest;
+   import mx.managers.dragClasses.DragProxy;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
-   import flash.display.DisplayObject;
-   import mx.core.UIComponentGlobals;
-   import flash.geom.Point;
-   import mx.events.InterDragManagerEvent;
-   import mx.events.DragEvent;
    
    use namespace mx_internal;
    
-   public class DragManagerImpl implements mx.managers.IDragManager
+   public class DragManagerImpl implements IDragManager
    {
       
-      private static var instance:mx.managers.IDragManager;
+      private static var instance:IDragManager;
       
       mx_internal static const VERSION:String = "3.6.0.21751";
       
-      private static var sm:mx.managers.ISystemManager;
+      private static var sm:ISystemManager;
        
       
       private var bDoingDrag:Boolean = false;
@@ -66,7 +66,7 @@ package mx.managers
          sandboxRoot.dispatchEvent(_loc2_);
       }
       
-      public static function getInstance() : mx.managers.IDragManager
+      public static function getInstance() : IDragManager
       {
          if(!instance)
          {

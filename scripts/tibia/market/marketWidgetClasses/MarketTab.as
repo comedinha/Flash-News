@@ -1,18 +1,18 @@
 package tibia.market.marketWidgetClasses
 {
-   import tibia.market.MarketWidget;
    import flash.events.Event;
-   import tibia.appearances.AppearanceStorage;
-   import mx.controls.Label;
-   import mx.containers.VBox;
-   import mx.containers.HBox;
-   import tibia.appearances.widgetClasses.SkinnedAppearanceRenderer;
-   import shared.controls.CustomLabel;
-   import mx.containers.ViewStack;
-   import mx.events.IndexChangedEvent;
-   import shared.controls.SimpleTabBar;
-   import mx.controls.TabBar;
    import mx.containers.BoxDirection;
+   import mx.containers.HBox;
+   import mx.containers.VBox;
+   import mx.containers.ViewStack;
+   import mx.controls.Label;
+   import mx.controls.TabBar;
+   import mx.events.IndexChangedEvent;
+   import shared.controls.CustomLabel;
+   import shared.controls.SimpleTabBar;
+   import tibia.appearances.AppearanceStorage;
+   import tibia.appearances.widgetClasses.SkinnedAppearanceRenderer;
+   import tibia.market.MarketWidget;
    
    public class MarketTab extends MarketComponent implements IViewContainer
    {
@@ -20,13 +20,13 @@ package tibia.market.marketWidgetClasses
       private static const BUNDLE:String = "MarketWidget";
        
       
-      private var m_UIBrowser:tibia.market.marketWidgetClasses.AppearanceTypeBrowser = null;
+      private var m_UIBrowser:AppearanceTypeBrowser = null;
       
       private var m_UncommittedSelectedView:Boolean = true;
       
       private var m_SelectedView:uint = 0;
       
-      private var m_UIViewDetails:tibia.market.marketWidgetClasses.MarketDetailsView = null;
+      private var m_UIViewDetails:MarketDetailsView = null;
       
       private var m_UIName:Label = null;
       
@@ -36,13 +36,13 @@ package tibia.market.marketWidgetClasses
       
       private var m_UncommittedSelectedType:Boolean = false;
       
-      private var m_UIViewStatistics:tibia.market.marketWidgetClasses.MarketStatisticsView = null;
+      private var m_UIViewStatistics:MarketStatisticsView = null;
       
       private var m_UIConstructed:Boolean = false;
       
-      private var m_UIViewOffers:tibia.market.marketWidgetClasses.MarketOffersView = null;
+      private var m_UIViewOffers:MarketOffersView = null;
       
-      private var m_UIEditor:tibia.market.marketWidgetClasses.MarketOfferEditor = null;
+      private var m_UIEditor:MarketOfferEditor = null;
       
       private var m_UIIcon:SkinnedAppearanceRenderer = null;
       
@@ -122,7 +122,7 @@ package tibia.market.marketWidgetClasses
          if(!this.m_UIConstructed)
          {
             super.createChildren();
-            this.m_UIBrowser = new tibia.market.marketWidgetClasses.AppearanceTypeBrowser();
+            this.m_UIBrowser = new AppearanceTypeBrowser();
             this.m_UIBrowser.percentHeight = 100;
             this.m_UIBrowser.width = 177;
             this.m_UIBrowser.addEventListener(Event.CHANGE,this.onTypeChange);
@@ -161,22 +161,22 @@ package tibia.market.marketWidgetClasses
             this.m_UIViewStack.percentWidth = 100;
             this.m_UIViewStack.addEventListener(IndexChangedEvent.CHANGE,this.onViewChange);
             _loc2_.addChild(this.m_UIViewStack);
-            this.m_UIViewOffers = new tibia.market.marketWidgetClasses.MarketOffersView(market);
+            this.m_UIViewOffers = new MarketOffersView(market);
             this.m_UIViewOffers.percentHeight = 100;
             this.m_UIViewOffers.percentWidth = 100;
             this.m_UIViewOffers.styleName = "marketWidgetView";
             this.m_UIViewStack.addChild(this.m_UIViewOffers);
-            this.m_UIViewDetails = new tibia.market.marketWidgetClasses.MarketDetailsView(market);
+            this.m_UIViewDetails = new MarketDetailsView(market);
             this.m_UIViewDetails.percentHeight = 100;
             this.m_UIViewDetails.percentWidth = 100;
             this.m_UIViewDetails.styleName = "marketWidgetView";
             this.m_UIViewStack.addChild(this.m_UIViewDetails);
-            this.m_UIViewStatistics = new tibia.market.marketWidgetClasses.MarketStatisticsView(market);
+            this.m_UIViewStatistics = new MarketStatisticsView(market);
             this.m_UIViewStatistics.percentHeight = 100;
             this.m_UIViewStatistics.percentWidth = 100;
             this.m_UIViewStatistics.styleName = "marketWidgetView";
             this.m_UIViewStack.addChild(this.m_UIViewStatistics);
-            this.m_UIEditor = new tibia.market.marketWidgetClasses.MarketOfferEditor(market);
+            this.m_UIEditor = new MarketOfferEditor(market);
             this.m_UIEditor.percentHeight = NaN;
             this.m_UIEditor.percentWidth = 100;
             this.m_UIEditor.styleName = "marketWidgetView";

@@ -1,8 +1,8 @@
 package shared.skins
 {
-   import mx.skins.ProgrammaticSkin;
-   import mx.core.IBorder;
    import mx.core.EdgeMetrics;
+   import mx.core.IBorder;
+   import mx.skins.ProgrammaticSkin;
    
    public class BitmapBorderSkin extends ProgrammaticSkin implements IBorder
    {
@@ -10,11 +10,11 @@ package shared.skins
       
       private var m_InvalidStyle:Boolean = false;
       
-      private var m_Grid:shared.skins.BitmapGrid;
+      private var m_Grid:BitmapGrid;
       
       public function BitmapBorderSkin()
       {
-         this.m_Grid = new shared.skins.BitmapGrid(null,"border");
+         this.m_Grid = new BitmapGrid(null,"border");
          super();
       }
       

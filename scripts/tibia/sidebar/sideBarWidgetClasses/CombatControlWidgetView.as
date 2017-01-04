@@ -1,19 +1,19 @@
 package tibia.sidebar.sideBarWidgetClasses
 {
-   import mx.controls.Button;
-   import tibia.creatures.Player;
    import flash.events.MouseEvent;
-   import tibia.network.Communication;
-   import tibia.§sidebar:ns_sidebar_internal§.options;
-   import tibia.options.OptionsStorage;
-   import tibia.input.staticaction.StaticActionList;
-   import shared.controls.CustomButton;
-   import mx.core.EventPriority;
-   import mx.events.PropertyChangeEvent;
-   import mx.core.EdgeMetrics;
-   import mx.core.UIComponent;
    import mx.containers.BoxDirection;
+   import mx.controls.Button;
+   import mx.core.EdgeMetrics;
+   import mx.core.EventPriority;
    import mx.core.ScrollPolicy;
+   import mx.core.UIComponent;
+   import mx.events.PropertyChangeEvent;
+   import shared.controls.CustomButton;
+   import tibia.creatures.Player;
+   import tibia.input.staticaction.StaticActionList;
+   import tibia.network.Communication;
+   import tibia.options.OptionsStorage;
+   import tibia.§sidebar:ns_sidebar_internal§.options;
    
    public class CombatControlWidgetView extends WidgetView
    {

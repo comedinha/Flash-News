@@ -1,9 +1,9 @@
 package tibia.game
 {
+   import mx.containers.VBox;
    import mx.controls.Text;
    import mx.controls.TextArea;
    import mx.core.EdgeMetrics;
-   import mx.containers.VBox;
    import mx.core.ScrollPolicy;
    
    public class MessageWidget extends PopUpBase

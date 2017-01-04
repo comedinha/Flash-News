@@ -1,8 +1,8 @@
 package shared.utility.i18n
 {
-   import mx.resources.ResourceManager;
-   import mx.resources.IResourceManager;
    import mx.formatters.DateFormatter;
+   import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
    
    public function i18nFormatTime(param1:Date) : String
    {

@@ -1,9 +1,9 @@
 package mx.skins.halo
 {
-   import mx.core.SpriteAsset;
-   import mx.core.IFlexDisplayObject;
-   import mx.core.mx_internal;
    import flash.display.Graphics;
+   import mx.core.IFlexDisplayObject;
+   import mx.core.SpriteAsset;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

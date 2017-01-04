@@ -10,7 +10,7 @@ package shared.utility
       
       private var m_Keys:Vector.<Object> = null;
       
-      private var m_Heap:shared.utility.Heap = null;
+      private var m_Heap:Heap = null;
       
       public function HeapDictionaryWrapper()
       {
@@ -79,7 +79,7 @@ package shared.utility
       {
          this.m_Dictionary = new Dictionary();
          this.m_Keys = new Vector.<Object>();
-         this.m_Heap = new shared.utility.Heap();
+         this.m_Heap = new Heap();
       }
       
       public function peekMinItemKey() : Object

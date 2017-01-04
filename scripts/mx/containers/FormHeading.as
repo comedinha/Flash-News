@@ -1,10 +1,10 @@
 package mx.containers
 {
-   import mx.core.UIComponent;
-   import mx.core.mx_internal;
+   import flash.events.Event;
    import mx.controls.Label;
    import mx.core.EdgeMetrics;
-   import flash.events.Event;
+   import mx.core.UIComponent;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

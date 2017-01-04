@@ -1,14 +1,14 @@
 package tibia.actionbar.widgetClasses
 {
-   import tibia.game.ContextMenuBase;
    import mx.core.IUIComponent;
+   import tibia.actionbar.ActionBar;
+   import tibia.actionbar.ConfigurationWidget;
    import tibia.appearances.AppearanceType;
+   import tibia.game.ContextMenuBase;
    import tibia.input.IAction;
    import tibia.input.gameaction.UseAction;
-   import tibia.actionbar.ConfigurationWidget;
    import tibia.input.staticaction.StaticActionList;
    import tibia.options.configurationWidgetClasses.HotkeyOptions;
-   import tibia.actionbar.ActionBar;
    
    public class ActionButtonContextMenu extends ContextMenuBase
    {

@@ -1,19 +1,19 @@
 package tibia.creatures
 {
    import flash.events.EventDispatcher;
-   import tibia.reporting.IReportable;
-   import shared.utility.Colour;
    import mx.events.PropertyChangeEvent;
-   import tibia.appearances.AppearanceInstance;
-   import shared.utility.StringHelper;
-   import tibia.creatures.battlelistWidgetClasses.BattlelistWidgetView;
    import mx.events.PropertyChangeEventKind;
+   import shared.utility.Colour;
+   import shared.utility.StringHelper;
    import shared.utility.Vector3D;
-   import tibia.reporting.reportType.Type;
+   import tibia.appearances.AppearanceInstance;
    import tibia.appearances.FrameGroup;
    import tibia.appearances.Marks;
-   import tibia.network.IServerConnection;
+   import tibia.creatures.battlelistWidgetClasses.BattlelistWidgetView;
    import tibia.network.Communication;
+   import tibia.network.IServerConnection;
+   import tibia.reporting.IReportable;
+   import tibia.reporting.reportType.Type;
    
    public class Creature extends EventDispatcher implements IReportable
    {

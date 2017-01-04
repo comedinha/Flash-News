@@ -1,26 +1,26 @@
 package tibia.sessiondump.controller
 {
-   import tibia.sessiondump.hints.SessiondumpHintBase;
-   import tibia.sessiondump.hints.SessiondumpHints;
-   import tibia.tutorial.TutorialProgressServiceAsset;
    import flash.events.Event;
-   import tibia.sessiondump.SessiondumpEvent;
-   import tibia.help.TransparentHintLayer;
    import flash.events.EventDispatcher;
    import flash.events.MouseEvent;
-   import tibia.chat.MessageStorage;
    import flash.utils.ByteArray;
-   import shared.utility.Vector3D;
+   import loader.asset.IAssetProvider;
    import shared.utility.StringHelper;
-   import tibia.creatures.Creature;
+   import shared.utility.Vector3D;
    import tibia.chat.ChatStorage;
    import tibia.chat.MessageMode;
-   import tibia.sessiondump.Sessiondump;
-   import tibia.sessiondump.SessiondumpReader;
+   import tibia.chat.MessageStorage;
    import tibia.chat.log;
-   import tibia.sessiondump.hints.SessiondumpHintsAsset;
-   import loader.asset.IAssetProvider;
+   import tibia.creatures.Creature;
    import tibia.game.AssetBase;
+   import tibia.help.TransparentHintLayer;
+   import tibia.sessiondump.Sessiondump;
+   import tibia.sessiondump.SessiondumpEvent;
+   import tibia.sessiondump.SessiondumpReader;
+   import tibia.sessiondump.hints.SessiondumpHintBase;
+   import tibia.sessiondump.hints.SessiondumpHints;
+   import tibia.sessiondump.hints.SessiondumpHintsAsset;
+   import tibia.tutorial.TutorialProgressServiceAsset;
    
    public class SessiondumpControllerHints extends SessiondumpControllerBase
    {

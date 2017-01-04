@@ -8,11 +8,11 @@ package mx.managers
    public class HistoryManager
    {
       
-      private static var implClassDependency:mx.managers.HistoryManagerImpl;
+      private static var implClassDependency:HistoryManagerImpl;
       
       mx_internal static const VERSION:String = "3.6.0.21751";
       
-      private static var _impl:mx.managers.IHistoryManager;
+      private static var _impl:IHistoryManager;
        
       
       public function HistoryManager()
@@ -25,7 +25,7 @@ package mx.managers
          impl.save();
       }
       
-      private static function get impl() : mx.managers.IHistoryManager
+      private static function get impl() : IHistoryManager
       {
          if(!_impl)
          {

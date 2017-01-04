@@ -1,9 +1,9 @@
 package tibia.game
 {
-   import mx.controls.Button;
    import flash.events.MouseEvent;
-   import shared.controls.CustomButton;
+   import mx.controls.Button;
    import mx.events.CloseEvent;
+   import shared.controls.CustomButton;
    
    public class DeathMessageWidget extends MessageWidget
    {

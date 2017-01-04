@@ -1,13 +1,13 @@
 package tibia.cursors
 {
-   import flash.ui.MouseCursorData;
-   import flash.display.BitmapData;
    import flash.display.Bitmap;
+   import flash.display.BitmapData;
    import flash.geom.Point;
    import flash.ui.Mouse;
-   import mx.managers.dragClasses.DragProxy;
-   import mx.managers.DragManager;
+   import flash.ui.MouseCursorData;
    import mx.core.mx_internal;
+   import mx.managers.DragManager;
+   import mx.managers.dragClasses.DragProxy;
    
    public class DragCursorBase
    {

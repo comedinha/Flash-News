@@ -1,18 +1,18 @@
 package mx.collections
 {
-   import mx.core.mx_internal;
-   import mx.collections.errors.CollectionViewError;
-   import flash.utils.Dictionary;
-   import mx.events.CollectionEvent;
-   import mx.events.PropertyChangeEvent;
-   import mx.events.CollectionEventKind;
-   import mx.resources.IResourceManager;
    import flash.events.Event;
+   import flash.utils.Dictionary;
+   import mx.collections.errors.CollectionViewError;
+   import mx.core.mx_internal;
+   import mx.events.CollectionEvent;
+   import mx.events.CollectionEventKind;
+   import mx.events.PropertyChangeEvent;
+   import mx.resources.IResourceManager;
    import mx.resources.ResourceManager;
    
    use namespace mx_internal;
    
-   public class ModifiedCollectionView implements mx.collections.ICollectionView
+   public class ModifiedCollectionView implements ICollectionView
    {
       
       public static const REPLACEMENT:String = "replacement";
@@ -30,7 +30,7 @@ package mx.collections
       
       private var _showPreserved:Boolean = false;
       
-      private var list:mx.collections.ICollectionView;
+      private var list:ICollectionView;
       
       private var deltaLength:int = 0;
       
@@ -48,7 +48,7 @@ package mx.collections
       
       private var itemWrappersByCollectionMod:Dictionary;
       
-      public function ModifiedCollectionView(param1:mx.collections.ICollectionView)
+      public function ModifiedCollectionView(param1:ICollectionView)
       {
          resourceManager = ResourceManager.getInstance();
          deltas = [];
@@ -506,8 +506,8 @@ package mx.collections
 }
 
 import mx.collections.CursorBookmark;
-import mx.core.mx_internal;
 import mx.collections.ModifiedCollectionView;
+import mx.core.mx_internal;
 
 use namespace mx_internal;
 
@@ -542,16 +542,16 @@ class ModifiedCollectionViewBookmark extends CursorBookmark
 }
 
 import flash.events.EventDispatcher;
+import mx.collections.CursorBookmark;
+import mx.collections.ICollectionView;
 import mx.collections.IViewCursor;
 import mx.collections.ModifiedCollectionView;
-import mx.resources.IResourceManager;
-import mx.collections.CursorBookmark;
 import mx.collections.errors.CollectionViewError;
-import mx.core.mx_internal;
 import mx.collections.errors.CursorError;
-import mx.collections.ICollectionView;
-import mx.events.FlexEvent;
 import mx.collections.errors.ItemPendingError;
+import mx.core.mx_internal;
+import mx.events.FlexEvent;
+import mx.resources.IResourceManager;
 import mx.resources.ResourceManager;
 
 use namespace mx_internal;

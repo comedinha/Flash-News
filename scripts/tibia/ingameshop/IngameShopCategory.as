@@ -10,9 +10,9 @@ package tibia.ingameshop
       private static var CATEGORY_SPECIAL_OFFERS:String = "Special Offers";
        
       
-      private var m_Offers:Vector.<tibia.ingameshop.IngameShopOffer> = null;
+      private var m_Offers:Vector.<IngameShopOffer> = null;
       
-      private var m_Subcategories:Vector.<tibia.ingameshop.IngameShopCategory> = null;
+      private var m_Subcategories:Vector.<IngameShopCategory> = null;
       
       private var m_CategoryHighlightState:int = 0;
       
@@ -32,8 +32,8 @@ package tibia.ingameshop
          this.m_Name = param1;
          this.m_Description = param2;
          this.m_CategoryHighlightState = param3;
-         this.m_Subcategories = new Vector.<tibia.ingameshop.IngameShopCategory>();
-         this.m_Offers = new Vector.<tibia.ingameshop.IngameShopOffer>();
+         this.m_Subcategories = new Vector.<IngameShopCategory>();
+         this.m_Offers = new Vector.<IngameShopOffer>();
          this.m_IconIdentifiers = new Vector.<String>();
       }
       
@@ -42,19 +42,19 @@ package tibia.ingameshop
          this.m_IconIdentifiers = param1;
       }
       
-      public function get subCategories() : Vector.<tibia.ingameshop.IngameShopCategory>
+      public function get subCategories() : Vector.<IngameShopCategory>
       {
          return this.m_Subcategories;
       }
       
       public function hasTimedOffer() : Boolean
       {
-         return this.m_CategoryHighlightState == tibia.ingameshop.IngameShopOffer.HIGHLIGHT_STATE_TIMED;
+         return this.m_CategoryHighlightState == IngameShopOffer.HIGHLIGHT_STATE_TIMED;
       }
       
       public function hasSaleOffer() : Boolean
       {
-         return this.m_Name != tibia.ingameshop.IngameShopCategory.CATEGORY_SPECIAL_OFFERS && this.m_CategoryHighlightState == tibia.ingameshop.IngameShopOffer.HIGHLIGHT_STATE_SALE;
+         return this.m_Name != IngameShopCategory.CATEGORY_SPECIAL_OFFERS && this.m_CategoryHighlightState == IngameShopOffer.HIGHLIGHT_STATE_SALE;
       }
       
       public function get name() : String
@@ -62,7 +62,7 @@ package tibia.ingameshop
          return this.m_Name;
       }
       
-      public function set offers(param1:Vector.<tibia.ingameshop.IngameShopOffer>) : void
+      public function set offers(param1:Vector.<IngameShopOffer>) : void
       {
          this.m_Offers = param1;
          var _loc2_:IngameShopEvent = new IngameShopEvent(IngameShopEvent.CATEGORY_OFFERS_CHANGED);
@@ -72,10 +72,10 @@ package tibia.ingameshop
       
       public function hasNewOffer() : Boolean
       {
-         return this.m_Name != tibia.ingameshop.IngameShopCategory.CATEGORY_NEW_PRODUCTS && this.m_CategoryHighlightState == tibia.ingameshop.IngameShopOffer.HIGHLIGHT_STATE_NEW;
+         return this.m_Name != IngameShopCategory.CATEGORY_NEW_PRODUCTS && this.m_CategoryHighlightState == IngameShopOffer.HIGHLIGHT_STATE_NEW;
       }
       
-      public function get offers() : Vector.<tibia.ingameshop.IngameShopOffer>
+      public function get offers() : Vector.<IngameShopOffer>
       {
          return this.m_Offers;
       }

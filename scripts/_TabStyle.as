@@ -1,9 +1,9 @@
 package
 {
    import mx.core.IFlexModuleFactory;
+   import mx.skins.halo.TabSkin;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
-   import mx.skins.halo.TabSkin;
    
    public class _TabStyle
    {

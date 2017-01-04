@@ -1,22 +1,22 @@
 package tibia.options.configurationWidgetClasses
 {
+   import flash.events.MouseEvent;
+   import mx.collections.ArrayCollection;
+   import mx.collections.IList;
+   import mx.containers.HBox;
    import mx.containers.VBox;
+   import mx.controls.Button;
+   import mx.controls.CheckBox;
    import mx.controls.DataGrid;
+   import mx.controls.Spacer;
+   import mx.controls.dataGridClasses.DataGridColumn;
+   import mx.core.ClassFactory;
    import mx.events.DataGridEvent;
    import mx.events.DataGridEventReason;
-   import mx.controls.Button;
-   import mx.controls.dataGridClasses.DataGridColumn;
-   import mx.containers.HBox;
-   import mx.controls.Spacer;
-   import shared.controls.CustomDataGrid;
-   import tibia.options.ConfigurationWidget;
-   import mx.core.ClassFactory;
-   import mx.controls.CheckBox;
    import shared.controls.CustomButton;
-   import flash.events.MouseEvent;
-   import mx.collections.IList;
+   import shared.controls.CustomDataGrid;
    import tibia.chat.NameFilterItem;
-   import mx.collections.ArrayCollection;
+   import tibia.options.ConfigurationWidget;
    
    public class NameFilterListEditor extends VBox
    {

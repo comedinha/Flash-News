@@ -1,21 +1,21 @@
 package tibia.reporting
 {
-   import tibia.game.PopUpBase;
+   import flash.display.DisplayObjectContainer;
    import flash.events.MouseEvent;
+   import mx.containers.ViewStack;
    import mx.controls.Button;
-   import tibia.network.Communication;
-   import tibia.reporting.reportType.Type;
+   import mx.resources.ResourceManager;
    import shared.controls.CustomButton;
+   import tibia.chat.ChatStorage;
+   import tibia.chat.MessageMode;
+   import tibia.game.PopUpBase;
+   import tibia.network.Communication;
+   import tibia.reporting.reportType.ReportableClone;
+   import tibia.reporting.reportType.Type;
+   import tibia.reporting.reportWidgetClasses.CommentView;
    import tibia.reporting.reportWidgetClasses.ConfirmView;
    import tibia.reporting.reportWidgetClasses.ReasonView;
-   import tibia.reporting.reportWidgetClasses.CommentView;
-   import mx.containers.ViewStack;
-   import tibia.chat.ChatStorage;
    import tibia.worldmap.WorldMapStorage;
-   import mx.resources.ResourceManager;
-   import tibia.chat.MessageMode;
-   import flash.display.DisplayObjectContainer;
-   import tibia.reporting.reportType.ReportableClone;
    
    public class ReportWidget extends PopUpBase
    {
@@ -56,7 +56,7 @@ package tibia.reporting
       public static const EXTRA_BUTTON_SUBMIT:int = 2097152;
        
       
-      private var m_Reportable:tibia.reporting.IReportable = null;
+      private var m_Reportable:IReportable = null;
       
       private var m_UncommittedStep:Boolean = false;
       
@@ -78,7 +78,7 @@ package tibia.reporting
       
       private var m_Step:int = -1;
       
-      public function ReportWidget(param1:uint, param2:tibia.reporting.IReportable)
+      public function ReportWidget(param1:uint, param2:IReportable)
       {
          super();
          if(param1 != Type.REPORT_BOT && param1 != Type.REPORT_NAME && param1 != Type.REPORT_STATEMENT)
@@ -249,7 +249,7 @@ package tibia.reporting
          }
       }
       
-      public function get reportable() : tibia.reporting.IReportable
+      public function get reportable() : IReportable
       {
          return this.m_Reportable;
       }

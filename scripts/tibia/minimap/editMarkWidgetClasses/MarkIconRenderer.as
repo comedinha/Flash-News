@@ -1,11 +1,11 @@
 package tibia.minimap.editMarkWidgetClasses
 {
-   import shared.controls.IconRendererBase;
-   import flash.display.Graphics;
-   import flash.geom.Rectangle;
    import flash.display.BitmapData;
-   import tibia.minimap.MiniMapStorage;
+   import flash.display.Graphics;
    import flash.geom.Matrix;
+   import flash.geom.Rectangle;
+   import shared.controls.IconRendererBase;
+   import tibia.minimap.MiniMapStorage;
    
    public class MarkIconRenderer extends IconRendererBase
    {

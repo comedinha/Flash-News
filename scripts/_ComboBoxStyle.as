@@ -1,9 +1,9 @@
 package
 {
    import mx.core.IFlexModuleFactory;
+   import mx.skins.halo.ComboBoxArrowSkin;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
-   import mx.skins.halo.ComboBoxArrowSkin;
    
    public class _ComboBoxStyle
    {

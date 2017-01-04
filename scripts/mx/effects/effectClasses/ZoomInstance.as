@@ -1,10 +1,10 @@
 package mx.effects.effectClasses
 {
-   import mx.core.mx_internal;
-   import flash.events.MouseEvent;
    import flash.events.Event;
-   import mx.events.FlexEvent;
+   import flash.events.MouseEvent;
+   import mx.core.mx_internal;
    import mx.effects.EffectManager;
+   import mx.events.FlexEvent;
    
    use namespace mx_internal;
    

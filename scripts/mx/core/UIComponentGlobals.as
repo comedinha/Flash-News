@@ -1,8 +1,8 @@
 package mx.core
 {
-   import mx.managers.ILayoutManager;
    import flash.display.InteractiveObject;
    import flash.geom.Matrix;
+   import mx.managers.ILayoutManager;
    
    use namespace mx_internal;
    

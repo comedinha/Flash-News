@@ -1,9 +1,9 @@
 package tibia.container.containerViewWidgetClasses
 {
    import mx.containers.Tile;
-   import mx.core.mx_internal;
-   import mx.core.EdgeMetrics;
    import mx.containers.TileDirection;
+   import mx.core.EdgeMetrics;
+   import mx.core.mx_internal;
    
    public class ContainerSlotHolder extends Tile
    {

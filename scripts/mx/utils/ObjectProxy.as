@@ -1,15 +1,15 @@
 package mx.utils
 {
-   import flash.utils.Proxy;
-   import flash.utils.IExternalizable;
-   import mx.core.IPropertyChangeNotifier;
    import flash.events.Event;
-   import flash.utils.flash_proxy;
-   import mx.events.PropertyChangeEvent;
+   import flash.events.EventDispatcher;
    import flash.utils.IDataInput;
    import flash.utils.IDataOutput;
-   import flash.events.EventDispatcher;
+   import flash.utils.IExternalizable;
+   import flash.utils.Proxy;
+   import flash.utils.flash_proxy;
    import flash.utils.getQualifiedClassName;
+   import mx.core.IPropertyChangeNotifier;
+   import mx.events.PropertyChangeEvent;
    import mx.events.PropertyChangeEventKind;
    
    use namespace object_proxy;

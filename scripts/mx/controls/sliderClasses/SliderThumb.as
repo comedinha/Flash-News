@@ -1,12 +1,12 @@
 package mx.controls.sliderClasses
 {
-   import mx.controls.Button;
-   import mx.core.mx_internal;
+   import flash.events.KeyboardEvent;
    import flash.events.MouseEvent;
    import flash.geom.Point;
-   import mx.controls.ButtonPhase;
-   import flash.events.KeyboardEvent;
    import flash.ui.Keyboard;
+   import mx.controls.Button;
+   import mx.controls.ButtonPhase;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

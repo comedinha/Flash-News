@@ -1,22 +1,22 @@
 package mx.preloaders
 {
-   import flash.display.Sprite;
-   import mx.core.mx_internal;
-   import flash.display.LoaderInfo;
-   import flash.events.IEventDispatcher;
-   import flash.events.Event;
-   import mx.events.FlexEvent;
-   import flash.events.IOErrorEvent;
-   import flash.utils.Timer;
-   import flash.events.ErrorEvent;
-   import mx.core.RSLItem;
-   import mx.events.RSLEvent;
-   import mx.core.ResourceModuleRSLItem;
-   import mx.core.RSLListLoader;
-   import flash.events.TimerEvent;
    import flash.display.DisplayObject;
-   import flash.events.ProgressEvent;
+   import flash.display.LoaderInfo;
    import flash.display.MovieClip;
+   import flash.display.Sprite;
+   import flash.events.ErrorEvent;
+   import flash.events.Event;
+   import flash.events.IEventDispatcher;
+   import flash.events.IOErrorEvent;
+   import flash.events.ProgressEvent;
+   import flash.events.TimerEvent;
+   import flash.utils.Timer;
+   import mx.core.RSLItem;
+   import mx.core.RSLListLoader;
+   import mx.core.ResourceModuleRSLItem;
+   import mx.core.mx_internal;
+   import mx.events.FlexEvent;
+   import mx.events.RSLEvent;
    
    use namespace mx_internal;
    
@@ -34,7 +34,7 @@ package mx.preloaders
       
       private var rslDone:Boolean = false;
       
-      private var displayClass:mx.preloaders.IPreloaderDisplay = null;
+      private var displayClass:IPreloaderDisplay = null;
       
       private var rslListLoader:RSLListLoader;
       

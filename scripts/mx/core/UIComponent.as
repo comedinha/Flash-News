@@ -1,71 +1,71 @@
 package mx.core
 {
+   import flash.accessibility.Accessibility;
+   import flash.accessibility.AccessibilityProperties;
+   import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
+   import flash.display.GradientType;
+   import flash.display.Graphics;
+   import flash.display.InteractiveObject;
+   import flash.display.Loader;
+   import flash.display.Sprite;
+   import flash.display.Stage;
+   import flash.events.Event;
+   import flash.events.EventPhase;
+   import flash.events.FocusEvent;
+   import flash.events.IEventDispatcher;
+   import flash.events.KeyboardEvent;
+   import flash.geom.Matrix;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import flash.system.ApplicationDomain;
+   import flash.system.Capabilities;
+   import flash.text.TextLineMetrics;
+   import flash.utils.getQualifiedClassName;
+   import flash.utils.getQualifiedSuperclassName;
    import mx.automation.IAutomationObject;
+   import mx.binding.BindingManager;
+   import mx.controls.IFlexContextMenu;
+   import mx.effects.EffectManager;
+   import mx.effects.IEffect;
+   import mx.effects.IEffectInstance;
+   import mx.events.ChildExistenceChangedEvent;
+   import mx.events.DynamicEvent;
+   import mx.events.EffectEvent;
+   import mx.events.FlexEvent;
+   import mx.events.MoveEvent;
+   import mx.events.PropertyChangeEvent;
+   import mx.events.ResizeEvent;
+   import mx.events.StateChangeEvent;
+   import mx.events.ValidationResultEvent;
+   import mx.graphics.RoundedRectangle;
+   import mx.managers.CursorManager;
+   import mx.managers.ICursorManager;
+   import mx.managers.IFocusManager;
+   import mx.managers.IFocusManagerComponent;
+   import mx.managers.IFocusManagerContainer;
    import mx.managers.ILayoutManagerClient;
+   import mx.managers.ISystemManager;
+   import mx.managers.IToolTipManagerClient;
+   import mx.managers.SystemManager;
+   import mx.managers.SystemManagerGlobals;
+   import mx.managers.SystemManagerProxy;
+   import mx.managers.ToolTipManager;
+   import mx.modules.ModuleManager;
+   import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
+   import mx.states.State;
+   import mx.states.Transition;
+   import mx.styles.CSSStyleDeclaration;
    import mx.styles.ISimpleStyleClient;
    import mx.styles.IStyleClient;
-   import mx.managers.IToolTipManagerClient;
-   import mx.validators.IValidatorListener;
-   import mx.managers.ISystemManager;
-   import mx.managers.SystemManagerGlobals;
-   import mx.events.EffectEvent;
-   import flash.display.DisplayObject;
-   import flash.geom.Point;
-   import mx.managers.IFocusManager;
-   import flash.display.DisplayObjectContainer;
-   import flash.events.Event;
-   import mx.events.DynamicEvent;
    import mx.styles.StyleManager;
-   import flash.utils.getQualifiedClassName;
-   import flash.system.Capabilities;
-   import flash.accessibility.AccessibilityProperties;
-   import flash.accessibility.Accessibility;
-   import flash.geom.Matrix;
-   import mx.events.FlexEvent;
-   import mx.states.State;
-   import flash.geom.Rectangle;
-   import mx.styles.CSSStyleDeclaration;
-   import flash.display.Stage;
-   import flash.display.Sprite;
-   import flash.events.KeyboardEvent;
-   import mx.utils.StringUtil;
-   import flash.events.FocusEvent;
-   import mx.graphics.RoundedRectangle;
-   import mx.events.ResizeEvent;
-   import mx.events.ChildExistenceChangedEvent;
-   import mx.managers.ToolTipManager;
-   import mx.events.ValidationResultEvent;
-   import mx.validators.ValidationResult;
-   import mx.effects.EffectManager;
-   import flash.display.Loader;
-   import mx.utils.ColorUtil;
-   import mx.binding.BindingManager;
-   import mx.effects.IEffectInstance;
-   import flash.display.Graphics;
-   import mx.managers.SystemManager;
-   import mx.events.StateChangeEvent;
-   import mx.effects.IEffect;
-   import mx.resources.IResourceManager;
-   import mx.managers.SystemManagerProxy;
-   import mx.states.Transition;
-   import mx.events.PropertyChangeEvent;
-   import mx.events.MoveEvent;
-   import mx.controls.IFlexContextMenu;
-   import flash.display.InteractiveObject;
    import mx.styles.StyleProtoChain;
-   import flash.text.TextLineMetrics;
-   import flash.events.EventPhase;
-   import flash.system.ApplicationDomain;
-   import mx.modules.ModuleManager;
-   import flash.utils.getQualifiedSuperclassName;
-   import mx.managers.ICursorManager;
-   import mx.managers.CursorManager;
-   import mx.managers.IFocusManagerContainer;
-   import flash.display.GradientType;
+   import mx.utils.ColorUtil;
    import mx.utils.GraphicsUtil;
-   import flash.events.IEventDispatcher;
-   import mx.resources.ResourceManager;
-   import mx.managers.IFocusManagerComponent;
+   import mx.utils.StringUtil;
+   import mx.validators.IValidatorListener;
+   import mx.validators.ValidationResult;
    
    use namespace mx_internal;
    
@@ -92,18 +92,18 @@ package mx.core
       
       public static const DEFAULT_MEASURED_HEIGHT:Number = 22;
       
-      private static var _embeddedFontRegistry:mx.core.IEmbeddedFontRegistry;
+      private static var _embeddedFontRegistry:IEmbeddedFontRegistry;
       
       mx_internal static const VERSION:String = "3.6.0.21751";
       
       public static const DEFAULT_MEASURED_MIN_WIDTH:Number = 40;
        
       
-      private var cachedEmbeddedFont:mx.core.EmbeddedFont = null;
+      private var cachedEmbeddedFont:EmbeddedFont = null;
       
       private var errorStringChanged:Boolean = false;
       
-      mx_internal var overlay:mx.core.UIComponent;
+      mx_internal var overlay:UIComponent;
       
       mx_internal var automaticRadioButtonGroups:Object;
       
@@ -139,7 +139,7 @@ package mx.core
       
       private var oldExplicitWidth:Number;
       
-      mx_internal var _descriptor:mx.core.UIComponentDescriptor;
+      mx_internal var _descriptor:UIComponentDescriptor;
       
       private var _initialized:Boolean = false;
       
@@ -177,7 +177,7 @@ package mx.core
       
       mx_internal var _affectedProperties:Object;
       
-      mx_internal var _documentDescriptor:mx.core.UIComponentDescriptor;
+      mx_internal var _documentDescriptor:UIComponentDescriptor;
       
       private var _processedDescriptors:Boolean = false;
       
@@ -213,7 +213,7 @@ package mx.core
       
       private var _currentStateChanged:Boolean;
       
-      private var cachedTextFormat:mx.core.UITextFormat;
+      private var cachedTextFormat:UITextFormat;
       
       mx_internal var _height:Number;
       
@@ -253,7 +253,7 @@ package mx.core
       
       private var _showInAutomationHierarchy:Boolean = true;
       
-      private var _moduleFactory:mx.core.IFlexModuleFactory;
+      private var _moduleFactory:IFlexModuleFactory;
       
       private var preventDrawFocus:Boolean = false;
       
@@ -295,7 +295,7 @@ package mx.core
       
       private var _percentHeight:Number;
       
-      private var oldEmbeddedFontContext:mx.core.IFlexModuleFactory = null;
+      private var oldEmbeddedFontContext:IFlexModuleFactory = null;
       
       private var oldWidth:Number = 0;
       
@@ -303,8 +303,8 @@ package mx.core
       {
          methodQueue = [];
          _resourceManager = ResourceManager.getInstance();
-         _inheritingStyles = mx.core.UIComponent.STYLE_UNINITIALIZED;
-         _nonInheritingStyles = mx.core.UIComponent.STYLE_UNINITIALIZED;
+         _inheritingStyles = UIComponent.STYLE_UNINITIALIZED;
+         _nonInheritingStyles = UIComponent.STYLE_UNINITIALIZED;
          states = [];
          transitions = [];
          _effectsStarted = [];
@@ -331,7 +331,7 @@ package mx.core
          _height = super.height;
       }
       
-      private static function get embeddedFontRegistry() : mx.core.IEmbeddedFontRegistry
+      private static function get embeddedFontRegistry() : IEmbeddedFontRegistry
       {
          if(!_embeddedFontRegistry)
          {
@@ -694,7 +694,7 @@ package mx.core
          var _loc6_:Rectangle = new Rectangle();
          do
          {
-            if(_loc5_ is mx.core.UIComponent)
+            if(_loc5_ is UIComponent)
             {
                if(UIComponent(_loc5_).$parent)
                {
@@ -905,8 +905,8 @@ package mx.core
          var _loc3_:String = getStyle("fontStyle");
          var _loc4_:* = _loc2_ == "bold";
          var _loc5_:* = _loc3_ == "italic";
-         var _loc6_:mx.core.EmbeddedFont = getEmbeddedFont(_loc1_,_loc4_,_loc5_);
-         var _loc7_:mx.core.IFlexModuleFactory = embeddedFontRegistry.getAssociatedModuleFactory(_loc6_,moduleFactory);
+         var _loc6_:EmbeddedFont = getEmbeddedFont(_loc1_,_loc4_,_loc5_);
+         var _loc7_:IFlexModuleFactory = embeddedFontRegistry.getAssociatedModuleFactory(_loc6_,moduleFactory);
          return _loc7_ != oldEmbeddedFontContext;
       }
       
@@ -940,7 +940,7 @@ package mx.core
          if(!overlay)
          {
             overlayColor = param1;
-            overlay = new mx.core.UIComponent();
+            overlay = new UIComponent();
             overlay.name = "overlay";
             overlay.$visible = true;
             fillOverlay(overlay,param1,param2);
@@ -994,7 +994,7 @@ package mx.core
          return _mouseFocusEnabled;
       }
       
-      mx_internal function getEmbeddedFont(param1:String, param2:Boolean, param3:Boolean) : mx.core.EmbeddedFont
+      mx_internal function getEmbeddedFont(param1:String, param2:Boolean, param3:Boolean) : EmbeddedFont
       {
          if(cachedEmbeddedFont)
          {
@@ -1003,7 +1003,7 @@ package mx.core
                return cachedEmbeddedFont;
             }
          }
-         cachedEmbeddedFont = new mx.core.EmbeddedFont(param1,param2,param3);
+         cachedEmbeddedFont = new EmbeddedFont(param1,param2,param3);
          return cachedEmbeddedFont;
       }
       
@@ -1199,14 +1199,14 @@ package mx.core
          }
       }
       
-      public function determineTextFormatFromStyles() : mx.core.UITextFormat
+      public function determineTextFormatFromStyles() : UITextFormat
       {
          var _loc2_:String = null;
-         var _loc1_:mx.core.UITextFormat = cachedTextFormat;
+         var _loc1_:UITextFormat = cachedTextFormat;
          if(!_loc1_)
          {
             _loc2_ = StringUtil.trimArrayElements(_inheritingStyles.fontFamily,",");
-            _loc1_ = new mx.core.UITextFormat(getNonNullSystemManager(),_loc2_);
+            _loc1_ = new UITextFormat(getNonNullSystemManager(),_loc2_);
             _loc1_.moduleFactory = moduleFactory;
             _loc1_.align = _inheritingStyles.textAlign;
             _loc1_.bold = _inheritingStyles.fontWeight == "bold";
@@ -1469,7 +1469,7 @@ package mx.core
          }
       }
       
-      public function get moduleFactory() : mx.core.IFlexModuleFactory
+      public function get moduleFactory() : IFlexModuleFactory
       {
          return _moduleFactory;
       }
@@ -1570,7 +1570,7 @@ package mx.core
          return false;
       }
       
-      mx_internal function getFontContext(param1:String, param2:Boolean, param3:Boolean) : mx.core.IFlexModuleFactory
+      mx_internal function getFontContext(param1:String, param2:Boolean, param3:Boolean) : IFlexModuleFactory
       {
          return embeddedFontRegistry.getAssociatedModuleFactory(getEmbeddedFont(param1,param2,param3),moduleFactory);
       }
@@ -1611,7 +1611,7 @@ package mx.core
          _isEffectStarted = param1;
       }
       
-      mx_internal function fillOverlay(param1:mx.core.UIComponent, param2:uint, param3:RoundedRectangle = null) : void
+      mx_internal function fillOverlay(param1:UIComponent, param2:uint, param3:RoundedRectangle = null) : void
       {
          if(!param3)
          {
@@ -1631,7 +1631,7 @@ package mx.core
       
       mx_internal function childAdded(param1:DisplayObject) : void
       {
-         if(param1 is mx.core.UIComponent)
+         if(param1 is UIComponent)
          {
             if(!UIComponent(param1).initialized)
             {
@@ -2491,7 +2491,7 @@ package mx.core
          {
             IUIComponent(param1).document = !!document?document:ApplicationGlobals.application;
          }
-         if(param1 is mx.core.UIComponent && UIComponent(param1).moduleFactory == null)
+         if(param1 is UIComponent && UIComponent(param1).moduleFactory == null)
          {
             if(moduleFactory != null)
             {
@@ -2501,12 +2501,12 @@ package mx.core
             {
                UIComponent(param1).moduleFactory = document.moduleFactory;
             }
-            else if(parent is mx.core.UIComponent && UIComponent(parent).moduleFactory != null)
+            else if(parent is UIComponent && UIComponent(parent).moduleFactory != null)
             {
                UIComponent(param1).moduleFactory = UIComponent(parent).moduleFactory;
             }
          }
-         if(param1 is IFontContextComponent && !param1 is mx.core.UIComponent && IFontContextComponent(param1).fontContext == null)
+         if(param1 is IFontContextComponent && !param1 is UIComponent && IFontContextComponent(param1).fontContext == null)
          {
             IFontContextComponent(param1).fontContext = moduleFactory;
          }
@@ -2545,11 +2545,11 @@ package mx.core
          {
             IStyleClient(param1).notifyStyleChangeInChildren(null,true);
          }
-         if(param1 is mx.core.UIComponent)
+         if(param1 is UIComponent)
          {
             UIComponent(param1).initThemeColor();
          }
-         if(param1 is mx.core.UIComponent)
+         if(param1 is UIComponent)
          {
             UIComponent(param1).stylesInitialized();
          }
@@ -2565,14 +2565,14 @@ package mx.core
          processedDescriptors = true;
       }
       
-      public function set moduleFactory(param1:mx.core.IFlexModuleFactory) : void
+      public function set moduleFactory(param1:IFlexModuleFactory) : void
       {
-         var _loc4_:mx.core.UIComponent = null;
+         var _loc4_:UIComponent = null;
          var _loc2_:int = numChildren;
          var _loc3_:int = 0;
          while(_loc3_ < _loc2_)
          {
-            _loc4_ = getChildAt(_loc3_) as mx.core.UIComponent;
+            _loc4_ = getChildAt(_loc3_) as UIComponent;
             if(_loc4_)
             {
                if(_loc4_.moduleFactory == null || _loc4_.moduleFactory == _moduleFactory)
@@ -2876,11 +2876,11 @@ package mx.core
       [Bindable("initialize")]
       public function get parentApplication() : Object
       {
-         var _loc2_:mx.core.UIComponent = null;
+         var _loc2_:UIComponent = null;
          var _loc1_:Object = systemManager.document;
          if(_loc1_ == this)
          {
-            _loc2_ = _loc1_.systemManager.parent as mx.core.UIComponent;
+            _loc2_ = _loc1_.systemManager.parent as UIComponent;
             _loc1_ = !!_loc2_?_loc2_.systemManager.document:null;
          }
          return _loc1_;
@@ -2929,7 +2929,7 @@ package mx.core
             EffectManager.setStyle(param1,this);
          }
          var _loc3_:Boolean = StyleManager.isInheritingStyle(param1);
-         var _loc4_:* = inheritingStyles != mx.core.UIComponent.STYLE_UNINITIALIZED;
+         var _loc4_:* = inheritingStyles != UIComponent.STYLE_UNINITIALIZED;
          var _loc5_:* = getStyle(param1) != param2;
          if(!_styleDeclaration)
          {
@@ -3278,7 +3278,7 @@ package mx.core
          return determineTextFormatFromStyles().measureHTMLText(param1);
       }
       
-      public function set descriptor(param1:mx.core.UIComponentDescriptor) : void
+      public function set descriptor(param1:UIComponentDescriptor) : void
       {
          _descriptor = param1;
       }
@@ -3311,7 +3311,7 @@ package mx.core
          }
       }
       
-      mx_internal function get documentDescriptor() : mx.core.UIComponentDescriptor
+      mx_internal function get documentDescriptor() : UIComponentDescriptor
       {
          return _documentDescriptor;
       }
@@ -3338,7 +3338,7 @@ package mx.core
          var cache:Array = null;
          var myRoot:DisplayObject = null;
          var s:CSSStyleDeclaration = null;
-         var factory:mx.core.IFlexModuleFactory = ModuleManager.getAssociatedFactory(this);
+         var factory:IFlexModuleFactory = ModuleManager.getAssociatedFactory(this);
          if(factory != null)
          {
             myApplicationDomain = ApplicationDomain(factory.info()["currentDomain"]);
@@ -3459,7 +3459,7 @@ package mx.core
          if(_loc3_)
          {
             _loc7_ = _loc3_.inheritingStyles;
-            if(_loc7_ == mx.core.UIComponent.STYLE_UNINITIALIZED)
+            if(_loc7_ == UIComponent.STYLE_UNINITIALIZED)
             {
                _loc7_ = _loc2_;
             }
@@ -3585,7 +3585,7 @@ package mx.core
             _loc5_ = _loc2_.getChildAt(_loc4_);
             if(_loc5_ is IStyleClient)
             {
-               if(IStyleClient(_loc5_).inheritingStyles != mx.core.UIComponent.STYLE_UNINITIALIZED)
+               if(IStyleClient(_loc5_).inheritingStyles != UIComponent.STYLE_UNINITIALIZED)
                {
                   IStyleClient(_loc5_).regenerateStyleCache(param1);
                }
@@ -3733,7 +3733,7 @@ package mx.core
          setStyle(param1,undefined);
       }
       
-      public function get descriptor() : mx.core.UIComponentDescriptor
+      public function get descriptor() : UIComponentDescriptor
       {
          return _descriptor;
       }
@@ -3924,9 +3924,9 @@ package mx.core
       
       protected function initializeAccessibility() : void
       {
-         if(mx.core.UIComponent.createAccessibilityImplementation != null)
+         if(UIComponent.createAccessibilityImplementation != null)
          {
-            mx.core.UIComponent.createAccessibilityImplementation(this);
+            UIComponent.createAccessibilityImplementation(this);
          }
       }
       
@@ -3977,7 +3977,7 @@ package mx.core
             return;
          }
          _styleName = param1;
-         if(inheritingStyles == mx.core.UIComponent.STYLE_UNINITIALIZED)
+         if(inheritingStyles == UIComponent.STYLE_UNINITIALIZED)
          {
             return;
          }
@@ -4250,7 +4250,7 @@ package mx.core
          return _styleName;
       }
       
-      protected function createInModuleContext(param1:mx.core.IFlexModuleFactory, param2:String) : Object
+      protected function createInModuleContext(param1:IFlexModuleFactory, param2:String) : Object
       {
          var _loc3_:Object = null;
          if(param1)

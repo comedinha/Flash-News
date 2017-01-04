@@ -1,8 +1,8 @@
 package mx.utils
 {
-   import mx.events.SandboxMouseEvent;
    import flash.events.MouseEvent;
    import mx.core.mx_internal;
+   import mx.events.SandboxMouseEvent;
    
    use namespace mx_internal;
    

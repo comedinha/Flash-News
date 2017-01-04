@@ -1,15 +1,15 @@
 package shared.controls
 {
-   import mx.controls.TileList;
-   import flash.display.Sprite;
-   import mx.controls.listClasses.IListItemRenderer;
-   import flash.display.Shape;
    import flash.display.Graphics;
-   import mx.core.FlexSprite;
-   import mx.styles.StyleManager;
-   import mx.core.FlexShape;
+   import flash.display.Shape;
+   import flash.display.Sprite;
    import flash.events.KeyboardEvent;
    import flash.ui.Keyboard;
+   import mx.controls.TileList;
+   import mx.controls.listClasses.IListItemRenderer;
+   import mx.core.FlexShape;
+   import mx.core.FlexSprite;
+   import mx.styles.StyleManager;
    
    public class CustomTileList extends TileList
    {

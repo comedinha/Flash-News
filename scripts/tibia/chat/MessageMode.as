@@ -1,9 +1,9 @@
 package tibia.chat
 {
    import flash.events.EventDispatcher;
-   import tibia.worldmap.WorldMapStorage;
    import mx.events.PropertyChangeEvent;
    import mx.resources.ResourceManager;
+   import tibia.worldmap.WorldMapStorage;
    
    public class MessageMode extends EventDispatcher
    {

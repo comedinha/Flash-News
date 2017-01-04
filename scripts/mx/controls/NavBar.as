@@ -1,27 +1,27 @@
 package mx.controls
 {
-   import mx.containers.Box;
-   import mx.core.mx_internal;
-   import mx.core.Container;
-   import mx.events.IndexChangedEvent;
-   import mx.core.FlexVersion;
-   import flash.events.Event;
    import flash.display.DisplayObject;
-   import mx.collections.IList;
-   import flash.events.MouseEvent;
-   import mx.events.ItemClickEvent;
    import flash.display.InteractiveObject;
-   import mx.core.ScrollPolicy;
-   import mx.events.ChildExistenceChangedEvent;
-   import mx.containers.ViewStack;
-   import mx.core.UIComponent;
-   import mx.core.IFlexDisplayObject;
-   import mx.core.IFactory;
-   import mx.events.CollectionEvent;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
    import mx.collections.ArrayCollection;
-   import mx.events.FlexEvent;
-   import mx.core.ClassFactory;
+   import mx.collections.IList;
+   import mx.containers.Box;
    import mx.containers.BoxDirection;
+   import mx.containers.ViewStack;
+   import mx.core.ClassFactory;
+   import mx.core.Container;
+   import mx.core.FlexVersion;
+   import mx.core.IFactory;
+   import mx.core.IFlexDisplayObject;
+   import mx.core.ScrollPolicy;
+   import mx.core.UIComponent;
+   import mx.core.mx_internal;
+   import mx.events.ChildExistenceChangedEvent;
+   import mx.events.CollectionEvent;
+   import mx.events.FlexEvent;
+   import mx.events.IndexChangedEvent;
+   import mx.events.ItemClickEvent;
    
    use namespace mx_internal;
    

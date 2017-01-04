@@ -1,12 +1,12 @@
 package mx.containers.utilityClasses
 {
-   import mx.core.mx_internal;
    import mx.containers.BoxDirection;
-   import mx.core.IUIComponent;
+   import mx.controls.scrollClasses.ScrollBar;
    import mx.core.Container;
    import mx.core.EdgeMetrics;
-   import mx.controls.scrollClasses.ScrollBar;
+   import mx.core.IUIComponent;
    import mx.core.ScrollPolicy;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

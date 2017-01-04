@@ -1,7 +1,7 @@
 package tibia.input
 {
-   import flash.events.MouseEvent;
    import flash.display.InteractiveObject;
+   import flash.events.MouseEvent;
    
    public class MouseClickBothEvent extends MouseEvent
    {

@@ -1,8 +1,8 @@
 package tibia.input.staticaction
 {
-   import tibia.options.ConfigurationWidget;
-   import tibia.network.Communication;
    import tibia.creatures.CharacterProfileWidget;
+   import tibia.network.Communication;
+   import tibia.options.ConfigurationWidget;
    import tibia.prey.PreyWidget;
    
    public class ShowDialog extends StaticAction

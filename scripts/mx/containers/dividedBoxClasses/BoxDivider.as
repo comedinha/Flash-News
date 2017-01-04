@@ -1,12 +1,12 @@
 package mx.containers.dividedBoxClasses
 {
-   import mx.core.UIComponent;
-   import mx.core.mx_internal;
+   import flash.display.DisplayObject;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
    import mx.containers.DividedBox;
    import mx.containers.DividerState;
-   import flash.events.MouseEvent;
-   import flash.events.Event;
-   import flash.display.DisplayObject;
+   import mx.core.UIComponent;
+   import mx.core.mx_internal;
    import mx.events.SandboxMouseEvent;
    
    use namespace mx_internal;

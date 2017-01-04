@@ -1,23 +1,23 @@
 package tibia.game
 {
-   import tibia.game.serverModalDialogClasses.Choice;
-   import mx.controls.Text;
    import flash.display.DisplayObject;
-   import mx.collections.IList;
-   import flash.events.MouseEvent;
-   import shared.controls.CustomButton;
-   import mx.controls.Button;
-   import shared.controls.CustomList;
-   import mx.events.ListEvent;
-   import mx.collections.ArrayList;
-   import flash.events.Event;
-   import mx.events.CloseEvent;
-   import mx.core.IDataRenderer;
    import flash.errors.IllegalOperationError;
-   import tibia.network.Communication;
-   import mx.controls.List;
+   import flash.events.Event;
    import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
    import flash.ui.Keyboard;
+   import mx.collections.ArrayList;
+   import mx.collections.IList;
+   import mx.controls.Button;
+   import mx.controls.List;
+   import mx.controls.Text;
+   import mx.core.IDataRenderer;
+   import mx.events.CloseEvent;
+   import mx.events.ListEvent;
+   import shared.controls.CustomButton;
+   import shared.controls.CustomList;
+   import tibia.game.serverModalDialogClasses.Choice;
+   import tibia.network.Communication;
    
    public class ServerModalDialog extends PopUpBase
    {

@@ -1,11 +1,11 @@
 package mx.utils
 {
-   import flash.utils.Dictionary;
    import flash.utils.ByteArray;
-   import mx.core.mx_internal;
-   import mx.core.IUID;
+   import flash.utils.Dictionary;
    import mx.core.IPropertyChangeNotifier;
    import mx.core.IUIComponent;
+   import mx.core.IUID;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

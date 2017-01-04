@@ -1,15 +1,15 @@
 package tibia.container
 {
-   import tibia.sidebar.Widget;
-   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
    import tibia.container.containerViewWidgetClasses.ContainerViewWidgetView;
    import tibia.network.Communication;
+   import tibia.sidebar.Widget;
+   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
    
    public class ContainerViewWidget extends Widget
    {
        
       
-      protected var m_Container:tibia.container.ContainerView = null;
+      protected var m_Container:ContainerView = null;
       
       public function ContainerViewWidget()
       {
@@ -28,12 +28,12 @@ package tibia.container
          return _loc2_;
       }
       
-      public function get container() : tibia.container.ContainerView
+      public function get container() : ContainerView
       {
          return this.m_Container;
       }
       
-      public function set container(param1:tibia.container.ContainerView) : void
+      public function set container(param1:ContainerView) : void
       {
          if(this.m_Container != param1)
          {

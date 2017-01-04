@@ -1,9 +1,9 @@
 package mx.controls
 {
-   import mx.controls.scrollClasses.ScrollBar;
-   import mx.core.mx_internal;
    import flash.ui.Keyboard;
+   import mx.controls.scrollClasses.ScrollBar;
    import mx.controls.scrollClasses.ScrollBarDirection;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

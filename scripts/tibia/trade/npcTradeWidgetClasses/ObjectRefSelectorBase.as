@@ -1,18 +1,18 @@
 package tibia.trade.npcTradeWidgetClasses
 {
-   import mx.core.UIComponent;
-   import tibia.trade.TradeObjectRef;
-   import mx.collections.Sort;
-   import mx.collections.ICollectionView;
-   import mx.collections.SortField;
-   import flash.events.MouseEvent;
-   import tibia.options.OptionsStorage;
    import flash.display.DisplayObject;
-   import tibia.input.gameaction.InspectNPCTradeActionImpl;
-   import mx.collections.IList;
-   import flash.events.Event;
-   import tibia.appearances.widgetClasses.SkinnedAppearanceRenderer;
    import flash.display.Stage;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import mx.collections.ICollectionView;
+   import mx.collections.IList;
+   import mx.collections.Sort;
+   import mx.collections.SortField;
+   import mx.core.UIComponent;
+   import tibia.appearances.widgetClasses.SkinnedAppearanceRenderer;
+   import tibia.input.gameaction.InspectNPCTradeActionImpl;
+   import tibia.options.OptionsStorage;
+   import tibia.trade.TradeObjectRef;
    
    public class ObjectRefSelectorBase extends UIComponent
    {

@@ -1,22 +1,22 @@
 package tibia.ingameshop.shopWidgetClasses
 {
-   import mx.containers.VBox;
-   import mx.containers.ViewStack;
-   import flash.events.Event;
-   import mx.events.CloseEvent;
-   import tibia.ingameshop.IngameShopManager;
-   import shared.controls.EmbeddedDialog;
-   import mx.controls.Button;
-   import mx.controls.Label;
-   import tibia.ingameshop.IngameShopEvent;
-   import flash.events.MouseEvent;
-   import tibia.ingameshop.IngameShopWidget;
    import flash.errors.IllegalOperationError;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
    import mx.containers.Box;
    import mx.containers.HBox;
+   import mx.containers.VBox;
+   import mx.containers.ViewStack;
+   import mx.controls.Button;
+   import mx.controls.Label;
    import mx.core.UIComponent;
+   import mx.events.CloseEvent;
    import shared.controls.CustomButton;
+   import shared.controls.EmbeddedDialog;
+   import tibia.ingameshop.IngameShopEvent;
+   import tibia.ingameshop.IngameShopManager;
    import tibia.ingameshop.IngameShopOffer;
+   import tibia.ingameshop.IngameShopWidget;
    
    public class MainContentPane extends VBox implements IIngameShopWidgetComponent
    {
@@ -32,7 +32,7 @@ package tibia.ingameshop.shopWidgetClasses
       
       private var m_UIStack:ViewStack;
       
-      private var m_UIOfferDetails:tibia.ingameshop.shopWidgetClasses.OfferDetails;
+      private var m_UIOfferDetails:OfferDetails;
       
       private var m_UIDetailsButton:Button;
       
@@ -40,11 +40,11 @@ package tibia.ingameshop.shopWidgetClasses
       
       private var m_UIBetweenButtonsLabel:Label;
       
-      private var m_UIOfferList:tibia.ingameshop.shopWidgetClasses.OfferList;
+      private var m_UIOfferList:OfferList;
       
       private var m_UIPreviousTransactionPage:Button;
       
-      private var m_UITransactions:tibia.ingameshop.shopWidgetClasses.TransactionHistory;
+      private var m_UITransactions:TransactionHistory;
       
       private var m_UIBackButton:Button;
       
@@ -67,7 +67,7 @@ package tibia.ingameshop.shopWidgetClasses
          IngameShopManager.getInstance().addEventListener(IngameShopEvent.CREDIT_BALANCE_CHANGED,this.onCreditBalanceChanged);
       }
       
-      public function get detailsList() : tibia.ingameshop.shopWidgetClasses.OfferDetails
+      public function get detailsList() : OfferDetails
       {
          return this.m_UIOfferDetails;
       }
@@ -108,7 +108,7 @@ package tibia.ingameshop.shopWidgetClasses
          this.switchBetweenBuyAndGetCoinsButton();
       }
       
-      public function get offerList() : tibia.ingameshop.shopWidgetClasses.OfferList
+      public function get offerList() : OfferList
       {
          return this.m_UIOfferList;
       }
@@ -183,18 +183,18 @@ package tibia.ingameshop.shopWidgetClasses
          _loc1_.percentHeight = _loc1_.percentWidth = 100;
          _loc1_.styleName = "ingameShopNoPadding";
          this.m_UIStack.addChild(_loc1_);
-         this.m_UIOfferList = new tibia.ingameshop.shopWidgetClasses.OfferList();
+         this.m_UIOfferList = new OfferList();
          this.m_UIOfferList.percentHeight = this.m_UIOfferList.percentWidth = 100;
          this.m_UIOfferList.addEventListener(IngameShopEvent.OFFER_ACTIVATED,this.onOfferDoubleClicked);
          _loc1_.addChild(this.m_UIOfferList);
-         this.m_UIOfferDetails = new tibia.ingameshop.shopWidgetClasses.OfferDetails();
+         this.m_UIOfferDetails = new OfferDetails();
          this.m_UIOfferDetails.percentHeight = this.m_UIOfferDetails.percentWidth = 100;
          this.m_UIStack.addChild(this.m_UIOfferDetails);
          _loc1_ = new VBox();
          _loc1_.percentHeight = _loc1_.percentWidth = 100;
          _loc1_.styleName = "ingameShopNoPadding";
          this.m_UIStack.addChild(_loc1_);
-         this.m_UITransactions = new tibia.ingameshop.shopWidgetClasses.TransactionHistory();
+         this.m_UITransactions = new TransactionHistory();
          this.m_UITransactions.percentHeight = this.m_UITransactions.percentWidth = 100;
          _loc1_.addChild(this.m_UITransactions);
          this.m_UIBottomButtonBox = new HBox();

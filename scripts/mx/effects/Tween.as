@@ -1,11 +1,11 @@
 package mx.effects
 {
    import flash.events.EventDispatcher;
-   import flash.utils.Timer;
-   import mx.core.mx_internal;
    import flash.events.TimerEvent;
+   import flash.utils.Timer;
    import flash.utils.getTimer;
    import mx.core.UIComponentGlobals;
+   import mx.core.mx_internal;
    import mx.events.TweenEvent;
    
    use namespace mx_internal;

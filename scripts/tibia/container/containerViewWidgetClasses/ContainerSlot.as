@@ -1,10 +1,10 @@
 package tibia.container.containerViewWidgetClasses
 {
-   import mx.core.UIComponent;
    import flash.display.Bitmap;
    import flash.display.Graphics;
-   import tibia.appearances.widgetClasses.SimpleAppearanceRenderer;
+   import mx.core.UIComponent;
    import tibia.appearances.AppearanceInstance;
+   import tibia.appearances.widgetClasses.SimpleAppearanceRenderer;
    
    public class ContainerSlot extends UIComponent
    {

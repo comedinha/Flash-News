@@ -1,12 +1,12 @@
 package tibia.ingameshop.shopWidgetClasses
 {
-   import mx.containers.HBox;
-   import flash.geom.Point;
-   import mx.controls.Text;
-   import tibia.ingameshop.IngameShopCategory;
    import flash.display.Bitmap;
+   import flash.geom.Point;
+   import mx.containers.HBox;
    import mx.controls.Image;
+   import mx.controls.Text;
    import mx.core.ScrollPolicy;
+   import tibia.ingameshop.IngameShopCategory;
    
    public class CategoryRenderer extends HBox
    {
@@ -20,7 +20,7 @@ package tibia.ingameshop.shopWidgetClasses
       
       private var m_UncommittedCategory:Boolean;
       
-      private var m_UIIcon:tibia.ingameshop.shopWidgetClasses.DynamicallyLoadedImage;
+      private var m_UIIcon:DynamicallyLoadedImage;
       
       public function CategoryRenderer()
       {
@@ -77,7 +77,7 @@ package tibia.ingameshop.shopWidgetClasses
          super.createChildren();
          verticalScrollPolicy = ScrollPolicy.OFF;
          horizontalScrollPolicy = ScrollPolicy.OFF;
-         this.m_UIIcon = new tibia.ingameshop.shopWidgetClasses.DynamicallyLoadedImage(32);
+         this.m_UIIcon = new DynamicallyLoadedImage(32);
          this.m_UIIcon.resizeToImage = false;
          addChild(this.m_UIIcon);
          this.m_UITextBox = new Text();

@@ -1,8 +1,8 @@
 package tibia.network
 {
+   import flash.utils.ByteArray;
    import shared.cryptography.XTEA;
    import shared.cryptography.calculateAdler32Checksum;
-   import flash.utils.ByteArray;
    
    public class NetworkPacketReader
    {
@@ -23,7 +23,7 @@ package tibia.network
       
       protected static const ERR_INVALID_STATE:int = 4;
       
-      public static const PROTOCOL_VERSION:int = 1100;
+      public static const PROTOCOL_VERSION:int = 1101;
       
       protected static const PAYLOADLENGTH_SIZE:int = 2;
       

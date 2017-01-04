@@ -1,7 +1,7 @@
 package mx.managers
 {
-   import mx.core.IFlexDisplayObject;
    import flash.display.DisplayObject;
+   import mx.core.IFlexDisplayObject;
    
    public interface IPopUpManager
    {

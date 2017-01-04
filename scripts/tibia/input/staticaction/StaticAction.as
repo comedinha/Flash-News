@@ -1,9 +1,9 @@
 package tibia.input.staticaction
 {
+   import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
    import tibia.input.IAction;
    import tibia.input.InputEvent;
-   import mx.resources.ResourceManager;
-   import mx.resources.IResourceManager;
    
    public class StaticAction implements IAction
    {
@@ -12,7 +12,7 @@ package tibia.input.staticaction
       
       protected static const BUNDLE:String = "StaticAction";
       
-      protected static const s_Action:Vector.<tibia.input.staticaction.StaticAction> = new Vector.<tibia.input.staticaction.StaticAction>();
+      protected static const s_Action:Vector.<StaticAction> = new Vector.<StaticAction>();
       
       protected static const OPTIONS_MIN_COMPATIBLE_VERSION:Number = 2;
        
@@ -36,10 +36,10 @@ package tibia.input.staticaction
          this.m_Label = param2;
          this.m_EventMask = param3;
          this.m_Hidden = param4;
-         tibia.input.staticaction.StaticAction.s_RegisterAction(this);
+         StaticAction.s_RegisterAction(this);
       }
       
-      public static function s_GetAction(param1:int) : tibia.input.staticaction.StaticAction
+      public static function s_GetAction(param1:int) : StaticAction
       {
          var _loc2_:int = s_Action.length - 1;
          while(_loc2_ >= 0)
@@ -53,7 +53,7 @@ package tibia.input.staticaction
          return null;
       }
       
-      public static function s_RegisterAction(param1:tibia.input.staticaction.StaticAction) : void
+      public static function s_RegisterAction(param1:StaticAction) : void
       {
          if(param1 == null)
          {
@@ -66,7 +66,7 @@ package tibia.input.staticaction
          s_Action.push(param1);
       }
       
-      public static function s_GetAllActions() : Vector.<tibia.input.staticaction.StaticAction>
+      public static function s_GetAllActions() : Vector.<StaticAction>
       {
          return s_Action.slice();
       }
@@ -86,7 +86,7 @@ package tibia.input.staticaction
          if((_loc3_ = param1.@object) != null && _loc3_.length() == 1)
          {
             _loc4_ = parseInt(_loc3_[0].toString());
-            return tibia.input.staticaction.StaticAction.s_GetAction(_loc4_);
+            return StaticAction.s_GetAction(_loc4_);
          }
          return null;
       }

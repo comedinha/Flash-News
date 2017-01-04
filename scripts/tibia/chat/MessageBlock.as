@@ -1,9 +1,9 @@
 package tibia.chat
 {
-   import shared.utility.Vector3D;
    import flash.events.TimerEvent;
-   import tibia.worldmap.OnscreenMessageBox;
+   import shared.utility.Vector3D;
    import tibia.creatures.Creature;
+   import tibia.worldmap.OnscreenMessageBox;
    
    public class MessageBlock
    {

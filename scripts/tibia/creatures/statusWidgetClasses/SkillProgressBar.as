@@ -1,29 +1,29 @@
 package tibia.creatures.statusWidgetClasses
 {
-   import mx.containers.HBox;
-   import shared.utility.cacheStyleInstance;
-   import mx.events.ToolTipEvent;
-   import mx.core.IToolTip;
-   import tibia.creatures.StatusWidget;
-   import tibia.creatures.Player;
-   import mx.core.IInvalidating;
-   import shared.controls.ShapeWrapper;
    import flash.display.Bitmap;
-   import shared.controls.CustomButton;
+   import flash.display.BitmapData;
+   import flash.display.DisplayObject;
    import flash.events.MouseEvent;
-   import mx.styles.CSSStyleDeclaration;
+   import flash.filters.BitmapFilterQuality;
+   import flash.filters.GlowFilter;
    import flash.geom.Matrix;
+   import flash.geom.Rectangle;
    import flash.text.TextField;
    import flash.text.TextFieldAutoSize;
-   import flash.filters.GlowFilter;
-   import flash.filters.BitmapFilterQuality;
-   import mx.styles.StyleManager;
    import flash.text.TextFormat;
-   import flash.display.BitmapData;
-   import flash.geom.Rectangle;
+   import mx.containers.HBox;
+   import mx.core.IInvalidating;
+   import mx.core.IToolTip;
    import mx.events.PropertyChangeEvent;
+   import mx.events.ToolTipEvent;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.StyleManager;
+   import shared.controls.CustomButton;
+   import shared.controls.ShapeWrapper;
    import shared.utility.StringHelper;
-   import flash.display.DisplayObject;
+   import shared.utility.cacheStyleInstance;
+   import tibia.creatures.Player;
+   import tibia.creatures.StatusWidget;
    import tibia.ingameshop.IngameShopManager;
    import tibia.ingameshop.IngameShopProduct;
    
@@ -333,7 +333,7 @@ package tibia.creatures.statusWidgetClasses
       
       private var m_Skill:int = -1;
       
-      private var m_UIProgress:tibia.creatures.statusWidgetClasses.BitmapProgressBar = null;
+      private var m_UIProgress:BitmapProgressBar = null;
       
       private var m_UILabel:Bitmap = null;
       
@@ -443,7 +443,7 @@ package tibia.creatures.statusWidgetClasses
          this.m_UILabelWrapper = new ShapeWrapper();
          this.m_UILabelWrapper.addChild(this.m_UILabel);
          addChild(this.m_UILabelWrapper);
-         this.m_UIProgress = new tibia.creatures.statusWidgetClasses.BitmapProgressBar();
+         this.m_UIProgress = new BitmapProgressBar();
          this.m_UIProgress.labelEnabled = false;
          this.m_UIProgress.labelFormat = "{1}%";
          this.m_UIProgress.percentWidth = 100;

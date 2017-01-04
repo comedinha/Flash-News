@@ -1,45 +1,45 @@
 package mx.managers
 {
-   import mx.core.mx_internal;
-   import flash.events.MouseEvent;
-   import mx.events.InterManagerRequest;
+   import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
    import flash.display.InteractiveObject;
+   import flash.display.Sprite;
    import flash.events.ContextMenuEvent;
    import flash.events.Event;
-   import mx.events.SWFBridgeRequest;
-   import flash.events.IEventDispatcher;
-   import flash.ui.Mouse;
-   import flash.display.Sprite;
-   import flash.display.DisplayObject;
-   import mx.styles.StyleManager;
-   import mx.styles.CSSStyleDeclaration;
-   import flash.geom.Point;
-   import mx.core.FlexSprite;
-   import flash.display.DisplayObjectContainer;
-   import mx.core.EventPriority;
-   import mx.events.SandboxMouseEvent;
-   import mx.core.ApplicationGlobals;
-   import flash.events.ProgressEvent;
    import flash.events.EventDispatcher;
+   import flash.events.IEventDispatcher;
    import flash.events.IOErrorEvent;
+   import flash.events.MouseEvent;
+   import flash.events.ProgressEvent;
+   import flash.geom.Point;
    import flash.text.TextField;
    import flash.text.TextFieldType;
+   import flash.ui.Mouse;
+   import mx.core.ApplicationGlobals;
+   import mx.core.EventPriority;
+   import mx.core.FlexSprite;
+   import mx.core.mx_internal;
+   import mx.events.InterManagerRequest;
+   import mx.events.SWFBridgeRequest;
+   import mx.events.SandboxMouseEvent;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.StyleManager;
    
    use namespace mx_internal;
    
-   public class CursorManagerImpl implements mx.managers.ICursorManager
+   public class CursorManagerImpl implements ICursorManager
    {
       
       mx_internal static const VERSION:String = "3.6.0.21751";
       
-      private static var instance:mx.managers.ICursorManager;
+      private static var instance:ICursorManager;
        
       
       private var showSystemCursor:Boolean = false;
       
       private var nextCursorID:int = 1;
       
-      private var systemManager:mx.managers.ISystemManager = null;
+      private var systemManager:ISystemManager = null;
       
       private var cursorList:Array;
       
@@ -71,7 +71,7 @@ package mx.managers
       
       private var sourceArray:Array;
       
-      public function CursorManagerImpl(param1:mx.managers.ISystemManager = null)
+      public function CursorManagerImpl(param1:ISystemManager = null)
       {
          cursorList = [];
          busyCursorList = [];
@@ -83,11 +83,11 @@ package mx.managers
          }
          if(param1)
          {
-            this.systemManager = param1 as mx.managers.ISystemManager;
+            this.systemManager = param1 as ISystemManager;
          }
          else
          {
-            this.systemManager = SystemManagerGlobals.topLevelSystemManagers[0] as mx.managers.ISystemManager;
+            this.systemManager = SystemManagerGlobals.topLevelSystemManagers[0] as ISystemManager;
          }
          sandboxRoot = this.systemManager.getSandboxRoot();
          sandboxRoot.addEventListener(InterManagerRequest.CURSOR_MANAGER_REQUEST,marshalCursorManagerHandler,false,0,true);
@@ -96,7 +96,7 @@ package mx.managers
          sandboxRoot.dispatchEvent(_loc2_);
       }
       
-      public static function getInstance() : mx.managers.ICursorManager
+      public static function getInstance() : ICursorManager
       {
          if(!instance)
          {
@@ -217,7 +217,7 @@ package mx.managers
          }
       }
       
-      private function priorityCompare(param1:CursorQueueItem, param2:CursorQueueItem) : int
+      private function priorityCompare(param1:CursorQueueItem#22, param2:CursorQueueItem#22) : int
       {
          if(param1.priority < param2.priority)
          {
@@ -586,7 +586,7 @@ package mx.managers
             return _loc7_.value as int;
          }
          var _loc5_:int = nextCursorID++;
-         var _loc6_:CursorQueueItem = new CursorQueueItem();
+         var _loc6_:CursorQueueItem = new CursorQueueItem#22();
          _loc6_.cursorID = _loc5_;
          _loc6_.cursorClass = param1;
          _loc6_.priority = param2;
@@ -745,7 +745,7 @@ import mx.managers.ISystemManager;
 
 use namespace mx_internal;
 
-class CursorQueueItem
+class CursorQueueItem#22
 {
    
    mx_internal static const VERSION:String = "3.6.0.21751";
@@ -763,7 +763,7 @@ class CursorQueueItem
    
    public var systemManager:ISystemManager;
    
-   function CursorQueueItem()
+   function CursorQueueItem#22()
    {
       super();
    }

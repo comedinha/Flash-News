@@ -1,16 +1,16 @@
 package mx.managers
 {
+   import flash.display.DisplayObject;
+   import flash.display.LoaderInfo;
+   import flash.display.Sprite;
+   import flash.display.Stage;
+   import flash.events.Event;
    import flash.events.IEventDispatcher;
+   import flash.geom.Rectangle;
+   import flash.text.TextFormat;
    import mx.core.IChildList;
    import mx.core.IFlexModuleFactory;
-   import flash.display.Sprite;
-   import flash.text.TextFormat;
-   import flash.events.Event;
-   import flash.display.DisplayObject;
    import mx.core.ISWFBridgeGroup;
-   import flash.display.LoaderInfo;
-   import flash.geom.Rectangle;
-   import flash.display.Stage;
    
    public interface ISystemManager extends IEventDispatcher, IChildList, IFlexModuleFactory
    {

@@ -3,7 +3,7 @@ package shared.utility
    public class Colour
    {
       
-      private static const s_TempColor:shared.utility.Colour = new shared.utility.Colour(0,0,0);
+      private static const s_TempColor:Colour = new Colour(0,0,0);
       
       public static const HSI_SI_VALUES:int = 7;
       
@@ -39,9 +39,9 @@ package shared.utility
          return s_TempColor.eightBit;
       }
       
-      public static function s_FromHSI(param1:int) : shared.utility.Colour
+      public static function s_FromHSI(param1:int) : Colour
       {
-         var _loc2_:shared.utility.Colour = new shared.utility.Colour(0,0,0);
+         var _loc2_:Colour = new Colour(0,0,0);
          _loc2_.HSI = param1;
          return _loc2_;
       }
@@ -52,18 +52,18 @@ package shared.utility
          return s_TempColor.RGB;
       }
       
-      public static function s_FromARGB(param1:uint) : shared.utility.Colour
+      public static function s_FromARGB(param1:uint) : Colour
       {
          var _loc2_:uint = param1 >> 24 & 255;
          var _loc3_:uint = param1 >> 16 & 255;
          var _loc4_:uint = param1 >> 8 & 255;
          var _loc5_:uint = param1 & 255;
-         return new shared.utility.Colour(_loc3_,_loc4_,_loc5_,_loc2_);
+         return new Colour(_loc3_,_loc4_,_loc5_,_loc2_);
       }
       
-      public static function s_FromEightBit(param1:int) : shared.utility.Colour
+      public static function s_FromEightBit(param1:int) : Colour
       {
-         var _loc2_:shared.utility.Colour = new shared.utility.Colour(0,0,0);
+         var _loc2_:Colour = new Colour(0,0,0);
          _loc2_.eightBit = param1;
          return _loc2_;
       }
@@ -111,7 +111,7 @@ package shared.utility
          this.m_Green = param1;
       }
       
-      public function div(param1:int, param2:Boolean = true) : shared.utility.Colour
+      public function div(param1:int, param2:Boolean = true) : Colour
       {
          if(param1 == 0)
          {
@@ -157,7 +157,7 @@ package shared.utility
                _loc6_ = 255;
             }
          }
-         return new shared.utility.Colour(_loc3_,_loc4_,_loc5_,_loc6_);
+         return new Colour(_loc3_,_loc4_,_loc5_,_loc6_);
       }
       
       public function get redFloat() : Number
@@ -225,9 +225,9 @@ package shared.utility
          return this.m_Blue & 255;
       }
       
-      public function mul(param1:int, param2:Boolean = true) : shared.utility.Colour
+      public function mul(param1:int, param2:Boolean = true) : Colour
       {
-         var _loc3_:shared.utility.Colour = new shared.utility.Colour(0,0,0);
+         var _loc3_:Colour = new Colour(0,0,0);
          _loc3_.ARGB = this.ARGB;
          _loc3_.mulToSelf(param1,param2);
          return _loc3_;
@@ -243,9 +243,9 @@ package shared.utility
          return (this.m_Red + this.m_Green + this.m_Blue) / (3 * 255);
       }
       
-      public function add(param1:shared.utility.Colour, param2:Boolean = true) : shared.utility.Colour
+      public function add(param1:Colour, param2:Boolean = true) : Colour
       {
-         var _loc3_:shared.utility.Colour = new shared.utility.Colour(0,0,0);
+         var _loc3_:Colour = new Colour(0,0,0);
          _loc3_.ARGB = this.ARGB;
          _loc3_.addToSelf(param1,param2);
          return _loc3_;
@@ -269,7 +269,7 @@ package shared.utility
          return this.m_Alpha / 255;
       }
       
-      public function addToSelf(param1:shared.utility.Colour, param2:Boolean = true) : void
+      public function addToSelf(param1:Colour, param2:Boolean = true) : void
       {
          var _loc3_:int = this.m_Red + param1.m_Red;
          var _loc4_:int = this.m_Green + param1.m_Green;
@@ -309,7 +309,7 @@ package shared.utility
          return this.m_Red << 16 | this.m_Green << 8 | this.m_Blue;
       }
       
-      public function divFloat(param1:Number, param2:Boolean = true) : shared.utility.Colour
+      public function divFloat(param1:Number, param2:Boolean = true) : Colour
       {
          if(param1 == 0)
          {
@@ -355,7 +355,7 @@ package shared.utility
                _loc6_ = 255;
             }
          }
-         return new shared.utility.Colour(_loc3_,_loc4_,_loc5_,_loc6_);
+         return new Colour(_loc3_,_loc4_,_loc5_,_loc6_);
       }
       
       public function get blueFloat() : Number
@@ -484,9 +484,9 @@ package shared.utility
          this.setChannels(int(_loc5_ * 255),int(_loc6_ * 255),int(_loc7_ * 255));
       }
       
-      public function mulFloat(param1:Number, param2:Boolean = true) : shared.utility.Colour
+      public function mulFloat(param1:Number, param2:Boolean = true) : Colour
       {
-         var _loc3_:shared.utility.Colour = new shared.utility.Colour(0,0,0);
+         var _loc3_:Colour = new Colour(0,0,0);
          _loc3_.ARGB = this.ARGB;
          _loc3_.mulFloatToSelf(param1,param2);
          return _loc3_;

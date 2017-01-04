@@ -1,15 +1,15 @@
 package tibia.options.configurationWidgetClasses
 {
-   import mx.containers.VBox;
-   import tibia.controls.CustomSlider;
    import flash.events.Event;
-   import mx.core.IContainer;
-   import mx.controls.CheckBox;
    import mx.containers.Form;
    import mx.containers.FormHeading;
    import mx.containers.FormItem;
-   import tibia.options.ConfigurationWidget;
+   import mx.containers.VBox;
+   import mx.controls.CheckBox;
+   import mx.core.IContainer;
    import mx.events.SliderEvent;
+   import tibia.controls.CustomSlider;
+   import tibia.options.ConfigurationWidget;
    import tibia.options.OptionsStorage;
    
    public class RendererOptions extends VBox implements IOptionsEditor

@@ -1,8 +1,8 @@
 package mx.managers
 {
-   import mx.core.Singleton;
-   import mx.core.IFlexDisplayObject;
    import flash.display.DisplayObject;
+   import mx.core.IFlexDisplayObject;
+   import mx.core.Singleton;
    import mx.core.mx_internal;
    
    use namespace mx_internal;
@@ -10,9 +10,9 @@ package mx.managers
    public class PopUpManager
    {
       
-      private static var implClassDependency:mx.managers.PopUpManagerImpl;
+      private static var implClassDependency:PopUpManagerImpl;
       
-      private static var _impl:mx.managers.IPopUpManager;
+      private static var _impl:IPopUpManager;
       
       mx_internal static const VERSION:String = "3.6.0.21751";
        
@@ -22,7 +22,7 @@ package mx.managers
          super();
       }
       
-      private static function get impl() : mx.managers.IPopUpManager
+      private static function get impl() : IPopUpManager
       {
          if(!_impl)
          {

@@ -1,28 +1,28 @@
 package tibia.sessiondump.hints.gameaction
 {
-   import tibia.input.gameaction.UseActionImpl;
-   import tibia.input.gameaction.AutowalkActionImpl;
-   import tibia.network.Communication;
-   import tibia.creatures.CreatureStorage;
-   import tibia.container.ContainerStorage;
-   import tibia.creatures.Player;
-   import tibia.magic.SpellStorage;
-   import tibia.container.BodyContainerView;
-   import tibia.sessiondump.controller.SessiondumpHintActionsController;
-   import shared.utility.Vector3D;
-   import flash.events.MouseEvent;
-   import tibia.creatures.Creature;
    import flash.display.DisplayObject;
+   import flash.events.MouseEvent;
    import flash.geom.Point;
-   import tibia.game.IUseWidget;
-   import tibia.appearances.ObjectInstance;
+   import shared.utility.Vector3D;
    import tibia.appearances.AppearanceInstance;
+   import tibia.appearances.ObjectInstance;
+   import tibia.container.BodyContainerView;
+   import tibia.container.ContainerStorage;
+   import tibia.creatures.Creature;
+   import tibia.creatures.CreatureStorage;
+   import tibia.creatures.Player;
+   import tibia.game.IUseWidget;
+   import tibia.input.gameaction.AutowalkActionImpl;
+   import tibia.input.gameaction.UseActionImpl;
+   import tibia.magic.SpellStorage;
+   import tibia.network.Communication;
+   import tibia.sessiondump.controller.SessiondumpHintActionsController;
    import tibia.sessiondump.hints.condition.HintConditionUse;
    
    public class SessiondumpHintsUseActionImpl extends UseActionImpl
    {
       
-      protected static var concurrentMultiUse:tibia.sessiondump.hints.gameaction.SessiondumpHintsUseActionImpl = null;
+      protected static var concurrentMultiUse:SessiondumpHintsUseActionImpl = null;
        
       
       private var m_DestinationAbsolute:Vector3D = null;

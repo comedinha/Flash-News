@@ -1,20 +1,20 @@
 package tibia.controls.dynamicTabBarClasses
 {
-   import mx.controls.Menu;
    import flash.display.DisplayObjectContainer;
-   import mx.core.Application;
-   import flash.display.Sprite;
-   import mx.controls.listClasses.IListItemRenderer;
-   import mx.core.mx_internal;
-   import flash.display.Shape;
    import flash.display.Graphics;
-   import mx.core.FlexSprite;
-   import mx.styles.StyleManager;
-   import mx.core.FlexShape;
+   import flash.display.Shape;
+   import flash.display.Sprite;
    import flash.events.Event;
+   import mx.controls.Menu;
+   import mx.controls.listClasses.IListItemRenderer;
    import mx.controls.menuClasses.IMenuItemRenderer;
-   import mx.managers.PopUpManager;
    import mx.controls.scrollClasses.ScrollBar;
+   import mx.core.Application;
+   import mx.core.FlexShape;
+   import mx.core.FlexSprite;
+   import mx.core.mx_internal;
+   import mx.managers.PopUpManager;
+   import mx.styles.StyleManager;
    
    use namespace mx_internal;
    

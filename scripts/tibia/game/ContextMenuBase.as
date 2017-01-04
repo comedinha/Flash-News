@@ -1,29 +1,29 @@
 package tibia.game
 {
-   import mx.containers.VBox;
-   import mx.managers.ISystemManager;
-   import mx.core.IUIComponent;
+   import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
+   import flash.display.Sprite;
+   import flash.events.ContextMenuEvent;
    import flash.events.Event;
    import flash.events.KeyboardEvent;
    import flash.events.MouseEvent;
-   import tibia.input.InputHandler;
-   import mx.managers.ToolTipManager;
-   import tibia.game.contextMenuClasses.SeparatorItem;
-   import flash.display.Sprite;
-   import flash.display.DisplayObjectContainer;
-   import mx.core.IToolTip;
    import flash.ui.Keyboard;
-   import mx.events.ChildExistenceChangedEvent;
-   import tibia.game.contextMenuClasses.IContextMenuItem;
-   import flash.events.ContextMenuEvent;
-   import flash.display.DisplayObject;
-   import tibia.game.contextMenuClasses.TextItem;
+   import mx.containers.VBox;
+   import mx.core.IToolTip;
+   import mx.core.IUIComponent;
    import mx.core.ScrollPolicy;
+   import mx.events.ChildExistenceChangedEvent;
+   import mx.managers.ISystemManager;
+   import mx.managers.ToolTipManager;
+   import tibia.game.contextMenuClasses.IContextMenuItem;
+   import tibia.game.contextMenuClasses.SeparatorItem;
+   import tibia.game.contextMenuClasses.TextItem;
+   import tibia.input.InputHandler;
    
    public class ContextMenuBase extends VBox
    {
       
-      protected static var s_Current:tibia.game.ContextMenuBase = null;
+      protected static var s_Current:ContextMenuBase = null;
        
       
       private var m_UIEmbeddedMouseShield:Sprite;
@@ -40,7 +40,7 @@ package tibia.game
          addEventListener(ChildExistenceChangedEvent.CHILD_REMOVE,this.onChildExistenceChanged);
       }
       
-      public static function getCurrent() : tibia.game.ContextMenuBase
+      public static function getCurrent() : ContextMenuBase
       {
          return s_Current;
       }

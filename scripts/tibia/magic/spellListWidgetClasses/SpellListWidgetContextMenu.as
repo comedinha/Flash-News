@@ -1,9 +1,9 @@
 package tibia.magic.spellListWidgetClasses
 {
-   import tibia.game.ContextMenuBase;
-   import tibia.magic.SpellListWidget;
    import mx.core.IUIComponent;
    import shared.utility.closure;
+   import tibia.game.ContextMenuBase;
+   import tibia.magic.SpellListWidget;
    
    public class SpellListWidgetContextMenu extends ContextMenuBase
    {

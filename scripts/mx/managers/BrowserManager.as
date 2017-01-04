@@ -1,16 +1,16 @@
 package mx.managers
 {
-   import mx.core.mx_internal;
    import mx.core.Singleton;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    
    public class BrowserManager
    {
       
-      private static var implClassDependency:mx.managers.BrowserManagerImpl;
+      private static var implClassDependency:BrowserManagerImpl;
       
-      private static var instance:mx.managers.IBrowserManager;
+      private static var instance:IBrowserManager;
       
       mx_internal static const VERSION:String = "3.6.0.21751";
        
@@ -20,7 +20,7 @@ package mx.managers
          super();
       }
       
-      public static function getInstance() : mx.managers.IBrowserManager
+      public static function getInstance() : IBrowserManager
       {
          if(!instance)
          {

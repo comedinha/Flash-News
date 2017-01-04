@@ -1,24 +1,24 @@
 package mx.effects
 {
-   import flash.events.EventDispatcher;
-   import mx.core.mx_internal;
-   import mx.resources.IResourceManager;
    import flash.display.DisplayObject;
    import flash.display.DisplayObjectContainer;
    import flash.events.Event;
+   import flash.events.EventDispatcher;
+   import flash.events.FocusEvent;
    import flash.utils.Dictionary;
-   import mx.events.MoveEvent;
-   import mx.events.ResizeEvent;
-   import mx.events.FlexEvent;
+   import mx.core.ApplicationGlobals;
+   import mx.core.EventPriority;
+   import mx.core.IDeferredInstantiationUIComponent;
+   import mx.core.IFlexDisplayObject;
    import mx.core.IUIComponent;
    import mx.core.UIComponent;
-   import mx.events.EffectEvent;
-   import mx.core.IDeferredInstantiationUIComponent;
    import mx.core.UIComponentCachePolicy;
-   import flash.events.FocusEvent;
-   import mx.core.IFlexDisplayObject;
-   import mx.core.EventPriority;
-   import mx.core.ApplicationGlobals;
+   import mx.core.mx_internal;
+   import mx.events.EffectEvent;
+   import mx.events.FlexEvent;
+   import mx.events.MoveEvent;
+   import mx.events.ResizeEvent;
+   import mx.resources.IResourceManager;
    import mx.resources.ResourceManager;
    
    use namespace mx_internal;
@@ -38,7 +38,7 @@ package mx.effects
       
       private static var effectTriggersForEvent:Object = {};
       
-      mx_internal static var lastEffectCreated:mx.effects.Effect;
+      mx_internal static var lastEffectCreated:Effect;
       
       private static var eventHandlingSuspendCount:Number = 0;
       
@@ -97,7 +97,7 @@ package mx.effects
          var _loc13_:Array = null;
          var _loc14_:Array = null;
          var _loc15_:EffectInstance = null;
-         var _loc3_:mx.effects.Effect = createEffectForType(param2,param1.type);
+         var _loc3_:Effect = createEffectForType(param2,param1.type);
          if(!_loc3_)
          {
             return;
@@ -365,7 +365,7 @@ package mx.effects
          cacheOrUncacheTargetAsBitmap(param1,false,true);
       }
       
-      private static function animateSameProperty(param1:mx.effects.Effect, param2:mx.effects.Effect, param3:EffectInstance) : Boolean
+      private static function animateSameProperty(param1:Effect, param2:Effect, param3:EffectInstance) : Boolean
       {
          var _loc4_:Array = null;
          var _loc5_:Array = null;
@@ -485,10 +485,10 @@ package mx.effects
          return "";
       }
       
-      mx_internal static function createEffectForType(param1:Object, param2:String) : mx.effects.Effect
+      mx_internal static function createEffectForType(param1:Object, param2:String) : Effect
       {
          var cls:Class = null;
-         var effectObj:mx.effects.Effect = null;
+         var effectObj:Effect = null;
          var doc:Object = null;
          var target:Object = param1;
          var type:String = param2;
@@ -518,7 +518,7 @@ package mx.effects
                }
                effectObj = doc[value];
             }
-            else if(value is mx.effects.Effect)
+            else if(value is Effect)
             {
                effectObj = Effect(value);
             }

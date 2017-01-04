@@ -1,7 +1,7 @@
 package tibia.input.staticaction
 {
-   import tibia.network.Communication;
    import tibia.creatures.Player;
+   import tibia.network.Communication;
    
    public class PlayerMount extends StaticAction
    {

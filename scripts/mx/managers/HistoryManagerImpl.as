@@ -1,20 +1,20 @@
 package mx.managers
 {
-   import mx.core.mx_internal;
-   import mx.core.ApplicationGlobals;
-   import mx.events.BrowserChangeEvent;
-   import flash.utils.Dictionary;
-   import flash.display.LoaderInfo;
    import flash.display.DisplayObject;
+   import flash.display.LoaderInfo;
+   import flash.utils.Dictionary;
+   import mx.core.ApplicationGlobals;
+   import mx.core.mx_internal;
+   import mx.events.BrowserChangeEvent;
    
    use namespace mx_internal;
    
-   public class HistoryManagerImpl implements mx.managers.IHistoryManager
+   public class HistoryManagerImpl implements IHistoryManager
    {
       
       private static const NAME_VALUE_SEPARATOR:String = "=";
       
-      private static var instance:mx.managers.IHistoryManager;
+      private static var instance:IHistoryManager;
       
       private static var appID:String;
       
@@ -30,7 +30,7 @@ package mx.managers
       
       private static const PROPERTY_SEPARATOR:String = "&";
       
-      private static var systemManager:mx.managers.ISystemManager;
+      private static var systemManager:ISystemManager;
        
       
       private var registeredObjects:Array;
@@ -81,7 +81,7 @@ package mx.managers
          BrowserManager.getInstance().initForHistoryManager();
       }
       
-      public static function getInstance() : mx.managers.IHistoryManager
+      public static function getInstance() : IHistoryManager
       {
          if(!instance)
          {

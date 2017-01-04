@@ -1,9 +1,9 @@
 package tibia.chat
 {
    import flash.events.EventDispatcher;
-   import shared.utility.XMLHelper;
    import mx.events.PropertyChangeEvent;
    import mx.events.PropertyChangeEventKind;
+   import shared.utility.XMLHelper;
    
    public class ChannelSet extends EventDispatcher
    {

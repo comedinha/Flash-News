@@ -1,8 +1,8 @@
 package mx.controls
 {
+   import mx.core.FlexVersion;
    import mx.core.IToggleButton;
    import mx.core.mx_internal;
-   import mx.core.FlexVersion;
    
    use namespace mx_internal;
    

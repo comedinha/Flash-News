@@ -1,10 +1,10 @@
 package tibia.ingameshop.shopWidgetClasses
 {
-   import shared.controls.EmbeddedDialog;
-   import tibia.ingameshop.IngameShopOffer;
    import mx.containers.HBox;
    import mx.controls.CheckBox;
    import mx.controls.Text;
+   import shared.controls.EmbeddedDialog;
+   import tibia.ingameshop.IngameShopOffer;
    import tibia.ingameshop.IngameShopWidget;
    
    public class PurchaseConfirmationWidget extends EmbeddedDialog
@@ -34,10 +34,9 @@ package tibia.ingameshop.shopWidgetClasses
       
       override protected function createChildren() : void
       {
-         var _loc1_:OfferDisplayBlock = null;
          var _loc2_:HBox = null;
          super.createChildren();
-         _loc1_ = new OfferDisplayBlock();
+         var _loc1_:OfferDisplayBlock = new OfferDisplayBlock();
          _loc1_.percentWidth = 100;
          _loc1_.offer = this.m_Offer;
          text = resourceManager.getString(BUNDLE,"LBL_PURCHASE_CONFIRMATION",[this.m_Offer.name]);

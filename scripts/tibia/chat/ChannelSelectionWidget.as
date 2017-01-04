@@ -1,19 +1,19 @@
 package tibia.chat
 {
-   import tibia.game.PopUpBase;
-   import mx.collections.IList;
-   import mx.controls.TextInput;
-   import mx.controls.List;
-   import mx.events.FlexEvent;
-   import mx.events.CloseEvent;
+   import flash.events.KeyboardEvent;
    import flash.events.MouseEvent;
+   import flash.events.TextEvent;
+   import mx.collections.IList;
+   import mx.controls.Label;
+   import mx.controls.List;
+   import mx.controls.TextInput;
    import mx.controls.listClasses.IListItemRenderer;
    import mx.core.mx_internal;
-   import mx.controls.Label;
+   import mx.events.CloseEvent;
+   import mx.events.FlexEvent;
    import shared.controls.CustomList;
-   import flash.events.KeyboardEvent;
+   import tibia.game.PopUpBase;
    import tibia.input.PreventWhitespaceInput;
-   import flash.events.TextEvent;
    
    public class ChannelSelectionWidget extends PopUpBase
    {

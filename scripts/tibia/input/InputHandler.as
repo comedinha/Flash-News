@@ -1,32 +1,32 @@
 package tibia.input
 {
-   import mx.core.UIComponent;
+   import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
+   import flash.display.InteractiveObject;
+   import flash.events.Event;
    import flash.events.EventDispatcher;
    import flash.events.FocusEvent;
    import flash.events.KeyboardEvent;
    import flash.events.MouseEvent;
    import flash.events.TextEvent;
    import flash.events.TimerEvent;
-   import flash.display.InteractiveObject;
-   import flash.events.Event;
-   import tibia.input.mapping.Binding;
-   import shared.utility.WeakReference;
-   import mx.controls.TextInput;
-   import shared.cryptography.Random;
-   import flash.utils.getTimer;
-   import tibia.options.OptionsStorage;
    import flash.geom.Point;
-   import tibia.input.staticaction.PlayerMove;
    import flash.ui.Keyboard;
-   import tibia.input.mapping.MouseBinding;
-   import mx.events.PropertyChangeEvent;
    import flash.utils.Timer;
-   import mx.events.FlexEvent;
-   import tibia.input.mapping.Mapping;
-   import flash.display.DisplayObjectContainer;
-   import flash.display.DisplayObject;
+   import flash.utils.getTimer;
+   import mx.controls.TextInput;
    import mx.core.EventPriority;
+   import mx.core.UIComponent;
+   import mx.events.FlexEvent;
+   import mx.events.PropertyChangeEvent;
+   import shared.cryptography.Random;
    import shared.utility.BrowserHelper;
+   import shared.utility.WeakReference;
+   import tibia.input.mapping.Binding;
+   import tibia.input.mapping.Mapping;
+   import tibia.input.mapping.MouseBinding;
+   import tibia.input.staticaction.PlayerMove;
+   import tibia.options.OptionsStorage;
    
    public class InputHandler extends UIComponent
    {
@@ -80,7 +80,7 @@ package tibia.input
       
       private var m_UncommittedCaptureKeyboard:Boolean = true;
       
-      protected var m_MouseRepeatEvent:tibia.input.MouseRepeatEvent = null;
+      protected var m_MouseRepeatEvent:MouseRepeatEvent = null;
       
       protected var m_MovementBindings:Vector.<Binding> = null;
       
@@ -173,7 +173,7 @@ package tibia.input
          var _loc4_:Number = NaN;
          var _loc5_:Number = NaN;
          var _loc6_:Number = NaN;
-         var _loc7_:tibia.input.MouseRepeatEvent = null;
+         var _loc7_:MouseRepeatEvent = null;
          if(this.m_MouseRepeatTrigger && this.m_MouseRepeatEvent != null && this.m_MouseRepeatTarget.value is InteractiveObject)
          {
             if(this.m_MouseRepeatTimer.currentCount == 1 && this.m_MouseRepeatTimer.repeatCount == 1)
@@ -184,11 +184,11 @@ package tibia.input
                this.m_MouseRepeatTimer.start();
             }
             _loc2_ = this.m_MouseRepeatTarget.value as InteractiveObject;
-            _loc3_ = this.m_MouseRepeatEvent.type == MouseEvent.MOUSE_DOWN?tibia.input.MouseRepeatEvent.REPEAT_MOUSE_DOWN:tibia.input.MouseRepeatEvent.REPEAT_RIGHT_MOUSE_DOWN;
+            _loc3_ = this.m_MouseRepeatEvent.type == MouseEvent.MOUSE_DOWN?MouseRepeatEvent.REPEAT_MOUSE_DOWN:MouseRepeatEvent.REPEAT_RIGHT_MOUSE_DOWN;
             _loc4_ = this.m_MouseRepeatEvent.localX - _loc2_.mouseX;
             _loc5_ = this.m_MouseRepeatEvent.localY - _loc2_.mouseY;
             _loc6_ = Math.sqrt(_loc4_ * _loc4_ + _loc5_ * _loc5_);
-            _loc7_ = new tibia.input.MouseRepeatEvent(_loc3_,this.m_MouseRepeatEvent.bubbles,this.m_MouseRepeatEvent.cancelable);
+            _loc7_ = new MouseRepeatEvent(_loc3_,this.m_MouseRepeatEvent.bubbles,this.m_MouseRepeatEvent.cancelable);
             _loc7_.localX = _loc2_.mouseX;
             _loc7_.localY = _loc2_.mouseY;
             _loc7_.ctrlKey = this.m_MouseRepeatEvent.ctrlKey;
@@ -409,7 +409,7 @@ package tibia.input
       
       private function internalMouseDown(param1:MouseEvent) : void
       {
-         var _loc5_:tibia.input.MouseRepeatEvent = null;
+         var _loc5_:MouseRepeatEvent = null;
          Random.s_PoolPutUnsignedInt(param1.stageX << 16 | param1.stageY);
          var _loc2_:uint = param1.type == MouseEvent.MOUSE_DOWN?uint(MOUSE_LEFT):uint(MOUSE_RIGHT);
          this.m_MouseDown[_loc2_] = true;
@@ -432,7 +432,7 @@ package tibia.input
          }
          if(_loc4_ != null)
          {
-            _loc5_ = new tibia.input.MouseRepeatEvent(param1.type,true,true);
+            _loc5_ = new MouseRepeatEvent(param1.type,true,true);
             _loc5_.localX = _loc4_.mouseX;
             _loc5_.localY = _loc4_.mouseY;
             _loc5_.relatedObject = param1.relatedObject;
@@ -795,7 +795,7 @@ package tibia.input
          this.m_KeyboardHandlerActive = false;
       }
       
-      private function initMouseRepeat(param1:InteractiveObject, param2:tibia.input.MouseRepeatEvent) : void
+      private function initMouseRepeat(param1:InteractiveObject, param2:MouseRepeatEvent) : void
       {
          var _loc3_:InteractiveObject = null;
          this.m_MouseRepeatTrigger = true;

@@ -1,13 +1,13 @@
 package tibia.controls.dynamicTabBarClasses
 {
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import mx.controls.Button;
    import mx.controls.tabBarClasses.Tab;
    import mx.styles.CSSStyleDeclaration;
    import mx.styles.StyleManager;
-   import flash.events.MouseEvent;
-   import mx.controls.Button;
-   import tibia.controls.DynamicTabBar;
    import shared.controls.CustomButton;
-   import flash.events.Event;
+   import tibia.controls.DynamicTabBar;
    
    public class DynamicTab extends Tab
    {

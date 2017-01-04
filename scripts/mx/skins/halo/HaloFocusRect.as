@@ -1,10 +1,10 @@
 package mx.skins.halo
 {
-   import mx.skins.ProgrammaticSkin;
-   import mx.styles.IStyleClient;
-   import mx.core.mx_internal;
-   import mx.styles.CSSStyleDeclaration;
    import flash.display.Graphics;
+   import mx.core.mx_internal;
+   import mx.skins.ProgrammaticSkin;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.IStyleClient;
    import mx.utils.GraphicsUtil;
    
    use namespace mx_internal;

@@ -1,19 +1,19 @@
 package tibia.creatures
 {
-   import tibia.game.PopUpBase;
-   import tibia.creatures.selectOutfitWidgetClasses.OutfitColourSelector;
    import flash.events.Event;
-   import tibia.creatures.selectOutfitWidgetClasses.OutfitTypeSelector;
    import flash.events.MouseEvent;
-   import tibia.ingameshop.IngameShopManager;
-   import tibia.ingameshop.IngameShopProduct;
-   import mx.containers.HBox;
+   import mx.collections.IList;
    import mx.containers.Canvas;
-   import mx.events.PropertyChangeEvent;
+   import mx.containers.HBox;
    import mx.controls.Button;
    import mx.controls.CheckBox;
+   import mx.events.PropertyChangeEvent;
    import shared.controls.SimpleTabNavigator;
-   import mx.collections.IList;
+   import tibia.creatures.selectOutfitWidgetClasses.OutfitColourSelector;
+   import tibia.creatures.selectOutfitWidgetClasses.OutfitTypeSelector;
+   import tibia.game.PopUpBase;
+   import tibia.ingameshop.IngameShopManager;
+   import tibia.ingameshop.IngameShopProduct;
    import tibia.network.Communication;
    
    public class SelectOutfitWidget extends PopUpBase

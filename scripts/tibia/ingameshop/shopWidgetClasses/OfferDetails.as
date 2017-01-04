@@ -1,16 +1,16 @@
 package tibia.ingameshop.shopWidgetClasses
 {
-   import mx.containers.VBox;
-   import mx.controls.Text;
-   import mx.controls.Label;
-   import mx.containers.Grid;
-   import tibia.ingameshop.IngameShopOffer;
-   import tibia.ingameshop.IngameShopWidget;
-   import shared.utility.i18n.i18nFormatDate;
    import flash.errors.IllegalOperationError;
-   import tibia.ingameshop.IngameShopProduct;
-   import mx.containers.GridRow;
+   import mx.containers.Grid;
    import mx.containers.GridItem;
+   import mx.containers.GridRow;
+   import mx.containers.VBox;
+   import mx.controls.Label;
+   import mx.controls.Text;
+   import shared.utility.i18n.i18nFormatDate;
+   import tibia.ingameshop.IngameShopOffer;
+   import tibia.ingameshop.IngameShopProduct;
+   import tibia.ingameshop.IngameShopWidget;
    
    public class OfferDetails extends VBox implements IIngameShopWidgetComponent
    {

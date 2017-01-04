@@ -1,16 +1,16 @@
 package mx.resources
 {
-   import mx.core.mx_internal;
    import mx.core.Singleton;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    
    public class ResourceManager
    {
       
-      private static var implClassDependency:mx.resources.ResourceManagerImpl;
+      private static var implClassDependency:ResourceManagerImpl;
       
-      private static var instance:mx.resources.IResourceManager;
+      private static var instance:IResourceManager;
       
       mx_internal static const VERSION:String = "3.6.0.21751";
        
@@ -20,7 +20,7 @@ package mx.resources
          super();
       }
       
-      public static function getInstance() : mx.resources.IResourceManager
+      public static function getInstance() : IResourceManager
       {
          if(!instance)
          {
@@ -30,7 +30,7 @@ package mx.resources
             }
             catch(e:Error)
             {
-               instance = new mx.resources.ResourceManagerImpl();
+               instance = new ResourceManagerImpl();
             }
          }
          return instance;

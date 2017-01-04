@@ -1,12 +1,12 @@
 package tibia.appearances.widgetClasses
 {
-   import tibia.appearances.AppearanceType;
+   import flash.display.BitmapData;
+   import flash.geom.Rectangle;
+   import flash.utils.Dictionary;
    import shared.utility.BitmapPart;
    import shared.utility.PagedBitmapCache;
+   import tibia.appearances.AppearanceType;
    import tibia.appearances.FrameGroup;
-   import flash.display.BitmapData;
-   import flash.utils.Dictionary;
-   import flash.geom.Rectangle;
    
    public class AsyncSpriteCache implements ISpriteProvider
    {
@@ -116,20 +116,20 @@ package tibia.appearances.widgetClasses
       public static const ANIMATION_SYNCHRON:int = 1;
        
       
-      private var m_AsyncCompressedSpriteProvider:tibia.appearances.widgetClasses.AsyncCompressedSpriteProvider = null;
+      private var m_AsyncCompressedSpriteProvider:AsyncCompressedSpriteProvider = null;
       
-      private var m_TempSpriteInformation:tibia.appearances.widgetClasses.CachedSpriteInformation;
+      private var m_TempSpriteInformation:CachedSpriteInformation;
       
       public var m_PagedBitmapCache:PagedBitmapCache = null;
       
       private var m_CacheBitmap:BitmapData = null;
       
-      public function AsyncSpriteCache(param1:tibia.appearances.widgetClasses.AsyncCompressedSpriteProvider, param2:Dictionary)
+      public function AsyncSpriteCache(param1:AsyncCompressedSpriteProvider, param2:Dictionary)
       {
          var _loc3_:uint = 0;
          var _loc4_:uint = 0;
          var _loc7_:uint = 0;
-         this.m_TempSpriteInformation = new tibia.appearances.widgetClasses.CachedSpriteInformation();
+         this.m_TempSpriteInformation = new CachedSpriteInformation();
          super();
          if(param1 == null)
          {
@@ -159,7 +159,7 @@ package tibia.appearances.widgetClasses
          this.m_PagedBitmapCache = new PagedBitmapCache(_loc5_);
       }
       
-      private function cacheSprite(param1:tibia.appearances.widgetClasses.CachedSpriteInformation) : Boolean
+      private function cacheSprite(param1:CachedSpriteInformation) : Boolean
       {
          var _loc2_:Boolean = false;
          if(param1.cacheMiss)
@@ -176,9 +176,9 @@ package tibia.appearances.widgetClasses
          return false;
       }
       
-      public function getSprite(param1:uint, param2:tibia.appearances.widgetClasses.CachedSpriteInformation = null, param3:AppearanceType = null) : tibia.appearances.widgetClasses.CachedSpriteInformation
+      public function getSprite(param1:uint, param2:CachedSpriteInformation = null, param3:AppearanceType = null) : CachedSpriteInformation
       {
-         var _loc4_:tibia.appearances.widgetClasses.CachedSpriteInformation = null;
+         var _loc4_:CachedSpriteInformation = null;
          if(param2 != null)
          {
             _loc4_ = param2;
@@ -237,7 +237,7 @@ package tibia.appearances.widgetClasses
          var _loc4_:uint = 0;
          var _loc5_:uint = 0;
          var _loc6_:uint = 0;
-         var _loc7_:tibia.appearances.widgetClasses.CachedSpriteInformation = null;
+         var _loc7_:CachedSpriteInformation = null;
          if(param1 == null)
          {
             return;

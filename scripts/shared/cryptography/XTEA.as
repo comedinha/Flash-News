@@ -14,12 +14,12 @@ package shared.cryptography
       
       private var m_Key:Array = null;
       
-      private var m_PRNG:shared.cryptography.Random = null;
+      private var m_PRNG:Random = null;
       
       public function XTEA()
       {
          super();
-         this.m_PRNG = new shared.cryptography.Random();
+         this.m_PRNG = new Random();
          this.generateKey();
       }
       

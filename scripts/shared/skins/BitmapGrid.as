@@ -1,14 +1,14 @@
 package shared.skins
 {
-   import mx.styles.ISimpleStyleClient;
-   import mx.core.IBorder;
-   import flash.geom.Point;
-   import flash.geom.Matrix;
-   import shared.utility.StringHelper;
-   import mx.styles.IStyleClient;
-   import mx.core.EdgeMetrics;
    import flash.display.Bitmap;
    import flash.display.Graphics;
+   import flash.geom.Matrix;
+   import flash.geom.Point;
+   import mx.core.EdgeMetrics;
+   import mx.core.IBorder;
+   import mx.styles.ISimpleStyleClient;
+   import mx.styles.IStyleClient;
+   import shared.utility.StringHelper;
    
    public class BitmapGrid implements ISimpleStyleClient, IBorder
    {

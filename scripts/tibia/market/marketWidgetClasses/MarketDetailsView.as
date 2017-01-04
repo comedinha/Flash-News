@@ -1,12 +1,12 @@
 package tibia.market.marketWidgetClasses
 {
-   import tibia.market.MarketWidget;
    import flash.events.Event;
-   import mx.controls.Text;
-   import mx.containers.FormItem;
-   import mx.containers.Form;
-   import mx.core.ScrollPolicy;
    import mx.containers.BoxDirection;
+   import mx.containers.Form;
+   import mx.containers.FormItem;
+   import mx.controls.Text;
+   import mx.core.ScrollPolicy;
+   import tibia.market.MarketWidget;
    
    public class MarketDetailsView extends MarketComponent
    {

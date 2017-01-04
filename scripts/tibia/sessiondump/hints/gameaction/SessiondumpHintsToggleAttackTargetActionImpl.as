@@ -1,10 +1,10 @@
 package tibia.sessiondump.hints.gameaction
 {
+   import shared.utility.StringHelper;
+   import tibia.creatures.Creature;
    import tibia.input.gameaction.ToggleAttackTargetActionImpl;
    import tibia.sessiondump.controller.SessiondumpHintActionsController;
-   import tibia.creatures.Creature;
    import tibia.sessiondump.hints.condition.HintConditionAttack;
-   import shared.utility.StringHelper;
    
    public class SessiondumpHintsToggleAttackTargetActionImpl extends ToggleAttackTargetActionImpl
    {

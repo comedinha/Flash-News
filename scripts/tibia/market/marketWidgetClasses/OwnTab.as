@@ -1,11 +1,11 @@
 package tibia.market.marketWidgetClasses
 {
-   import tibia.market.MarketWidget;
-   import mx.containers.TabNavigator;
    import flash.events.Event;
-   import shared.controls.SimpleTabNavigator;
-   import mx.events.IndexChangedEvent;
    import mx.containers.BoxDirection;
+   import mx.containers.TabNavigator;
+   import mx.events.IndexChangedEvent;
+   import shared.controls.SimpleTabNavigator;
+   import tibia.market.MarketWidget;
    
    public class OwnTab extends MarketComponent implements IViewContainer
    {
@@ -13,7 +13,7 @@ package tibia.market.marketWidgetClasses
       private static const BUNDLE:String = "MarketWidget";
        
       
-      private var m_UIViewHistory:tibia.market.marketWidgetClasses.OwnHistoryView = null;
+      private var m_UIViewHistory:OwnHistoryView = null;
       
       private var m_UIViewNavigator:TabNavigator = null;
       
@@ -23,7 +23,7 @@ package tibia.market.marketWidgetClasses
       
       private var m_SelectedView:uint = 3;
       
-      private var m_UIViewOffers:tibia.market.marketWidgetClasses.OwnOffersView = null;
+      private var m_UIViewOffers:OwnOffersView = null;
       
       public function OwnTab(param1:MarketWidget)
       {
@@ -92,7 +92,7 @@ package tibia.market.marketWidgetClasses
             this.m_UIViewNavigator.addEventListener(IndexChangedEvent.CHANGE,this.onViewChange);
             this.m_UIViewNavigator.setStyle("tabWidth",95);
             addChild(this.m_UIViewNavigator);
-            this.m_UIViewOffers = new tibia.market.marketWidgetClasses.OwnOffersView(market);
+            this.m_UIViewOffers = new OwnOffersView(market);
             this.m_UIViewOffers.percentHeight = 100;
             this.m_UIViewOffers.percentWidth = 100;
             this.m_UIViewOffers.styleName = "marketWidgetRootContainer";
@@ -101,7 +101,7 @@ package tibia.market.marketWidgetClasses
             this.m_UIViewOffers.setStyle("borderStyle","none");
             this.m_UIViewOffers.setStyle("borderThickness",undefined);
             this.m_UIViewNavigator.addChild(this.m_UIViewOffers);
-            this.m_UIViewHistory = new tibia.market.marketWidgetClasses.OwnHistoryView(market);
+            this.m_UIViewHistory = new OwnHistoryView(market);
             this.m_UIViewHistory.percentHeight = 100;
             this.m_UIViewHistory.percentWidth = 100;
             this.m_UIViewHistory.styleName = "marketWidgetRootContainer";

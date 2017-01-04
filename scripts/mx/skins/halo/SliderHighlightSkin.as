@@ -1,7 +1,7 @@
 package mx.skins.halo
 {
-   import mx.skins.Border;
    import mx.core.mx_internal;
+   import mx.skins.Border;
    
    use namespace mx_internal;
    

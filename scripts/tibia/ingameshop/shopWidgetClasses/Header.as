@@ -1,17 +1,17 @@
 package tibia.ingameshop.shopWidgetClasses
 {
-   import mx.containers.HBox;
-   import mx.core.IDataRenderer;
-   import flash.display.BitmapData;
    import flash.display.Bitmap;
-   import tibia.ingameshop.IngameShopWidget;
+   import flash.display.BitmapData;
    import flash.errors.IllegalOperationError;
-   import mx.controls.Text;
+   import mx.containers.HBox;
    import mx.containers.VBox;
    import mx.containers.ViewStack;
+   import mx.controls.Text;
+   import mx.core.IDataRenderer;
+   import tibia.ingameshop.DynamicImage;
    import tibia.ingameshop.IngameShopCategory;
    import tibia.ingameshop.IngameShopOffer;
-   import tibia.ingameshop.DynamicImage;
+   import tibia.ingameshop.IngameShopWidget;
    
    public class Header extends HBox implements IIngameShopWidgetComponent, IDataRenderer
    {
@@ -31,7 +31,7 @@ package tibia.ingameshop.shopWidgetClasses
       
       private var m_UILabelHeader:Text;
       
-      private var m_UIIcon:tibia.ingameshop.shopWidgetClasses.SliderImage;
+      private var m_UIIcon:SliderImage;
       
       private var m_UncommittedSelection:Boolean;
       
@@ -39,7 +39,7 @@ package tibia.ingameshop.shopWidgetClasses
       
       private var m_UILabelDescription:Text;
       
-      private var m_UILabelPrice:tibia.ingameshop.shopWidgetClasses.CoinWidget;
+      private var m_UILabelPrice:CoinWidget;
       
       private var m_ShopWindow:IngameShopWidget;
       
@@ -66,7 +66,7 @@ package tibia.ingameshop.shopWidgetClasses
       {
          super.createChildren();
          setStyle("verticalAlign","middle");
-         this.m_UIIcon = new tibia.ingameshop.shopWidgetClasses.SliderImage(64);
+         this.m_UIIcon = new SliderImage(64);
          addChild(this.m_UIIcon);
          var _loc1_:VBox = new VBox();
          _loc1_.percentWidth = 100;
@@ -86,7 +86,7 @@ package tibia.ingameshop.shopWidgetClasses
          this.m_UILabelDescription.percentWidth = 100;
          this.m_UILabelDescription.styleName = "ingameShopCategoryDescription";
          _loc2_.addChild(this.m_UILabelDescription);
-         this.m_UILabelPrice = new tibia.ingameshop.shopWidgetClasses.CoinWidget();
+         this.m_UILabelPrice = new CoinWidget();
          this.m_UILabelPrice.percentWidth = 100;
          this.m_UIDetailsStack.addChild(this.m_UILabelPrice);
          this.m_UncommittedSelection = true;

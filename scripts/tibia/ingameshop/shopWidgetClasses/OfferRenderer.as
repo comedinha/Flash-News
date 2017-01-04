@@ -1,18 +1,18 @@
 package tibia.ingameshop.shopWidgetClasses
 {
-   import mx.containers.VBox;
-   import flash.display.BitmapData;
-   import flash.geom.Point;
    import flash.display.Bitmap;
-   import mx.controls.Image;
-   import tibia.ingameshop.IngameShopOffer;
+   import flash.display.BitmapData;
    import flash.events.TimerEvent;
-   import mx.controls.Label;
-   import mx.core.IUIComponent;
-   import mx.core.Container;
    import flash.filters.ColorMatrixFilter;
+   import flash.geom.Point;
    import mx.containers.HBox;
+   import mx.containers.VBox;
+   import mx.controls.Image;
+   import mx.controls.Label;
+   import mx.core.Container;
+   import mx.core.IUIComponent;
    import mx.core.ScrollPolicy;
+   import tibia.ingameshop.IngameShopOffer;
    
    public class OfferRenderer extends VBox
    {
@@ -42,7 +42,7 @@ package tibia.ingameshop.shopWidgetClasses
       
       private var m_UIMainContainer:VBox;
       
-      private var m_UIPrice:tibia.ingameshop.shopWidgetClasses.CoinWidget;
+      private var m_UIPrice:CoinWidget;
       
       private var m_SecondsBeforeSaleDisplaySwitch:int;
       
@@ -52,7 +52,7 @@ package tibia.ingameshop.shopWidgetClasses
       
       private var m_UIName:Label;
       
-      private var m_UIIcon:tibia.ingameshop.shopWidgetClasses.SliderImage;
+      private var m_UIIcon:SliderImage;
       
       public function OfferRenderer()
       {
@@ -241,9 +241,9 @@ package tibia.ingameshop.shopWidgetClasses
          this.m_UIName.maxWidth = 100;
          this.m_UIName.truncateToFit = true;
          _loc3_.addChild(this.m_UIName);
-         this.m_UIIcon = new tibia.ingameshop.shopWidgetClasses.SliderImage(64);
+         this.m_UIIcon = new SliderImage(64);
          this.m_UIMainContainer.addChild(this.m_UIIcon);
-         this.m_UIPrice = new tibia.ingameshop.shopWidgetClasses.CoinWidget();
+         this.m_UIPrice = new CoinWidget();
          this.m_UIPrice.percentWidth = 100;
          this.m_UIPrice.styleName = "offerDarkBorder";
          this.m_UIMainContainer.addChild(this.m_UIPrice);

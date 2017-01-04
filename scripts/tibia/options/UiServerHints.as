@@ -9,11 +9,11 @@ package tibia.options
       
       private var m_canChangePvPFramingOption:Boolean = true;
       
-      private var m_Options:tibia.options.OptionsStorage = null;
+      private var m_Options:OptionsStorage = null;
       
       private var m_expertModeButtonEnabled:Boolean = true;
       
-      public function UiServerHints(param1:tibia.options.OptionsStorage)
+      public function UiServerHints(param1:OptionsStorage)
       {
          super();
          this.m_Options = param1;
@@ -55,7 +55,7 @@ package tibia.options
          return this.m_canChangePvPFramingOption;
       }
       
-      public function set options(param1:tibia.options.OptionsStorage) : void
+      public function set options(param1:OptionsStorage) : void
       {
          this.m_Options = param1;
       }
@@ -68,7 +68,7 @@ package tibia.options
          return _loc1_;
       }
       
-      public function get options() : tibia.options.OptionsStorage
+      public function get options() : OptionsStorage
       {
          return this.m_Options;
       }

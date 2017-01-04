@@ -1,15 +1,15 @@
 package tibia.trade.npcTradeWidgetClasses
 {
-   import mx.controls.List;
-   import mx.collections.IList;
-   import mx.events.CollectionEvent;
-   import mx.events.ListEvent;
    import flash.events.Event;
-   import mx.events.ScrollEvent;
-   import shared.controls.CustomList;
+   import mx.collections.IList;
+   import mx.controls.List;
    import mx.core.ClassFactory;
    import mx.core.ScrollPolicy;
+   import mx.events.CollectionEvent;
    import mx.events.FlexEvent;
+   import mx.events.ListEvent;
+   import mx.events.ScrollEvent;
+   import shared.controls.CustomList;
    
    public class ListObjectRefSelector extends ObjectRefSelectorBase
    {

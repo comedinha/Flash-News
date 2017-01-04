@@ -1,12 +1,12 @@
 package tibia.chat.chatWidgetClasses
 {
+   import mx.collections.ArrayCollection;
+   import mx.collections.IList;
+   import mx.core.ClassFactory;
+   import mx.core.EventPriority;
+   import tibia.chat.Channel;
    import tibia.controls.DynamicTabBar;
    import tibia.controls.dynamicTabBarClasses.DynamicTab;
-   import tibia.chat.Channel;
-   import mx.collections.IList;
-   import mx.collections.ArrayCollection;
-   import mx.core.EventPriority;
-   import mx.core.ClassFactory;
    
    public class ChannelTabBar extends DynamicTabBar
    {

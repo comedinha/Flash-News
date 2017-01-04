@@ -1,7 +1,7 @@
 package tibia.reporting.reportType
 {
-   import mx.resources.ResourceManager;
    import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
    
    public class Reason
    {

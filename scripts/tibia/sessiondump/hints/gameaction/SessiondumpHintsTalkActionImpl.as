@@ -1,9 +1,9 @@
 package tibia.sessiondump.hints.gameaction
 {
+   import shared.utility.StringHelper;
    import tibia.input.gameaction.TalkActionImpl;
    import tibia.sessiondump.controller.SessiondumpHintActionsController;
    import tibia.sessiondump.hints.condition.HintConditionTalk;
-   import shared.utility.StringHelper;
    
    public class SessiondumpHintsTalkActionImpl extends TalkActionImpl
    {

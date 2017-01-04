@@ -1,8 +1,8 @@
 package mx.controls.treeClasses
 {
    import mx.controls.listClasses.BaseListData;
-   import mx.core.mx_internal;
    import mx.controls.listClasses.ListBase;
+   import mx.core.mx_internal;
    
    use namespace mx_internal;
    

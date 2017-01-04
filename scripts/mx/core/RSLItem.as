@@ -1,16 +1,16 @@
 package mx.core
 {
-   import flash.events.ProgressEvent;
-   import flash.events.ErrorEvent;
-   import flash.events.IOErrorEvent;
-   import flash.events.SecurityErrorEvent;
-   import mx.events.RSLEvent;
-   import flash.net.URLRequest;
    import flash.display.Loader;
-   import flash.system.LoaderContext;
-   import mx.utils.LoaderUtil;
+   import flash.events.ErrorEvent;
    import flash.events.Event;
+   import flash.events.IOErrorEvent;
+   import flash.events.ProgressEvent;
+   import flash.events.SecurityErrorEvent;
+   import flash.net.URLRequest;
    import flash.system.ApplicationDomain;
+   import flash.system.LoaderContext;
+   import mx.events.RSLEvent;
+   import mx.utils.LoaderUtil;
    
    use namespace mx_internal;
    
@@ -44,9 +44,9 @@ package mx.core
       
       protected var url:String;
       
-      protected var moduleFactory:mx.core.IFlexModuleFactory;
+      protected var moduleFactory:IFlexModuleFactory;
       
-      public function RSLItem(param1:String, param2:String = null, param3:mx.core.IFlexModuleFactory = null)
+      public function RSLItem(param1:String, param2:String = null, param3:IFlexModuleFactory = null)
       {
          super();
          this.url = param1;

@@ -1,10 +1,10 @@
 package mx.core
 {
-   import mx.events.ResourceEvent;
-   import flash.events.IOErrorEvent;
-   import mx.resources.ResourceManager;
-   import mx.resources.IResourceManager;
    import flash.events.IEventDispatcher;
+   import flash.events.IOErrorEvent;
+   import mx.events.ResourceEvent;
+   import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
    
    use namespace mx_internal;
    

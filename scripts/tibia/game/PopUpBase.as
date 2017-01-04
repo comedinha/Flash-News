@@ -1,28 +1,28 @@
 package tibia.game
 {
-   import mx.containers.VBox;
    import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
+   import flash.display.Sprite;
    import flash.display.Stage;
-   import mx.core.Container;
-   import mx.core.EdgeMetrics;
-   import shared.controls.EmbeddedDialog;
-   import mx.containers.HBox;
-   import mx.core.ScrollPolicy;
-   import flash.events.MouseEvent;
-   import mx.controls.Label;
    import flash.events.Event;
    import flash.events.KeyboardEvent;
-   import mx.core.EventPriority;
-   import mx.events.SandboxMouseEvent;
-   import mx.events.CloseEvent;
-   import mx.controls.Button;
-   import shared.controls.CustomButton;
-   import shared.utility.loopDisplayList;
-   import mx.managers.IFocusManagerComponent;
-   import flash.display.DisplayObjectContainer;
-   import mx.core.IDataRenderer;
+   import flash.events.MouseEvent;
    import flash.ui.Keyboard;
-   import flash.display.Sprite;
+   import mx.containers.HBox;
+   import mx.containers.VBox;
+   import mx.controls.Button;
+   import mx.controls.Label;
+   import mx.core.Container;
+   import mx.core.EdgeMetrics;
+   import mx.core.EventPriority;
+   import mx.core.IDataRenderer;
+   import mx.core.ScrollPolicy;
+   import mx.events.CloseEvent;
+   import mx.events.SandboxMouseEvent;
+   import mx.managers.IFocusManagerComponent;
+   import shared.controls.CustomButton;
+   import shared.controls.EmbeddedDialog;
+   import shared.utility.loopDisplayList;
    
    public class PopUpBase extends VBox
    {
@@ -37,7 +37,7 @@ package tibia.game
       
       public static const BUTTON_CLOSE:uint = 16;
       
-      private static var s_Current:tibia.game.PopUpBase = null;
+      private static var s_Current:PopUpBase = null;
       
       private static const BUTTON_MASK:uint = DISABLE_BUTTONS | ENABLE_BUTTONS | BUTTON_YES | BUTTON_NO | BUTTON_OKAY | BUTTON_CANCEL | BUTTON_CLOSE | BUTTON_ABORT;
       
@@ -127,16 +127,16 @@ package tibia.game
          addEventListener(Event.REMOVED_FROM_STAGE,this.onRemovedFromStage);
       }
       
-      public static function getParentPopUp(param1:DisplayObject) : tibia.game.PopUpBase
+      public static function getParentPopUp(param1:DisplayObject) : PopUpBase
       {
-         while(param1 != null && !(param1 is Stage) && !(param1 is tibia.game.PopUpBase))
+         while(param1 != null && !(param1 is Stage) && !(param1 is PopUpBase))
          {
             param1 = param1.parent as DisplayObject;
          }
-         return param1 as tibia.game.PopUpBase;
+         return param1 as PopUpBase;
       }
       
-      public static function getCurrent() : tibia.game.PopUpBase
+      public static function getCurrent() : PopUpBase
       {
          return s_Current;
       }
@@ -485,16 +485,16 @@ package tibia.game
       {
          var _loc3_:IDataRenderer = null;
          var _loc2_:CloseEvent = null;
-         if(param1 is KeyboardEvent && KeyboardEvent(param1).keyCode == Keyboard.ENTER && (this.m_KeyboardFlags & tibia.game.PopUpBase.KEY_ENTER) != 0)
+         if(param1 is KeyboardEvent && KeyboardEvent(param1).keyCode == Keyboard.ENTER && (this.m_KeyboardFlags & PopUpBase.KEY_ENTER) != 0)
          {
             _loc2_ = new CloseEvent(CloseEvent.CLOSE,false,true);
-            _loc2_.detail = tibia.game.PopUpBase.BUTTON_OKAY;
+            _loc2_.detail = PopUpBase.BUTTON_OKAY;
             dispatchEvent(_loc2_);
          }
-         else if(param1 is KeyboardEvent && KeyboardEvent(param1).keyCode == Keyboard.ESCAPE && (this.m_KeyboardFlags & tibia.game.PopUpBase.KEY_ESCAPE) != 0)
+         else if(param1 is KeyboardEvent && KeyboardEvent(param1).keyCode == Keyboard.ESCAPE && (this.m_KeyboardFlags & PopUpBase.KEY_ESCAPE) != 0)
          {
             _loc2_ = new CloseEvent(CloseEvent.CLOSE,false,true);
-            _loc2_.detail = tibia.game.PopUpBase.BUTTON_CANCEL;
+            _loc2_.detail = PopUpBase.BUTTON_CANCEL;
             dispatchEvent(_loc2_);
          }
          else if(param1 is MouseEvent && param1.type == MouseEvent.CLICK)
@@ -509,7 +509,7 @@ package tibia.game
          }
          if(_loc2_ != null && (!_loc2_.cancelable || !_loc2_.isDefaultPrevented()))
          {
-            this.hide(_loc2_.detail == tibia.game.PopUpBase.BUTTON_OKAY || _loc2_.detail == tibia.game.PopUpBase.BUTTON_YES);
+            this.hide(_loc2_.detail == PopUpBase.BUTTON_OKAY || _loc2_.detail == PopUpBase.BUTTON_YES);
          }
       }
       

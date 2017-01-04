@@ -1,23 +1,23 @@
 package tibia.creatures.unjustPointsWidgetClasses
 {
-   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
    import flash.geom.Point;
    import flash.geom.Rectangle;
-   import flash.display.BitmapData;
-   import flash.display.Bitmap;
+   import mx.containers.HBox;
    import mx.controls.Image;
    import mx.controls.Label;
-   import tibia.creatures.CreatureStorage;
-   import shared.utility.StringHelper;
-   import mx.utils.StringUtil;
-   import tibia.creatures.UnjustPointsInfo;
-   import tibia.creatures.Player;
-   import mx.containers.HBox;
    import mx.core.EdgeMetrics;
+   import mx.core.ScrollPolicy;
    import mx.events.PropertyChangeEvent;
+   import mx.utils.StringUtil;
+   import shared.utility.StringHelper;
+   import tibia.creatures.CreatureStorage;
+   import tibia.creatures.Player;
+   import tibia.creatures.UnjustPointsInfo;
+   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
    import tibia.§sidebar:ns_sidebar_internal§.widgetClosed;
    import tibia.§sidebar:ns_sidebar_internal§.widgetCollapsed;
-   import mx.core.ScrollPolicy;
    
    public class UnjustPointsWidgetView extends WidgetView
    {

@@ -92,7 +92,7 @@ package tibia.sessiondump.hints
       
       private var m_PlayerOutfit:OutfitInstance = null;
       
-      private var m_Hints:Vector.<tibia.sessiondump.hints.SessiondumpHintBase>;
+      private var m_Hints:Vector.<SessiondumpHintBase>;
       
       private var m_SessiondumpDuration:uint = 0;
       
@@ -102,7 +102,7 @@ package tibia.sessiondump.hints
       
       public function SessiondumpHints()
       {
-         this.m_Hints = new Vector.<tibia.sessiondump.hints.SessiondumpHintBase>();
+         this.m_Hints = new Vector.<SessiondumpHintBase>();
          super();
       }
       
@@ -112,7 +112,7 @@ package tibia.sessiondump.hints
          var _loc8_:uint = 0;
          var _loc9_:Array = null;
          var _loc10_:Object = null;
-         var _loc11_:tibia.sessiondump.hints.SessiondumpHintBase = null;
+         var _loc11_:SessiondumpHintBase = null;
          if(param1 == null)
          {
             throw new Error("SessiondumpHints.s_Unmarshall: Invalid input.");
@@ -156,7 +156,7 @@ package tibia.sessiondump.hints
             _loc9_ = _loc5_["actions"] as Array;
             for each(_loc10_ in _loc9_)
             {
-               _loc11_ = tibia.sessiondump.hints.SessiondumpHintBase.s_Unmarshall(uint(_loc8_),_loc10_);
+               _loc11_ = SessiondumpHintBase.s_Unmarshall(uint(_loc8_),_loc10_);
                if(_loc11_ != null)
                {
                   _loc2_.m_Hints.push(_loc11_);
@@ -185,9 +185,9 @@ package tibia.sessiondump.hints
          return this.m_PlayerName;
       }
       
-      public function getNextSessiondumpHintToProcess(param1:uint) : tibia.sessiondump.hints.SessiondumpHintBase
+      public function getNextSessiondumpHintToProcess(param1:uint) : SessiondumpHintBase
       {
-         var _loc2_:tibia.sessiondump.hints.SessiondumpHintBase = null;
+         var _loc2_:SessiondumpHintBase = null;
          for each(_loc2_ in this.m_Hints)
          {
             if(_loc2_.processed == false && _loc2_.timestamp <= param1)
@@ -200,14 +200,14 @@ package tibia.sessiondump.hints
       
       public function reset() : void
       {
-         var _loc1_:tibia.sessiondump.hints.SessiondumpHintBase = null;
+         var _loc1_:SessiondumpHintBase = null;
          for each(_loc1_ in this.m_Hints)
          {
             _loc1_.reset();
          }
       }
       
-      public function get hints() : Vector.<tibia.sessiondump.hints.SessiondumpHintBase>
+      public function get hints() : Vector.<SessiondumpHintBase>
       {
          return this.m_Hints;
       }

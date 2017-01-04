@@ -1,12 +1,12 @@
 package mx.core
 {
-   import mx.styles.ISimpleStyleClient;
-   import mx.managers.IToolTipManagerClient;
    import flash.display.DisplayObject;
-   import flash.text.StyleSheet;
    import flash.geom.Rectangle;
+   import flash.text.StyleSheet;
    import flash.text.TextFormat;
    import flash.text.TextLineMetrics;
+   import mx.managers.IToolTipManagerClient;
+   import mx.styles.ISimpleStyleClient;
    
    public interface IUITextField extends IIMESupport, IFlexModule, IInvalidating, ISimpleStyleClient, IToolTipManagerClient, IUIComponent
    {

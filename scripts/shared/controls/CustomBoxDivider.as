@@ -1,9 +1,9 @@
 package shared.controls
 {
-   import mx.containers.dividedBoxClasses.BoxDivider;
-   import shared.skins.BitmapGrid;
-   import mx.core.mx_internal;
    import mx.containers.DividerState;
+   import mx.containers.dividedBoxClasses.BoxDivider;
+   import mx.core.mx_internal;
+   import shared.skins.BitmapGrid;
    
    public class CustomBoxDivider extends BoxDivider
    {

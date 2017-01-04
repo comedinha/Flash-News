@@ -1,15 +1,15 @@
 package mx.effects
 {
-   import flash.events.EventDispatcher;
-   import mx.core.mx_internal;
-   import mx.events.EffectEvent;
-   import mx.core.UIComponent;
-   import flash.utils.Timer;
-   import flash.utils.getTimer;
-   import flash.events.TimerEvent;
-   import flash.utils.getQualifiedClassName;
-   import mx.effects.effectClasses.PropertyChanges;
    import flash.events.Event;
+   import flash.events.EventDispatcher;
+   import flash.events.TimerEvent;
+   import flash.utils.Timer;
+   import flash.utils.getQualifiedClassName;
+   import flash.utils.getTimer;
+   import mx.core.UIComponent;
+   import mx.core.mx_internal;
+   import mx.effects.effectClasses.PropertyChanges;
+   import mx.events.EffectEvent;
    import mx.events.FlexEvent;
    
    use namespace mx_internal;
@@ -36,13 +36,13 @@ package mx.effects
       
       private var _triggerEvent:Event;
       
-      private var _effectTargetHost:mx.effects.IEffectTargetHost;
+      private var _effectTargetHost:IEffectTargetHost;
       
-      mx_internal var parentCompositeEffectInstance:mx.effects.EffectInstance;
+      mx_internal var parentCompositeEffectInstance:EffectInstance;
       
       mx_internal var durationExplicitlySet:Boolean = false;
       
-      private var _effect:mx.effects.IEffect;
+      private var _effect:IEffect;
       
       private var _target:Object;
       
@@ -133,7 +133,7 @@ package mx.effects
          return _playReversed;
       }
       
-      public function set effect(param1:mx.effects.IEffect) : void
+      public function set effect(param1:IEffect) : void
       {
          _effect = param1;
       }
@@ -223,7 +223,7 @@ package mx.effects
          return _suspendBackgroundProcessing;
       }
       
-      public function get effectTargetHost() : mx.effects.IEffectTargetHost
+      public function get effectTargetHost() : IEffectTargetHost
       {
          return _effectTargetHost;
       }
@@ -275,12 +275,12 @@ package mx.effects
          _startDelay = param1;
       }
       
-      public function get effect() : mx.effects.IEffect
+      public function get effect() : IEffect
       {
          return _effect;
       }
       
-      public function set effectTargetHost(param1:mx.effects.IEffectTargetHost) : void
+      public function set effectTargetHost(param1:IEffectTargetHost) : void
       {
          _effectTargetHost = param1;
       }

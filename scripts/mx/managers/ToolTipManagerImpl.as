@@ -1,36 +1,36 @@
 package mx.managers
 {
-   import flash.events.EventDispatcher;
-   import mx.core.mx_internal;
-   import flash.events.MouseEvent;
-   import mx.effects.IAbstractEffect;
-   import flash.events.TimerEvent;
-   import mx.events.ToolTipEvent;
-   import flash.utils.Timer;
-   import mx.core.IToolTip;
    import flash.display.DisplayObject;
-   import mx.core.IUIComponent;
+   import flash.events.Event;
+   import flash.events.EventDispatcher;
+   import flash.events.IEventDispatcher;
+   import flash.events.MouseEvent;
+   import flash.events.TimerEvent;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import flash.utils.Timer;
    import mx.controls.ToolTip;
    import mx.core.ApplicationGlobals;
-   import flash.events.IEventDispatcher;
-   import mx.events.EffectEvent;
+   import mx.core.IInvalidating;
+   import mx.core.IToolTip;
+   import mx.core.IUIComponent;
+   import mx.core.mx_internal;
    import mx.effects.EffectManager;
+   import mx.effects.IAbstractEffect;
+   import mx.events.EffectEvent;
    import mx.events.InterManagerRequest;
-   import flash.events.Event;
-   import flash.geom.Rectangle;
-   import flash.geom.Point;
+   import mx.events.ToolTipEvent;
    import mx.styles.IStyleClient;
    import mx.validators.IValidatorListener;
-   import mx.core.IInvalidating;
    
    use namespace mx_internal;
    
-   public class ToolTipManagerImpl extends EventDispatcher implements mx.managers.IToolTipManager2
+   public class ToolTipManagerImpl extends EventDispatcher implements IToolTipManager2
    {
       
       mx_internal static const VERSION:String = "3.6.0.21751";
       
-      private static var instance:mx.managers.IToolTipManager2;
+      private static var instance:IToolTipManager2;
        
       
       private var _enabled:Boolean = true;
@@ -59,7 +59,7 @@ package mx.managers
       
       private var _currentTarget:DisplayObject;
       
-      private var systemManager:mx.managers.ISystemManager = null;
+      private var systemManager:ISystemManager = null;
       
       private var _showEffect:IAbstractEffect;
       
@@ -77,7 +77,7 @@ package mx.managers
          {
             throw new Error("Instance already exists.");
          }
-         this.systemManager = SystemManagerGlobals.topLevelSystemManagers[0] as mx.managers.ISystemManager;
+         this.systemManager = SystemManagerGlobals.topLevelSystemManagers[0] as ISystemManager;
          sandboxRoot = this.systemManager.getSandboxRoot();
          sandboxRoot.addEventListener(InterManagerRequest.TOOLTIP_MANAGER_REQUEST,marshalToolTipManagerHandler,false,0,true);
          var _loc1_:InterManagerRequest = new InterManagerRequest(InterManagerRequest.TOOLTIP_MANAGER_REQUEST);
@@ -85,7 +85,7 @@ package mx.managers
          sandboxRoot.dispatchEvent(_loc1_);
       }
       
-      public static function getInstance() : mx.managers.IToolTipManager2
+      public static function getInstance() : IToolTipManager2
       {
          if(!instance)
          {
@@ -163,7 +163,7 @@ package mx.managers
       public function createToolTip(param1:String, param2:Number, param3:Number, param4:String = null, param5:IUIComponent = null) : IToolTip
       {
          var _loc6_:ToolTip = new ToolTip();
-         var _loc7_:mx.managers.ISystemManager = !!param5?param5.systemManager as mx.managers.ISystemManager:ApplicationGlobals.application.systemManager as mx.managers.ISystemManager;
+         var _loc7_:ISystemManager = !!param5?param5.systemManager as ISystemManager:ApplicationGlobals.application.systemManager as ISystemManager;
          _loc7_.topLevelSystemManager.addChildToSandboxRoot("toolTipChildren",_loc6_ as DisplayObject);
          if(param4)
          {
@@ -178,7 +178,7 @@ package mx.managers
       
       mx_internal function reset() : void
       {
-         var _loc1_:mx.managers.ISystemManager = null;
+         var _loc1_:ISystemManager = null;
          showTimer.reset();
          hideTimer.reset();
          if(currentToolTip)
@@ -188,7 +188,7 @@ package mx.managers
                currentToolTip.removeEventListener(EffectEvent.EFFECT_END,effectEndHandler);
             }
             EffectManager.endEffectsForTarget(currentToolTip);
-            _loc1_ = currentToolTip.systemManager as mx.managers.ISystemManager;
+            _loc1_ = currentToolTip.systemManager as ISystemManager;
             _loc1_.topLevelSystemManager.removeChildFromSandboxRoot("toolTipChildren",currentToolTip as DisplayObject);
             currentToolTip = null;
             scrubTimer.delay = scrubDelay;
@@ -222,7 +222,7 @@ package mx.managers
       
       mx_internal function showTip() : void
       {
-         var _loc2_:mx.managers.ISystemManager = null;
+         var _loc2_:ISystemManager = null;
          var _loc1_:ToolTipEvent = new ToolTipEvent(ToolTipEvent.TOOL_TIP_SHOW);
          _loc1_.toolTip = currentToolTip;
          currentTarget.dispatchEvent(_loc1_);
@@ -357,7 +357,7 @@ package mx.managers
       
       public function destroyToolTip(param1:IToolTip) : void
       {
-         var _loc2_:mx.managers.ISystemManager = param1.systemManager as mx.managers.ISystemManager;
+         var _loc2_:ISystemManager = param1.systemManager as ISystemManager;
          _loc2_.topLevelSystemManager.removeChildFromSandboxRoot("toolTipChildren",DisplayObject(param1));
       }
       
@@ -423,7 +423,7 @@ package mx.managers
          var _loc5_:Rectangle = null;
          var _loc6_:Number = NaN;
          var _loc7_:Number = NaN;
-         var _loc8_:mx.managers.ISystemManager = null;
+         var _loc8_:ISystemManager = null;
          var _loc9_:Number = NaN;
          var _loc10_:Number = NaN;
          var _loc11_:Point = null;
@@ -576,7 +576,7 @@ package mx.managers
          _hideDelay = param1;
       }
       
-      private function getSystemManager(param1:DisplayObject) : mx.managers.ISystemManager
+      private function getSystemManager(param1:DisplayObject) : ISystemManager
       {
          return param1 is IUIComponent?IUIComponent(param1).systemManager:null;
       }
@@ -698,7 +698,7 @@ package mx.managers
       mx_internal function hideTip() : void
       {
          var _loc1_:ToolTipEvent = null;
-         var _loc2_:mx.managers.ISystemManager = null;
+         var _loc2_:ISystemManager = null;
          if(previousTarget)
          {
             _loc1_ = new ToolTipEvent(ToolTipEvent.TOOL_TIP_HIDE);
@@ -740,7 +740,7 @@ package mx.managers
             currentToolTip = new toolTipClass();
          }
          currentToolTip.visible = false;
-         var _loc2_:mx.managers.ISystemManager = getSystemManager(currentTarget) as mx.managers.ISystemManager;
+         var _loc2_:ISystemManager = getSystemManager(currentTarget) as ISystemManager;
          _loc2_.topLevelSystemManager.addChildToSandboxRoot("toolTipChildren",currentToolTip as DisplayObject);
       }
    }

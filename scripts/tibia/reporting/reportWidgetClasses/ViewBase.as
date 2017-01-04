@@ -1,8 +1,8 @@
 package tibia.reporting.reportWidgetClasses
 {
    import mx.containers.VBox;
-   import tibia.reporting.IReportable;
    import mx.controls.Text;
+   import tibia.reporting.IReportable;
    import tibia.reporting.reportType.Type;
    
    public class ViewBase extends VBox

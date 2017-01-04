@@ -1,10 +1,10 @@
 package tibia.input.gameaction
 {
-   import tibia.input.IActionImpl;
-   import tibia.network.Communication;
    import shared.utility.Vector3D;
    import tibia.appearances.AppearanceType;
    import tibia.appearances.ObjectInstance;
+   import tibia.input.IActionImpl;
+   import tibia.network.Communication;
    
    public class TurnActionImpl implements IActionImpl
    {

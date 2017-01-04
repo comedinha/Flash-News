@@ -1,25 +1,25 @@
 package tibia.sessiondump.controller
 {
    import flash.events.EventDispatcher;
-   import tibia.sessiondump.hints.condition.HintConditionBase;
    import tibia.input.IActionImpl;
-   import tibia.sessiondump.hints.condition.HintConditionAutowalk;
-   import tibia.sessiondump.hints.gameaction.SessiondumpHintsAutowalkActionImpl;
-   import tibia.sessiondump.hints.condition.HintConditionMove;
-   import tibia.sessiondump.hints.gameaction.SessiondumpHintsMoveActionImpl;
    import tibia.sessiondump.hints.condition.HintConditionAttack;
-   import tibia.sessiondump.hints.gameaction.SessiondumpHintsToggleAttackTargetActionImpl;
+   import tibia.sessiondump.hints.condition.HintConditionAutowalk;
+   import tibia.sessiondump.hints.condition.HintConditionBase;
    import tibia.sessiondump.hints.condition.HintConditionGreet;
-   import tibia.sessiondump.hints.gameaction.SessiondumpHintsGreetActionImpl;
+   import tibia.sessiondump.hints.condition.HintConditionMove;
    import tibia.sessiondump.hints.condition.HintConditionTalk;
-   import tibia.sessiondump.hints.gameaction.SessiondumpHintsTalkActionImpl;
    import tibia.sessiondump.hints.condition.HintConditionUse;
+   import tibia.sessiondump.hints.gameaction.SessiondumpHintsAutowalkActionImpl;
+   import tibia.sessiondump.hints.gameaction.SessiondumpHintsGreetActionImpl;
+   import tibia.sessiondump.hints.gameaction.SessiondumpHintsMoveActionImpl;
+   import tibia.sessiondump.hints.gameaction.SessiondumpHintsTalkActionImpl;
+   import tibia.sessiondump.hints.gameaction.SessiondumpHintsToggleAttackTargetActionImpl;
    import tibia.sessiondump.hints.gameaction.SessiondumpHintsUseActionImpl;
    
    public class SessiondumpHintActionsController extends EventDispatcher
    {
       
-      private static var s_Instance:tibia.sessiondump.controller.SessiondumpHintActionsController = null;
+      private static var s_Instance:SessiondumpHintActionsController = null;
        
       
       private var m_CurrentCondition:HintConditionBase = null;
@@ -31,11 +31,11 @@ package tibia.sessiondump.controller
          super();
       }
       
-      public static function getInstance() : tibia.sessiondump.controller.SessiondumpHintActionsController
+      public static function getInstance() : SessiondumpHintActionsController
       {
          if(s_Instance == null)
          {
-            s_Instance = new tibia.sessiondump.controller.SessiondumpHintActionsController();
+            s_Instance = new SessiondumpHintActionsController();
          }
          return s_Instance;
       }

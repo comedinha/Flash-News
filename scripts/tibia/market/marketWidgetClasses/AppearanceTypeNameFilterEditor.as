@@ -1,17 +1,17 @@
 package tibia.market.marketWidgetClasses
 {
-   import mx.containers.VBox;
-   import tibia.appearances.AppearanceType;
-   import mx.controls.TextInput;
    import flash.events.Event;
    import flash.events.KeyboardEvent;
-   import tibia.input.PreventWhitespaceInput;
    import flash.events.TextEvent;
-   import tibia.options.OptionsStorage;
    import flash.events.TimerEvent;
+   import flash.utils.Timer;
+   import mx.containers.VBox;
+   import mx.controls.TextInput;
    import shared.utility.StringHelper;
    import shared.utility.closure;
-   import flash.utils.Timer;
+   import tibia.appearances.AppearanceType;
+   import tibia.input.PreventWhitespaceInput;
+   import tibia.options.OptionsStorage;
    
    class AppearanceTypeNameFilterEditor extends VBox implements IAppearanceTypeFilterEditor
    {

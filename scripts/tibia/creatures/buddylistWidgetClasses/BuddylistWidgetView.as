@@ -1,20 +1,20 @@
 package tibia.creatures.buddylistWidgetClasses
 {
-   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
-   import flash.utils.Dictionary;
-   import tibia.creatures.buddylistClasses.Buddy;
    import flash.events.MouseEvent;
-   import mx.collections.Sort;
-   import mx.collections.ListCollectionView;
+   import flash.utils.Dictionary;
    import mx.collections.ICollectionView;
-   import tibia.creatures.BuddySet;
-   import mx.controls.listClasses.IListItemRenderer;
-   import tibia.input.gameaction.PrivateChatActionImpl;
-   import shared.controls.SmoothList;
-   import mx.containers.HBox;
    import mx.collections.IList;
-   import tibia.creatures.BuddylistWidget;
+   import mx.collections.ListCollectionView;
+   import mx.collections.Sort;
+   import mx.containers.HBox;
+   import mx.controls.listClasses.IListItemRenderer;
    import mx.core.ScrollPolicy;
+   import shared.controls.SmoothList;
+   import tibia.creatures.BuddySet;
+   import tibia.creatures.BuddylistWidget;
+   import tibia.creatures.buddylistClasses.Buddy;
+   import tibia.input.gameaction.PrivateChatActionImpl;
+   import tibia.sidebar.sideBarWidgetClasses.WidgetView;
    
    public class BuddylistWidgetView extends WidgetView
    {

@@ -1,13 +1,13 @@
 package tibia.tutorial
 {
-   import tibia.game.AssetBase;
-   import flash.net.URLLoader;
-   import tibia.game.SecureWebsiteService;
-   import tibia.game.SecureWebsiteServiceEvent;
    import flash.events.ErrorEvent;
-   import mx.resources.ResourceManager;
    import flash.events.Event;
    import flash.events.IOErrorEvent;
+   import flash.net.URLLoader;
+   import mx.resources.ResourceManager;
+   import tibia.game.AssetBase;
+   import tibia.game.SecureWebsiteService;
+   import tibia.game.SecureWebsiteServiceEvent;
    
    public class TutorialProgressServiceAsset extends AssetBase
    {

@@ -1,30 +1,30 @@
 package tibia.options
 {
+   import flash.events.Event;
    import flash.events.EventDispatcher;
-   import tibia.chat.NameFilterSet;
-   import tibia.chat.ChannelSet;
-   import mx.events.PropertyChangeEvent;
-   import shared.utility.XMLHelper;
-   import tibia.market.marketWidgetClasses.AppearanceTypeBrowser;
-   import tibia.chat.MessageFilterSet;
-   import tibia.help.TutorialHint;
-   import mx.events.PropertyChangeEventKind;
-   import tibia.input.mapping.MouseMapping;
-   import tibia.input.MappingSet;
-   import tibia.trade.npcTradeWidgetClasses.ObjectRefSelectorBase;
-   import tibia.container.BodyContainerView;
-   import tibia.market.MarketWidget;
-   import tibia.actionbar.ActionBarSet;
-   import tibia.creatures.BuddySet;
-   import tibia.creatures.StatusWidget;
    import flash.events.IEventDispatcher;
    import mx.events.CollectionEvent;
-   import tibia.appearances.AppearanceType;
-   import flash.events.Event;
-   import tibia.sidebar.SideBarSet;
+   import mx.events.PropertyChangeEvent;
+   import mx.events.PropertyChangeEventKind;
    import mx.utils.StringUtil;
-   import tibia.worldmap.widgetClasses.RendererImpl;
+   import shared.utility.XMLHelper;
+   import tibia.actionbar.ActionBarSet;
+   import tibia.appearances.AppearanceType;
+   import tibia.chat.ChannelSet;
+   import tibia.chat.MessageFilterSet;
+   import tibia.chat.NameFilterSet;
+   import tibia.container.BodyContainerView;
+   import tibia.creatures.BuddySet;
    import tibia.creatures.CreatureStorage;
+   import tibia.creatures.StatusWidget;
+   import tibia.help.TutorialHint;
+   import tibia.input.MappingSet;
+   import tibia.input.mapping.MouseMapping;
+   import tibia.market.MarketWidget;
+   import tibia.market.marketWidgetClasses.AppearanceTypeBrowser;
+   import tibia.sidebar.SideBarSet;
+   import tibia.trade.npcTradeWidgetClasses.ObjectRefSelectorBase;
+   import tibia.worldmap.widgetClasses.RendererImpl;
    
    public class OptionsStorage extends EventDispatcher
    {
@@ -423,7 +423,7 @@ package tibia.options
       
       private var m_CombatSecureMode:int = -1;
       
-      private var m_ServerUIHints:tibia.options.UiServerHints = null;
+      private var m_ServerUIHints:UiServerHints = null;
       
       private var m_ChannelSet:Vector.<ChannelSet>;
       
@@ -497,7 +497,7 @@ package tibia.options
             }
          }
          this.initialiseBuddySet();
-         this.m_ServerUIHints = new tibia.options.UiServerHints(this);
+         this.m_ServerUIHints = new UiServerHints(this);
          var _Event:PropertyChangeEvent = new PropertyChangeEvent(PropertyChangeEvent.PROPERTY_CHANGE);
          _Event.kind = PropertyChangeEventKind.UPDATE;
          _Event.property = "*";
@@ -1434,7 +1434,7 @@ package tibia.options
                         </market>);
       }
       
-      public function get uiHints() : tibia.options.UiServerHints
+      public function get uiHints() : UiServerHints
       {
          return this.m_ServerUIHints;
       }
@@ -1830,7 +1830,7 @@ package tibia.options
          this.m_StatusPlayerHealth = param1;
       }
       
-      private function set _460459880uiHints(param1:tibia.options.UiServerHints) : void
+      private function set _460459880uiHints(param1:UiServerHints) : void
       {
          this.m_ServerUIHints = param1;
          this.m_ServerUIHints.options = this;
@@ -2202,7 +2202,7 @@ package tibia.options
       }
       
       [Bindable(event="propertyChange")]
-      public function set uiHints(param1:tibia.options.UiServerHints) : void
+      public function set uiHints(param1:UiServerHints) : void
       {
          var _loc2_:Object = this.uiHints;
          if(_loc2_ !== param1)

@@ -1,10 +1,10 @@
 package tibia.sessiondump.hints
 {
-   import tibia.worldmap.WorldMapStorage;
    import tibia.chat.ChatStorage;
-   import tibia.sessiondump.controller.SessiondumpControllerHints;
-   import tibia.sessiondump.Sessiondump;
    import tibia.chat.logSessiondump;
+   import tibia.sessiondump.Sessiondump;
+   import tibia.sessiondump.controller.SessiondumpControllerHints;
+   import tibia.worldmap.WorldMapStorage;
    
    public class SessiondumpHintSkipTo extends SessiondumpHintBase
    {

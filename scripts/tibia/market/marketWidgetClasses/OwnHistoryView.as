@@ -1,18 +1,18 @@
 package tibia.market.marketWidgetClasses
 {
-   import mx.collections.ArrayCollection;
-   import mx.controls.DataGrid;
-   import mx.controls.dataGridClasses.DataGridColumn;
    import flash.events.Event;
-   import tibia.market.MarketWidget;
+   import mx.collections.ArrayCollection;
    import mx.collections.Sort;
    import mx.collections.SortField;
-   import mx.events.ListEvent;
-   import tibia.market.Offer;
-   import mx.controls.Label;
-   import shared.controls.CustomDataGrid;
-   import mx.core.ScrollPolicy;
    import mx.containers.BoxDirection;
+   import mx.controls.DataGrid;
+   import mx.controls.Label;
+   import mx.controls.dataGridClasses.DataGridColumn;
+   import mx.core.ScrollPolicy;
+   import mx.events.ListEvent;
+   import shared.controls.CustomDataGrid;
+   import tibia.market.MarketWidget;
+   import tibia.market.Offer;
    
    public class OwnHistoryView extends MarketComponent
    {

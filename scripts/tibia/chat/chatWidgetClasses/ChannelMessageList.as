@@ -1,19 +1,19 @@
 package tibia.chat.chatWidgetClasses
 {
-   import shared.controls.SmoothList;
    import flash.events.Event;
+   import flash.events.MouseEvent;
    import flash.events.TimerEvent;
    import flash.geom.Point;
-   import mx.core.IUIComponent;
-   import flash.events.MouseEvent;
+   import mx.collections.IList;
+   import mx.controls.Button;
    import mx.controls.listClasses.IListItemRenderer;
+   import mx.core.EdgeMetrics;
+   import mx.core.IUIComponent;
    import mx.effects.Effect;
    import mx.effects.Glow;
    import mx.effects.Sequence;
-   import mx.controls.Button;
-   import mx.collections.IList;
+   import shared.controls.SmoothList;
    import tibia.chat.ChannelMessage;
-   import mx.core.EdgeMetrics;
    import tibia.chat.MessageMode;
    
    public class ChannelMessageList extends SmoothList
