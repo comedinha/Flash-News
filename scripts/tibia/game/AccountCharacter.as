@@ -5,7 +5,7 @@ package tibia.game
    public class AccountCharacter implements IConnectionData
    {
       
-      public static const CLIENT_VERSION:uint = 2399;
+      public static const CLIENT_VERSION:uint = 2405;
       
       public static const CLIENT_PREVIEW_STATE:uint = 0;
       
