@@ -7,9 +7,9 @@ package
       
       private static var _embed_properties_______images_help_hint_04_vocationpaladin_png_278823:Class = en_US$TutorialHintWidget_properties__embed_properties_______images_help_hint_04_vocationpaladin_png_278823;
       
-      private static var _embed_properties_______images_help_hint_05_vocationsorcerer_png_1892993925:Class = en_US$TutorialHintWidget_properties__embed_properties_______images_help_hint_05_vocationsorcerer_png_1892993925;
-      
       private static var _embed_properties_______images_help_hint_06_vocationdruid_png_2116003747:Class = en_US$TutorialHintWidget_properties__embed_properties_______images_help_hint_06_vocationdruid_png_2116003747;
+      
+      private static var _embed_properties_______images_help_hint_05_vocationsorcerer_png_1892993925:Class = en_US$TutorialHintWidget_properties__embed_properties_______images_help_hint_05_vocationsorcerer_png_1892993925;
       
       private static var _embed_properties_______images_help_hint_01_alternativecontrols_png_1673767561:Class = en_US$TutorialHintWidget_properties__embed_properties_______images_help_hint_01_alternativecontrols_png_1673767561;
       

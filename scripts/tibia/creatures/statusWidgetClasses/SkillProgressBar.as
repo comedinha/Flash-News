@@ -568,10 +568,10 @@ package tibia.creatures.statusWidgetClasses
          var _loc3_:uint = 0;
          var _loc4_:uint = 0;
          var _loc5_:uint = 0;
-         var _loc1_:String = resourceManager.getString(BUNDLE,"TIP_XPGAIN_BASE",[(this.m_Character.experienceGainInfo.computeXpGainModifier() * 100).toFixed(0),(this.m_Character.experienceGainInfo.baseXpGain * 100).toFixed(0)]);
+         var _loc1_:String = resourceManager.getString(BUNDLE,"TIP_XPGAIN_BASE",[Math.floor(this.m_Character.experienceGainInfo.computeXpGainModifier() * 100).toFixed(0),Math.floor(this.m_Character.experienceGainInfo.baseXpGain * 100 + 0.5).toFixed(0)]);
          if(this.m_Character.experienceGainInfo.grindingAddend > 0)
          {
-            _loc1_ = _loc1_ + resourceManager.getString(BUNDLE,"TIP_XPGAIN_GRINDING",[(this.m_Character.experienceGainInfo.grindingAddend * 100).toFixed(0)]);
+            _loc1_ = _loc1_ + resourceManager.getString(BUNDLE,"TIP_XPGAIN_GRINDING",[Math.floor(this.m_Character.experienceGainInfo.grindingAddend * 100 + 0.5).toFixed(0)]);
          }
          if(this.m_Character.experienceGainInfo.remaingStoreXpBoostSeconds > 0)
          {
@@ -587,12 +587,12 @@ package tibia.creatures.statusWidgetClasses
             }
             else
             {
-               _loc1_ = _loc1_ + resourceManager.getString(BUNDLE,"TIP_XPGAIN_XPBOOST_PAUSED",[(this.m_Character.experienceGainInfo.storeBoostAddend * 100).toFixed(0)]);
+               _loc1_ = _loc1_ + resourceManager.getString(BUNDLE,"TIP_XPGAIN_XPBOOST_PAUSED",[Math.floor(this.m_Character.experienceGainInfo.storeBoostAddend * 100 + 0.5).toFixed(0)]);
             }
          }
          if(this.m_Character.experienceGainInfo.voucherAddend > 0)
          {
-            _loc1_ = _loc1_ + resourceManager.getString(BUNDLE,"TIP_XPGAIN_VOUCHER",[(this.m_Character.experienceGainInfo.voucherAddend * 100).toFixed(0)]);
+            _loc1_ = _loc1_ + resourceManager.getString(BUNDLE,"TIP_XPGAIN_VOUCHER",[Math.floor(this.m_Character.experienceGainInfo.voucherAddend * 100 + 0.5).toFixed(0)]);
          }
          if(this.m_Character.experienceGainInfo.huntingBoostFactor > 1)
          {

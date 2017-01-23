@@ -563,7 +563,7 @@ package tibia.network
       
       protected static const TYPE_SUMMON_OTHERS:int = 4;
       
-      public static const CLIENT_VERSION:uint = 2405;
+      public static const CLIENT_VERSION:uint = 2409;
       
       protected static const CATTACK:int = 161;
       
