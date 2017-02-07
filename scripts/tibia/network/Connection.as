@@ -69,7 +69,7 @@ package tibia.network
       
       protected static const CBUYOBJECT:int = 122;
       
-      public static const CLIENT_VERSION:uint = 2409;
+      public static const CLIENT_VERSION:uint = 2416;
       
       protected static const SPING:int = 29;
       
@@ -171,6 +171,8 @@ package tibia.network
       
       protected static const SCREATURESKULL:int = 144;
       
+      public static const MESSAGEDIALOG_PREY_ERROR:int = 21;
+      
       protected static const CGETCHANNELS:int = 151;
       
       protected static const SUNJUSTIFIEDPOINTS:int = 183;
@@ -189,8 +191,6 @@ package tibia.network
       
       protected static const CROTATESOUTH:int = 113;
       
-      public static const MESSAGEDIALOG_PREY_ERROR:int = 21;
-      
       protected static const CACCEPTTRADE:int = 127;
       
       protected static const SCHANNELS:int = 171;
@@ -204,6 +204,8 @@ package tibia.network
       public static const MESSAGEDIALOG_PREY_MESSAGE:int = 20;
       
       protected static const CBUYPREMIUMOFFER:int = 252;
+      
+      protected static const CLOOKTRADE:int = 126;
       
       protected static const SPRIVATECHANNEL:int = 173;
       
@@ -251,13 +253,13 @@ package tibia.network
       
       protected static const SPREMIUMSHOPOFFERS:int = 252;
       
-      protected static const CSELLOBJECT:int = 123;
-      
       protected static const CMOUNT:int = 212;
       
       protected static const CCLOSENPCTRADE:int = 124;
       
       protected static const SMARKETBROWSE:int = 249;
+      
+      protected static const CSELLOBJECT:int = 123;
       
       protected static const CMARKETBROWSE:int = 245;
       
@@ -266,6 +268,8 @@ package tibia.network
       protected static const SCOUNTEROFFER:int = 126;
       
       protected static const CFOLLOW:int = 162;
+      
+      protected static const SBUDDYGROUPDATA:int = 212;
       
       public static const MESSAGEDIALOG_IMBUING_STATION_NOT_FOUND:int = 3;
       
@@ -301,7 +305,7 @@ package tibia.network
       
       protected static const SCREATUREOUTFIT:int = 142;
       
-      public static const PROTOCOL_VERSION:int = 1101;
+      public static const PROTOCOL_VERSION:int = 1110;
       
       protected static const SAMBIENTE:int = 130;
       
@@ -341,8 +345,6 @@ package tibia.network
       
       protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + CHECKSUM_SIZE;
       
-      protected static const CINSPECTNPCTRADE:int = 121;
-      
       protected static const STOPROW:int = 101;
       
       protected static const SBOTTOMFLOOR:int = 191;
@@ -351,11 +353,13 @@ package tibia.network
       
       protected static const COPENPREMIUMSHOP:int = 250;
       
+      protected static const CINSPECTPLAYER:int = 206;
+      
       protected static const CUSEOBJECT:int = 130;
       
       protected static const CHECKSUM_SIZE:int = 4;
       
-      protected static const ERR_INVALID_MESSAGE:int = 3;
+      protected static const CLOOKNPCTRADE:int = 121;
       
       protected static const CINVITETOCHANNEL:int = 171;
       
@@ -364,6 +368,8 @@ package tibia.network
       protected static const ERR_INVALID_STATE:int = 4;
       
       protected static const SPREMIUMTRIGGER:int = 158;
+      
+      protected static const ERR_INVALID_MESSAGE:int = 3;
       
       protected static const CINVITETOPARTY:int = 163;
       
@@ -380,6 +386,10 @@ package tibia.network
       protected static const CSTOP:int = 105;
       
       protected static const SPLAYERINVENTORY:int = 245;
+      
+      protected static const SINSPECTIONSTATE:int = 119;
+      
+      protected static const CINSPECTOBJECT:int = 205;
       
       protected static const CMOVEOBJECT:int = 120;
       
@@ -415,11 +425,13 @@ package tibia.network
       
       protected static const CGOPATH:int = 100;
       
+      protected static const CLEAVEPARTY:int = 167;
+      
       protected static const SCHANGEONMAP:int = 107;
       
       protected static const CGOSOUTHEAST:int = 107;
       
-      protected static const CLEAVEPARTY:int = 167;
+      protected static const SINSPECTIONLIST:int = 118;
       
       private static const PING_RETRY_INTERVAL:uint = 5;
       
@@ -475,15 +487,13 @@ package tibia.network
       
       protected static const SRIGHTROW:int = 102;
       
-      protected static const CINSPECTTRADE:int = 126;
-      
       protected static const SEDITTEXT:int = 150;
       
       protected static const SOPENOWNCHANNEL:int = 178;
       
-      protected static const SGRAPHICALEFFECT:int = 131;
-      
       protected static const PAYLOADLENGTH_SIZE:int = 2;
+      
+      protected static const SGRAPHICALEFFECT:int = 131;
       
       protected static const CBUGREPORT:int = 230;
       

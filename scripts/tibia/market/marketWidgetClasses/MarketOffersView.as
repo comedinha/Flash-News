@@ -147,7 +147,7 @@ package tibia.market.marketWidgetClasses
             this.m_UISellOffers.dataProvider = this.m_SellOffersView;
             this.m_UISellOffers.dataTipFunction = this.createOfferToolTip;
             this.m_UISellOffers.draggableColumns = false;
-            this.m_UISellOffers.itemRenderer = new ClassFactory(CustomItemRenderer#1716);
+            this.m_UISellOffers.itemRenderer = new ClassFactory(CustomItemRenderer#1717);
             this.m_UISellOffers.percentHeight = 100;
             this.m_UISellOffers.percentWidth = 100;
             this.m_UISellOffers.resizableColumns = false;
@@ -176,7 +176,7 @@ package tibia.market.marketWidgetClasses
             this.m_UIBuyOffers.dataProvider = this.m_BuyOffersView;
             this.m_UIBuyOffers.dataTipFunction = this.createOfferToolTip;
             this.m_UIBuyOffers.draggableColumns = false;
-            this.m_UIBuyOffers.itemRenderer = new ClassFactory(CustomItemRenderer#1716);
+            this.m_UIBuyOffers.itemRenderer = new ClassFactory(CustomItemRenderer#1717);
             this.m_UIBuyOffers.percentHeight = 100;
             this.m_UIBuyOffers.percentWidth = 100;
             this.m_UIBuyOffers.resizableColumns = false;
@@ -295,11 +295,11 @@ import mx.controls.dataGridClasses.DataGridItemRenderer;
 import mx.events.ToolTipEvent;
 import tibia.market.Offer;
 
-class CustomItemRenderer#1716 extends DataGridItemRenderer
+class CustomItemRenderer#1717 extends DataGridItemRenderer
 {
     
    
-   function CustomItemRenderer#1716()
+   function CustomItemRenderer#1717()
    {
       super();
    }

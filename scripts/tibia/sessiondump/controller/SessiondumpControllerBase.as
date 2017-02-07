@@ -24,13 +24,13 @@ package tibia.sessiondump.controller
       
       protected static const SOUTFIT:int = 200;
       
+      protected static const CADDBUDDY:int = 220;
+      
       protected static const CSETTACTICS:int = 160;
       
       protected static const CPERFORMANCEMETRICS:int = 31;
       
       protected static const SSHOWMESSAGEDIALOG:int = 237;
-      
-      protected static const CADDBUDDY:int = 220;
       
       protected static const ERR_COULD_NOT_CONNECT:int = 5;
       
@@ -150,6 +150,8 @@ package tibia.sessiondump.controller
       
       protected static const CLOGIN:int = 10;
       
+      public static const MESSAGEDIALOG_PREY_ERROR:int = 21;
+      
       protected static const ERR_CONNECTION_LOST:int = 6;
       
       protected static const SUNJUSTIFIEDPOINTS:int = 183;
@@ -164,11 +166,9 @@ package tibia.sessiondump.controller
       
       protected static const SSNAPBACK:int = 181;
       
-      protected static const CROTATESOUTH:int = 113;
-      
       protected static const CGETCHANNELS:int = 151;
       
-      public static const MESSAGEDIALOG_PREY_ERROR:int = 21;
+      protected static const CROTATESOUTH:int = 113;
       
       protected static const CACCEPTTRADE:int = 127;
       
@@ -181,6 +181,8 @@ package tibia.sessiondump.controller
       public static const MESSAGEDIALOG_PREY_MESSAGE:int = 20;
       
       protected static const CBUYPREMIUMOFFER:int = 252;
+      
+      protected static const CLOOKTRADE:int = 126;
       
       protected static const SPRIVATECHANNEL:int = 173;
       
@@ -226,13 +228,13 @@ package tibia.sessiondump.controller
       
       protected static const SPREMIUMSHOPOFFERS:int = 252;
       
-      protected static const CSELLOBJECT:int = 123;
-      
       protected static const CMOUNT:int = 212;
       
       protected static const CCLOSENPCTRADE:int = 124;
       
       protected static const SMARKETBROWSE:int = 249;
+      
+      protected static const CSELLOBJECT:int = 123;
       
       protected static const CMARKETBROWSE:int = 245;
       
@@ -241,6 +243,8 @@ package tibia.sessiondump.controller
       protected static const SCOUNTEROFFER:int = 126;
       
       protected static const CFOLLOW:int = 162;
+      
+      protected static const SBUDDYGROUPDATA:int = 212;
       
       protected static const CEXCLUDEFROMCHANNEL:int = 172;
       
@@ -270,7 +274,7 @@ package tibia.sessiondump.controller
       
       protected static const CROTATEWEST:int = 114;
       
-      public static const PROTOCOL_VERSION:int = 1101;
+      public static const PROTOCOL_VERSION:int = 1110;
       
       protected static const SCREATUREOUTFIT:int = 142;
       
@@ -308,8 +312,6 @@ package tibia.sessiondump.controller
       
       protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + CHECKSUM_SIZE;
       
-      protected static const CINSPECTNPCTRADE:int = 121;
-      
       protected static const SCREATUREHEALTH:int = 140;
       
       protected static const STOPROW:int = 101;
@@ -320,6 +322,8 @@ package tibia.sessiondump.controller
       
       protected static const COPENPREMIUMSHOP:int = 250;
       
+      protected static const CINSPECTPLAYER:int = 206;
+      
       protected static const CUSEOBJECT:int = 130;
       
       protected static const ERR_INVALID_MESSAGE:int = 3;
@@ -328,9 +332,11 @@ package tibia.sessiondump.controller
       
       protected static const CINVITETOCHANNEL:int = 171;
       
-      protected static const CUSETWOOBJECTS:int = 131;
+      protected static const CLOOKNPCTRADE:int = 121;
       
       protected static const ERR_INVALID_STATE:int = 4;
+      
+      protected static const CUSETWOOBJECTS:int = 131;
       
       protected static const SPREMIUMTRIGGER:int = 158;
       
@@ -349,6 +355,10 @@ package tibia.sessiondump.controller
       protected static const CSTOP:int = 105;
       
       protected static const SPLAYERINVENTORY:int = 245;
+      
+      protected static const CINSPECTOBJECT:int = 205;
+      
+      protected static const SINSPECTIONSTATE:int = 119;
       
       protected static const CMOVEOBJECT:int = 120;
       
@@ -389,6 +399,8 @@ package tibia.sessiondump.controller
       protected static const SCHANGEONMAP:int = 107;
       
       protected static const CGOSOUTHEAST:int = 107;
+      
+      protected static const SINSPECTIONLIST:int = 118;
       
       protected static const CEQUIPOBJECT:int = 119;
       
@@ -441,8 +453,6 @@ package tibia.sessiondump.controller
       protected static const PAYLOADLENGTH_SIZE:int = 2;
       
       protected static const SRIGHTROW:int = 102;
-      
-      protected static const CINSPECTTRADE:int = 126;
       
       protected static const SEDITTEXT:int = 150;
       

@@ -7,6 +7,8 @@ package tibia.creatures.battlelistWidgetClasses
    import tibia.creatures.Creature;
    import tibia.creatures.CreatureStorage;
    import tibia.game.ContextMenuBase;
+   import tibia.game.MessageWidget;
+   import tibia.game.Tibia11NagWidget;
    import tibia.input.gameaction.BuddylistActionImpl;
    import tibia.input.gameaction.NameFilterActionImpl;
    import tibia.input.gameaction.PartyActionImpl;
@@ -429,6 +431,11 @@ package tibia.creatures.battlelistWidgetClasses
                   case PARTY_MEMBER_SEXP_OFF:
                }
             }
+            createTextItem(resourceManager.getString(BUNDLE,"CTX_INSPECT_CHARACTER",[this.m_Creature.name]),function(param1:*):void
+            {
+               var _loc2_:MessageWidget = new Tibia11NagWidget();
+               _loc2_.show();
+            });
             createSeparatorItem();
          }
          if(this.m_Creature != null)

@@ -28,6 +28,7 @@ package
             "DLG_CONNECTING_TEXT":"Connecting to the game server.",
             "TOOLTIP_CURRENCY_BONUS_REROLLS":"Bonus Rerolls",
             "DLG_CHANGE_CHARACTER_NO_SELECTION_TITLE":"Error",
+            "DLG_TIBIA11_ONLY_TEXT":"<p>This feature is only available for Tibia 11.<br>If you like to use this feature, please download and install the Tibia 11 client.</p><br><p align=\"center\"><a target=\"_blank\" href=\"{0}\">&gt; Click here to download the installer. &lt;</a></p>",
             "TOOLTIP_CURRENCY_GOLD_BALANCE":"Cash: {0} gold\nBank: {1} gold",
             "DLG_CLIENT_CHANGE_TEXT":"This character lives on a world that needs a different client. Do you want to switch the client?",
             "DLG_DEAD_TEXT_UNFAIR":"Alas! Brave adventurer, you have met a sad fate. <br>But do not despair, for the gods will bring you back into the world in exchange for a small sacrifice.<br><br>This death penalty has been reduced by {0}% because it was an unfair fight.<br><br>Simply click on \'<b>Okay</b>\' to resume your journeys in Tibia or on \'<b>Cancel</b>\' to get to your character list! <br><br>Click on \'<b>Store</b>\' to resume your journeys and to shop blessings to ease the pain if you are unfortunate enough to lose another fight!",
@@ -44,12 +45,14 @@ package
             "DLG_ERROR_TEXT_GENERAL":"{0}",
             "DLG_DEAD_TEXT_FAIR":"Alas! Brave adventurer, you have met a sad fate. <br>But do not despair, for the gods will bring you back into the world in exchange for a small sacrifice.<br><br>Simply click on \'<b>Okay</b>\' to resume your journeys in Tibia or on \'<b>Cancel</b>\' to get to your character list! <br><br>Click on \'<b>Store</b>\' to resume your journeys and to shop blessings to ease the pain if you are unfortunate enough to lose another fight!",
             "DLG_LOGINWAIT_TEXT":"{0}\n\nTrying to reconnect in {1}.",
+            "DLG_TIBIA11_ONLY_TITLE":"Feature not Available for Flash Client",
             "DLG_CONNECTION_LOST_TEXT":"{0}\n\nWaiting another {1} before closing.",
             "DLG_CONNECTION_LOST_TITLE":"Warning",
             "DLG_CONNECTION_LOST_MESSAGE":"Connection lost.",
             "DLG_LOGINERROR_TITLE":"Sorry",
             "DLG_CONNECTIONLOST_TITLE":"Connection lost",
-            "DLG_DEAD_TEXT_NOPENALTY":"Alas! Brave adventurer, you have met a sad fate. <br>But in this dark hour fortune smiled on you and the gods will bring you back into the world for free.<br><br>You lost the battle, but you did not lose any items, experience or skill points. You also kept any possible blessings or an Amulet of Loss you may have worn.<br><br>Simply click on \'<b>Okay</b>\' to resume your journeys in Tibia or on \'<b>Cancel</b>\' to get to your character list! <br><br>If you are not protected by any blessings but like to get some in case you are unfortunate enough to lose another fight, click on \'<b>Store</b>\' to shop for them and to resume your journeys! "
+            "DLG_DEAD_TEXT_NOPENALTY":"Alas! Brave adventurer, you have met a sad fate. <br>But in this dark hour fortune smiled on you and the gods will bring you back into the world for free.<br><br>You lost the battle, but you did not lose any items, experience or skill points. You also kept any possible blessings or an Amulet of Loss you may have worn.<br><br>Simply click on \'<b>Okay</b>\' to resume your journeys in Tibia or on \'<b>Cancel</b>\' to get to your character list! <br><br>If you are not protected by any blessings but like to get some in case you are unfortunate enough to lose another fight, click on \'<b>Store</b>\' to shop for them and to resume your journeys! ",
+            "DLG_TIBIA11_ONLY_LINK":"http://static.tibia.com/download/Tibia_Setup.exe"
          };
          return _loc1_;
       }

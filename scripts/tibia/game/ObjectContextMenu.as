@@ -340,6 +340,14 @@ package tibia.game
                }
             });
          }
+         if(LookObj != null && LookObj.type.isTakeable)
+         {
+            createTextItem(resourceManager.getString(BUNDLE,"CTX_OBJECT_INSPECT_OBJECT"),function(param1:*):void
+            {
+               var _loc2_:MessageWidget = new Tibia11NagWidget();
+               _loc2_.show();
+            });
+         }
          if(UseObj != null && (UseObj.type.isContainer || UseObj.type.defaultAction == ACTION_OPEN))
          {
             if(this.m_Absolute.x == 65535 && this.m_Absolute.y >= 64)
@@ -572,6 +580,11 @@ package tibia.game
                         createTextItem(resourceManager.getString(BUNDLE,"CTX_PARTY_INVITE",[this.m_CreatureTarget.name]),closure(null,PartyAction,PartyActionImpl.INVITE,this.m_CreatureTarget));
                      }
                }
+               createTextItem(resourceManager.getString(BUNDLE,"CTX_INSPECT_CHARACTER",[this.m_CreatureTarget.name]),function(param1:*):void
+               {
+                  var _loc2_:MessageWidget = new Tibia11NagWidget();
+                  _loc2_.show();
+               });
             }
             createSeparatorItem();
             if(this.m_CreatureTarget.isReportTypeAllowed(Type.REPORT_NAME))
@@ -625,6 +638,11 @@ package tibia.game
             {
                createTextItem(resourceManager.getString(BUNDLE,"CTX_PARTY_LEAVE"),closure(null,PartyAction,PartyActionImpl.LEAVE,null));
             }
+            createTextItem(resourceManager.getString(BUNDLE,"CTX_INSPECT_CHARACTER",[this.m_CreatureTarget.name]),function(param1:*):void
+            {
+               var _loc2_:MessageWidget = new Tibia11NagWidget();
+               _loc2_.show();
+            });
          }
          createSeparatorItem();
          if(this.m_CreatureTarget != null)

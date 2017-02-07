@@ -8,6 +8,8 @@ package tibia.creatures.buddylistWidgetClasses
    import tibia.creatures.EditBuddyWidget;
    import tibia.creatures.buddylistClasses.Buddy;
    import tibia.game.ContextMenuBase;
+   import tibia.game.MessageWidget;
+   import tibia.game.Tibia11NagWidget;
    import tibia.input.gameaction.BuddylistActionImpl;
    import tibia.input.gameaction.PrivateChatActionImpl;
    import tibia.reporting.ReportWidget;
@@ -97,6 +99,11 @@ package tibia.creatures.buddylistWidgetClasses
             createTextItem(resourceManager.getString(BUNDLE,!!_Widget.showOffline?"CTX_HIDE_OFFLINE":"CTX_SHOW_OFFLINE"),function(param1:*):void
             {
                _Widget.showOffline = !_Widget.showOffline;
+            });
+            createTextItem(resourceManager.getString(BUNDLE,"CTX_SHOW_GROUPED"),function(param1:*):void
+            {
+               var _loc2_:MessageWidget = new Tibia11NagWidget();
+               _loc2_.show();
             });
          }
          createSeparatorItem();

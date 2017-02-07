@@ -22,7 +22,7 @@ package tibia.sessiondump
       
       protected static const ERR_INVALID_STATE:int = 4;
       
-      public static const PROTOCOL_VERSION:int = 1101;
+      public static const PROTOCOL_VERSION:int = 1110;
       
       protected static const PAYLOADLENGTH_SIZE:int = 2;
       

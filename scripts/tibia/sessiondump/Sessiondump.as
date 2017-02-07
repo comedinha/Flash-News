@@ -43,6 +43,8 @@ package tibia.sessiondump
       
       protected static const SOUTFIT:int = 200;
       
+      protected static const CADDBUDDY:int = 220;
+      
       protected static const SKILL_FIGHTCLUB:int = 10;
       
       protected static const NPC_SPEECH_NONE:uint = 0;
@@ -55,7 +57,7 @@ package tibia.sessiondump
       
       protected static const SSHOWMESSAGEDIALOG:int = 237;
       
-      protected static const CADDBUDDY:int = 220;
+      protected static const PARTY_LEADER_SEXP_ACTIVE:int = 6;
       
       protected static const RISKINESS_DANGEROUS:int = 1;
       
@@ -63,9 +65,7 @@ package tibia.sessiondump
       
       protected static const ERR_COULD_NOT_CONNECT:int = 5;
       
-      protected static const NPC_SPEECH_TRAVEL:uint = 5;
-      
-      protected static const PARTY_LEADER_SEXP_ACTIVE:int = 6;
+      protected static const GUILD_NONE:int = 0;
       
       protected static const SSETTACTICS:int = 167;
       
@@ -109,8 +109,6 @@ package tibia.sessiondump
       
       protected static const SKILL_EXPERIENCE:int = 0;
       
-      protected static const GUILD_NONE:int = 0;
-      
       protected static const SKILL_MANA_LEECH_CHANCE:int = 23;
       
       protected static const CLOOKATCREATURE:int = 141;
@@ -146,6 +144,8 @@ package tibia.sessiondump
       protected static const ERR_INTERNAL:int = 0;
       
       protected static const NPC_SPEECH_QUEST:uint = 3;
+      
+      protected static const NPC_SPEECH_TRAVEL:uint = 5;
       
       protected static const CCANCEL:int = 190;
       
@@ -241,6 +241,8 @@ package tibia.sessiondump
       
       protected static const CLOGIN:int = 10;
       
+      public static const MESSAGEDIALOG_PREY_ERROR:int = 21;
+      
       protected static const ERR_CONNECTION_LOST:int = 6;
       
       protected static const SUNJUSTIFIEDPOINTS:int = 183;
@@ -257,15 +259,13 @@ package tibia.sessiondump
       
       protected static const SSNAPBACK:int = 181;
       
+      protected static const CGETCHANNELS:int = 151;
+      
       protected static const PARTY_MEMBER_SEXP_OFF:int = 3;
       
       public static const SCREATUREDATA:int = 3;
       
       protected static const CROTATESOUTH:int = 113;
-      
-      protected static const CGETCHANNELS:int = 151;
-      
-      public static const MESSAGEDIALOG_PREY_ERROR:int = 21;
       
       protected static const GUILD_WAR_ALLY:int = 1;
       
@@ -291,7 +291,7 @@ package tibia.sessiondump
       
       protected static const CBUYPREMIUMOFFER:int = 252;
       
-      protected static const NPC_SPEECH_QUESTTRADER:uint = 4;
+      protected static const CLOOKTRADE:int = 126;
       
       protected static const SPRIVATECHANNEL:int = 173;
       
@@ -326,6 +326,8 @@ package tibia.sessiondump
       protected static const SPREYREROLLPRICE:int = 233;
       
       public static const SKEYFRAMEEND:int = 2;
+      
+      protected static const NPC_SPEECH_QUESTTRADER:uint = 4;
       
       protected static const CTRADEOBJECT:int = 125;
       
@@ -363,17 +365,17 @@ package tibia.sessiondump
       
       protected static const STATE_MANA_SHIELD:int = 4;
       
-      protected static const CSELLOBJECT:int = 123;
-      
       protected static const CMOUNT:int = 212;
       
       protected static const CCLOSENPCTRADE:int = 124;
       
       protected static const SMARKETBROWSE:int = 249;
       
-      protected static const STATE_CURSED:int = 11;
+      protected static const CSELLOBJECT:int = 123;
       
       protected static const CMARKETBROWSE:int = 245;
+      
+      protected static const STATE_CURSED:int = 11;
       
       protected static const STATE_FREEZING:int = 9;
       
@@ -388,6 +390,8 @@ package tibia.sessiondump
       protected static const CFOLLOW:int = 162;
       
       protected static const STATE_POISONED:int = 0;
+      
+      protected static const SBUDDYGROUPDATA:int = 212;
       
       protected static const SKILL_LIFE_LEECH_CHANCE:int = 21;
       
@@ -435,7 +439,7 @@ package tibia.sessiondump
       
       protected static const CROTATEWEST:int = 114;
       
-      public static const PROTOCOL_VERSION:int = 1101;
+      public static const PROTOCOL_VERSION:int = 1110;
       
       protected static const SCREATUREOUTFIT:int = 142;
       
@@ -501,8 +505,6 @@ package tibia.sessiondump
       
       protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + CHECKSUM_SIZE;
       
-      protected static const CINSPECTNPCTRADE:int = 121;
-      
       protected static const SCREATUREHEALTH:int = 140;
       
       protected static const STOPROW:int = 101;
@@ -512,6 +514,8 @@ package tibia.sessiondump
       protected static const CTURNOBJECT:int = 133;
       
       protected static const COPENPREMIUMSHOP:int = 250;
+      
+      protected static const CINSPECTPLAYER:int = 206;
       
       private static const ERROR_SESSIONDUMP_CONNECTION_ERROR:uint = 1;
       
@@ -523,11 +527,13 @@ package tibia.sessiondump
       
       protected static const CINVITETOCHANNEL:int = 171;
       
-      protected static const CUSETWOOBJECTS:int = 131;
+      protected static const CLOOKNPCTRADE:int = 121;
       
       protected static const STATE_BLEEDING:int = 15;
       
       protected static const ERR_INVALID_STATE:int = 4;
+      
+      protected static const CUSETWOOBJECTS:int = 131;
       
       protected static const SPREMIUMTRIGGER:int = 158;
       
@@ -556,6 +562,10 @@ package tibia.sessiondump
       protected static const CSTOP:int = 105;
       
       protected static const SPLAYERINVENTORY:int = 245;
+      
+      protected static const CINSPECTOBJECT:int = 205;
+      
+      protected static const SINSPECTIONSTATE:int = 119;
       
       protected static const CMOVEOBJECT:int = 120;
       
@@ -605,13 +615,15 @@ package tibia.sessiondump
       
       protected static const CGOSOUTHEAST:int = 107;
       
+      protected static const SINSPECTIONLIST:int = 118;
+      
+      protected static const SKILL_EXPERIENCE_GAIN:int = -2;
+      
       protected static const CEQUIPOBJECT:int = 119;
       
       protected static const SCREATUREPVPHELPERS:int = 148;
       
       protected static const PROFESSION_MASK_SORCERER:int = 1 << PROFESSION_SORCERER;
-      
-      protected static const SKILL_EXPERIENCE_GAIN:int = -2;
       
       protected static const COPENCHANNEL:int = 170;
       
@@ -684,8 +696,6 @@ package tibia.sessiondump
       protected static const TYPE_PLAYER:int = 0;
       
       protected static const SRIGHTROW:int = 102;
-      
-      protected static const CINSPECTTRADE:int = 126;
       
       protected static const SKILL_MANA:int = 5;
       

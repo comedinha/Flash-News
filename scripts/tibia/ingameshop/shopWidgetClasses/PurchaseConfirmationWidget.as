@@ -34,9 +34,10 @@ package tibia.ingameshop.shopWidgetClasses
       
       override protected function createChildren() : void
       {
+         var _loc1_:OfferDisplayBlock = null;
          var _loc2_:HBox = null;
          super.createChildren();
-         var _loc1_:OfferDisplayBlock = new OfferDisplayBlock();
+         _loc1_ = new OfferDisplayBlock();
          _loc1_.percentWidth = 100;
          _loc1_.offer = this.m_Offer;
          text = resourceManager.getString(BUNDLE,"LBL_PURCHASE_CONFIRMATION",[this.m_Offer.name]);

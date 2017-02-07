@@ -28,6 +28,7 @@ package
             "CTX_SORT_NAME":"Sort by Name",
             "CTX_HIDE_OFFLINE":"Hide Offline VIPs",
             "CTX_REPORT_NAME":"Report Name",
+            "CTX_SHOW_GROUPED":"Show groups (Tibia 11 only)",
             "CTX_REMOVE_BUDDY":"Remove {0}",
             "CTX_SHOW_OFFLINE":"Show Offline VIPs"
          };

@@ -410,7 +410,7 @@ package tibia.options.configurationWidgetClasses
             _loc6_.headerText = resourceManager.getString(ConfigurationWidget.BUNDLE,"HOTKEY_COLUMN_FIRST_BINDING");
             _loc6_.dataField = "firstBinding";
             _loc6_.editable = false;
-            _loc6_.itemRenderer = new ClassFactory(CustomItemRenderer#1628);
+            _loc6_.itemRenderer = new ClassFactory(CustomItemRenderer#1629);
             _loc6_.sortable = false;
             _loc6_.width = 126;
             _loc6_.setStyle("textAlign","center");
@@ -419,7 +419,7 @@ package tibia.options.configurationWidgetClasses
             _loc6_.headerText = resourceManager.getString(ConfigurationWidget.BUNDLE,"HOTKEY_COLUMN_SECOND_BINDING");
             _loc6_.dataField = "secondBinding";
             _loc6_.editable = false;
-            _loc6_.itemRenderer = new ClassFactory(CustomItemRenderer#1628);
+            _loc6_.itemRenderer = new ClassFactory(CustomItemRenderer#1629);
             _loc6_.sortable = false;
             _loc6_.width = 126;
             _loc6_.setStyle("textAlign","center");
@@ -994,11 +994,11 @@ import mx.controls.dataGridClasses.DataGridItemRenderer;
 import mx.controls.dataGridClasses.DataGridListData;
 import tibia.input.mapping.Binding;
 
-class CustomItemRenderer#1628 extends DataGridItemRenderer
+class CustomItemRenderer#1629 extends DataGridItemRenderer
 {
     
    
-   function CustomItemRenderer#1628()
+   function CustomItemRenderer#1629()
    {
       super();
    }

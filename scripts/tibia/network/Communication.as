@@ -255,6 +255,8 @@ package tibia.network
       
       protected static const PROFESSION_MASK_NONE:int = 1 << PROFESSION_NONE;
       
+      protected static const CLOOKTRADE:int = 126;
+      
       protected static const SCHANNELS:int = 171;
       
       protected static const SOPENCHANNEL:int = 172;
@@ -311,6 +313,8 @@ package tibia.network
       
       protected static const CFOLLOW:int = 162;
       
+      protected static const SBUDDYGROUPDATA:int = 212;
+      
       protected static const SKILL_LIFE_LEECH_CHANCE:int = 21;
       
       protected static const SMARKETENTER:int = 246;
@@ -363,6 +367,8 @@ package tibia.network
       
       protected static const STATE_BLEEDING:int = 15;
       
+      protected static const CINSPECTPLAYER:int = 206;
+      
       protected static const STATE_DAZZLED:int = 10;
       
       protected static const CUSEOBJECT:int = 130;
@@ -388,6 +394,10 @@ package tibia.network
       protected static const STATE_ELECTRIFIED:int = 2;
       
       protected static const SPLAYERGOODS:int = 123;
+      
+      protected static const SINSPECTIONSTATE:int = 119;
+      
+      protected static const CINSPECTOBJECT:int = 205;
       
       protected static const CMOVEOBJECT:int = 120;
       
@@ -416,6 +426,8 @@ package tibia.network
       protected static const CGOSOUTHEAST:int = 107;
       
       protected static const CLEAVEPARTY:int = 167;
+      
+      protected static const SINSPECTIONLIST:int = 118;
       
       protected static const CEQUIPOBJECT:int = 119;
       
@@ -507,11 +519,11 @@ package tibia.network
       
       protected static const SCLOSECHANNEL:int = 179;
       
-      protected static const PAYLOAD_POS:int = HEADER_POS + HEADER_SIZE;
+      protected static const NPC_SPEECH_QUEST:uint = 3;
       
       protected static const SOWNOFFER:int = 125;
       
-      protected static const NPC_SPEECH_QUEST:uint = 3;
+      protected static const PAYLOAD_POS:int = HEADER_POS + HEADER_SIZE;
       
       protected static const SKILL_GOSTRENGTH:int = 6;
       
@@ -563,7 +575,7 @@ package tibia.network
       
       protected static const TYPE_SUMMON_OTHERS:int = 4;
       
-      public static const CLIENT_VERSION:uint = 2409;
+      public static const CLIENT_VERSION:uint = 2416;
       
       protected static const CATTACK:int = 161;
       
@@ -741,7 +753,7 @@ package tibia.network
       
       protected static const SEDITGUILDMESSAGE:int = 174;
       
-      public static const PROTOCOL_VERSION:int = 1101;
+      public static const PROTOCOL_VERSION:int = 1110;
       
       protected static const SAMBIENTE:int = 130;
       
@@ -755,9 +767,9 @@ package tibia.network
       
       protected static const SKILL_STAMINA:int = 17;
       
-      protected static const CONNECTION_STATE_DISCONNECTED:int = 0;
-      
       protected static const SKILL_FIGHTSHIELD:int = 8;
+      
+      protected static const CONNECTION_STATE_DISCONNECTED:int = 0;
       
       protected static const SKILL_FIGHTDISTANCE:int = 9;
       
@@ -773,8 +785,6 @@ package tibia.network
       
       protected static const PK_PLAYERKILLER:int = 4;
       
-      protected static const CINSPECTNPCTRADE:int = 121;
-      
       protected static const SBOTTOMFLOOR:int = 191;
       
       protected static const STOPROW:int = 101;
@@ -784,6 +794,8 @@ package tibia.network
       protected static const CTURNOBJECT:int = 133;
       
       protected static const CINVITETOCHANNEL:int = 171;
+      
+      protected static const CLOOKNPCTRADE:int = 121;
       
       protected static const PATH_ERROR_INTERNAL:int = -5;
       
@@ -870,8 +882,6 @@ package tibia.network
       protected static const SRIGHTROW:int = 102;
       
       protected static const SGRAPHICALEFFECT:int = 131;
-      
-      protected static const CINSPECTTRADE:int = 126;
       
       protected static const CBUGREPORT:int = 230;
       
@@ -1816,6 +1826,10 @@ package tibia.network
             "ID":ChatStorage.NPC_CHANNEL_ID,
             "name":ChatStorage.NPC_CHANNEL_LABEL
          });
+         _loc2_.addItem({
+            "ID":ChatStorage.LOOT_CHANNEL_ID,
+            "name":ChatStorage.LOOT_CHANNEL_LABEL
+         });
          _loc4_ = new ChannelSelectionWidget();
          _loc4_.channels = _loc2_;
          _loc4_.show();
@@ -2019,33 +2033,10 @@ package tibia.network
          ImbuingManager.getInstance().closeImbuingWindow();
       }
       
-      protected function readSPLAYERSKILLS(param1:ByteArray) : void
+      protected function readSINSPECTIONSTATE(param1:ByteArray) : void
       {
-         var _loc2_:int = 0;
-         var _loc3_:Number = NaN;
-         var _loc4_:Number = NaN;
-         var _loc5_:Number = NaN;
-         var _loc6_:Array = null;
-         var _loc7_:Array = null;
-         _loc2_ = 0;
-         _loc3_ = 0;
-         _loc4_ = 0;
-         _loc5_ = 0;
-         _loc6_ = [SKILL_FIGHTFIST,SKILL_FIGHTCLUB,SKILL_FIGHTSWORD,SKILL_FIGHTAXE,SKILL_FIGHTDISTANCE,SKILL_FIGHTSHIELD,SKILL_FISHING];
-         _loc7_ = [SKILL_CRITICAL_HIT_CHANCE,SKILL_CRITICAL_HIT_DAMAGE,SKILL_LIFE_LEECH_CHANCE,SKILL_LIFE_LEECH_AMOUNT,SKILL_MANA_LEECH_CHANCE,SKILL_MANA_LEECH_AMOUNT];
-         for each(_loc2_ in _loc6_)
-         {
-            _loc3_ = param1.readUnsignedShort();
-            _loc4_ = param1.readUnsignedShort();
-            _loc5_ = param1.readUnsignedByte();
-            this.m_Player.setSkill(_loc2_,_loc3_,_loc4_,_loc5_);
-         }
-         for each(_loc2_ in _loc7_)
-         {
-            _loc3_ = param1.readUnsignedShort();
-            _loc4_ = param1.readUnsignedShort();
-            this.m_Player.setSkill(_loc2_,_loc3_,_loc4_,0);
-         }
+         param1.readUnsignedInt();
+         param1.readUnsignedByte();
       }
       
       protected function readSSTOREBUTTONINDICATORS(param1:ByteArray) : void
@@ -2079,6 +2070,35 @@ package tibia.network
          {
             handleSendError(CEDITLIST,e);
             return;
+         }
+      }
+      
+      protected function readSPLAYERSKILLS(param1:ByteArray) : void
+      {
+         var _loc2_:int = 0;
+         var _loc3_:Number = NaN;
+         var _loc4_:Number = NaN;
+         var _loc5_:Number = NaN;
+         var _loc6_:Array = null;
+         var _loc7_:Array = null;
+         _loc2_ = 0;
+         _loc3_ = 0;
+         _loc4_ = 0;
+         _loc5_ = 0;
+         _loc6_ = [SKILL_FIGHTFIST,SKILL_FIGHTCLUB,SKILL_FIGHTSWORD,SKILL_FIGHTAXE,SKILL_FIGHTDISTANCE,SKILL_FIGHTSHIELD,SKILL_FISHING];
+         _loc7_ = [SKILL_CRITICAL_HIT_CHANCE,SKILL_CRITICAL_HIT_DAMAGE,SKILL_LIFE_LEECH_CHANCE,SKILL_LIFE_LEECH_AMOUNT,SKILL_MANA_LEECH_CHANCE,SKILL_MANA_LEECH_AMOUNT];
+         for each(_loc2_ in _loc6_)
+         {
+            _loc3_ = param1.readUnsignedShort();
+            _loc4_ = param1.readUnsignedShort();
+            _loc5_ = param1.readUnsignedByte();
+            this.m_Player.setSkill(_loc2_,_loc3_,_loc4_,_loc5_);
+         }
+         for each(_loc2_ in _loc7_)
+         {
+            _loc3_ = param1.readUnsignedShort();
+            _loc4_ = param1.readUnsignedShort();
+            this.m_Player.setSkill(_loc2_,_loc3_,_loc4_,0);
          }
       }
       
@@ -2177,19 +2197,28 @@ package tibia.network
          var _loc5_:uint = 0;
          var _loc6_:Boolean = false;
          var _loc7_:uint = 0;
-         var _loc8_:OptionsStorage = null;
-         var _loc9_:BuddySet = null;
+         var _loc8_:uint = 0;
+         var _loc9_:int = 0;
+         var _loc10_:OptionsStorage = null;
+         var _loc11_:BuddySet = null;
          _loc2_ = param1.readUnsignedInt();
          _loc3_ = StringHelper.s_ReadLongStringFromByteArray(param1,Creature.MAX_NAME_LENGHT);
          _loc4_ = StringHelper.s_ReadLongStringFromByteArray(param1,Creature.MAX_DESCRIPTION_LENGHT);
          _loc5_ = param1.readUnsignedInt();
          _loc6_ = param1.readBoolean();
          _loc7_ = param1.readByte();
-         _loc8_ = Tibia.s_GetOptions();
-         _loc9_ = null;
-         if(_loc8_ != null && (_loc9_ = _loc8_.getBuddySet(BuddySet.DEFAULT_SET)) != null)
+         _loc8_ = param1.readByte();
+         _loc9_ = 0;
+         while(_loc9_ < _loc8_)
          {
-            _loc9_.updateBuddy(_loc2_,_loc3_,_loc4_,_loc5_,_loc6_,_loc7_);
+            param1.readByte();
+            _loc9_++;
+         }
+         _loc10_ = Tibia.s_GetOptions();
+         _loc11_ = null;
+         if(_loc10_ != null && (_loc11_ = _loc10_.getBuddySet(BuddySet.DEFAULT_SET)) != null)
+         {
+            _loc11_.updateBuddy(_loc2_,_loc3_,_loc4_,_loc5_,_loc6_,_loc7_);
          }
       }
       
@@ -2848,13 +2877,9 @@ package tibia.network
          this.m_ChatStorage.addChannel(_loc2_,_loc2_,MessageMode.MESSAGE_PRIVATE_TO);
       }
       
-      protected function readSINGAMESHOPERROR(param1:ByteArray) : void
+      protected function readSINSPECTIONLIST(param1:ByteArray) : void
       {
-         var _loc2_:int = 0;
-         var _loc3_:String = null;
-         _loc2_ = param1.readUnsignedByte();
-         _loc3_ = StringHelper.s_ReadLongStringFromByteArray(param1);
-         IngameShopManager.getInstance().propagateError(_loc3_,_loc2_);
+         throw new Error("Connection.readSINSPECTIONLIST: Invalid Message for Flash-Client.");
       }
       
       protected function readSQUESTLINE(param1:ByteArray) : void
@@ -2983,6 +3008,15 @@ package tibia.network
             _loc5_.setSkill(SKILL_GOSTRENGTH,_loc4_,_loc3_,0);
          }
          this.m_CreatureStorage.invalidateOpponents();
+      }
+      
+      protected function readSINGAMESHOPERROR(param1:ByteArray) : void
+      {
+         var _loc2_:int = 0;
+         var _loc3_:String = null;
+         _loc2_ = param1.readUnsignedByte();
+         _loc3_ = StringHelper.s_ReadLongStringFromByteArray(param1);
+         IngameShopManager.getInstance().propagateError(_loc3_,_loc2_);
       }
       
       public function sendCMARKETCANCEL(param1:Offer) : void
@@ -3194,7 +3228,7 @@ package tibia.network
          try
          {
             b = this.m_ServerConnection.messageWriter.createMessage();
-            b.writeByte(CINSPECTTRADE);
+            b.writeByte(CLOOKTRADE);
             b.writeByte(a_Side);
             b.writeByte(a_Position);
             this.m_ServerConnection.messageWriter.finishMessage();
@@ -3202,7 +3236,7 @@ package tibia.network
          }
          catch(e:Error)
          {
-            handleSendError(CINSPECTTRADE,e);
+            handleSendError(CLOOKTRADE,e);
             return;
          }
       }
@@ -3269,6 +3303,8 @@ package tibia.network
          var _loc3_:Number = NaN;
          var _loc4_:Number = NaN;
          var _loc5_:Number = NaN;
+         var _loc6_:Number = NaN;
+         var _loc7_:Number = NaN;
          var _loc8_:Number = NaN;
          var _loc9_:Number = NaN;
          var _loc10_:Number = NaN;
@@ -3294,8 +3330,8 @@ package tibia.network
          _loc4_ = 1;
          _loc5_ = param1.readUnsignedByte();
          this.m_Player.setSkill(SKILL_LEVEL,_loc3_,_loc4_,_loc5_);
-         var _loc6_:Number = param1.readUnsignedShort() / 100;
-         var _loc7_:Number = param1.readUnsignedShort() / 100;
+         _loc6_ = param1.readUnsignedShort() / 100;
+         _loc7_ = param1.readUnsignedShort() / 100;
          _loc8_ = param1.readUnsignedShort() / 100;
          _loc9_ = param1.readUnsignedShort() / 100;
          _loc10_ = param1.readUnsignedShort() / 100;
@@ -4062,6 +4098,22 @@ package tibia.network
          }
       }
       
+      protected function readSBUDDYGROUPDATA(param1:ByteArray) : void
+      {
+         var _loc2_:uint = 0;
+         var _loc3_:int = 0;
+         _loc2_ = param1.readByte();
+         _loc3_ = 0;
+         while(_loc3_ < _loc2_)
+         {
+            param1.readByte();
+            StringHelper.s_ReadLongStringFromByteArray(param1);
+            param1.readBoolean();
+            _loc3_++;
+         }
+         param1.readByte();
+      }
+      
       public function sendCREQUESTSHOPOFFERS(param1:String) : void
       {
          var b:ByteArray = null;
@@ -4632,6 +4684,14 @@ package tibia.network
                   this.readSDELETEINCONTAINER(CommunicationData);
                   a_MessageReader.finishMessage();
                   break;
+               case SINSPECTIONLIST:
+                  this.readSINSPECTIONLIST(CommunicationData);
+                  a_MessageReader.finishMessage();
+                  break;
+               case SINSPECTIONSTATE:
+                  this.readSINSPECTIONSTATE(CommunicationData);
+                  a_MessageReader.finishMessage();
+                  break;
                case SSETINVENTORY:
                   this.readSSETINVENTORY(CommunicationData);
                   a_MessageReader.finishMessage();
@@ -4846,6 +4906,10 @@ package tibia.network
                   break;
                case SBUDDYSTATUSCHANGE:
                   this.readSBUDDYSTATUSCHANGE(CommunicationData);
+                  a_MessageReader.finishMessage();
+                  break;
+               case SBUDDYGROUPDATA:
+                  this.readSBUDDYGROUPDATA(CommunicationData);
                   a_MessageReader.finishMessage();
                   break;
                case STUTORIALHINT:
@@ -5201,6 +5265,7 @@ package tibia.network
                   _loc7_.type = param1.readUnsignedByte();
                   _loc7_.speechCategory = param1.readUnsignedByte();
                   _loc7_.marks.setMark(Marks.MARK_TYPE_PERMANENT,param1.readUnsignedByte());
+                  param1.readUnsignedByte();
                   _loc7_.numberOfPVPHelpers = param1.readUnsignedShort();
                   _loc7_.isUnpassable = param1.readUnsignedByte() != 0;
                   break;
@@ -5223,6 +5288,7 @@ package tibia.network
                   _loc7_.type = param1.readUnsignedByte();
                   _loc7_.speechCategory = param1.readUnsignedByte();
                   _loc7_.marks.setMark(Marks.MARK_TYPE_PERMANENT,param1.readUnsignedByte());
+                  param1.readUnsignedByte();
                   _loc7_.numberOfPVPHelpers = param1.readUnsignedShort();
                   _loc7_.isUnpassable = param1.readUnsignedByte() != 0;
                   break;
@@ -5770,6 +5836,8 @@ package tibia.network
             case MessageMode.MESSAGE_BARK_LOUD:
                Pos = this.readCoordinate(a_Bytes);
                ChannelID = -1;
+               break;
+            case MessageMode.MESSAGE_GAME:
                break;
             default:
                throw new Error("Connection.readSTALK: Invalid message mode " + Mode + ".",0);
@@ -6516,7 +6584,7 @@ package tibia.network
          try
          {
             b = this.m_ServerConnection.messageWriter.createMessage();
-            b.writeByte(CINSPECTNPCTRADE);
+            b.writeByte(CLOOKNPCTRADE);
             b.writeShort(a_Type);
             b.writeByte(a_Data);
             this.m_ServerConnection.messageWriter.finishMessage();
@@ -6524,7 +6592,7 @@ package tibia.network
          }
          catch(e:Error)
          {
-            handleSendError(CINSPECTNPCTRADE,e);
+            handleSendError(CLOOKNPCTRADE,e);
             return;
          }
       }

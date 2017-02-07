@@ -24,6 +24,7 @@ package
             "LBL_SESSIONDUMP_CHANNEL":"Sessiondump",
             "MSG_IGNORE":"You are now ignoring player {0}.",
             "LBL_NPC_CHANNEL":"NPCs",
+            "LBL_LOOT_CHANNEL":"Loot (Tibia 11 only)",
             "LBL_LOCAL_CHANNEL":"Local Chat",
             "LBL_DEBUG_CHANNEL":"Debug"
          };

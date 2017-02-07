@@ -22,6 +22,7 @@ package
             "CTX_COPY_NAME":"Copy Name",
             "CTX_SORT_HITPOINTS_ASC":"Sort Ascending by Hitpoints",
             "CTX_STOP_ATTACK":"Stop Attack",
+            "CTX_INSPECT_CHARACTER":"Inspect {0} (Tibia 11 only)",
             "TIP_HIDE_NON_SKULLED":"Hide Non-Skulled Players",
             "CTX_SORT_KNOWN_SINCE_ASC":"Sort Ascending by Age",
             "CTX_SORT_HITPOINTS_DESC":"Sort Descending by Hitpoints",

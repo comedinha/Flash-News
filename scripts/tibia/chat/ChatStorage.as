@@ -14,6 +14,8 @@ package tibia.chat
    import tibia.§chat:ns_chat_internal§.s_IsPrivateChannel;
    import tibia.§chat:ns_chat_internal§.s_IsRestorableChannel;
    import tibia.creatures.Player;
+   import tibia.game.MessageWidget;
+   import tibia.game.Tibia11NagWidget;
    import tibia.network.Communication;
    import tibia.options.OptionsStorage;
    import tibia.reporting.reportType.Type;
@@ -37,6 +39,8 @@ package tibia.chat
       
       public static const LAST_PRIVATE_CHANNEL_ID:int = 9999;
       
+      public static const LOOT_CHANNEL_LABEL:String = ResourceManager.getInstance().getString(BUNDLE,"LBL_LOOT_CHANNEL");
+      
       public static const NPC_CHANNEL_ID:int = 65534;
       
       public static const FIRST_GUILD_CHANNEL_ID:int = 10000;
@@ -59,15 +63,17 @@ package tibia.chat
       
       public static const SESSIONDUMP_CHANNEL_LABEL:String = ResourceManager.getInstance().getString(BUNDLE,"LBL_SESSIONDUMP_CHANNEL");
       
-      private static const MSG_CHANNEL_CLOSED:String = ResourceManager.getInstance().getString(BUNDLE,"MSG_CHANNEL_CLOSED");
+      public static const FIRST_PARTY_CHANNEL_ID:int = 20000;
       
       public static const LOCAL_CHANNEL_ID:int = 131071;
       
       public static const LAST_GUILD_CHANNEL_ID:int = 19999;
       
-      public static const FIRST_PARTY_CHANNEL_ID:int = 20000;
+      public static const LOOT_CHANNEL_ID:int = 131067;
       
       public static const SERVER_CHANNEL_ID:int = 131070;
+      
+      private static const MSG_CHANNEL_CLOSED:String = ResourceManager.getInstance().getString(BUNDLE,"MSG_CHANNEL_CLOSED");
       
       public static const NPC_CHANNEL_LABEL:String = ResourceManager.getInstance().getString(BUNDLE,"LBL_NPC_CHANNEL");
       
@@ -716,6 +722,7 @@ package tibia.chat
       {
          var _loc3_:Object = null;
          var _loc4_:Player = null;
+         var _loc5_:MessageWidget = null;
          var _loc2_:Communication = Tibia.s_GetCommunication();
          if(_loc2_ != null && _loc2_.isGameRunning)
          {
@@ -747,6 +754,11 @@ package tibia.chat
                {
                   _loc2_.sendCPRIVATECHANNEL(String(_loc3_));
                }
+            }
+            else if(_loc3_ is int && int(_loc3_) == LOOT_CHANNEL_ID)
+            {
+               _loc5_ = new Tibia11NagWidget();
+               _loc5_.show();
             }
          }
       }
