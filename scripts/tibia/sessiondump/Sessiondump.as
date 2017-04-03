@@ -83,13 +83,13 @@ package tibia.sessiondump
       
       protected static const SCREDITBALANCE:int = 223;
       
-      protected static const CHECKSUM_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
-      
       protected static const SPREYDATA:int = 232;
       
       protected static const CGETQUESTLOG:int = 240;
       
       protected static const CENTERWORLD:int = 15;
+      
+      protected static const SKILL_EXPERIENCE:int = 0;
       
       protected static const PARTY_MEMBER_SEXP_INACTIVE_GUILTY:int = 7;
       
@@ -106,8 +106,6 @@ package tibia.sessiondump
       protected static const SLOGINSUCCESS:int = 23;
       
       protected static const CCLOSENPCCHANNEL:int = 158;
-      
-      protected static const SKILL_EXPERIENCE:int = 0;
       
       protected static const SKILL_MANA_LEECH_CHANCE:int = 23;
       
@@ -166,6 +164,8 @@ package tibia.sessiondump
       protected static const SKILL_NONE:int = -1;
       
       protected static const SFIELDDATA:int = 105;
+      
+      private static const KEYFRAME_STATE_PROCESS:uint = 1;
       
       protected static const GUILD_MEMBER:int = 4;
       
@@ -237,13 +237,13 @@ package tibia.sessiondump
       
       protected static const CREVOKEINVITATION:int = 165;
       
-      protected static const SCREATURESKULL:int = 144;
+      protected static const ERR_CONNECTION_LOST:int = 6;
       
       protected static const CLOGIN:int = 10;
       
       public static const MESSAGEDIALOG_PREY_ERROR:int = 21;
       
-      protected static const ERR_CONNECTION_LOST:int = 6;
+      protected static const SCREATURESKULL:int = 144;
       
       protected static const SUNJUSTIFIEDPOINTS:int = 183;
       
@@ -254,6 +254,8 @@ package tibia.sessiondump
       protected static const STRAPPERS:int = 135;
       
       protected static const SOBJECTINFO:int = 244;
+      
+      protected static const PROFESSION_MASK_DRUID:int = 1 << PROFESSION_DRUID;
       
       protected static const CGETQUESTLINE:int = 241;
       
@@ -268,8 +270,6 @@ package tibia.sessiondump
       protected static const CROTATESOUTH:int = 113;
       
       protected static const GUILD_WAR_ALLY:int = 1;
-      
-      protected static const PROFESSION_MASK_DRUID:int = 1 << PROFESSION_DRUID;
       
       protected static const STATE_SLOW:int = 5;
       
@@ -306,8 +306,6 @@ package tibia.sessiondump
       protected static const BLESSING_WISDOM_OF_SOLITUDE:int = BLESSING_FIRE_OF_SUNS << 1;
       
       protected static const PARTY_LEADER_SEXP_INACTIVE_GUILTY:int = 8;
-      
-      private static const KEYFRAME_STATE_PROCESS:uint = 1;
       
       protected static const SINGAMESHOPSUCCESS:int = 254;
       
@@ -439,7 +437,7 @@ package tibia.sessiondump
       
       protected static const CROTATEWEST:int = 114;
       
-      public static const PROTOCOL_VERSION:int = 1110;
+      public static const PROTOCOL_VERSION:int = 1120;
       
       protected static const SCREATUREOUTFIT:int = 142;
       
@@ -503,13 +501,13 @@ package tibia.sessiondump
       
       protected static const CERRORFILEENTRY:int = 232;
       
-      protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + CHECKSUM_SIZE;
+      protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + SEQUENCE_NUMBER_SIZE;
       
       protected static const SCREATUREHEALTH:int = 140;
       
       protected static const STOPROW:int = 101;
       
-      protected static const CHECKSUM_SIZE:int = 4;
+      protected static const SBOTTOMFLOOR:int = 191;
       
       protected static const CTURNOBJECT:int = 133;
       
@@ -522,8 +520,6 @@ package tibia.sessiondump
       protected static const CUSEOBJECT:int = 130;
       
       protected static const ERR_INVALID_MESSAGE:int = 3;
-      
-      protected static const SBOTTOMFLOOR:int = 191;
       
       protected static const CINVITETOCHANNEL:int = 171;
       
@@ -681,6 +677,8 @@ package tibia.sessiondump
       
       protected static const SPREMIUMSHOP:int = 251;
       
+      protected static const SEQUENCE_NUMBER_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
+      
       protected static const STALK:int = 170;
       
       protected static const CEDITTEXT:int = 137;
@@ -716,6 +714,8 @@ package tibia.sessiondump
       protected static const TYPE_MONSTER:int = 1;
       
       protected static const CMARKETLEAVE:int = 244;
+      
+      protected static const SEQUENCE_NUMBER_SIZE:int = 4;
       
       protected static const COPENTRANSACTIONHISTORY:int = 253;
       

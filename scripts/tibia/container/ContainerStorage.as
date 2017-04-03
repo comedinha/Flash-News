@@ -14,7 +14,7 @@ package tibia.container
    public class ContainerStorage extends EventDispatcher
    {
       
-      public static const MAX_CONTAINER_VIEWS:int = 16;
+      public static const MAX_CONTAINER_VIEWS:int = 32;
       
       public static const MIN_MULTI_USE_DELAY:int = 1000;
       

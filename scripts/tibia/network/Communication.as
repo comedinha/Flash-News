@@ -145,8 +145,6 @@ package tibia.network
       
       protected static const SKILL_FED:int = 15;
       
-      protected static const CHECKSUM_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
-      
       protected static const CROTATEEAST:int = 112;
       
       protected static const SKILL_MAGLEVEL:int = 2;
@@ -363,7 +361,7 @@ package tibia.network
       
       protected static const CERRORFILEENTRY:int = 232;
       
-      protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + CHECKSUM_SIZE;
+      protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + SEQUENCE_NUMBER_SIZE;
       
       protected static const STATE_BLEEDING:int = 15;
       
@@ -475,6 +473,8 @@ package tibia.network
       
       protected static const PATH_ERROR_TOO_FAR:int = -3;
       
+      protected static const SEQUENCE_NUMBER_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
+      
       protected static const STALK:int = 170;
       
       protected static const GUILD_OTHER:int = 5;
@@ -494,6 +494,8 @@ package tibia.network
       public static const CLIENT_PREVIEW_STATE:uint = 0;
       
       protected static const SCLOSEIMBUINGDIALOG:int = 236;
+      
+      protected static const SEQUENCE_NUMBER_SIZE:int = 4;
       
       protected static const CMARKETLEAVE:int = 244;
       
@@ -575,7 +577,7 @@ package tibia.network
       
       protected static const TYPE_SUMMON_OTHERS:int = 4;
       
-      public static const CLIENT_VERSION:uint = 2416;
+      public static const CLIENT_VERSION:uint = 2443;
       
       protected static const CATTACK:int = 161;
       
@@ -753,7 +755,7 @@ package tibia.network
       
       protected static const SEDITGUILDMESSAGE:int = 174;
       
-      public static const PROTOCOL_VERSION:int = 1110;
+      public static const PROTOCOL_VERSION:int = 1120;
       
       protected static const SAMBIENTE:int = 130;
       
@@ -788,8 +790,6 @@ package tibia.network
       protected static const SBOTTOMFLOOR:int = 191;
       
       protected static const STOPROW:int = 101;
-      
-      protected static const CHECKSUM_SIZE:int = 4;
       
       protected static const CTURNOBJECT:int = 133;
       

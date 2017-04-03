@@ -58,7 +58,8 @@ package tibia.network
       
       public function shouldAttemptReconnect() : Boolean
       {
-         return this.m_AttemptedReconnects < MAXIMUM_ATTEMPTED_RETRIES - 1;
+         var _loc1_:IServerConnection = Tibia.s_GetConnection();
+         return (_loc1_ == null || _loc1_ is Connection) && this.m_AttemptedReconnects < MAXIMUM_ATTEMPTED_RETRIES - 1;
       }
       
       public function reset() : void

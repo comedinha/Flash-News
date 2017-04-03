@@ -65,11 +65,9 @@ package tibia.network
       
       protected static const CENTERWORLD:int = 15;
       
-      protected static const CHECKSUM_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
-      
       protected static const CBUYOBJECT:int = 122;
       
-      public static const CLIENT_VERSION:uint = 2416;
+      public static const CLIENT_VERSION:uint = 2443;
       
       protected static const SPING:int = 29;
       
@@ -305,7 +303,7 @@ package tibia.network
       
       protected static const SCREATUREOUTFIT:int = 142;
       
-      public static const PROTOCOL_VERSION:int = 1110;
+      public static const PROTOCOL_VERSION:int = 1120;
       
       protected static const SAMBIENTE:int = 130;
       
@@ -343,7 +341,7 @@ package tibia.network
       
       protected static const CERRORFILEENTRY:int = 232;
       
-      protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + CHECKSUM_SIZE;
+      protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + SEQUENCE_NUMBER_SIZE;
       
       protected static const STOPROW:int = 101;
       
@@ -356,8 +354,6 @@ package tibia.network
       protected static const CINSPECTPLAYER:int = 206;
       
       protected static const CUSEOBJECT:int = 130;
-      
-      protected static const CHECKSUM_SIZE:int = 4;
       
       protected static const CLOOKNPCTRADE:int = 121;
       
@@ -475,6 +471,8 @@ package tibia.network
       
       protected static const SPREMIUMSHOP:int = 251;
       
+      protected static const SEQUENCE_NUMBER_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
+      
       protected static const STALK:int = 170;
       
       protected static const CEDITTEXT:int = 137;
@@ -504,6 +502,8 @@ package tibia.network
       protected static const SCLOSEIMBUINGDIALOG:int = 236;
       
       protected static const CMARKETLEAVE:int = 244;
+      
+      protected static const SEQUENCE_NUMBER_SIZE:int = 4;
       
       protected static const COPENTRANSACTIONHISTORY:int = 253;
       

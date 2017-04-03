@@ -289,6 +289,7 @@ package tibia.sidebar
       override protected function measure() : void
       {
          var _loc3_:Number = NaN;
+         var _loc5_:EdgeMetrics = null;
          var _loc6_:UIComponent = null;
          super.measure();
          var _loc1_:Number = getStyle("verticalGap");
@@ -304,7 +305,7 @@ package tibia.sidebar
          }
          _loc3_ = Math.max(0,_loc3_);
          this.updateBorder();
-         var _loc5_:EdgeMetrics = EdgeMetrics.EMPTY;
+         _loc5_ = EdgeMetrics.EMPTY;
          if(this.m_UIBorderInstance is IBorder)
          {
             _loc5_ = IBorder(this.m_UIBorderInstance).borderMetrics;

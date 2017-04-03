@@ -122,7 +122,7 @@ package
       
       public static const BUGGY_FLASH_PLAYER_VERSION:String = "21,0,0,182";
       
-      public static const PROTOCOL_VERSION:int = 1110;
+      public static const PROTOCOL_VERSION:int = 1120;
       
       public static var s_FrameTibiaTimestamp:Number = 0;
       
@@ -142,9 +142,7 @@ package
       
       private static var s_LastTibiaFactorChangeRealTimestamp:int = 0;
       
-      protected static const CHECKSUM_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
-      
-      public static const CLIENT_VERSION:uint = 2416;
+      public static const CLIENT_VERSION:uint = 2443;
       
       public static const PREVIEW_STATE_PREVIEW_NO_ACTIVE_CHANGE:uint = 1;
       
@@ -158,13 +156,15 @@ package
       
       protected static const ERR_INVALID_CHECKSUM:int = 2;
       
-      protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + CHECKSUM_SIZE;
+      protected static const PAYLOADDATA_POSITION:int = PAYLOADLENGTH_POS + PAYLOADLENGTH_SIZE;
+      
+      protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + SEQUENCE_NUMBER_SIZE;
       
       protected static const ERR_INTERNAL:int = 0;
       
-      protected static const CHECKSUM_SIZE:int = 4;
+      protected static const SEQUENCE_NUMBER_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
       
-      protected static const PAYLOADDATA_POSITION:int = PAYLOADLENGTH_POS + PAYLOADLENGTH_SIZE;
+      mx_internal static var _Tibia_StylesInit_done:Boolean = false;
       
       protected static const HEADER_POS:int = 0;
       
@@ -184,7 +184,7 @@ package
       
       public static const CLIENT_PREVIEW_STATE:uint = 0;
       
-      mx_internal static var _Tibia_StylesInit_done:Boolean = false;
+      protected static const SEQUENCE_NUMBER_SIZE:int = 4;
       
       protected static const CONNECTION_STATE_CONNECTING_STAGE1:int = 1;
       
@@ -196,9 +196,9 @@ package
       
       protected static const PACKETLENGTH_POS:int = HEADER_POS;
       
-      protected static const PAYLOAD_POS:int = HEADER_POS + HEADER_SIZE;
-      
       protected static const ERR_CONNECTION_LOST:int = 6;
+      
+      protected static const PAYLOAD_POS:int = HEADER_POS + HEADER_SIZE;
        
       
       private var _embed_css_images_BG_Bars_compact_enpieceOrnamented_png_985111789:Class;
@@ -1890,11 +1890,6 @@ package
          return (application as Tibia).m_UIEffectsManager;
       }
       
-      public static function s_GetCreatureStorage() : CreatureStorage
-      {
-         return (application as Tibia).m_CreatureStorage;
-      }
-      
       public static function set s_TibiaTimerFactor(param1:Number) : void
       {
          if(!isNaN(param1))
@@ -1903,6 +1898,11 @@ package
             s_LastTibiaFactorChangeRealTimestamp = getTimer();
             s_InternalTibiaTimerFactor = param1;
          }
+      }
+      
+      public static function s_GetCreatureStorage() : CreatureStorage
+      {
+         return (application as Tibia).m_CreatureStorage;
       }
       
       public static function set s_GameActionFactory(param1:GameActionFactory) : void
@@ -1975,11 +1975,6 @@ package
          return (application as Tibia).m_Connection;
       }
       
-      public static function s_GetPlayer() : Player
-      {
-         return (application as Tibia).m_Player;
-      }
-      
       public static function s_GetTibiaTimer() : int
       {
          if(s_LastTibiaFactorChangeRealTimestamp == 0)
@@ -1995,6 +1990,11 @@ package
       public static function s_GetSessionKey() : String
       {
          return (application as Tibia).m_SessionKey;
+      }
+      
+      public static function s_GetPlayer() : Player
+      {
+         return (application as Tibia).m_Player;
       }
       
       [Bindable(event="propertyChange")]

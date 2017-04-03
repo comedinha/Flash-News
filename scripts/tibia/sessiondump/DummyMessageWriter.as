@@ -22,7 +22,7 @@ package tibia.sessiondump
       
       protected static const ERR_INVALID_STATE:int = 4;
       
-      public static const PROTOCOL_VERSION:int = 1110;
+      public static const PROTOCOL_VERSION:int = 1120;
       
       protected static const PAYLOADLENGTH_SIZE:int = 2;
       
@@ -38,19 +38,19 @@ package tibia.sessiondump
       
       protected static const ERR_CONNECTION_LOST:int = 6;
       
+      protected static const PAYLOADDATA_POSITION:int = PAYLOADLENGTH_POS + PAYLOADLENGTH_SIZE;
+      
       protected static const PACKETLENGTH_SIZE:int = 2;
       
-      protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + CHECKSUM_SIZE;
+      protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + SEQUENCE_NUMBER_SIZE;
       
       protected static const ERR_INTERNAL:int = 0;
       
-      protected static const CHECKSUM_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
+      protected static const SEQUENCE_NUMBER_SIZE:int = 4;
       
       protected static const PAYLOAD_POS:int = HEADER_POS + HEADER_SIZE;
       
-      protected static const CHECKSUM_SIZE:int = 4;
-      
-      protected static const PAYLOADDATA_POSITION:int = PAYLOADLENGTH_POS + PAYLOADLENGTH_SIZE;
+      protected static const SEQUENCE_NUMBER_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
        
       
       private var m_DummyBuffer:ByteArray = null;

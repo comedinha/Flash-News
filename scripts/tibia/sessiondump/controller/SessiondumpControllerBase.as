@@ -48,8 +48,6 @@ package tibia.sessiondump.controller
       
       protected static const SCREDITBALANCE:int = 223;
       
-      protected static const CHECKSUM_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
-      
       protected static const SPREYDATA:int = 232;
       
       protected static const CGETQUESTLOG:int = 240;
@@ -146,13 +144,13 @@ package tibia.sessiondump.controller
       
       protected static const CREVOKEINVITATION:int = 165;
       
-      protected static const SCREATURESKULL:int = 144;
+      protected static const ERR_CONNECTION_LOST:int = 6;
       
       protected static const CLOGIN:int = 10;
       
       public static const MESSAGEDIALOG_PREY_ERROR:int = 21;
       
-      protected static const ERR_CONNECTION_LOST:int = 6;
+      protected static const SCREATURESKULL:int = 144;
       
       protected static const SUNJUSTIFIEDPOINTS:int = 183;
       
@@ -274,7 +272,7 @@ package tibia.sessiondump.controller
       
       protected static const CROTATEWEST:int = 114;
       
-      public static const PROTOCOL_VERSION:int = 1110;
+      public static const PROTOCOL_VERSION:int = 1120;
       
       protected static const SCREATUREOUTFIT:int = 142;
       
@@ -310,13 +308,13 @@ package tibia.sessiondump.controller
       
       protected static const CERRORFILEENTRY:int = 232;
       
-      protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + CHECKSUM_SIZE;
+      protected static const HEADER_SIZE:int = PACKETLENGTH_SIZE + SEQUENCE_NUMBER_SIZE;
       
       protected static const SCREATUREHEALTH:int = 140;
       
       protected static const STOPROW:int = 101;
       
-      protected static const CHECKSUM_SIZE:int = 4;
+      protected static const SBOTTOMFLOOR:int = 191;
       
       protected static const CTURNOBJECT:int = 133;
       
@@ -327,8 +325,6 @@ package tibia.sessiondump.controller
       protected static const CUSEOBJECT:int = 130;
       
       protected static const ERR_INVALID_MESSAGE:int = 3;
-      
-      protected static const SBOTTOMFLOOR:int = 191;
       
       protected static const CINVITETOCHANNEL:int = 171;
       
@@ -442,6 +438,8 @@ package tibia.sessiondump.controller
       
       protected static const SPREMIUMSHOP:int = 251;
       
+      protected static const SEQUENCE_NUMBER_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
+      
       protected static const STALK:int = 170;
       
       protected static const CEDITTEXT:int = 137;
@@ -467,6 +465,8 @@ package tibia.sessiondump.controller
       private static const CALCULATED_PLAYSPEED_FACTOR_SAMPLE_SIZE:uint = 3;
       
       protected static const CMARKETLEAVE:int = 244;
+      
+      protected static const SEQUENCE_NUMBER_SIZE:int = 4;
       
       protected static const COPENTRANSACTIONHISTORY:int = 253;
       
