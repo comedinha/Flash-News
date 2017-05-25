@@ -60,13 +60,11 @@ package tibia.creatures
       
       protected static const ONSCREEN_MESSAGE_HEIGHT:int = 195;
       
-      protected static const TYPE_SUMMON_OTHERS:int = 4;
+      protected static const TYPE_NPC:int = 2;
       
-      protected static const BLESSING_FIRE_OF_SUNS:int = BLESSING_EMBRACE_OF_TIBIA << 1;
+      protected static const BLESSING_FIRE_OF_SUNS:int = BLESSING_SPARK_OF_PHOENIX << 1;
       
       protected static const SKILL_STAMINA:int = 17;
-      
-      protected static const TYPE_NPC:int = 2;
       
       protected static const STATE_NONE:int = -1;
       
@@ -122,13 +120,15 @@ package tibia.creatures
       
       private static var s_SpeedC:Number = 1;
       
+      protected static const BLESSING_BLOOD_OF_THE_MOUNTAIN:int = BLESSING_HEART_OF_THE_MOUNTAIN << 1;
+      
       protected static const MAX_NAME_LENGTH:int = 29;
       
       protected static const PARTY_LEADER:int = 1;
       
-      protected static const STATE_PZ_ENTERED:int = 14;
-      
       protected static const SKILL_CARRYSTRENGTH:int = 7;
+      
+      protected static const STATE_PZ_ENTERED:int = 14;
       
       protected static const PK_ATTACKER:int = 1;
       
@@ -145,6 +145,8 @@ package tibia.creatures
       protected static const MAP_MIN_Z:int = 0;
       
       protected static const MAP_MIN_X:int = 24576;
+      
+      protected static const BLESSING_HEART_OF_THE_MOUNTAIN:int = BLESSING_EMBRACE_OF_TIBIA << 1;
       
       protected static const SKILL_LIFE_LEECH_AMOUNT:int = 22;
       
@@ -186,8 +188,6 @@ package tibia.creatures
       
       protected static const FIELD_ENTER_NOT_POSSIBLE:uint = 2;
       
-      protected static const TYPE_SUMMON_OWN:int = 3;
-      
       protected static const PROFESSION_MASK_SORCERER:int = 1 << PROFESSION_SORCERER;
       
       protected static const PROFESSION_KNIGHT:int = 1;
@@ -200,7 +200,7 @@ package tibia.creatures
       
       protected static const UNDERGROUND_LAYER:int = 2;
       
-      protected static const BLESSING_WISDOM_OF_SOLITUDE:int = BLESSING_FIRE_OF_SUNS << 1;
+      protected static const BLESSING_WISDOM_OF_SOLITUDE:int = BLESSING_TWIST_OF_FATE << 1;
       
       protected static const FIELD_CACHESIZE:int = FIELD_SIZE;
       
@@ -230,7 +230,7 @@ package tibia.creatures
       
       protected static const STATE_FAST:int = 6;
       
-      protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_SPARK_OF_PHOENIX << 1;
+      protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_ADVENTURER << 1;
       
       protected static const SKILL_MANA_LEECH_AMOUNT:int = 24;
       
@@ -304,9 +304,11 @@ package tibia.creatures
       
       protected static const NPC_SPEECH_NORMAL:uint = 1;
       
+      protected static const TYPE_PLAYERSUMMON:int = 3;
+      
       protected static const MAPSIZE_W:int = 10;
       
-      protected static const BLESSING_SPIRITUAL_SHIELDING:int = BLESSING_ADVENTURER << 1;
+      protected static const BLESSING_SPIRITUAL_SHIELDING:int = BLESSING_FIRE_OF_SUNS << 1;
       
       protected static const NPC_SPEECH_NONE:uint = 0;
       
@@ -353,15 +355,17 @@ package tibia.creatures
       
       protected var m_GuildFlag:int = 0;
       
+      protected var m_SummonerCreatureID:uint = 0;
+      
       protected var m_MovementEnd:Number = 0;
       
       protected var m_AnimationDelta:Vector3D;
       
       protected var m_IsTrapper:Boolean = false;
       
-      var m_Position:Vector3D;
-      
       protected var m_Marks:Marks = null;
+      
+      var m_Position:Vector3D;
       
       protected var m_KnownSince:int = -1;
       
@@ -494,6 +498,17 @@ package tibia.creatures
          this.m_Direction = param1;
       }
       
+      [Bindable(event="propertyChange")]
+      public function set summonerCreatureID(param1:uint) : void
+      {
+         var _loc2_:Object = this.summonerCreatureID;
+         if(_loc2_ !== param1)
+         {
+            this._74792328summonerCreatureID = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"summonerCreatureID",_loc2_,param1));
+         }
+      }
+      
       public function get ID() : int
       {
          return this.m_ID;
@@ -542,7 +557,7 @@ package tibia.creatures
       
       private function set _3575610type(param1:int) : void
       {
-         if(param1 != TYPE_PLAYER && param1 != TYPE_MONSTER && param1 != TYPE_NPC && param1 != TYPE_SUMMON_OWN && param1 != TYPE_SUMMON_OTHERS)
+         if(param1 != TYPE_PLAYER && param1 != TYPE_MONSTER && param1 != TYPE_NPC && param1 != TYPE_PLAYERSUMMON)
          {
             throw new ArgumentError("Creature.set type: Invalid creature type: " + param1 + ".");
          }
@@ -746,6 +761,11 @@ package tibia.creatures
          this.m_MovementRunning = true;
       }
       
+      public function get characterName() : String
+      {
+         return this.m_Name;
+      }
+      
       public function get isNPC() : Boolean
       {
          return this.m_Type == TYPE_NPC;
@@ -760,11 +780,6 @@ package tibia.creatures
             this._2331ID = param1;
             this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"ID",_loc2_,param1));
          }
-      }
-      
-      public function get characterName() : String
-      {
-         return this.m_Name;
       }
       
       public function get isTrapper() : Boolean
@@ -834,6 +849,11 @@ package tibia.creatures
          return this.m_LightColour;
       }
       
+      public function get summonerCreatureID() : uint
+      {
+         return this.m_SummonerCreatureID;
+      }
+      
       public function get isConfirmedPartyMember() : Boolean
       {
          return this.m_PartyFlag == PARTY_LEADER_SEXP_ACTIVE || this.m_PartyFlag == PARTY_LEADER_SEXP_INACTIVE_GUILTY || this.m_PartyFlag == PARTY_LEADER_SEXP_INACTIVE_INNOCENT || this.m_PartyFlag == PARTY_LEADER_SEXP_OFF || this.m_PartyFlag == PARTY_MEMBER_SEXP_ACTIVE || this.m_PartyFlag == PARTY_MEMBER_SEXP_INACTIVE_GUILTY || this.m_PartyFlag == PARTY_MEMBER_SEXP_INACTIVE_INNOCENT || this.m_PartyFlag == PARTY_MEMBER_SEXP_OFF;
@@ -890,17 +910,6 @@ package tibia.creatures
          return param1;
       }
       
-      [Bindable(event="propertyChange")]
-      public function set type(param1:int) : void
-      {
-         var _loc2_:Object = this.type;
-         if(_loc2_ !== param1)
-         {
-            this._3575610type = param1;
-            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"type",_loc2_,param1));
-         }
-      }
-      
       public function set brightness(param1:int) : void
       {
          this.m_Brightness = param1;
@@ -936,7 +945,18 @@ package tibia.creatures
       
       public function get isSummon() : Boolean
       {
-         return this.m_Type == TYPE_SUMMON_OTHERS || this.m_Type == TYPE_SUMMON_OWN;
+         return this.m_Type == TYPE_PLAYERSUMMON;
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function set type(param1:int) : void
+      {
+         var _loc2_:Object = this.type;
+         if(_loc2_ !== param1)
+         {
+            this._3575610type = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"type",_loc2_,param1));
+         }
       }
       
       function animateMovement(param1:Number) : void
@@ -1011,6 +1031,11 @@ package tibia.creatures
          this.m_Position.z = param3;
       }
       
+      private function set _74792328summonerCreatureID(param1:uint) : void
+      {
+         this.m_SummonerCreatureID = param1;
+      }
+      
       public function get riskinessFlag() : int
       {
          if(this.m_NumberOfPVPHelpers >= NUM_PVP_HELPERS_FOR_RISKINESS_DANGEROUS)
@@ -1039,15 +1064,15 @@ package tibia.creatures
       
       public function get summonFlag() : uint
       {
-         switch(this.m_Type)
+         if(this.m_Type == TYPE_PLAYERSUMMON)
          {
-            case TYPE_SUMMON_OTHERS:
-               return SUMMON_OTHERS;
-            case TYPE_SUMMON_OWN:
+            if(this.m_SummonerCreatureID == Tibia.s_GetCreatureStorage().player.ID)
+            {
                return SUMMON_OWN;
-            default:
-               return SUMMON_NONE;
+            }
+            return SUMMON_OTHERS;
          }
+         return SUMMON_NONE;
       }
       
       public function getSkillProgress(param1:int) : Number

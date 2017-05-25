@@ -73,11 +73,9 @@ package tibia.options
       
       protected static const TYPE_NPC:int = 2;
       
-      protected static const BLESSING_FIRE_OF_SUNS:int = BLESSING_EMBRACE_OF_TIBIA << 1;
+      protected static const BLESSING_FIRE_OF_SUNS:int = BLESSING_SPARK_OF_PHOENIX << 1;
       
       protected static const SKILL_STAMINA:int = 17;
-      
-      protected static const TYPE_SUMMON_OTHERS:int = 4;
       
       protected static const STATE_NONE:int = -1;
       
@@ -129,6 +127,8 @@ package tibia.options
       
       public static const COMBAT_PVP_MODE_DOVE:uint = 0;
       
+      protected static const BLESSING_BLOOD_OF_THE_MOUNTAIN:int = BLESSING_HEART_OF_THE_MOUNTAIN << 1;
+      
       protected static const MAX_NAME_LENGTH:int = 29;
       
       protected static const PARTY_LEADER:int = 1;
@@ -137,17 +137,19 @@ package tibia.options
       
       public static const COMBAT_SECURE_OFF:int = 0;
       
+      protected static const SKILL_CARRYSTRENGTH:int = 7;
+      
       protected static const PK_ATTACKER:int = 1;
       
       protected static const STATE_ELECTRIFIED:int = 2;
       
       protected static const SKILL_FIGHTSWORD:int = 11;
       
-      protected static const SKILL_CARRYSTRENGTH:int = 7;
-      
       protected static const GUILD_WAR_NEUTRAL:int = 3;
       
       protected static const STATE_DROWNING:int = 8;
+      
+      protected static const BLESSING_HEART_OF_THE_MOUNTAIN:int = BLESSING_EMBRACE_OF_TIBIA << 1;
       
       protected static const SKILL_LIFE_LEECH_AMOUNT:int = 22;
       
@@ -224,8 +226,6 @@ package tibia.options
       
       protected static const PROFESSION_MASK_NONE:int = 1 << PROFESSION_NONE;
       
-      protected static const TYPE_SUMMON_OWN:int = 3;
-      
       protected static const PROFESSION_MASK_SORCERER:int = 1 << PROFESSION_SORCERER;
       
       protected static const PROFESSION_KNIGHT:int = 1;
@@ -234,7 +234,7 @@ package tibia.options
       
       protected static const PARTY_LEADER_SEXP_INACTIVE_GUILTY:int = 8;
       
-      protected static const BLESSING_WISDOM_OF_SOLITUDE:int = BLESSING_FIRE_OF_SUNS << 1;
+      protected static const BLESSING_WISDOM_OF_SOLITUDE:int = BLESSING_TWIST_OF_FATE << 1;
       
       protected static const PROFESSION_PALADIN:int = 2;
       
@@ -250,7 +250,7 @@ package tibia.options
       
       protected static const STATE_FAST:int = 6;
       
-      protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_SPARK_OF_PHOENIX << 1;
+      protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_ADVENTURER << 1;
       
       protected static const SKILL_MANA_LEECH_AMOUNT:int = 24;
       
@@ -314,9 +314,11 @@ package tibia.options
       
       protected static const NPC_SPEECH_NORMAL:uint = 1;
       
+      protected static const TYPE_PLAYERSUMMON:int = 3;
+      
       public static const COMBAT_ATTACK_BALANCED:int = 2;
       
-      protected static const BLESSING_SPIRITUAL_SHIELDING:int = BLESSING_ADVENTURER << 1;
+      protected static const BLESSING_SPIRITUAL_SHIELDING:int = BLESSING_FIRE_OF_SUNS << 1;
       
       protected static const NPC_SPEECH_NONE:uint = 0;
       

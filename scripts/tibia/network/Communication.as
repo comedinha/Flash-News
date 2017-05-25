@@ -163,6 +163,8 @@ package tibia.network
       
       protected static const ERR_INTERNAL:int = 0;
       
+      protected static const CREMOVEBUDDY:int = 221;
+      
       protected static const SUMMON_OTHERS:int = 2;
       
       protected static const CAPPLYIMBUEMENT:int = 213;
@@ -172,8 +174,6 @@ package tibia.network
       protected static const SFIELDDATA:int = 105;
       
       protected static const CCLOSECONTAINER:int = 135;
-      
-      protected static const CREMOVEBUDDY:int = 221;
       
       protected static const CPASSLEADERSHIP:int = 166;
       
@@ -191,11 +191,11 @@ package tibia.network
       
       protected static const PATH_COST_MAX:int = 250;
       
-      protected static const SKILL_CARRYSTRENGTH:int = 7;
-      
       protected static const STATE_PZ_ENTERED:int = 14;
       
       protected static const PATH_MAX_STEPS:int = 128;
+      
+      protected static const SKILL_CARRYSTRENGTH:int = 7;
       
       protected static const SBOTTOMROW:int = 103;
       
@@ -317,7 +317,11 @@ package tibia.network
       
       protected static const SMARKETENTER:int = 246;
       
+      protected static const SCLIENTCHECK:int = 99;
+      
       protected static const SKILL_FIGHTFIST:int = 13;
+      
+      protected static const CBLESSINGSDIALOG:int = 207;
       
       protected static const SCREATURESPEED:int = 143;
       
@@ -327,7 +331,7 @@ package tibia.network
       
       protected static const SSPELLDELAY:int = 164;
       
-      protected static const BLESSING_SPIRITUAL_SHIELDING:int = BLESSING_ADVENTURER << 1;
+      protected static const BLESSING_SPIRITUAL_SHIELDING:int = BLESSING_FIRE_OF_SUNS << 1;
       
       protected static const BLESSING_SPARK_OF_PHOENIX:int = BLESSING_WISDOM_OF_SOLITUDE << 1;
       
@@ -376,6 +380,8 @@ package tibia.network
       protected static const COPENPREMIUMSHOP:int = 250;
       
       protected static const CUSETWOOBJECTS:int = 131;
+      
+      protected static const BLESSING_BLOOD_OF_THE_MOUNTAIN:int = BLESSING_HEART_OF_THE_MOUNTAIN << 1;
       
       protected static const ERR_INVALID_STATE:int = 4;
       
@@ -573,11 +579,9 @@ package tibia.network
       
       protected static const STATE_DRUNK:int = 3;
       
-      protected static const BLESSING_FIRE_OF_SUNS:int = BLESSING_EMBRACE_OF_TIBIA << 1;
+      protected static const BLESSING_FIRE_OF_SUNS:int = BLESSING_SPARK_OF_PHOENIX << 1;
       
-      protected static const TYPE_SUMMON_OTHERS:int = 4;
-      
-      public static const CLIENT_VERSION:uint = 2443;
+      public static const CLIENT_VERSION:uint = 2460;
       
       protected static const CATTACK:int = 161;
       
@@ -635,6 +639,8 @@ package tibia.network
       
       protected static const GUILD_WAR_NEUTRAL:int = 3;
       
+      protected static const BLESSING_HEART_OF_THE_MOUNTAIN:int = BLESSING_EMBRACE_OF_TIBIA << 1;
+      
       protected static const SLOGINERROR:int = 20;
       
       protected static const SCREATUREMARKS:int = 147;
@@ -667,8 +673,6 @@ package tibia.network
       
       protected static const STOPFLOOR:int = 190;
       
-      protected static const TYPE_SUMMON_OWN:int = 3;
-      
       protected static const CBUYPREMIUMOFFER:int = 252;
       
       protected static const NPC_SPEECH_QUESTTRADER:uint = 4;
@@ -677,7 +681,7 @@ package tibia.network
       
       protected static const SBLESSINGS:int = 156;
       
-      protected static const BLESSING_WISDOM_OF_SOLITUDE:int = BLESSING_FIRE_OF_SUNS << 1;
+      protected static const BLESSING_WISDOM_OF_SOLITUDE:int = BLESSING_TWIST_OF_FATE << 1;
       
       protected static const SSTOREBUTTONINDICATORS:int = 25;
       
@@ -755,7 +759,7 @@ package tibia.network
       
       protected static const SEDITGUILDMESSAGE:int = 174;
       
-      public static const PROTOCOL_VERSION:int = 1120;
+      public static const PROTOCOL_VERSION:int = 1130;
       
       protected static const SAMBIENTE:int = 130;
       
@@ -865,7 +869,7 @@ package tibia.network
       
       protected static const NUM_ONSCREEN_MESSAGES:int = 16;
       
-      protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_SPARK_OF_PHOENIX << 1;
+      protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_ADVENTURER << 1;
       
       protected static const PAYLOADDATA_POSITION:int = PAYLOADLENGTH_POS + PAYLOADLENGTH_SIZE;
       
@@ -889,6 +893,8 @@ package tibia.network
       
       protected static const TYPE_MONSTER:int = 1;
       
+      protected static const SBLESSINGSDIALOG:int = 155;
+      
       protected static const SCREATURETYPE:int = 149;
       
       protected static const SBUDDYSTATUSCHANGE:int = 211;
@@ -897,15 +903,17 @@ package tibia.network
       
       protected static const PATH_EAST:int = 1;
       
-      protected static const SUMMON_NONE:int = 0;
-      
       protected static const STATE_STRENGTHENED:int = 12;
       
       protected static const PROFESSION_DRUID:int = 4;
       
       protected static const PACKETLENGTH_POS:int = HEADER_POS;
       
+      protected static const SUMMON_NONE:int = 0;
+      
       protected static const SAUTOMAPFLAG:int = 221;
+      
+      protected static const TYPE_PLAYERSUMMON:int = 3;
       
       protected static const CSETOUTFIT:int = 211;
       
@@ -1636,8 +1644,10 @@ package tibia.network
       
       protected function readSPREMIUMTRIGGER(param1:ByteArray) : void
       {
-         var _loc2_:Vector.<uint> = new Vector.<uint>();
-         var _loc3_:int = param1.readUnsignedByte() - 1;
+         var _loc2_:Vector.<uint> = null;
+         var _loc3_:int = 0;
+         _loc2_ = new Vector.<uint>();
+         _loc3_ = param1.readUnsignedByte() - 1;
          while(_loc3_ >= 0)
          {
             _loc2_.push(param1.readUnsignedByte());
@@ -2033,10 +2043,33 @@ package tibia.network
          ImbuingManager.getInstance().closeImbuingWindow();
       }
       
-      protected function readSINSPECTIONSTATE(param1:ByteArray) : void
+      protected function readSPLAYERSKILLS(param1:ByteArray) : void
       {
-         param1.readUnsignedInt();
-         param1.readUnsignedByte();
+         var _loc2_:int = 0;
+         var _loc3_:Number = NaN;
+         var _loc4_:Number = NaN;
+         var _loc5_:Number = NaN;
+         var _loc6_:Array = null;
+         var _loc7_:Array = null;
+         _loc2_ = 0;
+         _loc3_ = 0;
+         _loc4_ = 0;
+         _loc5_ = 0;
+         _loc6_ = [SKILL_FIGHTFIST,SKILL_FIGHTCLUB,SKILL_FIGHTSWORD,SKILL_FIGHTAXE,SKILL_FIGHTDISTANCE,SKILL_FIGHTSHIELD,SKILL_FISHING];
+         _loc7_ = [SKILL_CRITICAL_HIT_CHANCE,SKILL_CRITICAL_HIT_DAMAGE,SKILL_LIFE_LEECH_CHANCE,SKILL_LIFE_LEECH_AMOUNT,SKILL_MANA_LEECH_CHANCE,SKILL_MANA_LEECH_AMOUNT];
+         for each(_loc2_ in _loc6_)
+         {
+            _loc3_ = param1.readUnsignedShort();
+            _loc4_ = param1.readUnsignedShort();
+            _loc5_ = param1.readUnsignedByte();
+            this.m_Player.setSkill(_loc2_,_loc3_,_loc4_,_loc5_);
+         }
+         for each(_loc2_ in _loc7_)
+         {
+            _loc3_ = param1.readUnsignedShort();
+            _loc4_ = param1.readUnsignedShort();
+            this.m_Player.setSkill(_loc2_,_loc3_,_loc4_,0);
+         }
       }
       
       protected function readSSTOREBUTTONINDICATORS(param1:ByteArray) : void
@@ -2073,33 +2106,11 @@ package tibia.network
          }
       }
       
-      protected function readSPLAYERSKILLS(param1:ByteArray) : void
+      protected function readSCLIENTCHECK(param1:ByteArray) : void
       {
-         var _loc2_:int = 0;
-         var _loc3_:Number = NaN;
-         var _loc4_:Number = NaN;
-         var _loc5_:Number = NaN;
-         var _loc6_:Array = null;
-         var _loc7_:Array = null;
-         _loc2_ = 0;
-         _loc3_ = 0;
-         _loc4_ = 0;
-         _loc5_ = 0;
-         _loc6_ = [SKILL_FIGHTFIST,SKILL_FIGHTCLUB,SKILL_FIGHTSWORD,SKILL_FIGHTAXE,SKILL_FIGHTDISTANCE,SKILL_FIGHTSHIELD,SKILL_FISHING];
-         _loc7_ = [SKILL_CRITICAL_HIT_CHANCE,SKILL_CRITICAL_HIT_DAMAGE,SKILL_LIFE_LEECH_CHANCE,SKILL_LIFE_LEECH_AMOUNT,SKILL_MANA_LEECH_CHANCE,SKILL_MANA_LEECH_AMOUNT];
-         for each(_loc2_ in _loc6_)
-         {
-            _loc3_ = param1.readUnsignedShort();
-            _loc4_ = param1.readUnsignedShort();
-            _loc5_ = param1.readUnsignedByte();
-            this.m_Player.setSkill(_loc2_,_loc3_,_loc4_,_loc5_);
-         }
-         for each(_loc2_ in _loc7_)
-         {
-            _loc3_ = param1.readUnsignedShort();
-            _loc4_ = param1.readUnsignedShort();
-            this.m_Player.setSkill(_loc2_,_loc3_,_loc4_,0);
-         }
+         var _loc2_:uint = param1.readUnsignedInt();
+         var _loc3_:ByteArray = new ByteArray();
+         param1.readBytes(_loc3_,0,_loc2_);
       }
       
       protected function readSCLEARTARGET(param1:ByteArray) : void
@@ -2182,6 +2193,12 @@ package tibia.network
          _loc6_.accountBalance = _loc2_;
          _loc6_.activeOffers = _loc3_;
          _loc6_.depotContent = _loc4_;
+      }
+      
+      protected function readSINSPECTIONSTATE(param1:ByteArray) : void
+      {
+         param1.readUnsignedInt();
+         param1.readUnsignedByte();
       }
       
       protected function readSWAIT(param1:ByteArray) : void
@@ -3258,8 +3275,10 @@ package tibia.network
       
       protected function readSSWITCHPRESET(param1:ByteArray) : void
       {
-         var _loc2_:int = param1.readUnsignedInt();
-         var _loc3_:OptionsStorage = Tibia.s_GetOptions();
+         var _loc2_:int = 0;
+         var _loc3_:OptionsStorage = null;
+         _loc2_ = param1.readUnsignedInt();
+         _loc3_ = Tibia.s_GetOptions();
          if(_loc3_ != null)
          {
             switch(_loc2_)
@@ -3300,6 +3319,7 @@ package tibia.network
       
       protected function readSPLAYERDATACURRENT(param1:ByteArray) : void
       {
+         var _loc2_:Number = NaN;
          var _loc3_:Number = NaN;
          var _loc4_:Number = NaN;
          var _loc5_:Number = NaN;
@@ -3310,7 +3330,7 @@ package tibia.network
          var _loc10_:Number = NaN;
          var _loc11_:uint = 0;
          var _loc12_:Boolean = false;
-         var _loc2_:Number = Tibia.s_FrameTibiaTimestamp;
+         _loc2_ = Tibia.s_FrameTibiaTimestamp;
          _loc3_ = 0;
          _loc4_ = 0;
          _loc5_ = 0;
@@ -3975,10 +3995,50 @@ package tibia.network
       
       protected function readSBLESSINGS(param1:ByteArray) : void
       {
-         var _loc2_:uint = param1.readUnsignedShort();
+         var _loc2_:uint = 0;
+         _loc2_ = param1.readUnsignedShort();
          if(this.m_Player != null)
          {
             this.m_Player.blessings = _loc2_;
+         }
+         var _loc3_:uint = param1.readUnsignedByte();
+      }
+      
+      protected function readSBLESSINGSDIALOG(param1:ByteArray) : void
+      {
+         var _loc2_:uint = 0;
+         var _loc3_:uint = 0;
+         var _loc13_:uint = 0;
+         var _loc14_:uint = 0;
+         var _loc15_:uint = 0;
+         var _loc16_:uint = 0;
+         var _loc17_:uint = 0;
+         var _loc18_:String = null;
+         _loc2_ = param1.readUnsignedByte();
+         _loc3_ = 0;
+         while(_loc3_ < _loc2_)
+         {
+            _loc14_ = param1.readUnsignedShort();
+            _loc15_ = param1.readUnsignedByte();
+            _loc3_++;
+         }
+         var _loc4_:Boolean = param1.readBoolean();
+         var _loc5_:uint = param1.readUnsignedByte();
+         var _loc6_:uint = param1.readUnsignedByte();
+         var _loc7_:uint = param1.readUnsignedByte();
+         var _loc8_:uint = param1.readUnsignedByte();
+         var _loc9_:uint = param1.readUnsignedByte();
+         var _loc10_:uint = param1.readUnsignedByte();
+         var _loc11_:Boolean = param1.readBoolean();
+         var _loc12_:Boolean = param1.readBoolean();
+         _loc13_ = param1.readUnsignedByte();
+         _loc3_ = 0;
+         while(_loc3_ < _loc13_)
+         {
+            _loc16_ = param1.readUnsignedInt();
+            _loc17_ = param1.readUnsignedByte();
+            _loc18_ = StringHelper.s_ReadLongStringFromByteArray(param1);
+            _loc3_++;
          }
       }
       
@@ -4242,18 +4302,18 @@ package tibia.network
       
       protected function readSDEAD(param1:ByteArray) : void
       {
-         var _loc4_:Number = NaN;
+         var _loc5_:Number = NaN;
          var _loc2_:ConnectionEvent = new ConnectionEvent(ConnectionEvent.DEAD);
          _loc2_.message = null;
          var _loc3_:int = param1.readUnsignedByte();
          if(_loc3_ == 0)
          {
-            _loc4_ = param1.readUnsignedByte();
-            if(_loc4_ < 100)
+            _loc5_ = param1.readUnsignedByte();
+            if(_loc5_ < 100)
             {
                _loc2_.data = {
                   "type":ConnectionEvent.DEATH_UNFAIR,
-                  "fairFightFactor":_loc4_
+                  "fairFightFactor":_loc5_
                };
             }
             else
@@ -4282,6 +4342,7 @@ package tibia.network
          {
             throw new Error("Connection.readSDEAD: Invalid death type " + _loc3_);
          }
+         var _loc4_:Boolean = param1.readUnsignedByte();
          this.m_ServerConnection.dispatchEvent(_loc2_);
       }
       
@@ -4624,6 +4685,10 @@ package tibia.network
                   this.readSDEAD(CommunicationData);
                   a_MessageReader.finishMessage();
                   break;
+               case SCLIENTCHECK:
+                  this.readSCLIENTCHECK(CommunicationData);
+                  a_MessageReader.finishMessage();
+                  break;
                case SFULLMAP:
                   this.readSFULLMAP(CommunicationData);
                   a_MessageReader.finishMessage();
@@ -4786,6 +4851,10 @@ package tibia.network
                   break;
                case SEDITLIST:
                   this.readSEDITLIST(CommunicationData);
+                  a_MessageReader.finishMessage();
+                  break;
+               case SBLESSINGSDIALOG:
+                  this.readSBLESSINGSDIALOG(CommunicationData);
                   a_MessageReader.finishMessage();
                   break;
                case SBLESSINGS:
@@ -5251,6 +5320,10 @@ package tibia.network
                if(_loc7_ != null)
                {
                   _loc7_.type = _loc6_;
+                  if(_loc7_.isSummon)
+                  {
+                     _loc7_.summonerCreatureID = param1.readUnsignedInt();
+                  }
                   _loc7_.name = StringHelper.s_ReadLongStringFromByteArray(param1,Creature.MAX_NAME_LENGHT);
                   _loc7_.setSkillValue(SKILL_HITPOINTS_PERCENT,param1.readUnsignedByte());
                   _loc7_.direction = param1.readUnsignedByte();
@@ -5263,6 +5336,10 @@ package tibia.network
                   _loc7_.setPartyFlag(param1.readUnsignedByte());
                   _loc7_.guildFlag = param1.readUnsignedByte();
                   _loc7_.type = param1.readUnsignedByte();
+                  if(_loc7_.isSummon)
+                  {
+                     _loc7_.summonerCreatureID = param1.readUnsignedInt();
+                  }
                   _loc7_.speechCategory = param1.readUnsignedByte();
                   _loc7_.marks.setMark(Marks.MARK_TYPE_PERMANENT,param1.readUnsignedByte());
                   param1.readUnsignedByte();
@@ -5286,6 +5363,10 @@ package tibia.network
                   _loc7_.setPKFlag(param1.readUnsignedByte());
                   _loc7_.setPartyFlag(param1.readUnsignedByte());
                   _loc7_.type = param1.readUnsignedByte();
+                  if(_loc7_.isSummon)
+                  {
+                     _loc7_.summonerCreatureID = param1.readUnsignedInt();
+                  }
                   _loc7_.speechCategory = param1.readUnsignedByte();
                   _loc7_.marks.setMark(Marks.MARK_TYPE_PERMANENT,param1.readUnsignedByte());
                   param1.readUnsignedByte();
@@ -5763,13 +5844,16 @@ package tibia.network
       
       protected function readSPLAYERDATABASIC(param1:ByteArray) : void
       {
-         var _loc2_:Boolean = param1.readBoolean();
+         var _loc2_:Boolean = false;
+         var _loc3_:Array = null;
+         var _loc4_:int = 0;
+         _loc2_ = param1.readBoolean();
          this.m_Player.premiumUntil = param1.readUnsignedInt();
          this.m_Player.premium = _loc2_;
          this.m_Player.profession = param1.readUnsignedByte();
          this.m_Player.hasReachedMain = param1.readBoolean();
-         var _loc3_:Array = [];
-         var _loc4_:int = param1.readUnsignedShort() - 1;
+         _loc3_ = [];
+         _loc4_ = param1.readUnsignedShort() - 1;
          while(_loc4_ >= 0)
          {
             _loc3_.push(param1.readUnsignedByte());
@@ -6522,6 +6606,10 @@ package tibia.network
          if(_loc4_ != null)
          {
             _loc4_.type = _loc3_;
+            if(_loc4_.isSummon)
+            {
+               _loc4_.summonerCreatureID = param1.readUnsignedInt();
+            }
          }
          this.m_CreatureStorage.invalidateOpponents();
       }

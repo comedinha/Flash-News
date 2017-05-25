@@ -129,7 +129,7 @@ package tibia.sessiondump
       
       protected static const TYPE_NPC:int = 2;
       
-      protected static const BLESSING_FIRE_OF_SUNS:int = BLESSING_EMBRACE_OF_TIBIA << 1;
+      protected static const BLESSING_FIRE_OF_SUNS:int = BLESSING_SPARK_OF_PHOENIX << 1;
       
       protected static const CBROWSEFIELD:int = 203;
       
@@ -154,8 +154,6 @@ package tibia.sessiondump
       public static const STATE_DEFAULT:int = 0;
       
       protected static const CAPPLYIMBUEMENT:int = 213;
-      
-      protected static const TYPE_SUMMON_OTHERS:int = 4;
       
       protected static const CREMOVEBUDDY:int = 221;
       
@@ -191,6 +189,8 @@ package tibia.sessiondump
       
       protected static const PROFESSION_NONE:int = 0;
       
+      protected static const NPC_SPEECH_TRADER:uint = 2;
+      
       protected static const STATE_PZ_ENTERED:int = 14;
       
       protected static const CPASSLEADERSHIP:int = 166;
@@ -223,11 +223,9 @@ package tibia.sessiondump
       
       protected static const SLOGINERROR:int = 20;
       
-      protected static const NPC_SPEECH_TRADER:uint = 2;
-      
       protected static const SCREATUREMARKS:int = 147;
       
-      private static const KEYFRAME_STATE_NONE:uint = 0;
+      protected static const BLESSING_HEART_OF_THE_MOUNTAIN:int = BLESSING_EMBRACE_OF_TIBIA << 1;
       
       protected static const SPREYFREELISTREROLLAVAILABILITY:int = 230;
       
@@ -285,8 +283,6 @@ package tibia.sessiondump
       
       protected static const PROFESSION_SORCERER:int = 3;
       
-      protected static const TYPE_SUMMON_OWN:int = 3;
-      
       public static const MESSAGEDIALOG_PREY_MESSAGE:int = 20;
       
       protected static const CBUYPREMIUMOFFER:int = 252;
@@ -303,7 +299,7 @@ package tibia.sessiondump
       
       private static const HEADER_MAGIC_BYTES_SIZE:uint = 3;
       
-      protected static const BLESSING_WISDOM_OF_SOLITUDE:int = BLESSING_FIRE_OF_SUNS << 1;
+      protected static const BLESSING_WISDOM_OF_SOLITUDE:int = BLESSING_TWIST_OF_FATE << 1;
       
       protected static const PARTY_LEADER_SEXP_INACTIVE_GUILTY:int = 8;
       
@@ -371,6 +367,8 @@ package tibia.sessiondump
       
       protected static const CSELLOBJECT:int = 123;
       
+      private static const KEYFRAME_STATE_NONE:uint = 0;
+      
       protected static const CMARKETBROWSE:int = 245;
       
       protected static const STATE_CURSED:int = 11;
@@ -401,7 +399,11 @@ package tibia.sessiondump
       
       protected static const SMARKETENTER:int = 246;
       
+      protected static const SCLIENTCHECK:int = 99;
+      
       protected static const CONNECTION_STATE_CONNECTING_STAGE1:int = 1;
+      
+      protected static const CBLESSINGSDIALOG:int = 207;
       
       protected static const CONNECTION_STATE_CONNECTING_STAGE2:int = 2;
       
@@ -425,7 +427,7 @@ package tibia.sessiondump
       
       protected static const SSPELLDELAY:int = 164;
       
-      protected static const BLESSING_SPIRITUAL_SHIELDING:int = BLESSING_ADVENTURER << 1;
+      protected static const BLESSING_SPIRITUAL_SHIELDING:int = BLESSING_FIRE_OF_SUNS << 1;
       
       protected static const CEDITBUDDY:int = 222;
       
@@ -437,7 +439,7 @@ package tibia.sessiondump
       
       protected static const CROTATEWEST:int = 114;
       
-      public static const PROTOCOL_VERSION:int = 1120;
+      public static const PROTOCOL_VERSION:int = 1130;
       
       protected static const SCREATUREOUTFIT:int = 142;
       
@@ -524,6 +526,8 @@ package tibia.sessiondump
       protected static const CINVITETOCHANNEL:int = 171;
       
       protected static const CLOOKNPCTRADE:int = 121;
+      
+      protected static const BLESSING_BLOOD_OF_THE_MOUNTAIN:int = BLESSING_HEART_OF_THE_MOUNTAIN << 1;
       
       protected static const STATE_BLEEDING:int = 15;
       
@@ -667,7 +671,7 @@ package tibia.sessiondump
       
       public static const MESSAGEDIALOG_IMBUEMENT_SUCCESS:int = 0;
       
-      protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_SPARK_OF_PHOENIX << 1;
+      protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_ADVENTURER << 1;
       
       protected static const CTALK:int = 150;
       
@@ -717,6 +721,8 @@ package tibia.sessiondump
       
       protected static const SEQUENCE_NUMBER_SIZE:int = 4;
       
+      protected static const SBLESSINGSDIALOG:int = 155;
+      
       protected static const COPENTRANSACTIONHISTORY:int = 253;
       
       protected static const CSHAREEXPERIENCE:int = 168;
@@ -750,6 +756,8 @@ package tibia.sessiondump
       protected static const SUMMON_NONE:int = 0;
       
       protected static const SAUTOMAPFLAG:int = 221;
+      
+      protected static const TYPE_PLAYERSUMMON:int = 3;
       
       protected static const SOWNOFFER:int = 125;
       

@@ -250,7 +250,11 @@ package tibia.sessiondump.controller
       
       protected static const SMARKETENTER:int = 246;
       
+      protected static const SCLIENTCHECK:int = 99;
+      
       protected static const CONNECTION_STATE_CONNECTING_STAGE1:int = 1;
+      
+      protected static const CBLESSINGSDIALOG:int = 207;
       
       protected static const CONNECTION_STATE_CONNECTING_STAGE2:int = 2;
       
@@ -272,7 +276,7 @@ package tibia.sessiondump.controller
       
       protected static const CROTATEWEST:int = 114;
       
-      public static const PROTOCOL_VERSION:int = 1120;
+      public static const PROTOCOL_VERSION:int = 1130;
       
       protected static const SCREATUREOUTFIT:int = 142;
       
@@ -467,6 +471,8 @@ package tibia.sessiondump.controller
       protected static const CMARKETLEAVE:int = 244;
       
       protected static const SEQUENCE_NUMBER_SIZE:int = 4;
+      
+      protected static const SBLESSINGSDIALOG:int = 155;
       
       protected static const COPENTRANSACTIONHISTORY:int = 253;
       

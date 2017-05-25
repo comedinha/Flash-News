@@ -78,13 +78,11 @@ package tibia.creatures.battlelistWidgetClasses
       
       protected static const ONSCREEN_MESSAGE_HEIGHT:int = 195;
       
-      protected static const TYPE_SUMMON_OTHERS:int = 4;
+      protected static const TYPE_NPC:int = 2;
       
-      protected static const BLESSING_FIRE_OF_SUNS:int = BLESSING_EMBRACE_OF_TIBIA << 1;
+      protected static const BLESSING_FIRE_OF_SUNS:int = BLESSING_SPARK_OF_PHOENIX << 1;
       
       protected static const SKILL_STAMINA:int = 17;
-      
-      protected static const TYPE_NPC:int = 2;
       
       protected static const STATE_NONE:int = -1;
       
@@ -138,6 +136,8 @@ package tibia.creatures.battlelistWidgetClasses
       
       protected static const PROFESSION_NONE:int = 0;
       
+      protected static const BLESSING_BLOOD_OF_THE_MOUNTAIN:int = BLESSING_HEART_OF_THE_MOUNTAIN << 1;
+      
       protected static const MAX_NAME_LENGTH:int = 29;
       
       protected static const PARTY_LEADER:int = 1;
@@ -146,9 +146,9 @@ package tibia.creatures.battlelistWidgetClasses
       
       public static const HEIGHT_HINT:int = 28;
       
-      protected static const STATE_PZ_ENTERED:int = 14;
-      
       protected static const SKILL_CARRYSTRENGTH:int = 7;
+      
+      protected static const STATE_PZ_ENTERED:int = 14;
       
       protected static const PK_ATTACKER:int = 1;
       
@@ -167,6 +167,8 @@ package tibia.creatures.battlelistWidgetClasses
       static var s_NameCache:TextFieldCache = new TextFieldCache(192,TextFieldCache.DEFAULT_HEIGHT,NUM_CREATURES,true);
       
       protected static const MAP_MIN_X:int = 24576;
+      
+      protected static const BLESSING_HEART_OF_THE_MOUNTAIN:int = BLESSING_EMBRACE_OF_TIBIA << 1;
       
       protected static const SKILL_LIFE_LEECH_AMOUNT:int = 22;
       
@@ -210,8 +212,6 @@ package tibia.creatures.battlelistWidgetClasses
       
       protected static const FIELD_ENTER_NOT_POSSIBLE:uint = 2;
       
-      protected static const TYPE_SUMMON_OWN:int = 3;
-      
       protected static const PROFESSION_MASK_SORCERER:int = 1 << PROFESSION_SORCERER;
       
       protected static const PROFESSION_KNIGHT:int = 1;
@@ -222,7 +222,7 @@ package tibia.creatures.battlelistWidgetClasses
       
       protected static const UNDERGROUND_LAYER:int = 2;
       
-      protected static const BLESSING_WISDOM_OF_SOLITUDE:int = BLESSING_FIRE_OF_SUNS << 1;
+      protected static const BLESSING_WISDOM_OF_SOLITUDE:int = BLESSING_TWIST_OF_FATE << 1;
       
       protected static const FIELD_CACHESIZE:int = FIELD_SIZE;
       
@@ -252,7 +252,7 @@ package tibia.creatures.battlelistWidgetClasses
       
       protected static const STATE_FAST:int = 6;
       
-      protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_SPARK_OF_PHOENIX << 1;
+      protected static const BLESSING_TWIST_OF_FATE:int = BLESSING_ADVENTURER << 1;
       
       protected static const SKILL_MANA_LEECH_AMOUNT:int = 24;
       
@@ -326,9 +326,11 @@ package tibia.creatures.battlelistWidgetClasses
       
       protected static const NPC_SPEECH_NORMAL:uint = 1;
       
+      protected static const TYPE_PLAYERSUMMON:int = 3;
+      
       protected static const MAPSIZE_W:int = 10;
       
-      protected static const BLESSING_SPIRITUAL_SHIELDING:int = BLESSING_ADVENTURER << 1;
+      protected static const BLESSING_SPIRITUAL_SHIELDING:int = BLESSING_FIRE_OF_SUNS << 1;
       
       protected static const NPC_SPEECH_NONE:uint = 0;
       

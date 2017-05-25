@@ -232,13 +232,13 @@ package tibia.sidebar
       
       override protected function updateDisplayList(param1:Number, param2:Number) : void
       {
-         var _loc13_:WidgetView = null;
+         var _loc7_:Number = NaN;
          layoutChrome(param1,unscaledHeight);
          var _loc3_:EdgeMetrics = viewMetricsAndPadding;
          var _loc4_:Number = Math.max(0,getStyle("verticalGap"));
          var _loc5_:Number = 0;
          var _loc6_:Number = 0;
-         var _loc7_:Number = 0;
+         _loc7_ = 0;
          var _loc8_:Number = 0;
          var _loc9_:Number = getStyle("paddingLeft");
          var _loc10_:Number = 0;
@@ -253,7 +253,7 @@ package tibia.sidebar
             _loc10_ = _loc7_;
          }
          var _loc12_:int = 0;
-         _loc13_ = null;
+         var _loc13_:WidgetView = null;
          var _loc14_:Number = param2 - _loc10_ - _loc3_.top - _loc3_.bottom;
          var _loc15_:Number = -_loc4_;
          if(!visible)
