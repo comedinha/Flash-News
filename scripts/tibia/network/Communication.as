@@ -581,7 +581,7 @@ package tibia.network
       
       protected static const BLESSING_FIRE_OF_SUNS:int = BLESSING_SPARK_OF_PHOENIX << 1;
       
-      public static const CLIENT_VERSION:uint = 2460;
+      public static const CLIENT_VERSION:uint = 2474;
       
       protected static const CATTACK:int = 161;
       
@@ -759,7 +759,7 @@ package tibia.network
       
       protected static const SEDITGUILDMESSAGE:int = 174;
       
-      public static const PROTOCOL_VERSION:int = 1130;
+      public static const PROTOCOL_VERSION:int = 1132;
       
       protected static const SAMBIENTE:int = 130;
       
@@ -884,6 +884,8 @@ package tibia.network
       protected static const RENDERER_DEFAULT_WIDTH:Number = MAP_WIDTH * FIELD_SIZE;
       
       protected static const SRIGHTROW:int = 102;
+      
+      protected static const SSHOWGAMENEWS:int = 152;
       
       protected static const SGRAPHICALEFFECT:int = 131;
       
@@ -4342,7 +4344,7 @@ package tibia.network
          {
             throw new Error("Connection.readSDEAD: Invalid death type " + _loc3_);
          }
-         var _loc4_:Boolean = param1.readUnsignedByte();
+         var _loc4_:Boolean = param1.readBoolean();
          this.m_ServerConnection.dispatchEvent(_loc2_);
       }
       
@@ -4851,6 +4853,10 @@ package tibia.network
                   break;
                case SEDITLIST:
                   this.readSEDITLIST(CommunicationData);
+                  a_MessageReader.finishMessage();
+                  break;
+               case SSHOWGAMENEWS:
+                  this.readSSHOWGAMENEWS(CommunicationData);
                   a_MessageReader.finishMessage();
                   break;
                case SBLESSINGSDIALOG:
@@ -5711,21 +5717,10 @@ package tibia.network
          }
       }
       
-      public function sendCCLOSENPCCHANNEL() : void
+      protected function readSSHOWGAMENEWS(param1:ByteArray) : void
       {
-         var b:ByteArray = null;
-         try
-         {
-            b = this.m_ServerConnection.messageWriter.createMessage();
-            b.writeByte(CCLOSENPCCHANNEL);
-            this.m_ServerConnection.messageWriter.finishMessage();
-            return;
-         }
-         catch(e:Error)
-         {
-            handleSendError(CCLOSENPCCHANNEL,e);
-            return;
-         }
+         param1.readUnsignedInt();
+         param1.readUnsignedByte();
       }
       
       protected function readSOUTFIT(param1:ByteArray) : void
@@ -5842,24 +5837,21 @@ package tibia.network
          }
       }
       
-      protected function readSPLAYERDATABASIC(param1:ByteArray) : void
+      public function sendCCLOSENPCCHANNEL() : void
       {
-         var _loc2_:Boolean = false;
-         var _loc3_:Array = null;
-         var _loc4_:int = 0;
-         _loc2_ = param1.readBoolean();
-         this.m_Player.premiumUntil = param1.readUnsignedInt();
-         this.m_Player.premium = _loc2_;
-         this.m_Player.profession = param1.readUnsignedByte();
-         this.m_Player.hasReachedMain = param1.readBoolean();
-         _loc3_ = [];
-         _loc4_ = param1.readUnsignedShort() - 1;
-         while(_loc4_ >= 0)
+         var b:ByteArray = null;
+         try
          {
-            _loc3_.push(param1.readUnsignedByte());
-            _loc4_--;
+            b = this.m_ServerConnection.messageWriter.createMessage();
+            b.writeByte(CCLOSENPCCHANNEL);
+            this.m_ServerConnection.messageWriter.finishMessage();
+            return;
          }
-         this.m_Player.knownSpells = _loc3_;
+         catch(e:Error)
+         {
+            handleSendError(CCLOSENPCCHANNEL,e);
+            return;
+         }
       }
       
       protected function readSTALK(param1:ByteArray) : void
@@ -5973,6 +5965,26 @@ package tibia.network
             handleSendError(CLOOKATCREATURE,e);
             return;
          }
+      }
+      
+      protected function readSPLAYERDATABASIC(param1:ByteArray) : void
+      {
+         var _loc2_:Boolean = false;
+         var _loc3_:Array = null;
+         var _loc4_:int = 0;
+         _loc2_ = param1.readBoolean();
+         this.m_Player.premiumUntil = param1.readUnsignedInt();
+         this.m_Player.premium = _loc2_;
+         this.m_Player.profession = param1.readUnsignedByte();
+         this.m_Player.hasReachedMain = param1.readBoolean();
+         _loc3_ = [];
+         _loc4_ = param1.readUnsignedShort() - 1;
+         while(_loc4_ >= 0)
+         {
+            _loc3_.push(param1.readUnsignedByte());
+            _loc4_--;
+         }
+         this.m_Player.knownSpells = _loc3_;
       }
       
       protected function readSCREATUREOUTFIT(param1:ByteArray) : void

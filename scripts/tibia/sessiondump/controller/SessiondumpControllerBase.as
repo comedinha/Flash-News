@@ -276,7 +276,7 @@ package tibia.sessiondump.controller
       
       protected static const CROTATEWEST:int = 114;
       
-      public static const PROTOCOL_VERSION:int = 1130;
+      public static const PROTOCOL_VERSION:int = 1132;
       
       protected static const SCREATUREOUTFIT:int = 142;
       
@@ -455,6 +455,8 @@ package tibia.sessiondump.controller
       protected static const PAYLOADLENGTH_SIZE:int = 2;
       
       protected static const SRIGHTROW:int = 102;
+      
+      protected static const SSHOWGAMENEWS:int = 152;
       
       protected static const SEDITTEXT:int = 150;
       
