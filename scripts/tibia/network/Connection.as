@@ -67,7 +67,7 @@ package tibia.network
       
       protected static const CBUYOBJECT:int = 122;
       
-      public static const CLIENT_VERSION:uint = 2474;
+      public static const CLIENT_VERSION:uint = 2483;
       
       protected static const SPING:int = 29;
       
@@ -125,6 +125,8 @@ package tibia.network
       
       protected static const SCLOSECONTAINER:int = 111;
       
+      protected static const SCLOSEREWARDWALL:int = 227;
+      
       protected static const SLEFTROW:int = 104;
       
       protected static const SFULLMAP:int = 100;
@@ -138,6 +140,8 @@ package tibia.network
       protected static const CGOWEST:int = 104;
       
       protected static const CPASSLEADERSHIP:int = 166;
+      
+      protected static const SMARKETSTATISTICS:int = 205;
       
       protected static const SSPELLGROUPDELAY:int = 165;
       
@@ -175,6 +179,8 @@ package tibia.network
       
       protected static const SUNJUSTIFIEDPOINTS:int = 183;
       
+      protected static const SDAILYREWARDBASIC:int = 228;
+      
       protected static const SPLAYERDATACURRENT:int = 160;
       
       protected static const STRAPPERS:int = 135;
@@ -188,6 +194,8 @@ package tibia.network
       protected static const ERR_CONNECTION_LOST:int = 6;
       
       protected static const CROTATESOUTH:int = 113;
+      
+      protected static const SIMPACTTRACKING:int = 204;
       
       protected static const CACCEPTTRADE:int = 127;
       
@@ -243,6 +251,8 @@ package tibia.network
       
       protected static const CMARKETCANCEL:int = 247;
       
+      protected static const STRACKEDQUESTFLAGS:int = 208;
+      
       protected static const SWORLDENTERED:int = 15;
       
       protected static const CEXCLUDEFROMCHANNEL:int = 172;
@@ -291,7 +301,7 @@ package tibia.network
       
       protected static const SSPELLDELAY:int = 164;
       
-      protected static const CEDITBUDDY:int = 222;
+      protected static const SITEMWASTED:int = 206;
       
       protected static const SDELETEONMAP:int = 108;
       
@@ -307,15 +317,17 @@ package tibia.network
       
       protected static const SCREATUREOUTFIT:int = 142;
       
-      public static const PROTOCOL_VERSION:int = 1132;
+      public static const PROTOCOL_VERSION:int = 1140;
+      
+      protected static const CEDITBUDDY:int = 222;
       
       protected static const SAMBIENTE:int = 130;
       
       protected static const ERR_INVALID_SIZE:int = 1;
       
-      protected static const SLOGINCHALLENGE:int = 31;
+      public static const RESOURCETYPE_COLLECTION_TOKENS:int = 20;
       
-      protected static const CLEAVECHANNEL:int = 153;
+      protected static const SLOGINCHALLENGE:int = 31;
       
       private static const PING_LATENCY_INTERVAL:uint = 15;
       
@@ -327,13 +339,17 @@ package tibia.network
       
       protected static const SCREATUREUNPASS:int = 146;
       
-      protected static const SSHOWMODALDIALOG:int = 250;
+      protected static const CLEAVECHANNEL:int = 153;
       
       protected static const CONNECTION_STATE_DISCONNECTED:int = 0;
+      
+      protected static const SOPENREWARDWALL:int = 226;
       
       protected static const CGONORTHEAST:int = 106;
       
       protected static const RECONNECT_DELAY:int = 3000;
+      
+      protected static const SSHOWMODALDIALOG:int = 250;
       
       protected static const SDELETEINCONTAINER:int = 114;
       
@@ -371,13 +387,19 @@ package tibia.network
       
       protected static const ERR_INVALID_MESSAGE:int = 3;
       
-      protected static const CINVITETOPARTY:int = 163;
+      protected static const SDAILYREWARDHISTORY:int = 229;
       
       protected static const SCREATURELIGHT:int = 141;
+      
+      protected static const CINVITETOPARTY:int = 163;
+      
+      protected static const SRESTINGAREASTATE:int = 169;
       
       protected static const CPINGBACK:int = 30;
       
       protected static const SPINGBACK:int = 30;
+      
+      protected static const SITEMLOOTED:int = 207;
       
       protected static const STUTORIALHINT:int = 220;
       
@@ -475,11 +497,11 @@ package tibia.network
       
       protected static const SPREMIUMSHOP:int = 251;
       
-      protected static const SEQUENCE_NUMBER_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
-      
       protected static const STALK:int = 170;
       
       protected static const CEDITTEXT:int = 137;
+      
+      protected static const SEQUENCE_NUMBER_POS:int = PACKETLENGTH_POS + PACKETLENGTH_SIZE;
       
       protected static const SCLOSENPCTRADE:int = 124;
       
@@ -497,6 +519,8 @@ package tibia.network
       
       protected static const PAYLOADLENGTH_SIZE:int = 2;
       
+      protected static const STIBIATIME:int = 239;
+      
       protected static const SGRAPHICALEFFECT:int = 131;
       
       protected static const CBUGREPORT:int = 230;
@@ -510,6 +534,8 @@ package tibia.network
       protected static const CMARKETLEAVE:int = 244;
       
       protected static const SEQUENCE_NUMBER_SIZE:int = 4;
+      
+      protected static const SDAILYREWARDCOLLECTIONSTATE:int = 222;
       
       protected static const SBLESSINGSDIALOG:int = 155;
       
@@ -532,6 +558,8 @@ package tibia.network
       protected static const PACKETLENGTH_POS:int = HEADER_POS;
       
       protected static const SAUTOMAPFLAG:int = 221;
+      
+      protected static const SKILLTRACKING:int = 209;
       
       protected static const SOWNOFFER:int = 125;
       

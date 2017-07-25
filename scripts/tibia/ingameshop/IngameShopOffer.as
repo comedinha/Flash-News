@@ -56,6 +56,11 @@ package tibia.ingameshop
          this.m_SalidValidUntilTimestamp = 0;
       }
       
+      public static function s_ReplacePlaceholderTextInStoreDescription(param1:String) : String
+      {
+         return param1.replace(/\{1\}/g,"\nNote that decoration kits and the objects they contain are not tradable. A decoration kit can only be unwrapped in a house of which the purchasing character is the owner. If the character loses this house or gives it to another character, the purchased decoration will be wrapped back and sent to the character\'s inbox.");
+      }
+      
       public function set disabledReason(param1:String) : void
       {
          this.m_DisabledReason = param1;

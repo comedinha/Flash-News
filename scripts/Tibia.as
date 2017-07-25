@@ -122,7 +122,7 @@ package
       
       public static const BUGGY_FLASH_PLAYER_VERSION:String = "21,0,0,182";
       
-      public static const PROTOCOL_VERSION:int = 1132;
+      public static const PROTOCOL_VERSION:int = 1140;
       
       public static var s_FrameTibiaTimestamp:Number = 0;
       
@@ -142,7 +142,7 @@ package
       
       private static var s_LastTibiaFactorChangeRealTimestamp:int = 0;
       
-      public static const CLIENT_VERSION:uint = 2474;
+      public static const CLIENT_VERSION:uint = 2483;
       
       public static const PREVIEW_STATE_PREVIEW_NO_ACTIVE_CHANGE:uint = 1;
       
@@ -201,789 +201,777 @@ package
       protected static const PAYLOAD_POS:int = HEADER_POS + HEADER_SIZE;
        
       
-      private var _embed_css____images_prey_prey_unlock_temporarily_png_1138134336:Class;
+      private var _embed_css_images_BG_Bars_compact_enpieceOrnamented_png_985111789:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Skull_idle_png_1630824013:Class;
-      
-      private var _embed_css_images_custombutton_Button_Standard_tileable_ml_idle_png_1785933248:Class;
-      
-      private var _embed_css_images_Icons_Conditions_Strenghtened_png_957751449:Class;
+      private var _embed_css_images_Icons_WidgetHeaders_BattleList_png_1517554948:Class;
       
       protected var m_CurrentOptionsAsset:OptionsAsset = null;
       
-      private var _embed_css_images_Icons_CombatControls_PvPOn_active_png_342724498:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_tl_over_png_1203653996:Class;
       
-      private var _embed_css_images_custombutton_Button_Highlight_tileable_bl_idle_png_308178610:Class;
+      private var _embed_css_images_slot_Hotkey_protected_png_803702344:Class;
       
-      private var _embed_css_images_Arrow_ScrollHotkeys_over_png_191481507:Class;
+      private var _embed_css_____assets_images_imbuing_imbuing_icon_imbue_disabled_png_2110185778:Class;
       
-      private var _embed_css_images_Button_PurchaseComplete_over_png_1939813504:Class;
+      private var _embed_css_images_Icons_BattleList_HideSkulled_idle_png_428456803:Class;
       
-      private var _embed_css____images_prey_prey_bonus_reroll_png_1664079721:Class;
+      private var _embed_css_images_Icons_BattleList_HideNPCs_over_png_917250191:Class;
       
-      private var _embed_css_images_Icons_ProgressBars_SwordFighting_png_388408934:Class;
+      private var _embed_css_images_Icons_CombatControls_YellowHandOff_over_png_443456403:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_GeneralControls_active_over_png_239349245:Class;
+      private var _embed_css_images_BarsHealth_compact_Yellow_png_824185175:Class;
       
-      private var _embed_css_images_Slot_InventoryHead_png_556570291:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Prey_active_over_png_21306593:Class;
       
-      private var _embed_css_images_Icons_Conditions_Drunk_png_495340422:Class;
+      private var _embed_css_images_ChatTab_tileable_png_883140798:Class;
       
-      private var _embed_css_images_BarsHealth_fat_GreenFull_png_1675173631:Class;
+      private var _embed_css_images_Icons_WidgetHeaders_Skull_png_1181631553:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Inventory_idle_over_png_1298136851:Class;
+      private var _embed_css_images_Icons_WidgetMenu_GeneralControls_active_over_png_450488793:Class;
       
-      private var _embed_css____images_prey_prey_list_reroll_png_1720722638:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_bc_disabled_png_97198997:Class;
       
-      private var _embed_css_images_Icons_BattleList_HideSkulled_over_png_238536285:Class;
+      private var _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672:Class;
       
-      private var _embed_css_images_Button_ContainerUp_over_png_133274678:Class;
+      private var _embed_css_images_Button_LockHotkeys_Locked_idle_png_1093080407:Class;
       
-      private var _embed_css_images_Button_LockHotkeys_UnLocked_idle_png_587263282:Class;
+      private var _embed_css_images_Slot_InventoryShield_png_125978696:Class;
       
       mx_internal var _bindingsByDestination:Object;
       
-      private var _embed_css_images_Icons_WidgetMenu_Inventory_active_over_png_609144603:Class;
-      
-      private var _embed_css_images_Arrow_ScrollTabs_over_png_1462627108:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_tc_over_png_1569901787:Class;
       
       private var _1314206572m_UIWorldMapWidget:WorldMapWidget;
       
-      private var _embed_css_images_custombutton_Button_Standard_tileable_ml_over_png_517648064:Class;
+      private var _embed_css_images_Icons_ProgressBars_ProgressOff_png_1779777081:Class;
       
-      private var _embed_css_images_Icons_CombatControls_StandOff_over_png_325171198:Class;
+      private var _embed_css____images_prey_prey_bonus_reroll_png_1391458109:Class;
       
-      private var _embed_css_images_custombutton_Button_Border_tileable_ml_pressed_png_1348489359:Class;
+      private var _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040:Class;
       
-      private var _embed_css_images_custombutton_Button_Standard_tileable_bl_disabled_png_1093953119:Class;
-      
-      private var _embed_css_images_Icons_WidgetMenu_Skull_active_png_1541707963:Class;
-      
-      private var _embed_css_images_Icons_TradeLists_ContainerDisplay_idle_png_851212863:Class;
-      
-      private var _embed_css_images_Icons_Inventory_StoreInbox_png_2111006747:Class;
-      
-      private var _embed_css_images_Icons_WidgetHeaders_Minimap_png_1626881241:Class;
-      
-      private var _embed_css_images_BarsHealth_default_GreenFull_png_807562777:Class;
-      
-      private var _embed_css_images_custombutton_Button_Gold_tileable_tc_pressed_png_206403197:Class;
+      private var _embed_css_images_custombutton_Button_Gold_tileable_mc_idle_png_144725306:Class;
       
       protected var m_ContainerStorage:ContainerStorage = null;
       
-      private var _embed_css_images_Minimap_ZoomOut_pressed_png_630904298:Class;
-      
-      private var _embed_css_____assets_images_imbuing_imbuing_icon_remove_disabled_png_1775436169:Class;
-      
-      private var _embed_css_images_Icons_CombatControls_WhiteHandOff_over_png_1354370208:Class;
-      
       protected var m_CurrentOptionsUploadErrorDelay:int = 0;
       
-      private var _embed_css_images_Arrow_Minimap_LevelUpDown_over_png_536705658:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_bc_pressed_png_969488782:Class;
+      
+      private var _embed_css_images_Icons_TradeLists_ListDisplay_idle_png_539137698:Class;
       
       private var _1020379552m_UITibiaRootContainer:HBox;
       
-      private var _embed_css_images_BarsHealth_compact_RedLow_png_298615636:Class;
+      private var _embed_css_images_Slot_Hotkey_Cooldown_png_1017067163:Class;
+      
+      private var _embed_css_images_Icons_CombatControls_OffensiveOn_idle_png_228803293:Class;
       
       protected var m_IsActive:Boolean = false;
       
-      private var _embed_css_images_Icons_CombatControls_DoveOff_over_png_1096554064:Class;
+      private var _embed_css_images_Minimap_ZoomOut_over_png_353204682:Class;
       
-      private var _embed_css_images_custombutton_Button_Standard_tileable_ml_pressed_png_165397636:Class;
+      private var _embed_css_images_custombutton_Button_Highlight_tileable_tc_idle_png_1335630595:Class;
       
-      private var _embed_css_images_Button_ChatTab_Close_pressed_png_1974009856:Class;
+      private var _embed_css_images_Scrollbar_Arrow_down_idle_png_91820120:Class;
       
-      private var _embed_css_images_custombutton_Button_Border_tileable_bc_disabled_png_372459381:Class;
+      private var _embed_css_images_Icons_CombatControls_RedFistOn_over_png_744247435:Class;
       
-      private var _embed_css_images_Icons_IngameShop_12x12_Yes_png_1011478395:Class;
+      private var _embed_css_images_Icons_CombatControls_PvPOn_idle_png_325504288:Class;
       
-      private var _embed_css_images_Icons_TradeLists_ListDisplay_over_png_417076086:Class;
+      private var _embed_css_images_Slot_Statusicon_highlighted_png_1332900150:Class;
       
-      private var _embed_css_images_Minimap_ZoomIn_over_png_1410316311:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Containers_idle_png_2144032898:Class;
       
-      private var _embed_css_images_Button_ChatTab_Close_idle_png_1545025108:Class;
+      private var _embed_css_images_Icons_BattleList_HideMonsters_idle_png_1236418872:Class;
       
-      private var _embed_css_images_custombutton_Button_Gold_tileable_tl_idle_png_1873827252:Class;
+      private var _embed_css_images_Icons_Conditions_MagicShield_png_557850584:Class;
       
-      private var _embed_css_images_BarsHealth_compact_RedLow2_png_6321508:Class;
+      private var _embed_css_images_Minimap_Center_idle_png_2012166886:Class;
       
-      private var _embed_css_images_Icons_CombatControls_AutochaseOn_idle_png_1441980539:Class;
+      private var _embed_css_images_Icons_ProgressBars_ProgressOn_png_370747169:Class;
       
-      private var _embed_css_images_Icons_Conditions_Poisoned_png_1674352817:Class;
+      private var _embed_css_images_Icons_IngameShop_12x12_Yes_png_415896407:Class;
       
-      private var _embed_css_images_Scrollbar_Arrow_up_over_png_933050065:Class;
+      private var _embed_css_images_Icons_CombatControls_RedFistOff_idle_png_1338322061:Class;
+      
+      private var _embed_css_images_BarsHealth_default_GreenFull_png_539233669:Class;
       
       protected var m_Options:OptionsStorage = null;
       
-      private var _embed_css_images_Slot_InventoryAmmo_protected_png_235878180:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Minimap_active_over_png_13628752:Class;
       
       protected var m_CurrentOptionsLastUpload:int = -2.147483648E9;
       
-      private var _embed_css_images_Arrow_ScrollHotkeys_pressed_png_1194517687:Class;
+      private var _embed_css____images_prey_prey_unlock_temporarily_png_1205226112:Class;
       
-      private var _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784:Class;
+      private var _embed_css_images_BarsXP_default__png_162149957:Class;
       
-      private var _embed_css_images_Icons_CombatControls_RedFistOff_idle_png_2005346177:Class;
+      private var _embed_css_images_Icons_WidgetHeaders_SafeTrades_png_1154048530:Class;
       
-      private var _embed_css_images_Minimap_Center_idle_png_1943470262:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Combat_idle_png_1063594900:Class;
+      
+      private var _embed_css_images_Icons_WidgetMenu_Trades_active_over_png_1517102410:Class;
       
       private var m_TutorialMode:Boolean = false;
       
-      private var _embed_css_images_Icons_BattleList_HideNPCs_active_png_1949955707:Class;
+      private var _embed_css_images_Icons_CombatControls_OffensiveOn_over_png_1911407069:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Prey_active_over_png_224076033:Class;
+      private var _embed_css_images_Slot_InventoryHead_protected_png_1088319362:Class;
       
-      private var _embed_css_images_Icons_Conditions_Slowed_png_479759276:Class;
+      private var _embed_css_images_BarsHealth_default_RedLow_png_1323495386:Class;
       
-      private var _embed_css_images_custombutton_Button_Border_tileable_tl_idle_png_402102152:Class;
+      private var _embed_css_images_Icons_Conditions_PZ_png_2094848430:Class;
       
-      private var _embed_css_images_BuySellTab_idle_png_886708504:Class;
+      private var _embed_css_images_Button_ChatTab_Close_over_png_1945347312:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_VipList_idle_png_298077813:Class;
+      private var _embed_css_images_Icons_BattleList_HidePlayers_active_png_613329023:Class;
       
-      private var _embed_css____images_prey_prey_list_reroll_disabled_png_1408279029:Class;
+      private var _embed_css_images_BG_Stone2_Tileable_png_2089033964:Class;
       
-      private var _embed_css____images_prey_prey_confirm_monster_selection_png_1854902533:Class;
+      private var _embed_css_images_Border_Widget_corner_png_30247409:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Blessings_active_png_1623160046:Class;
+      private var _embed_css_images_Icons_CombatControls_WhiteHandOn_over_png_1435348302:Class;
       
       private var _1174474338m_UIActionBarLeft:VActionBarWidget;
       
-      private var _embed_css_images_custombutton_Button_Gold_tileable_bl_over_png_608410194:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_tl_pressed_png_1978729388:Class;
       
-      private var _embed_css_images_Icons_CombatControls_OffensiveOff_over_png_1112870265:Class;
+      private var _embed_css_images_Icons_CombatControls_RedFistOn_idle_png_329965451:Class;
       
       private var m_FailedConnectionRescheduler:FailedConnectionRescheduler;
       
-      private var _embed_css_images_custombutton_Button_Border_tileable_ml_idle_png_901180245:Class;
+      private var _embed_css_images_Icons_BattleList_PartyMembers_active_png_1666844766:Class;
       
       protected var m_CurrentOptionsDirty:Boolean = false;
       
-      private var _embed_css_images_BarsXP_default_improved_png_1615848679:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Combat_active_png_327192750:Class;
       
-      private var _embed_css_images_custombutton_Button_IngameShopBuy_tileable_pressed_png_1298820406:Class;
+      private var _embed_css_images_Button_Combat_Stop_idle_png_2028013783:Class;
       
-      private var _embed_css_images_Icons_CombatControls_Mounted_idle_png_264427409:Class;
+      private var _embed_css_images_Icons_CombatControls_DefensiveOff_idle_png_1971662251:Class;
       
-      private var _embed_css_images_Widget_Footer_tileable_end02_png_302478279:Class;
+      private var _embed_css_images_Border_Widget_png_123662323:Class;
       
-      private var _embed_css_images_Button_ContainerUp_pressed_png_697201334:Class;
+      private var _embed_css_images_BG_BarsProgress_compact_tileable_png_1434705776:Class;
       
-      private var _embed_css_images_Slot_InventoryShield_protected_png_1678489541:Class;
+      private var _embed_css_images_Button_ChatTab_Close_pressed_png_1705582336:Class;
       
-      private var _embed_css_images_BarsHealth_compact_GreenLow_png_823416786:Class;
+      private var _embed_css_images_Arrow_ScrollHotkeys_pressed_png_1584202487:Class;
       
-      private var _embed_css_images_Icons_BattleList_HidePlayers_active_over_png_961154706:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Containers_active_png_387529648:Class;
       
-      private var _embed_css_images_Icons_BattleList_HideMonsters_idle_png_1297366744:Class;
+      private var _embed_css_images_Icons_WidgetHeaders_Trades_png_17953531:Class;
       
-      private var _embed_css_images_Icons_ProgressBars_AxeFighting_png_854207195:Class;
+      private var _embed_css_images_custombutton_Button_Highlight_tileable_bc_pressed_png_829106133:Class;
       
-      private var _embed_css_images_Icons_ProgressBars_FistFighting_png_946464807:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Minimap_idle_over_png_1920390846:Class;
       
-      private var _embed_css_images_Button_ChatTab_Close_over_png_1679055020:Class;
+      private var _embed_css_images_Button_Close_disabled_png_585602746:Class;
       
-      private var _embed_css_images_Slot_InventoryArmor_png_1846126774:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Trades_active_png_1392106579:Class;
       
-      private var _embed_css_images_Scrollbar_Handler_png_487857897:Class;
+      private var _embed_css____images_prey_prey_list_reroll_png_1451613866:Class;
       
-      private var _embed_css_images_Slot_InventoryLegs_png_1244810316:Class;
+      private var _embed_css_images_Button_Maximize_idle_png_960737362:Class;
+      
+      private var _embed_css_images_Icons_WidgetHeaders_GeneralControls_png_314099262:Class;
+      
+      private var _embed_css_images_Slot_InventoryLegs_png_2114818196:Class;
+      
+      private var _embed_css_images_BarsHealth_compact_GreenLow_png_1230640774:Class;
+      
+      private var _embed_css_images_custombutton_Button_Standard_tileable_bc_disabled_png_2000142426:Class;
+      
+      private var _embed_css____images_prey_prey_unlock_permanently_png_2084364847:Class;
+      
+      private var _embed_css_images_Icons_ProgressBars_AxeFighting_png_784879159:Class;
       
       private var m_GameClientReady:Boolean = false;
       
-      private var _embed_css_images_Icons_CombatControls_DoveOn_over_png_927199358:Class;
+      private var _embed_css_images_Icons_BattleList_HideMonsters_over_png_1260863432:Class;
       
-      private var _embed_css_images_Icons_CombatControls_DefensiveOff_over_png_88580271:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Skull_active_over_png_616733832:Class;
       
-      private var _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1621675861:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_ml_idle_png_1658654332:Class;
       
-      private var _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162:Class;
+      private var _embed_css_images_Icons_BattleList_HideNPCs_active_png_2145118177:Class;
       
-      private var _embed_css____images_prey_prey_list_reroll_small_png_1392369160:Class;
+      private var _embed_css_images_Arrow_ScrollTabs_disabled_png_879110432:Class;
       
-      private var _embed_css_images_Slot_Statusicon_highlighted_png_1468805634:Class;
+      private var _embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_idle_png_546154478:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Minimap_idle_png_483881531:Class;
+      private var _embed_css_images_BG_ChatTab_Tabdrop_png_344159956:Class;
       
-      private var _embed_css_images_custombutton_Button_Gold_tileable_ml_pressed_png_921560467:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_bl_idle_png_2093052983:Class;
       
-      private var _embed_css_images_custombutton_Button_Gold_tileable_bc_over_png_1310818591:Class;
+      private var _embed_css_____assets_images_imbuing_imbuing_icon_useprotection_active_png_532986814:Class;
       
-      private var _embed_css_images_custombutton_Button_Standard_tileable_tl_pressed_png_1968611417:Class;
+      private var _embed_css_images_Icons_Inventory_Store_png_1162053375:Class;
       
-      private var _embed_css_images_Icons_WidgetHeaders_GetPremium_png_582079029:Class;
+      private var _embed_css_images_Icons_CombatControls_WhiteHandOff_idle_png_283159200:Class;
       
-      private var _embed_css_images_BG_ChatTab_Tabdrop_png_60591148:Class;
+      private var _embed_css_images_Icons_CombatControls_DefensiveOn_idle_png_1337920135:Class;
       
-      private var _embed_css_____assets_images_ingameshop_Icons_IngameShop_32x14_TransferCoins_png_198242323:Class;
+      private var _embed_css_images_custombutton_Button_Gold_tileable_bc_pressed_png_1314073167:Class;
       
-      private var _embed_css_images_Arrow_ScrollTabsHighlighted_pressed_png_1019332597:Class;
+      private var _embed_css_images_Slot_InventoryNecklace_protected_png_1799961580:Class;
       
-      private var _embed_css_images_Icons_ProgressBars_CompactStyle_png_2100207391:Class;
+      private var _embed_css_images_Icons_WidgetMenu_BattleList_active_over_png_793986337:Class;
       
-      private var _embed_css_images_Icons_CombatControls_Mounted_over_png_83007855:Class;
+      private var _embed_css_images_BarsProgress_compact_orange_png_198580350:Class;
       
-      private var _embed_css_images_Inventory_png_54849410:Class;
+      private var _embed_css_images_Icons_CombatControls_ExpertModeOn_over_png_1392963547:Class;
       
-      private var _embed_css_images_custombutton_Button_IngameShopBuy_tileable_over_png_2100178506:Class;
+      private var _embed_css_images_Icons_Conditions_Slowed_png_77123048:Class;
       
-      private var _embed_css_images_BarsProgress_compact_orange_png_605959778:Class;
+      private var _embed_css_images_Icons_WidgetMenu_GeneralControls_idle_png_1439642702:Class;
       
-      private var _embed_css_images_BarsHealth_fat_Yellow_png_1332323165:Class;
+      private var _embed_css_images_Icons_CombatControls_ExpertMode_idle_png_754231034:Class;
       
-      private var _embed_css_images_custombutton_Button_Border_tileable_bc_over_png_373998323:Class;
+      private var _embed_css_images_Arrow_ScrollTabsHighlighted_pressed_png_1482270485:Class;
       
-      private var _embed_css_images_Icons_CombatControls_MediumOff_over_png_418575695:Class;
+      private var _embed_css_images_Minimap_png_667670405:Class;
+      
+      private var _embed_css_images_Button_ChatTabNew_pressed_png_923606007:Class;
+      
+      private var _embed_css_images_Icons_BattleList_PartyMembers_idle_png_788781616:Class;
+      
+      private var _embed_css_images_Arrow_ScrollHotkeys_over_png_585745991:Class;
+      
+      private var _embed_css_images_Button_MaximizePremium_over_png_267955669:Class;
+      
+      private var _embed_css_images_Icons_Conditions_Hungry_png_758019275:Class;
       
       private var m_ConnectionEstablishedAndPacketReceived:Boolean = false;
       
-      private var _embed_css_images_Icons_BattleList_PartyMembers_idle_png_590067760:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Containers_idle_over_png_1806477361:Class;
       
-      private var _embed_css_images_Button_Maximize_idle_png_1094816082:Class;
+      private var _embed_css_images_Widget_Footer_tileable_png_2102878075:Class;
       
-      private var _embed_css_images_Slot_InventoryShield_png_8091800:Class;
+      private var _embed_css_images_Icons_ProgressBars_MagicLevel_png_1093895878:Class;
       
-      private var _embed_css_images_Icons_CombatControls_PvPOff_active_png_75654116:Class;
+      private var _embed_css_images_Icons_WidgetHeaders_Combat_png_375287802:Class;
       
-      private var _embed_css_images_Icons_CombatControls_ExpertMode_idle_png_884394490:Class;
+      private var _embed_css_images_Scrollbar_Arrow_up_over_png_860191089:Class;
       
-      private var _embed_css_images_custombutton_Button_Highlight_tileable_bc_idle_png_1286951951:Class;
+      private var _embed_css_images_Slot_Statusicon_png_1415858734:Class;
       
-      private var _embed_css_images_Arrow_WidgetToggle_idle_png_550075419:Class;
+      private var _embed_css_images_custombutton_Button_Gold_tileable_bl_idle_png_866059770:Class;
       
-      private var _embed_css_images_BG_BarsProgress_compact_endpiece_png_1448454481:Class;
+      private var _embed_css_images_BarsXP_default_improved_png_1481613863:Class;
       
-      private var _embed_css_images_BarsXP_default_zero_png_841389645:Class;
+      private var _embed_css_images_Button_LockHotkeys_UnLocked_idle_png_583051058:Class;
       
-      private var _embed_css_images_Arrow_ScrollHotkeys_idle_png_1989691811:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Prey_active_png_2078269124:Class;
       
-      private var _embed_css_images_Icons_Conditions_Cursed_png_226830886:Class;
-      
-      private var _embed_css_images_custombutton_Button_Highlight_tileable_tl_idle_png_908937052:Class;
-      
-      private var _embed_css_images_custombutton_Button_Border_tileable_ml_disabled_png_1474936339:Class;
-      
-      private var _embed_css____images_prey_prey_list_reroll_small_reactivate_png_1096128443:Class;
-      
-      private var _embed_css_images_BG_Bars_compact_tileable_png_1378708577:Class;
-      
-      private var _embed_css_images_Icons_WidgetHeaders_Prey_png_1844002948:Class;
-      
-      private var _embed_css_images_custombutton_Button_Standard_tileable_bc_pressed_png_572612494:Class;
-      
-      private var _embed_css_images_Icons_CombatControls_WhiteHandOff_idle_png_1012304800:Class;
-      
-      private var _embed_css____images_prey_prey_list_reroll_reactivate_png_1106340657:Class;
-      
-      private var _embed_css_images_Icons_WidgetMenu_BattleList_idle_png_224575958:Class;
-      
-      mx_internal var _bindingsBeginWithWord:Object;
+      private var _embed_css_images_BarsHealth_compact_RedLow_png_432309528:Class;
       
       private var _1404294856m_UIGameWindow:GridContainer;
       
-      private var _embed_css_images_Icons_WidgetMenu_Skull_idle_over_png_611961046:Class;
+      private var _embed_css_images_Button_MaximizePremium_idle_png_1480797397:Class;
       
-      private var _embed_css_images_Icon_NoPremium_png_1355667196:Class;
-      
-      private var _embed_css_images_ChatTab_tileable_png_1152222910:Class;
-      
-      private var _embed_css_images_Icons_ProgressBars_ClubFighting_png_1530352971:Class;
-      
-      private var _embed_css_images_custombutton_Button_Standard_tileable_bc_idle_png_1982739778:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Combat_idle_over_png_1137251407:Class;
       
       protected var m_Connection:IServerConnection = null;
       
-      private var _embed_css_images_Slot_InventoryBoots_png_1593843512:Class;
+      mx_internal var _bindingsBeginWithWord:Object;
       
-      private var _embed_css_images_BG_Stone2_Tileable_png_1536416308:Class;
+      private var _embed_css____images_prey_prey_list_reroll_reactivate_png_1235856493:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_GetPremium_active_over_png_347021528:Class;
+      private var _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002:Class;
       
-      private var _embed_css_images_custombutton_Button_Standard_tileable_mc_pressed_png_81347079:Class;
+      private var _embed_css_images_Icons_Conditions_Dazzled_png_1747135488:Class;
       
-      private var _embed_css_images_custombutton_Button_Standard_tileable_tc_idle_png_24708496:Class;
+      private var _embed_css_images_Border02_WidgetSidebar_slim_png_420837653:Class;
       
-      private var _embed_css_images_Icons_CombatControls_StandOff_idle_png_1491392258:Class;
+      private var _embed_css_images_Icons_CombatControls_OffensiveOff_over_png_1660751461:Class;
+      
+      private var _embed_css_images_Arrow_Minimap_LevelUpDown_pressed_png_1801889674:Class;
       
       private var _64278965m_UISideBarA:SideBarWidget;
       
-      private var _embed_css_images_Icons_BattleList_HidePlayers_over_png_419396003:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Skull_idle_over_png_626524886:Class;
       
-      private var _embed_css_images_Slot_InventoryAmmo_png_813114047:Class;
+      private var _embed_css_images_Button_ChatTab_Close_idle_png_1074740208:Class;
       
-      private var _embed_css_images_custombutton_Button_Gold_tileable_bc_idle_png_1121387039:Class;
+      private var _embed_css_images_Scrollbar_Arrow_up_idle_png_18741135:Class;
       
-      private var _embed_css_images_custombutton_Button_Standard_tileable_tc_over_png_1841477776:Class;
+      private var _embed_css_images_BG_Bars_compact_tileable_png_1504529517:Class;
       
-      private var _embed_css_images_Icons_Conditions_PZlock_png_2031018067:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_tc_idle_png_1034633179:Class;
       
-      private var _embed_css_images_Scrollbar_Arrow_down_over_png_1994681196:Class;
+      private var _embed_css_images_Arrow_WidgetToggle_idle_png_952187387:Class;
       
-      private var _embed_css_images_Arrow_ScrollTabsHighlighted_over_png_475447497:Class;
+      private var _embed_css_images_Icons_TradeLists_ContainerDisplay_pressed_png_1075890131:Class;
       
-      private var _embed_css_images_custombutton_Button_Gold_tileable_tl_over_png_1141054284:Class;
+      private var _embed_css_images_custombutton_Button_Highlight_tileable_tc_pressed_png_1605574371:Class;
       
-      private var _embed_css_images_custombutton_Button_Gold_tileable_mc_idle_png_313886890:Class;
+      private var _embed_css_images_Icons_CombatControls_PvPOn_active_png_806196142:Class;
       
-      private var _embed_css_images_Icons_ProgressBars_LargeStyle_png_1014712263:Class;
+      private var _embed_css_images_Icons_ProgressBars_Shielding_png_599280960:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_GetPremium_active_png_778187739:Class;
-      
-      private var _embed_css_images_Icons_WidgetMenu_Combat_active_png_390223278:Class;
-      
-      private var _embed_css_images_custombutton_Button_Border_tileable_tc_idle_png_1026384539:Class;
+      private var _embed_css_images_Icons_TradeLists_ContainerDisplay_idle_png_1396972083:Class;
       
       protected var m_ConnectionDataPending:int = -1;
       
-      private var _embed_css_images_BarsHealth_default_RedLow2_png_1110203394:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_ml_over_png_427887893:Class;
       
-      private var _embed_css_images_Slot_InventoryHead_protected_png_819760770:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Blessings_active_over_png_675712135:Class;
       
-      private var _embed_css_images_Icons_BattleList_HidePlayers_active_png_1087801247:Class;
+      private var _embed_css_images_Icons_Conditions_Freezing_png_1444773940:Class;
       
-      private var _embed_css_images_Button_Combat_Stop_pressed_png_1343706347:Class;
+      private var _embed_css_images_Icons_ProgressBars_ClubFighting_png_1530197035:Class;
       
-      private var _embed_css_images_BG_Combat_ExpertOff_png_1133893050:Class;
+      private var _embed_css_images_Arrow_ScrollHotkeys_idle_png_1863838023:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Trades_active_over_png_1728513382:Class;
+      private var _embed_css_images_Icons_WidgetHeaders_Inventory_png_1405466304:Class;
       
-      private var _embed_css_images_BG_BohemianTileable_Game_png_1148175408:Class;
+      private var _embed_css_images_Icons_CombatControls_PvPOff_active_png_470312516:Class;
       
-      private var _embed_css_images_Arrow_Minimap_LevelUpDown_pressed_png_1728357286:Class;
+      private var _embed_css_images_Icons_Conditions_Strenghtened_png_695721049:Class;
       
-      private var _embed_css_images_Minimap_Center_active_png_2136380360:Class;
+      private var _embed_css_images_slot_Hotkey_disabled_png_804094220:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_BattleList_active_over_png_523969601:Class;
+      private var _embed_css_images_Icons_WidgetMenu_GetPremium_active_png_377762303:Class;
       
-      private var _embed_css_images_Icons_Conditions_Drowning_png_142081554:Class;
+      private var _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260:Class;
       
-      private var _embed_css_images_Slot_InventoryRing_protected_png_613777710:Class;
+      private var _embed_css_images_Slot_InventoryWeapon_protected_png_2025859402:Class;
       
-      private var _embed_css_images_custombutton_Button_Highlight_tileable_tc_pressed_png_1467694627:Class;
+      private var _embed_css_images_Icons_BattleList_HideMonsters_active_over_png_234622227:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_VipList_active_over_png_177527574:Class;
+      private var _embed_css_images_Arrow_ScrollTabs_over_png_1323680872:Class;
       
-      private var _embed_css_images_Icons_CombatControls_ExpertModeOn_idle_png_652505055:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_tl_pressed_png_1833730757:Class;
       
-      private var _embed_css_images_custombutton_Button_Standard_tileable_tc_pressed_png_1274559636:Class;
+      private var _embed_css_____assets_images_ingameshop_Icons_IngameShop_12x12_TibiaCoin_png_423192446:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Blessings_idle_png_1665211264:Class;
+      private var _embed_css_____assets_images_imbuing_imbuing_slot_empty_png_768110180:Class;
       
-      private var _embed_css_images_Scrollbar_Arrow_down_idle_png_500241812:Class;
+      private var _embed_css_images_Icons_WidgetMenu_GeneralControls_active_png_273763964:Class;
       
-      private var _embed_css_images_Minimap_png_803584357:Class;
+      private var _embed_css_images_BG_BohemianTileable_png_1422729109:Class;
       
-      private var _embed_css_images_Icons_Conditions_Burning_png_1552261945:Class;
+      private var _embed_css_images_Icons_CombatControls_YellowHandOn_over_png_1241884053:Class;
       
-      private var _embed_css_images_Slot_InventoryBoots_protected_png_395711413:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_tl_idle_png_1688019237:Class;
       
-      private var _embed_css_images_BarsHealth_default_RedLow_png_2034053770:Class;
+      private var _embed_css_images_Slot_InventoryRing_protected_png_143630382:Class;
       
-      private var _embed_css_images_BG_BohemianTileable_ChatConsole_png_2063585141:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_ml_idle_png_1245218325:Class;
+      
+      private var _embed_css_images_custombutton_Button_Standard_tileable_mc_disabled_png_1660613429:Class;
       
       protected var m_WorldMapStorage:WorldMapStorage = null;
       
-      private var _embed_css_images_Icons_CombatControls_WhiteHandOn_over_png_2062716238:Class;
+      private var _embed_css_images_custombutton_Button_Gold_tileable_bl_pressed_png_1601544042:Class;
       
-      private var _embed_css_images_Minimap_ZoomOut_idle_png_1218964010:Class;
+      private var _embed_css_images_Icons_CombatControls_DoveOn_idle_png_1799831422:Class;
       
-      private var _embed_css_images_UnjustifiedPoints_png_1971471823:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_bc_over_png_46790494:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_GetPremium_idle_png_1985287859:Class;
+      private var _embed_css_images_Button_Close_pressed_png_1495633374:Class;
+      
+      private var _embed_css_images_custombutton_Button_Standard_tileable_tc_over_png_1962565460:Class;
+      
+      private var _embed_css_images_Icons_CombatControls_MediumOff_over_png_1017681455:Class;
+      
+      private var _embed_css_images_custombutton_Button_Border_tileable_bc_pressed_png_1996698541:Class;
+      
+      private var _embed_css_images_Icons_ProgressBars_FistFighting_png_744761447:Class;
       
       protected var m_SpellStorage:SpellStorage = null;
       
+      private var _embed_css_images_Icons_BattleList_HideSkulled_active_over_png_1205967224:Class;
+      
+      private var _embed_css_images_Icons_TradeLists_ListDisplay_pressed_png_1456372718:Class;
+      
       private var _1568861366m_UIOuterRootContainer:DividedBox;
       
-      private var _embed_css_images_custombutton_Button_Border_tileable_tc_over_png_1913712539:Class;
+      private var _embed_css_images_BarsHealth_default_RedFull_png_471797811:Class;
       
-      private var _embed_css_images_Arrow_ScrollHotkeys_disabled_png_326951061:Class;
+      private var _embed_css_images_Icons_BattleList_HideMonsters_active_png_1589130474:Class;
+      
+      private var _embed_css_images_Scrollbar_Handler_png_760479401:Class;
+      
+      private var _embed_css_images_Icons_WidgetMenu_VipList_idle_over_png_412469896:Class;
       
       protected var m_CharacterDeath:Boolean = false;
       
-      private var _embed_css_images_Icons_ProgressBars_ProgressOn_png_1171186177:Class;
+      private var _embed_css_____assets_images_imbuing_imbuing_icon_remove_active_png_857913398:Class;
       
-      private var _embed_css_images_Slot_Hotkey_Cooldown_png_348452255:Class;
+      private var _embed_css_images_Icons_Conditions_Logoutblock_png_358377557:Class;
       
-      private var _embed_css_images_Arrow_WidgetToggle_pressed_png_806241479:Class;
+      private var _embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_2102059443:Class;
       
-      private var _embed_css_images_BarsHealth_fat_Mana_png_1856202898:Class;
+      private var _embed_css_images_Icons_BattleList_HidePlayers_idle_png_177601341:Class;
       
-      private var _embed_css_images_Slot_InventoryNecklace_png_2012705831:Class;
+      private var _embed_css_images_Arrow_ScrollTabsHighlighted_over_png_468614837:Class;
       
-      private var _embed_css_images_Button_Combat_Stop_over_png_564437783:Class;
+      private var _embed_css_images_BG_ChatTab_tileable_png_1482271674:Class;
       
-      private var _embed_css_images_Icons_CombatControls_AutochaseOn_over_png_554521467:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_bc_over_png_718071091:Class;
       
-      private var _embed_css_images_Slot_InventoryBackpack_protected_png_274576798:Class;
+      private var _embed_css_images_Icons_CombatControls_DefensiveOff_over_png_523657045:Class;
       
-      private var _embed_css_images_custombutton_Button_Standard_tileable_tl_disabled_png_1248907181:Class;
+      private var _embed_css_images_ChatWindow_Mover_png_2100462174:Class;
+      
+      private var _embed_css_images_Icons_WidgetMenu_Trades_idle_png_1730481697:Class;
       
       protected var m_SecondaryTimestamp:int = 0;
       
-      private var _embed_css_images_Icons_WidgetHeaders_BattleList_png_1186213636:Class;
+      private var _embed_css_images_Icons_CombatControls_YellowHandOff_idle_png_1235819155:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Containers_active_over_png_1480923629:Class;
+      private var _embed_css_images_Icons_CombatControls_AutochaseOn_idle_png_1165139419:Class;
       
-      private var _embed_css_images_Border02_WidgetSidebar_slim_png_828323829:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Inventory_active_png_506655126:Class;
       
-      private var _embed_css_images_Icons_BattleList_HideNPCs_over_png_977927827:Class;
+      private var _embed_css_images_BarsHealth_default_Yellow_png_338291605:Class;
       
-      private var _embed_css_images_Icons_CombatControls_DoveOn_idle_png_1462206846:Class;
+      private var _embed_css_images_Button_LockHotkeys_UnLocked_over_png_933660722:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Combat_idle_png_1668074132:Class;
+      private var _embed_css_images_Icons_WidgetMenu_GeneralControls_idle_over_png_1523904949:Class;
       
-      private var _embed_css_images_Bars_ProgressMarker_png_1761755336:Class;
+      private var _embed_css_images_BarsHealth_compact_GreenFull_png_658108631:Class;
       
-      private var _embed_css_images_Icons_CombatControls_YellowHandOff_idle_png_768654451:Class;
+      private var _embed_css_images_Slot_InventoryNecklace_png_1808156997:Class;
       
-      private var _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256:Class;
+      private var _embed_css_images_Icons_WidgetMenu_VipList_active_over_png_47374454:Class;
       
-      private var _embed_css_images_Slot_InventoryWeapon_png_1587500415:Class;
+      private var _embed_css_images_Arrow_WidgetToggle_pressed_png_948994267:Class;
       
-      private var _embed_css_images_Slot_InventoryArmor_protected_png_1192226633:Class;
+      private var _embed_css_images_Icons_BattleList_PartyMembers_over_png_79143632:Class;
       
-      private var _embed_css_images_custombutton_Button_Standard_tileable_tl_over_png_546849157:Class;
+      private var _embed_css_images_Icons_CombatControls_Unmounted_over_png_1144518310:Class;
       
-      private var _embed_css_images_Arrow_Minimap_LevelUpDown_idle_png_332004998:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_bl_over_png_1316684489:Class;
       
-      private var _embed_css_images_Border02_corners_png_1465567525:Class;
+      private var _embed_css_images_Button_ChatTabIgnore_pressed_png_922258679:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Containers_active_png_309943728:Class;
+      private var _embed_css_images_slot_container_highlighted_png_1302039720:Class;
       
-      private var _embed_css_images_Scrollbar_Arrow_up_idle_png_48874961:Class;
+      private var _embed_css_images_Scrollbar_tileable_png_1885091563:Class;
       
-      private var _embed_css_images_Slot_Statusicon_png_1608787474:Class;
+      private var _embed_css_images_Button_Combat_Stop_pressed_png_1195446471:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_GeneralControls_active_png_611020736:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_tc_pressed_png_491469499:Class;
+      
+      private var _embed_css_images_Slot_InventoryLegs_protected_png_516995939:Class;
+      
+      private var _embed_css_images_Icons_CombatControls_DoveOff_over_png_893524756:Class;
       
       protected var m_PremiumManager:PremiumManager = null;
       
-      private var _embed_css_images_Icons_BattleList_HideMonsters_active_over_png_1041894995:Class;
+      private var _embed_css_images_custombutton_Button_Gold_tileable_bl_over_png_866883846:Class;
       
-      private var _embed_css_images_Icons_CombatControls_ExpertModeOn_over_png_2021716257:Class;
+      private var _embed_css_images_UnjustifiedPoints_png_1782736303:Class;
       
-      private var _embed_css_images_BarsHealth_fat_RedLow2_png_1983741974:Class;
+      private var _embed_css_images_Arrow_Minimap_LevelUpDown_idle_png_271327590:Class;
       
-      private var _embed_css_images_Button_Minimize_over_png_1989991220:Class;
+      private var _embed_css_images_Arrow_ScrollHotkeys_disabled_png_59047793:Class;
       
-      private var _embed_css_images_custombutton_Button_Gold_tileable_mc_pressed_png_1727779818:Class;
+      private var _embed_css_images_Icons_WidgetMenu_GetPremium_idle_png_1978490031:Class;
       
-      private var _embed_css_____assets_images_imbuing_imbuing_icon_imbue_disabled_png_1836447193:Class;
-      
-      private var _embed_css____images_prey_prey_list_reroll_small_reactivate_disabled_png_1868832418:Class;
-      
-      private var _embed_css_images_Icons_BattleList_HideSkulled_active_png_1474407051:Class;
-      
-      private var _embed_css_images_Icons_BattleList_HideMonsters_active_png_1182126058:Class;
-      
-      private var _embed_css_images_Icons_Conditions_PZ_png_1659726190:Class;
-      
-      private var _embed_css_images_ChatTab_tileable_EndpieceLeft_png_1323048363:Class;
+      private var _embed_css_images_Icons_ProgressBars_CompactStyle_png_2100887615:Class;
       
       private var _64278964m_UISideBarB:SideBarWidget;
       
-      private var _embed_css_images_Widget_Footer_tileable_png_1914256359:Class;
+      private var _embed_css_images_custombutton_Button_Highlight_tileable_bc_idle_png_1480530699:Class;
       
-      private var _embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_pressed_png_301372130:Class;
+      private var _embed_css_images_Icons_WidgetMenu_GetPremium_active_over_png_618087100:Class;
       
-      private var _embed_css_images_custombutton_Button_Border_tileable_ml_over_png_637758037:Class;
+      private var _embed_css_images_Widget_Footer_tileable_end01_png_99047970:Class;
       
-      private var _embed_css_images_BuySellTab_active_png_1449511366:Class;
+      private var _embed_css_images_Minimap_ZoomIn_pressed_png_1013656729:Class;
       
-      private var _embed_css_images_custombutton_Button_Standard_tileable_ml_disabled_png_1250879576:Class;
+      private var _embed_css_images_Button_ContainerUp_idle_png_883766938:Class;
       
-      private var _embed_css_images_Icons_CombatControls_RedFistOff_over_png_1679929985:Class;
+      private var _embed_css_images_Icons_WidgetHeaders_GetPremium_png_376682585:Class;
       
-      private var _embed_css_images_BarsHealth_fat_RedLow_png_1029541970:Class;
+      private var _embed_css_images_custombutton_Button_Highlight_tileable_ml_over_png_1626598931:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Blessings_active_over_png_130321579:Class;
+      private var _embed_css_images_Minimap_Center_over_png_279361510:Class;
       
-      private var _embed_css_images_Button_LockHotkeys_Locked_over_png_554269051:Class;
+      private var _embed_css_images_BuySellTab_active_png_1722132850:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_GeneralControls_idle_over_png_1722601649:Class;
+      private var _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1901253493:Class;
       
-      private var _embed_css_images_Button_ContainerUp_idle_png_1017477430:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_bc_idle_png_713449011:Class;
       
-      private var _embed_css_images_Icon_Premium_png_157361223:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_tl_idle_png_460698220:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Prey_idle_png_1066518890:Class;
+      private var _embed_css_images_custombutton_Button_Gold_tileable_tc_over_png_701648527:Class;
       
-      private var _embed_css_images_Icons_BattleList_HidePlayers_idle_png_112457565:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_bl_idle_png_1479317574:Class;
       
-      private var _embed_css_images_BG_Bars_default_tileable_png_813666947:Class;
+      private var _embed_css_images_Icons_Conditions_Drunk_png_45733786:Class;
       
-      private var _embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_1491157363:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Blessings_idle_png_1732180796:Class;
       
-      private var _embed_css_images_Icons_CombatControls_YellowHandOn_over_png_713246121:Class;
+      private var _embed_css_images_Slot_InventoryArmor_png_1841074918:Class;
+      
+      private var _embed_css_images_custombutton_Button_Highlight_tileable_bl_idle_png_299642002:Class;
+      
+      private var _embed_css_images_Widget_Footer_tileable_end02_png_100995747:Class;
+      
+      private var _embed_css____images_prey_prey_bonus_reroll_disabled_png_192280102:Class;
+      
+      private var _embed_css_images_Border02_corners_png_2023953407:Class;
+      
+      private var _embed_css_images_Icons_CombatControls_MediumOn_over_png_1201440323:Class;
+      
+      private var _embed_css_images_Icons_Conditions_Burning_png_1677566757:Class;
+      
+      private var _embed_css_images_Slot_InventoryBoots_protected_png_674517205:Class;
+      
+      private var _embed_css_images_custombutton_Button_Standard_tileable_ml_pressed_png_236721532:Class;
       
       mx_internal var _bindings:Array;
       
-      private var _embed_css_images_BarsHealth_fat_GreenLow_png_425933188:Class;
+      private var _embed_css_images_BarsHealth_fat_GreenFull_png_1012481779:Class;
       
-      private var _embed_css_images_BarsHealth_compact_GreenFull_png_147173125:Class;
+      private var _embed_css_images_slot_container_png_1996786444:Class;
       
-      private var _embed_css_images_Icons_CombatControls_MediumOn_idle_png_1333658855:Class;
+      private var _embed_css_images_Icons_BattleList_HideNPCs_idle_png_1784655247:Class;
       
-      private var _embed_css_images_BG_BarsProgress_compact_tileable_png_1503274352:Class;
+      private var _embed_css_images_Inventory_png_381497758:Class;
       
-      private var _embed_css_images_Icons_CombatControls_MediumOn_over_png_1002865639:Class;
+      private var _embed_css_images_BarsHealth_fat_GreenLow_png_23264160:Class;
       
-      private var _embed_css_images_custombutton_Button_Gold_tileable_tl_pressed_png_169894520:Class;
+      private var _embed_css_images_custombutton_Button_IngameShopBuy_tileable_over_png_1828072166:Class;
       
-      private var _embed_css_images_BarsHealth_default_RedFull_png_60642647:Class;
+      private var _embed_css_images_Arrow_ScrollTabsHighlighted_idle_png_791544907:Class;
       
-      private var _embed_css_images_Button_Close_over_png_1551448006:Class;
+      private var _embed_css_images_BarsHealth_compact_RedLow2_png_673302076:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Combat_idle_over_png_665522223:Class;
+      private var _embed_css_images_custombutton_Button_Gold_tileable_ml_pressed_png_1124837519:Class;
       
-      private var _embed_css_images_BarsHealth_compact_RedFull_png_1122893911:Class;
+      private var _embed_css_images_Widget_HeaderBG_png_730116019:Class;
       
-      private var _embed_css_images_Icons_ProgressBars_Shielding_png_1404202048:Class;
+      private var _embed_css_images_Icons_CombatControls_MediumOn_idle_png_1550321475:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Trades_idle_png_925331141:Class;
+      private var _embed_css_____assets_images_imbuing_imbuing_icon_remove_disabled_png_1334606270:Class;
       
-      private var _embed_css_images_Button_ChatTabIgnore_pressed_png_653700051:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_bc_idle_png_1913227682:Class;
       
-      private var _embed_css_images_Button_LockHotkeys_Locked_idle_png_885060219:Class;
+      private var _embed_css_images_Minimap_ZoomIn_idle_png_480998871:Class;
       
-      private var _embed_css____images_prey_prey_confirm_monster_selection_disabled_png_1540726376:Class;
+      private var _embed_css_____assets_images_ingameshop_Icons_IngameShop_32x14_TransferCoins_png_920566008:Class;
       
-      private var _embed_css_images_Icons_CombatControls_DefensiveOff_idle_png_1794298449:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_tc_pressed_png_1408096916:Class;
       
-      private var _embed_css_images_custombutton_Button_Highlight_tileable_tl_pressed_png_2092601240:Class;
+      private var _embed_css_images_Slot_InventoryArmor_protected_png_919089929:Class;
       
-      private var _embed_css_images_custombutton_Button_Highlight_tileable_ml_idle_png_1397612513:Class;
-      
-      private var _embed_css_images_Icons_WidgetMenu_VipList_active_png_781472649:Class;
-      
-      private var _embed_css_images_custombutton_Button_Standard_tileable_bl_pressed_png_1326387531:Class;
-      
-      private var _embed_css_images_custombutton_Button_Border_tileable_tl_pressed_png_1903116940:Class;
-      
-      private var _embed_css_images_Icons_WidgetHeaders_SafeTrades_png_1491550258:Class;
-      
-      private var _embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_1369512376:Class;
-      
-      private var _embed_css_images_custombutton_Button_Gold_tileable_bc_pressed_png_504718635:Class;
-      
-      private var _embed_css_images_Icons_CombatControls_OffensiveOff_idle_png_386961017:Class;
-      
-      private var _embed_css_images_custombutton_Button_Standard_tileable_mc_idle_png_1278990365:Class;
-      
-      private var _embed_css_images_Button_Minimize_pressed_png_1820422736:Class;
-      
-      private var _embed_css_images_custombutton_Button_Standard_tileable_mc_over_png_931421981:Class;
-      
-      private var _embed_css_images_Icons_WidgetMenu_Containers_idle_over_png_1529638289:Class;
-      
-      private var _embed_css_images_Icons_WidgetHeaders_Spells_png_527053179:Class;
-      
-      private var _embed_css_images_Icons_WidgetMenu_Minimap_idle_over_png_1778448670:Class;
+      private var _embed_css____images_prey_prey_confirm_monster_selection_disabled_png_1811398472:Class;
       
       private var _2056921391m_UISideBarToggleLeft:ToggleBar;
       
-      private var _embed_css_images_custombutton_Button_Standard_tileable_tc_disabled_png_509379672:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Minimap_active_png_1080426003:Class;
       
-      private var _embed_css____images_prey_prey_list_reroll_small_disabled_png_600754165:Class;
+      private var _embed_css_images_Slot_InventoryBoots_png_1061018524:Class;
       
-      private var _embed_css_images_Icons_CombatControls_RedFistOn_over_png_273027531:Class;
+      private var _embed_css_images_BarsHealth_fat_Yellow_png_917594525:Class;
       
-      private var _embed_css_images_custombutton_Button_Standard_tileable_bl_idle_png_1526099209:Class;
+      private var _embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_pressed_png_493785154:Class;
       
-      private var _embed_css_images_Icons_CombatControls_PvPOn_idle_png_258280708:Class;
+      private var _embed_css_images_custombutton_Button_Gold_tileable_tc_pressed_png_1001206657:Class;
       
-      private var _embed_css_images_Icons_Conditions_Electrified_png_1043769654:Class;
+      private var _embed_css_images_Minimap_ZoomOut_idle_png_2125846326:Class;
       
-      private var _embed_css_images_BarsHealth_default_Mana_png_2014888902:Class;
+      private var _embed_css_images_BarsHealth_compact_RedFull_png_1785716075:Class;
       
-      private var _embed_css_images_Scrollbar_Arrow_down_pressed_png_2102997480:Class;
+      private var _embed_css_images_Icons_BattleList_HidePlayers_over_png_622687683:Class;
       
-      private var _embed_css_images_custombutton_Button_Highlight_tileable_tl_over_png_1798619228:Class;
-      
-      private var _embed_css_images_Icons_BattleList_HideSkulled_idle_png_629388963:Class;
+      private var _embed_css_images_BG_BarsXP_default_tileable_png_1802488215:Class;
       
       protected var m_AssetProvider:IAssetProvider = null;
       
-      private var _embed_css_images_custombutton_Button_Highlight_tileable_bl_over_png_497741234:Class;
+      private var _embed_css_images_Icons_ProgressBars_LargeStyle_png_1083507847:Class;
       
-      private var _embed_css_images_BG_ChatTab_tileable_png_2031873750:Class;
+      private var _embed_css_images_custombutton_Button_Highlight_tileable_bc_over_png_1545885173:Class;
       
-      private var _embed_css_images_Button_ChatTabNew_pressed_png_1051530935:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Inventory_idle_png_1991267500:Class;
       
-      private var _embed_css_images_Arrow_ScrollTabsHighlighted_idle_png_802144823:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_tc_disabled_png_369402996:Class;
       
-      private var _embed_css_images_custombutton_Button_Standard_tileable_bc_over_png_185603650:Class;
+      private var _embed_css_images_custombutton_Button_Gold_tileable_bc_over_png_1582917375:Class;
       
-      private var _embed_css_images_Icons_Conditions_Logoutblock_png_626674025:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_bl_disabled_png_1996451214:Class;
       
-      private var _embed_css_images_Minimap_ZoomIn_pressed_png_1554730941:Class;
+      private var _embed_css_images_Icons_BattleList_PartyMembers_active_over_png_138520421:Class;
       
-      private var _embed_css_images_Button_MaximizePremium_over_png_138300341:Class;
+      private var _embed_css_images_custombutton_Button_Highlight_tileable_tl_over_png_1790083580:Class;
       
-      private var _embed_css_images_Slot_InventoryLegs_protected_png_785554311:Class;
+      private var _embed_css_images_Button_ChatTabIgnore_idle_png_1319268057:Class;
       
-      private var _embed_css_images_Icons_CombatControls_DefensiveOn_active_png_1844746073:Class;
+      private var _embed_css_images_custombutton_Button_Highlight_tileable_tl_idle_png_919535868:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_GeneralControls_idle_png_2058421838:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Prey_idle_png_924058986:Class;
       
-      private var _embed_css_____assets_images_imbuing_imbuing_icon_imbue_active_png_2017811027:Class;
-      
-      private var _embed_css_images_Icons_BattleList_HideSkulled_active_over_png_660583768:Class;
-      
-      private var _embed_css_images_custombutton_Button_Border_tileable_tl_over_png_1128024712:Class;
-      
-      private var _embed_css_images_custombutton_Button_Border_tileable_tl_disabled_png_655788448:Class;
-      
-      private var _embed_css_images_Slot_InventoryRing_png_1209351389:Class;
-      
-      private var _embed_css_images_Button_LockHotkeys_UnLocked_over_png_935749170:Class;
-      
-      private var _embed_css_images_Icons_Conditions_Bleeding_png_325607052:Class;
-      
-      private var _embed_css_images_custombutton_Button_Border_tileable_bl_pressed_png_1894305430:Class;
-      
-      private var _embed_css_images_custombutton_Button_Standard_tileable_tl_idle_png_1925791611:Class;
-      
-      private var _embed_css_images_BG_Bars_fat_tileable_png_1851975525:Class;
+      private var _embed_css_images_custombutton_Button_Highlight_tileable_tl_pressed_png_2061438852:Class;
       
       protected var m_DefaultOptionsAsset:OptionsAsset = null;
       
-      private var _embed_css_images_Icons_WidgetMenu_Trades_active_png_1472479607:Class;
+      private var _embed_css_images_Icons_Conditions_Drowning_png_542106670:Class;
       
-      private var _embed_css_images_custombutton_Button_Gold_tileable_tc_over_png_960245103:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Prey_idle_over_png_459157651:Class;
       
-      private var _embed_css_images_Arrow_ScrollTabs_disabled_png_744892220:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Containers_active_over_png_1759328973:Class;
       
-      private var _embed_css_images_Icons_BattleList_HideNPCs_idle_png_1862110099:Class;
+      private var _embed_css_images_Button_ChatTabNew_over_png_541842649:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Skull_active_over_png_491271656:Class;
+      private var _embed_css_images_Icons_CombatControls_Mounted_over_png_526740337:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Prey_active_png_1809319364:Class;
+      private var _embed_css_images_Button_ContainerUp_pressed_png_571520662:Class;
       
-      private var _embed_css_images_Icons_ProgressBars_DistanceFighting_png_1306281466:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_ml_disabled_png_846678076:Class;
       
-      private var _embed_css_images_Minimap_ZoomIn_idle_png_394970857:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Inventory_idle_over_png_1428562487:Class;
       
-      private var _embed_css_images_Icons_CombatControls_DefensiveOn_idle_png_1614728391:Class;
+      private var _embed_css_images_custombutton_Button_Gold_tileable_tc_idle_png_354340239:Class;
       
-      private var _embed_css_images_custombutton_Button_Gold_tileable_tc_idle_png_628673647:Class;
+      private var _embed_css_images_Icons_Conditions_Bleeding_png_526934384:Class;
       
-      private var _embed_css_images_custombutton_Button_Border_tileable_bc_idle_png_721306611:Class;
+      private var _embed_css_images_BG_BarsProgress_compact_endpiece_png_1370317653:Class;
+      
+      private var _embed_css_images_Icons_WidgetHeaders_Prey_png_2056699772:Class;
+      
+      private var _embed_css____images_prey_prey_list_reroll_small_reactivate_disabled_png_1943789254:Class;
+      
+      private var _embed_css_images_Button_ChatTabIgnore_over_png_503059495:Class;
+      
+      private var _embed_css_images_Icons_IngameShop_12x12_No_png_115059819:Class;
+      
+      private var _embed_css_images_custombutton_Button_Border_tileable_tl_disabled_png_929049956:Class;
+      
+      private var _embed_css_images_Icons_WidgetMenu_BattleList_active_png_1337425916:Class;
+      
+      private var _embed_css_images_Icons_Conditions_Haste_png_378019693:Class;
       
       private var m_ForceDisableGameWindowSizeCalc:Boolean = false;
       
       private var _64278963m_UISideBarC:SideBarWidget;
       
-      private var _embed_css_images_BG_Bars_compact_enpiece_png_1122989386:Class;
+      private var _embed_css_images_Button_Close_over_png_1824069490:Class;
       
-      private var _embed_css_images_Widget_Footer_tileable_end01_png_300497730:Class;
+      private var _embed_css_images_Icons_TradeLists_ContainerDisplay_over_png_1728022323:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Containers_idle_png_1947022978:Class;
+      private var _embed_css_images_Icons_CombatControls_MediumOff_idle_png_1324480721:Class;
       
-      private var _embed_css_images_Icons_TradeLists_ContainerDisplay_over_png_1199957823:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_mc_idle_png_863893501:Class;
       
-      private var _embed_css_images_Icons_Inventory_Store_png_1300473375:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_tc_idle_png_700367956:Class;
       
-      private var _embed_css_images_Icons_BattleList_PartyMembers_active_png_1520198974:Class;
-      
-      private var _embed_css_images_Button_ChatTabIgnore_idle_png_373453081:Class;
+      private var _embed_css____images_prey_prey_confirm_monster_selection_png_1917808293:Class;
       
       protected var m_CreatureStorage:CreatureStorage = null;
       
-      private var _embed_css_images_Icons_ProgressBars_MagicLevel_png_1025231274:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Skull_idle_png_1224099597:Class;
       
-      private var _embed_css_images_Icons_ProgressBars_ParallelStyle_png_564397355:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_bl_pressed_png_1673065226:Class;
       
-      private var _embed_css_images_Button_ChatTabNew_idle_png_1330657205:Class;
+      private var _embed_css_images_Icons_TradeLists_ListDisplay_over_png_349575074:Class;
       
-      private var _embed_css_____assets_images_imbuing_imbuing_icon_useprotection_active_png_1327320745:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_ml_pressed_png_1339953035:Class;
       
-      private var _embed_css_images_Icons_ProgressBars_ProgressOff_png_1580407517:Class;
+      private var _embed_css_images_Slot_InventoryHead_png_1231852719:Class;
       
-      private var _embed_css_images_slot_Hotkey_protected_png_1201653772:Class;
+      private var _embed_css_images_Icons_Conditions_Electrified_png_1245219382:Class;
+      
+      private var _embed_css_images_Slot_InventoryAmmo_png_675331507:Class;
+      
+      private var _embed_css_images_BG_BohemianTileable_ChatConsole_png_2130554773:Class;
+      
+      private var _embed_css_images_BarsHealth_fat_Mana_png_1830736570:Class;
+      
+      private var _embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_over_png_1892300526:Class;
+      
+      private var _embed_css_images_custombutton_Button_Standard_tileable_mc_pressed_png_253647645:Class;
+      
+      private var _embed_css_images_Button_ChatTabNew_idle_png_1804753881:Class;
+      
+      private var _embed_css_images_custombutton_Button_Highlight_tileable_ml_idle_png_1406639853:Class;
       
       private var _1356021457m_UICenterColumn:CustomDividedBox;
       
-      private var _embed_css_images_BG_BarsXP_default_tileable_png_1408337339:Class;
+      private var _embed_css_images_BarsXP_default_zero_png_1390467341:Class;
       
-      private var _embed_css_images_Icons_Conditions_Dazzled_png_1336617984:Class;
+      private var _embed_css_images_Border02_png_248151906:Class;
+      
+      private var _embed_css_images_ChatTab_tileable_EndpieceLeft_png_520247787:Class;
+      
+      private var _embed_css_____assets_images_imbuing_imbuing_icon_useprotection_disabled_png_494797810:Class;
+      
+      private var _embed_css_images_Icons_CombatControls_AutochaseOn_over_png_294457563:Class;
+      
+      private var _embed_css_images_Slot_InventoryShield_protected_png_1742050537:Class;
+      
+      private var _embed_css_images_Icons_CombatControls_WhiteHandOn_idle_png_1088011342:Class;
       
       protected var m_UIEffectsManager:UIEffectsManager = null;
       
-      private var _embed_css_images_Button_PurchaseComplete_pressed_png_296739540:Class;
+      private var _embed_css_images_custombutton_Button_Gold_tileable_bc_idle_png_1388109823:Class;
+      
+      private var _embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_969613528:Class;
       
       protected var m_ConnectionDataList:Vector.<IConnectionData> = null;
       
-      private var _embed_css_images_BarsXP_default__png_385879515:Class;
+      private var _embed_css_images_custombutton_Button_Highlight_tileable_tc_over_png_279471101:Class;
       
-      private var _embed_css_images_Button_Close_idle_png_1218950854:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_mc_over_png_4423939:Class;
       
-      private var _embed_css_images_Button_Combat_Stop_idle_png_1826670103:Class;
+      private var _embed_css_images_Scrollbar_Arrow_down_over_png_1360238424:Class;
       
-      private var _embed_css_images_custombutton_Button_Border_tileable_bc_pressed_png_1988687265:Class;
+      private var _embed_css_images_Icons_BattleList_HidePlayers_active_over_png_1490023058:Class;
       
-      private var _embed_css_images_Arrow_WidgetToggle_over_png_334496997:Class;
+      private var _embed_css_images_Icons_BattleList_HideSkulled_active_png_2021231179:Class;
       
-      private var _embed_css_images_Icons_Conditions_Freezing_png_1581087256:Class;
+      private var _embed_css_images_Icons_CombatControls_Unmounted_idle_png_1148616102:Class;
       
-      private var _embed_css_images_custombutton_Button_Border_tileable_bl_idle_png_1538038570:Class;
-      
-      private var _embed_css_images_Icons_WidgetHeaders_Combat_png_518010106:Class;
-      
-      private var _embed_css_images_ChatTab_tileable_idle_png_1025655505:Class;
-      
-      private var _embed_css_images_Icons_CombatControls_YellowHandOff_over_png_511982963:Class;
-      
-      private var _embed_css_images_BG_Widget_Menu_png_779308052:Class;
-      
-      private var _embed_css_images_custombutton_Button_Standard_tileable_mc_disabled_png_983765749:Class;
-      
-      private var _embed_css_images_Icons_CombatControls_OffensiveOn_idle_png_505642365:Class;
-      
-      private var _embed_css_images_Icons_WidgetMenu_Inventory_idle_png_1929909360:Class;
+      private var _embed_css_images_custombutton_Button_Highlight_tileable_ml_pressed_png_1710390195:Class;
       
       private var _228925540m_UIStatusWidget:StatusWidget;
       
+      private var _embed_css_images_Icons_WidgetMenu_Skull_active_png_1811862907:Class;
+      
       private var _967396880m_UIBottomContainer:HBox;
       
-      private var _embed_css_images_custombutton_Button_Highlight_tileable_tc_idle_png_1528191247:Class;
+      private var _embed_css_images_Slot_InventoryBackpack_protected_png_278754206:Class;
+      
+      private var _embed_css_images_Border02_WidgetSidebar_png_584799829:Class;
+      
+      private var _embed_css_images_Button_Maximize_over_png_853065390:Class;
       
       private var _2043305115m_UIActionBarRight:VActionBarWidget;
       
-      private var _embed_css_images_custombutton_Button_Border_tileable_bl_disabled_png_1194789362:Class;
+      private var _embed_css_images_Button_PurchaseComplete_over_png_1670828928:Class;
       
-      private var _embed_css_images_Widget_HeaderBG_png_1258056819:Class;
+      private var _embed_css_images_Icons_CombatControls_OffensiveOff_idle_png_582119269:Class;
       
-      private var _embed_css_images_Icons_CombatControls_PvPOff_idle_png_1515870738:Class;
+      private var _embed_css_images_Button_Minimize_over_png_1857747508:Class;
       
-      private var _embed_css_images_Button_Maximize_pressed_png_744580322:Class;
+      private var _embed_css_images_Minimap_ZoomIn_over_png_1744305367:Class;
       
-      private var _embed_css_images_custombutton_Button_Gold_tileable_ml_over_png_1035473025:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Inventory_active_over_png_1138143095:Class;
       
-      private var _embed_css_images_Icons_WidgetHeaders_Skull_png_980830817:Class;
-      
-      private var _embed_css_images_slot_container_png_1830671892:Class;
+      private var _embed_css_images_BG_Bars_fat_enpieceOrnamented_png_1076170925:Class;
       
       protected var m_AppearanceStorage:AppearanceStorage = null;
       
-      private var _embed_css_images_Button_ChatTabNew_over_png_67901621:Class;
+      private var _embed_css_images_ChatTab_tileable_EndpieceRound_png_1457444790:Class;
       
-      private var _embed_css_images_Button_Close_pressed_png_1627770558:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_tl_over_png_424714789:Class;
       
-      private var _embed_css_images_custombutton_Button_Border_tileable_bl_over_png_344982570:Class;
+      private var _embed_css_images_Slot_InventoryBackpack_png_1145397297:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Inventory_active_png_710741474:Class;
+      private var _embed_css____images_prey_prey_list_reroll_reactivate_disabled_png_204334064:Class;
       
-      private var _embed_css_images_Slot_InventoryWeapon_protected_png_1818101578:Class;
+      private var _embed_css_images_Icons_ProgressBars_ParallelStyle_png_562446159:Class;
       
-      private var _embed_css_images_Icons_BattleList_HideNPCs_active_over_png_551096440:Class;
+      private var _embed_css_images_Button_Close_idle_png_1491572338:Class;
       
-      private var _embed_css_images_Slot_InventoryBackpack_png_1739537709:Class;
+      private var _embed_css_images_Button_Minimize_idle_png_996649268:Class;
       
-      private var _embed_css_images_Icons_TradeLists_ContainerDisplay_pressed_png_817941011:Class;
-      
-      private var _embed_css_images_Button_Minimize_idle_png_1665493556:Class;
+      private var _embed_css_images_custombutton_Button_Gold_tileable_tl_idle_png_1066808312:Class;
       
       private var _629924354m_UIActionBarBottom:HActionBarWidget;
       
@@ -991,231 +979,243 @@ package
       
       public var _Tibia_Array2:Array;
       
-      private var _embed_css_images_Button_PurchaseComplete_idle_png_950754944:Class;
+      private var _embed_css_images_Scrollbar_Arrow_up_pressed_png_165887905:Class;
       
-      private var _embed_css_images_Icons_CombatControls_Unmounted_idle_png_1675114250:Class;
+      private var _embed_css_images_BG_Bars_fat_enpiece_png_285397664:Class;
       
-      private var _embed_css_images_Border02_WidgetSidebar_png_43620945:Class;
-      
-      private var _embed_css_images_custombutton_Button_Highlight_tileable_bc_over_png_1207833841:Class;
+      private var _embed_css_images_Button_Combat_Stop_over_png_222586327:Class;
       
       protected var m_ConnectionDataCurrent:int = -1;
       
-      private var _embed_css_images_BG_Bars_default_enpiece_png_329250772:Class;
+      private var _embed_css_images_Icons_CombatControls_Mounted_idle_png_332190833:Class;
       
-      private var _embed_css_images_Border_Widget_corner_png_969648405:Class;
+      private var _embed_css_images_BG_Bars_default_enpiece_png_341854824:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Combat_active_over_png_992770113:Class;
+      private var _embed_css_images_Icons_ProgressBars_DefaultStyle_png_1681910211:Class;
       
-      private var _embed_css_images_custombutton_Button_Highlight_tileable_bl_pressed_png_697106038:Class;
+      private var _embed_css_images_BarsHealth_default_RedLow2_png_1319540706:Class;
       
-      private var _embed_css_images_Icons_BattleList_PartyMembers_active_over_png_405251525:Class;
+      private var _embed_css_images_slot_container_disabled_png_2017818209:Class;
       
-      private var _embed_css_images_custombutton_Button_Gold_tileable_mc_over_png_662243754:Class;
+      private var _embed_css_____assets_images_imbuing_imbuing_icon_imbue_active_png_2078825278:Class;
       
-      private var _embed_css_images_custombutton_Button_Highlight_tileable_ml_over_png_1618062623:Class;
+      private var _embed_css_images_Arrow_WidgetToggle_over_png_468729605:Class;
       
-      private var _embed_css_images_Icons_BattleList_HideMonsters_over_png_1720793640:Class;
+      private var _embed_css_images_BarsHealth_default_GreenLow_png_1615903576:Class;
       
-      private var _embed_css_images_slot_container_disabled_png_2143438719:Class;
+      private var _embed_css_images_BG_Bars_fat_tileable_png_1719993865:Class;
       
-      private var _embed_css_images_Minimap_ZoomOut_over_png_49587414:Class;
+      private var _embed_css_images_Icon_NoPremium_png_619567132:Class;
       
-      private var _embed_css____images_prey_prey_unlock_permanently_png_1955932179:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Trades_idle_over_png_634503524:Class;
       
-      private var _embed_css_images_Icons_TradeLists_ListDisplay_pressed_png_1846304974:Class;
-      
-      private var _embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_over_png_2097822234:Class;
-      
-      private var _embed_css_images_Icons_WidgetMenu_BattleList_active_png_1129152252:Class;
-      
-      private var _embed_css_images_Icons_BattleList_PartyMembers_over_png_289252560:Class;
-      
-      private var _embed_css_images_BarsHealth_fat_RedFull_png_1188262271:Class;
+      private var _embed_css_images_Icons_BattleList_HideSkulled_over_png_634011235:Class;
       
       private var _748017946m_UIInputHandler:InputHandler;
       
-      private var _embed_css_____assets_images_imbuing_imbuing_icon_useprotection_disabled_png_1477840035:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Combat_active_over_png_390355041:Class;
       
-      private var _embed_css_images_BG_Bars_fat_enpiece_png_254994756:Class;
+      private var _embed_css_images_BG_Widget_Menu_png_1523929844:Class;
       
-      private var _embed_css_images_custombutton_Button_Highlight_tileable_ml_pressed_png_1040849779:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_ml_over_png_158167172:Class;
       
-      private var _embed_css_images_Icons_WidgetHeaders_GeneralControls_png_227481822:Class;
+      private var _embed_css_images_Icons_CombatControls_DoveOff_idle_png_369785836:Class;
+      
+      private var _embed_css_images_Icons_CombatControls_DefensiveOn_active_png_2114894105:Class;
       
       private var _1423351586m_UIActionBarTop:HActionBarWidget;
       
-      private var _embed_css_images_custombutton_Button_Highlight_tileable_tc_over_png_271197681:Class;
+      private var _embed_css_images_Icons_CombatControls_PvPOff_idle_png_1518483442:Class;
+      
+      private var _embed_css_images_Icons_WidgetHeaders_Spells_png_653028639:Class;
+      
+      private var _embed_css_images_Icons_Inventory_StoreInbox_png_1901440063:Class;
+      
+      private var _embed_css_images_Icons_WidgetMenu_VipList_idle_png_44831157:Class;
+      
+      private var _embed_css_images_Icons_WidgetMenu_Minimap_idle_png_230798747:Class;
       
       private var _64278962m_UISideBarD:SideBarWidget;
       
-      private var _embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_idle_png_812485402:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_bl_over_png_269609286:Class;
       
-      private var _embed_css____images_prey_prey_bonus_reroll_disabled_png_218744390:Class;
+      private var _embed_css_images_Scrollbar_Arrow_down_pressed_png_1990651256:Class;
       
-      private var _embed_css_images_Icons_CombatControls_OffensiveOn_over_png_1922169731:Class;
+      private var _embed_css_images_BarsHealth_fat_RedLow_png_630566510:Class;
       
-      private var _embed_css_images_Button_Maximize_over_png_1257962926:Class;
+      private var _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878:Class;
       
-      private var _embed_css_images_ChatTab_tileable_EndpieceRound_png_1662843318:Class;
+      private var _embed_css_images_custombutton_Button_IngameShopBuy_tileable_idle_png_130764314:Class;
       
-      private var _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108:Class;
+      private var _embed_css_images_custombutton_Button_IngameShopBuy_tileable_pressed_png_1350701846:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Prey_idle_over_png_257691859:Class;
-      
-      private var _embed_css_images_Icons_WidgetMenu_Minimap_active_png_1080311283:Class;
-      
-      private var _embed_css_images_Icons_WidgetHeaders_Trades_png_107866521:Class;
+      private var _embed_css_images_custombutton_Button_Border_tileable_tc_disabled_png_744772701:Class;
       
       protected var m_TutorialData:Object;
       
-      private var _embed_css_images_custombutton_Button_Standard_tileable_bl_over_png_1195435017:Class;
+      private var _embed_css_images_Button_Maximize_pressed_png_1415129086:Class;
       
-      private var _embed_css_images_Minimap_Center_over_png_803503178:Class;
-      
-      private var _embed_css_images_Icons_CombatControls_Unmounted_over_png_948934666:Class;
+      private var _embed_css____images_prey_prey_list_reroll_small_reactivate_png_1299157975:Class;
       
       protected var m_EnableFocusNotifier:Boolean = true;
       
       protected var m_CurrentOptionsUploading:Boolean = false;
       
-      private var _embed_css_images_Icons_CombatControls_WhiteHandOn_idle_png_1901846962:Class;
+      private var _embed_css_images_ChatTab_tileable_idle_png_627868017:Class;
       
-      private var _embed_css_images_BarsHealth_default_GreenLow_png_1485470108:Class;
+      private var _embed_css_images_Icons_CombatControls_WhiteHandOff_over_png_814885792:Class;
       
-      private var _embed_css_images_BG_BohemianTileable_png_1964434549:Class;
+      private var _embed_css_images_Icons_ProgressBars_SwordFighting_png_726197318:Class;
       
-      private var _embed_css_images_slot_Hotkey_highlighted_png_1867388771:Class;
+      private var _embed_css_images_Icons_Conditions_PZlock_png_2127619469:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_BattleList_idle_over_png_803885037:Class;
+      private var _embed_css_images_Icons_CombatControls_YellowHandOn_idle_png_1100929387:Class;
       
-      private var _embed_css_images_Icons_Conditions_Hungry_png_1160557067:Class;
-      
-      private var _embed_css_images_Icons_ProgressBars_DefaultStyle_png_1681795459:Class;
-      
-      private var _embed_css_images_slot_container_highlighted_png_622440584:Class;
-      
-      private var _embed_css_images_BG_Bars_fat_enpieceOrnamented_png_805098349:Class;
-      
-      private var _embed_css_images_custombutton_Button_Gold_tileable_bl_idle_png_1140384942:Class;
+      private var _embed_css_images_BuySellTab_idle_png_1415167540:Class;
       
       protected var m_ChatStorage:ChatStorage = null;
       
       protected var m_Player:Player = null;
       
+      private var _embed_css_images_custombutton_Button_Border_tileable_ml_disabled_png_1201650483:Class;
+      
+      private var _embed_css_images_Icons_CombatControls_RedFistOff_over_png_1544269709:Class;
+      
+      private var _embed_css_images_Button_Minimize_pressed_png_1803996148:Class;
+      
+      private var _embed_css_images_custombutton_Button_Gold_tileable_ml_over_png_1301417569:Class;
+      
       protected var m_SessionKey:String = null;
       
-      private var _embed_css_____assets_images_ingameshop_Icons_IngameShop_12x12_TibiaCoin_png_552533231:Class;
+      private var _embed_css_images_Icons_CombatControls_ExpertModeOn_idle_png_123367643:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Trades_idle_over_png_433309128:Class;
+      private var _embed_css_images_BG_BohemianTileable_Game_png_821519408:Class;
       
-      private var _embed_css_images_slot_Hotkey_disabled_png_669884428:Class;
+      private var _embed_css_images_Icons_WidgetMenu_BattleList_idle_png_239928278:Class;
       
-      private var _embed_css_images_Scrollbar_Arrow_up_pressed_png_228522939:Class;
+      private var _embed_css_images_Arrow_Minimap_LevelUpDown_over_png_616546202:Class;
       
-      private var _embed_css_images_Icons_CombatControls_ExpertMode_disabled_png_1087726802:Class;
+      private var _embed_css_images_custombutton_Button_Highlight_tileable_bl_over_png_505981842:Class;
+      
+      private var _embed_css_images_Icon_Premium_png_299837787:Class;
+      
+      private var _embed_css_images_Bars_ProgressMarker_png_1220674660:Class;
+      
+      private var _embed_css_images_Minimap_Center_active_png_1997427884:Class;
+      
+      private var _embed_css_images_Icons_Conditions_Cursed_png_90499082:Class;
+      
+      private var _embed_css_images_BG_Combat_ExpertOn_png_1994504722:Class;
+      
+      private var _embed_css_images_Icons_CombatControls_StandOff_idle_png_1945447166:Class;
       
       private var _1313911232m_UIWorldMapWindow:GameWindowContainer;
-      
-      private var _embed_css_images_Icons_CombatControls_DoveOff_idle_png_165836976:Class;
       
       private var _665607314m_UISideBarToggleRight:ToggleBar;
       
       protected var m_SeconaryTimer:Timer = null;
       
-      private var _embed_css_images_Border02_png_856171138:Class;
+      private var _embed_css____images_prey_prey_list_reroll_disabled_png_1005632601:Class;
       
-      private var _embed_css_images_Border_Widget_png_589090515:Class;
+      private var _embed_css_images_custombutton_Button_Gold_tileable_tl_over_png_1949119752:Class;
       
-      private var _embed_css_images_custombutton_Button_Border_tileable_tc_disabled_png_1563054077:Class;
+      private var _embed_css____images_prey_prey_list_reroll_small_disabled_png_600614801:Class;
       
-      private var _embed_css_____assets_images_imbuing_imbuing_slot_empty_png_1983091155:Class;
+      private var _embed_css_images_BarsHealth_default_Mana_png_2142805618:Class;
       
-      private var _embed_css_images_BarsHealth_default_Yellow_png_808052085:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_tl_disabled_png_1116270317:Class;
       
-      private var _embed_css_images_Icons_CombatControls_MediumOff_idle_png_844732849:Class;
+      private var _embed_css_images_custombutton_Button_Highlight_tileable_bl_pressed_png_564600482:Class;
       
-      private var _embed_css_images_Icons_TradeLists_ListDisplay_idle_png_1140494966:Class;
-      
-      private var _embed_css_images_Icons_WidgetMenu_VipList_idle_over_png_540002728:Class;
-      
-      private var _embed_css_images_Icons_Conditions_Haste_png_46815841:Class;
-      
-      private var _embed_css_images_BarsXP_default_malus_png_1083584633:Class;
-      
-      private var _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210:Class;
-      
-      private var _embed_css_images_slot_Hotkey_png_542831063:Class;
+      private var _embed_css_images_BarsXP_default_malus_png_1223952997:Class;
       
       protected var m_Communication:Communication = null;
       
+      private var _embed_css_images_BG_Bars_default_tileable_png_402625151:Class;
+      
       protected var m_MiniMapStorage:MiniMapStorage = null;
       
-      private var _embed_css_images_Scrollbar_tileable_png_2024027095:Class;
+      private var _embed_css_images_Icons_BattleList_HideNPCs_active_over_png_274255324:Class;
       
-      private var _embed_css_images_Button_Close_disabled_png_447174510:Class;
+      private var _embed_css_images_Button_PurchaseComplete_pressed_png_296592240:Class;
       
-      private var _embed_css_images_Slot_InventoryNecklace_protected_png_1785395660:Class;
+      private var _embed_css____images_prey_prey_list_reroll_small_png_860092972:Class;
       
-      private var _embed_css_images_custombutton_Button_Gold_tileable_ml_idle_png_1852541313:Class;
+      private var _embed_css_images_Icons_ProgressBars_Fishing_png_159411631:Class;
       
-      private var _embed_css_images_Icons_CombatControls_ExpertMode_over_png_13719802:Class;
+      private var _embed_css_images_Icons_CombatControls_ExpertMode_disabled_png_894372018:Class;
       
-      private var _embed_css_images_Icons_WidgetMenu_Minimap_active_over_png_376047536:Class;
+      private var _embed_css_images_Button_PurchaseComplete_idle_png_1219313536:Class;
       
-      private var _embed_css_images_Icons_ProgressBars_Fishing_png_368980363:Class;
-      
-      private var _embed_css____images_prey_prey_list_reroll_reactivate_disabled_png_74434796:Class;
+      private var _embed_css_images_Icons_ProgressBars_DistanceFighting_png_779396374:Class;
       
       private var _883427326m_UIChatWidget:ChatWidget;
       
+      private var _embed_css_images_custombutton_Button_Gold_tileable_ml_idle_png_2119528289:Class;
+      
+      private var _embed_css_images_Icons_WidgetMenu_BattleList_idle_over_png_9825491:Class;
+      
       mx_internal var _watchers:Array;
       
-      private var _embed_css_images_BG_Combat_ExpertOn_png_2127142674:Class;
+      private var _embed_css_images_Icons_WidgetHeaders_VipList_png_570669695:Class;
       
-      private var _embed_css_images_custombutton_Button_IngameShopBuy_tileable_idle_png_931484342:Class;
+      private var _embed_css_images_Minimap_ZoomOut_pressed_png_834344966:Class;
       
-      private var _embed_css_____assets_images_imbuing_imbuing_icon_remove_active_png_831749865:Class;
-      
-      private var _embed_css_images_Icons_CombatControls_RedFistOn_idle_png_142442293:Class;
+      private var _embed_css_images_custombutton_Button_Gold_tileable_tl_pressed_png_96476760:Class;
       
       private var m_GameActionFactory:GameActionFactory = null;
       
+      private var _embed_css_images_custombutton_Button_Standard_tileable_bl_pressed_png_1258615591:Class;
+      
       protected var m_ChannelsPending:Vector.<int> = null;
       
-      private var _embed_css_images_BG_Bars_compact_enpieceOrnamented_png_918003981:Class;
+      private var _embed_css_images_Slot_InventoryRing_png_534601697:Class;
+      
+      private var _embed_css_images_Button_ContainerUp_over_png_533315994:Class;
       
       private var m_ConnectionLostDialog:ConnectionLostWidget;
       
-      private var _embed_css_images_Icons_CombatControls_YellowHandOn_idle_png_572971351:Class;
+      private var _embed_css_images_Slot_InventoryAmmo_protected_png_437721124:Class;
       
-      private var _embed_css_images_Icons_IngameShop_12x12_No_png_85749109:Class;
+      private var _embed_css_images_Button_LockHotkeys_Locked_over_png_208376919:Class;
       
-      private var _embed_css_images_custombutton_Button_Highlight_tileable_bc_pressed_png_1234389013:Class;
+      private var _embed_css_images_Icons_CombatControls_DoveOn_over_png_931245694:Class;
       
-      private var _embed_css_images_Icons_Conditions_MagicShield_png_246939656:Class;
+      private var _embed_css_images_Icons_CombatControls_StandOff_over_png_549332482:Class;
       
-      private var _embed_css_images_Icons_WidgetHeaders_VipList_png_164461471:Class;
+      private var _embed_css_images_Icons_WidgetMenu_Blessings_active_png_1558016314:Class;
       
-      private var _embed_css_images_ChatWindow_Mover_png_1725151138:Class;
+      private var _embed_css_images_BarsHealth_fat_RedFull_png_663565691:Class;
       
-      private var _embed_css_images_Icons_WidgetHeaders_Inventory_png_2094138972:Class;
+      private var _embed_css_images_BarsHealth_compact_Mana_png_1849035652:Class;
       
-      private var _embed_css_images_custombutton_Button_Border_tileable_tc_pressed_png_502332351:Class;
+      private var _embed_css_images_Icons_WidgetMenu_VipList_active_png_848728905:Class;
       
-      private var _embed_css_images_custombutton_Button_Gold_tileable_bl_pressed_png_1833599894:Class;
+      private var _embed_css_images_BG_Combat_ExpertOff_png_793516502:Class;
       
-      private var _embed_css_images_Button_MaximizePremium_idle_png_1870457525:Class;
+      private var _embed_css_images_custombutton_Button_Standard_tileable_bl_disabled_png_953976447:Class;
       
-      private var _embed_css_images_custombutton_Button_Standard_tileable_bc_disabled_png_1867898870:Class;
+      private var _embed_css_images_custombutton_Button_Gold_tileable_mc_over_png_387132358:Class;
       
-      private var _embed_css_images_BarsHealth_compact_Yellow_png_1489515415:Class;
+      private var _embed_css_images_BarsHealth_fat_RedLow2_png_2105859306:Class;
+      
+      private var _embed_css_images_slot_Hotkey_png_1006833303:Class;
+      
+      private var _embed_css_images_Icons_CombatControls_ExpertMode_over_png_420435450:Class;
       
       private var _documentDescriptor_:UIComponentDescriptor;
       
-      private var _embed_css_images_Button_ChatTabIgnore_over_png_906238439:Class;
+      private var _embed_css_images_Slot_InventoryWeapon_png_1721833083:Class;
       
-      private var _embed_css_images_BarsHealth_compact_Mana_png_1712179560:Class;
+      private var _embed_css_images_Icons_Conditions_Poisoned_png_1540003537:Class;
+      
+      private var _embed_css_images_Icons_WidgetHeaders_Minimap_png_2033089433:Class;
+      
+      private var _embed_css_images_BG_Bars_compact_enpiece_png_1259288550:Class;
+      
+      private var _embed_css_images_custombutton_Button_Gold_tileable_mc_pressed_png_1792782474:Class;
+      
+      private var _embed_css_images_slot_Hotkey_highlighted_png_1467341187:Class;
       
       public function Tibia()
       {
@@ -1374,449 +1374,449 @@ package
          this.m_ConnectionLostDialog = new ConnectionLostWidget();
          this.m_TutorialData = new Object();
          this.m_FailedConnectionRescheduler = new FailedConnectionRescheduler();
-         this._embed_css_____assets_images_imbuing_imbuing_icon_imbue_active_png_2017811027 = Tibia__embed_css_____assets_images_imbuing_imbuing_icon_imbue_active_png_2017811027;
-         this._embed_css_____assets_images_imbuing_imbuing_icon_imbue_disabled_png_1836447193 = Tibia__embed_css_____assets_images_imbuing_imbuing_icon_imbue_disabled_png_1836447193;
-         this._embed_css_____assets_images_imbuing_imbuing_icon_remove_active_png_831749865 = Tibia__embed_css_____assets_images_imbuing_imbuing_icon_remove_active_png_831749865;
-         this._embed_css_____assets_images_imbuing_imbuing_icon_remove_disabled_png_1775436169 = Tibia__embed_css_____assets_images_imbuing_imbuing_icon_remove_disabled_png_1775436169;
-         this._embed_css_____assets_images_imbuing_imbuing_icon_useprotection_active_png_1327320745 = Tibia__embed_css_____assets_images_imbuing_imbuing_icon_useprotection_active_png_1327320745;
-         this._embed_css_____assets_images_imbuing_imbuing_icon_useprotection_disabled_png_1477840035 = Tibia__embed_css_____assets_images_imbuing_imbuing_icon_useprotection_disabled_png_1477840035;
-         this._embed_css_____assets_images_imbuing_imbuing_slot_empty_png_1983091155 = Tibia__embed_css_____assets_images_imbuing_imbuing_slot_empty_png_1983091155;
-         this._embed_css_____assets_images_ingameshop_Icons_IngameShop_12x12_TibiaCoin_png_552533231 = Tibia__embed_css_____assets_images_ingameshop_Icons_IngameShop_12x12_TibiaCoin_png_552533231;
-         this._embed_css_____assets_images_ingameshop_Icons_IngameShop_32x14_TransferCoins_png_198242323 = Tibia__embed_css_____assets_images_ingameshop_Icons_IngameShop_32x14_TransferCoins_png_198242323;
-         this._embed_css____images_prey_prey_bonus_reroll_disabled_png_218744390 = Tibia__embed_css____images_prey_prey_bonus_reroll_disabled_png_218744390;
-         this._embed_css____images_prey_prey_bonus_reroll_png_1664079721 = Tibia__embed_css____images_prey_prey_bonus_reroll_png_1664079721;
-         this._embed_css____images_prey_prey_confirm_monster_selection_disabled_png_1540726376 = Tibia__embed_css____images_prey_prey_confirm_monster_selection_disabled_png_1540726376;
-         this._embed_css____images_prey_prey_confirm_monster_selection_png_1854902533 = Tibia__embed_css____images_prey_prey_confirm_monster_selection_png_1854902533;
-         this._embed_css____images_prey_prey_list_reroll_disabled_png_1408279029 = Tibia__embed_css____images_prey_prey_list_reroll_disabled_png_1408279029;
-         this._embed_css____images_prey_prey_list_reroll_png_1720722638 = Tibia__embed_css____images_prey_prey_list_reroll_png_1720722638;
-         this._embed_css____images_prey_prey_list_reroll_reactivate_disabled_png_74434796 = Tibia__embed_css____images_prey_prey_list_reroll_reactivate_disabled_png_74434796;
-         this._embed_css____images_prey_prey_list_reroll_reactivate_png_1106340657 = Tibia__embed_css____images_prey_prey_list_reroll_reactivate_png_1106340657;
-         this._embed_css____images_prey_prey_list_reroll_small_disabled_png_600754165 = Tibia__embed_css____images_prey_prey_list_reroll_small_disabled_png_600754165;
-         this._embed_css____images_prey_prey_list_reroll_small_png_1392369160 = Tibia__embed_css____images_prey_prey_list_reroll_small_png_1392369160;
-         this._embed_css____images_prey_prey_list_reroll_small_reactivate_disabled_png_1868832418 = Tibia__embed_css____images_prey_prey_list_reroll_small_reactivate_disabled_png_1868832418;
-         this._embed_css____images_prey_prey_list_reroll_small_reactivate_png_1096128443 = Tibia__embed_css____images_prey_prey_list_reroll_small_reactivate_png_1096128443;
-         this._embed_css____images_prey_prey_unlock_permanently_png_1955932179 = Tibia__embed_css____images_prey_prey_unlock_permanently_png_1955932179;
-         this._embed_css____images_prey_prey_unlock_temporarily_png_1138134336 = Tibia__embed_css____images_prey_prey_unlock_temporarily_png_1138134336;
-         this._embed_css_images_Arrow_HotkeyToggle_BG_png_368269210 = Tibia__embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
-         this._embed_css_images_Arrow_Minimap_LevelUpDown_idle_png_332004998 = Tibia__embed_css_images_Arrow_Minimap_LevelUpDown_idle_png_332004998;
-         this._embed_css_images_Arrow_Minimap_LevelUpDown_over_png_536705658 = Tibia__embed_css_images_Arrow_Minimap_LevelUpDown_over_png_536705658;
-         this._embed_css_images_Arrow_Minimap_LevelUpDown_pressed_png_1728357286 = Tibia__embed_css_images_Arrow_Minimap_LevelUpDown_pressed_png_1728357286;
-         this._embed_css_images_Arrow_ScrollHotkeys_disabled_png_326951061 = Tibia__embed_css_images_Arrow_ScrollHotkeys_disabled_png_326951061;
-         this._embed_css_images_Arrow_ScrollHotkeys_idle_png_1989691811 = Tibia__embed_css_images_Arrow_ScrollHotkeys_idle_png_1989691811;
-         this._embed_css_images_Arrow_ScrollHotkeys_over_png_191481507 = Tibia__embed_css_images_Arrow_ScrollHotkeys_over_png_191481507;
-         this._embed_css_images_Arrow_ScrollHotkeys_pressed_png_1194517687 = Tibia__embed_css_images_Arrow_ScrollHotkeys_pressed_png_1194517687;
-         this._embed_css_images_Arrow_ScrollTabsHighlighted_idle_png_802144823 = Tibia__embed_css_images_Arrow_ScrollTabsHighlighted_idle_png_802144823;
-         this._embed_css_images_Arrow_ScrollTabsHighlighted_over_png_475447497 = Tibia__embed_css_images_Arrow_ScrollTabsHighlighted_over_png_475447497;
-         this._embed_css_images_Arrow_ScrollTabsHighlighted_pressed_png_1019332597 = Tibia__embed_css_images_Arrow_ScrollTabsHighlighted_pressed_png_1019332597;
-         this._embed_css_images_Arrow_ScrollTabs_disabled_png_744892220 = Tibia__embed_css_images_Arrow_ScrollTabs_disabled_png_744892220;
-         this._embed_css_images_Arrow_ScrollTabs_idle_png_1793155108 = Tibia__embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
-         this._embed_css_images_Arrow_ScrollTabs_over_png_1462627108 = Tibia__embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
-         this._embed_css_images_Arrow_ScrollTabs_pressed_png_169219784 = Tibia__embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
-         this._embed_css_images_Arrow_WidgetToggle_BG_png_2044967256 = Tibia__embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
-         this._embed_css_images_Arrow_WidgetToggle_idle_png_550075419 = Tibia__embed_css_images_Arrow_WidgetToggle_idle_png_550075419;
-         this._embed_css_images_Arrow_WidgetToggle_over_png_334496997 = Tibia__embed_css_images_Arrow_WidgetToggle_over_png_334496997;
-         this._embed_css_images_Arrow_WidgetToggle_pressed_png_806241479 = Tibia__embed_css_images_Arrow_WidgetToggle_pressed_png_806241479;
-         this._embed_css_images_BG_BarsProgress_compact_endpiece_png_1448454481 = Tibia__embed_css_images_BG_BarsProgress_compact_endpiece_png_1448454481;
-         this._embed_css_images_BG_BarsProgress_compact_tileable_png_1503274352 = Tibia__embed_css_images_BG_BarsProgress_compact_tileable_png_1503274352;
-         this._embed_css_images_BG_BarsXP_default_endpiece_png_1394078162 = Tibia__embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-         this._embed_css_images_BG_BarsXP_default_tileable_png_1408337339 = Tibia__embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-         this._embed_css_images_BG_Bars_compact_enpieceOrnamented_png_918003981 = Tibia__embed_css_images_BG_Bars_compact_enpieceOrnamented_png_918003981;
-         this._embed_css_images_BG_Bars_compact_enpiece_png_1122989386 = Tibia__embed_css_images_BG_Bars_compact_enpiece_png_1122989386;
-         this._embed_css_images_BG_Bars_compact_tileable_png_1378708577 = Tibia__embed_css_images_BG_Bars_compact_tileable_png_1378708577;
-         this._embed_css_images_BG_Bars_default_enpieceOrnamented_png_1621675861 = Tibia__embed_css_images_BG_Bars_default_enpieceOrnamented_png_1621675861;
-         this._embed_css_images_BG_Bars_default_enpiece_png_329250772 = Tibia__embed_css_images_BG_Bars_default_enpiece_png_329250772;
-         this._embed_css_images_BG_Bars_default_tileable_png_813666947 = Tibia__embed_css_images_BG_Bars_default_tileable_png_813666947;
-         this._embed_css_images_BG_Bars_fat_enpieceOrnamented_png_805098349 = Tibia__embed_css_images_BG_Bars_fat_enpieceOrnamented_png_805098349;
-         this._embed_css_images_BG_Bars_fat_enpiece_png_254994756 = Tibia__embed_css_images_BG_Bars_fat_enpiece_png_254994756;
-         this._embed_css_images_BG_Bars_fat_tileable_png_1851975525 = Tibia__embed_css_images_BG_Bars_fat_tileable_png_1851975525;
-         this._embed_css_images_BG_BohemianTileable_ChatConsole_png_2063585141 = Tibia__embed_css_images_BG_BohemianTileable_ChatConsole_png_2063585141;
-         this._embed_css_images_BG_BohemianTileable_Game_png_1148175408 = Tibia__embed_css_images_BG_BohemianTileable_Game_png_1148175408;
-         this._embed_css_images_BG_BohemianTileable_png_1964434549 = Tibia__embed_css_images_BG_BohemianTileable_png_1964434549;
-         this._embed_css_images_BG_ChatTab_Tabdrop_png_60591148 = Tibia__embed_css_images_BG_ChatTab_Tabdrop_png_60591148;
-         this._embed_css_images_BG_ChatTab_tileable_png_2031873750 = Tibia__embed_css_images_BG_ChatTab_tileable_png_2031873750;
-         this._embed_css_images_BG_Combat_ExpertOff_png_1133893050 = Tibia__embed_css_images_BG_Combat_ExpertOff_png_1133893050;
-         this._embed_css_images_BG_Combat_ExpertOn_png_2127142674 = Tibia__embed_css_images_BG_Combat_ExpertOn_png_2127142674;
-         this._embed_css_images_BG_Stone2_Tileable_png_1536416308 = Tibia__embed_css_images_BG_Stone2_Tileable_png_1536416308;
-         this._embed_css_images_BG_Widget_Menu_png_779308052 = Tibia__embed_css_images_BG_Widget_Menu_png_779308052;
-         this._embed_css_images_BarsHealth_compact_GreenFull_png_147173125 = Tibia__embed_css_images_BarsHealth_compact_GreenFull_png_147173125;
-         this._embed_css_images_BarsHealth_compact_GreenLow_png_823416786 = Tibia__embed_css_images_BarsHealth_compact_GreenLow_png_823416786;
-         this._embed_css_images_BarsHealth_compact_Mana_png_1712179560 = Tibia__embed_css_images_BarsHealth_compact_Mana_png_1712179560;
-         this._embed_css_images_BarsHealth_compact_RedFull_png_1122893911 = Tibia__embed_css_images_BarsHealth_compact_RedFull_png_1122893911;
-         this._embed_css_images_BarsHealth_compact_RedLow2_png_6321508 = Tibia__embed_css_images_BarsHealth_compact_RedLow2_png_6321508;
-         this._embed_css_images_BarsHealth_compact_RedLow_png_298615636 = Tibia__embed_css_images_BarsHealth_compact_RedLow_png_298615636;
-         this._embed_css_images_BarsHealth_compact_Yellow_png_1489515415 = Tibia__embed_css_images_BarsHealth_compact_Yellow_png_1489515415;
-         this._embed_css_images_BarsHealth_default_GreenFull_png_807562777 = Tibia__embed_css_images_BarsHealth_default_GreenFull_png_807562777;
-         this._embed_css_images_BarsHealth_default_GreenLow_png_1485470108 = Tibia__embed_css_images_BarsHealth_default_GreenLow_png_1485470108;
-         this._embed_css_images_BarsHealth_default_Mana_png_2014888902 = Tibia__embed_css_images_BarsHealth_default_Mana_png_2014888902;
-         this._embed_css_images_BarsHealth_default_RedFull_png_60642647 = Tibia__embed_css_images_BarsHealth_default_RedFull_png_60642647;
-         this._embed_css_images_BarsHealth_default_RedLow2_png_1110203394 = Tibia__embed_css_images_BarsHealth_default_RedLow2_png_1110203394;
-         this._embed_css_images_BarsHealth_default_RedLow_png_2034053770 = Tibia__embed_css_images_BarsHealth_default_RedLow_png_2034053770;
-         this._embed_css_images_BarsHealth_default_Yellow_png_808052085 = Tibia__embed_css_images_BarsHealth_default_Yellow_png_808052085;
-         this._embed_css_images_BarsHealth_fat_GreenFull_png_1675173631 = Tibia__embed_css_images_BarsHealth_fat_GreenFull_png_1675173631;
-         this._embed_css_images_BarsHealth_fat_GreenLow_png_425933188 = Tibia__embed_css_images_BarsHealth_fat_GreenLow_png_425933188;
-         this._embed_css_images_BarsHealth_fat_Mana_png_1856202898 = Tibia__embed_css_images_BarsHealth_fat_Mana_png_1856202898;
-         this._embed_css_images_BarsHealth_fat_RedFull_png_1188262271 = Tibia__embed_css_images_BarsHealth_fat_RedFull_png_1188262271;
-         this._embed_css_images_BarsHealth_fat_RedLow2_png_1983741974 = Tibia__embed_css_images_BarsHealth_fat_RedLow2_png_1983741974;
-         this._embed_css_images_BarsHealth_fat_RedLow_png_1029541970 = Tibia__embed_css_images_BarsHealth_fat_RedLow_png_1029541970;
-         this._embed_css_images_BarsHealth_fat_Yellow_png_1332323165 = Tibia__embed_css_images_BarsHealth_fat_Yellow_png_1332323165;
-         this._embed_css_images_BarsProgress_compact_orange_png_605959778 = Tibia__embed_css_images_BarsProgress_compact_orange_png_605959778;
-         this._embed_css_images_BarsXP_default__png_385879515 = Tibia__embed_css_images_BarsXP_default__png_385879515;
-         this._embed_css_images_BarsXP_default_improved_png_1615848679 = Tibia__embed_css_images_BarsXP_default_improved_png_1615848679;
-         this._embed_css_images_BarsXP_default_malus_png_1083584633 = Tibia__embed_css_images_BarsXP_default_malus_png_1083584633;
-         this._embed_css_images_BarsXP_default_zero_png_841389645 = Tibia__embed_css_images_BarsXP_default_zero_png_841389645;
-         this._embed_css_images_Bars_ProgressMarker_png_1761755336 = Tibia__embed_css_images_Bars_ProgressMarker_png_1761755336;
-         this._embed_css_images_Border02_WidgetSidebar_png_43620945 = Tibia__embed_css_images_Border02_WidgetSidebar_png_43620945;
-         this._embed_css_images_Border02_WidgetSidebar_slim_png_828323829 = Tibia__embed_css_images_Border02_WidgetSidebar_slim_png_828323829;
-         this._embed_css_images_Border02_corners_png_1465567525 = Tibia__embed_css_images_Border02_corners_png_1465567525;
-         this._embed_css_images_Border02_png_856171138 = Tibia__embed_css_images_Border02_png_856171138;
-         this._embed_css_images_Border_Widget_corner_png_969648405 = Tibia__embed_css_images_Border_Widget_corner_png_969648405;
-         this._embed_css_images_Border_Widget_png_589090515 = Tibia__embed_css_images_Border_Widget_png_589090515;
-         this._embed_css_images_Button_ChatTabIgnore_idle_png_373453081 = Tibia__embed_css_images_Button_ChatTabIgnore_idle_png_373453081;
-         this._embed_css_images_Button_ChatTabIgnore_over_png_906238439 = Tibia__embed_css_images_Button_ChatTabIgnore_over_png_906238439;
-         this._embed_css_images_Button_ChatTabIgnore_pressed_png_653700051 = Tibia__embed_css_images_Button_ChatTabIgnore_pressed_png_653700051;
-         this._embed_css_images_Button_ChatTabNew_idle_png_1330657205 = Tibia__embed_css_images_Button_ChatTabNew_idle_png_1330657205;
-         this._embed_css_images_Button_ChatTabNew_over_png_67901621 = Tibia__embed_css_images_Button_ChatTabNew_over_png_67901621;
-         this._embed_css_images_Button_ChatTabNew_pressed_png_1051530935 = Tibia__embed_css_images_Button_ChatTabNew_pressed_png_1051530935;
-         this._embed_css_images_Button_ChatTab_Close_idle_png_1545025108 = Tibia__embed_css_images_Button_ChatTab_Close_idle_png_1545025108;
-         this._embed_css_images_Button_ChatTab_Close_over_png_1679055020 = Tibia__embed_css_images_Button_ChatTab_Close_over_png_1679055020;
-         this._embed_css_images_Button_ChatTab_Close_pressed_png_1974009856 = Tibia__embed_css_images_Button_ChatTab_Close_pressed_png_1974009856;
-         this._embed_css_images_Button_Close_disabled_png_447174510 = Tibia__embed_css_images_Button_Close_disabled_png_447174510;
-         this._embed_css_images_Button_Close_idle_png_1218950854 = Tibia__embed_css_images_Button_Close_idle_png_1218950854;
-         this._embed_css_images_Button_Close_over_png_1551448006 = Tibia__embed_css_images_Button_Close_over_png_1551448006;
-         this._embed_css_images_Button_Close_pressed_png_1627770558 = Tibia__embed_css_images_Button_Close_pressed_png_1627770558;
-         this._embed_css_images_Button_Combat_Stop_idle_png_1826670103 = Tibia__embed_css_images_Button_Combat_Stop_idle_png_1826670103;
-         this._embed_css_images_Button_Combat_Stop_over_png_564437783 = Tibia__embed_css_images_Button_Combat_Stop_over_png_564437783;
-         this._embed_css_images_Button_Combat_Stop_pressed_png_1343706347 = Tibia__embed_css_images_Button_Combat_Stop_pressed_png_1343706347;
-         this._embed_css_images_Button_ContainerUp_idle_png_1017477430 = Tibia__embed_css_images_Button_ContainerUp_idle_png_1017477430;
-         this._embed_css_images_Button_ContainerUp_over_png_133274678 = Tibia__embed_css_images_Button_ContainerUp_over_png_133274678;
-         this._embed_css_images_Button_ContainerUp_pressed_png_697201334 = Tibia__embed_css_images_Button_ContainerUp_pressed_png_697201334;
-         this._embed_css_images_Button_LockHotkeys_Locked_idle_png_885060219 = Tibia__embed_css_images_Button_LockHotkeys_Locked_idle_png_885060219;
-         this._embed_css_images_Button_LockHotkeys_Locked_over_png_554269051 = Tibia__embed_css_images_Button_LockHotkeys_Locked_over_png_554269051;
-         this._embed_css_images_Button_LockHotkeys_UnLocked_idle_png_587263282 = Tibia__embed_css_images_Button_LockHotkeys_UnLocked_idle_png_587263282;
-         this._embed_css_images_Button_LockHotkeys_UnLocked_over_png_935749170 = Tibia__embed_css_images_Button_LockHotkeys_UnLocked_over_png_935749170;
-         this._embed_css_images_Button_MaximizePremium_idle_png_1870457525 = Tibia__embed_css_images_Button_MaximizePremium_idle_png_1870457525;
-         this._embed_css_images_Button_MaximizePremium_over_png_138300341 = Tibia__embed_css_images_Button_MaximizePremium_over_png_138300341;
-         this._embed_css_images_Button_Maximize_idle_png_1094816082 = Tibia__embed_css_images_Button_Maximize_idle_png_1094816082;
-         this._embed_css_images_Button_Maximize_over_png_1257962926 = Tibia__embed_css_images_Button_Maximize_over_png_1257962926;
-         this._embed_css_images_Button_Maximize_pressed_png_744580322 = Tibia__embed_css_images_Button_Maximize_pressed_png_744580322;
-         this._embed_css_images_Button_Minimize_idle_png_1665493556 = Tibia__embed_css_images_Button_Minimize_idle_png_1665493556;
-         this._embed_css_images_Button_Minimize_over_png_1989991220 = Tibia__embed_css_images_Button_Minimize_over_png_1989991220;
-         this._embed_css_images_Button_Minimize_pressed_png_1820422736 = Tibia__embed_css_images_Button_Minimize_pressed_png_1820422736;
-         this._embed_css_images_Button_PurchaseComplete_idle_png_950754944 = Tibia__embed_css_images_Button_PurchaseComplete_idle_png_950754944;
-         this._embed_css_images_Button_PurchaseComplete_over_png_1939813504 = Tibia__embed_css_images_Button_PurchaseComplete_over_png_1939813504;
-         this._embed_css_images_Button_PurchaseComplete_pressed_png_296739540 = Tibia__embed_css_images_Button_PurchaseComplete_pressed_png_296739540;
-         this._embed_css_images_BuySellTab_active_png_1449511366 = Tibia__embed_css_images_BuySellTab_active_png_1449511366;
-         this._embed_css_images_BuySellTab_idle_png_886708504 = Tibia__embed_css_images_BuySellTab_idle_png_886708504;
-         this._embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_1369512376 = Tibia__embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_1369512376;
-         this._embed_css_images_ChatTab_tileable_EndpieceLeft_png_1323048363 = Tibia__embed_css_images_ChatTab_tileable_EndpieceLeft_png_1323048363;
-         this._embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_1491157363 = Tibia__embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_1491157363;
-         this._embed_css_images_ChatTab_tileable_EndpieceRound_png_1662843318 = Tibia__embed_css_images_ChatTab_tileable_EndpieceRound_png_1662843318;
-         this._embed_css_images_ChatTab_tileable_idle_png_1025655505 = Tibia__embed_css_images_ChatTab_tileable_idle_png_1025655505;
-         this._embed_css_images_ChatTab_tileable_png_1152222910 = Tibia__embed_css_images_ChatTab_tileable_png_1152222910;
-         this._embed_css_images_ChatWindow_Mover_png_1725151138 = Tibia__embed_css_images_ChatWindow_Mover_png_1725151138;
-         this._embed_css_images_Icon_NoPremium_png_1355667196 = Tibia__embed_css_images_Icon_NoPremium_png_1355667196;
-         this._embed_css_images_Icon_Premium_png_157361223 = Tibia__embed_css_images_Icon_Premium_png_157361223;
-         this._embed_css_images_Icons_BattleList_HideMonsters_active_over_png_1041894995 = Tibia__embed_css_images_Icons_BattleList_HideMonsters_active_over_png_1041894995;
-         this._embed_css_images_Icons_BattleList_HideMonsters_active_png_1182126058 = Tibia__embed_css_images_Icons_BattleList_HideMonsters_active_png_1182126058;
-         this._embed_css_images_Icons_BattleList_HideMonsters_idle_png_1297366744 = Tibia__embed_css_images_Icons_BattleList_HideMonsters_idle_png_1297366744;
-         this._embed_css_images_Icons_BattleList_HideMonsters_over_png_1720793640 = Tibia__embed_css_images_Icons_BattleList_HideMonsters_over_png_1720793640;
-         this._embed_css_images_Icons_BattleList_HideNPCs_active_over_png_551096440 = Tibia__embed_css_images_Icons_BattleList_HideNPCs_active_over_png_551096440;
-         this._embed_css_images_Icons_BattleList_HideNPCs_active_png_1949955707 = Tibia__embed_css_images_Icons_BattleList_HideNPCs_active_png_1949955707;
-         this._embed_css_images_Icons_BattleList_HideNPCs_idle_png_1862110099 = Tibia__embed_css_images_Icons_BattleList_HideNPCs_idle_png_1862110099;
-         this._embed_css_images_Icons_BattleList_HideNPCs_over_png_977927827 = Tibia__embed_css_images_Icons_BattleList_HideNPCs_over_png_977927827;
-         this._embed_css_images_Icons_BattleList_HidePlayers_active_over_png_961154706 = Tibia__embed_css_images_Icons_BattleList_HidePlayers_active_over_png_961154706;
-         this._embed_css_images_Icons_BattleList_HidePlayers_active_png_1087801247 = Tibia__embed_css_images_Icons_BattleList_HidePlayers_active_png_1087801247;
-         this._embed_css_images_Icons_BattleList_HidePlayers_idle_png_112457565 = Tibia__embed_css_images_Icons_BattleList_HidePlayers_idle_png_112457565;
-         this._embed_css_images_Icons_BattleList_HidePlayers_over_png_419396003 = Tibia__embed_css_images_Icons_BattleList_HidePlayers_over_png_419396003;
-         this._embed_css_images_Icons_BattleList_HideSkulled_active_over_png_660583768 = Tibia__embed_css_images_Icons_BattleList_HideSkulled_active_over_png_660583768;
-         this._embed_css_images_Icons_BattleList_HideSkulled_active_png_1474407051 = Tibia__embed_css_images_Icons_BattleList_HideSkulled_active_png_1474407051;
-         this._embed_css_images_Icons_BattleList_HideSkulled_idle_png_629388963 = Tibia__embed_css_images_Icons_BattleList_HideSkulled_idle_png_629388963;
-         this._embed_css_images_Icons_BattleList_HideSkulled_over_png_238536285 = Tibia__embed_css_images_Icons_BattleList_HideSkulled_over_png_238536285;
-         this._embed_css_images_Icons_BattleList_PartyMembers_active_over_png_405251525 = Tibia__embed_css_images_Icons_BattleList_PartyMembers_active_over_png_405251525;
-         this._embed_css_images_Icons_BattleList_PartyMembers_active_png_1520198974 = Tibia__embed_css_images_Icons_BattleList_PartyMembers_active_png_1520198974;
-         this._embed_css_images_Icons_BattleList_PartyMembers_idle_png_590067760 = Tibia__embed_css_images_Icons_BattleList_PartyMembers_idle_png_590067760;
-         this._embed_css_images_Icons_BattleList_PartyMembers_over_png_289252560 = Tibia__embed_css_images_Icons_BattleList_PartyMembers_over_png_289252560;
-         this._embed_css_images_Icons_CombatControls_AutochaseOn_idle_png_1441980539 = Tibia__embed_css_images_Icons_CombatControls_AutochaseOn_idle_png_1441980539;
-         this._embed_css_images_Icons_CombatControls_AutochaseOn_over_png_554521467 = Tibia__embed_css_images_Icons_CombatControls_AutochaseOn_over_png_554521467;
-         this._embed_css_images_Icons_CombatControls_DefensiveOff_idle_png_1794298449 = Tibia__embed_css_images_Icons_CombatControls_DefensiveOff_idle_png_1794298449;
-         this._embed_css_images_Icons_CombatControls_DefensiveOff_over_png_88580271 = Tibia__embed_css_images_Icons_CombatControls_DefensiveOff_over_png_88580271;
-         this._embed_css_images_Icons_CombatControls_DefensiveOn_active_png_1844746073 = Tibia__embed_css_images_Icons_CombatControls_DefensiveOn_active_png_1844746073;
-         this._embed_css_images_Icons_CombatControls_DefensiveOn_idle_png_1614728391 = Tibia__embed_css_images_Icons_CombatControls_DefensiveOn_idle_png_1614728391;
-         this._embed_css_images_Icons_CombatControls_DoveOff_idle_png_165836976 = Tibia__embed_css_images_Icons_CombatControls_DoveOff_idle_png_165836976;
-         this._embed_css_images_Icons_CombatControls_DoveOff_over_png_1096554064 = Tibia__embed_css_images_Icons_CombatControls_DoveOff_over_png_1096554064;
-         this._embed_css_images_Icons_CombatControls_DoveOn_idle_png_1462206846 = Tibia__embed_css_images_Icons_CombatControls_DoveOn_idle_png_1462206846;
-         this._embed_css_images_Icons_CombatControls_DoveOn_over_png_927199358 = Tibia__embed_css_images_Icons_CombatControls_DoveOn_over_png_927199358;
-         this._embed_css_images_Icons_CombatControls_ExpertModeOn_idle_png_652505055 = Tibia__embed_css_images_Icons_CombatControls_ExpertModeOn_idle_png_652505055;
-         this._embed_css_images_Icons_CombatControls_ExpertModeOn_over_png_2021716257 = Tibia__embed_css_images_Icons_CombatControls_ExpertModeOn_over_png_2021716257;
-         this._embed_css_images_Icons_CombatControls_ExpertMode_disabled_png_1087726802 = Tibia__embed_css_images_Icons_CombatControls_ExpertMode_disabled_png_1087726802;
-         this._embed_css_images_Icons_CombatControls_ExpertMode_idle_png_884394490 = Tibia__embed_css_images_Icons_CombatControls_ExpertMode_idle_png_884394490;
-         this._embed_css_images_Icons_CombatControls_ExpertMode_over_png_13719802 = Tibia__embed_css_images_Icons_CombatControls_ExpertMode_over_png_13719802;
-         this._embed_css_images_Icons_CombatControls_MediumOff_idle_png_844732849 = Tibia__embed_css_images_Icons_CombatControls_MediumOff_idle_png_844732849;
-         this._embed_css_images_Icons_CombatControls_MediumOff_over_png_418575695 = Tibia__embed_css_images_Icons_CombatControls_MediumOff_over_png_418575695;
-         this._embed_css_images_Icons_CombatControls_MediumOn_idle_png_1333658855 = Tibia__embed_css_images_Icons_CombatControls_MediumOn_idle_png_1333658855;
-         this._embed_css_images_Icons_CombatControls_MediumOn_over_png_1002865639 = Tibia__embed_css_images_Icons_CombatControls_MediumOn_over_png_1002865639;
-         this._embed_css_images_Icons_CombatControls_Mounted_idle_png_264427409 = Tibia__embed_css_images_Icons_CombatControls_Mounted_idle_png_264427409;
-         this._embed_css_images_Icons_CombatControls_Mounted_over_png_83007855 = Tibia__embed_css_images_Icons_CombatControls_Mounted_over_png_83007855;
-         this._embed_css_images_Icons_CombatControls_OffensiveOff_idle_png_386961017 = Tibia__embed_css_images_Icons_CombatControls_OffensiveOff_idle_png_386961017;
-         this._embed_css_images_Icons_CombatControls_OffensiveOff_over_png_1112870265 = Tibia__embed_css_images_Icons_CombatControls_OffensiveOff_over_png_1112870265;
-         this._embed_css_images_Icons_CombatControls_OffensiveOn_idle_png_505642365 = Tibia__embed_css_images_Icons_CombatControls_OffensiveOn_idle_png_505642365;
-         this._embed_css_images_Icons_CombatControls_OffensiveOn_over_png_1922169731 = Tibia__embed_css_images_Icons_CombatControls_OffensiveOn_over_png_1922169731;
-         this._embed_css_images_Icons_CombatControls_PvPOff_active_png_75654116 = Tibia__embed_css_images_Icons_CombatControls_PvPOff_active_png_75654116;
-         this._embed_css_images_Icons_CombatControls_PvPOff_idle_png_1515870738 = Tibia__embed_css_images_Icons_CombatControls_PvPOff_idle_png_1515870738;
-         this._embed_css_images_Icons_CombatControls_PvPOn_active_png_342724498 = Tibia__embed_css_images_Icons_CombatControls_PvPOn_active_png_342724498;
-         this._embed_css_images_Icons_CombatControls_PvPOn_idle_png_258280708 = Tibia__embed_css_images_Icons_CombatControls_PvPOn_idle_png_258280708;
-         this._embed_css_images_Icons_CombatControls_RedFistOff_idle_png_2005346177 = Tibia__embed_css_images_Icons_CombatControls_RedFistOff_idle_png_2005346177;
-         this._embed_css_images_Icons_CombatControls_RedFistOff_over_png_1679929985 = Tibia__embed_css_images_Icons_CombatControls_RedFistOff_over_png_1679929985;
-         this._embed_css_images_Icons_CombatControls_RedFistOn_idle_png_142442293 = Tibia__embed_css_images_Icons_CombatControls_RedFistOn_idle_png_142442293;
-         this._embed_css_images_Icons_CombatControls_RedFistOn_over_png_273027531 = Tibia__embed_css_images_Icons_CombatControls_RedFistOn_over_png_273027531;
-         this._embed_css_images_Icons_CombatControls_StandOff_idle_png_1491392258 = Tibia__embed_css_images_Icons_CombatControls_StandOff_idle_png_1491392258;
-         this._embed_css_images_Icons_CombatControls_StandOff_over_png_325171198 = Tibia__embed_css_images_Icons_CombatControls_StandOff_over_png_325171198;
-         this._embed_css_images_Icons_CombatControls_Unmounted_idle_png_1675114250 = Tibia__embed_css_images_Icons_CombatControls_Unmounted_idle_png_1675114250;
-         this._embed_css_images_Icons_CombatControls_Unmounted_over_png_948934666 = Tibia__embed_css_images_Icons_CombatControls_Unmounted_over_png_948934666;
-         this._embed_css_images_Icons_CombatControls_WhiteHandOff_idle_png_1012304800 = Tibia__embed_css_images_Icons_CombatControls_WhiteHandOff_idle_png_1012304800;
-         this._embed_css_images_Icons_CombatControls_WhiteHandOff_over_png_1354370208 = Tibia__embed_css_images_Icons_CombatControls_WhiteHandOff_over_png_1354370208;
-         this._embed_css_images_Icons_CombatControls_WhiteHandOn_idle_png_1901846962 = Tibia__embed_css_images_Icons_CombatControls_WhiteHandOn_idle_png_1901846962;
-         this._embed_css_images_Icons_CombatControls_WhiteHandOn_over_png_2062716238 = Tibia__embed_css_images_Icons_CombatControls_WhiteHandOn_over_png_2062716238;
-         this._embed_css_images_Icons_CombatControls_YellowHandOff_idle_png_768654451 = Tibia__embed_css_images_Icons_CombatControls_YellowHandOff_idle_png_768654451;
-         this._embed_css_images_Icons_CombatControls_YellowHandOff_over_png_511982963 = Tibia__embed_css_images_Icons_CombatControls_YellowHandOff_over_png_511982963;
-         this._embed_css_images_Icons_CombatControls_YellowHandOn_idle_png_572971351 = Tibia__embed_css_images_Icons_CombatControls_YellowHandOn_idle_png_572971351;
-         this._embed_css_images_Icons_CombatControls_YellowHandOn_over_png_713246121 = Tibia__embed_css_images_Icons_CombatControls_YellowHandOn_over_png_713246121;
-         this._embed_css_images_Icons_Conditions_Bleeding_png_325607052 = Tibia__embed_css_images_Icons_Conditions_Bleeding_png_325607052;
-         this._embed_css_images_Icons_Conditions_Burning_png_1552261945 = Tibia__embed_css_images_Icons_Conditions_Burning_png_1552261945;
-         this._embed_css_images_Icons_Conditions_Cursed_png_226830886 = Tibia__embed_css_images_Icons_Conditions_Cursed_png_226830886;
-         this._embed_css_images_Icons_Conditions_Dazzled_png_1336617984 = Tibia__embed_css_images_Icons_Conditions_Dazzled_png_1336617984;
-         this._embed_css_images_Icons_Conditions_Drowning_png_142081554 = Tibia__embed_css_images_Icons_Conditions_Drowning_png_142081554;
-         this._embed_css_images_Icons_Conditions_Drunk_png_495340422 = Tibia__embed_css_images_Icons_Conditions_Drunk_png_495340422;
-         this._embed_css_images_Icons_Conditions_Electrified_png_1043769654 = Tibia__embed_css_images_Icons_Conditions_Electrified_png_1043769654;
-         this._embed_css_images_Icons_Conditions_Freezing_png_1581087256 = Tibia__embed_css_images_Icons_Conditions_Freezing_png_1581087256;
-         this._embed_css_images_Icons_Conditions_Haste_png_46815841 = Tibia__embed_css_images_Icons_Conditions_Haste_png_46815841;
-         this._embed_css_images_Icons_Conditions_Hungry_png_1160557067 = Tibia__embed_css_images_Icons_Conditions_Hungry_png_1160557067;
-         this._embed_css_images_Icons_Conditions_Logoutblock_png_626674025 = Tibia__embed_css_images_Icons_Conditions_Logoutblock_png_626674025;
-         this._embed_css_images_Icons_Conditions_MagicShield_png_246939656 = Tibia__embed_css_images_Icons_Conditions_MagicShield_png_246939656;
-         this._embed_css_images_Icons_Conditions_PZ_png_1659726190 = Tibia__embed_css_images_Icons_Conditions_PZ_png_1659726190;
-         this._embed_css_images_Icons_Conditions_PZlock_png_2031018067 = Tibia__embed_css_images_Icons_Conditions_PZlock_png_2031018067;
-         this._embed_css_images_Icons_Conditions_Poisoned_png_1674352817 = Tibia__embed_css_images_Icons_Conditions_Poisoned_png_1674352817;
-         this._embed_css_images_Icons_Conditions_Slowed_png_479759276 = Tibia__embed_css_images_Icons_Conditions_Slowed_png_479759276;
-         this._embed_css_images_Icons_Conditions_Strenghtened_png_957751449 = Tibia__embed_css_images_Icons_Conditions_Strenghtened_png_957751449;
-         this._embed_css_images_Icons_IngameShop_12x12_No_png_85749109 = Tibia__embed_css_images_Icons_IngameShop_12x12_No_png_85749109;
-         this._embed_css_images_Icons_IngameShop_12x12_Yes_png_1011478395 = Tibia__embed_css_images_Icons_IngameShop_12x12_Yes_png_1011478395;
-         this._embed_css_images_Icons_Inventory_StoreInbox_png_2111006747 = Tibia__embed_css_images_Icons_Inventory_StoreInbox_png_2111006747;
-         this._embed_css_images_Icons_Inventory_Store_png_1300473375 = Tibia__embed_css_images_Icons_Inventory_Store_png_1300473375;
-         this._embed_css_images_Icons_ProgressBars_AxeFighting_png_854207195 = Tibia__embed_css_images_Icons_ProgressBars_AxeFighting_png_854207195;
-         this._embed_css_images_Icons_ProgressBars_ClubFighting_png_1530352971 = Tibia__embed_css_images_Icons_ProgressBars_ClubFighting_png_1530352971;
-         this._embed_css_images_Icons_ProgressBars_CompactStyle_png_2100207391 = Tibia__embed_css_images_Icons_ProgressBars_CompactStyle_png_2100207391;
-         this._embed_css_images_Icons_ProgressBars_DefaultStyle_png_1681795459 = Tibia__embed_css_images_Icons_ProgressBars_DefaultStyle_png_1681795459;
-         this._embed_css_images_Icons_ProgressBars_DistanceFighting_png_1306281466 = Tibia__embed_css_images_Icons_ProgressBars_DistanceFighting_png_1306281466;
-         this._embed_css_images_Icons_ProgressBars_Fishing_png_368980363 = Tibia__embed_css_images_Icons_ProgressBars_Fishing_png_368980363;
-         this._embed_css_images_Icons_ProgressBars_FistFighting_png_946464807 = Tibia__embed_css_images_Icons_ProgressBars_FistFighting_png_946464807;
-         this._embed_css_images_Icons_ProgressBars_LargeStyle_png_1014712263 = Tibia__embed_css_images_Icons_ProgressBars_LargeStyle_png_1014712263;
-         this._embed_css_images_Icons_ProgressBars_MagicLevel_png_1025231274 = Tibia__embed_css_images_Icons_ProgressBars_MagicLevel_png_1025231274;
-         this._embed_css_images_Icons_ProgressBars_ParallelStyle_png_564397355 = Tibia__embed_css_images_Icons_ProgressBars_ParallelStyle_png_564397355;
-         this._embed_css_images_Icons_ProgressBars_ProgressOff_png_1580407517 = Tibia__embed_css_images_Icons_ProgressBars_ProgressOff_png_1580407517;
-         this._embed_css_images_Icons_ProgressBars_ProgressOn_png_1171186177 = Tibia__embed_css_images_Icons_ProgressBars_ProgressOn_png_1171186177;
-         this._embed_css_images_Icons_ProgressBars_Shielding_png_1404202048 = Tibia__embed_css_images_Icons_ProgressBars_Shielding_png_1404202048;
-         this._embed_css_images_Icons_ProgressBars_SwordFighting_png_388408934 = Tibia__embed_css_images_Icons_ProgressBars_SwordFighting_png_388408934;
-         this._embed_css_images_Icons_TradeLists_ContainerDisplay_idle_png_851212863 = Tibia__embed_css_images_Icons_TradeLists_ContainerDisplay_idle_png_851212863;
-         this._embed_css_images_Icons_TradeLists_ContainerDisplay_over_png_1199957823 = Tibia__embed_css_images_Icons_TradeLists_ContainerDisplay_over_png_1199957823;
-         this._embed_css_images_Icons_TradeLists_ContainerDisplay_pressed_png_817941011 = Tibia__embed_css_images_Icons_TradeLists_ContainerDisplay_pressed_png_817941011;
-         this._embed_css_images_Icons_TradeLists_ListDisplay_idle_png_1140494966 = Tibia__embed_css_images_Icons_TradeLists_ListDisplay_idle_png_1140494966;
-         this._embed_css_images_Icons_TradeLists_ListDisplay_over_png_417076086 = Tibia__embed_css_images_Icons_TradeLists_ListDisplay_over_png_417076086;
-         this._embed_css_images_Icons_TradeLists_ListDisplay_pressed_png_1846304974 = Tibia__embed_css_images_Icons_TradeLists_ListDisplay_pressed_png_1846304974;
-         this._embed_css_images_Icons_WidgetHeaders_BattleList_png_1186213636 = Tibia__embed_css_images_Icons_WidgetHeaders_BattleList_png_1186213636;
-         this._embed_css_images_Icons_WidgetHeaders_Combat_png_518010106 = Tibia__embed_css_images_Icons_WidgetHeaders_Combat_png_518010106;
-         this._embed_css_images_Icons_WidgetHeaders_GeneralControls_png_227481822 = Tibia__embed_css_images_Icons_WidgetHeaders_GeneralControls_png_227481822;
-         this._embed_css_images_Icons_WidgetHeaders_GetPremium_png_582079029 = Tibia__embed_css_images_Icons_WidgetHeaders_GetPremium_png_582079029;
-         this._embed_css_images_Icons_WidgetHeaders_Inventory_png_2094138972 = Tibia__embed_css_images_Icons_WidgetHeaders_Inventory_png_2094138972;
-         this._embed_css_images_Icons_WidgetHeaders_Minimap_png_1626881241 = Tibia__embed_css_images_Icons_WidgetHeaders_Minimap_png_1626881241;
-         this._embed_css_images_Icons_WidgetHeaders_Prey_png_1844002948 = Tibia__embed_css_images_Icons_WidgetHeaders_Prey_png_1844002948;
-         this._embed_css_images_Icons_WidgetHeaders_SafeTrades_png_1491550258 = Tibia__embed_css_images_Icons_WidgetHeaders_SafeTrades_png_1491550258;
-         this._embed_css_images_Icons_WidgetHeaders_Skull_png_980830817 = Tibia__embed_css_images_Icons_WidgetHeaders_Skull_png_980830817;
-         this._embed_css_images_Icons_WidgetHeaders_Spells_png_527053179 = Tibia__embed_css_images_Icons_WidgetHeaders_Spells_png_527053179;
-         this._embed_css_images_Icons_WidgetHeaders_Trades_png_107866521 = Tibia__embed_css_images_Icons_WidgetHeaders_Trades_png_107866521;
-         this._embed_css_images_Icons_WidgetHeaders_VipList_png_164461471 = Tibia__embed_css_images_Icons_WidgetHeaders_VipList_png_164461471;
-         this._embed_css_images_Icons_WidgetMenu_BattleList_active_over_png_523969601 = Tibia__embed_css_images_Icons_WidgetMenu_BattleList_active_over_png_523969601;
-         this._embed_css_images_Icons_WidgetMenu_BattleList_active_png_1129152252 = Tibia__embed_css_images_Icons_WidgetMenu_BattleList_active_png_1129152252;
-         this._embed_css_images_Icons_WidgetMenu_BattleList_idle_over_png_803885037 = Tibia__embed_css_images_Icons_WidgetMenu_BattleList_idle_over_png_803885037;
-         this._embed_css_images_Icons_WidgetMenu_BattleList_idle_png_224575958 = Tibia__embed_css_images_Icons_WidgetMenu_BattleList_idle_png_224575958;
-         this._embed_css_images_Icons_WidgetMenu_Blessings_active_over_png_130321579 = Tibia__embed_css_images_Icons_WidgetMenu_Blessings_active_over_png_130321579;
-         this._embed_css_images_Icons_WidgetMenu_Blessings_active_png_1623160046 = Tibia__embed_css_images_Icons_WidgetMenu_Blessings_active_png_1623160046;
-         this._embed_css_images_Icons_WidgetMenu_Blessings_idle_png_1665211264 = Tibia__embed_css_images_Icons_WidgetMenu_Blessings_idle_png_1665211264;
-         this._embed_css_images_Icons_WidgetMenu_Combat_active_over_png_992770113 = Tibia__embed_css_images_Icons_WidgetMenu_Combat_active_over_png_992770113;
-         this._embed_css_images_Icons_WidgetMenu_Combat_active_png_390223278 = Tibia__embed_css_images_Icons_WidgetMenu_Combat_active_png_390223278;
-         this._embed_css_images_Icons_WidgetMenu_Combat_idle_over_png_665522223 = Tibia__embed_css_images_Icons_WidgetMenu_Combat_idle_over_png_665522223;
-         this._embed_css_images_Icons_WidgetMenu_Combat_idle_png_1668074132 = Tibia__embed_css_images_Icons_WidgetMenu_Combat_idle_png_1668074132;
-         this._embed_css_images_Icons_WidgetMenu_Containers_active_over_png_1480923629 = Tibia__embed_css_images_Icons_WidgetMenu_Containers_active_over_png_1480923629;
-         this._embed_css_images_Icons_WidgetMenu_Containers_active_png_309943728 = Tibia__embed_css_images_Icons_WidgetMenu_Containers_active_png_309943728;
-         this._embed_css_images_Icons_WidgetMenu_Containers_idle_over_png_1529638289 = Tibia__embed_css_images_Icons_WidgetMenu_Containers_idle_over_png_1529638289;
-         this._embed_css_images_Icons_WidgetMenu_Containers_idle_png_1947022978 = Tibia__embed_css_images_Icons_WidgetMenu_Containers_idle_png_1947022978;
-         this._embed_css_images_Icons_WidgetMenu_GeneralControls_active_over_png_239349245 = Tibia__embed_css_images_Icons_WidgetMenu_GeneralControls_active_over_png_239349245;
-         this._embed_css_images_Icons_WidgetMenu_GeneralControls_active_png_611020736 = Tibia__embed_css_images_Icons_WidgetMenu_GeneralControls_active_png_611020736;
-         this._embed_css_images_Icons_WidgetMenu_GeneralControls_idle_over_png_1722601649 = Tibia__embed_css_images_Icons_WidgetMenu_GeneralControls_idle_over_png_1722601649;
-         this._embed_css_images_Icons_WidgetMenu_GeneralControls_idle_png_2058421838 = Tibia__embed_css_images_Icons_WidgetMenu_GeneralControls_idle_png_2058421838;
-         this._embed_css_images_Icons_WidgetMenu_GetPremium_active_over_png_347021528 = Tibia__embed_css_images_Icons_WidgetMenu_GetPremium_active_over_png_347021528;
-         this._embed_css_images_Icons_WidgetMenu_GetPremium_active_png_778187739 = Tibia__embed_css_images_Icons_WidgetMenu_GetPremium_active_png_778187739;
-         this._embed_css_images_Icons_WidgetMenu_GetPremium_idle_png_1985287859 = Tibia__embed_css_images_Icons_WidgetMenu_GetPremium_idle_png_1985287859;
-         this._embed_css_images_Icons_WidgetMenu_Inventory_active_over_png_609144603 = Tibia__embed_css_images_Icons_WidgetMenu_Inventory_active_over_png_609144603;
-         this._embed_css_images_Icons_WidgetMenu_Inventory_active_png_710741474 = Tibia__embed_css_images_Icons_WidgetMenu_Inventory_active_png_710741474;
-         this._embed_css_images_Icons_WidgetMenu_Inventory_idle_over_png_1298136851 = Tibia__embed_css_images_Icons_WidgetMenu_Inventory_idle_over_png_1298136851;
-         this._embed_css_images_Icons_WidgetMenu_Inventory_idle_png_1929909360 = Tibia__embed_css_images_Icons_WidgetMenu_Inventory_idle_png_1929909360;
-         this._embed_css_images_Icons_WidgetMenu_Minimap_active_over_png_376047536 = Tibia__embed_css_images_Icons_WidgetMenu_Minimap_active_over_png_376047536;
-         this._embed_css_images_Icons_WidgetMenu_Minimap_active_png_1080311283 = Tibia__embed_css_images_Icons_WidgetMenu_Minimap_active_png_1080311283;
-         this._embed_css_images_Icons_WidgetMenu_Minimap_idle_over_png_1778448670 = Tibia__embed_css_images_Icons_WidgetMenu_Minimap_idle_over_png_1778448670;
-         this._embed_css_images_Icons_WidgetMenu_Minimap_idle_png_483881531 = Tibia__embed_css_images_Icons_WidgetMenu_Minimap_idle_png_483881531;
-         this._embed_css_images_Icons_WidgetMenu_Prey_active_over_png_224076033 = Tibia__embed_css_images_Icons_WidgetMenu_Prey_active_over_png_224076033;
-         this._embed_css_images_Icons_WidgetMenu_Prey_active_png_1809319364 = Tibia__embed_css_images_Icons_WidgetMenu_Prey_active_png_1809319364;
-         this._embed_css_images_Icons_WidgetMenu_Prey_idle_over_png_257691859 = Tibia__embed_css_images_Icons_WidgetMenu_Prey_idle_over_png_257691859;
-         this._embed_css_images_Icons_WidgetMenu_Prey_idle_png_1066518890 = Tibia__embed_css_images_Icons_WidgetMenu_Prey_idle_png_1066518890;
-         this._embed_css_images_Icons_WidgetMenu_Skull_active_over_png_491271656 = Tibia__embed_css_images_Icons_WidgetMenu_Skull_active_over_png_491271656;
-         this._embed_css_images_Icons_WidgetMenu_Skull_active_png_1541707963 = Tibia__embed_css_images_Icons_WidgetMenu_Skull_active_png_1541707963;
-         this._embed_css_images_Icons_WidgetMenu_Skull_idle_over_png_611961046 = Tibia__embed_css_images_Icons_WidgetMenu_Skull_idle_over_png_611961046;
-         this._embed_css_images_Icons_WidgetMenu_Skull_idle_png_1630824013 = Tibia__embed_css_images_Icons_WidgetMenu_Skull_idle_png_1630824013;
-         this._embed_css_images_Icons_WidgetMenu_Trades_active_over_png_1728513382 = Tibia__embed_css_images_Icons_WidgetMenu_Trades_active_over_png_1728513382;
-         this._embed_css_images_Icons_WidgetMenu_Trades_active_png_1472479607 = Tibia__embed_css_images_Icons_WidgetMenu_Trades_active_png_1472479607;
-         this._embed_css_images_Icons_WidgetMenu_Trades_idle_over_png_433309128 = Tibia__embed_css_images_Icons_WidgetMenu_Trades_idle_over_png_433309128;
-         this._embed_css_images_Icons_WidgetMenu_Trades_idle_png_925331141 = Tibia__embed_css_images_Icons_WidgetMenu_Trades_idle_png_925331141;
-         this._embed_css_images_Icons_WidgetMenu_VipList_active_over_png_177527574 = Tibia__embed_css_images_Icons_WidgetMenu_VipList_active_over_png_177527574;
-         this._embed_css_images_Icons_WidgetMenu_VipList_active_png_781472649 = Tibia__embed_css_images_Icons_WidgetMenu_VipList_active_png_781472649;
-         this._embed_css_images_Icons_WidgetMenu_VipList_idle_over_png_540002728 = Tibia__embed_css_images_Icons_WidgetMenu_VipList_idle_over_png_540002728;
-         this._embed_css_images_Icons_WidgetMenu_VipList_idle_png_298077813 = Tibia__embed_css_images_Icons_WidgetMenu_VipList_idle_png_298077813;
-         this._embed_css_images_Inventory_png_54849410 = Tibia__embed_css_images_Inventory_png_54849410;
-         this._embed_css_images_Minimap_Center_active_png_2136380360 = Tibia__embed_css_images_Minimap_Center_active_png_2136380360;
-         this._embed_css_images_Minimap_Center_idle_png_1943470262 = Tibia__embed_css_images_Minimap_Center_idle_png_1943470262;
-         this._embed_css_images_Minimap_Center_over_png_803503178 = Tibia__embed_css_images_Minimap_Center_over_png_803503178;
-         this._embed_css_images_Minimap_ZoomIn_idle_png_394970857 = Tibia__embed_css_images_Minimap_ZoomIn_idle_png_394970857;
-         this._embed_css_images_Minimap_ZoomIn_over_png_1410316311 = Tibia__embed_css_images_Minimap_ZoomIn_over_png_1410316311;
-         this._embed_css_images_Minimap_ZoomIn_pressed_png_1554730941 = Tibia__embed_css_images_Minimap_ZoomIn_pressed_png_1554730941;
-         this._embed_css_images_Minimap_ZoomOut_idle_png_1218964010 = Tibia__embed_css_images_Minimap_ZoomOut_idle_png_1218964010;
-         this._embed_css_images_Minimap_ZoomOut_over_png_49587414 = Tibia__embed_css_images_Minimap_ZoomOut_over_png_49587414;
-         this._embed_css_images_Minimap_ZoomOut_pressed_png_630904298 = Tibia__embed_css_images_Minimap_ZoomOut_pressed_png_630904298;
-         this._embed_css_images_Minimap_png_803584357 = Tibia__embed_css_images_Minimap_png_803584357;
-         this._embed_css_images_Scrollbar_Arrow_down_idle_png_500241812 = Tibia__embed_css_images_Scrollbar_Arrow_down_idle_png_500241812;
-         this._embed_css_images_Scrollbar_Arrow_down_over_png_1994681196 = Tibia__embed_css_images_Scrollbar_Arrow_down_over_png_1994681196;
-         this._embed_css_images_Scrollbar_Arrow_down_pressed_png_2102997480 = Tibia__embed_css_images_Scrollbar_Arrow_down_pressed_png_2102997480;
-         this._embed_css_images_Scrollbar_Arrow_up_idle_png_48874961 = Tibia__embed_css_images_Scrollbar_Arrow_up_idle_png_48874961;
-         this._embed_css_images_Scrollbar_Arrow_up_over_png_933050065 = Tibia__embed_css_images_Scrollbar_Arrow_up_over_png_933050065;
-         this._embed_css_images_Scrollbar_Arrow_up_pressed_png_228522939 = Tibia__embed_css_images_Scrollbar_Arrow_up_pressed_png_228522939;
-         this._embed_css_images_Scrollbar_Handler_png_487857897 = Tibia__embed_css_images_Scrollbar_Handler_png_487857897;
-         this._embed_css_images_Scrollbar_tileable_png_2024027095 = Tibia__embed_css_images_Scrollbar_tileable_png_2024027095;
-         this._embed_css_images_Slot_Hotkey_Cooldown_png_348452255 = Tibia__embed_css_images_Slot_Hotkey_Cooldown_png_348452255;
-         this._embed_css_images_Slot_InventoryAmmo_png_813114047 = Tibia__embed_css_images_Slot_InventoryAmmo_png_813114047;
-         this._embed_css_images_Slot_InventoryAmmo_protected_png_235878180 = Tibia__embed_css_images_Slot_InventoryAmmo_protected_png_235878180;
-         this._embed_css_images_Slot_InventoryArmor_png_1846126774 = Tibia__embed_css_images_Slot_InventoryArmor_png_1846126774;
-         this._embed_css_images_Slot_InventoryArmor_protected_png_1192226633 = Tibia__embed_css_images_Slot_InventoryArmor_protected_png_1192226633;
-         this._embed_css_images_Slot_InventoryBackpack_png_1739537709 = Tibia__embed_css_images_Slot_InventoryBackpack_png_1739537709;
-         this._embed_css_images_Slot_InventoryBackpack_protected_png_274576798 = Tibia__embed_css_images_Slot_InventoryBackpack_protected_png_274576798;
-         this._embed_css_images_Slot_InventoryBoots_png_1593843512 = Tibia__embed_css_images_Slot_InventoryBoots_png_1593843512;
-         this._embed_css_images_Slot_InventoryBoots_protected_png_395711413 = Tibia__embed_css_images_Slot_InventoryBoots_protected_png_395711413;
-         this._embed_css_images_Slot_InventoryHead_png_556570291 = Tibia__embed_css_images_Slot_InventoryHead_png_556570291;
-         this._embed_css_images_Slot_InventoryHead_protected_png_819760770 = Tibia__embed_css_images_Slot_InventoryHead_protected_png_819760770;
-         this._embed_css_images_Slot_InventoryLegs_png_1244810316 = Tibia__embed_css_images_Slot_InventoryLegs_png_1244810316;
-         this._embed_css_images_Slot_InventoryLegs_protected_png_785554311 = Tibia__embed_css_images_Slot_InventoryLegs_protected_png_785554311;
-         this._embed_css_images_Slot_InventoryNecklace_png_2012705831 = Tibia__embed_css_images_Slot_InventoryNecklace_png_2012705831;
-         this._embed_css_images_Slot_InventoryNecklace_protected_png_1785395660 = Tibia__embed_css_images_Slot_InventoryNecklace_protected_png_1785395660;
-         this._embed_css_images_Slot_InventoryRing_png_1209351389 = Tibia__embed_css_images_Slot_InventoryRing_png_1209351389;
-         this._embed_css_images_Slot_InventoryRing_protected_png_613777710 = Tibia__embed_css_images_Slot_InventoryRing_protected_png_613777710;
-         this._embed_css_images_Slot_InventoryShield_png_8091800 = Tibia__embed_css_images_Slot_InventoryShield_png_8091800;
-         this._embed_css_images_Slot_InventoryShield_protected_png_1678489541 = Tibia__embed_css_images_Slot_InventoryShield_protected_png_1678489541;
-         this._embed_css_images_Slot_InventoryWeapon_png_1587500415 = Tibia__embed_css_images_Slot_InventoryWeapon_png_1587500415;
-         this._embed_css_images_Slot_InventoryWeapon_protected_png_1818101578 = Tibia__embed_css_images_Slot_InventoryWeapon_protected_png_1818101578;
-         this._embed_css_images_Slot_Statusicon_highlighted_png_1468805634 = Tibia__embed_css_images_Slot_Statusicon_highlighted_png_1468805634;
-         this._embed_css_images_Slot_Statusicon_png_1608787474 = Tibia__embed_css_images_Slot_Statusicon_png_1608787474;
-         this._embed_css_images_UnjustifiedPoints_png_1971471823 = Tibia__embed_css_images_UnjustifiedPoints_png_1971471823;
-         this._embed_css_images_Widget_Footer_tileable_end01_png_300497730 = Tibia__embed_css_images_Widget_Footer_tileable_end01_png_300497730;
-         this._embed_css_images_Widget_Footer_tileable_end02_png_302478279 = Tibia__embed_css_images_Widget_Footer_tileable_end02_png_302478279;
-         this._embed_css_images_Widget_Footer_tileable_png_1914256359 = Tibia__embed_css_images_Widget_Footer_tileable_png_1914256359;
-         this._embed_css_images_Widget_HeaderBG_png_1258056819 = Tibia__embed_css_images_Widget_HeaderBG_png_1258056819;
-         this._embed_css_images_custombutton_Button_Border_tileable_bc_disabled_png_372459381 = Tibia__embed_css_images_custombutton_Button_Border_tileable_bc_disabled_png_372459381;
-         this._embed_css_images_custombutton_Button_Border_tileable_bc_idle_png_721306611 = Tibia__embed_css_images_custombutton_Button_Border_tileable_bc_idle_png_721306611;
-         this._embed_css_images_custombutton_Button_Border_tileable_bc_over_png_373998323 = Tibia__embed_css_images_custombutton_Button_Border_tileable_bc_over_png_373998323;
-         this._embed_css_images_custombutton_Button_Border_tileable_bc_pressed_png_1988687265 = Tibia__embed_css_images_custombutton_Button_Border_tileable_bc_pressed_png_1988687265;
-         this._embed_css_images_custombutton_Button_Border_tileable_bl_disabled_png_1194789362 = Tibia__embed_css_images_custombutton_Button_Border_tileable_bl_disabled_png_1194789362;
-         this._embed_css_images_custombutton_Button_Border_tileable_bl_idle_png_1538038570 = Tibia__embed_css_images_custombutton_Button_Border_tileable_bl_idle_png_1538038570;
-         this._embed_css_images_custombutton_Button_Border_tileable_bl_over_png_344982570 = Tibia__embed_css_images_custombutton_Button_Border_tileable_bl_over_png_344982570;
-         this._embed_css_images_custombutton_Button_Border_tileable_bl_pressed_png_1894305430 = Tibia__embed_css_images_custombutton_Button_Border_tileable_bl_pressed_png_1894305430;
-         this._embed_css_images_custombutton_Button_Border_tileable_ml_disabled_png_1474936339 = Tibia__embed_css_images_custombutton_Button_Border_tileable_ml_disabled_png_1474936339;
-         this._embed_css_images_custombutton_Button_Border_tileable_ml_idle_png_901180245 = Tibia__embed_css_images_custombutton_Button_Border_tileable_ml_idle_png_901180245;
-         this._embed_css_images_custombutton_Button_Border_tileable_ml_over_png_637758037 = Tibia__embed_css_images_custombutton_Button_Border_tileable_ml_over_png_637758037;
-         this._embed_css_images_custombutton_Button_Border_tileable_ml_pressed_png_1348489359 = Tibia__embed_css_images_custombutton_Button_Border_tileable_ml_pressed_png_1348489359;
-         this._embed_css_images_custombutton_Button_Border_tileable_tc_disabled_png_1563054077 = Tibia__embed_css_images_custombutton_Button_Border_tileable_tc_disabled_png_1563054077;
-         this._embed_css_images_custombutton_Button_Border_tileable_tc_idle_png_1026384539 = Tibia__embed_css_images_custombutton_Button_Border_tileable_tc_idle_png_1026384539;
-         this._embed_css_images_custombutton_Button_Border_tileable_tc_over_png_1913712539 = Tibia__embed_css_images_custombutton_Button_Border_tileable_tc_over_png_1913712539;
-         this._embed_css_images_custombutton_Button_Border_tileable_tc_pressed_png_502332351 = Tibia__embed_css_images_custombutton_Button_Border_tileable_tc_pressed_png_502332351;
-         this._embed_css_images_custombutton_Button_Border_tileable_tl_disabled_png_655788448 = Tibia__embed_css_images_custombutton_Button_Border_tileable_tl_disabled_png_655788448;
-         this._embed_css_images_custombutton_Button_Border_tileable_tl_idle_png_402102152 = Tibia__embed_css_images_custombutton_Button_Border_tileable_tl_idle_png_402102152;
-         this._embed_css_images_custombutton_Button_Border_tileable_tl_over_png_1128024712 = Tibia__embed_css_images_custombutton_Button_Border_tileable_tl_over_png_1128024712;
-         this._embed_css_images_custombutton_Button_Border_tileable_tl_pressed_png_1903116940 = Tibia__embed_css_images_custombutton_Button_Border_tileable_tl_pressed_png_1903116940;
-         this._embed_css_images_custombutton_Button_Gold_tileable_bc_idle_png_1121387039 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_bc_idle_png_1121387039;
-         this._embed_css_images_custombutton_Button_Gold_tileable_bc_over_png_1310818591 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_bc_over_png_1310818591;
-         this._embed_css_images_custombutton_Button_Gold_tileable_bc_pressed_png_504718635 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_bc_pressed_png_504718635;
-         this._embed_css_images_custombutton_Button_Gold_tileable_bl_idle_png_1140384942 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_bl_idle_png_1140384942;
-         this._embed_css_images_custombutton_Button_Gold_tileable_bl_over_png_608410194 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_bl_over_png_608410194;
-         this._embed_css_images_custombutton_Button_Gold_tileable_bl_pressed_png_1833599894 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_bl_pressed_png_1833599894;
-         this._embed_css_images_custombutton_Button_Gold_tileable_mc_idle_png_313886890 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_mc_idle_png_313886890;
-         this._embed_css_images_custombutton_Button_Gold_tileable_mc_over_png_662243754 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_mc_over_png_662243754;
-         this._embed_css_images_custombutton_Button_Gold_tileable_mc_pressed_png_1727779818 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_mc_pressed_png_1727779818;
-         this._embed_css_images_custombutton_Button_Gold_tileable_ml_idle_png_1852541313 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_ml_idle_png_1852541313;
-         this._embed_css_images_custombutton_Button_Gold_tileable_ml_over_png_1035473025 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_ml_over_png_1035473025;
-         this._embed_css_images_custombutton_Button_Gold_tileable_ml_pressed_png_921560467 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_ml_pressed_png_921560467;
-         this._embed_css_images_custombutton_Button_Gold_tileable_tc_idle_png_628673647 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_tc_idle_png_628673647;
-         this._embed_css_images_custombutton_Button_Gold_tileable_tc_over_png_960245103 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_tc_over_png_960245103;
-         this._embed_css_images_custombutton_Button_Gold_tileable_tc_pressed_png_206403197 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_tc_pressed_png_206403197;
-         this._embed_css_images_custombutton_Button_Gold_tileable_tl_idle_png_1873827252 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_tl_idle_png_1873827252;
-         this._embed_css_images_custombutton_Button_Gold_tileable_tl_over_png_1141054284 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_tl_over_png_1141054284;
-         this._embed_css_images_custombutton_Button_Gold_tileable_tl_pressed_png_169894520 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_tl_pressed_png_169894520;
-         this._embed_css_images_custombutton_Button_Highlight_tileable_bc_idle_png_1286951951 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_bc_idle_png_1286951951;
-         this._embed_css_images_custombutton_Button_Highlight_tileable_bc_over_png_1207833841 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_bc_over_png_1207833841;
-         this._embed_css_images_custombutton_Button_Highlight_tileable_bc_pressed_png_1234389013 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_bc_pressed_png_1234389013;
-         this._embed_css_images_custombutton_Button_Highlight_tileable_bl_idle_png_308178610 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_bl_idle_png_308178610;
-         this._embed_css_images_custombutton_Button_Highlight_tileable_bl_over_png_497741234 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_bl_over_png_497741234;
-         this._embed_css_images_custombutton_Button_Highlight_tileable_bl_pressed_png_697106038 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_bl_pressed_png_697106038;
-         this._embed_css_images_custombutton_Button_Highlight_tileable_ml_idle_png_1397612513 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_ml_idle_png_1397612513;
-         this._embed_css_images_custombutton_Button_Highlight_tileable_ml_over_png_1618062623 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_ml_over_png_1618062623;
-         this._embed_css_images_custombutton_Button_Highlight_tileable_ml_pressed_png_1040849779 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_ml_pressed_png_1040849779;
-         this._embed_css_images_custombutton_Button_Highlight_tileable_tc_idle_png_1528191247 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_tc_idle_png_1528191247;
-         this._embed_css_images_custombutton_Button_Highlight_tileable_tc_over_png_271197681 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_tc_over_png_271197681;
-         this._embed_css_images_custombutton_Button_Highlight_tileable_tc_pressed_png_1467694627 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_tc_pressed_png_1467694627;
-         this._embed_css_images_custombutton_Button_Highlight_tileable_tl_idle_png_908937052 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_tl_idle_png_908937052;
-         this._embed_css_images_custombutton_Button_Highlight_tileable_tl_over_png_1798619228 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_tl_over_png_1798619228;
-         this._embed_css_images_custombutton_Button_Highlight_tileable_tl_pressed_png_2092601240 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_tl_pressed_png_2092601240;
-         this._embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_idle_png_812485402 = Tibia__embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_idle_png_812485402;
-         this._embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_over_png_2097822234 = Tibia__embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_over_png_2097822234;
-         this._embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_pressed_png_301372130 = Tibia__embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_pressed_png_301372130;
-         this._embed_css_images_custombutton_Button_IngameShopBuy_tileable_idle_png_931484342 = Tibia__embed_css_images_custombutton_Button_IngameShopBuy_tileable_idle_png_931484342;
-         this._embed_css_images_custombutton_Button_IngameShopBuy_tileable_over_png_2100178506 = Tibia__embed_css_images_custombutton_Button_IngameShopBuy_tileable_over_png_2100178506;
-         this._embed_css_images_custombutton_Button_IngameShopBuy_tileable_pressed_png_1298820406 = Tibia__embed_css_images_custombutton_Button_IngameShopBuy_tileable_pressed_png_1298820406;
-         this._embed_css_images_custombutton_Button_Standard_tileable_bc_disabled_png_1867898870 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_bc_disabled_png_1867898870;
-         this._embed_css_images_custombutton_Button_Standard_tileable_bc_idle_png_1982739778 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_bc_idle_png_1982739778;
-         this._embed_css_images_custombutton_Button_Standard_tileable_bc_over_png_185603650 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_bc_over_png_185603650;
-         this._embed_css_images_custombutton_Button_Standard_tileable_bc_pressed_png_572612494 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_bc_pressed_png_572612494;
-         this._embed_css_images_custombutton_Button_Standard_tileable_bl_disabled_png_1093953119 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_bl_disabled_png_1093953119;
-         this._embed_css_images_custombutton_Button_Standard_tileable_bl_idle_png_1526099209 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_bl_idle_png_1526099209;
-         this._embed_css_images_custombutton_Button_Standard_tileable_bl_over_png_1195435017 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_bl_over_png_1195435017;
-         this._embed_css_images_custombutton_Button_Standard_tileable_bl_pressed_png_1326387531 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_bl_pressed_png_1326387531;
-         this._embed_css_images_custombutton_Button_Standard_tileable_mc_disabled_png_983765749 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_mc_disabled_png_983765749;
-         this._embed_css_images_custombutton_Button_Standard_tileable_mc_idle_png_1278990365 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_mc_idle_png_1278990365;
-         this._embed_css_images_custombutton_Button_Standard_tileable_mc_over_png_931421981 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_mc_over_png_931421981;
-         this._embed_css_images_custombutton_Button_Standard_tileable_mc_pressed_png_81347079 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_mc_pressed_png_81347079;
-         this._embed_css_images_custombutton_Button_Standard_tileable_ml_disabled_png_1250879576 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_ml_disabled_png_1250879576;
-         this._embed_css_images_custombutton_Button_Standard_tileable_ml_idle_png_1785933248 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_ml_idle_png_1785933248;
-         this._embed_css_images_custombutton_Button_Standard_tileable_ml_over_png_517648064 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_ml_over_png_517648064;
-         this._embed_css_images_custombutton_Button_Standard_tileable_ml_pressed_png_165397636 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_ml_pressed_png_165397636;
-         this._embed_css_images_custombutton_Button_Standard_tileable_tc_disabled_png_509379672 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_tc_disabled_png_509379672;
-         this._embed_css_images_custombutton_Button_Standard_tileable_tc_idle_png_24708496 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_tc_idle_png_24708496;
-         this._embed_css_images_custombutton_Button_Standard_tileable_tc_over_png_1841477776 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_tc_over_png_1841477776;
-         this._embed_css_images_custombutton_Button_Standard_tileable_tc_pressed_png_1274559636 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_tc_pressed_png_1274559636;
-         this._embed_css_images_custombutton_Button_Standard_tileable_tl_disabled_png_1248907181 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_tl_disabled_png_1248907181;
-         this._embed_css_images_custombutton_Button_Standard_tileable_tl_idle_png_1925791611 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_tl_idle_png_1925791611;
-         this._embed_css_images_custombutton_Button_Standard_tileable_tl_over_png_546849157 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_tl_over_png_546849157;
-         this._embed_css_images_custombutton_Button_Standard_tileable_tl_pressed_png_1968611417 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_tl_pressed_png_1968611417;
-         this._embed_css_images_slot_Hotkey_disabled_png_669884428 = Tibia__embed_css_images_slot_Hotkey_disabled_png_669884428;
-         this._embed_css_images_slot_Hotkey_highlighted_png_1867388771 = Tibia__embed_css_images_slot_Hotkey_highlighted_png_1867388771;
-         this._embed_css_images_slot_Hotkey_png_542831063 = Tibia__embed_css_images_slot_Hotkey_png_542831063;
-         this._embed_css_images_slot_Hotkey_protected_png_1201653772 = Tibia__embed_css_images_slot_Hotkey_protected_png_1201653772;
-         this._embed_css_images_slot_container_disabled_png_2143438719 = Tibia__embed_css_images_slot_container_disabled_png_2143438719;
-         this._embed_css_images_slot_container_highlighted_png_622440584 = Tibia__embed_css_images_slot_container_highlighted_png_622440584;
-         this._embed_css_images_slot_container_png_1830671892 = Tibia__embed_css_images_slot_container_png_1830671892;
+         this._embed_css_____assets_images_imbuing_imbuing_icon_imbue_active_png_2078825278 = Tibia__embed_css_____assets_images_imbuing_imbuing_icon_imbue_active_png_2078825278;
+         this._embed_css_____assets_images_imbuing_imbuing_icon_imbue_disabled_png_2110185778 = Tibia__embed_css_____assets_images_imbuing_imbuing_icon_imbue_disabled_png_2110185778;
+         this._embed_css_____assets_images_imbuing_imbuing_icon_remove_active_png_857913398 = Tibia__embed_css_____assets_images_imbuing_imbuing_icon_remove_active_png_857913398;
+         this._embed_css_____assets_images_imbuing_imbuing_icon_remove_disabled_png_1334606270 = Tibia__embed_css_____assets_images_imbuing_imbuing_icon_remove_disabled_png_1334606270;
+         this._embed_css_____assets_images_imbuing_imbuing_icon_useprotection_active_png_532986814 = Tibia__embed_css_____assets_images_imbuing_imbuing_icon_useprotection_active_png_532986814;
+         this._embed_css_____assets_images_imbuing_imbuing_icon_useprotection_disabled_png_494797810 = Tibia__embed_css_____assets_images_imbuing_imbuing_icon_useprotection_disabled_png_494797810;
+         this._embed_css_____assets_images_imbuing_imbuing_slot_empty_png_768110180 = Tibia__embed_css_____assets_images_imbuing_imbuing_slot_empty_png_768110180;
+         this._embed_css_____assets_images_ingameshop_Icons_IngameShop_12x12_TibiaCoin_png_423192446 = Tibia__embed_css_____assets_images_ingameshop_Icons_IngameShop_12x12_TibiaCoin_png_423192446;
+         this._embed_css_____assets_images_ingameshop_Icons_IngameShop_32x14_TransferCoins_png_920566008 = Tibia__embed_css_____assets_images_ingameshop_Icons_IngameShop_32x14_TransferCoins_png_920566008;
+         this._embed_css____images_prey_prey_bonus_reroll_disabled_png_192280102 = Tibia__embed_css____images_prey_prey_bonus_reroll_disabled_png_192280102;
+         this._embed_css____images_prey_prey_bonus_reroll_png_1391458109 = Tibia__embed_css____images_prey_prey_bonus_reroll_png_1391458109;
+         this._embed_css____images_prey_prey_confirm_monster_selection_disabled_png_1811398472 = Tibia__embed_css____images_prey_prey_confirm_monster_selection_disabled_png_1811398472;
+         this._embed_css____images_prey_prey_confirm_monster_selection_png_1917808293 = Tibia__embed_css____images_prey_prey_confirm_monster_selection_png_1917808293;
+         this._embed_css____images_prey_prey_list_reroll_disabled_png_1005632601 = Tibia__embed_css____images_prey_prey_list_reroll_disabled_png_1005632601;
+         this._embed_css____images_prey_prey_list_reroll_png_1451613866 = Tibia__embed_css____images_prey_prey_list_reroll_png_1451613866;
+         this._embed_css____images_prey_prey_list_reroll_reactivate_disabled_png_204334064 = Tibia__embed_css____images_prey_prey_list_reroll_reactivate_disabled_png_204334064;
+         this._embed_css____images_prey_prey_list_reroll_reactivate_png_1235856493 = Tibia__embed_css____images_prey_prey_list_reroll_reactivate_png_1235856493;
+         this._embed_css____images_prey_prey_list_reroll_small_disabled_png_600614801 = Tibia__embed_css____images_prey_prey_list_reroll_small_disabled_png_600614801;
+         this._embed_css____images_prey_prey_list_reroll_small_png_860092972 = Tibia__embed_css____images_prey_prey_list_reroll_small_png_860092972;
+         this._embed_css____images_prey_prey_list_reroll_small_reactivate_disabled_png_1943789254 = Tibia__embed_css____images_prey_prey_list_reroll_small_reactivate_disabled_png_1943789254;
+         this._embed_css____images_prey_prey_list_reroll_small_reactivate_png_1299157975 = Tibia__embed_css____images_prey_prey_list_reroll_small_reactivate_png_1299157975;
+         this._embed_css____images_prey_prey_unlock_permanently_png_2084364847 = Tibia__embed_css____images_prey_prey_unlock_permanently_png_2084364847;
+         this._embed_css____images_prey_prey_unlock_temporarily_png_1205226112 = Tibia__embed_css____images_prey_prey_unlock_temporarily_png_1205226112;
+         this._embed_css_images_Arrow_HotkeyToggle_BG_png_162240878 = Tibia__embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
+         this._embed_css_images_Arrow_Minimap_LevelUpDown_idle_png_271327590 = Tibia__embed_css_images_Arrow_Minimap_LevelUpDown_idle_png_271327590;
+         this._embed_css_images_Arrow_Minimap_LevelUpDown_over_png_616546202 = Tibia__embed_css_images_Arrow_Minimap_LevelUpDown_over_png_616546202;
+         this._embed_css_images_Arrow_Minimap_LevelUpDown_pressed_png_1801889674 = Tibia__embed_css_images_Arrow_Minimap_LevelUpDown_pressed_png_1801889674;
+         this._embed_css_images_Arrow_ScrollHotkeys_disabled_png_59047793 = Tibia__embed_css_images_Arrow_ScrollHotkeys_disabled_png_59047793;
+         this._embed_css_images_Arrow_ScrollHotkeys_idle_png_1863838023 = Tibia__embed_css_images_Arrow_ScrollHotkeys_idle_png_1863838023;
+         this._embed_css_images_Arrow_ScrollHotkeys_over_png_585745991 = Tibia__embed_css_images_Arrow_ScrollHotkeys_over_png_585745991;
+         this._embed_css_images_Arrow_ScrollHotkeys_pressed_png_1584202487 = Tibia__embed_css_images_Arrow_ScrollHotkeys_pressed_png_1584202487;
+         this._embed_css_images_Arrow_ScrollTabsHighlighted_idle_png_791544907 = Tibia__embed_css_images_Arrow_ScrollTabsHighlighted_idle_png_791544907;
+         this._embed_css_images_Arrow_ScrollTabsHighlighted_over_png_468614837 = Tibia__embed_css_images_Arrow_ScrollTabsHighlighted_over_png_468614837;
+         this._embed_css_images_Arrow_ScrollTabsHighlighted_pressed_png_1482270485 = Tibia__embed_css_images_Arrow_ScrollTabsHighlighted_pressed_png_1482270485;
+         this._embed_css_images_Arrow_ScrollTabs_disabled_png_879110432 = Tibia__embed_css_images_Arrow_ScrollTabs_disabled_png_879110432;
+         this._embed_css_images_Arrow_ScrollTabs_idle_png_2086059672 = Tibia__embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
+         this._embed_css_images_Arrow_ScrollTabs_over_png_1323680872 = Tibia__embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
+         this._embed_css_images_Arrow_ScrollTabs_pressed_png_225438040 = Tibia__embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
+         this._embed_css_images_Arrow_WidgetToggle_BG_png_2128357260 = Tibia__embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
+         this._embed_css_images_Arrow_WidgetToggle_idle_png_952187387 = Tibia__embed_css_images_Arrow_WidgetToggle_idle_png_952187387;
+         this._embed_css_images_Arrow_WidgetToggle_over_png_468729605 = Tibia__embed_css_images_Arrow_WidgetToggle_over_png_468729605;
+         this._embed_css_images_Arrow_WidgetToggle_pressed_png_948994267 = Tibia__embed_css_images_Arrow_WidgetToggle_pressed_png_948994267;
+         this._embed_css_images_BG_BarsProgress_compact_endpiece_png_1370317653 = Tibia__embed_css_images_BG_BarsProgress_compact_endpiece_png_1370317653;
+         this._embed_css_images_BG_BarsProgress_compact_tileable_png_1434705776 = Tibia__embed_css_images_BG_BarsProgress_compact_tileable_png_1434705776;
+         this._embed_css_images_BG_BarsXP_default_endpiece_png_1805006002 = Tibia__embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+         this._embed_css_images_BG_BarsXP_default_tileable_png_1802488215 = Tibia__embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+         this._embed_css_images_BG_Bars_compact_enpieceOrnamented_png_985111789 = Tibia__embed_css_images_BG_Bars_compact_enpieceOrnamented_png_985111789;
+         this._embed_css_images_BG_Bars_compact_enpiece_png_1259288550 = Tibia__embed_css_images_BG_Bars_compact_enpiece_png_1259288550;
+         this._embed_css_images_BG_Bars_compact_tileable_png_1504529517 = Tibia__embed_css_images_BG_Bars_compact_tileable_png_1504529517;
+         this._embed_css_images_BG_Bars_default_enpieceOrnamented_png_1901253493 = Tibia__embed_css_images_BG_Bars_default_enpieceOrnamented_png_1901253493;
+         this._embed_css_images_BG_Bars_default_enpiece_png_341854824 = Tibia__embed_css_images_BG_Bars_default_enpiece_png_341854824;
+         this._embed_css_images_BG_Bars_default_tileable_png_402625151 = Tibia__embed_css_images_BG_Bars_default_tileable_png_402625151;
+         this._embed_css_images_BG_Bars_fat_enpieceOrnamented_png_1076170925 = Tibia__embed_css_images_BG_Bars_fat_enpieceOrnamented_png_1076170925;
+         this._embed_css_images_BG_Bars_fat_enpiece_png_285397664 = Tibia__embed_css_images_BG_Bars_fat_enpiece_png_285397664;
+         this._embed_css_images_BG_Bars_fat_tileable_png_1719993865 = Tibia__embed_css_images_BG_Bars_fat_tileable_png_1719993865;
+         this._embed_css_images_BG_BohemianTileable_ChatConsole_png_2130554773 = Tibia__embed_css_images_BG_BohemianTileable_ChatConsole_png_2130554773;
+         this._embed_css_images_BG_BohemianTileable_Game_png_821519408 = Tibia__embed_css_images_BG_BohemianTileable_Game_png_821519408;
+         this._embed_css_images_BG_BohemianTileable_png_1422729109 = Tibia__embed_css_images_BG_BohemianTileable_png_1422729109;
+         this._embed_css_images_BG_ChatTab_Tabdrop_png_344159956 = Tibia__embed_css_images_BG_ChatTab_Tabdrop_png_344159956;
+         this._embed_css_images_BG_ChatTab_tileable_png_1482271674 = Tibia__embed_css_images_BG_ChatTab_tileable_png_1482271674;
+         this._embed_css_images_BG_Combat_ExpertOff_png_793516502 = Tibia__embed_css_images_BG_Combat_ExpertOff_png_793516502;
+         this._embed_css_images_BG_Combat_ExpertOn_png_1994504722 = Tibia__embed_css_images_BG_Combat_ExpertOn_png_1994504722;
+         this._embed_css_images_BG_Stone2_Tileable_png_2089033964 = Tibia__embed_css_images_BG_Stone2_Tileable_png_2089033964;
+         this._embed_css_images_BG_Widget_Menu_png_1523929844 = Tibia__embed_css_images_BG_Widget_Menu_png_1523929844;
+         this._embed_css_images_BarsHealth_compact_GreenFull_png_658108631 = Tibia__embed_css_images_BarsHealth_compact_GreenFull_png_658108631;
+         this._embed_css_images_BarsHealth_compact_GreenLow_png_1230640774 = Tibia__embed_css_images_BarsHealth_compact_GreenLow_png_1230640774;
+         this._embed_css_images_BarsHealth_compact_Mana_png_1849035652 = Tibia__embed_css_images_BarsHealth_compact_Mana_png_1849035652;
+         this._embed_css_images_BarsHealth_compact_RedFull_png_1785716075 = Tibia__embed_css_images_BarsHealth_compact_RedFull_png_1785716075;
+         this._embed_css_images_BarsHealth_compact_RedLow2_png_673302076 = Tibia__embed_css_images_BarsHealth_compact_RedLow2_png_673302076;
+         this._embed_css_images_BarsHealth_compact_RedLow_png_432309528 = Tibia__embed_css_images_BarsHealth_compact_RedLow_png_432309528;
+         this._embed_css_images_BarsHealth_compact_Yellow_png_824185175 = Tibia__embed_css_images_BarsHealth_compact_Yellow_png_824185175;
+         this._embed_css_images_BarsHealth_default_GreenFull_png_539233669 = Tibia__embed_css_images_BarsHealth_default_GreenFull_png_539233669;
+         this._embed_css_images_BarsHealth_default_GreenLow_png_1615903576 = Tibia__embed_css_images_BarsHealth_default_GreenLow_png_1615903576;
+         this._embed_css_images_BarsHealth_default_Mana_png_2142805618 = Tibia__embed_css_images_BarsHealth_default_Mana_png_2142805618;
+         this._embed_css_images_BarsHealth_default_RedFull_png_471797811 = Tibia__embed_css_images_BarsHealth_default_RedFull_png_471797811;
+         this._embed_css_images_BarsHealth_default_RedLow2_png_1319540706 = Tibia__embed_css_images_BarsHealth_default_RedLow2_png_1319540706;
+         this._embed_css_images_BarsHealth_default_RedLow_png_1323495386 = Tibia__embed_css_images_BarsHealth_default_RedLow_png_1323495386;
+         this._embed_css_images_BarsHealth_default_Yellow_png_338291605 = Tibia__embed_css_images_BarsHealth_default_Yellow_png_338291605;
+         this._embed_css_images_BarsHealth_fat_GreenFull_png_1012481779 = Tibia__embed_css_images_BarsHealth_fat_GreenFull_png_1012481779;
+         this._embed_css_images_BarsHealth_fat_GreenLow_png_23264160 = Tibia__embed_css_images_BarsHealth_fat_GreenLow_png_23264160;
+         this._embed_css_images_BarsHealth_fat_Mana_png_1830736570 = Tibia__embed_css_images_BarsHealth_fat_Mana_png_1830736570;
+         this._embed_css_images_BarsHealth_fat_RedFull_png_663565691 = Tibia__embed_css_images_BarsHealth_fat_RedFull_png_663565691;
+         this._embed_css_images_BarsHealth_fat_RedLow2_png_2105859306 = Tibia__embed_css_images_BarsHealth_fat_RedLow2_png_2105859306;
+         this._embed_css_images_BarsHealth_fat_RedLow_png_630566510 = Tibia__embed_css_images_BarsHealth_fat_RedLow_png_630566510;
+         this._embed_css_images_BarsHealth_fat_Yellow_png_917594525 = Tibia__embed_css_images_BarsHealth_fat_Yellow_png_917594525;
+         this._embed_css_images_BarsProgress_compact_orange_png_198580350 = Tibia__embed_css_images_BarsProgress_compact_orange_png_198580350;
+         this._embed_css_images_BarsXP_default__png_162149957 = Tibia__embed_css_images_BarsXP_default__png_162149957;
+         this._embed_css_images_BarsXP_default_improved_png_1481613863 = Tibia__embed_css_images_BarsXP_default_improved_png_1481613863;
+         this._embed_css_images_BarsXP_default_malus_png_1223952997 = Tibia__embed_css_images_BarsXP_default_malus_png_1223952997;
+         this._embed_css_images_BarsXP_default_zero_png_1390467341 = Tibia__embed_css_images_BarsXP_default_zero_png_1390467341;
+         this._embed_css_images_Bars_ProgressMarker_png_1220674660 = Tibia__embed_css_images_Bars_ProgressMarker_png_1220674660;
+         this._embed_css_images_Border02_WidgetSidebar_png_584799829 = Tibia__embed_css_images_Border02_WidgetSidebar_png_584799829;
+         this._embed_css_images_Border02_WidgetSidebar_slim_png_420837653 = Tibia__embed_css_images_Border02_WidgetSidebar_slim_png_420837653;
+         this._embed_css_images_Border02_corners_png_2023953407 = Tibia__embed_css_images_Border02_corners_png_2023953407;
+         this._embed_css_images_Border02_png_248151906 = Tibia__embed_css_images_Border02_png_248151906;
+         this._embed_css_images_Border_Widget_corner_png_30247409 = Tibia__embed_css_images_Border_Widget_corner_png_30247409;
+         this._embed_css_images_Border_Widget_png_123662323 = Tibia__embed_css_images_Border_Widget_png_123662323;
+         this._embed_css_images_Button_ChatTabIgnore_idle_png_1319268057 = Tibia__embed_css_images_Button_ChatTabIgnore_idle_png_1319268057;
+         this._embed_css_images_Button_ChatTabIgnore_over_png_503059495 = Tibia__embed_css_images_Button_ChatTabIgnore_over_png_503059495;
+         this._embed_css_images_Button_ChatTabIgnore_pressed_png_922258679 = Tibia__embed_css_images_Button_ChatTabIgnore_pressed_png_922258679;
+         this._embed_css_images_Button_ChatTabNew_idle_png_1804753881 = Tibia__embed_css_images_Button_ChatTabNew_idle_png_1804753881;
+         this._embed_css_images_Button_ChatTabNew_over_png_541842649 = Tibia__embed_css_images_Button_ChatTabNew_over_png_541842649;
+         this._embed_css_images_Button_ChatTabNew_pressed_png_923606007 = Tibia__embed_css_images_Button_ChatTabNew_pressed_png_923606007;
+         this._embed_css_images_Button_ChatTab_Close_idle_png_1074740208 = Tibia__embed_css_images_Button_ChatTab_Close_idle_png_1074740208;
+         this._embed_css_images_Button_ChatTab_Close_over_png_1945347312 = Tibia__embed_css_images_Button_ChatTab_Close_over_png_1945347312;
+         this._embed_css_images_Button_ChatTab_Close_pressed_png_1705582336 = Tibia__embed_css_images_Button_ChatTab_Close_pressed_png_1705582336;
+         this._embed_css_images_Button_Close_disabled_png_585602746 = Tibia__embed_css_images_Button_Close_disabled_png_585602746;
+         this._embed_css_images_Button_Close_idle_png_1491572338 = Tibia__embed_css_images_Button_Close_idle_png_1491572338;
+         this._embed_css_images_Button_Close_over_png_1824069490 = Tibia__embed_css_images_Button_Close_over_png_1824069490;
+         this._embed_css_images_Button_Close_pressed_png_1495633374 = Tibia__embed_css_images_Button_Close_pressed_png_1495633374;
+         this._embed_css_images_Button_Combat_Stop_idle_png_2028013783 = Tibia__embed_css_images_Button_Combat_Stop_idle_png_2028013783;
+         this._embed_css_images_Button_Combat_Stop_over_png_222586327 = Tibia__embed_css_images_Button_Combat_Stop_over_png_222586327;
+         this._embed_css_images_Button_Combat_Stop_pressed_png_1195446471 = Tibia__embed_css_images_Button_Combat_Stop_pressed_png_1195446471;
+         this._embed_css_images_Button_ContainerUp_idle_png_883766938 = Tibia__embed_css_images_Button_ContainerUp_idle_png_883766938;
+         this._embed_css_images_Button_ContainerUp_over_png_533315994 = Tibia__embed_css_images_Button_ContainerUp_over_png_533315994;
+         this._embed_css_images_Button_ContainerUp_pressed_png_571520662 = Tibia__embed_css_images_Button_ContainerUp_pressed_png_571520662;
+         this._embed_css_images_Button_LockHotkeys_Locked_idle_png_1093080407 = Tibia__embed_css_images_Button_LockHotkeys_Locked_idle_png_1093080407;
+         this._embed_css_images_Button_LockHotkeys_Locked_over_png_208376919 = Tibia__embed_css_images_Button_LockHotkeys_Locked_over_png_208376919;
+         this._embed_css_images_Button_LockHotkeys_UnLocked_idle_png_583051058 = Tibia__embed_css_images_Button_LockHotkeys_UnLocked_idle_png_583051058;
+         this._embed_css_images_Button_LockHotkeys_UnLocked_over_png_933660722 = Tibia__embed_css_images_Button_LockHotkeys_UnLocked_over_png_933660722;
+         this._embed_css_images_Button_MaximizePremium_idle_png_1480797397 = Tibia__embed_css_images_Button_MaximizePremium_idle_png_1480797397;
+         this._embed_css_images_Button_MaximizePremium_over_png_267955669 = Tibia__embed_css_images_Button_MaximizePremium_over_png_267955669;
+         this._embed_css_images_Button_Maximize_idle_png_960737362 = Tibia__embed_css_images_Button_Maximize_idle_png_960737362;
+         this._embed_css_images_Button_Maximize_over_png_853065390 = Tibia__embed_css_images_Button_Maximize_over_png_853065390;
+         this._embed_css_images_Button_Maximize_pressed_png_1415129086 = Tibia__embed_css_images_Button_Maximize_pressed_png_1415129086;
+         this._embed_css_images_Button_Minimize_idle_png_996649268 = Tibia__embed_css_images_Button_Minimize_idle_png_996649268;
+         this._embed_css_images_Button_Minimize_over_png_1857747508 = Tibia__embed_css_images_Button_Minimize_over_png_1857747508;
+         this._embed_css_images_Button_Minimize_pressed_png_1803996148 = Tibia__embed_css_images_Button_Minimize_pressed_png_1803996148;
+         this._embed_css_images_Button_PurchaseComplete_idle_png_1219313536 = Tibia__embed_css_images_Button_PurchaseComplete_idle_png_1219313536;
+         this._embed_css_images_Button_PurchaseComplete_over_png_1670828928 = Tibia__embed_css_images_Button_PurchaseComplete_over_png_1670828928;
+         this._embed_css_images_Button_PurchaseComplete_pressed_png_296592240 = Tibia__embed_css_images_Button_PurchaseComplete_pressed_png_296592240;
+         this._embed_css_images_BuySellTab_active_png_1722132850 = Tibia__embed_css_images_BuySellTab_active_png_1722132850;
+         this._embed_css_images_BuySellTab_idle_png_1415167540 = Tibia__embed_css_images_BuySellTab_idle_png_1415167540;
+         this._embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_969613528 = Tibia__embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_969613528;
+         this._embed_css_images_ChatTab_tileable_EndpieceLeft_png_520247787 = Tibia__embed_css_images_ChatTab_tileable_EndpieceLeft_png_520247787;
+         this._embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_2102059443 = Tibia__embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_2102059443;
+         this._embed_css_images_ChatTab_tileable_EndpieceRound_png_1457444790 = Tibia__embed_css_images_ChatTab_tileable_EndpieceRound_png_1457444790;
+         this._embed_css_images_ChatTab_tileable_idle_png_627868017 = Tibia__embed_css_images_ChatTab_tileable_idle_png_627868017;
+         this._embed_css_images_ChatTab_tileable_png_883140798 = Tibia__embed_css_images_ChatTab_tileable_png_883140798;
+         this._embed_css_images_ChatWindow_Mover_png_2100462174 = Tibia__embed_css_images_ChatWindow_Mover_png_2100462174;
+         this._embed_css_images_Icon_NoPremium_png_619567132 = Tibia__embed_css_images_Icon_NoPremium_png_619567132;
+         this._embed_css_images_Icon_Premium_png_299837787 = Tibia__embed_css_images_Icon_Premium_png_299837787;
+         this._embed_css_images_Icons_BattleList_HideMonsters_active_over_png_234622227 = Tibia__embed_css_images_Icons_BattleList_HideMonsters_active_over_png_234622227;
+         this._embed_css_images_Icons_BattleList_HideMonsters_active_png_1589130474 = Tibia__embed_css_images_Icons_BattleList_HideMonsters_active_png_1589130474;
+         this._embed_css_images_Icons_BattleList_HideMonsters_idle_png_1236418872 = Tibia__embed_css_images_Icons_BattleList_HideMonsters_idle_png_1236418872;
+         this._embed_css_images_Icons_BattleList_HideMonsters_over_png_1260863432 = Tibia__embed_css_images_Icons_BattleList_HideMonsters_over_png_1260863432;
+         this._embed_css_images_Icons_BattleList_HideNPCs_active_over_png_274255324 = Tibia__embed_css_images_Icons_BattleList_HideNPCs_active_over_png_274255324;
+         this._embed_css_images_Icons_BattleList_HideNPCs_active_png_2145118177 = Tibia__embed_css_images_Icons_BattleList_HideNPCs_active_png_2145118177;
+         this._embed_css_images_Icons_BattleList_HideNPCs_idle_png_1784655247 = Tibia__embed_css_images_Icons_BattleList_HideNPCs_idle_png_1784655247;
+         this._embed_css_images_Icons_BattleList_HideNPCs_over_png_917250191 = Tibia__embed_css_images_Icons_BattleList_HideNPCs_over_png_917250191;
+         this._embed_css_images_Icons_BattleList_HidePlayers_active_over_png_1490023058 = Tibia__embed_css_images_Icons_BattleList_HidePlayers_active_over_png_1490023058;
+         this._embed_css_images_Icons_BattleList_HidePlayers_active_png_613329023 = Tibia__embed_css_images_Icons_BattleList_HidePlayers_active_png_613329023;
+         this._embed_css_images_Icons_BattleList_HidePlayers_idle_png_177601341 = Tibia__embed_css_images_Icons_BattleList_HidePlayers_idle_png_177601341;
+         this._embed_css_images_Icons_BattleList_HidePlayers_over_png_622687683 = Tibia__embed_css_images_Icons_BattleList_HidePlayers_over_png_622687683;
+         this._embed_css_images_Icons_BattleList_HideSkulled_active_over_png_1205967224 = Tibia__embed_css_images_Icons_BattleList_HideSkulled_active_over_png_1205967224;
+         this._embed_css_images_Icons_BattleList_HideSkulled_active_png_2021231179 = Tibia__embed_css_images_Icons_BattleList_HideSkulled_active_png_2021231179;
+         this._embed_css_images_Icons_BattleList_HideSkulled_idle_png_428456803 = Tibia__embed_css_images_Icons_BattleList_HideSkulled_idle_png_428456803;
+         this._embed_css_images_Icons_BattleList_HideSkulled_over_png_634011235 = Tibia__embed_css_images_Icons_BattleList_HideSkulled_over_png_634011235;
+         this._embed_css_images_Icons_BattleList_PartyMembers_active_over_png_138520421 = Tibia__embed_css_images_Icons_BattleList_PartyMembers_active_over_png_138520421;
+         this._embed_css_images_Icons_BattleList_PartyMembers_active_png_1666844766 = Tibia__embed_css_images_Icons_BattleList_PartyMembers_active_png_1666844766;
+         this._embed_css_images_Icons_BattleList_PartyMembers_idle_png_788781616 = Tibia__embed_css_images_Icons_BattleList_PartyMembers_idle_png_788781616;
+         this._embed_css_images_Icons_BattleList_PartyMembers_over_png_79143632 = Tibia__embed_css_images_Icons_BattleList_PartyMembers_over_png_79143632;
+         this._embed_css_images_Icons_CombatControls_AutochaseOn_idle_png_1165139419 = Tibia__embed_css_images_Icons_CombatControls_AutochaseOn_idle_png_1165139419;
+         this._embed_css_images_Icons_CombatControls_AutochaseOn_over_png_294457563 = Tibia__embed_css_images_Icons_CombatControls_AutochaseOn_over_png_294457563;
+         this._embed_css_images_Icons_CombatControls_DefensiveOff_idle_png_1971662251 = Tibia__embed_css_images_Icons_CombatControls_DefensiveOff_idle_png_1971662251;
+         this._embed_css_images_Icons_CombatControls_DefensiveOff_over_png_523657045 = Tibia__embed_css_images_Icons_CombatControls_DefensiveOff_over_png_523657045;
+         this._embed_css_images_Icons_CombatControls_DefensiveOn_active_png_2114894105 = Tibia__embed_css_images_Icons_CombatControls_DefensiveOn_active_png_2114894105;
+         this._embed_css_images_Icons_CombatControls_DefensiveOn_idle_png_1337920135 = Tibia__embed_css_images_Icons_CombatControls_DefensiveOn_idle_png_1337920135;
+         this._embed_css_images_Icons_CombatControls_DoveOff_idle_png_369785836 = Tibia__embed_css_images_Icons_CombatControls_DoveOff_idle_png_369785836;
+         this._embed_css_images_Icons_CombatControls_DoveOff_over_png_893524756 = Tibia__embed_css_images_Icons_CombatControls_DoveOff_over_png_893524756;
+         this._embed_css_images_Icons_CombatControls_DoveOn_idle_png_1799831422 = Tibia__embed_css_images_Icons_CombatControls_DoveOn_idle_png_1799831422;
+         this._embed_css_images_Icons_CombatControls_DoveOn_over_png_931245694 = Tibia__embed_css_images_Icons_CombatControls_DoveOn_over_png_931245694;
+         this._embed_css_images_Icons_CombatControls_ExpertModeOn_idle_png_123367643 = Tibia__embed_css_images_Icons_CombatControls_ExpertModeOn_idle_png_123367643;
+         this._embed_css_images_Icons_CombatControls_ExpertModeOn_over_png_1392963547 = Tibia__embed_css_images_Icons_CombatControls_ExpertModeOn_over_png_1392963547;
+         this._embed_css_images_Icons_CombatControls_ExpertMode_disabled_png_894372018 = Tibia__embed_css_images_Icons_CombatControls_ExpertMode_disabled_png_894372018;
+         this._embed_css_images_Icons_CombatControls_ExpertMode_idle_png_754231034 = Tibia__embed_css_images_Icons_CombatControls_ExpertMode_idle_png_754231034;
+         this._embed_css_images_Icons_CombatControls_ExpertMode_over_png_420435450 = Tibia__embed_css_images_Icons_CombatControls_ExpertMode_over_png_420435450;
+         this._embed_css_images_Icons_CombatControls_MediumOff_idle_png_1324480721 = Tibia__embed_css_images_Icons_CombatControls_MediumOff_idle_png_1324480721;
+         this._embed_css_images_Icons_CombatControls_MediumOff_over_png_1017681455 = Tibia__embed_css_images_Icons_CombatControls_MediumOff_over_png_1017681455;
+         this._embed_css_images_Icons_CombatControls_MediumOn_idle_png_1550321475 = Tibia__embed_css_images_Icons_CombatControls_MediumOn_idle_png_1550321475;
+         this._embed_css_images_Icons_CombatControls_MediumOn_over_png_1201440323 = Tibia__embed_css_images_Icons_CombatControls_MediumOn_over_png_1201440323;
+         this._embed_css_images_Icons_CombatControls_Mounted_idle_png_332190833 = Tibia__embed_css_images_Icons_CombatControls_Mounted_idle_png_332190833;
+         this._embed_css_images_Icons_CombatControls_Mounted_over_png_526740337 = Tibia__embed_css_images_Icons_CombatControls_Mounted_over_png_526740337;
+         this._embed_css_images_Icons_CombatControls_OffensiveOff_idle_png_582119269 = Tibia__embed_css_images_Icons_CombatControls_OffensiveOff_idle_png_582119269;
+         this._embed_css_images_Icons_CombatControls_OffensiveOff_over_png_1660751461 = Tibia__embed_css_images_Icons_CombatControls_OffensiveOff_over_png_1660751461;
+         this._embed_css_images_Icons_CombatControls_OffensiveOn_idle_png_228803293 = Tibia__embed_css_images_Icons_CombatControls_OffensiveOn_idle_png_228803293;
+         this._embed_css_images_Icons_CombatControls_OffensiveOn_over_png_1911407069 = Tibia__embed_css_images_Icons_CombatControls_OffensiveOn_over_png_1911407069;
+         this._embed_css_images_Icons_CombatControls_PvPOff_active_png_470312516 = Tibia__embed_css_images_Icons_CombatControls_PvPOff_active_png_470312516;
+         this._embed_css_images_Icons_CombatControls_PvPOff_idle_png_1518483442 = Tibia__embed_css_images_Icons_CombatControls_PvPOff_idle_png_1518483442;
+         this._embed_css_images_Icons_CombatControls_PvPOn_active_png_806196142 = Tibia__embed_css_images_Icons_CombatControls_PvPOn_active_png_806196142;
+         this._embed_css_images_Icons_CombatControls_PvPOn_idle_png_325504288 = Tibia__embed_css_images_Icons_CombatControls_PvPOn_idle_png_325504288;
+         this._embed_css_images_Icons_CombatControls_RedFistOff_idle_png_1338322061 = Tibia__embed_css_images_Icons_CombatControls_RedFistOff_idle_png_1338322061;
+         this._embed_css_images_Icons_CombatControls_RedFistOff_over_png_1544269709 = Tibia__embed_css_images_Icons_CombatControls_RedFistOff_over_png_1544269709;
+         this._embed_css_images_Icons_CombatControls_RedFistOn_idle_png_329965451 = Tibia__embed_css_images_Icons_CombatControls_RedFistOn_idle_png_329965451;
+         this._embed_css_images_Icons_CombatControls_RedFistOn_over_png_744247435 = Tibia__embed_css_images_Icons_CombatControls_RedFistOn_over_png_744247435;
+         this._embed_css_images_Icons_CombatControls_StandOff_idle_png_1945447166 = Tibia__embed_css_images_Icons_CombatControls_StandOff_idle_png_1945447166;
+         this._embed_css_images_Icons_CombatControls_StandOff_over_png_549332482 = Tibia__embed_css_images_Icons_CombatControls_StandOff_over_png_549332482;
+         this._embed_css_images_Icons_CombatControls_Unmounted_idle_png_1148616102 = Tibia__embed_css_images_Icons_CombatControls_Unmounted_idle_png_1148616102;
+         this._embed_css_images_Icons_CombatControls_Unmounted_over_png_1144518310 = Tibia__embed_css_images_Icons_CombatControls_Unmounted_over_png_1144518310;
+         this._embed_css_images_Icons_CombatControls_WhiteHandOff_idle_png_283159200 = Tibia__embed_css_images_Icons_CombatControls_WhiteHandOff_idle_png_283159200;
+         this._embed_css_images_Icons_CombatControls_WhiteHandOff_over_png_814885792 = Tibia__embed_css_images_Icons_CombatControls_WhiteHandOff_over_png_814885792;
+         this._embed_css_images_Icons_CombatControls_WhiteHandOn_idle_png_1088011342 = Tibia__embed_css_images_Icons_CombatControls_WhiteHandOn_idle_png_1088011342;
+         this._embed_css_images_Icons_CombatControls_WhiteHandOn_over_png_1435348302 = Tibia__embed_css_images_Icons_CombatControls_WhiteHandOn_over_png_1435348302;
+         this._embed_css_images_Icons_CombatControls_YellowHandOff_idle_png_1235819155 = Tibia__embed_css_images_Icons_CombatControls_YellowHandOff_idle_png_1235819155;
+         this._embed_css_images_Icons_CombatControls_YellowHandOff_over_png_443456403 = Tibia__embed_css_images_Icons_CombatControls_YellowHandOff_over_png_443456403;
+         this._embed_css_images_Icons_CombatControls_YellowHandOn_idle_png_1100929387 = Tibia__embed_css_images_Icons_CombatControls_YellowHandOn_idle_png_1100929387;
+         this._embed_css_images_Icons_CombatControls_YellowHandOn_over_png_1241884053 = Tibia__embed_css_images_Icons_CombatControls_YellowHandOn_over_png_1241884053;
+         this._embed_css_images_Icons_Conditions_Bleeding_png_526934384 = Tibia__embed_css_images_Icons_Conditions_Bleeding_png_526934384;
+         this._embed_css_images_Icons_Conditions_Burning_png_1677566757 = Tibia__embed_css_images_Icons_Conditions_Burning_png_1677566757;
+         this._embed_css_images_Icons_Conditions_Cursed_png_90499082 = Tibia__embed_css_images_Icons_Conditions_Cursed_png_90499082;
+         this._embed_css_images_Icons_Conditions_Dazzled_png_1747135488 = Tibia__embed_css_images_Icons_Conditions_Dazzled_png_1747135488;
+         this._embed_css_images_Icons_Conditions_Drowning_png_542106670 = Tibia__embed_css_images_Icons_Conditions_Drowning_png_542106670;
+         this._embed_css_images_Icons_Conditions_Drunk_png_45733786 = Tibia__embed_css_images_Icons_Conditions_Drunk_png_45733786;
+         this._embed_css_images_Icons_Conditions_Electrified_png_1245219382 = Tibia__embed_css_images_Icons_Conditions_Electrified_png_1245219382;
+         this._embed_css_images_Icons_Conditions_Freezing_png_1444773940 = Tibia__embed_css_images_Icons_Conditions_Freezing_png_1444773940;
+         this._embed_css_images_Icons_Conditions_Haste_png_378019693 = Tibia__embed_css_images_Icons_Conditions_Haste_png_378019693;
+         this._embed_css_images_Icons_Conditions_Hungry_png_758019275 = Tibia__embed_css_images_Icons_Conditions_Hungry_png_758019275;
+         this._embed_css_images_Icons_Conditions_Logoutblock_png_358377557 = Tibia__embed_css_images_Icons_Conditions_Logoutblock_png_358377557;
+         this._embed_css_images_Icons_Conditions_MagicShield_png_557850584 = Tibia__embed_css_images_Icons_Conditions_MagicShield_png_557850584;
+         this._embed_css_images_Icons_Conditions_PZ_png_2094848430 = Tibia__embed_css_images_Icons_Conditions_PZ_png_2094848430;
+         this._embed_css_images_Icons_Conditions_PZlock_png_2127619469 = Tibia__embed_css_images_Icons_Conditions_PZlock_png_2127619469;
+         this._embed_css_images_Icons_Conditions_Poisoned_png_1540003537 = Tibia__embed_css_images_Icons_Conditions_Poisoned_png_1540003537;
+         this._embed_css_images_Icons_Conditions_Slowed_png_77123048 = Tibia__embed_css_images_Icons_Conditions_Slowed_png_77123048;
+         this._embed_css_images_Icons_Conditions_Strenghtened_png_695721049 = Tibia__embed_css_images_Icons_Conditions_Strenghtened_png_695721049;
+         this._embed_css_images_Icons_IngameShop_12x12_No_png_115059819 = Tibia__embed_css_images_Icons_IngameShop_12x12_No_png_115059819;
+         this._embed_css_images_Icons_IngameShop_12x12_Yes_png_415896407 = Tibia__embed_css_images_Icons_IngameShop_12x12_Yes_png_415896407;
+         this._embed_css_images_Icons_Inventory_StoreInbox_png_1901440063 = Tibia__embed_css_images_Icons_Inventory_StoreInbox_png_1901440063;
+         this._embed_css_images_Icons_Inventory_Store_png_1162053375 = Tibia__embed_css_images_Icons_Inventory_Store_png_1162053375;
+         this._embed_css_images_Icons_ProgressBars_AxeFighting_png_784879159 = Tibia__embed_css_images_Icons_ProgressBars_AxeFighting_png_784879159;
+         this._embed_css_images_Icons_ProgressBars_ClubFighting_png_1530197035 = Tibia__embed_css_images_Icons_ProgressBars_ClubFighting_png_1530197035;
+         this._embed_css_images_Icons_ProgressBars_CompactStyle_png_2100887615 = Tibia__embed_css_images_Icons_ProgressBars_CompactStyle_png_2100887615;
+         this._embed_css_images_Icons_ProgressBars_DefaultStyle_png_1681910211 = Tibia__embed_css_images_Icons_ProgressBars_DefaultStyle_png_1681910211;
+         this._embed_css_images_Icons_ProgressBars_DistanceFighting_png_779396374 = Tibia__embed_css_images_Icons_ProgressBars_DistanceFighting_png_779396374;
+         this._embed_css_images_Icons_ProgressBars_Fishing_png_159411631 = Tibia__embed_css_images_Icons_ProgressBars_Fishing_png_159411631;
+         this._embed_css_images_Icons_ProgressBars_FistFighting_png_744761447 = Tibia__embed_css_images_Icons_ProgressBars_FistFighting_png_744761447;
+         this._embed_css_images_Icons_ProgressBars_LargeStyle_png_1083507847 = Tibia__embed_css_images_Icons_ProgressBars_LargeStyle_png_1083507847;
+         this._embed_css_images_Icons_ProgressBars_MagicLevel_png_1093895878 = Tibia__embed_css_images_Icons_ProgressBars_MagicLevel_png_1093895878;
+         this._embed_css_images_Icons_ProgressBars_ParallelStyle_png_562446159 = Tibia__embed_css_images_Icons_ProgressBars_ParallelStyle_png_562446159;
+         this._embed_css_images_Icons_ProgressBars_ProgressOff_png_1779777081 = Tibia__embed_css_images_Icons_ProgressBars_ProgressOff_png_1779777081;
+         this._embed_css_images_Icons_ProgressBars_ProgressOn_png_370747169 = Tibia__embed_css_images_Icons_ProgressBars_ProgressOn_png_370747169;
+         this._embed_css_images_Icons_ProgressBars_Shielding_png_599280960 = Tibia__embed_css_images_Icons_ProgressBars_Shielding_png_599280960;
+         this._embed_css_images_Icons_ProgressBars_SwordFighting_png_726197318 = Tibia__embed_css_images_Icons_ProgressBars_SwordFighting_png_726197318;
+         this._embed_css_images_Icons_TradeLists_ContainerDisplay_idle_png_1396972083 = Tibia__embed_css_images_Icons_TradeLists_ContainerDisplay_idle_png_1396972083;
+         this._embed_css_images_Icons_TradeLists_ContainerDisplay_over_png_1728022323 = Tibia__embed_css_images_Icons_TradeLists_ContainerDisplay_over_png_1728022323;
+         this._embed_css_images_Icons_TradeLists_ContainerDisplay_pressed_png_1075890131 = Tibia__embed_css_images_Icons_TradeLists_ContainerDisplay_pressed_png_1075890131;
+         this._embed_css_images_Icons_TradeLists_ListDisplay_idle_png_539137698 = Tibia__embed_css_images_Icons_TradeLists_ListDisplay_idle_png_539137698;
+         this._embed_css_images_Icons_TradeLists_ListDisplay_over_png_349575074 = Tibia__embed_css_images_Icons_TradeLists_ListDisplay_over_png_349575074;
+         this._embed_css_images_Icons_TradeLists_ListDisplay_pressed_png_1456372718 = Tibia__embed_css_images_Icons_TradeLists_ListDisplay_pressed_png_1456372718;
+         this._embed_css_images_Icons_WidgetHeaders_BattleList_png_1517554948 = Tibia__embed_css_images_Icons_WidgetHeaders_BattleList_png_1517554948;
+         this._embed_css_images_Icons_WidgetHeaders_Combat_png_375287802 = Tibia__embed_css_images_Icons_WidgetHeaders_Combat_png_375287802;
+         this._embed_css_images_Icons_WidgetHeaders_GeneralControls_png_314099262 = Tibia__embed_css_images_Icons_WidgetHeaders_GeneralControls_png_314099262;
+         this._embed_css_images_Icons_WidgetHeaders_GetPremium_png_376682585 = Tibia__embed_css_images_Icons_WidgetHeaders_GetPremium_png_376682585;
+         this._embed_css_images_Icons_WidgetHeaders_Inventory_png_1405466304 = Tibia__embed_css_images_Icons_WidgetHeaders_Inventory_png_1405466304;
+         this._embed_css_images_Icons_WidgetHeaders_Minimap_png_2033089433 = Tibia__embed_css_images_Icons_WidgetHeaders_Minimap_png_2033089433;
+         this._embed_css_images_Icons_WidgetHeaders_Prey_png_2056699772 = Tibia__embed_css_images_Icons_WidgetHeaders_Prey_png_2056699772;
+         this._embed_css_images_Icons_WidgetHeaders_SafeTrades_png_1154048530 = Tibia__embed_css_images_Icons_WidgetHeaders_SafeTrades_png_1154048530;
+         this._embed_css_images_Icons_WidgetHeaders_Skull_png_1181631553 = Tibia__embed_css_images_Icons_WidgetHeaders_Skull_png_1181631553;
+         this._embed_css_images_Icons_WidgetHeaders_Spells_png_653028639 = Tibia__embed_css_images_Icons_WidgetHeaders_Spells_png_653028639;
+         this._embed_css_images_Icons_WidgetHeaders_Trades_png_17953531 = Tibia__embed_css_images_Icons_WidgetHeaders_Trades_png_17953531;
+         this._embed_css_images_Icons_WidgetHeaders_VipList_png_570669695 = Tibia__embed_css_images_Icons_WidgetHeaders_VipList_png_570669695;
+         this._embed_css_images_Icons_WidgetMenu_BattleList_active_over_png_793986337 = Tibia__embed_css_images_Icons_WidgetMenu_BattleList_active_over_png_793986337;
+         this._embed_css_images_Icons_WidgetMenu_BattleList_active_png_1337425916 = Tibia__embed_css_images_Icons_WidgetMenu_BattleList_active_png_1337425916;
+         this._embed_css_images_Icons_WidgetMenu_BattleList_idle_over_png_9825491 = Tibia__embed_css_images_Icons_WidgetMenu_BattleList_idle_over_png_9825491;
+         this._embed_css_images_Icons_WidgetMenu_BattleList_idle_png_239928278 = Tibia__embed_css_images_Icons_WidgetMenu_BattleList_idle_png_239928278;
+         this._embed_css_images_Icons_WidgetMenu_Blessings_active_over_png_675712135 = Tibia__embed_css_images_Icons_WidgetMenu_Blessings_active_over_png_675712135;
+         this._embed_css_images_Icons_WidgetMenu_Blessings_active_png_1558016314 = Tibia__embed_css_images_Icons_WidgetMenu_Blessings_active_png_1558016314;
+         this._embed_css_images_Icons_WidgetMenu_Blessings_idle_png_1732180796 = Tibia__embed_css_images_Icons_WidgetMenu_Blessings_idle_png_1732180796;
+         this._embed_css_images_Icons_WidgetMenu_Combat_active_over_png_390355041 = Tibia__embed_css_images_Icons_WidgetMenu_Combat_active_over_png_390355041;
+         this._embed_css_images_Icons_WidgetMenu_Combat_active_png_327192750 = Tibia__embed_css_images_Icons_WidgetMenu_Combat_active_png_327192750;
+         this._embed_css_images_Icons_WidgetMenu_Combat_idle_over_png_1137251407 = Tibia__embed_css_images_Icons_WidgetMenu_Combat_idle_over_png_1137251407;
+         this._embed_css_images_Icons_WidgetMenu_Combat_idle_png_1063594900 = Tibia__embed_css_images_Icons_WidgetMenu_Combat_idle_png_1063594900;
+         this._embed_css_images_Icons_WidgetMenu_Containers_active_over_png_1759328973 = Tibia__embed_css_images_Icons_WidgetMenu_Containers_active_over_png_1759328973;
+         this._embed_css_images_Icons_WidgetMenu_Containers_active_png_387529648 = Tibia__embed_css_images_Icons_WidgetMenu_Containers_active_png_387529648;
+         this._embed_css_images_Icons_WidgetMenu_Containers_idle_over_png_1806477361 = Tibia__embed_css_images_Icons_WidgetMenu_Containers_idle_over_png_1806477361;
+         this._embed_css_images_Icons_WidgetMenu_Containers_idle_png_2144032898 = Tibia__embed_css_images_Icons_WidgetMenu_Containers_idle_png_2144032898;
+         this._embed_css_images_Icons_WidgetMenu_GeneralControls_active_over_png_450488793 = Tibia__embed_css_images_Icons_WidgetMenu_GeneralControls_active_over_png_450488793;
+         this._embed_css_images_Icons_WidgetMenu_GeneralControls_active_png_273763964 = Tibia__embed_css_images_Icons_WidgetMenu_GeneralControls_active_png_273763964;
+         this._embed_css_images_Icons_WidgetMenu_GeneralControls_idle_over_png_1523904949 = Tibia__embed_css_images_Icons_WidgetMenu_GeneralControls_idle_over_png_1523904949;
+         this._embed_css_images_Icons_WidgetMenu_GeneralControls_idle_png_1439642702 = Tibia__embed_css_images_Icons_WidgetMenu_GeneralControls_idle_png_1439642702;
+         this._embed_css_images_Icons_WidgetMenu_GetPremium_active_over_png_618087100 = Tibia__embed_css_images_Icons_WidgetMenu_GetPremium_active_over_png_618087100;
+         this._embed_css_images_Icons_WidgetMenu_GetPremium_active_png_377762303 = Tibia__embed_css_images_Icons_WidgetMenu_GetPremium_active_png_377762303;
+         this._embed_css_images_Icons_WidgetMenu_GetPremium_idle_png_1978490031 = Tibia__embed_css_images_Icons_WidgetMenu_GetPremium_idle_png_1978490031;
+         this._embed_css_images_Icons_WidgetMenu_Inventory_active_over_png_1138143095 = Tibia__embed_css_images_Icons_WidgetMenu_Inventory_active_over_png_1138143095;
+         this._embed_css_images_Icons_WidgetMenu_Inventory_active_png_506655126 = Tibia__embed_css_images_Icons_WidgetMenu_Inventory_active_png_506655126;
+         this._embed_css_images_Icons_WidgetMenu_Inventory_idle_over_png_1428562487 = Tibia__embed_css_images_Icons_WidgetMenu_Inventory_idle_over_png_1428562487;
+         this._embed_css_images_Icons_WidgetMenu_Inventory_idle_png_1991267500 = Tibia__embed_css_images_Icons_WidgetMenu_Inventory_idle_png_1991267500;
+         this._embed_css_images_Icons_WidgetMenu_Minimap_active_over_png_13628752 = Tibia__embed_css_images_Icons_WidgetMenu_Minimap_active_over_png_13628752;
+         this._embed_css_images_Icons_WidgetMenu_Minimap_active_png_1080426003 = Tibia__embed_css_images_Icons_WidgetMenu_Minimap_active_png_1080426003;
+         this._embed_css_images_Icons_WidgetMenu_Minimap_idle_over_png_1920390846 = Tibia__embed_css_images_Icons_WidgetMenu_Minimap_idle_over_png_1920390846;
+         this._embed_css_images_Icons_WidgetMenu_Minimap_idle_png_230798747 = Tibia__embed_css_images_Icons_WidgetMenu_Minimap_idle_png_230798747;
+         this._embed_css_images_Icons_WidgetMenu_Prey_active_over_png_21306593 = Tibia__embed_css_images_Icons_WidgetMenu_Prey_active_over_png_21306593;
+         this._embed_css_images_Icons_WidgetMenu_Prey_active_png_2078269124 = Tibia__embed_css_images_Icons_WidgetMenu_Prey_active_png_2078269124;
+         this._embed_css_images_Icons_WidgetMenu_Prey_idle_over_png_459157651 = Tibia__embed_css_images_Icons_WidgetMenu_Prey_idle_over_png_459157651;
+         this._embed_css_images_Icons_WidgetMenu_Prey_idle_png_924058986 = Tibia__embed_css_images_Icons_WidgetMenu_Prey_idle_png_924058986;
+         this._embed_css_images_Icons_WidgetMenu_Skull_active_over_png_616733832 = Tibia__embed_css_images_Icons_WidgetMenu_Skull_active_over_png_616733832;
+         this._embed_css_images_Icons_WidgetMenu_Skull_active_png_1811862907 = Tibia__embed_css_images_Icons_WidgetMenu_Skull_active_png_1811862907;
+         this._embed_css_images_Icons_WidgetMenu_Skull_idle_over_png_626524886 = Tibia__embed_css_images_Icons_WidgetMenu_Skull_idle_over_png_626524886;
+         this._embed_css_images_Icons_WidgetMenu_Skull_idle_png_1224099597 = Tibia__embed_css_images_Icons_WidgetMenu_Skull_idle_png_1224099597;
+         this._embed_css_images_Icons_WidgetMenu_Trades_active_over_png_1517102410 = Tibia__embed_css_images_Icons_WidgetMenu_Trades_active_over_png_1517102410;
+         this._embed_css_images_Icons_WidgetMenu_Trades_active_png_1392106579 = Tibia__embed_css_images_Icons_WidgetMenu_Trades_active_png_1392106579;
+         this._embed_css_images_Icons_WidgetMenu_Trades_idle_over_png_634503524 = Tibia__embed_css_images_Icons_WidgetMenu_Trades_idle_over_png_634503524;
+         this._embed_css_images_Icons_WidgetMenu_Trades_idle_png_1730481697 = Tibia__embed_css_images_Icons_WidgetMenu_Trades_idle_png_1730481697;
+         this._embed_css_images_Icons_WidgetMenu_VipList_active_over_png_47374454 = Tibia__embed_css_images_Icons_WidgetMenu_VipList_active_over_png_47374454;
+         this._embed_css_images_Icons_WidgetMenu_VipList_active_png_848728905 = Tibia__embed_css_images_Icons_WidgetMenu_VipList_active_png_848728905;
+         this._embed_css_images_Icons_WidgetMenu_VipList_idle_over_png_412469896 = Tibia__embed_css_images_Icons_WidgetMenu_VipList_idle_over_png_412469896;
+         this._embed_css_images_Icons_WidgetMenu_VipList_idle_png_44831157 = Tibia__embed_css_images_Icons_WidgetMenu_VipList_idle_png_44831157;
+         this._embed_css_images_Inventory_png_381497758 = Tibia__embed_css_images_Inventory_png_381497758;
+         this._embed_css_images_Minimap_Center_active_png_1997427884 = Tibia__embed_css_images_Minimap_Center_active_png_1997427884;
+         this._embed_css_images_Minimap_Center_idle_png_2012166886 = Tibia__embed_css_images_Minimap_Center_idle_png_2012166886;
+         this._embed_css_images_Minimap_Center_over_png_279361510 = Tibia__embed_css_images_Minimap_Center_over_png_279361510;
+         this._embed_css_images_Minimap_ZoomIn_idle_png_480998871 = Tibia__embed_css_images_Minimap_ZoomIn_idle_png_480998871;
+         this._embed_css_images_Minimap_ZoomIn_over_png_1744305367 = Tibia__embed_css_images_Minimap_ZoomIn_over_png_1744305367;
+         this._embed_css_images_Minimap_ZoomIn_pressed_png_1013656729 = Tibia__embed_css_images_Minimap_ZoomIn_pressed_png_1013656729;
+         this._embed_css_images_Minimap_ZoomOut_idle_png_2125846326 = Tibia__embed_css_images_Minimap_ZoomOut_idle_png_2125846326;
+         this._embed_css_images_Minimap_ZoomOut_over_png_353204682 = Tibia__embed_css_images_Minimap_ZoomOut_over_png_353204682;
+         this._embed_css_images_Minimap_ZoomOut_pressed_png_834344966 = Tibia__embed_css_images_Minimap_ZoomOut_pressed_png_834344966;
+         this._embed_css_images_Minimap_png_667670405 = Tibia__embed_css_images_Minimap_png_667670405;
+         this._embed_css_images_Scrollbar_Arrow_down_idle_png_91820120 = Tibia__embed_css_images_Scrollbar_Arrow_down_idle_png_91820120;
+         this._embed_css_images_Scrollbar_Arrow_down_over_png_1360238424 = Tibia__embed_css_images_Scrollbar_Arrow_down_over_png_1360238424;
+         this._embed_css_images_Scrollbar_Arrow_down_pressed_png_1990651256 = Tibia__embed_css_images_Scrollbar_Arrow_down_pressed_png_1990651256;
+         this._embed_css_images_Scrollbar_Arrow_up_idle_png_18741135 = Tibia__embed_css_images_Scrollbar_Arrow_up_idle_png_18741135;
+         this._embed_css_images_Scrollbar_Arrow_up_over_png_860191089 = Tibia__embed_css_images_Scrollbar_Arrow_up_over_png_860191089;
+         this._embed_css_images_Scrollbar_Arrow_up_pressed_png_165887905 = Tibia__embed_css_images_Scrollbar_Arrow_up_pressed_png_165887905;
+         this._embed_css_images_Scrollbar_Handler_png_760479401 = Tibia__embed_css_images_Scrollbar_Handler_png_760479401;
+         this._embed_css_images_Scrollbar_tileable_png_1885091563 = Tibia__embed_css_images_Scrollbar_tileable_png_1885091563;
+         this._embed_css_images_Slot_Hotkey_Cooldown_png_1017067163 = Tibia__embed_css_images_Slot_Hotkey_Cooldown_png_1017067163;
+         this._embed_css_images_Slot_InventoryAmmo_png_675331507 = Tibia__embed_css_images_Slot_InventoryAmmo_png_675331507;
+         this._embed_css_images_Slot_InventoryAmmo_protected_png_437721124 = Tibia__embed_css_images_Slot_InventoryAmmo_protected_png_437721124;
+         this._embed_css_images_Slot_InventoryArmor_png_1841074918 = Tibia__embed_css_images_Slot_InventoryArmor_png_1841074918;
+         this._embed_css_images_Slot_InventoryArmor_protected_png_919089929 = Tibia__embed_css_images_Slot_InventoryArmor_protected_png_919089929;
+         this._embed_css_images_Slot_InventoryBackpack_png_1145397297 = Tibia__embed_css_images_Slot_InventoryBackpack_png_1145397297;
+         this._embed_css_images_Slot_InventoryBackpack_protected_png_278754206 = Tibia__embed_css_images_Slot_InventoryBackpack_protected_png_278754206;
+         this._embed_css_images_Slot_InventoryBoots_png_1061018524 = Tibia__embed_css_images_Slot_InventoryBoots_png_1061018524;
+         this._embed_css_images_Slot_InventoryBoots_protected_png_674517205 = Tibia__embed_css_images_Slot_InventoryBoots_protected_png_674517205;
+         this._embed_css_images_Slot_InventoryHead_png_1231852719 = Tibia__embed_css_images_Slot_InventoryHead_png_1231852719;
+         this._embed_css_images_Slot_InventoryHead_protected_png_1088319362 = Tibia__embed_css_images_Slot_InventoryHead_protected_png_1088319362;
+         this._embed_css_images_Slot_InventoryLegs_png_2114818196 = Tibia__embed_css_images_Slot_InventoryLegs_png_2114818196;
+         this._embed_css_images_Slot_InventoryLegs_protected_png_516995939 = Tibia__embed_css_images_Slot_InventoryLegs_protected_png_516995939;
+         this._embed_css_images_Slot_InventoryNecklace_png_1808156997 = Tibia__embed_css_images_Slot_InventoryNecklace_png_1808156997;
+         this._embed_css_images_Slot_InventoryNecklace_protected_png_1799961580 = Tibia__embed_css_images_Slot_InventoryNecklace_protected_png_1799961580;
+         this._embed_css_images_Slot_InventoryRing_png_534601697 = Tibia__embed_css_images_Slot_InventoryRing_png_534601697;
+         this._embed_css_images_Slot_InventoryRing_protected_png_143630382 = Tibia__embed_css_images_Slot_InventoryRing_protected_png_143630382;
+         this._embed_css_images_Slot_InventoryShield_png_125978696 = Tibia__embed_css_images_Slot_InventoryShield_png_125978696;
+         this._embed_css_images_Slot_InventoryShield_protected_png_1742050537 = Tibia__embed_css_images_Slot_InventoryShield_protected_png_1742050537;
+         this._embed_css_images_Slot_InventoryWeapon_png_1721833083 = Tibia__embed_css_images_Slot_InventoryWeapon_png_1721833083;
+         this._embed_css_images_Slot_InventoryWeapon_protected_png_2025859402 = Tibia__embed_css_images_Slot_InventoryWeapon_protected_png_2025859402;
+         this._embed_css_images_Slot_Statusicon_highlighted_png_1332900150 = Tibia__embed_css_images_Slot_Statusicon_highlighted_png_1332900150;
+         this._embed_css_images_Slot_Statusicon_png_1415858734 = Tibia__embed_css_images_Slot_Statusicon_png_1415858734;
+         this._embed_css_images_UnjustifiedPoints_png_1782736303 = Tibia__embed_css_images_UnjustifiedPoints_png_1782736303;
+         this._embed_css_images_Widget_Footer_tileable_end01_png_99047970 = Tibia__embed_css_images_Widget_Footer_tileable_end01_png_99047970;
+         this._embed_css_images_Widget_Footer_tileable_end02_png_100995747 = Tibia__embed_css_images_Widget_Footer_tileable_end02_png_100995747;
+         this._embed_css_images_Widget_Footer_tileable_png_2102878075 = Tibia__embed_css_images_Widget_Footer_tileable_png_2102878075;
+         this._embed_css_images_Widget_HeaderBG_png_730116019 = Tibia__embed_css_images_Widget_HeaderBG_png_730116019;
+         this._embed_css_images_custombutton_Button_Border_tileable_bc_disabled_png_97198997 = Tibia__embed_css_images_custombutton_Button_Border_tileable_bc_disabled_png_97198997;
+         this._embed_css_images_custombutton_Button_Border_tileable_bc_idle_png_713449011 = Tibia__embed_css_images_custombutton_Button_Border_tileable_bc_idle_png_713449011;
+         this._embed_css_images_custombutton_Button_Border_tileable_bc_over_png_718071091 = Tibia__embed_css_images_custombutton_Button_Border_tileable_bc_over_png_718071091;
+         this._embed_css_images_custombutton_Button_Border_tileable_bc_pressed_png_1996698541 = Tibia__embed_css_images_custombutton_Button_Border_tileable_bc_pressed_png_1996698541;
+         this._embed_css_images_custombutton_Button_Border_tileable_bl_disabled_png_1996451214 = Tibia__embed_css_images_custombutton_Button_Border_tileable_bl_disabled_png_1996451214;
+         this._embed_css_images_custombutton_Button_Border_tileable_bl_idle_png_1479317574 = Tibia__embed_css_images_custombutton_Button_Border_tileable_bl_idle_png_1479317574;
+         this._embed_css_images_custombutton_Button_Border_tileable_bl_over_png_269609286 = Tibia__embed_css_images_custombutton_Button_Border_tileable_bl_over_png_269609286;
+         this._embed_css_images_custombutton_Button_Border_tileable_bl_pressed_png_1673065226 = Tibia__embed_css_images_custombutton_Button_Border_tileable_bl_pressed_png_1673065226;
+         this._embed_css_images_custombutton_Button_Border_tileable_ml_disabled_png_1201650483 = Tibia__embed_css_images_custombutton_Button_Border_tileable_ml_disabled_png_1201650483;
+         this._embed_css_images_custombutton_Button_Border_tileable_ml_idle_png_1245218325 = Tibia__embed_css_images_custombutton_Button_Border_tileable_ml_idle_png_1245218325;
+         this._embed_css_images_custombutton_Button_Border_tileable_ml_over_png_427887893 = Tibia__embed_css_images_custombutton_Button_Border_tileable_ml_over_png_427887893;
+         this._embed_css_images_custombutton_Button_Border_tileable_ml_pressed_png_1339953035 = Tibia__embed_css_images_custombutton_Button_Border_tileable_ml_pressed_png_1339953035;
+         this._embed_css_images_custombutton_Button_Border_tileable_tc_disabled_png_744772701 = Tibia__embed_css_images_custombutton_Button_Border_tileable_tc_disabled_png_744772701;
+         this._embed_css_images_custombutton_Button_Border_tileable_tc_idle_png_1034633179 = Tibia__embed_css_images_custombutton_Button_Border_tileable_tc_idle_png_1034633179;
+         this._embed_css_images_custombutton_Button_Border_tileable_tc_over_png_1569901787 = Tibia__embed_css_images_custombutton_Button_Border_tileable_tc_over_png_1569901787;
+         this._embed_css_images_custombutton_Button_Border_tileable_tc_pressed_png_491469499 = Tibia__embed_css_images_custombutton_Button_Border_tileable_tc_pressed_png_491469499;
+         this._embed_css_images_custombutton_Button_Border_tileable_tl_disabled_png_929049956 = Tibia__embed_css_images_custombutton_Button_Border_tileable_tl_disabled_png_929049956;
+         this._embed_css_images_custombutton_Button_Border_tileable_tl_idle_png_460698220 = Tibia__embed_css_images_custombutton_Button_Border_tileable_tl_idle_png_460698220;
+         this._embed_css_images_custombutton_Button_Border_tileable_tl_over_png_1203653996 = Tibia__embed_css_images_custombutton_Button_Border_tileable_tl_over_png_1203653996;
+         this._embed_css_images_custombutton_Button_Border_tileable_tl_pressed_png_1978729388 = Tibia__embed_css_images_custombutton_Button_Border_tileable_tl_pressed_png_1978729388;
+         this._embed_css_images_custombutton_Button_Gold_tileable_bc_idle_png_1388109823 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_bc_idle_png_1388109823;
+         this._embed_css_images_custombutton_Button_Gold_tileable_bc_over_png_1582917375 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_bc_over_png_1582917375;
+         this._embed_css_images_custombutton_Button_Gold_tileable_bc_pressed_png_1314073167 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_bc_pressed_png_1314073167;
+         this._embed_css_images_custombutton_Button_Gold_tileable_bl_idle_png_866059770 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_bl_idle_png_866059770;
+         this._embed_css_images_custombutton_Button_Gold_tileable_bl_over_png_866883846 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_bl_over_png_866883846;
+         this._embed_css_images_custombutton_Button_Gold_tileable_bl_pressed_png_1601544042 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_bl_pressed_png_1601544042;
+         this._embed_css_images_custombutton_Button_Gold_tileable_mc_idle_png_144725306 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_mc_idle_png_144725306;
+         this._embed_css_images_custombutton_Button_Gold_tileable_mc_over_png_387132358 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_mc_over_png_387132358;
+         this._embed_css_images_custombutton_Button_Gold_tileable_mc_pressed_png_1792782474 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_mc_pressed_png_1792782474;
+         this._embed_css_images_custombutton_Button_Gold_tileable_ml_idle_png_2119528289 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_ml_idle_png_2119528289;
+         this._embed_css_images_custombutton_Button_Gold_tileable_ml_over_png_1301417569 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_ml_over_png_1301417569;
+         this._embed_css_images_custombutton_Button_Gold_tileable_ml_pressed_png_1124837519 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_ml_pressed_png_1124837519;
+         this._embed_css_images_custombutton_Button_Gold_tileable_tc_idle_png_354340239 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_tc_idle_png_354340239;
+         this._embed_css_images_custombutton_Button_Gold_tileable_tc_over_png_701648527 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_tc_over_png_701648527;
+         this._embed_css_images_custombutton_Button_Gold_tileable_tc_pressed_png_1001206657 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_tc_pressed_png_1001206657;
+         this._embed_css_images_custombutton_Button_Gold_tileable_tl_idle_png_1066808312 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_tl_idle_png_1066808312;
+         this._embed_css_images_custombutton_Button_Gold_tileable_tl_over_png_1949119752 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_tl_over_png_1949119752;
+         this._embed_css_images_custombutton_Button_Gold_tileable_tl_pressed_png_96476760 = Tibia__embed_css_images_custombutton_Button_Gold_tileable_tl_pressed_png_96476760;
+         this._embed_css_images_custombutton_Button_Highlight_tileable_bc_idle_png_1480530699 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_bc_idle_png_1480530699;
+         this._embed_css_images_custombutton_Button_Highlight_tileable_bc_over_png_1545885173 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_bc_over_png_1545885173;
+         this._embed_css_images_custombutton_Button_Highlight_tileable_bc_pressed_png_829106133 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_bc_pressed_png_829106133;
+         this._embed_css_images_custombutton_Button_Highlight_tileable_bl_idle_png_299642002 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_bl_idle_png_299642002;
+         this._embed_css_images_custombutton_Button_Highlight_tileable_bl_over_png_505981842 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_bl_over_png_505981842;
+         this._embed_css_images_custombutton_Button_Highlight_tileable_bl_pressed_png_564600482 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_bl_pressed_png_564600482;
+         this._embed_css_images_custombutton_Button_Highlight_tileable_ml_idle_png_1406639853 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_ml_idle_png_1406639853;
+         this._embed_css_images_custombutton_Button_Highlight_tileable_ml_over_png_1626598931 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_ml_over_png_1626598931;
+         this._embed_css_images_custombutton_Button_Highlight_tileable_ml_pressed_png_1710390195 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_ml_pressed_png_1710390195;
+         this._embed_css_images_custombutton_Button_Highlight_tileable_tc_idle_png_1335630595 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_tc_idle_png_1335630595;
+         this._embed_css_images_custombutton_Button_Highlight_tileable_tc_over_png_279471101 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_tc_over_png_279471101;
+         this._embed_css_images_custombutton_Button_Highlight_tileable_tc_pressed_png_1605574371 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_tc_pressed_png_1605574371;
+         this._embed_css_images_custombutton_Button_Highlight_tileable_tl_idle_png_919535868 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_tl_idle_png_919535868;
+         this._embed_css_images_custombutton_Button_Highlight_tileable_tl_over_png_1790083580 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_tl_over_png_1790083580;
+         this._embed_css_images_custombutton_Button_Highlight_tileable_tl_pressed_png_2061438852 = Tibia__embed_css_images_custombutton_Button_Highlight_tileable_tl_pressed_png_2061438852;
+         this._embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_idle_png_546154478 = Tibia__embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_idle_png_546154478;
+         this._embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_over_png_1892300526 = Tibia__embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_over_png_1892300526;
+         this._embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_pressed_png_493785154 = Tibia__embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_pressed_png_493785154;
+         this._embed_css_images_custombutton_Button_IngameShopBuy_tileable_idle_png_130764314 = Tibia__embed_css_images_custombutton_Button_IngameShopBuy_tileable_idle_png_130764314;
+         this._embed_css_images_custombutton_Button_IngameShopBuy_tileable_over_png_1828072166 = Tibia__embed_css_images_custombutton_Button_IngameShopBuy_tileable_over_png_1828072166;
+         this._embed_css_images_custombutton_Button_IngameShopBuy_tileable_pressed_png_1350701846 = Tibia__embed_css_images_custombutton_Button_IngameShopBuy_tileable_pressed_png_1350701846;
+         this._embed_css_images_custombutton_Button_Standard_tileable_bc_disabled_png_2000142426 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_bc_disabled_png_2000142426;
+         this._embed_css_images_custombutton_Button_Standard_tileable_bc_idle_png_1913227682 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_bc_idle_png_1913227682;
+         this._embed_css_images_custombutton_Button_Standard_tileable_bc_over_png_46790494 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_bc_over_png_46790494;
+         this._embed_css_images_custombutton_Button_Standard_tileable_bc_pressed_png_969488782 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_bc_pressed_png_969488782;
+         this._embed_css_images_custombutton_Button_Standard_tileable_bl_disabled_png_953976447 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_bl_disabled_png_953976447;
+         this._embed_css_images_custombutton_Button_Standard_tileable_bl_idle_png_2093052983 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_bl_idle_png_2093052983;
+         this._embed_css_images_custombutton_Button_Standard_tileable_bl_over_png_1316684489 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_bl_over_png_1316684489;
+         this._embed_css_images_custombutton_Button_Standard_tileable_bl_pressed_png_1258615591 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_bl_pressed_png_1258615591;
+         this._embed_css_images_custombutton_Button_Standard_tileable_mc_disabled_png_1660613429 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_mc_disabled_png_1660613429;
+         this._embed_css_images_custombutton_Button_Standard_tileable_mc_idle_png_863893501 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_mc_idle_png_863893501;
+         this._embed_css_images_custombutton_Button_Standard_tileable_mc_over_png_4423939 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_mc_over_png_4423939;
+         this._embed_css_images_custombutton_Button_Standard_tileable_mc_pressed_png_253647645 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_mc_pressed_png_253647645;
+         this._embed_css_images_custombutton_Button_Standard_tileable_ml_disabled_png_846678076 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_ml_disabled_png_846678076;
+         this._embed_css_images_custombutton_Button_Standard_tileable_ml_idle_png_1658654332 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_ml_idle_png_1658654332;
+         this._embed_css_images_custombutton_Button_Standard_tileable_ml_over_png_158167172 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_ml_over_png_158167172;
+         this._embed_css_images_custombutton_Button_Standard_tileable_ml_pressed_png_236721532 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_ml_pressed_png_236721532;
+         this._embed_css_images_custombutton_Button_Standard_tileable_tc_disabled_png_369402996 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_tc_disabled_png_369402996;
+         this._embed_css_images_custombutton_Button_Standard_tileable_tc_idle_png_700367956 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_tc_idle_png_700367956;
+         this._embed_css_images_custombutton_Button_Standard_tileable_tc_over_png_1962565460 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_tc_over_png_1962565460;
+         this._embed_css_images_custombutton_Button_Standard_tileable_tc_pressed_png_1408096916 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_tc_pressed_png_1408096916;
+         this._embed_css_images_custombutton_Button_Standard_tileable_tl_disabled_png_1116270317 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_tl_disabled_png_1116270317;
+         this._embed_css_images_custombutton_Button_Standard_tileable_tl_idle_png_1688019237 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_tl_idle_png_1688019237;
+         this._embed_css_images_custombutton_Button_Standard_tileable_tl_over_png_424714789 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_tl_over_png_424714789;
+         this._embed_css_images_custombutton_Button_Standard_tileable_tl_pressed_png_1833730757 = Tibia__embed_css_images_custombutton_Button_Standard_tileable_tl_pressed_png_1833730757;
+         this._embed_css_images_slot_Hotkey_disabled_png_804094220 = Tibia__embed_css_images_slot_Hotkey_disabled_png_804094220;
+         this._embed_css_images_slot_Hotkey_highlighted_png_1467341187 = Tibia__embed_css_images_slot_Hotkey_highlighted_png_1467341187;
+         this._embed_css_images_slot_Hotkey_png_1006833303 = Tibia__embed_css_images_slot_Hotkey_png_1006833303;
+         this._embed_css_images_slot_Hotkey_protected_png_803702344 = Tibia__embed_css_images_slot_Hotkey_protected_png_803702344;
+         this._embed_css_images_slot_container_disabled_png_2017818209 = Tibia__embed_css_images_slot_container_disabled_png_2017818209;
+         this._embed_css_images_slot_container_highlighted_png_1302039720 = Tibia__embed_css_images_slot_container_highlighted_png_1302039720;
+         this._embed_css_images_slot_container_png_1996786444 = Tibia__embed_css_images_slot_container_png_1996786444;
          this._bindings = [];
          this._watchers = [];
          this._bindingsByDestination = {};
@@ -1997,6 +1997,12 @@ package
          return (application as Tibia).m_Player;
       }
       
+      [Bindable(event="propertyChange")]
+      public function get m_UIChatWidget() : ChatWidget
+      {
+         return this._883427326m_UIChatWidget;
+      }
+      
       public function set m_UIChatWidget(param1:ChatWidget) : void
       {
          var _loc2_:Object = null;
@@ -2006,12 +2012,6 @@ package
             this._883427326m_UIChatWidget = param1;
             this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"m_UIChatWidget",_loc2_,param1));
          }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get m_UIChatWidget() : ChatWidget
-      {
-         return this._883427326m_UIChatWidget;
       }
       
       private function _Tibia_VActionBarWidget1_i() : VActionBarWidget
@@ -2244,17 +2244,6 @@ package
          this.m_CurrentOptionsUploadErrorDelay = 0;
       }
       
-      public function set m_UISideBarToggleRight(param1:ToggleBar) : void
-      {
-         var _loc2_:Object = null;
-         _loc2_ = this._665607314m_UISideBarToggleRight;
-         if(_loc2_ !== param1)
-         {
-            this._665607314m_UISideBarToggleRight = param1;
-            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"m_UISideBarToggleRight",_loc2_,param1));
-         }
-      }
-      
       private function onCloseLoginWait(param1:CloseEvent) : void
       {
          if(param1.detail == TimeoutWaitWidget.TIMOUT_EXPIRED)
@@ -2280,6 +2269,17 @@ package
          {
             this._1314206572m_UIWorldMapWidget = param1;
             this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"m_UIWorldMapWidget",_loc2_,param1));
+         }
+      }
+      
+      public function set m_UISideBarToggleRight(param1:ToggleBar) : void
+      {
+         var _loc2_:Object = null;
+         _loc2_ = this._665607314m_UISideBarToggleRight;
+         if(_loc2_ !== param1)
+         {
+            this._665607314m_UISideBarToggleRight = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"m_UISideBarToggleRight",_loc2_,param1));
          }
       }
       
@@ -2452,12 +2452,6 @@ package
          }
       }
       
-      [Bindable(event="propertyChange")]
-      public function get m_UIActionBarLeft() : VActionBarWidget
-      {
-         return this._1174474338m_UIActionBarLeft;
-      }
-      
       public function set isActive(param1:Boolean) : void
       {
          if(this.m_IsActive != param1)
@@ -2475,6 +2469,12 @@ package
                }
             }
          }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get m_UIActionBarLeft() : VActionBarWidget
+      {
+         return this._1174474338m_UIActionBarLeft;
       }
       
       public function loginCharacter() : void
@@ -2516,17 +2516,6 @@ package
          if(_loc1_ != null)
          {
             this.connect(_loc1_);
-         }
-      }
-      
-      public function set m_UIActionBarTop(param1:HActionBarWidget) : void
-      {
-         var _loc2_:Object = null;
-         _loc2_ = this._1423351586m_UIActionBarTop;
-         if(_loc2_ !== param1)
-         {
-            this._1423351586m_UIActionBarTop = param1;
-            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"m_UIActionBarTop",_loc2_,param1));
          }
       }
       
@@ -2649,19 +2638,19 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_BuySellTab_idle_png_886708504;
+               this.defaultUpCenterImage = _embed_css_images_BuySellTab_idle_png_1415167540;
                this.paddingBottom = 0;
                this.selectedTextColor = 15904590;
-               this.selectedOverCenterImage = _embed_css_images_BuySellTab_active_png_1449511366;
-               this.defaultOverCenterImage = _embed_css_images_BuySellTab_idle_png_886708504;
+               this.selectedOverCenterImage = _embed_css_images_BuySellTab_active_png_1722132850;
+               this.defaultOverCenterImage = _embed_css_images_BuySellTab_idle_png_1415167540;
                this.selectedOverMask = "center";
                this.defaultTextColor = 15904590;
-               this.defaultDownCenterImage = _embed_css_images_BuySellTab_idle_png_886708504;
-               this.selectedDownCenterImage = _embed_css_images_BuySellTab_active_png_1449511366;
+               this.defaultDownCenterImage = _embed_css_images_BuySellTab_idle_png_1415167540;
+               this.selectedDownCenterImage = _embed_css_images_BuySellTab_active_png_1722132850;
                this.paddingTop = 0;
                this.paddingLeft = 2;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_BuySellTab_active_png_1449511366;
+               this.selectedUpCenterImage = _embed_css_images_BuySellTab_active_png_1722132850;
             };
          }
          style = StyleManager.getStyleDeclaration(".miniMapButtonNorth");
@@ -2680,13 +2669,13 @@ package
                this.defaultOverLeftImage = "right";
                this.defaultDownMask = "top";
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
                this.defaultDownTopImage = "right";
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.defaultUpBottomImage = "right";
                this.defaultUpTopImage = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultOverTopImage = "right";
                this.defaultUpLeftImage = "right";
                this.defaultOverMask = "top";
@@ -2702,7 +2691,7 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryRing_png_1209351389;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryRing_png_534601697;
             };
          }
          style = StyleManager.getStyleDeclaration(".customSliderIncreaseButton");
@@ -2715,17 +2704,17 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_550075419;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_952187387;
                this.defaultUpMask = "right";
                this.skin = BitmapButtonSkin;
                this.defaultOverLeftImage = "right";
                this.defaultDisabledMask = "right";
                this.defaultDisabledLeftImage = "right";
                this.defaultDownMask = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_550075419;
-               this.defaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_806241479;
+               this.defaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_952187387;
+               this.defaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_948994267;
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_334496997;
+               this.defaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_468729605;
                this.defaultUpLeftImage = "right";
                this.defaultOverMask = "right";
             };
@@ -2762,94 +2751,94 @@ package
                this.defaultDisabledRightImage = "left";
                this.defaultDisabledBottomRightImage = "bottomLeft";
                this.paddingRight = 4;
-               this.selectedOverTopImage = _embed_css_images_custombutton_Button_Border_tileable_tc_over_png_1913712539;
-               this.selectedDisabledBottomImage = _embed_css_images_custombutton_Button_Border_tileable_bc_disabled_png_372459381;
-               this.selectedDownLeftImage = _embed_css_images_custombutton_Button_Border_tileable_ml_pressed_png_1348489359;
-               this.selectedOverLeftImage = _embed_css_images_custombutton_Button_Border_tileable_ml_over_png_637758037;
-               this.defaultOverBottomLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_bl_over_png_1195435017;
-               this.defaultDisabledTopImage = _embed_css_images_custombutton_Button_Standard_tileable_tc_disabled_png_509379672;
-               this.defaultDownTopImage = _embed_css_images_custombutton_Button_Standard_tileable_tc_pressed_png_1274559636;
+               this.selectedOverTopImage = _embed_css_images_custombutton_Button_Border_tileable_tc_over_png_1569901787;
+               this.selectedDisabledBottomImage = _embed_css_images_custombutton_Button_Border_tileable_bc_disabled_png_97198997;
+               this.selectedDownLeftImage = _embed_css_images_custombutton_Button_Border_tileable_ml_pressed_png_1339953035;
+               this.selectedOverLeftImage = _embed_css_images_custombutton_Button_Border_tileable_ml_over_png_427887893;
+               this.defaultOverBottomLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_bl_over_png_1316684489;
+               this.defaultDisabledTopImage = _embed_css_images_custombutton_Button_Standard_tileable_tc_disabled_png_369402996;
+               this.defaultDownTopImage = _embed_css_images_custombutton_Button_Standard_tileable_tc_pressed_png_1408096916;
                this.selectedOverBottomRightImage = "bottomLeft";
-               this.defaultUpCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_idle_png_1278990365;
+               this.defaultUpCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_idle_png_863893501;
                this.paddingBottom = 0;
-               this.selectedDownTopLeftImage = _embed_css_images_custombutton_Button_Border_tileable_tl_pressed_png_1903116940;
+               this.selectedDownTopLeftImage = _embed_css_images_custombutton_Button_Border_tileable_tl_pressed_png_1978729388;
                this.textSelectedColor = 13221291;
-               this.defaultDownCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_pressed_png_81347079;
-               this.selectedDownCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_pressed_png_81347079;
-               this.defaultDisabledTopLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_tl_disabled_png_1248907181;
+               this.defaultDownCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_pressed_png_253647645;
+               this.selectedDownCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_pressed_png_253647645;
+               this.defaultDisabledTopLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_tl_disabled_png_1116270317;
                this.selectedUpBottomRightImage = "bottomLeft";
                this.height = 22;
                this.defaultUpTopRightImage = "topLeft";
                this.selectedUpTopRightImage = "topLeft";
-               this.selectedUpCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_idle_png_1278990365;
-               this.selectedDisabledTopImage = _embed_css_images_custombutton_Button_Border_tileable_tc_disabled_png_1563054077;
+               this.selectedUpCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_idle_png_863893501;
+               this.selectedDisabledTopImage = _embed_css_images_custombutton_Button_Border_tileable_tc_disabled_png_744772701;
                this.selectedDownMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
-               this.selectedDisabledTopLeftImage = _embed_css_images_custombutton_Button_Border_tileable_tl_disabled_png_655788448;
+               this.selectedDisabledTopLeftImage = _embed_css_images_custombutton_Button_Border_tileable_tl_disabled_png_929049956;
                this.selectedOverTopRightImage = "topLeft";
-               this.defaultOverLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_ml_over_png_517648064;
+               this.defaultOverLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_ml_over_png_158167172;
                this.defaultDownMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
-               this.selectedUpTopImage = _embed_css_images_custombutton_Button_Border_tileable_tc_idle_png_1026384539;
+               this.selectedUpTopImage = _embed_css_images_custombutton_Button_Border_tileable_tc_idle_png_1034633179;
                this.selectedUpMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
-               this.selectedDownBottomImage = _embed_css_images_custombutton_Button_Border_tileable_bc_pressed_png_1988687265;
-               this.selectedDisabledBottomLeftImage = _embed_css_images_custombutton_Button_Border_tileable_bl_disabled_png_1194789362;
-               this.selectedOverTopLeftImage = _embed_css_images_custombutton_Button_Border_tileable_tl_over_png_1128024712;
+               this.selectedDownBottomImage = _embed_css_images_custombutton_Button_Border_tileable_bc_pressed_png_1996698541;
+               this.selectedDisabledBottomLeftImage = _embed_css_images_custombutton_Button_Border_tileable_bl_disabled_png_1996451214;
+               this.selectedOverTopLeftImage = _embed_css_images_custombutton_Button_Border_tileable_tl_over_png_1203653996;
                this.focusThickness = 0;
-               this.defaultDownBottomLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_bl_pressed_png_1326387531;
-               this.selectedDownBottomLeftImage = _embed_css_images_custombutton_Button_Border_tileable_bl_pressed_png_1894305430;
-               this.defaultDownLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_ml_pressed_png_165397636;
+               this.defaultDownBottomLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_bl_pressed_png_1258615591;
+               this.selectedDownBottomLeftImage = _embed_css_images_custombutton_Button_Border_tileable_bl_pressed_png_1673065226;
+               this.defaultDownLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_ml_pressed_png_236721532;
                this.defaultOverRightImage = "left";
-               this.defaultOverCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_over_png_931421981;
+               this.defaultOverCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_over_png_4423939;
                this.defaultDisabledTopRightImage = "topLeft";
                this.selectedDownTopRightImage = "topLeft";
                this.selectedOverRightImage = "left";
                this.selectedUpRightImage = "left";
                this.textRollOverColor = 15904590;
-               this.defaultUpLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_ml_idle_png_1785933248;
+               this.defaultUpLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_ml_idle_png_1658654332;
                this.paddingLeft = 4;
-               this.selectedOverBottomLeftImage = _embed_css_images_custombutton_Button_Border_tileable_bl_over_png_344982570;
+               this.selectedOverBottomLeftImage = _embed_css_images_custombutton_Button_Border_tileable_bl_over_png_269609286;
                this.color = 15904590;
-               this.defaultDisabledBottomLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_bl_disabled_png_1093953119;
-               this.selectedUpLeftImage = _embed_css_images_custombutton_Button_Border_tileable_ml_idle_png_901180245;
+               this.defaultDisabledBottomLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_bl_disabled_png_953976447;
+               this.selectedUpLeftImage = _embed_css_images_custombutton_Button_Border_tileable_ml_idle_png_1245218325;
                this.skin = StyleSizedBitmapButtonSkin;
                this.defaultOverBottomRightImage = "bottomLeft";
-               this.defaultOverBottomImage = _embed_css_images_custombutton_Button_Standard_tileable_bc_over_png_185603650;
-               this.defaultDisabledLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_ml_disabled_png_1250879576;
-               this.selectedUpBottomLeftImage = _embed_css_images_custombutton_Button_Border_tileable_bl_idle_png_1538038570;
-               this.defaultDownBottomImage = _embed_css_images_custombutton_Button_Standard_tileable_bc_pressed_png_572612494;
+               this.defaultOverBottomImage = _embed_css_images_custombutton_Button_Standard_tileable_bc_over_png_46790494;
+               this.defaultDisabledLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_ml_disabled_png_846678076;
+               this.selectedUpBottomLeftImage = _embed_css_images_custombutton_Button_Border_tileable_bl_idle_png_1479317574;
+               this.defaultDownBottomImage = _embed_css_images_custombutton_Button_Standard_tileable_bc_pressed_png_969488782;
                this.defaultUpRightImage = "left";
                this.defaultOverTopRightImage = "topLeft";
-               this.defaultDownTopLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_tl_pressed_png_1968611417;
+               this.defaultDownTopLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_tl_pressed_png_1833730757;
                this.defaultDownRightImage = "left";
-               this.defaultUpBottomImage = _embed_css_images_custombutton_Button_Standard_tileable_bc_idle_png_1982739778;
-               this.selectedDisabledLeftImage = _embed_css_images_custombutton_Button_Border_tileable_ml_disabled_png_1474936339;
-               this.defaultUpTopImage = _embed_css_images_custombutton_Button_Standard_tileable_tc_idle_png_24708496;
+               this.defaultUpBottomImage = _embed_css_images_custombutton_Button_Standard_tileable_bc_idle_png_1913227682;
+               this.selectedDisabledLeftImage = _embed_css_images_custombutton_Button_Border_tileable_ml_disabled_png_1201650483;
+               this.defaultUpTopImage = _embed_css_images_custombutton_Button_Standard_tileable_tc_idle_png_700367956;
                this.selectedDisabledTopRightImage = "topLeft";
-               this.defaultOverTopImage = _embed_css_images_custombutton_Button_Standard_tileable_tc_over_png_1841477776;
+               this.defaultOverTopImage = _embed_css_images_custombutton_Button_Standard_tileable_tc_over_png_1962565460;
                this.selectedDownRightImage = "left";
                this.selectedOverMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
                this.paddingTop = 0;
-               this.selectedUpTopLeftImage = _embed_css_images_custombutton_Button_Border_tileable_tl_idle_png_402102152;
-               this.defaultDisabledBottomImage = _embed_css_images_custombutton_Button_Standard_tileable_bc_disabled_png_1867898870;
+               this.selectedUpTopLeftImage = _embed_css_images_custombutton_Button_Border_tileable_tl_idle_png_460698220;
+               this.defaultDisabledBottomImage = _embed_css_images_custombutton_Button_Standard_tileable_bc_disabled_png_2000142426;
                this.defaultOverMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
                this.selectedDisabledRightImage = "left";
-               this.selectedUpBottomImage = _embed_css_images_custombutton_Button_Border_tileable_bc_idle_png_721306611;
+               this.selectedUpBottomImage = _embed_css_images_custombutton_Button_Border_tileable_bc_idle_png_713449011;
                this.selectedDownBottomRightImage = "bottomLeft";
                this.defaultUpMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
-               this.selectedDisabledCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_disabled_png_983765749;
-               this.defaultUpBottomLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_bl_idle_png_1526099209;
-               this.defaultDisabledCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_disabled_png_983765749;
+               this.selectedDisabledCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_disabled_png_1660613429;
+               this.defaultUpBottomLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_bl_idle_png_2093052983;
+               this.defaultDisabledCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_disabled_png_1660613429;
                this.defaultDisabledMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
-               this.selectedOverBottomImage = _embed_css_images_custombutton_Button_Border_tileable_bc_over_png_373998323;
+               this.selectedOverBottomImage = _embed_css_images_custombutton_Button_Border_tileable_bc_over_png_718071091;
                this.disabledColor = 15904590;
                this.defaultDownTopRightImage = "topLeft";
-               this.defaultUpTopLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_tl_idle_png_1925791611;
+               this.defaultUpTopLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_tl_idle_png_1688019237;
                this.defaultUpBottomRightImage = "bottomLeft";
-               this.selectedDownTopImage = _embed_css_images_custombutton_Button_Border_tileable_tc_pressed_png_502332351;
-               this.selectedOverCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_over_png_931421981;
+               this.selectedDownTopImage = _embed_css_images_custombutton_Button_Border_tileable_tc_pressed_png_491469499;
+               this.selectedOverCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_over_png_4423939;
                this.width = 1;
                this.defaultDownBottomRightImage = "bottomLeft";
                this.selectedDisabledBottomRightImage = "bottomLeft";
-               this.defaultOverTopLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_tl_over_png_546849157;
+               this.defaultOverTopLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_tl_over_png_424714789;
                this.selectedDisabledMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
             };
          }
@@ -2886,21 +2875,21 @@ package
             style.factory = function():void
             {
                this.barImages = "barDefault";
-               this.backgroundRightImage = _embed_css_images_BG_Bars_fat_enpiece_png_254994756;
+               this.backgroundRightImage = _embed_css_images_BG_Bars_fat_enpiece_png_285397664;
                this.paddingRight = 1;
                this.backgroundMask = "center";
                this.leftOrnamentMask = "left";
                this.rightOrnamentMask = "none";
-               this.backgroundCenterImage = _embed_css_images_BG_Bars_fat_tileable_png_1851975525;
-               this.rightOrnamentRightImage = _embed_css_images_BG_Bars_fat_enpieceOrnamented_png_805098349;
+               this.backgroundCenterImage = _embed_css_images_BG_Bars_fat_tileable_png_1719993865;
+               this.rightOrnamentRightImage = _embed_css_images_BG_Bars_fat_enpieceOrnamented_png_1076170925;
                this.backgroundLeftImage = "right";
                this.leftOrnamentLeftImage = "right";
                this.paddingBottom = 3;
-               this.barDefault = _embed_css_images_BarsHealth_fat_Mana_png_1856202898;
+               this.barDefault = _embed_css_images_BarsHealth_fat_Mana_png_1830736570;
                this.leftOrnamentOffset = -6;
                this.rightOrnamentOffset = 6;
                this.paddingTop = 1;
-               this.leftOrnamentRightImage = _embed_css_images_BG_Bars_fat_enpieceOrnamented_png_805098349;
+               this.leftOrnamentRightImage = _embed_css_images_BG_Bars_fat_enpieceOrnamented_png_1076170925;
                this.paddingLeft = 3;
                this.barLimits = 0;
             };
@@ -2929,21 +2918,21 @@ package
             style.factory = function():void
             {
                this.barImages = "barDefault";
-               this.backgroundRightImage = _embed_css_images_BG_Bars_compact_enpiece_png_1122989386;
+               this.backgroundRightImage = _embed_css_images_BG_Bars_compact_enpiece_png_1259288550;
                this.paddingRight = 1;
                this.backgroundMask = "center";
                this.leftOrnamentMask = "left";
                this.rightOrnamentMask = "none";
-               this.backgroundCenterImage = _embed_css_images_BG_Bars_compact_tileable_png_1378708577;
-               this.rightOrnamentRightImage = _embed_css_images_BG_Bars_compact_enpieceOrnamented_png_918003981;
+               this.backgroundCenterImage = _embed_css_images_BG_Bars_compact_tileable_png_1504529517;
+               this.rightOrnamentRightImage = _embed_css_images_BG_Bars_compact_enpieceOrnamented_png_985111789;
                this.backgroundLeftImage = "right";
                this.leftOrnamentLeftImage = "right";
                this.paddingBottom = 3;
-               this.barDefault = _embed_css_images_BarsHealth_compact_Mana_png_1712179560;
+               this.barDefault = _embed_css_images_BarsHealth_compact_Mana_png_1849035652;
                this.leftOrnamentOffset = -6;
                this.rightOrnamentOffset = 6;
                this.paddingTop = 1;
-               this.leftOrnamentRightImage = _embed_css_images_BG_Bars_compact_enpieceOrnamented_png_918003981;
+               this.leftOrnamentRightImage = _embed_css_images_BG_Bars_compact_enpieceOrnamented_png_985111789;
                this.paddingLeft = 3;
                this.barLimits = 0;
             };
@@ -2958,15 +2947,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default_zero_png_841389645;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default_zero_png_1390467341;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -3073,17 +3062,17 @@ package
             style.factory = function():void
             {
                this.iconDefaultUpMask = "center";
-               this.iconSelectedUpCenterImage = _embed_css_images_Button_LockHotkeys_Locked_idle_png_885060219;
+               this.iconSelectedUpCenterImage = _embed_css_images_Button_LockHotkeys_Locked_idle_png_1093080407;
                this.iconSelectedUpMask = "center";
                this.icon = BitmapButtonIcon;
-               this.skin = _embed_css_images_Slot_Statusicon_png_1608787474;
-               this.iconDefaultUpCenterImage = _embed_css_images_Button_LockHotkeys_UnLocked_idle_png_587263282;
-               this.iconSelectedOverCenterImage = _embed_css_images_Button_LockHotkeys_Locked_over_png_554269051;
+               this.skin = _embed_css_images_Slot_Statusicon_png_1415858734;
+               this.iconDefaultUpCenterImage = _embed_css_images_Button_LockHotkeys_UnLocked_idle_png_583051058;
+               this.iconSelectedOverCenterImage = _embed_css_images_Button_LockHotkeys_Locked_over_png_208376919;
                this.iconDefaultDownMask = "center";
-               this.iconDefaultDownCenterImage = _embed_css_images_Button_LockHotkeys_UnLocked_over_png_935749170;
+               this.iconDefaultDownCenterImage = _embed_css_images_Button_LockHotkeys_UnLocked_over_png_933660722;
                this.iconSelectedDownMask = "center";
-               this.iconDefaultOverCenterImage = _embed_css_images_Button_LockHotkeys_UnLocked_over_png_935749170;
-               this.iconSelectedDownCenterImage = _embed_css_images_Button_LockHotkeys_Locked_over_png_554269051;
+               this.iconDefaultOverCenterImage = _embed_css_images_Button_LockHotkeys_UnLocked_over_png_933660722;
+               this.iconSelectedDownCenterImage = _embed_css_images_Button_LockHotkeys_Locked_over_png_208376919;
                this.iconDefaultOverMask = "center";
                this.iconSelectedOverMask = "center";
             };
@@ -3116,7 +3105,7 @@ package
                this.paddingBottom = 0;
                this.horizontalAlign = "left";
                this.paddingRight = 0;
-               this.borderTopImage = _embed_css_images_BG_ChatTab_tileable_png_2031873750;
+               this.borderTopImage = _embed_css_images_BG_ChatTab_tileable_png_1482271674;
                this.borderMask = "top";
                this.borderBottomImage = "top";
                this.paddingTop = 0;
@@ -3154,16 +3143,16 @@ package
                this.verticalBigGap = 10;
                this.paddingRight = 1;
                this.borderSkin = BitmapBorderSkin;
-               this.borderTopRightImage = _embed_css_images_Border02_corners_png_1465567525;
+               this.borderTopRightImage = _embed_css_images_Border02_corners_png_2023953407;
                this.verticalGap = 1;
                this.horizontalBigGap = 10;
                this.horizontalGap = 1;
                this.paddingBottom = 1;
-               this.borderRightImage = _embed_css_images_Border02_png_856171138;
+               this.borderRightImage = _embed_css_images_Border02_png_248151906;
                this.borderMask = "all";
                this.paddingTop = 0;
                this.paddingLeft = 1;
-               this.borderCenterImage = _embed_css_images_BG_Stone2_Tileable_png_1536416308;
+               this.borderCenterImage = _embed_css_images_BG_Stone2_Tileable_png_2089033964;
             };
          }
          style = StyleManager.getStyleDeclaration("ComboBox");
@@ -3209,15 +3198,15 @@ package
                this.defaultDisabledMask = "center";
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_StandOff_idle_png_1491392258;
-               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_AutochaseOn_over_png_554521467;
-               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_StandOff_over_png_325171198;
+               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_StandOff_idle_png_1945447166;
+               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_AutochaseOn_over_png_294457563;
+               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_StandOff_over_png_549332482;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_StandOff_over_png_325171198;
-               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_AutochaseOn_over_png_554521467;
+               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_StandOff_over_png_549332482;
+               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_AutochaseOn_over_png_294457563;
                this.defaultOverMask = "center";
                this.selectedDisabledMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_AutochaseOn_idle_png_1441980539;
+               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_AutochaseOn_idle_png_1165139419;
             };
          }
          style = StyleManager.getStyleDeclaration(".chatWidgetInput");
@@ -3233,7 +3222,7 @@ package
                this.verticalAlign = "middle";
                this.horizontalGap = 2;
                this.horizontalAlign = "left";
-               this.borderTopImage = _embed_css_images_BG_ChatTab_tileable_png_2031873750;
+               this.borderTopImage = _embed_css_images_BG_ChatTab_tileable_png_1482271674;
                this.borderMask = "bottom";
                this.borderBottomImage = "top";
                this.paddingTop = 2;
@@ -3260,11 +3249,11 @@ package
                this.iconDefaultDownMask = "left";
                this.defaultDownTopImage = "right";
                this.borderLeft = 0;
-               this.iconDefaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
+               this.iconDefaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
                this.paddingBottom = 0;
                this.iconDefaultOverBottomImage = "right";
                this.iconSelectedDownMask = "right";
-               this.iconDefaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.iconDefaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.borderBottom = 0;
                this.iconSelectedUpLeftImage = "right";
                this.iconSelectedDownTopImage = "right";
@@ -3275,18 +3264,18 @@ package
                this.defaultOverLeftImage = "right";
                this.selectedUpTopImage = "right";
                this.iconSelectedDownBottomImage = "right";
-               this.iconSelectedOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.iconSelectedOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultDownMask = "left";
                this.selectedUpMask = "right";
                this.selectedDownBottomImage = "right";
-               this.iconSelectedDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.iconSelectedDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.iconDefaultUpTopImage = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.defaultOverRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.borderRight = 0;
-               this.selectedOverRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.selectedOverRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.iconDefaultUpLeftImage = "right";
-               this.selectedUpRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.selectedUpRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.iconDefaultOverLeftImage = "right";
                this.defaultUpLeftImage = "right";
                this.paddingLeft = 0;
@@ -3301,13 +3290,13 @@ package
                this.defaultOverBottomImage = "right";
                this.borderTop = 0;
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
-               this.defaultDownRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.defaultUpRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
+               this.defaultDownRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.defaultUpBottomImage = "right";
                this.defaultUpTopImage = "right";
-               this.iconSelectedUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
+               this.iconSelectedUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
                this.defaultOverTopImage = "right";
-               this.selectedDownRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.selectedDownRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.selectedOverMask = "right";
                this.iconDefaultDownLeftImage = "right";
                this.iconDefaultOverMask = "left";
@@ -3320,7 +3309,7 @@ package
                this.selectedOverBottomImage = "right";
                this.selectedDownTopImage = "right";
                this.iconDefaultDownBottomImage = "right";
-               this.iconDefaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.iconDefaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
             };
          }
          style = StyleManager.getStyleDeclaration(".ingameShopYesButton");
@@ -3335,7 +3324,7 @@ package
             {
                this.paddingBottom = 2;
                this.paddingRight = 8;
-               this.icon = _embed_css_images_Icons_IngameShop_12x12_Yes_png_1011478395;
+               this.icon = _embed_css_images_Icons_IngameShop_12x12_Yes_png_415896407;
                this.paddingTop = 2;
                this.paddingLeft = 8;
             };
@@ -3355,14 +3344,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_Minimap_idle_png_483881531;
-               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_Minimap_active_over_png_376047536;
-               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_Minimap_idle_over_png_1778448670;
+               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_Minimap_idle_png_230798747;
+               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_Minimap_active_over_png_13628752;
+               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_Minimap_idle_over_png_1920390846;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_Minimap_idle_over_png_1778448670;
-               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_Minimap_active_over_png_376047536;
+               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_Minimap_idle_over_png_1920390846;
+               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_Minimap_active_over_png_13628752;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_Minimap_active_png_1080311283;
+               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_Minimap_active_png_1080426003;
             };
          }
          style = StyleManager.getStyleDeclaration(".widgetViewClose");
@@ -3375,13 +3364,13 @@ package
          {
             style.factory = function():void
             {
-               this.defaultUpCenterImage = _embed_css_images_Button_Close_idle_png_1218950854;
+               this.defaultUpCenterImage = _embed_css_images_Button_Close_idle_png_1491572338;
                this.defaultUpMask = "center";
-               this.defaultOverCenterImage = _embed_css_images_Button_Close_over_png_1551448006;
+               this.defaultOverCenterImage = _embed_css_images_Button_Close_over_png_1824069490;
                this.skin = BitmapButtonSkin;
-               this.defaultDisabledCenterImage = _embed_css_images_Button_Close_disabled_png_447174510;
+               this.defaultDisabledCenterImage = _embed_css_images_Button_Close_disabled_png_585602746;
                this.defaultDisabledMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Button_Close_pressed_png_1627770558;
+               this.defaultDownCenterImage = _embed_css_images_Button_Close_pressed_png_1495633374;
                this.defaultDownMask = "center";
                this.defaultOverMask = "center";
             };
@@ -3431,8 +3420,8 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryArmor_protected_png_1192226633;
-               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_1201653772;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryArmor_protected_png_919089929;
+               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_803702344;
             };
          }
          style = StyleManager.getStyleDeclaration("Header");
@@ -3526,13 +3515,13 @@ package
                this.defaultOverLeftImage = "right";
                this.defaultDownMask = "left";
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
                this.defaultDownTopImage = "right";
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.defaultUpBottomImage = "right";
                this.defaultUpTopImage = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultOverTopImage = "right";
                this.defaultUpLeftImage = "right";
                this.defaultOverMask = "left";
@@ -3567,7 +3556,7 @@ package
          {
             style.factory = function():void
             {
-               this.icon = _embed_css_images_Icon_NoPremium_png_1355667196;
+               this.icon = _embed_css_images_Icon_NoPremium_png_619567132;
             };
          }
          style = StyleManager.getStyleDeclaration("MiniMapWidgetView");
@@ -3582,13 +3571,13 @@ package
             {
                this.buttonWestStyle = "miniMapButtonWest";
                this.buttonUpStyle = "miniMapButtonUp";
-               this.iconImage = _embed_css_images_Icons_WidgetHeaders_Minimap_png_1626881241;
+               this.iconImage = _embed_css_images_Icons_WidgetHeaders_Minimap_png_2033089433;
                this.borderCenterMask = "all";
                this.buttonCenterStyle = "miniMapButtonCenter";
                this.borderFooterMask = "none";
                this.paddingRight = 0;
                this.buttonZoomOutStyle = "miniMapButtonZoomOut";
-               this.borderCenterCenterImage = _embed_css_images_Minimap_png_803584357;
+               this.borderCenterCenterImage = _embed_css_images_Minimap_png_667670405;
                this.paddingBottom = 0;
                this.buttonNorthStyle = "miniMapButtonNorth";
                this.buttonSouthStyle = "miniMapButtonSouth";
@@ -3609,8 +3598,8 @@ package
          {
             style.factory = function():void
             {
-               this.backgroundSkin = _embed_css_images_Slot_Statusicon_png_1608787474;
-               this.highlightSkin = _embed_css_images_Slot_Statusicon_highlighted_png_1468805634;
+               this.backgroundSkin = _embed_css_images_Slot_Statusicon_png_1415858734;
+               this.highlightSkin = _embed_css_images_Slot_Statusicon_highlighted_png_1332900150;
             };
          }
          style = StyleManager.getStyleDeclaration(".preyRerollBonusButton");
@@ -3623,8 +3612,8 @@ package
          {
             style.factory = function():void
             {
-               this.icon = _embed_css____images_prey_prey_bonus_reroll_png_1664079721;
-               this.disabledIcon = _embed_css____images_prey_prey_bonus_reroll_disabled_png_218744390;
+               this.icon = _embed_css____images_prey_prey_bonus_reroll_png_1391458109;
+               this.disabledIcon = _embed_css____images_prey_prey_bonus_reroll_disabled_png_192280102;
             };
          }
          style = StyleManager.getStyleDeclaration(".buddylistContent");
@@ -3653,7 +3642,7 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryLegs_png_1244810316;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryLegs_png_2114818196;
             };
          }
          style = StyleManager.getStyleDeclaration(".chatWidgetTabBarScrollRightHighlight");
@@ -3666,17 +3655,17 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabsHighlighted_idle_png_802144823;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabsHighlighted_idle_png_791544907;
                this.defaultUpMask = "right";
                this.skin = BitmapButtonSkin;
                this.defaultOverLeftImage = "right";
                this.defaultDisabledMask = "right";
                this.defaultDisabledLeftImage = "right";
                this.defaultDownMask = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabsHighlighted_idle_png_802144823;
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabsHighlighted_pressed_png_1019332597;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabsHighlighted_idle_png_791544907;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabsHighlighted_pressed_png_1482270485;
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabsHighlighted_over_png_475447497;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabsHighlighted_over_png_468614837;
                this.defaultUpLeftImage = "right";
                this.defaultOverMask = "right";
             };
@@ -3751,11 +3740,11 @@ package
          {
             style.factory = function():void
             {
-               this.defaultUpCenterImage = _embed_css_images_Button_ChatTab_Close_idle_png_1545025108;
+               this.defaultUpCenterImage = _embed_css_images_Button_ChatTab_Close_idle_png_1074740208;
                this.defaultUpMask = "center";
-               this.defaultOverCenterImage = _embed_css_images_Button_ChatTab_Close_over_png_1679055020;
+               this.defaultOverCenterImage = _embed_css_images_Button_ChatTab_Close_over_png_1945347312;
                this.skin = BitmapButtonSkin;
-               this.defaultDownCenterImage = _embed_css_images_Button_ChatTab_Close_pressed_png_1974009856;
+               this.defaultDownCenterImage = _embed_css_images_Button_ChatTab_Close_pressed_png_1705582336;
                this.defaultDownMask = "center";
                this.defaultOverMask = "center";
             };
@@ -3770,11 +3759,11 @@ package
          {
             style.factory = function():void
             {
-               this.defaultUpCenterImage = _embed_css_images_Minimap_ZoomOut_idle_png_1218964010;
+               this.defaultUpCenterImage = _embed_css_images_Minimap_ZoomOut_idle_png_2125846326;
                this.defaultUpMask = "center";
-               this.defaultOverCenterImage = _embed_css_images_Minimap_ZoomOut_over_png_49587414;
+               this.defaultOverCenterImage = _embed_css_images_Minimap_ZoomOut_over_png_353204682;
                this.skin = BitmapButtonSkin;
-               this.defaultDownCenterImage = _embed_css_images_Minimap_ZoomOut_pressed_png_630904298;
+               this.defaultDownCenterImage = _embed_css_images_Minimap_ZoomOut_pressed_png_834344966;
                this.defaultDownMask = "center";
                this.defaultOverMask = "center";
             };
@@ -3844,8 +3833,8 @@ package
          {
             style.factory = function():void
             {
-               this.icon = _embed_css_____assets_images_imbuing_imbuing_icon_imbue_active_png_2017811027;
-               this.disabledIcon = _embed_css_____assets_images_imbuing_imbuing_icon_imbue_disabled_png_1836447193;
+               this.icon = _embed_css_____assets_images_imbuing_imbuing_icon_imbue_active_png_2078825278;
+               this.disabledIcon = _embed_css_____assets_images_imbuing_imbuing_icon_imbue_disabled_png_2110185778;
             };
          }
          style = StyleManager.getStyleDeclaration(".ingameShopCategoryBox");
@@ -3911,8 +3900,8 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryShield_protected_png_1678489541;
-               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_1201653772;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryShield_protected_png_1742050537;
+               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_803702344;
             };
          }
          style = StyleManager.getStyleDeclaration(".optionsConfigurationWidgetTabContainer");
@@ -3969,14 +3958,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_BattleList_HideNPCs_idle_png_1862110099;
-               this.selectedOverCenterImage = _embed_css_images_Icons_BattleList_HideNPCs_active_over_png_551096440;
-               this.defaultOverCenterImage = _embed_css_images_Icons_BattleList_HideNPCs_over_png_977927827;
+               this.defaultUpCenterImage = _embed_css_images_Icons_BattleList_HideNPCs_idle_png_1784655247;
+               this.selectedOverCenterImage = _embed_css_images_Icons_BattleList_HideNPCs_active_over_png_274255324;
+               this.defaultOverCenterImage = _embed_css_images_Icons_BattleList_HideNPCs_over_png_917250191;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_BattleList_HideNPCs_over_png_977927827;
-               this.selectedDownCenterImage = _embed_css_images_Icons_BattleList_HideNPCs_active_over_png_551096440;
+               this.defaultDownCenterImage = _embed_css_images_Icons_BattleList_HideNPCs_over_png_917250191;
+               this.selectedDownCenterImage = _embed_css_images_Icons_BattleList_HideNPCs_active_over_png_274255324;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_BattleList_HideNPCs_active_png_1949955707;
+               this.selectedUpCenterImage = _embed_css_images_Icons_BattleList_HideNPCs_active_png_2145118177;
             };
          }
          style = StyleManager.getStyleDeclaration("ToggleBar");
@@ -3989,7 +3978,7 @@ package
          {
             style.factory = function():void
             {
-               this.borderRightImage = _embed_css_images_Border02_WidgetSidebar_png_43620945;
+               this.borderRightImage = _embed_css_images_Border02_WidgetSidebar_png_584799829;
                this.verticalGap = 1;
                this.borderSkin = BitmapBorderSkin;
             };
@@ -4033,19 +4022,19 @@ package
                this.defaultUpMask = "left center right";
                this.color = 16777215;
                this.skin = BitmapButtonSkin;
-               this.defaultOverLeftImage = _embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_over_png_2097822234;
+               this.defaultOverLeftImage = _embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_over_png_1892300526;
                this.defaultDownMask = "left center right";
                this.disabledColor = 16777215;
                this.defaultUpRightImage = "left";
-               this.defaultUpCenterImage = _embed_css_images_custombutton_Button_IngameShopBuy_tileable_idle_png_931484342;
+               this.defaultUpCenterImage = _embed_css_images_custombutton_Button_IngameShopBuy_tileable_idle_png_130764314;
                this.defaultDownRightImage = "left";
-               this.defaultDownLeftImage = _embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_pressed_png_301372130;
+               this.defaultDownLeftImage = _embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_pressed_png_493785154;
                this.defaultOverRightImage = "left";
-               this.defaultOverCenterImage = _embed_css_images_custombutton_Button_IngameShopBuy_tileable_over_png_2100178506;
+               this.defaultOverCenterImage = _embed_css_images_custombutton_Button_IngameShopBuy_tileable_over_png_1828072166;
                this.textSelectedColor = 16777215;
                this.textRollOverColor = 16777215;
-               this.defaultDownCenterImage = _embed_css_images_custombutton_Button_IngameShopBuy_tileable_pressed_png_1298820406;
-               this.defaultUpLeftImage = _embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_idle_png_812485402;
+               this.defaultDownCenterImage = _embed_css_images_custombutton_Button_IngameShopBuy_tileable_pressed_png_1350701846;
+               this.defaultUpLeftImage = _embed_css_images_custombutton_Button_IngameShopBuy_tileable_end_idle_png_546154478;
                this.defaultOverMask = "left center right";
             };
          }
@@ -4060,8 +4049,8 @@ package
             style.factory = function():void
             {
                this.paddingBottom = 20;
-               this.icon = _embed_css____images_prey_prey_list_reroll_png_1720722638;
-               this.disabledIcon = _embed_css____images_prey_prey_list_reroll_disabled_png_1408279029;
+               this.icon = _embed_css____images_prey_prey_list_reroll_png_1451613866;
+               this.disabledIcon = _embed_css____images_prey_prey_list_reroll_disabled_png_1005632601;
             };
          }
          style = StyleManager.getStyleDeclaration(".npcCommitBox");
@@ -4093,7 +4082,7 @@ package
                this.separatorColor = 8089164;
                this.tradeHeaderStyle = "tradeHeaderStyle";
                this.errorColor = 16711680;
-               this.iconImage = _embed_css_images_Icons_WidgetHeaders_SafeTrades_png_1491550258;
+               this.iconImage = _embed_css_images_Icons_WidgetHeaders_SafeTrades_png_1154048530;
                this.color = 13221291;
                this.tradeFooterStyle = "tradeFooterStyle";
                this.tradeItemListStyle = "tradeItemListStyle";
@@ -4111,8 +4100,8 @@ package
          {
             style.factory = function():void
             {
-               this.icon = _embed_css____images_prey_prey_confirm_monster_selection_png_1854902533;
-               this.disabledIcon = _embed_css____images_prey_prey_confirm_monster_selection_disabled_png_1540726376;
+               this.icon = _embed_css____images_prey_prey_confirm_monster_selection_png_1917808293;
+               this.disabledIcon = _embed_css____images_prey_prey_confirm_monster_selection_disabled_png_1811398472;
             };
          }
          style = StyleManager.getStyleDeclaration(".actionBarWidgetToggleLeft");
@@ -4134,11 +4123,11 @@ package
                this.iconDefaultDownMask = "right";
                this.defaultDownTopImage = "right";
                this.borderLeft = 0;
-               this.iconDefaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
+               this.iconDefaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
                this.paddingBottom = 0;
                this.iconDefaultOverBottomImage = "right";
                this.iconSelectedDownMask = "left";
-               this.iconDefaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.iconDefaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.borderBottom = 0;
                this.iconSelectedUpLeftImage = "right";
                this.iconSelectedDownTopImage = "right";
@@ -4149,18 +4138,18 @@ package
                this.defaultOverLeftImage = "right";
                this.selectedUpTopImage = "right";
                this.iconSelectedDownBottomImage = "right";
-               this.iconSelectedOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.iconSelectedOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultDownMask = "right";
                this.selectedUpMask = "left";
                this.selectedDownBottomImage = "right";
-               this.iconSelectedDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.iconSelectedDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.iconDefaultUpTopImage = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.defaultOverRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.borderRight = 0;
-               this.selectedOverRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.selectedOverRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.iconDefaultUpLeftImage = "right";
-               this.selectedUpRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.selectedUpRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.iconDefaultOverLeftImage = "right";
                this.defaultUpLeftImage = "right";
                this.paddingLeft = 0;
@@ -4175,13 +4164,13 @@ package
                this.defaultOverBottomImage = "right";
                this.borderTop = 0;
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
-               this.defaultDownRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.defaultUpRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
+               this.defaultDownRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.defaultUpBottomImage = "right";
                this.defaultUpTopImage = "right";
-               this.iconSelectedUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
+               this.iconSelectedUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
                this.defaultOverTopImage = "right";
-               this.selectedDownRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.selectedDownRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.selectedOverMask = "left";
                this.iconDefaultDownLeftImage = "right";
                this.iconDefaultOverMask = "right";
@@ -4194,7 +4183,7 @@ package
                this.selectedOverBottomImage = "right";
                this.selectedDownTopImage = "right";
                this.iconDefaultDownBottomImage = "right";
-               this.iconDefaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.iconDefaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
             };
          }
          style = StyleManager.getStyleDeclaration(".purchaseCompletedStyle");
@@ -4207,11 +4196,11 @@ package
          {
             style.factory = function():void
             {
-               this.defaultUpCenterImage = _embed_css_images_Button_PurchaseComplete_idle_png_950754944;
+               this.defaultUpCenterImage = _embed_css_images_Button_PurchaseComplete_idle_png_1219313536;
                this.defaultUpMask = "center";
-               this.defaultOverCenterImage = _embed_css_images_Button_PurchaseComplete_over_png_1939813504;
+               this.defaultOverCenterImage = _embed_css_images_Button_PurchaseComplete_over_png_1670828928;
                this.skin = BitmapButtonSkin;
-               this.defaultDownCenterImage = _embed_css_images_Button_PurchaseComplete_pressed_png_296739540;
+               this.defaultDownCenterImage = _embed_css_images_Button_PurchaseComplete_pressed_png_296592240;
                this.defaultDownMask = "center";
                this.defaultOverMask = "center";
             };
@@ -4226,16 +4215,16 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollHotkeys_disabled_png_326951061;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollHotkeys_disabled_png_59047793;
                this.paddingRight = 0;
                this.skin = BitmapButtonSkin;
                this.defaultOverBottomImage = "right";
                this.defaultDisabledLeftImage = "right";
                this.defaultDisabledTopImage = "right";
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollHotkeys_idle_png_1989691811;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollHotkeys_idle_png_1863838023;
                this.defaultDownTopImage = "right";
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollHotkeys_pressed_png_1194517687;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollHotkeys_pressed_png_1584202487;
                this.defaultUpBottomImage = "right";
                this.defaultUpTopImage = "right";
                this.paddingBottom = 0;
@@ -4248,7 +4237,7 @@ package
                this.defaultDisabledMask = "right";
                this.defaultDownMask = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollHotkeys_over_png_191481507;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollHotkeys_over_png_585745991;
                this.defaultUpLeftImage = "right";
                this.paddingLeft = 0;
             };
@@ -4284,15 +4273,15 @@ package
          {
             style.factory = function():void
             {
-               this.backgroundLeftImage = _embed_css_images_BG_BarsProgress_compact_endpiece_png_1448454481;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsProgress_compact_endpiece_png_1370317653;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.paddingBottom = 2;
-               this.barDefault = _embed_css_images_BarsProgress_compact_orange_png_605959778;
+               this.barDefault = _embed_css_images_BarsProgress_compact_orange_png_198580350;
                this.backgroundMask = "left center right";
                this.labelHorizontalAlign = "center";
                this.paddingTop = 2;
-               this.backgroundCenterImage = _embed_css_images_BG_BarsProgress_compact_tileable_png_1503274352;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsProgress_compact_tileable_png_1434705776;
                this.barLimits = 0;
             };
          }
@@ -4326,7 +4315,7 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryNecklace_png_2012705831;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryNecklace_png_1808156997;
             };
          }
          style = StyleManager.getStyleDeclaration(".npcTradeModeBox");
@@ -4343,7 +4332,7 @@ package
                this.paddingBottom = 0;
                this.horizontalAlign = "left";
                this.paddingRight = 2;
-               this.borderTopImage = _embed_css_images_BG_ChatTab_tileable_png_2031873750;
+               this.borderTopImage = _embed_css_images_BG_ChatTab_tileable_png_1482271674;
                this.borderMask = "top";
                this.paddingTop = 0;
                this.borderSkin = BitmapBorderSkin;
@@ -4360,7 +4349,7 @@ package
          {
             style.factory = function():void
             {
-               this.iconImage = _embed_css_images_Icons_WidgetHeaders_GetPremium_png_582079029;
+               this.iconImage = _embed_css_images_Icons_WidgetHeaders_GetPremium_png_376682585;
                this.color = 13221291;
                this.borderFooterMask = "none";
             };
@@ -4375,9 +4364,9 @@ package
          {
             style.factory = function():void
             {
-               this.dividerBackgroundRightImage = _embed_css_images_Border02_png_856171138;
+               this.dividerBackgroundRightImage = _embed_css_images_Border02_png_248151906;
                this.dividerKnobAlignment = "top";
-               this.dividerBackgroundTopRightImage = _embed_css_images_Border02_corners_png_1465567525;
+               this.dividerBackgroundTopRightImage = _embed_css_images_Border02_corners_png_2023953407;
                this.horizontalGap = 0;
                this.dividerThickness = 7;
                this.dividerBackgroundMask = "topLeft top topRight";
@@ -4385,7 +4374,7 @@ package
                this.dividerKnobMask = "top";
                this.verticalGap = 7;
                this.dividerBackgroundTopLeftImage = "topRight";
-               this.dividerKnobTopImage = _embed_css_images_ChatWindow_Mover_png_1725151138;
+               this.dividerKnobTopImage = _embed_css_images_ChatWindow_Mover_png_2100462174;
             };
          }
          style = StyleManager.getStyleDeclaration(".npcSummaryBox");
@@ -4414,7 +4403,7 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryAmmo_png_813114047;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryAmmo_png_675331507;
             };
          }
          style = StyleManager.getStyleDeclaration("ToolTip");
@@ -4452,15 +4441,15 @@ package
                this.defaultDisabledMask = "center";
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_Unmounted_idle_png_1675114250;
-               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_Mounted_over_png_83007855;
-               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_Unmounted_over_png_948934666;
+               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_Unmounted_idle_png_1148616102;
+               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_Mounted_over_png_526740337;
+               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_Unmounted_over_png_1144518310;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_Unmounted_over_png_948934666;
-               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_Mounted_over_png_83007855;
+               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_Unmounted_over_png_1144518310;
+               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_Mounted_over_png_526740337;
                this.defaultOverMask = "center";
                this.selectedDisabledMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_Mounted_idle_png_264427409;
+               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_Mounted_idle_png_332190833;
             };
          }
          style = StyleManager.getStyleDeclaration(".statusWidgetParallelMana");
@@ -4474,21 +4463,21 @@ package
             style.factory = function():void
             {
                this.barImages = "barDefault";
-               this.backgroundRightImage = _embed_css_images_BG_Bars_default_enpiece_png_329250772;
+               this.backgroundRightImage = _embed_css_images_BG_Bars_default_enpiece_png_341854824;
                this.paddingRight = 3;
                this.backgroundMask = "center";
                this.leftOrnamentMask = "left";
                this.rightOrnamentMask = "right";
-               this.backgroundCenterImage = _embed_css_images_BG_Bars_default_tileable_png_813666947;
-               this.rightOrnamentRightImage = _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1621675861;
+               this.backgroundCenterImage = _embed_css_images_BG_Bars_default_tileable_png_402625151;
+               this.rightOrnamentRightImage = _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1901253493;
                this.backgroundLeftImage = "right";
                this.leftOrnamentLeftImage = "right";
                this.paddingBottom = 3;
-               this.barDefault = _embed_css_images_BarsHealth_default_Mana_png_2014888902;
+               this.barDefault = _embed_css_images_BarsHealth_default_Mana_png_2142805618;
                this.leftOrnamentOffset = -5;
                this.rightOrnamentOffset = 5;
                this.paddingTop = 1;
-               this.leftOrnamentRightImage = _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1621675861;
+               this.leftOrnamentRightImage = _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1901253493;
                this.paddingLeft = 3;
                this.barLimits = 0;
             };
@@ -4503,8 +4492,8 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryAmmo_protected_png_235878180;
-               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_1201653772;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryAmmo_protected_png_437721124;
+               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_803702344;
             };
          }
          style = StyleManager.getStyleDeclaration("TextArea");
@@ -4536,7 +4525,7 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryBackpack_png_1739537709;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryBackpack_png_1145397297;
             };
          }
          style = StyleManager.getStyleDeclaration("SpellIconRenderer");
@@ -4549,11 +4538,11 @@ package
          {
             style.factory = function():void
             {
-               this.overlaySelectedImage = _embed_css_images_slot_container_highlighted_png_622440584;
+               this.overlaySelectedImage = _embed_css_images_slot_container_highlighted_png_1302039720;
                this.paddingBottom = 1;
-               this.backgroundImage = _embed_css_images_slot_container_png_1830671892;
+               this.backgroundImage = _embed_css_images_slot_container_png_1996786444;
                this.paddingRight = 1;
-               this.overlayUnavailableImage = _embed_css_images_slot_container_disabled_png_2143438719;
+               this.overlayUnavailableImage = _embed_css_images_slot_container_disabled_png_2017818209;
                this.paddingTop = 1;
                this.paddingLeft = 1;
             };
@@ -4568,8 +4557,8 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryBackpack_protected_png_274576798;
-               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_1201653772;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryBackpack_protected_png_278754206;
+               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_803702344;
             };
          }
          style = StyleManager.getStyleDeclaration(".statusWidgetParallelSkillProgress");
@@ -4582,15 +4571,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default__png_385879515;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default__png_162149957;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -4613,14 +4602,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_BattleList_idle_png_224575958;
-               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_BattleList_active_over_png_523969601;
-               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_BattleList_idle_over_png_803885037;
+               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_BattleList_idle_png_239928278;
+               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_BattleList_active_over_png_793986337;
+               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_BattleList_idle_over_png_9825491;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_BattleList_idle_over_png_803885037;
-               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_BattleList_active_over_png_523969601;
+               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_BattleList_idle_over_png_9825491;
+               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_BattleList_active_over_png_793986337;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_BattleList_active_png_1129152252;
+               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_BattleList_active_png_1337425916;
             };
          }
          style = StyleManager.getStyleDeclaration("BuddylistWidgetView");
@@ -4636,7 +4625,7 @@ package
                this.horizontalGap = 0;
                this.listStyle = "buddylist";
                this.paddingBottom = 0;
-               this.iconImage = _embed_css_images_Icons_WidgetHeaders_VipList_png_164461471;
+               this.iconImage = _embed_css_images_Icons_WidgetHeaders_VipList_png_570669695;
                this.paddingRight = 0;
                this.listBoxStyle = "buddylistContent";
                this.paddingTop = 0;
@@ -4670,8 +4659,8 @@ package
          {
             style.factory = function():void
             {
-               this.icon = _embed_css_____assets_images_imbuing_imbuing_icon_remove_active_png_831749865;
-               this.disabledIcon = _embed_css_____assets_images_imbuing_imbuing_icon_remove_disabled_png_1775436169;
+               this.icon = _embed_css_____assets_images_imbuing_imbuing_icon_remove_active_png_857913398;
+               this.disabledIcon = _embed_css_____assets_images_imbuing_imbuing_icon_remove_disabled_png_1334606270;
             };
          }
          style = StyleManager.getStyleDeclaration(".npcTradeButtonLayout");
@@ -4689,14 +4678,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_idle_png_851212863;
-               this.selectedOverCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_over_png_417076086;
-               this.defaultOverCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_over_png_1199957823;
+               this.defaultUpCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_idle_png_1396972083;
+               this.selectedOverCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_over_png_349575074;
+               this.defaultOverCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_over_png_1728022323;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_pressed_png_817941011;
-               this.selectedDownCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_pressed_png_1846304974;
+               this.defaultDownCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_pressed_png_1075890131;
+               this.selectedDownCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_pressed_png_1456372718;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_idle_png_1140494966;
+               this.selectedUpCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_idle_png_539137698;
             };
          }
          style = StyleManager.getStyleDeclaration(".preyRerollListButtonSmall");
@@ -4710,8 +4699,8 @@ package
             style.factory = function():void
             {
                this.paddingRight = 75;
-               this.icon = _embed_css____images_prey_prey_list_reroll_small_png_1392369160;
-               this.disabledIcon = _embed_css____images_prey_prey_list_reroll_small_disabled_png_600754165;
+               this.icon = _embed_css____images_prey_prey_list_reroll_small_png_860092972;
+               this.disabledIcon = _embed_css____images_prey_prey_list_reroll_small_disabled_png_600614801;
             };
          }
          style = StyleManager.getStyleDeclaration("FocusNotifier");
@@ -4762,14 +4751,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_idle_png_851212863;
-               this.selectedOverCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_over_png_417076086;
-               this.defaultOverCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_over_png_1199957823;
+               this.defaultUpCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_idle_png_1396972083;
+               this.selectedOverCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_over_png_349575074;
+               this.defaultOverCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_over_png_1728022323;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_pressed_png_817941011;
-               this.selectedDownCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_pressed_png_1846304974;
+               this.defaultDownCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_pressed_png_1075890131;
+               this.selectedDownCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_pressed_png_1456372718;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_idle_png_1140494966;
+               this.selectedUpCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_idle_png_539137698;
             };
          }
          style = StyleManager.getStyleDeclaration("CategoryRenderer");
@@ -4824,11 +4813,11 @@ package
                this.selectedOverLeftImage = "right";
                this.iconDefaultDownMask = "right";
                this.defaultDownTopImage = "right";
-               this.iconDefaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_550075419;
+               this.iconDefaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_952187387;
                this.paddingBottom = 0;
                this.iconDefaultOverBottomImage = "right";
                this.iconSelectedDownMask = "left";
-               this.iconDefaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_806241479;
+               this.iconDefaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_948994267;
                this.iconSelectedUpLeftImage = "right";
                this.iconSelectedDownTopImage = "right";
                this.selectedDownMask = "left";
@@ -4838,17 +4827,17 @@ package
                this.defaultOverLeftImage = "right";
                this.selectedUpTopImage = "right";
                this.iconSelectedDownBottomImage = "right";
-               this.iconSelectedOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_334496997;
+               this.iconSelectedOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_468729605;
                this.defaultDownMask = "right";
                this.selectedUpMask = "left";
                this.selectedDownBottomImage = "right";
-               this.iconSelectedDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_806241479;
+               this.iconSelectedDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_948994267;
                this.iconDefaultUpTopImage = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
-               this.selectedOverRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
+               this.defaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
+               this.selectedOverRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
                this.iconDefaultUpLeftImage = "right";
-               this.selectedUpRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
+               this.selectedUpRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
                this.iconDefaultOverLeftImage = "right";
                this.defaultUpLeftImage = "right";
                this.paddingLeft = 0;
@@ -4862,14 +4851,14 @@ package
                this.icon = BitmapButtonIcon;
                this.defaultOverBottomImage = "right";
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
+               this.defaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
                this.toggleButtonStyle = "sideBarToggleLeft";
-               this.defaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
+               this.defaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
                this.defaultUpBottomImage = "right";
                this.defaultUpTopImage = "right";
-               this.iconSelectedUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_550075419;
+               this.iconSelectedUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_952187387;
                this.defaultOverTopImage = "right";
-               this.selectedDownRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
+               this.selectedDownRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
                this.selectedOverMask = "left";
                this.iconDefaultDownLeftImage = "right";
                this.iconDefaultOverMask = "right";
@@ -4883,7 +4872,7 @@ package
                this.selectedDownTopImage = "right";
                this.borderMask = "right";
                this.iconDefaultDownBottomImage = "right";
-               this.iconDefaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_334496997;
+               this.iconDefaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_468729605;
             };
          }
          style = StyleManager.getStyleDeclaration("Container");
@@ -4909,17 +4898,17 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_744892220;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_879110432;
                this.defaultUpMask = "left";
                this.skin = BitmapButtonSkin;
                this.defaultOverLeftImage = "right";
                this.defaultDisabledMask = "left";
                this.defaultDisabledLeftImage = "right";
                this.defaultDownMask = "left";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultUpLeftImage = "right";
                this.defaultOverMask = "left";
             };
@@ -4937,7 +4926,7 @@ package
                this.themeColor = 13221291;
                this.borderMask = "center";
                this.borderSkin = BitmapBorderSkin;
-               this.borderCenterImage = _embed_css_images_BG_BohemianTileable_png_1964434549;
+               this.borderCenterImage = _embed_css_images_BG_BohemianTileable_png_1422729109;
             };
          }
          style = StyleManager.getStyleDeclaration(".chatWidgetTabBarScrollRight");
@@ -4950,7 +4939,7 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_744892220;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_879110432;
                this.defaultUpMask = "right";
                this.skin = BitmapButtonSkin;
                this.defaultOverBottomImage = "right";
@@ -4959,11 +4948,11 @@ package
                this.defaultDisabledLeftImage = "right";
                this.defaultDownMask = "right";
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.defaultUpBottomImage = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultUpLeftImage = "right";
                this.defaultDisabledBottomImage = "right";
                this.defaultOverMask = "right";
@@ -5033,11 +5022,11 @@ package
          {
             style.factory = function():void
             {
-               this.defaultUpCenterImage = _embed_css_images_Minimap_Center_idle_png_1943470262;
+               this.defaultUpCenterImage = _embed_css_images_Minimap_Center_idle_png_2012166886;
                this.defaultUpMask = "center";
-               this.defaultOverCenterImage = _embed_css_images_Minimap_Center_over_png_803503178;
+               this.defaultOverCenterImage = _embed_css_images_Minimap_Center_over_png_279361510;
                this.skin = BitmapButtonSkin;
-               this.defaultDownCenterImage = _embed_css_images_Minimap_Center_active_png_2136380360;
+               this.defaultDownCenterImage = _embed_css_images_Minimap_Center_active_png_1997427884;
                this.defaultDownMask = "center";
                this.defaultOverMask = "center";
             };
@@ -5108,13 +5097,13 @@ package
                this.defaultOverLeftImage = "right";
                this.defaultDownMask = "bottom";
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
                this.defaultDownTopImage = "right";
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.defaultUpBottomImage = "right";
                this.defaultUpTopImage = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultOverTopImage = "right";
                this.defaultUpLeftImage = "right";
                this.defaultOverMask = "bottom";
@@ -5130,11 +5119,11 @@ package
          {
             style.factory = function():void
             {
-               this.overlayHighlightImage = _embed_css_images_slot_container_highlighted_png_622440584;
+               this.overlayHighlightImage = _embed_css_images_slot_container_highlighted_png_1302039720;
                this.paddingBottom = 1;
-               this.backgroundImage = _embed_css_images_slot_container_png_1830671892;
+               this.backgroundImage = _embed_css_images_slot_container_png_1996786444;
                this.paddingRight = 1;
-               this.overlayDisabledImage = _embed_css_images_slot_container_disabled_png_2143438719;
+               this.overlayDisabledImage = _embed_css_images_slot_container_disabled_png_2017818209;
                this.paddingTop = 1;
                this.paddingLeft = 1;
             };
@@ -5154,7 +5143,7 @@ package
                this.paddingBottom = 0;
                this.horizontalAlign = "center";
                this.paddingRight = 2;
-               this.borderTopImage = _embed_css_images_BG_ChatTab_tileable_png_2031873750;
+               this.borderTopImage = _embed_css_images_BG_ChatTab_tileable_png_1482271674;
                this.borderMask = "top";
                this.paddingTop = 0;
                this.borderSkin = BitmapBorderSkin;
@@ -5188,16 +5177,16 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollHotkeys_disabled_png_326951061;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollHotkeys_disabled_png_59047793;
                this.paddingRight = 0;
                this.skin = BitmapButtonSkin;
                this.defaultOverBottomImage = "right";
                this.defaultDisabledLeftImage = "right";
                this.defaultDisabledTopImage = "right";
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollHotkeys_idle_png_1989691811;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollHotkeys_idle_png_1863838023;
                this.defaultDownTopImage = "right";
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollHotkeys_pressed_png_1194517687;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollHotkeys_pressed_png_1584202487;
                this.defaultUpBottomImage = "right";
                this.defaultUpTopImage = "right";
                this.paddingBottom = 0;
@@ -5210,7 +5199,7 @@ package
                this.defaultDisabledMask = "left";
                this.defaultDownMask = "left";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollHotkeys_over_png_191481507;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollHotkeys_over_png_585745991;
                this.defaultUpLeftImage = "right";
                this.paddingLeft = 0;
             };
@@ -5245,15 +5234,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default_improved_png_1615848679;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default_improved_png_1481613863;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -5273,7 +5262,7 @@ package
             {
                this.headerBoxStyle = "battlelistHeader";
                this.hideNPCButtonStyle = "battlelistWidgetViewHideNPC";
-               this.iconImage = _embed_css_images_Icons_WidgetHeaders_BattleList_png_1186213636;
+               this.iconImage = _embed_css_images_Icons_WidgetHeaders_BattleList_png_1517554948;
                this.paddingRight = 0;
                this.listBoxStyle = "battlelistContent";
                this.verticalGap = 0;
@@ -5346,7 +5335,7 @@ package
                this.borderSkin = BitmapBorderSkin;
                this.verticalGap = 0;
                this.paddingLeft = 0;
-               this.borderCenterImage = _embed_css_images_BG_ChatTab_Tabdrop_png_60591148;
+               this.borderCenterImage = _embed_css_images_BG_ChatTab_Tabdrop_png_344159956;
             };
          }
          style = StyleManager.getStyleDeclaration(".optionsConfigurationWidgetTabNavigator");
@@ -5392,19 +5381,19 @@ package
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
                this.disabledColor = 15904590;
-               this.defaultUpCenterImage = _embed_css_images_BuySellTab_idle_png_886708504;
+               this.defaultUpCenterImage = _embed_css_images_BuySellTab_idle_png_1415167540;
                this.paddingBottom = 0;
-               this.selectedOverCenterImage = _embed_css_images_BuySellTab_active_png_1449511366;
-               this.defaultOverCenterImage = _embed_css_images_BuySellTab_idle_png_886708504;
+               this.selectedOverCenterImage = _embed_css_images_BuySellTab_active_png_1722132850;
+               this.defaultOverCenterImage = _embed_css_images_BuySellTab_idle_png_1415167540;
                this.selectedOverMask = "center";
                this.textSelectedColor = 15904590;
                this.textRollOverColor = 15904590;
-               this.defaultDownCenterImage = _embed_css_images_BuySellTab_idle_png_886708504;
-               this.selectedDownCenterImage = _embed_css_images_BuySellTab_active_png_1449511366;
+               this.defaultDownCenterImage = _embed_css_images_BuySellTab_idle_png_1415167540;
+               this.selectedDownCenterImage = _embed_css_images_BuySellTab_active_png_1722132850;
                this.paddingTop = 0;
                this.paddingLeft = 4;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_BuySellTab_active_png_1449511366;
+               this.selectedUpCenterImage = _embed_css_images_BuySellTab_active_png_1722132850;
             };
          }
          style = StyleManager.getStyleDeclaration("SmoothList");
@@ -5435,13 +5424,13 @@ package
          {
             style.factory = function():void
             {
-               this.defaultUpCenterImage = _embed_css_images_Button_ContainerUp_idle_png_1017477430;
+               this.defaultUpCenterImage = _embed_css_images_Button_ContainerUp_idle_png_883766938;
                this.defaultUpMask = "center";
-               this.defaultOverCenterImage = _embed_css_images_Button_ContainerUp_over_png_133274678;
+               this.defaultOverCenterImage = _embed_css_images_Button_ContainerUp_over_png_533315994;
                this.skin = BitmapButtonSkin;
-               this.defaultDisabledCenterImage = _embed_css_images_Button_ContainerUp_idle_png_1017477430;
+               this.defaultDisabledCenterImage = _embed_css_images_Button_ContainerUp_idle_png_883766938;
                this.defaultDisabledMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Button_ContainerUp_pressed_png_697201334;
+               this.defaultDownCenterImage = _embed_css_images_Button_ContainerUp_pressed_png_571520662;
                this.defaultDownMask = "center";
                this.defaultOverMask = "center";
             };
@@ -5470,17 +5459,17 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_744892220;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_879110432;
                this.defaultUpMask = "right";
                this.skin = BitmapButtonSkin;
                this.defaultOverLeftImage = "right";
                this.defaultDisabledMask = "right";
                this.defaultDisabledLeftImage = "right";
                this.defaultDownMask = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultUpLeftImage = "right";
                this.defaultOverMask = "right";
             };
@@ -5524,15 +5513,15 @@ package
                this.defaultDisabledMask = "center";
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_MediumOff_idle_png_844732849;
-               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_MediumOn_over_png_1002865639;
-               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_MediumOff_over_png_418575695;
+               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_MediumOff_idle_png_1324480721;
+               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_MediumOn_over_png_1201440323;
+               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_MediumOff_over_png_1017681455;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_MediumOff_over_png_418575695;
-               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_MediumOn_over_png_1002865639;
+               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_MediumOff_over_png_1017681455;
+               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_MediumOn_over_png_1201440323;
                this.defaultOverMask = "center";
                this.selectedDisabledMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_MediumOn_idle_png_1333658855;
+               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_MediumOn_idle_png_1550321475;
             };
          }
          style = StyleManager.getStyleDeclaration("CheckBox");
@@ -5618,11 +5607,11 @@ package
             style.factory = function():void
             {
                this.capacityFontColor = 16777215;
-               this.iconImage = _embed_css_images_Icons_WidgetHeaders_Inventory_png_2094138972;
+               this.iconImage = _embed_css_images_Icons_WidgetHeaders_Inventory_png_1405466304;
                this.capacityFontFamily = "Verdana";
                this.borderCenterMask = "all";
                this.paddingRight = 0;
-               this.borderCenterCenterImage = _embed_css_images_Inventory_png_54849410;
+               this.borderCenterCenterImage = _embed_css_images_Inventory_png_381497758;
                this.bodySlotFeetStyle = "bodySlotFeet";
                this.bodySlotLeftHandBlessedStyle = "bodySlotLeftHandBlessed";
                this.bodySlotLegsBlessedStyle = "bodySlotLegsBlessed";
@@ -5689,14 +5678,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_Combat_idle_png_1668074132;
-               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_Combat_active_over_png_992770113;
-               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_Combat_idle_over_png_665522223;
+               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_Combat_idle_png_1063594900;
+               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_Combat_active_over_png_390355041;
+               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_Combat_idle_over_png_1137251407;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_Combat_idle_over_png_665522223;
-               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_Combat_active_over_png_992770113;
+               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_Combat_idle_over_png_1137251407;
+               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_Combat_active_over_png_390355041;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_Combat_active_png_390223278;
+               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_Combat_active_png_327192750;
             };
          }
          style = StyleManager.getStyleDeclaration(".statusWidgetFatSkill");
@@ -5775,14 +5764,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_idle_png_112457565;
-               this.selectedOverCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_active_over_png_961154706;
-               this.defaultOverCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_over_png_419396003;
+               this.defaultUpCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_idle_png_177601341;
+               this.selectedOverCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_active_over_png_1490023058;
+               this.defaultOverCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_over_png_622687683;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_over_png_419396003;
-               this.selectedDownCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_active_over_png_961154706;
+               this.defaultDownCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_over_png_622687683;
+               this.selectedDownCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_active_over_png_1490023058;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_active_png_1087801247;
+               this.selectedUpCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_active_png_613329023;
             };
          }
          style = StyleManager.getStyleDeclaration(".buttonDialogOpenStoreButton");
@@ -5795,7 +5784,7 @@ package
          {
             style.factory = function():void
             {
-               this.icon = _embed_css_images_Icons_Inventory_Store_png_1300473375;
+               this.icon = _embed_css_images_Icons_Inventory_Store_png_1162053375;
             };
          }
          style = StyleManager.getStyleDeclaration(".miniMapButtonZoomIn");
@@ -5808,11 +5797,11 @@ package
          {
             style.factory = function():void
             {
-               this.defaultUpCenterImage = _embed_css_images_Minimap_ZoomIn_idle_png_394970857;
+               this.defaultUpCenterImage = _embed_css_images_Minimap_ZoomIn_idle_png_480998871;
                this.defaultUpMask = "center";
-               this.defaultOverCenterImage = _embed_css_images_Minimap_ZoomIn_over_png_1410316311;
+               this.defaultOverCenterImage = _embed_css_images_Minimap_ZoomIn_over_png_1744305367;
                this.skin = BitmapButtonSkin;
-               this.defaultDownCenterImage = _embed_css_images_Minimap_ZoomIn_pressed_png_1554730941;
+               this.defaultDownCenterImage = _embed_css_images_Minimap_ZoomIn_pressed_png_1013656729;
                this.defaultDownMask = "center";
                this.defaultOverMask = "center";
             };
@@ -5827,16 +5816,16 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollHotkeys_disabled_png_326951061;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollHotkeys_disabled_png_59047793;
                this.paddingRight = 0;
                this.skin = BitmapButtonSkin;
                this.defaultOverBottomImage = "right";
                this.defaultDisabledLeftImage = "right";
                this.defaultDisabledTopImage = "right";
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollHotkeys_idle_png_1989691811;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollHotkeys_idle_png_1863838023;
                this.defaultDownTopImage = "right";
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollHotkeys_pressed_png_1194517687;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollHotkeys_pressed_png_1584202487;
                this.defaultUpBottomImage = "right";
                this.defaultUpTopImage = "right";
                this.paddingBottom = 0;
@@ -5849,7 +5838,7 @@ package
                this.defaultDisabledMask = "top";
                this.defaultDownMask = "top";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollHotkeys_over_png_191481507;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollHotkeys_over_png_585745991;
                this.defaultUpLeftImage = "right";
                this.paddingLeft = 0;
             };
@@ -5869,14 +5858,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_Skull_idle_png_1630824013;
-               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_Skull_active_over_png_491271656;
-               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_Skull_idle_over_png_611961046;
+               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_Skull_idle_png_1224099597;
+               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_Skull_active_over_png_616733832;
+               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_Skull_idle_over_png_626524886;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_Skull_idle_over_png_611961046;
-               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_Skull_active_over_png_491271656;
+               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_Skull_idle_over_png_626524886;
+               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_Skull_active_over_png_616733832;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_Skull_active_png_1541707963;
+               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_Skull_active_png_1811862907;
             };
          }
          style = StyleManager.getStyleDeclaration(".buttonIngameShop");
@@ -5889,35 +5878,35 @@ package
          {
             style.factory = function():void
             {
-               this.selectedOverBottomLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_bl_over_png_497741234;
-               this.selectedUpLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_ml_idle_png_1397612513;
+               this.selectedOverBottomLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_bl_over_png_505981842;
+               this.selectedUpLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_ml_idle_png_1406639853;
                this.paddingRight = 22;
-               this.icon = _embed_css_images_Icons_Inventory_Store_png_1300473375;
-               this.selectedOverTopImage = _embed_css_images_custombutton_Button_Highlight_tileable_tc_over_png_271197681;
-               this.selectedDownLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_ml_pressed_png_1040849779;
-               this.selectedOverLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_ml_over_png_1618062623;
-               this.selectedUpBottomLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_bl_idle_png_308178610;
+               this.icon = _embed_css_images_Icons_Inventory_Store_png_1162053375;
+               this.selectedOverTopImage = _embed_css_images_custombutton_Button_Highlight_tileable_tc_over_png_279471101;
+               this.selectedDownLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_ml_pressed_png_1710390195;
+               this.selectedOverLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_ml_over_png_1626598931;
+               this.selectedUpBottomLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_bl_idle_png_299642002;
                this.selectedOverBottomRightImage = "bottomLeft";
                this.selectedDownRightImage = "left";
                this.selectedOverMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
-               this.selectedDownTopLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_tl_pressed_png_2092601240;
-               this.selectedDownCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_pressed_png_81347079;
-               this.selectedUpTopLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_tl_idle_png_908937052;
+               this.selectedDownTopLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_tl_pressed_png_2061438852;
+               this.selectedDownCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_pressed_png_253647645;
+               this.selectedUpTopLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_tl_idle_png_919535868;
                this.selectedUpBottomRightImage = "bottomLeft";
                this.selectedUpTopRightImage = "topLeft";
-               this.selectedUpCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_idle_png_1278990365;
-               this.selectedUpBottomImage = _embed_css_images_custombutton_Button_Highlight_tileable_bc_idle_png_1286951951;
+               this.selectedUpCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_idle_png_863893501;
+               this.selectedUpBottomImage = _embed_css_images_custombutton_Button_Highlight_tileable_bc_idle_png_1480530699;
                this.selectedDownBottomRightImage = "bottomLeft";
                this.selectedDownMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
                this.selectedOverTopRightImage = "topLeft";
-               this.selectedOverBottomImage = _embed_css_images_custombutton_Button_Highlight_tileable_bc_over_png_1207833841;
-               this.selectedUpTopImage = _embed_css_images_custombutton_Button_Highlight_tileable_tc_idle_png_1528191247;
+               this.selectedOverBottomImage = _embed_css_images_custombutton_Button_Highlight_tileable_bc_over_png_1545885173;
+               this.selectedUpTopImage = _embed_css_images_custombutton_Button_Highlight_tileable_tc_idle_png_1335630595;
                this.selectedUpMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
-               this.selectedDownBottomImage = _embed_css_images_custombutton_Button_Highlight_tileable_bc_pressed_png_1234389013;
-               this.selectedDownTopImage = _embed_css_images_custombutton_Button_Highlight_tileable_tc_pressed_png_1467694627;
-               this.selectedOverTopLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_tl_over_png_1798619228;
-               this.selectedDownBottomLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_bl_pressed_png_697106038;
-               this.selectedOverCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_over_png_931421981;
+               this.selectedDownBottomImage = _embed_css_images_custombutton_Button_Highlight_tileable_bc_pressed_png_829106133;
+               this.selectedDownTopImage = _embed_css_images_custombutton_Button_Highlight_tileable_tc_pressed_png_1605574371;
+               this.selectedOverTopLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_tl_over_png_1790083580;
+               this.selectedDownBottomLeftImage = _embed_css_images_custombutton_Button_Highlight_tileable_bl_pressed_png_564600482;
+               this.selectedOverCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_over_png_4423939;
                this.selectedDownTopRightImage = "topLeft";
                this.selectedOverRightImage = "left";
                this.selectedUpRightImage = "left";
@@ -5950,15 +5939,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default__png_385879515;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default__png_162149957;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -6001,7 +5990,7 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_550075419;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_952187387;
                this.defaultUpMask = "right";
                this.skin = BitmapButtonSkin;
                this.defaultOverBottomImage = "right";
@@ -6010,11 +5999,11 @@ package
                this.defaultDisabledLeftImage = "right";
                this.defaultDownMask = "right";
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_550075419;
-               this.defaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_806241479;
+               this.defaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_952187387;
+               this.defaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_948994267;
                this.defaultUpBottomImage = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_334496997;
+               this.defaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_468729605;
                this.defaultUpLeftImage = "right";
                this.defaultDisabledBottomImage = "right";
                this.defaultOverMask = "right";
@@ -6035,14 +6024,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_BattleList_PartyMembers_idle_png_590067760;
-               this.selectedOverCenterImage = _embed_css_images_Icons_BattleList_PartyMembers_active_over_png_405251525;
-               this.defaultOverCenterImage = _embed_css_images_Icons_BattleList_PartyMembers_over_png_289252560;
+               this.defaultUpCenterImage = _embed_css_images_Icons_BattleList_PartyMembers_idle_png_788781616;
+               this.selectedOverCenterImage = _embed_css_images_Icons_BattleList_PartyMembers_active_over_png_138520421;
+               this.defaultOverCenterImage = _embed_css_images_Icons_BattleList_PartyMembers_over_png_79143632;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_BattleList_PartyMembers_over_png_289252560;
-               this.selectedDownCenterImage = _embed_css_images_Icons_BattleList_PartyMembers_active_over_png_405251525;
+               this.defaultDownCenterImage = _embed_css_images_Icons_BattleList_PartyMembers_over_png_79143632;
+               this.selectedDownCenterImage = _embed_css_images_Icons_BattleList_PartyMembers_active_over_png_138520421;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_BattleList_PartyMembers_active_png_1520198974;
+               this.selectedUpCenterImage = _embed_css_images_Icons_BattleList_PartyMembers_active_png_1666844766;
             };
          }
          style = StyleManager.getStyleDeclaration("SpellListWidgetView");
@@ -6057,7 +6046,7 @@ package
             {
                this.horizontalGap = 0;
                this.paddingBottom = 0;
-               this.iconImage = _embed_css_images_Icons_WidgetHeaders_Spells_png_527053179;
+               this.iconImage = _embed_css_images_Icons_WidgetHeaders_Spells_png_653028639;
                this.paddingRight = 0;
                this.paddingTop = 0;
                this.verticalGap = 0;
@@ -6076,14 +6065,14 @@ package
             {
                this.horizontalGap = 2;
                this.paddingBottom = 2;
-               this.borderRightImage = _embed_css_images_Border02_png_856171138;
+               this.borderRightImage = _embed_css_images_Border02_png_248151906;
                this.paddingRight = 2;
                this.paddingTop = 2;
                this.borderSkin = BitmapBorderSkin;
-               this.borderTopRightImage = _embed_css_images_Border02_corners_png_1465567525;
+               this.borderTopRightImage = _embed_css_images_Border02_corners_png_2023953407;
                this.verticalGap = 2;
                this.paddingLeft = 2;
-               this.borderCenterImage = _embed_css_images_BG_BohemianTileable_Game_png_1148175408;
+               this.borderCenterImage = _embed_css_images_BG_BohemianTileable_Game_png_821519408;
             };
          }
          style = StyleManager.getStyleDeclaration(".preyRerollListButtonReactivate");
@@ -6096,8 +6085,8 @@ package
          {
             style.factory = function():void
             {
-               this.icon = _embed_css____images_prey_prey_list_reroll_reactivate_png_1106340657;
-               this.disabledIcon = _embed_css____images_prey_prey_list_reroll_reactivate_disabled_png_74434796;
+               this.icon = _embed_css____images_prey_prey_list_reroll_reactivate_png_1235856493;
+               this.disabledIcon = _embed_css____images_prey_prey_list_reroll_reactivate_disabled_png_204334064;
             };
          }
          style = StyleManager.getStyleDeclaration(".preyDurationProgressSidebar");
@@ -6110,15 +6099,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default_malus_png_1083584633;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default_malus_png_1223952997;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -6173,11 +6162,11 @@ package
          {
             style.factory = function():void
             {
-               this.defaultUpCenterImage = _embed_css_images_Button_ChatTabIgnore_idle_png_373453081;
+               this.defaultUpCenterImage = _embed_css_images_Button_ChatTabIgnore_idle_png_1319268057;
                this.defaultUpMask = "center";
-               this.defaultOverCenterImage = _embed_css_images_Button_ChatTabIgnore_over_png_906238439;
+               this.defaultOverCenterImage = _embed_css_images_Button_ChatTabIgnore_over_png_503059495;
                this.skin = BitmapButtonSkin;
-               this.defaultDownCenterImage = _embed_css_images_Button_ChatTabIgnore_pressed_png_653700051;
+               this.defaultDownCenterImage = _embed_css_images_Button_ChatTabIgnore_pressed_png_922258679;
                this.defaultDownMask = "center";
                this.defaultOverMask = "center";
             };
@@ -6227,13 +6216,13 @@ package
                this.defaultOverLeftImage = "right";
                this.defaultDownMask = "right";
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
                this.defaultDownTopImage = "right";
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.defaultUpBottomImage = "right";
                this.defaultUpTopImage = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultOverTopImage = "right";
                this.defaultUpLeftImage = "right";
                this.defaultOverMask = "right";
@@ -6254,14 +6243,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_Trades_idle_png_925331141;
-               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_Trades_active_over_png_1728513382;
-               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_Trades_idle_over_png_433309128;
+               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_Trades_idle_png_1730481697;
+               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_Trades_active_over_png_1517102410;
+               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_Trades_idle_over_png_634503524;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_Trades_idle_over_png_433309128;
-               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_Trades_active_over_png_1728513382;
+               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_Trades_idle_over_png_634503524;
+               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_Trades_active_over_png_1517102410;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_Trades_active_png_1472479607;
+               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_Trades_active_png_1392106579;
             };
          }
          style = StyleManager.getStyleDeclaration("WorldMapWidget");
@@ -6276,7 +6265,7 @@ package
             {
                this.borderMask = "center";
                this.borderSkin = BitmapBorderSkin;
-               this.borderCenterImage = _embed_css_images_BG_BohemianTileable_Game_png_1148175408;
+               this.borderCenterImage = _embed_css_images_BG_BohemianTileable_Game_png_821519408;
             };
          }
          style = StyleManager.getStyleDeclaration(".selectOutfitPrev");
@@ -6289,17 +6278,17 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_744892220;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_879110432;
                this.defaultUpMask = "left";
                this.skin = BitmapButtonSkin;
                this.defaultOverLeftImage = "right";
                this.defaultDisabledMask = "left";
                this.defaultDisabledLeftImage = "right";
                this.defaultDownMask = "left";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultUpLeftImage = "right";
                this.defaultOverMask = "left";
             };
@@ -6370,14 +6359,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_idle_png_851212863;
-               this.selectedOverCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_over_png_417076086;
-               this.defaultOverCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_over_png_1199957823;
+               this.defaultUpCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_idle_png_1396972083;
+               this.selectedOverCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_over_png_349575074;
+               this.defaultOverCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_over_png_1728022323;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_pressed_png_817941011;
-               this.selectedDownCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_pressed_png_1846304974;
+               this.defaultDownCenterImage = _embed_css_images_Icons_TradeLists_ContainerDisplay_pressed_png_1075890131;
+               this.selectedDownCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_pressed_png_1456372718;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_idle_png_1140494966;
+               this.selectedUpCenterImage = _embed_css_images_Icons_TradeLists_ListDisplay_idle_png_539137698;
             };
          }
          style = StyleManager.getStyleDeclaration(".chatWidgetView");
@@ -6393,7 +6382,7 @@ package
                this.dividerThickness = 5;
                this.horizontalGap = 5;
                this.dividerBackgroundMask = "left";
-               this.dividerBackgroundLeftImage = _embed_css_images_Border02_WidgetSidebar_slim_png_828323829;
+               this.dividerBackgroundLeftImage = _embed_css_images_Border02_WidgetSidebar_slim_png_420837653;
                this.dividerAffordance = 5;
                this.verticalGap = 0;
             };
@@ -6447,27 +6436,27 @@ package
          {
             style.factory = function():void
             {
-               this.barRedLow = _embed_css_images_BarsHealth_fat_RedLow_png_1029541970;
+               this.barRedLow = _embed_css_images_BarsHealth_fat_RedLow_png_630566510;
                this.barImages = ["barRedLow2","barRedLow","barRedFull","barYellow","barGreenLow","barGreenFull"];
-               this.backgroundRightImage = _embed_css_images_BG_Bars_fat_enpiece_png_254994756;
-               this.barRedFull = _embed_css_images_BarsHealth_fat_RedFull_png_1188262271;
-               this.barGreenFull = _embed_css_images_BarsHealth_fat_GreenFull_png_1675173631;
+               this.backgroundRightImage = _embed_css_images_BG_Bars_fat_enpiece_png_285397664;
+               this.barRedFull = _embed_css_images_BarsHealth_fat_RedFull_png_663565691;
+               this.barGreenFull = _embed_css_images_BarsHealth_fat_GreenFull_png_1012481779;
                this.paddingRight = 3;
                this.backgroundMask = "center";
                this.leftOrnamentMask = "none";
-               this.barYellow = _embed_css_images_BarsHealth_fat_Yellow_png_1332323165;
-               this.barGreenLow = _embed_css_images_BarsHealth_fat_GreenLow_png_425933188;
+               this.barYellow = _embed_css_images_BarsHealth_fat_Yellow_png_917594525;
+               this.barGreenLow = _embed_css_images_BarsHealth_fat_GreenLow_png_23264160;
                this.rightOrnamentMask = "right";
-               this.backgroundCenterImage = _embed_css_images_BG_Bars_fat_tileable_png_1851975525;
-               this.rightOrnamentRightImage = _embed_css_images_BG_Bars_fat_enpieceOrnamented_png_805098349;
+               this.backgroundCenterImage = _embed_css_images_BG_Bars_fat_tileable_png_1719993865;
+               this.rightOrnamentRightImage = _embed_css_images_BG_Bars_fat_enpieceOrnamented_png_1076170925;
                this.backgroundLeftImage = "right";
                this.leftOrnamentLeftImage = "right";
                this.paddingBottom = 3;
-               this.barRedLow2 = _embed_css_images_BarsHealth_fat_RedLow2_png_1983741974;
+               this.barRedLow2 = _embed_css_images_BarsHealth_fat_RedLow2_png_2105859306;
                this.leftOrnamentOffset = -6;
                this.rightOrnamentOffset = 6;
                this.paddingTop = 1;
-               this.leftOrnamentRightImage = _embed_css_images_BG_Bars_fat_enpieceOrnamented_png_805098349;
+               this.leftOrnamentRightImage = _embed_css_images_BG_Bars_fat_enpieceOrnamented_png_1076170925;
                this.paddingLeft = 1;
                this.barLimits = [0,0.04,0.1,0.3,0.6,0.95];
             };
@@ -6482,17 +6471,17 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabsHighlighted_idle_png_802144823;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabsHighlighted_idle_png_791544907;
                this.defaultUpMask = "left";
                this.skin = BitmapButtonSkin;
                this.defaultOverLeftImage = "right";
                this.defaultDisabledMask = "left";
                this.defaultDisabledLeftImage = "right";
                this.defaultDownMask = "left";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabsHighlighted_idle_png_802144823;
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabsHighlighted_pressed_png_1019332597;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabsHighlighted_idle_png_791544907;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabsHighlighted_pressed_png_1482270485;
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabsHighlighted_over_png_475447497;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabsHighlighted_over_png_468614837;
                this.defaultUpLeftImage = "right";
                this.defaultOverMask = "left";
             };
@@ -6507,12 +6496,12 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDownTopImage = _embed_css_images_Arrow_Minimap_LevelUpDown_pressed_png_1728357286;
+               this.defaultDownTopImage = _embed_css_images_Arrow_Minimap_LevelUpDown_pressed_png_1801889674;
                this.defaultUpBottomImage = "top";
-               this.defaultUpTopImage = _embed_css_images_Arrow_Minimap_LevelUpDown_idle_png_332004998;
+               this.defaultUpTopImage = _embed_css_images_Arrow_Minimap_LevelUpDown_idle_png_271327590;
                this.defaultUpMask = "top";
                this.skin = BitmapButtonSkin;
-               this.defaultOverTopImage = _embed_css_images_Arrow_Minimap_LevelUpDown_over_png_536705658;
+               this.defaultOverTopImage = _embed_css_images_Arrow_Minimap_LevelUpDown_over_png_616546202;
                this.defaultOverBottomImage = "top";
                this.defaultDownMask = "top";
                this.defaultDownBottomImage = "top";
@@ -6535,8 +6524,8 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryRing_protected_png_613777710;
-               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_1201653772;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryRing_protected_png_143630382;
+               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_803702344;
             };
          }
          style = StyleManager.getStyleDeclaration(".spellListWidgetTabBar");
@@ -6564,8 +6553,8 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryWeapon_protected_png_1818101578;
-               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_1201653772;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryWeapon_protected_png_2025859402;
+               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_803702344;
             };
          }
          style = StyleManager.getStyleDeclaration("SpellTileRenderer");
@@ -6593,38 +6582,38 @@ package
          {
             style.factory = function():void
             {
-               this.iconProgressOff = _embed_css_images_Icons_ProgressBars_ProgressOff_png_1580407517;
-               this.iconStatePoisoned = _embed_css_images_Icons_Conditions_Poisoned_png_1674352817;
-               this.iconSkillFightAxe = _embed_css_images_Icons_ProgressBars_AxeFighting_png_854207195;
-               this.iconStateDrowning = _embed_css_images_Icons_Conditions_Drowning_png_142081554;
-               this.iconStateElectrified = _embed_css_images_Icons_Conditions_Electrified_png_1043769654;
-               this.iconStateStrengthened = _embed_css_images_Icons_Conditions_Strenghtened_png_957751449;
-               this.iconSkillFightDistance = _embed_css_images_Icons_ProgressBars_DistanceFighting_png_1306281466;
-               this.iconStateBleeding = _embed_css_images_Icons_Conditions_Bleeding_png_325607052;
-               this.iconStateFast = _embed_css_images_Icons_Conditions_Haste_png_46815841;
-               this.iconSkillFightClub = _embed_css_images_Icons_ProgressBars_ClubFighting_png_1530352971;
-               this.iconStatePZEntered = _embed_css_images_Icons_Conditions_PZ_png_1659726190;
-               this.iconStateCursed = _embed_css_images_Icons_Conditions_Cursed_png_226830886;
-               this.iconStateDrunk = _embed_css_images_Icons_Conditions_Drunk_png_495340422;
-               this.iconSkillFightShield = _embed_css_images_Icons_ProgressBars_Shielding_png_1404202048;
-               this.iconStateDazzled = _embed_css_images_Icons_Conditions_Dazzled_png_1336617984;
-               this.iconSkillFightSword = _embed_css_images_Icons_ProgressBars_SwordFighting_png_388408934;
-               this.iconStyleParallel = _embed_css_images_Icons_ProgressBars_ParallelStyle_png_564397355;
-               this.iconSkillFightFist = _embed_css_images_Icons_ProgressBars_FistFighting_png_946464807;
-               this.iconStyleCompact = _embed_css_images_Icons_ProgressBars_CompactStyle_png_2100207391;
-               this.iconStyleLarge = _embed_css_images_Icons_ProgressBars_LargeStyle_png_1014712263;
-               this.iconStateHungry = _embed_css_images_Icons_Conditions_Hungry_png_1160557067;
-               this.iconProgressOn = _embed_css_images_Icons_ProgressBars_ProgressOn_png_1171186177;
-               this.iconSkillMagLevel = _embed_css_images_Icons_ProgressBars_MagicLevel_png_1025231274;
-               this.iconSkillFishing = _embed_css_images_Icons_ProgressBars_Fishing_png_368980363;
-               this.iconStateFighting = _embed_css_images_Icons_Conditions_Logoutblock_png_626674025;
-               this.iconStateFreezing = _embed_css_images_Icons_Conditions_Freezing_png_1581087256;
-               this.iconStatePZBlock = _embed_css_images_Icons_Conditions_PZlock_png_2031018067;
-               this.iconSkillLevel = _embed_css_images_Icons_ProgressBars_ProgressOn_png_1171186177;
-               this.iconStateBurning = _embed_css_images_Icons_Conditions_Burning_png_1552261945;
-               this.iconStateManaShield = _embed_css_images_Icons_Conditions_MagicShield_png_246939656;
-               this.iconStyleDefault = _embed_css_images_Icons_ProgressBars_DefaultStyle_png_1681795459;
-               this.iconStateSlow = _embed_css_images_Icons_Conditions_Slowed_png_479759276;
+               this.iconProgressOff = _embed_css_images_Icons_ProgressBars_ProgressOff_png_1779777081;
+               this.iconStatePoisoned = _embed_css_images_Icons_Conditions_Poisoned_png_1540003537;
+               this.iconSkillFightAxe = _embed_css_images_Icons_ProgressBars_AxeFighting_png_784879159;
+               this.iconStateDrowning = _embed_css_images_Icons_Conditions_Drowning_png_542106670;
+               this.iconStateElectrified = _embed_css_images_Icons_Conditions_Electrified_png_1245219382;
+               this.iconStateStrengthened = _embed_css_images_Icons_Conditions_Strenghtened_png_695721049;
+               this.iconSkillFightDistance = _embed_css_images_Icons_ProgressBars_DistanceFighting_png_779396374;
+               this.iconStateBleeding = _embed_css_images_Icons_Conditions_Bleeding_png_526934384;
+               this.iconStateFast = _embed_css_images_Icons_Conditions_Haste_png_378019693;
+               this.iconSkillFightClub = _embed_css_images_Icons_ProgressBars_ClubFighting_png_1530197035;
+               this.iconStatePZEntered = _embed_css_images_Icons_Conditions_PZ_png_2094848430;
+               this.iconStateCursed = _embed_css_images_Icons_Conditions_Cursed_png_90499082;
+               this.iconStateDrunk = _embed_css_images_Icons_Conditions_Drunk_png_45733786;
+               this.iconSkillFightShield = _embed_css_images_Icons_ProgressBars_Shielding_png_599280960;
+               this.iconStateDazzled = _embed_css_images_Icons_Conditions_Dazzled_png_1747135488;
+               this.iconSkillFightSword = _embed_css_images_Icons_ProgressBars_SwordFighting_png_726197318;
+               this.iconStyleParallel = _embed_css_images_Icons_ProgressBars_ParallelStyle_png_562446159;
+               this.iconSkillFightFist = _embed_css_images_Icons_ProgressBars_FistFighting_png_744761447;
+               this.iconStyleCompact = _embed_css_images_Icons_ProgressBars_CompactStyle_png_2100887615;
+               this.iconStyleLarge = _embed_css_images_Icons_ProgressBars_LargeStyle_png_1083507847;
+               this.iconStateHungry = _embed_css_images_Icons_Conditions_Hungry_png_758019275;
+               this.iconProgressOn = _embed_css_images_Icons_ProgressBars_ProgressOn_png_370747169;
+               this.iconSkillMagLevel = _embed_css_images_Icons_ProgressBars_MagicLevel_png_1093895878;
+               this.iconSkillFishing = _embed_css_images_Icons_ProgressBars_Fishing_png_159411631;
+               this.iconStateFighting = _embed_css_images_Icons_Conditions_Logoutblock_png_358377557;
+               this.iconStateFreezing = _embed_css_images_Icons_Conditions_Freezing_png_1444773940;
+               this.iconStatePZBlock = _embed_css_images_Icons_Conditions_PZlock_png_2127619469;
+               this.iconSkillLevel = _embed_css_images_Icons_ProgressBars_ProgressOn_png_370747169;
+               this.iconStateBurning = _embed_css_images_Icons_Conditions_Burning_png_1677566757;
+               this.iconStateManaShield = _embed_css_images_Icons_Conditions_MagicShield_png_557850584;
+               this.iconStyleDefault = _embed_css_images_Icons_ProgressBars_DefaultStyle_png_1681910211;
+               this.iconStateSlow = _embed_css_images_Icons_Conditions_Slowed_png_77123048;
             };
          }
          style = StyleManager.getStyleDeclaration("PreySidebarView");
@@ -6639,7 +6628,7 @@ package
             {
                this.horizontalGap = 0;
                this.paddingBottom = 0;
-               this.iconImage = _embed_css_images_Icons_WidgetHeaders_Prey_png_1844002948;
+               this.iconImage = _embed_css_images_Icons_WidgetHeaders_Prey_png_2056699772;
                this.color = 16777215;
                this.paddingRight = 0;
                this.paddingTop = 0;
@@ -6693,12 +6682,12 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDownTopImage = _embed_css_images_Arrow_Minimap_LevelUpDown_pressed_png_1728357286;
+               this.defaultDownTopImage = _embed_css_images_Arrow_Minimap_LevelUpDown_pressed_png_1801889674;
                this.defaultUpBottomImage = "top";
-               this.defaultUpTopImage = _embed_css_images_Arrow_Minimap_LevelUpDown_idle_png_332004998;
+               this.defaultUpTopImage = _embed_css_images_Arrow_Minimap_LevelUpDown_idle_png_271327590;
                this.defaultUpMask = "bottom";
                this.skin = BitmapButtonSkin;
-               this.defaultOverTopImage = _embed_css_images_Arrow_Minimap_LevelUpDown_over_png_536705658;
+               this.defaultOverTopImage = _embed_css_images_Arrow_Minimap_LevelUpDown_over_png_616546202;
                this.defaultOverBottomImage = "top";
                this.defaultDownMask = "bottom";
                this.defaultDownBottomImage = "top";
@@ -6753,7 +6742,7 @@ package
                this.horizontalGap = 0;
                this.paddingBottom = 0;
                this.resizeCursorSkin = ResizeVerticalCursor;
-               this.borderRightImage = _embed_css_images_Border02_WidgetSidebar_slim_png_828323829;
+               this.borderRightImage = _embed_css_images_Border02_WidgetSidebar_slim_png_420837653;
                this.paddingRight = 2;
                this.borderBackgroundAlpha = 0;
                this.borderMask = "none";
@@ -6773,17 +6762,17 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_744892220;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_879110432;
                this.defaultUpMask = "left";
                this.skin = BitmapButtonSkin;
                this.defaultOverLeftImage = "right";
                this.defaultDisabledMask = "left";
                this.defaultDisabledLeftImage = "right";
                this.defaultDownMask = "left";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultUpLeftImage = "right";
                this.defaultOverMask = "left";
             };
@@ -6811,13 +6800,13 @@ package
          {
             style.factory = function():void
             {
-               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_GetPremium_active_png_778187739;
+               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_GetPremium_active_png_377762303;
                this.defaultUpMask = "center";
-               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_GetPremium_active_over_png_347021528;
+               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_GetPremium_active_over_png_618087100;
                this.skin = BitmapButtonSkin;
-               this.defaultDisabledCenterImage = _embed_css_images_Icons_WidgetMenu_GetPremium_idle_png_1985287859;
+               this.defaultDisabledCenterImage = _embed_css_images_Icons_WidgetMenu_GetPremium_idle_png_1978490031;
                this.defaultDisabledMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_GetPremium_active_over_png_347021528;
+               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_GetPremium_active_over_png_618087100;
                this.defaultDownMask = "center";
                this.defaultOverMask = "center";
             };
@@ -6859,14 +6848,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_BattleList_HideSkulled_idle_png_629388963;
-               this.selectedOverCenterImage = _embed_css_images_Icons_BattleList_HideSkulled_active_over_png_660583768;
-               this.defaultOverCenterImage = _embed_css_images_Icons_BattleList_HideSkulled_over_png_238536285;
+               this.defaultUpCenterImage = _embed_css_images_Icons_BattleList_HideSkulled_idle_png_428456803;
+               this.selectedOverCenterImage = _embed_css_images_Icons_BattleList_HideSkulled_active_over_png_1205967224;
+               this.defaultOverCenterImage = _embed_css_images_Icons_BattleList_HideSkulled_over_png_634011235;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_BattleList_HideSkulled_over_png_238536285;
-               this.selectedDownCenterImage = _embed_css_images_Icons_BattleList_HideSkulled_active_over_png_660583768;
+               this.defaultDownCenterImage = _embed_css_images_Icons_BattleList_HideSkulled_over_png_634011235;
+               this.selectedDownCenterImage = _embed_css_images_Icons_BattleList_HideSkulled_active_over_png_1205967224;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_BattleList_HideSkulled_active_png_1474407051;
+               this.selectedUpCenterImage = _embed_css_images_Icons_BattleList_HideSkulled_active_png_2021231179;
             };
          }
          style = StyleManager.getStyleDeclaration(".bodySlotTorso");
@@ -6879,7 +6868,7 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryArmor_png_1846126774;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryArmor_png_1841074918;
             };
          }
          style = StyleManager.getStyleDeclaration(".statusWidgetParallelZeroSkillProgress");
@@ -6892,15 +6881,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default_zero_png_841389645;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default_zero_png_1390467341;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -6949,12 +6938,12 @@ package
                this.buttonExpertModeStyle = "combatButtonExpert";
                this.buttonWhiteHandStyle = "combatButtonWhiteHand";
                this.buttonDefensiveStyle = "combatButtonDefensive";
-               this.iconImage = _embed_css_images_Icons_WidgetHeaders_Combat_png_518010106;
+               this.iconImage = _embed_css_images_Icons_WidgetHeaders_Combat_png_375287802;
                this.borderCenterMask = "all";
                this.borderFooterMask = "none";
                this.paddingRight = 0;
                this.buttonDoveStyle = "combatButtonDove";
-               this.borderCenterCenterImage = _embed_css_images_BG_Combat_ExpertOff_png_1133893050;
+               this.borderCenterCenterImage = _embed_css_images_BG_Combat_ExpertOff_png_793516502;
                this.buttonRedFistStyle = "combatButtonRedFist";
                this.paddingBottom = 0;
                this.buttonMountStyle = "combatButtonMount";
@@ -6977,27 +6966,27 @@ package
          {
             style.factory = function():void
             {
-               this.barRedLow = _embed_css_images_BarsHealth_default_RedLow_png_2034053770;
+               this.barRedLow = _embed_css_images_BarsHealth_default_RedLow_png_1323495386;
                this.barImages = ["barRedLow2","barRedLow","barRedFull","barYellow","barGreenLow","barGreenFull"];
-               this.backgroundRightImage = _embed_css_images_BG_Bars_default_enpiece_png_329250772;
-               this.barRedFull = _embed_css_images_BarsHealth_default_RedFull_png_60642647;
-               this.barGreenFull = _embed_css_images_BarsHealth_default_GreenFull_png_807562777;
+               this.backgroundRightImage = _embed_css_images_BG_Bars_default_enpiece_png_341854824;
+               this.barRedFull = _embed_css_images_BarsHealth_default_RedFull_png_471797811;
+               this.barGreenFull = _embed_css_images_BarsHealth_default_GreenFull_png_539233669;
                this.paddingRight = 3;
                this.backgroundMask = "center";
                this.leftOrnamentMask = "none";
-               this.barYellow = _embed_css_images_BarsHealth_default_Yellow_png_808052085;
-               this.barGreenLow = _embed_css_images_BarsHealth_default_GreenLow_png_1485470108;
+               this.barYellow = _embed_css_images_BarsHealth_default_Yellow_png_338291605;
+               this.barGreenLow = _embed_css_images_BarsHealth_default_GreenLow_png_1615903576;
                this.rightOrnamentMask = "right";
-               this.backgroundCenterImage = _embed_css_images_BG_Bars_default_tileable_png_813666947;
-               this.rightOrnamentRightImage = _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1621675861;
+               this.backgroundCenterImage = _embed_css_images_BG_Bars_default_tileable_png_402625151;
+               this.rightOrnamentRightImage = _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1901253493;
                this.backgroundLeftImage = "right";
                this.leftOrnamentLeftImage = "right";
                this.paddingBottom = 3;
-               this.barRedLow2 = _embed_css_images_BarsHealth_default_RedLow2_png_1110203394;
+               this.barRedLow2 = _embed_css_images_BarsHealth_default_RedLow2_png_1319540706;
                this.leftOrnamentOffset = -5;
                this.rightOrnamentOffset = 5;
                this.paddingTop = 1;
-               this.leftOrnamentRightImage = _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1621675861;
+               this.leftOrnamentRightImage = _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1901253493;
                this.paddingLeft = 1;
                this.barLimits = [0,0.04,0.1,0.3,0.6,0.95];
             };
@@ -7033,14 +7022,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_VipList_idle_png_298077813;
-               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_VipList_active_over_png_177527574;
-               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_VipList_idle_over_png_540002728;
+               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_VipList_idle_png_44831157;
+               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_VipList_active_over_png_47374454;
+               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_VipList_idle_over_png_412469896;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_VipList_idle_over_png_540002728;
-               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_VipList_active_over_png_177527574;
+               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_VipList_idle_over_png_412469896;
+               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_VipList_active_over_png_47374454;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_VipList_active_png_781472649;
+               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_VipList_active_png_848728905;
             };
          }
          style = StyleManager.getStyleDeclaration(".sideBarLeftWithBorder");
@@ -7057,7 +7046,7 @@ package
                this.horizontalGap = 0;
                this.paddingBottom = 0;
                this.resizeCursorSkin = ResizeVerticalCursor;
-               this.borderRightImage = _embed_css_images_Border02_WidgetSidebar_slim_png_828323829;
+               this.borderRightImage = _embed_css_images_Border02_WidgetSidebar_slim_png_420837653;
                this.paddingRight = 2;
                this.borderBackgroundAlpha = 0;
                this.borderMask = "right";
@@ -7078,7 +7067,7 @@ package
             style.factory = function():void
             {
                this.paddingRight = 12;
-               this.icon = _embed_css_images_Icons_Inventory_StoreInbox_png_2111006747;
+               this.icon = _embed_css_images_Icons_Inventory_StoreInbox_png_1901440063;
                this.paddingLeft = 12;
             };
          }
@@ -7094,7 +7083,7 @@ package
             {
                this.backgroundColor = 16711680;
                this.paddingBottom = 1;
-               this.backgroundImage = _embed_css_images_slot_container_png_1830671892;
+               this.backgroundImage = _embed_css_images_slot_container_png_1996786444;
                this.paddingRight = 1;
                this.backgroundAlpha = 1;
                this.paddingTop = 1;
@@ -7143,14 +7132,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_Prey_idle_png_1066518890;
-               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_Prey_active_over_png_224076033;
-               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_Prey_idle_over_png_257691859;
+               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_Prey_idle_png_924058986;
+               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_Prey_active_over_png_21306593;
+               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_Prey_idle_over_png_459157651;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_Prey_idle_over_png_257691859;
-               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_Prey_active_over_png_224076033;
+               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_Prey_idle_over_png_459157651;
+               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_Prey_active_over_png_21306593;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_Prey_active_png_1809319364;
+               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_Prey_active_png_2078269124;
             };
          }
          style = StyleManager.getStyleDeclaration(".invisibleDivider");
@@ -7239,11 +7228,11 @@ package
          {
             style.factory = function():void
             {
-               this.defaultUpCenterImage = _embed_css_images_Button_Combat_Stop_idle_png_1826670103;
+               this.defaultUpCenterImage = _embed_css_images_Button_Combat_Stop_idle_png_2028013783;
                this.defaultUpMask = "center";
-               this.defaultOverCenterImage = _embed_css_images_Button_Combat_Stop_over_png_564437783;
+               this.defaultOverCenterImage = _embed_css_images_Button_Combat_Stop_over_png_222586327;
                this.skin = BitmapButtonSkin;
-               this.defaultDownCenterImage = _embed_css_images_Button_Combat_Stop_pressed_png_1343706347;
+               this.defaultDownCenterImage = _embed_css_images_Button_Combat_Stop_pressed_png_1195446471;
                this.defaultDownMask = "center";
                this.defaultOverMask = "center";
             };
@@ -7305,40 +7294,40 @@ package
             {
                this.color = 16777215;
                this.skin = BitmapButtonSkin;
-               this.icon = _embed_css_____assets_images_ingameshop_Icons_IngameShop_12x12_TibiaCoin_png_552533231;
+               this.icon = _embed_css_____assets_images_ingameshop_Icons_IngameShop_12x12_TibiaCoin_png_423192446;
                this.defaultOverBottomRightImage = "bottomLeft";
-               this.defaultOverBottomImage = _embed_css_images_custombutton_Button_Gold_tileable_bc_over_png_1310818591;
-               this.defaultOverBottomLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_bl_over_png_608410194;
-               this.defaultDownBottomImage = _embed_css_images_custombutton_Button_Gold_tileable_bc_pressed_png_504718635;
+               this.defaultOverBottomImage = _embed_css_images_custombutton_Button_Gold_tileable_bc_over_png_1582917375;
+               this.defaultOverBottomLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_bl_over_png_866883846;
+               this.defaultDownBottomImage = _embed_css_images_custombutton_Button_Gold_tileable_bc_pressed_png_1314073167;
                this.defaultUpRightImage = "left";
-               this.defaultDownTopImage = _embed_css_images_custombutton_Button_Gold_tileable_tc_pressed_png_206403197;
+               this.defaultDownTopImage = _embed_css_images_custombutton_Button_Gold_tileable_tc_pressed_png_1001206657;
                this.defaultOverTopRightImage = "topLeft";
-               this.defaultDownTopLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_tl_pressed_png_169894520;
-               this.defaultUpCenterImage = _embed_css_images_custombutton_Button_Gold_tileable_mc_idle_png_313886890;
+               this.defaultDownTopLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_tl_pressed_png_96476760;
+               this.defaultUpCenterImage = _embed_css_images_custombutton_Button_Gold_tileable_mc_idle_png_144725306;
                this.defaultDownRightImage = "left";
-               this.defaultUpBottomImage = _embed_css_images_custombutton_Button_Gold_tileable_bc_idle_png_1121387039;
-               this.defaultUpTopImage = _embed_css_images_custombutton_Button_Gold_tileable_tc_idle_png_628673647;
-               this.defaultOverTopImage = _embed_css_images_custombutton_Button_Gold_tileable_tc_over_png_960245103;
+               this.defaultUpBottomImage = _embed_css_images_custombutton_Button_Gold_tileable_bc_idle_png_1388109823;
+               this.defaultUpTopImage = _embed_css_images_custombutton_Button_Gold_tileable_tc_idle_png_354340239;
+               this.defaultOverTopImage = _embed_css_images_custombutton_Button_Gold_tileable_tc_over_png_701648527;
                this.textSelectedColor = 16777215;
-               this.defaultDownCenterImage = _embed_css_images_custombutton_Button_Gold_tileable_mc_pressed_png_1727779818;
+               this.defaultDownCenterImage = _embed_css_images_custombutton_Button_Gold_tileable_mc_pressed_png_1792782474;
                this.defaultUpTopRightImage = "topLeft";
                this.defaultOverMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
                this.defaultUpMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
-               this.defaultUpBottomLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_bl_idle_png_1140384942;
-               this.defaultOverLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_ml_over_png_1035473025;
+               this.defaultUpBottomLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_bl_idle_png_866059770;
+               this.defaultOverLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_ml_over_png_1301417569;
                this.defaultDownMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
                this.disabledColor = 16777215;
                this.defaultDownTopRightImage = "topLeft";
-               this.defaultUpTopLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_tl_idle_png_1873827252;
+               this.defaultUpTopLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_tl_idle_png_1066808312;
                this.defaultUpBottomRightImage = "bottomLeft";
-               this.defaultDownBottomLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_bl_pressed_png_1833599894;
-               this.defaultDownLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_ml_pressed_png_921560467;
+               this.defaultDownBottomLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_bl_pressed_png_1601544042;
+               this.defaultDownLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_ml_pressed_png_1124837519;
                this.defaultOverRightImage = "left";
-               this.defaultOverCenterImage = _embed_css_images_custombutton_Button_Gold_tileable_mc_over_png_662243754;
+               this.defaultOverCenterImage = _embed_css_images_custombutton_Button_Gold_tileable_mc_over_png_387132358;
                this.defaultDownBottomRightImage = "bottomLeft";
                this.textRollOverColor = 16777215;
-               this.defaultUpLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_ml_idle_png_1852541313;
-               this.defaultOverTopLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_tl_over_png_1141054284;
+               this.defaultUpLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_ml_idle_png_2119528289;
+               this.defaultOverTopLeftImage = _embed_css_images_custombutton_Button_Gold_tileable_tl_over_png_1949119752;
             };
          }
          style = StyleManager.getStyleDeclaration(".purchaseBonusRerollsButton");
@@ -7351,7 +7340,7 @@ package
          {
             style.factory = function():void
             {
-               this.icon = _embed_css____images_prey_prey_unlock_permanently_png_1955932179;
+               this.icon = _embed_css____images_prey_prey_unlock_permanently_png_2084364847;
             };
          }
          style = StyleManager.getStyleDeclaration(".popUpHeaderStyle");
@@ -7403,15 +7392,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default_malus_png_1083584633;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default_malus_png_1223952997;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -7429,17 +7418,17 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_744892220;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_879110432;
                this.defaultUpMask = "right";
                this.skin = BitmapButtonSkin;
                this.defaultOverLeftImage = "right";
                this.defaultDisabledMask = "right";
                this.defaultDisabledLeftImage = "right";
                this.defaultDownMask = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultUpLeftImage = "right";
                this.defaultOverMask = "right";
             };
@@ -7487,15 +7476,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default_malus_png_1083584633;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default_malus_png_1223952997;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -7533,7 +7522,7 @@ package
          {
             style.factory = function():void
             {
-               this.iconImage = _embed_css_images_Icons_WidgetHeaders_GeneralControls_png_227481822;
+               this.iconImage = _embed_css_images_Icons_WidgetHeaders_GeneralControls_png_314099262;
                this.borderFooterMask = "none";
             };
          }
@@ -7547,15 +7536,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default_improved_png_1615848679;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default_improved_png_1481613863;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -7579,15 +7568,15 @@ package
                this.defaultDisabledMask = "center";
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_DefensiveOff_idle_png_1794298449;
-               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_DefensiveOn_active_png_1844746073;
-               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_DefensiveOff_over_png_88580271;
+               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_DefensiveOff_idle_png_1971662251;
+               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_DefensiveOn_active_png_2114894105;
+               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_DefensiveOff_over_png_523657045;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_DefensiveOff_over_png_88580271;
-               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_DefensiveOn_active_png_1844746073;
+               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_DefensiveOff_over_png_523657045;
+               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_DefensiveOn_active_png_2114894105;
                this.defaultOverMask = "center";
                this.selectedDisabledMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_DefensiveOn_idle_png_1614728391;
+               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_DefensiveOn_idle_png_1337920135;
             };
          }
          style = StyleManager.getStyleDeclaration(".astralSourcesArrowBox");
@@ -7614,17 +7603,17 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_550075419;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_952187387;
                this.defaultUpMask = "left";
                this.skin = BitmapButtonSkin;
                this.defaultOverLeftImage = "right";
                this.defaultDisabledMask = "left";
                this.defaultDisabledLeftImage = "right";
                this.defaultDownMask = "left";
-               this.defaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_550075419;
-               this.defaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_806241479;
+               this.defaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_952187387;
+               this.defaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_948994267;
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_334496997;
+               this.defaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_468729605;
                this.defaultUpLeftImage = "right";
                this.defaultOverMask = "left";
             };
@@ -7700,8 +7689,8 @@ package
             style.factory = function():void
             {
                this.paddingRight = 75;
-               this.icon = _embed_css____images_prey_prey_list_reroll_small_reactivate_png_1096128443;
-               this.disabledIcon = _embed_css____images_prey_prey_list_reroll_small_reactivate_disabled_png_1868832418;
+               this.icon = _embed_css____images_prey_prey_list_reroll_small_reactivate_png_1299157975;
+               this.disabledIcon = _embed_css____images_prey_prey_list_reroll_small_reactivate_disabled_png_1943789254;
             };
          }
          style = StyleManager.getStyleDeclaration("HotkeyOptions");
@@ -7759,7 +7748,7 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryWeapon_png_1587500415;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryWeapon_png_1721833083;
             };
          }
          style = StyleManager.getStyleDeclaration(".battlelistWidgetViewHideMonster");
@@ -7777,14 +7766,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_BattleList_HideMonsters_idle_png_1297366744;
-               this.selectedOverCenterImage = _embed_css_images_Icons_BattleList_HideMonsters_active_over_png_1041894995;
-               this.defaultOverCenterImage = _embed_css_images_Icons_BattleList_HideMonsters_over_png_1720793640;
+               this.defaultUpCenterImage = _embed_css_images_Icons_BattleList_HideMonsters_idle_png_1236418872;
+               this.selectedOverCenterImage = _embed_css_images_Icons_BattleList_HideMonsters_active_over_png_234622227;
+               this.defaultOverCenterImage = _embed_css_images_Icons_BattleList_HideMonsters_over_png_1260863432;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_BattleList_HideMonsters_over_png_1720793640;
-               this.selectedDownCenterImage = _embed_css_images_Icons_BattleList_HideMonsters_active_over_png_1041894995;
+               this.defaultDownCenterImage = _embed_css_images_Icons_BattleList_HideMonsters_over_png_1260863432;
+               this.selectedDownCenterImage = _embed_css_images_Icons_BattleList_HideMonsters_active_over_png_234622227;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_BattleList_HideMonsters_active_png_1182126058;
+               this.selectedUpCenterImage = _embed_css_images_Icons_BattleList_HideMonsters_active_png_1589130474;
             };
          }
          style = StyleManager.getStyleDeclaration(".spellListWidgetForm");
@@ -7824,39 +7813,39 @@ package
             style.factory = function():void
             {
                this.closeButtonTop = 4;
-               this.selectedUpLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_png_1323048363;
+               this.selectedUpLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_png_520247787;
                this.paddingRight = 4;
                this.skin = BitmapButtonSkin;
-               this.selectedDownLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_png_1323048363;
-               this.selectedOverLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_png_1323048363;
-               this.defaultUpRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_1491157363;
-               this.defaultUpCenterImage = _embed_css_images_ChatTab_tileable_idle_png_1025655505;
-               this.defaultDownRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_1491157363;
+               this.selectedDownLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_png_520247787;
+               this.selectedOverLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_png_520247787;
+               this.defaultUpRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_2102059443;
+               this.defaultUpCenterImage = _embed_css_images_ChatTab_tileable_idle_png_627868017;
+               this.defaultDownRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_2102059443;
                this.paddingBottom = 0;
                this.selectedTextColor = 15904590;
                this.closeButtonRight = 4;
-               this.selectedDownRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_png_1662843318;
+               this.selectedDownRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_png_1457444790;
                this.selectedOverMask = "left center right";
-               this.defaultDownCenterImage = _embed_css_images_ChatTab_tileable_idle_png_1025655505;
-               this.selectedDownCenterImage = _embed_css_images_ChatTab_tileable_png_1152222910;
+               this.defaultDownCenterImage = _embed_css_images_ChatTab_tileable_idle_png_627868017;
+               this.selectedDownCenterImage = _embed_css_images_ChatTab_tileable_png_883140798;
                this.paddingTop = 0;
                this.defaultOverMask = "left center right";
-               this.selectedUpCenterImage = _embed_css_images_ChatTab_tileable_png_1152222910;
+               this.selectedUpCenterImage = _embed_css_images_ChatTab_tileable_png_883140798;
                this.defaultUpMask = "left center right";
                this.selectedDownMask = "left center right";
                this.textAlign = "left";
-               this.defaultOverLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_1369512376;
+               this.defaultOverLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_969613528;
                this.highlightTextColor = 13120000;
                this.defaultDownMask = "left center right";
                this.selectedUpMask = "left center right";
-               this.defaultDownLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_1369512376;
-               this.defaultOverRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_1491157363;
-               this.selectedOverCenterImage = _embed_css_images_ChatTab_tileable_png_1152222910;
-               this.defaultOverCenterImage = _embed_css_images_ChatTab_tileable_idle_png_1025655505;
-               this.selectedOverRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_png_1662843318;
-               this.selectedUpRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_png_1662843318;
+               this.defaultDownLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_969613528;
+               this.defaultOverRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_2102059443;
+               this.selectedOverCenterImage = _embed_css_images_ChatTab_tileable_png_883140798;
+               this.defaultOverCenterImage = _embed_css_images_ChatTab_tileable_idle_png_627868017;
+               this.selectedOverRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_png_1457444790;
+               this.selectedUpRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_png_1457444790;
                this.defaultTextColor = 13221291;
-               this.defaultUpLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_1369512376;
+               this.defaultUpLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_969613528;
                this.paddingLeft = 4;
                this.closeButtonStyle = "chatWidgetDefaultTabCloseButton";
             };
@@ -7885,7 +7874,7 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryShield_png_8091800;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryShield_png_125978696;
             };
          }
          style = StyleManager.getStyleDeclaration(".npcObjectBox");
@@ -7914,16 +7903,16 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollHotkeys_disabled_png_326951061;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollHotkeys_disabled_png_59047793;
                this.paddingRight = 0;
                this.skin = BitmapButtonSkin;
                this.defaultOverBottomImage = "right";
                this.defaultDisabledLeftImage = "right";
                this.defaultDisabledTopImage = "right";
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollHotkeys_idle_png_1989691811;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollHotkeys_idle_png_1863838023;
                this.defaultDownTopImage = "right";
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollHotkeys_pressed_png_1194517687;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollHotkeys_pressed_png_1584202487;
                this.defaultUpBottomImage = "right";
                this.defaultUpTopImage = "right";
                this.paddingBottom = 0;
@@ -7936,7 +7925,7 @@ package
                this.defaultDisabledMask = "bottom";
                this.defaultDownMask = "bottom";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollHotkeys_over_png_191481507;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollHotkeys_over_png_585745991;
                this.defaultUpLeftImage = "right";
                this.paddingLeft = 0;
             };
@@ -7993,18 +7982,18 @@ package
                this.selectedDownMask = "center";
                this.skin = BitmapButtonSkin;
                this.defaultDisabledMask = "center";
-               this.defaultDisabledCenterImage = _embed_css_images_Icons_CombatControls_ExpertMode_disabled_png_1087726802;
+               this.defaultDisabledCenterImage = _embed_css_images_Icons_CombatControls_ExpertMode_disabled_png_894372018;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_ExpertMode_idle_png_884394490;
-               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_ExpertModeOn_over_png_2021716257;
-               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_ExpertMode_over_png_13719802;
+               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_ExpertMode_idle_png_754231034;
+               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_ExpertModeOn_over_png_1392963547;
+               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_ExpertMode_over_png_420435450;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_ExpertMode_over_png_13719802;
-               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_ExpertModeOn_over_png_2021716257;
+               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_ExpertMode_over_png_420435450;
+               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_ExpertModeOn_over_png_1392963547;
                this.defaultOverMask = "center";
                this.selectedDisabledMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_ExpertModeOn_idle_png_652505055;
+               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_ExpertModeOn_idle_png_123367643;
             };
          }
          style = StyleManager.getStyleDeclaration(".expandButtonPremiumTriggered");
@@ -8018,11 +8007,11 @@ package
             style.factory = function():void
             {
                this.selectedDownMask = "center";
-               this.selectedOverCenterImage = _embed_css_images_Button_MaximizePremium_over_png_138300341;
+               this.selectedOverCenterImage = _embed_css_images_Button_MaximizePremium_over_png_267955669;
                this.selectedOverMask = "center";
-               this.selectedDownCenterImage = _embed_css_images_Button_Maximize_pressed_png_744580322;
+               this.selectedDownCenterImage = _embed_css_images_Button_Maximize_pressed_png_1415129086;
                this.selectedUpMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Button_MaximizePremium_idle_png_1870457525;
+               this.selectedUpCenterImage = _embed_css_images_Button_MaximizePremium_idle_png_1480797397;
             };
          }
          style = StyleManager.getStyleDeclaration("EditMarkWidget");
@@ -8098,14 +8087,14 @@ package
          {
             style.factory = function():void
             {
-               this.overlayCooldownImage = _embed_css_images_Slot_Hotkey_Cooldown_png_348452255;
-               this.overlayHighlightImage = _embed_css_images_slot_Hotkey_highlighted_png_1867388771;
+               this.overlayCooldownImage = _embed_css_images_Slot_Hotkey_Cooldown_png_1017067163;
+               this.overlayHighlightImage = _embed_css_images_slot_Hotkey_highlighted_png_1467341187;
                this.backgroundLabelColor = 14277081;
                this.paddingBottom = 3;
                this.overlayLabelColor = 16777215;
-               this.backgroundImage = _embed_css_images_slot_Hotkey_png_542831063;
+               this.backgroundImage = _embed_css_images_slot_Hotkey_png_1006833303;
                this.paddingRight = 3;
-               this.overlayDisabledImage = _embed_css_images_slot_Hotkey_disabled_png_669884428;
+               this.overlayDisabledImage = _embed_css_images_slot_Hotkey_disabled_png_804094220;
                this.paddingTop = 3;
                this.paddingLeft = 3;
             };
@@ -8120,7 +8109,7 @@ package
          {
             style.factory = function():void
             {
-               this.icon = _embed_css_____assets_images_ingameshop_Icons_IngameShop_12x12_TibiaCoin_png_552533231;
+               this.icon = _embed_css_____assets_images_ingameshop_Icons_IngameShop_12x12_TibiaCoin_png_423192446;
             };
          }
          style = StyleManager.getStyleDeclaration(".ingameShopNoButton");
@@ -8135,7 +8124,7 @@ package
             {
                this.paddingBottom = 2;
                this.paddingRight = 8;
-               this.icon = _embed_css_images_Icons_IngameShop_12x12_No_png_85749109;
+               this.icon = _embed_css_images_Icons_IngameShop_12x12_No_png_115059819;
                this.paddingTop = 2;
                this.paddingLeft = 8;
             };
@@ -8182,13 +8171,13 @@ package
          {
             style.factory = function():void
             {
-               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_Blessings_active_png_1623160046;
+               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_Blessings_active_png_1558016314;
                this.defaultUpMask = "center";
-               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_Blessings_active_over_png_130321579;
+               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_Blessings_active_over_png_675712135;
                this.skin = BitmapButtonSkin;
-               this.defaultDisabledCenterImage = _embed_css_images_Icons_WidgetMenu_Blessings_idle_png_1665211264;
+               this.defaultDisabledCenterImage = _embed_css_images_Icons_WidgetMenu_Blessings_idle_png_1732180796;
                this.defaultDisabledMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_Blessings_active_over_png_130321579;
+               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_Blessings_active_over_png_675712135;
                this.defaultDownMask = "center";
                this.defaultOverMask = "center";
             };
@@ -8270,8 +8259,8 @@ package
          {
             style.factory = function():void
             {
-               this.icon = _embed_css_____assets_images_imbuing_imbuing_icon_useprotection_active_png_1327320745;
-               this.disabledIcon = _embed_css_____assets_images_imbuing_imbuing_icon_useprotection_disabled_png_1477840035;
+               this.icon = _embed_css_____assets_images_imbuing_imbuing_icon_useprotection_active_png_532986814;
+               this.disabledIcon = _embed_css_____assets_images_imbuing_imbuing_icon_useprotection_disabled_png_494797810;
             };
          }
          style = StyleManager.getStyleDeclaration(".npcSummaryForm");
@@ -8317,11 +8306,11 @@ package
                this.iconDefaultDownMask = "top";
                this.defaultDownTopImage = "right";
                this.borderLeft = 0;
-               this.iconDefaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
+               this.iconDefaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
                this.paddingBottom = 0;
                this.iconDefaultOverBottomImage = "right";
                this.iconSelectedDownMask = "bottom";
-               this.iconDefaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.iconDefaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.borderBottom = 0;
                this.iconSelectedUpLeftImage = "right";
                this.iconSelectedDownTopImage = "right";
@@ -8332,18 +8321,18 @@ package
                this.defaultOverLeftImage = "right";
                this.selectedUpTopImage = "right";
                this.iconSelectedDownBottomImage = "right";
-               this.iconSelectedOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.iconSelectedOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultDownMask = "top";
                this.selectedUpMask = "bottom";
                this.selectedDownBottomImage = "right";
-               this.iconSelectedDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.iconSelectedDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.iconDefaultUpTopImage = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.defaultOverRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.borderRight = 0;
-               this.selectedOverRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.selectedOverRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.iconDefaultUpLeftImage = "right";
-               this.selectedUpRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.selectedUpRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.iconDefaultOverLeftImage = "right";
                this.defaultUpLeftImage = "right";
                this.paddingLeft = 0;
@@ -8358,13 +8347,13 @@ package
                this.defaultOverBottomImage = "right";
                this.borderTop = 0;
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
-               this.defaultDownRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.defaultUpRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
+               this.defaultDownRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.defaultUpBottomImage = "right";
                this.defaultUpTopImage = "right";
-               this.iconSelectedUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
+               this.iconSelectedUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
                this.defaultOverTopImage = "right";
-               this.selectedDownRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.selectedDownRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.selectedOverMask = "bottom";
                this.iconDefaultDownLeftImage = "right";
                this.iconDefaultOverMask = "top";
@@ -8377,7 +8366,7 @@ package
                this.selectedOverBottomImage = "right";
                this.selectedDownTopImage = "right";
                this.iconDefaultDownBottomImage = "right";
-               this.iconDefaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.iconDefaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
             };
          }
          style = StyleManager.getStyleDeclaration("TextEditor");
@@ -8471,12 +8460,12 @@ package
                this.buttonCombatStyle = "sideBarHeaderCombat";
                this.verticalGap = 2;
                this.borderSkin = BitmapBorderSkin;
-               this.borderTopRightImage = _embed_css_images_Border02_corners_png_1465567525;
+               this.borderTopRightImage = _embed_css_images_Border02_corners_png_2023953407;
                this.buttonBuddylistStyle = "sideBarHeaderBuddylist";
                this.horizontalGap = 2;
                this.paddingBottom = 2;
                this.horizontalAlign = "center";
-               this.borderRightImage = _embed_css_images_Border02_png_856171138;
+               this.borderRightImage = _embed_css_images_Border02_png_248151906;
                this.buttonBodyStyle = "sideBarHeaderBody";
                this.buttonUnjustPointsStyle = "sideBarUnjustPoints";
                this.borderMask = "left bottomLeft bottom bottomRight right center";
@@ -8484,7 +8473,7 @@ package
                this.buttonPreyStyle = "sideBarPrey";
                this.paddingLeft = 0;
                this.buttonBattlelistStyle = "sideBarHeaderBattlelist";
-               this.borderCenterImage = _embed_css_images_BG_Widget_Menu_png_779308052;
+               this.borderCenterImage = _embed_css_images_BG_Widget_Menu_png_1523929844;
                this.foldButtonStyleName = "sideBarHeaderFold";
             };
          }
@@ -8533,11 +8522,11 @@ package
          {
             style.factory = function():void
             {
-               this.overlayHighlightImage = _embed_css_images_slot_container_highlighted_png_622440584;
+               this.overlayHighlightImage = _embed_css_images_slot_container_highlighted_png_1302039720;
                this.paddingBottom = 1;
-               this.backgroundImage = _embed_css_images_slot_container_png_1830671892;
+               this.backgroundImage = _embed_css_images_slot_container_png_1996786444;
                this.paddingRight = 1;
-               this.overlayDisabledImage = _embed_css_images_slot_container_disabled_png_2143438719;
+               this.overlayDisabledImage = _embed_css_images_slot_container_disabled_png_2017818209;
                this.paddingTop = 1;
                this.paddingLeft = 1;
             };
@@ -8575,11 +8564,11 @@ package
                this.iconDefaultDownMask = "bottom";
                this.defaultDownTopImage = "right";
                this.borderLeft = 0;
-               this.iconDefaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
+               this.iconDefaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
                this.paddingBottom = 0;
                this.iconDefaultOverBottomImage = "right";
                this.iconSelectedDownMask = "top";
-               this.iconDefaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.iconDefaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.borderBottom = 0;
                this.iconSelectedUpLeftImage = "right";
                this.iconSelectedDownTopImage = "right";
@@ -8590,18 +8579,18 @@ package
                this.defaultOverLeftImage = "right";
                this.selectedUpTopImage = "right";
                this.iconSelectedDownBottomImage = "right";
-               this.iconSelectedOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.iconSelectedOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultDownMask = "bottom";
                this.selectedUpMask = "top";
                this.selectedDownBottomImage = "right";
-               this.iconSelectedDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.iconSelectedDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.iconDefaultUpTopImage = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.defaultOverRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.borderRight = 0;
-               this.selectedOverRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.selectedOverRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.iconDefaultUpLeftImage = "right";
-               this.selectedUpRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.selectedUpRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.iconDefaultOverLeftImage = "right";
                this.defaultUpLeftImage = "right";
                this.paddingLeft = 0;
@@ -8616,13 +8605,13 @@ package
                this.defaultOverBottomImage = "right";
                this.borderTop = 0;
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
-               this.defaultDownRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.defaultUpRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
+               this.defaultDownRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.defaultUpBottomImage = "right";
                this.defaultUpTopImage = "right";
-               this.iconSelectedUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
+               this.iconSelectedUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
                this.defaultOverTopImage = "right";
-               this.selectedDownRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_368269210;
+               this.selectedDownRightImage = _embed_css_images_Arrow_HotkeyToggle_BG_png_162240878;
                this.selectedOverMask = "top";
                this.iconDefaultDownLeftImage = "right";
                this.iconDefaultOverMask = "bottom";
@@ -8635,7 +8624,7 @@ package
                this.selectedOverBottomImage = "right";
                this.selectedDownTopImage = "right";
                this.iconDefaultDownBottomImage = "right";
-               this.iconDefaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.iconDefaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
             };
          }
          style = StyleManager.getStyleDeclaration(".sideBarHeaderFold");
@@ -8656,11 +8645,11 @@ package
                this.selectedOverLeftImage = "right";
                this.iconDefaultDownMask = "top";
                this.defaultDownTopImage = "right";
-               this.iconDefaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_550075419;
+               this.iconDefaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_952187387;
                this.paddingBottom = 0;
                this.iconDefaultOverBottomImage = "right";
                this.iconSelectedDownMask = "bottom";
-               this.iconDefaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_806241479;
+               this.iconDefaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_948994267;
                this.iconSelectedUpLeftImage = "right";
                this.iconSelectedDownTopImage = "right";
                this.selectedDownMask = "bottom";
@@ -8670,17 +8659,17 @@ package
                this.defaultOverLeftImage = "right";
                this.selectedUpTopImage = "right";
                this.iconSelectedDownBottomImage = "right";
-               this.iconSelectedOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_334496997;
+               this.iconSelectedOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_468729605;
                this.defaultDownMask = "top";
                this.selectedUpMask = "bottom";
                this.selectedDownBottomImage = "right";
-               this.iconSelectedDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_806241479;
+               this.iconSelectedDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_948994267;
                this.iconDefaultUpTopImage = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
-               this.selectedOverRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
+               this.defaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
+               this.selectedOverRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
                this.iconDefaultUpLeftImage = "right";
-               this.selectedUpRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
+               this.selectedUpRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
                this.iconDefaultOverLeftImage = "right";
                this.defaultUpLeftImage = "right";
                this.paddingLeft = 0;
@@ -8694,13 +8683,13 @@ package
                this.icon = BitmapButtonIcon;
                this.defaultOverBottomImage = "right";
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
-               this.defaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
+               this.defaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
+               this.defaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
                this.defaultUpBottomImage = "right";
                this.defaultUpTopImage = "right";
-               this.iconSelectedUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_550075419;
+               this.iconSelectedUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_952187387;
                this.defaultOverTopImage = "right";
-               this.selectedDownRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
+               this.selectedDownRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
                this.selectedOverMask = "bottom";
                this.iconDefaultDownLeftImage = "right";
                this.iconDefaultOverMask = "top";
@@ -8713,7 +8702,7 @@ package
                this.selectedOverBottomImage = "right";
                this.selectedDownTopImage = "right";
                this.iconDefaultDownBottomImage = "right";
-               this.iconDefaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_334496997;
+               this.iconDefaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_468729605;
             };
          }
          style = StyleManager.getStyleDeclaration(".hovered");
@@ -8765,15 +8754,15 @@ package
                this.defaultDisabledMask = "center";
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_PvPOff_idle_png_1515870738;
-               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_PvPOn_active_png_342724498;
-               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_PvPOff_active_png_75654116;
+               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_PvPOff_idle_png_1518483442;
+               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_PvPOn_active_png_806196142;
+               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_PvPOff_active_png_470312516;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_PvPOff_active_png_75654116;
-               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_PvPOn_active_png_342724498;
+               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_PvPOff_active_png_470312516;
+               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_PvPOn_active_png_806196142;
                this.defaultOverMask = "center";
                this.selectedDisabledMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_PvPOn_idle_png_258280708;
+               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_PvPOn_idle_png_325504288;
             };
          }
          style = StyleManager.getStyleDeclaration(".statusWidgetCompactHitpoints");
@@ -8786,27 +8775,27 @@ package
          {
             style.factory = function():void
             {
-               this.barRedLow = _embed_css_images_BarsHealth_compact_RedLow_png_298615636;
+               this.barRedLow = _embed_css_images_BarsHealth_compact_RedLow_png_432309528;
                this.barImages = ["barRedLow2","barRedLow","barRedFull","barYellow","barGreenLow","barGreenFull"];
-               this.backgroundRightImage = _embed_css_images_BG_Bars_compact_enpiece_png_1122989386;
-               this.barRedFull = _embed_css_images_BarsHealth_compact_RedFull_png_1122893911;
-               this.barGreenFull = _embed_css_images_BarsHealth_compact_GreenFull_png_147173125;
+               this.backgroundRightImage = _embed_css_images_BG_Bars_compact_enpiece_png_1259288550;
+               this.barRedFull = _embed_css_images_BarsHealth_compact_RedFull_png_1785716075;
+               this.barGreenFull = _embed_css_images_BarsHealth_compact_GreenFull_png_658108631;
                this.paddingRight = 3;
                this.backgroundMask = "center";
                this.leftOrnamentMask = "none";
-               this.barYellow = _embed_css_images_BarsHealth_compact_Yellow_png_1489515415;
-               this.barGreenLow = _embed_css_images_BarsHealth_compact_GreenLow_png_823416786;
+               this.barYellow = _embed_css_images_BarsHealth_compact_Yellow_png_824185175;
+               this.barGreenLow = _embed_css_images_BarsHealth_compact_GreenLow_png_1230640774;
                this.rightOrnamentMask = "right";
-               this.backgroundCenterImage = _embed_css_images_BG_Bars_compact_tileable_png_1378708577;
-               this.rightOrnamentRightImage = _embed_css_images_BG_Bars_compact_enpieceOrnamented_png_918003981;
+               this.backgroundCenterImage = _embed_css_images_BG_Bars_compact_tileable_png_1504529517;
+               this.rightOrnamentRightImage = _embed_css_images_BG_Bars_compact_enpieceOrnamented_png_985111789;
                this.backgroundLeftImage = "right";
                this.leftOrnamentLeftImage = "right";
                this.paddingBottom = 3;
-               this.barRedLow2 = _embed_css_images_BarsHealth_compact_RedLow2_png_6321508;
+               this.barRedLow2 = _embed_css_images_BarsHealth_compact_RedLow2_png_673302076;
                this.leftOrnamentOffset = -6;
                this.rightOrnamentOffset = 6;
                this.paddingTop = 1;
-               this.leftOrnamentRightImage = _embed_css_images_BG_Bars_compact_enpieceOrnamented_png_918003981;
+               this.leftOrnamentRightImage = _embed_css_images_BG_Bars_compact_enpieceOrnamented_png_985111789;
                this.paddingLeft = 1;
                this.barLimits = [0,0.04,0.1,0.3,0.6,0.95];
             };
@@ -8821,7 +8810,7 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryHead_png_556570291;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryHead_png_1231852719;
             };
          }
          style = StyleManager.getStyleDeclaration(".chatWidgetDefaultTab");
@@ -8835,39 +8824,39 @@ package
             style.factory = function():void
             {
                this.closeButtonTop = 4;
-               this.selectedUpLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_png_1323048363;
+               this.selectedUpLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_png_520247787;
                this.paddingRight = 4;
                this.skin = BitmapButtonSkin;
-               this.selectedDownLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_png_1323048363;
-               this.selectedOverLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_png_1323048363;
-               this.defaultUpRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_1491157363;
-               this.defaultUpCenterImage = _embed_css_images_ChatTab_tileable_idle_png_1025655505;
-               this.defaultDownRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_1491157363;
+               this.selectedDownLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_png_520247787;
+               this.selectedOverLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_png_520247787;
+               this.defaultUpRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_2102059443;
+               this.defaultUpCenterImage = _embed_css_images_ChatTab_tileable_idle_png_627868017;
+               this.defaultDownRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_2102059443;
                this.paddingBottom = 0;
                this.selectedTextColor = 15904590;
                this.closeButtonRight = 4;
-               this.selectedDownRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_png_1662843318;
+               this.selectedDownRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_png_1457444790;
                this.selectedOverMask = "left center right";
-               this.defaultDownCenterImage = _embed_css_images_ChatTab_tileable_idle_png_1025655505;
-               this.selectedDownCenterImage = _embed_css_images_ChatTab_tileable_png_1152222910;
+               this.defaultDownCenterImage = _embed_css_images_ChatTab_tileable_idle_png_627868017;
+               this.selectedDownCenterImage = _embed_css_images_ChatTab_tileable_png_883140798;
                this.paddingTop = 0;
                this.defaultOverMask = "left center right";
-               this.selectedUpCenterImage = _embed_css_images_ChatTab_tileable_png_1152222910;
+               this.selectedUpCenterImage = _embed_css_images_ChatTab_tileable_png_883140798;
                this.defaultUpMask = "left center right";
                this.selectedDownMask = "left center right";
                this.textAlign = "left";
-               this.defaultOverLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_1369512376;
+               this.defaultOverLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_969613528;
                this.highlightTextColor = 13120000;
                this.defaultDownMask = "left center right";
                this.selectedUpMask = "left center right";
-               this.defaultDownLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_1369512376;
-               this.defaultOverRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_1491157363;
-               this.selectedOverCenterImage = _embed_css_images_ChatTab_tileable_png_1152222910;
-               this.defaultOverCenterImage = _embed_css_images_ChatTab_tileable_idle_png_1025655505;
-               this.selectedOverRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_png_1662843318;
-               this.selectedUpRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_png_1662843318;
+               this.defaultDownLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_969613528;
+               this.defaultOverRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_idle_png_2102059443;
+               this.selectedOverCenterImage = _embed_css_images_ChatTab_tileable_png_883140798;
+               this.defaultOverCenterImage = _embed_css_images_ChatTab_tileable_idle_png_627868017;
+               this.selectedOverRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_png_1457444790;
+               this.selectedUpRightImage = _embed_css_images_ChatTab_tileable_EndpieceRound_png_1457444790;
                this.defaultTextColor = 13221291;
-               this.defaultUpLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_1369512376;
+               this.defaultUpLeftImage = _embed_css_images_ChatTab_tileable_EndpieceLeft_idle_png_969613528;
                this.paddingLeft = 4;
                this.closeButtonStyle = "chatWidgetDefaultTabCloseButton";
             };
@@ -8886,7 +8875,7 @@ package
                this.horizontalGap = 0;
                this.paddingBottom = 0;
                this.resizeCursorSkin = ResizeVerticalCursor;
-               this.borderRightImage = _embed_css_images_Border02_WidgetSidebar_slim_png_828323829;
+               this.borderRightImage = _embed_css_images_Border02_WidgetSidebar_slim_png_420837653;
                this.paddingRight = 2;
                this.borderBackgroundAlpha = 0;
                this.borderMask = "left";
@@ -8940,11 +8929,11 @@ package
          {
             style.factory = function():void
             {
-               this.overlayHighlightImage = _embed_css_images_slot_container_highlighted_png_622440584;
+               this.overlayHighlightImage = _embed_css_images_slot_container_highlighted_png_1302039720;
                this.paddingBottom = 1;
-               this.backgroundImage = _embed_css_images_slot_container_png_1830671892;
+               this.backgroundImage = _embed_css_images_slot_container_png_1996786444;
                this.paddingRight = 1;
-               this.overlayDisabledImage = _embed_css_images_slot_container_disabled_png_2143438719;
+               this.overlayDisabledImage = _embed_css_images_slot_container_disabled_png_2017818209;
                this.paddingTop = 1;
                this.paddingLeft = 1;
             };
@@ -8959,13 +8948,13 @@ package
          {
             style.factory = function():void
             {
-               this.defaultUpCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_idle_png_112457565;
-               this.selectedOverCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_active_over_png_961154706;
-               this.defaultOverCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_over_png_419396003;
-               this.icon = _embed_css_____assets_images_imbuing_imbuing_slot_empty_png_1983091155;
-               this.defaultDownCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_over_png_419396003;
-               this.selectedDownCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_active_over_png_961154706;
-               this.selectedUpCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_active_png_1087801247;
+               this.defaultUpCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_idle_png_177601341;
+               this.selectedOverCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_active_over_png_1490023058;
+               this.defaultOverCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_over_png_622687683;
+               this.icon = _embed_css_____assets_images_imbuing_imbuing_slot_empty_png_768110180;
+               this.defaultDownCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_over_png_622687683;
+               this.selectedDownCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_active_over_png_1490023058;
+               this.selectedUpCenterImage = _embed_css_images_Icons_BattleList_HidePlayers_active_png_613329023;
             };
          }
          style = StyleManager.getStyleDeclaration(".premiumWidgetButtonBox");
@@ -8997,15 +8986,15 @@ package
                this.defaultDisabledMask = "center";
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_RedFistOff_idle_png_2005346177;
-               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_RedFistOn_over_png_273027531;
-               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_RedFistOff_over_png_1679929985;
+               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_RedFistOff_idle_png_1338322061;
+               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_RedFistOn_over_png_744247435;
+               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_RedFistOff_over_png_1544269709;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_RedFistOff_over_png_1679929985;
-               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_RedFistOn_over_png_273027531;
+               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_RedFistOff_over_png_1544269709;
+               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_RedFistOn_over_png_744247435;
                this.defaultOverMask = "center";
                this.selectedDisabledMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_RedFistOn_idle_png_142442293;
+               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_RedFistOn_idle_png_329965451;
             };
          }
          style = StyleManager.getStyleDeclaration(".preyTitle");
@@ -9032,15 +9021,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default__png_385879515;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default__png_162149957;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -9086,15 +9075,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default_improved_png_1615848679;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default_improved_png_1481613863;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -9112,15 +9101,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default_malus_png_1083584633;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default_malus_png_1223952997;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -9177,8 +9166,8 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryHead_protected_png_819760770;
-               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_1201653772;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryHead_protected_png_1088319362;
+               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_803702344;
             };
          }
          style = StyleManager.getStyleDeclaration(".border");
@@ -9221,17 +9210,17 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_744892220;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_879110432;
                this.defaultUpMask = "right";
                this.skin = BitmapButtonSkin;
                this.defaultOverLeftImage = "right";
                this.defaultDisabledMask = "right";
                this.defaultDisabledLeftImage = "right";
                this.defaultDownMask = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultUpLeftImage = "right";
                this.defaultOverMask = "right";
             };
@@ -9246,11 +9235,11 @@ package
          {
             style.factory = function():void
             {
-               this.defaultUpCenterImage = _embed_css_images_Button_ChatTabNew_idle_png_1330657205;
+               this.defaultUpCenterImage = _embed_css_images_Button_ChatTabNew_idle_png_1804753881;
                this.defaultUpMask = "center";
-               this.defaultOverCenterImage = _embed_css_images_Button_ChatTabNew_over_png_67901621;
+               this.defaultOverCenterImage = _embed_css_images_Button_ChatTabNew_over_png_541842649;
                this.skin = BitmapButtonSkin;
-               this.defaultDownCenterImage = _embed_css_images_Button_ChatTabNew_pressed_png_1051530935;
+               this.defaultDownCenterImage = _embed_css_images_Button_ChatTabNew_pressed_png_923606007;
                this.defaultDownMask = "center";
                this.defaultOverMask = "center";
             };
@@ -9265,15 +9254,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default_improved_png_1615848679;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default_improved_png_1481613863;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -9296,14 +9285,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_GeneralControls_idle_png_2058421838;
-               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_GeneralControls_active_over_png_239349245;
-               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_GeneralControls_idle_over_png_1722601649;
+               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_GeneralControls_idle_png_1439642702;
+               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_GeneralControls_active_over_png_450488793;
+               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_GeneralControls_idle_over_png_1523904949;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_GeneralControls_idle_over_png_1722601649;
-               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_GeneralControls_active_over_png_239349245;
+               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_GeneralControls_idle_over_png_1523904949;
+               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_GeneralControls_active_over_png_450488793;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_GeneralControls_active_png_611020736;
+               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_GeneralControls_active_png_273763964;
             };
          }
          style = StyleManager.getStyleDeclaration("WidgetView");
@@ -9319,7 +9308,7 @@ package
                this.borderCenterBackgroundColor = 1977654;
                this.headerVerticalAlign = "middle";
                this.paddingRight = 2;
-               this.borderFooterBottomImage = _embed_css_images_Widget_Footer_tileable_png_1914256359;
+               this.borderFooterBottomImage = _embed_css_images_Widget_Footer_tileable_png_2102878075;
                this.borderSkin = WidgetViewSkin;
                this.titleFontColor = 13221291;
                this.paddingBottom = 2;
@@ -9332,7 +9321,7 @@ package
                this.headerWidth = 141;
                this.borderHeaderTop = 22;
                this.headerPaddingBottom = 0;
-               this.borderCenterRightImage = _embed_css_images_Border_Widget_png_589090515;
+               this.borderCenterRightImage = _embed_css_images_Border_Widget_png_123662323;
                this.iconTop = 2;
                this.footerVerticalAlign = "top";
                this.borderCenterBackgroundAlpha = 0.5;
@@ -9340,17 +9329,17 @@ package
                this.headerTop = 2;
                this.iconHeight = 19;
                this.borderCenterMask = "all";
-               this.borderFooterBottomLeftImage = _embed_css_images_Widget_Footer_tileable_end01_png_300497730;
+               this.borderFooterBottomLeftImage = _embed_css_images_Widget_Footer_tileable_end01_png_99047970;
                this.footerTop = 0;
                this.verticalGap = 2;
                this.headerPaddingRight = 0;
-               this.borderFooterBottomRightImage = _embed_css_images_Widget_Footer_tileable_end02_png_302478279;
+               this.borderFooterBottomRightImage = _embed_css_images_Widget_Footer_tileable_end02_png_100995747;
                this.footerPaddingLeft = 0;
                this.headerPaddingTop = 0;
                this.paddingTop = 2;
-               this.borderCenterTopRightImage = _embed_css_images_Border_Widget_corner_png_969648405;
+               this.borderCenterTopRightImage = _embed_css_images_Border_Widget_corner_png_30247409;
                this.headerHorizontalAlign = "center";
-               this.borderHeaderTopImage = _embed_css_images_Widget_HeaderBG_png_1258056819;
+               this.borderHeaderTopImage = _embed_css_images_Widget_HeaderBG_png_730116019;
                this.borderHeaderMask = "top";
                this.iconWidth = 23;
                this.footerHeight = 10;
@@ -9377,8 +9366,8 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryBoots_protected_png_395711413;
-               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_1201653772;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryBoots_protected_png_674517205;
+               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_803702344;
             };
          }
          style = StyleManager.getStyleDeclaration(".premiumOnlyPremium");
@@ -9391,7 +9380,7 @@ package
          {
             style.factory = function():void
             {
-               this.icon = _embed_css_images_Icon_Premium_png_157361223;
+               this.icon = _embed_css_images_Icon_Premium_png_299837787;
             };
          }
          style = StyleManager.getStyleDeclaration(".sideBarToggleRight");
@@ -9412,11 +9401,11 @@ package
                this.selectedOverLeftImage = "right";
                this.iconDefaultDownMask = "left";
                this.defaultDownTopImage = "right";
-               this.iconDefaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_550075419;
+               this.iconDefaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_952187387;
                this.paddingBottom = 0;
                this.iconDefaultOverBottomImage = "right";
                this.iconSelectedDownMask = "right";
-               this.iconDefaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_806241479;
+               this.iconDefaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_948994267;
                this.iconSelectedUpLeftImage = "right";
                this.iconSelectedDownTopImage = "right";
                this.selectedDownMask = "right";
@@ -9426,17 +9415,17 @@ package
                this.defaultOverLeftImage = "right";
                this.selectedUpTopImage = "right";
                this.iconSelectedDownBottomImage = "right";
-               this.iconSelectedOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_334496997;
+               this.iconSelectedOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_468729605;
                this.defaultDownMask = "left";
                this.selectedUpMask = "right";
                this.selectedDownBottomImage = "right";
-               this.iconSelectedDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_806241479;
+               this.iconSelectedDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_948994267;
                this.iconDefaultUpTopImage = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
-               this.selectedOverRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
+               this.defaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
+               this.selectedOverRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
                this.iconDefaultUpLeftImage = "right";
-               this.selectedUpRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
+               this.selectedUpRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
                this.iconDefaultOverLeftImage = "right";
                this.defaultUpLeftImage = "right";
                this.paddingLeft = 0;
@@ -9450,14 +9439,14 @@ package
                this.icon = BitmapButtonIcon;
                this.defaultOverBottomImage = "right";
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
+               this.defaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
                this.toggleButtonStyle = "sideBarToggleRight";
-               this.defaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
+               this.defaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
                this.defaultUpBottomImage = "right";
                this.defaultUpTopImage = "right";
-               this.iconSelectedUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_550075419;
+               this.iconSelectedUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_952187387;
                this.defaultOverTopImage = "right";
-               this.selectedDownRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2044967256;
+               this.selectedDownRightImage = _embed_css_images_Arrow_WidgetToggle_BG_png_2128357260;
                this.selectedOverMask = "right";
                this.iconDefaultDownLeftImage = "right";
                this.iconDefaultOverMask = "left";
@@ -9471,7 +9460,7 @@ package
                this.selectedDownTopImage = "right";
                this.borderMask = "left";
                this.iconDefaultDownBottomImage = "right";
-               this.iconDefaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_334496997;
+               this.iconDefaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_468729605;
             };
          }
          style = StyleManager.getStyleDeclaration("UnjustPointsWidgetView");
@@ -9486,12 +9475,12 @@ package
             {
                this.horizontalGap = 0;
                this.paddingBottom = 0;
-               this.iconImage = _embed_css_images_Icons_WidgetHeaders_Skull_png_980830817;
+               this.iconImage = _embed_css_images_Icons_WidgetHeaders_Skull_png_1181631553;
                this.color = 16777215;
                this.borderCenterMask = "all";
                this.paddingRight = 0;
                this.borderFooterMask = "none";
-               this.borderCenterCenterImage = _embed_css_images_UnjustifiedPoints_png_1971471823;
+               this.borderCenterCenterImage = _embed_css_images_UnjustifiedPoints_png_1782736303;
                this.paddingTop = 0;
                this.verticalGap = 0;
                this.paddingLeft = 0;
@@ -9531,7 +9520,7 @@ package
             {
                this.amountBoxStyle = "npcAmountBox";
                this.errorColor = 16711680;
-               this.iconImage = _embed_css_images_Icons_WidgetHeaders_Trades_png_107866521;
+               this.iconImage = _embed_css_images_Icons_WidgetHeaders_Trades_png_17953531;
                this.color = 13221291;
                this.paddingRight = 0;
                this.summaryFormStyle = "npcSummaryForm";
@@ -9582,7 +9571,7 @@ package
             {
                this.backgroundColor = 65280;
                this.emptyBackgroundColor = 16711680;
-               this.backgroundImage = _embed_css_images_slot_Hotkey_png_542831063;
+               this.backgroundImage = _embed_css_images_slot_Hotkey_png_1006833303;
                this.paddingRight = 3;
                this.backgroundAlpha = 1;
                this.backgroundOverAlpha = 1;
@@ -9609,7 +9598,7 @@ package
                this.paddingBottom = 0;
                this.horizontalAlign = "left";
                this.paddingRight = 2;
-               this.borderTopImage = _embed_css_images_BG_ChatTab_tileable_png_2031873750;
+               this.borderTopImage = _embed_css_images_BG_ChatTab_tileable_png_1482271674;
                this.borderMask = "top";
                this.paddingTop = 0;
                this.borderSkin = BitmapBorderSkin;
@@ -9716,18 +9705,18 @@ package
          {
             style.factory = function():void
             {
-               this.thumbSkin = _embed_css_images_Scrollbar_Handler_png_487857897;
+               this.thumbSkin = _embed_css_images_Scrollbar_Handler_png_760479401;
                this.backgroundColor = 65280;
-               this.upArrowDownSkin = _embed_css_images_Scrollbar_Arrow_up_pressed_png_228522939;
-               this.trackSkin = _embed_css_images_Scrollbar_tileable_png_2024027095;
-               this.downArrowDownSkin = _embed_css_images_Scrollbar_Arrow_down_pressed_png_2102997480;
-               this.upArrowDisabledSkin = _embed_css_images_Scrollbar_Arrow_up_idle_png_48874961;
-               this.upArrowUpSkin = _embed_css_images_Scrollbar_Arrow_up_idle_png_48874961;
+               this.upArrowDownSkin = _embed_css_images_Scrollbar_Arrow_up_pressed_png_165887905;
+               this.trackSkin = _embed_css_images_Scrollbar_tileable_png_1885091563;
+               this.downArrowDownSkin = _embed_css_images_Scrollbar_Arrow_down_pressed_png_1990651256;
+               this.upArrowDisabledSkin = _embed_css_images_Scrollbar_Arrow_up_idle_png_18741135;
+               this.upArrowUpSkin = _embed_css_images_Scrollbar_Arrow_up_idle_png_18741135;
                this.backgroundAlpha = 0;
-               this.downArrowDisabledSkin = _embed_css_images_Scrollbar_Arrow_down_idle_png_500241812;
-               this.upArrowOverSkin = _embed_css_images_Scrollbar_Arrow_up_over_png_933050065;
-               this.downArrowUpSkin = _embed_css_images_Scrollbar_Arrow_down_idle_png_500241812;
-               this.downArrowOverSkin = _embed_css_images_Scrollbar_Arrow_down_over_png_1994681196;
+               this.downArrowDisabledSkin = _embed_css_images_Scrollbar_Arrow_down_idle_png_91820120;
+               this.upArrowOverSkin = _embed_css_images_Scrollbar_Arrow_up_over_png_860191089;
+               this.downArrowUpSkin = _embed_css_images_Scrollbar_Arrow_down_idle_png_91820120;
+               this.downArrowOverSkin = _embed_css_images_Scrollbar_Arrow_down_over_png_1360238424;
             };
          }
          style = StyleManager.getStyleDeclaration(".statusWidgetCompactZeroSkillProgress");
@@ -9740,15 +9729,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default_zero_png_841389645;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default_zero_png_1390467341;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -9789,7 +9778,7 @@ package
          {
             style.factory = function():void
             {
-               this.icon = _embed_css_____assets_images_ingameshop_Icons_IngameShop_32x14_TransferCoins_png_198242323;
+               this.icon = _embed_css_____assets_images_ingameshop_Icons_IngameShop_32x14_TransferCoins_png_920566008;
             };
          }
          style = StyleManager.getStyleDeclaration(".embeddedDialogButtonBox");
@@ -9843,14 +9832,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_Containers_idle_png_1947022978;
-               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_Containers_active_over_png_1480923629;
-               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_Containers_idle_over_png_1529638289;
+               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_Containers_idle_png_2144032898;
+               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_Containers_active_over_png_1759328973;
+               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_Containers_idle_over_png_1806477361;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_Containers_idle_over_png_1529638289;
-               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_Containers_active_over_png_1480923629;
+               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_Containers_idle_over_png_1806477361;
+               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_Containers_active_over_png_1759328973;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_Containers_active_png_309943728;
+               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_Containers_active_png_387529648;
             };
          }
          style = StyleManager.getStyleDeclaration(".containerPageFooter");
@@ -9899,7 +9888,7 @@ package
                this.titleRightHolderStyle = "chatWidgetRightHolder";
                this.titleIgnoreButtonStyle = "chatWidgetButtonIgnore";
                this.borderSkin = BitmapBorderSkin;
-               this.borderTopRightImage = _embed_css_images_Border02_corners_png_1465567525;
+               this.borderTopRightImage = _embed_css_images_Border02_corners_png_2023953407;
                this.verticalGap = 0;
                this.viewBarSingleViewStyle = "chatWidgetSingleView";
                this.viewBarStyle = "chatWidgetView";
@@ -9907,12 +9896,12 @@ package
                this.paddingBottom = 0;
                this.titleOpenButtonStyle = "chatWidgetButtonOpen";
                this.viewBarRightViewStyle = "chatWidgetRightView";
-               this.borderRightImage = _embed_css_images_Border02_png_856171138;
+               this.borderRightImage = _embed_css_images_Border02_png_248151906;
                this.borderMask = "left bottomLeft bottom bottomRight right center";
                this.paddingTop = 0;
                this.viewBarLeftViewStyle = "chatWidgetLeftView";
                this.paddingLeft = 0;
-               this.borderCenterImage = _embed_css_images_BG_BohemianTileable_ChatConsole_png_2063585141;
+               this.borderCenterImage = _embed_css_images_BG_BohemianTileable_ChatConsole_png_2130554773;
             };
          }
          style = StyleManager.getStyleDeclaration(".statusWidgetDefaultZeroSkillProgress");
@@ -9925,15 +9914,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default_zero_png_841389645;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default_zero_png_1390467341;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -9987,7 +9976,7 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryBoots_png_1593843512;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryBoots_png_1061018524;
             };
          }
          style = StyleManager.getStyleDeclaration(".actionBarTop");
@@ -10016,7 +10005,7 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_744892220;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_879110432;
                this.defaultUpMask = "bottom";
                this.defaultDisabledBottom = 11;
                this.defaultDownBottom = 11;
@@ -10028,11 +10017,11 @@ package
                this.defaultDisabledLeftImage = "right";
                this.defaultDownMask = "bottom";
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.defaultUpBottomImage = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultOverBottom = 11;
                this.defaultUpLeftImage = "right";
                this.defaultDisabledBottomImage = "right";
@@ -10065,8 +10054,8 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryLegs_protected_png_785554311;
-               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_1201653772;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryLegs_protected_png_516995939;
+               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_803702344;
             };
          }
          style = StyleManager.getStyleDeclaration(".combatButtonYellowHand");
@@ -10085,15 +10074,15 @@ package
                this.defaultDisabledMask = "center";
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_YellowHandOff_idle_png_768654451;
-               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_YellowHandOn_over_png_713246121;
-               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_YellowHandOff_over_png_511982963;
+               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_YellowHandOff_idle_png_1235819155;
+               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_YellowHandOn_over_png_1241884053;
+               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_YellowHandOff_over_png_443456403;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_YellowHandOff_over_png_511982963;
-               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_YellowHandOn_over_png_713246121;
+               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_YellowHandOff_over_png_443456403;
+               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_YellowHandOn_over_png_1241884053;
                this.defaultOverMask = "center";
                this.selectedDisabledMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_YellowHandOn_idle_png_572971351;
+               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_YellowHandOn_idle_png_1100929387;
             };
          }
          style = StyleManager.getStyleDeclaration("NicklistItemRenderer");
@@ -10121,7 +10110,7 @@ package
          {
             style.factory = function():void
             {
-               this.icon = _embed_css____images_prey_prey_unlock_temporarily_png_1138134336;
+               this.icon = _embed_css____images_prey_prey_unlock_temporarily_png_1205226112;
             };
          }
          style = StyleManager.getStyleDeclaration(".statusWidgetDefaultSkillProgress");
@@ -10134,15 +10123,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default__png_385879515;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default__png_162149957;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -10160,7 +10149,7 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_550075419;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_952187387;
                this.defaultUpMask = "left";
                this.skin = BitmapButtonSkin;
                this.defaultOverBottomImage = "right";
@@ -10169,11 +10158,11 @@ package
                this.defaultDisabledLeftImage = "right";
                this.defaultDownMask = "left";
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_550075419;
-               this.defaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_806241479;
+               this.defaultUpRightImage = _embed_css_images_Arrow_WidgetToggle_idle_png_952187387;
+               this.defaultDownRightImage = _embed_css_images_Arrow_WidgetToggle_pressed_png_948994267;
                this.defaultUpBottomImage = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_334496997;
+               this.defaultOverRightImage = _embed_css_images_Arrow_WidgetToggle_over_png_468729605;
                this.defaultUpLeftImage = "right";
                this.defaultDisabledBottomImage = "right";
                this.defaultOverMask = "left";
@@ -10192,94 +10181,94 @@ package
                this.defaultDisabledRightImage = "left";
                this.defaultDisabledBottomRightImage = "bottomLeft";
                this.paddingRight = 4;
-               this.selectedOverTopImage = _embed_css_images_custombutton_Button_Border_tileable_tc_over_png_1913712539;
-               this.selectedDisabledBottomImage = _embed_css_images_custombutton_Button_Border_tileable_bc_disabled_png_372459381;
-               this.selectedDownLeftImage = _embed_css_images_custombutton_Button_Border_tileable_ml_pressed_png_1348489359;
-               this.selectedOverLeftImage = _embed_css_images_custombutton_Button_Border_tileable_ml_over_png_637758037;
-               this.defaultOverBottomLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_bl_over_png_1195435017;
-               this.defaultDisabledTopImage = _embed_css_images_custombutton_Button_Standard_tileable_tc_disabled_png_509379672;
-               this.defaultDownTopImage = _embed_css_images_custombutton_Button_Standard_tileable_tc_pressed_png_1274559636;
+               this.selectedOverTopImage = _embed_css_images_custombutton_Button_Border_tileable_tc_over_png_1569901787;
+               this.selectedDisabledBottomImage = _embed_css_images_custombutton_Button_Border_tileable_bc_disabled_png_97198997;
+               this.selectedDownLeftImage = _embed_css_images_custombutton_Button_Border_tileable_ml_pressed_png_1339953035;
+               this.selectedOverLeftImage = _embed_css_images_custombutton_Button_Border_tileable_ml_over_png_427887893;
+               this.defaultOverBottomLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_bl_over_png_1316684489;
+               this.defaultDisabledTopImage = _embed_css_images_custombutton_Button_Standard_tileable_tc_disabled_png_369402996;
+               this.defaultDownTopImage = _embed_css_images_custombutton_Button_Standard_tileable_tc_pressed_png_1408096916;
                this.selectedOverBottomRightImage = "bottomLeft";
-               this.defaultUpCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_idle_png_1278990365;
+               this.defaultUpCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_idle_png_863893501;
                this.paddingBottom = 0;
-               this.selectedDownTopLeftImage = _embed_css_images_custombutton_Button_Border_tileable_tl_pressed_png_1903116940;
+               this.selectedDownTopLeftImage = _embed_css_images_custombutton_Button_Border_tileable_tl_pressed_png_1978729388;
                this.textSelectedColor = 13221291;
-               this.defaultDownCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_pressed_png_81347079;
-               this.selectedDownCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_pressed_png_81347079;
-               this.defaultDisabledTopLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_tl_disabled_png_1248907181;
+               this.defaultDownCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_pressed_png_253647645;
+               this.selectedDownCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_pressed_png_253647645;
+               this.defaultDisabledTopLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_tl_disabled_png_1116270317;
                this.selectedUpBottomRightImage = "bottomLeft";
                this.height = 22;
                this.defaultUpTopRightImage = "topLeft";
                this.selectedUpTopRightImage = "topLeft";
-               this.selectedUpCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_idle_png_1278990365;
-               this.selectedDisabledTopImage = _embed_css_images_custombutton_Button_Border_tileable_tc_disabled_png_1563054077;
+               this.selectedUpCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_idle_png_863893501;
+               this.selectedDisabledTopImage = _embed_css_images_custombutton_Button_Border_tileable_tc_disabled_png_744772701;
                this.selectedDownMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
-               this.selectedDisabledTopLeftImage = _embed_css_images_custombutton_Button_Border_tileable_tl_disabled_png_655788448;
+               this.selectedDisabledTopLeftImage = _embed_css_images_custombutton_Button_Border_tileable_tl_disabled_png_929049956;
                this.selectedOverTopRightImage = "topLeft";
-               this.defaultOverLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_ml_over_png_517648064;
+               this.defaultOverLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_ml_over_png_158167172;
                this.defaultDownMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
-               this.selectedUpTopImage = _embed_css_images_custombutton_Button_Border_tileable_tc_idle_png_1026384539;
+               this.selectedUpTopImage = _embed_css_images_custombutton_Button_Border_tileable_tc_idle_png_1034633179;
                this.selectedUpMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
-               this.selectedDownBottomImage = _embed_css_images_custombutton_Button_Border_tileable_bc_pressed_png_1988687265;
-               this.selectedDisabledBottomLeftImage = _embed_css_images_custombutton_Button_Border_tileable_bl_disabled_png_1194789362;
-               this.selectedOverTopLeftImage = _embed_css_images_custombutton_Button_Border_tileable_tl_over_png_1128024712;
+               this.selectedDownBottomImage = _embed_css_images_custombutton_Button_Border_tileable_bc_pressed_png_1996698541;
+               this.selectedDisabledBottomLeftImage = _embed_css_images_custombutton_Button_Border_tileable_bl_disabled_png_1996451214;
+               this.selectedOverTopLeftImage = _embed_css_images_custombutton_Button_Border_tileable_tl_over_png_1203653996;
                this.focusThickness = 0;
-               this.defaultDownBottomLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_bl_pressed_png_1326387531;
-               this.selectedDownBottomLeftImage = _embed_css_images_custombutton_Button_Border_tileable_bl_pressed_png_1894305430;
-               this.defaultDownLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_ml_pressed_png_165397636;
+               this.defaultDownBottomLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_bl_pressed_png_1258615591;
+               this.selectedDownBottomLeftImage = _embed_css_images_custombutton_Button_Border_tileable_bl_pressed_png_1673065226;
+               this.defaultDownLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_ml_pressed_png_236721532;
                this.defaultOverRightImage = "left";
-               this.defaultOverCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_over_png_931421981;
+               this.defaultOverCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_over_png_4423939;
                this.defaultDisabledTopRightImage = "topLeft";
                this.selectedDownTopRightImage = "topLeft";
                this.selectedOverRightImage = "left";
                this.selectedUpRightImage = "left";
                this.textRollOverColor = 15904590;
-               this.defaultUpLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_ml_idle_png_1785933248;
+               this.defaultUpLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_ml_idle_png_1658654332;
                this.paddingLeft = 4;
-               this.selectedOverBottomLeftImage = _embed_css_images_custombutton_Button_Border_tileable_bl_over_png_344982570;
+               this.selectedOverBottomLeftImage = _embed_css_images_custombutton_Button_Border_tileable_bl_over_png_269609286;
                this.color = 15904590;
-               this.defaultDisabledBottomLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_bl_disabled_png_1093953119;
-               this.selectedUpLeftImage = _embed_css_images_custombutton_Button_Border_tileable_ml_idle_png_901180245;
+               this.defaultDisabledBottomLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_bl_disabled_png_953976447;
+               this.selectedUpLeftImage = _embed_css_images_custombutton_Button_Border_tileable_ml_idle_png_1245218325;
                this.skin = StyleSizedBitmapButtonSkin;
                this.defaultOverBottomRightImage = "bottomLeft";
-               this.defaultOverBottomImage = _embed_css_images_custombutton_Button_Standard_tileable_bc_over_png_185603650;
-               this.defaultDisabledLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_ml_disabled_png_1250879576;
-               this.selectedUpBottomLeftImage = _embed_css_images_custombutton_Button_Border_tileable_bl_idle_png_1538038570;
-               this.defaultDownBottomImage = _embed_css_images_custombutton_Button_Standard_tileable_bc_pressed_png_572612494;
+               this.defaultOverBottomImage = _embed_css_images_custombutton_Button_Standard_tileable_bc_over_png_46790494;
+               this.defaultDisabledLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_ml_disabled_png_846678076;
+               this.selectedUpBottomLeftImage = _embed_css_images_custombutton_Button_Border_tileable_bl_idle_png_1479317574;
+               this.defaultDownBottomImage = _embed_css_images_custombutton_Button_Standard_tileable_bc_pressed_png_969488782;
                this.defaultUpRightImage = "left";
                this.defaultOverTopRightImage = "topLeft";
-               this.defaultDownTopLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_tl_pressed_png_1968611417;
+               this.defaultDownTopLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_tl_pressed_png_1833730757;
                this.defaultDownRightImage = "left";
-               this.defaultUpBottomImage = _embed_css_images_custombutton_Button_Standard_tileable_bc_idle_png_1982739778;
-               this.selectedDisabledLeftImage = _embed_css_images_custombutton_Button_Border_tileable_ml_disabled_png_1474936339;
-               this.defaultUpTopImage = _embed_css_images_custombutton_Button_Standard_tileable_tc_idle_png_24708496;
+               this.defaultUpBottomImage = _embed_css_images_custombutton_Button_Standard_tileable_bc_idle_png_1913227682;
+               this.selectedDisabledLeftImage = _embed_css_images_custombutton_Button_Border_tileable_ml_disabled_png_1201650483;
+               this.defaultUpTopImage = _embed_css_images_custombutton_Button_Standard_tileable_tc_idle_png_700367956;
                this.selectedDisabledTopRightImage = "topLeft";
-               this.defaultOverTopImage = _embed_css_images_custombutton_Button_Standard_tileable_tc_over_png_1841477776;
+               this.defaultOverTopImage = _embed_css_images_custombutton_Button_Standard_tileable_tc_over_png_1962565460;
                this.selectedDownRightImage = "left";
                this.selectedOverMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
                this.paddingTop = 0;
-               this.selectedUpTopLeftImage = _embed_css_images_custombutton_Button_Border_tileable_tl_idle_png_402102152;
-               this.defaultDisabledBottomImage = _embed_css_images_custombutton_Button_Standard_tileable_bc_disabled_png_1867898870;
+               this.selectedUpTopLeftImage = _embed_css_images_custombutton_Button_Border_tileable_tl_idle_png_460698220;
+               this.defaultDisabledBottomImage = _embed_css_images_custombutton_Button_Standard_tileable_bc_disabled_png_2000142426;
                this.defaultOverMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
                this.selectedDisabledRightImage = "left";
-               this.selectedUpBottomImage = _embed_css_images_custombutton_Button_Border_tileable_bc_idle_png_721306611;
+               this.selectedUpBottomImage = _embed_css_images_custombutton_Button_Border_tileable_bc_idle_png_713449011;
                this.selectedDownBottomRightImage = "bottomLeft";
                this.defaultUpMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
-               this.selectedDisabledCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_disabled_png_983765749;
-               this.defaultUpBottomLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_bl_idle_png_1526099209;
-               this.defaultDisabledCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_disabled_png_983765749;
+               this.selectedDisabledCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_disabled_png_1660613429;
+               this.defaultUpBottomLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_bl_idle_png_2093052983;
+               this.defaultDisabledCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_disabled_png_1660613429;
                this.defaultDisabledMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
-               this.selectedOverBottomImage = _embed_css_images_custombutton_Button_Border_tileable_bc_over_png_373998323;
+               this.selectedOverBottomImage = _embed_css_images_custombutton_Button_Border_tileable_bc_over_png_718071091;
                this.disabledColor = 15904590;
                this.defaultDownTopRightImage = "topLeft";
-               this.defaultUpTopLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_tl_idle_png_1925791611;
+               this.defaultUpTopLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_tl_idle_png_1688019237;
                this.defaultUpBottomRightImage = "bottomLeft";
-               this.selectedDownTopImage = _embed_css_images_custombutton_Button_Border_tileable_tc_pressed_png_502332351;
-               this.selectedOverCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_over_png_931421981;
+               this.selectedDownTopImage = _embed_css_images_custombutton_Button_Border_tileable_tc_pressed_png_491469499;
+               this.selectedOverCenterImage = _embed_css_images_custombutton_Button_Standard_tileable_mc_over_png_4423939;
                this.width = 1;
                this.defaultDownBottomRightImage = "bottomLeft";
                this.selectedDisabledBottomRightImage = "bottomLeft";
-               this.defaultOverTopLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_tl_over_png_546849157;
+               this.defaultOverTopLeftImage = _embed_css_images_custombutton_Button_Standard_tileable_tl_over_png_424714789;
                this.selectedDisabledMask = "topLeft top topRight left center right bottomLeft bottom bottomRight";
             };
          }
@@ -10299,15 +10288,15 @@ package
                this.defaultDisabledMask = "center";
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_OffensiveOff_idle_png_386961017;
-               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_OffensiveOn_over_png_1922169731;
-               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_OffensiveOff_over_png_1112870265;
+               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_OffensiveOff_idle_png_582119269;
+               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_OffensiveOn_over_png_1911407069;
+               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_OffensiveOff_over_png_1660751461;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_OffensiveOff_over_png_1112870265;
-               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_OffensiveOn_over_png_1922169731;
+               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_OffensiveOff_over_png_1660751461;
+               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_OffensiveOn_over_png_1911407069;
                this.defaultOverMask = "center";
                this.selectedDisabledMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_OffensiveOn_idle_png_505642365;
+               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_OffensiveOn_idle_png_228803293;
             };
          }
          style = StyleManager.getStyleDeclaration(".actionBarRight");
@@ -10338,21 +10327,21 @@ package
             {
                this.defaultUpMask = "center";
                this.selectedDownMask = "center";
-               this.selectedDisabledCenterImage = _embed_css_images_Button_Maximize_idle_png_1094816082;
+               this.selectedDisabledCenterImage = _embed_css_images_Button_Maximize_idle_png_960737362;
                this.skin = BitmapButtonSkin;
-               this.defaultDisabledCenterImage = _embed_css_images_Button_Minimize_idle_png_1665493556;
+               this.defaultDisabledCenterImage = _embed_css_images_Button_Minimize_idle_png_996649268;
                this.defaultDisabledMask = "center";
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Button_Minimize_idle_png_1665493556;
-               this.selectedOverCenterImage = _embed_css_images_Button_Maximize_over_png_1257962926;
-               this.defaultOverCenterImage = _embed_css_images_Button_Minimize_over_png_1989991220;
+               this.defaultUpCenterImage = _embed_css_images_Button_Minimize_idle_png_996649268;
+               this.selectedOverCenterImage = _embed_css_images_Button_Maximize_over_png_853065390;
+               this.defaultOverCenterImage = _embed_css_images_Button_Minimize_over_png_1857747508;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Button_Minimize_pressed_png_1820422736;
-               this.selectedDownCenterImage = _embed_css_images_Button_Maximize_pressed_png_744580322;
+               this.defaultDownCenterImage = _embed_css_images_Button_Minimize_pressed_png_1803996148;
+               this.selectedDownCenterImage = _embed_css_images_Button_Maximize_pressed_png_1415129086;
                this.defaultOverMask = "center";
                this.selectedDisabledMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Button_Maximize_idle_png_1094816082;
+               this.selectedUpCenterImage = _embed_css_images_Button_Maximize_idle_png_960737362;
             };
          }
          style = StyleManager.getStyleDeclaration(".sideBarHeaderBody");
@@ -10370,14 +10359,14 @@ package
                this.skin = BitmapButtonSkin;
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_Inventory_idle_png_1929909360;
-               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_Inventory_active_over_png_609144603;
-               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_Inventory_idle_over_png_1298136851;
+               this.defaultUpCenterImage = _embed_css_images_Icons_WidgetMenu_Inventory_idle_png_1991267500;
+               this.selectedOverCenterImage = _embed_css_images_Icons_WidgetMenu_Inventory_active_over_png_1138143095;
+               this.defaultOverCenterImage = _embed_css_images_Icons_WidgetMenu_Inventory_idle_over_png_1428562487;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_Inventory_idle_over_png_1298136851;
-               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_Inventory_active_over_png_609144603;
+               this.defaultDownCenterImage = _embed_css_images_Icons_WidgetMenu_Inventory_idle_over_png_1428562487;
+               this.selectedDownCenterImage = _embed_css_images_Icons_WidgetMenu_Inventory_active_over_png_1138143095;
                this.defaultOverMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_Inventory_active_png_710741474;
+               this.selectedUpCenterImage = _embed_css_images_Icons_WidgetMenu_Inventory_active_png_506655126;
             };
          }
          style = StyleManager.getStyleDeclaration(".combatButtonDove");
@@ -10396,15 +10385,15 @@ package
                this.defaultDisabledMask = "center";
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_DoveOff_idle_png_165836976;
-               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_DoveOn_over_png_927199358;
-               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_DoveOff_over_png_1096554064;
+               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_DoveOff_idle_png_369785836;
+               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_DoveOn_over_png_931245694;
+               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_DoveOff_over_png_893524756;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_DoveOff_over_png_1096554064;
-               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_DoveOn_over_png_927199358;
+               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_DoveOff_over_png_893524756;
+               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_DoveOn_over_png_931245694;
                this.defaultOverMask = "center";
                this.selectedDisabledMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_DoveOn_idle_png_1462206846;
+               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_DoveOn_idle_png_1799831422;
             };
          }
          style = StyleManager.getStyleDeclaration("ActionButtonToolTip");
@@ -10456,27 +10445,27 @@ package
          {
             style.factory = function():void
             {
-               this.barRedLow = _embed_css_images_BarsHealth_default_RedLow_png_2034053770;
+               this.barRedLow = _embed_css_images_BarsHealth_default_RedLow_png_1323495386;
                this.barImages = ["barRedLow2","barRedLow","barRedFull","barYellow","barGreenLow","barGreenFull"];
-               this.backgroundRightImage = _embed_css_images_BG_Bars_default_enpiece_png_329250772;
-               this.barRedFull = _embed_css_images_BarsHealth_default_RedFull_png_60642647;
-               this.barGreenFull = _embed_css_images_BarsHealth_default_GreenFull_png_807562777;
+               this.backgroundRightImage = _embed_css_images_BG_Bars_default_enpiece_png_341854824;
+               this.barRedFull = _embed_css_images_BarsHealth_default_RedFull_png_471797811;
+               this.barGreenFull = _embed_css_images_BarsHealth_default_GreenFull_png_539233669;
                this.paddingRight = 3;
                this.backgroundMask = "center";
                this.leftOrnamentMask = "left";
-               this.barYellow = _embed_css_images_BarsHealth_default_Yellow_png_808052085;
-               this.barGreenLow = _embed_css_images_BarsHealth_default_GreenLow_png_1485470108;
+               this.barYellow = _embed_css_images_BarsHealth_default_Yellow_png_338291605;
+               this.barGreenLow = _embed_css_images_BarsHealth_default_GreenLow_png_1615903576;
                this.rightOrnamentMask = "right";
-               this.backgroundCenterImage = _embed_css_images_BG_Bars_default_tileable_png_813666947;
-               this.rightOrnamentRightImage = _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1621675861;
+               this.backgroundCenterImage = _embed_css_images_BG_Bars_default_tileable_png_402625151;
+               this.rightOrnamentRightImage = _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1901253493;
                this.backgroundLeftImage = "right";
                this.leftOrnamentLeftImage = "right";
                this.paddingBottom = 3;
-               this.barRedLow2 = _embed_css_images_BarsHealth_default_RedLow2_png_1110203394;
+               this.barRedLow2 = _embed_css_images_BarsHealth_default_RedLow2_png_1319540706;
                this.leftOrnamentOffset = -5;
                this.rightOrnamentOffset = 5;
                this.paddingTop = 1;
-               this.leftOrnamentRightImage = _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1621675861;
+               this.leftOrnamentRightImage = _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1901253493;
                this.paddingLeft = 3;
                this.barLimits = [0,0.04,0.1,0.3,0.6,0.95];
             };
@@ -10491,7 +10480,7 @@ package
          {
             style.factory = function():void
             {
-               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_744892220;
+               this.defaultDisabledRightImage = _embed_css_images_Arrow_ScrollTabs_disabled_png_879110432;
                this.defaultUpMask = "left";
                this.skin = BitmapButtonSkin;
                this.defaultOverBottomImage = "right";
@@ -10500,11 +10489,11 @@ package
                this.defaultDisabledLeftImage = "right";
                this.defaultDownMask = "left";
                this.defaultDownBottomImage = "right";
-               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_1793155108;
-               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_169219784;
+               this.defaultUpRightImage = _embed_css_images_Arrow_ScrollTabs_idle_png_2086059672;
+               this.defaultDownRightImage = _embed_css_images_Arrow_ScrollTabs_pressed_png_225438040;
                this.defaultUpBottomImage = "right";
                this.defaultDownLeftImage = "right";
-               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1462627108;
+               this.defaultOverRightImage = _embed_css_images_Arrow_ScrollTabs_over_png_1323680872;
                this.defaultUpLeftImage = "right";
                this.defaultDisabledBottomImage = "right";
                this.defaultOverMask = "left";
@@ -10593,8 +10582,8 @@ package
          {
             style.factory = function():void
             {
-               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryNecklace_protected_png_1785395660;
-               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_1201653772;
+               this.emptyBackgroundImage = _embed_css_images_Slot_InventoryNecklace_protected_png_1799961580;
+               this.backgroundImage = _embed_css_images_slot_Hotkey_protected_png_803702344;
             };
          }
          style = StyleManager.getStyleDeclaration("ChannelView");
@@ -10610,7 +10599,7 @@ package
                this.dividerThickness = 5;
                this.horizontalGap = 5;
                this.dividerBackgroundMask = "left";
-               this.dividerBackgroundLeftImage = _embed_css_images_Border02_WidgetSidebar_slim_png_828323829;
+               this.dividerBackgroundLeftImage = _embed_css_images_Border02_WidgetSidebar_slim_png_420837653;
                this.messagesStyle = "messages";
                this.dividerAffordance = 5;
                this.verticalGap = 0;
@@ -10640,15 +10629,15 @@ package
          {
             style.factory = function():void
             {
-               this.backgroundLeftImage = _embed_css_images_BG_BarsProgress_compact_endpiece_png_1448454481;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsProgress_compact_endpiece_png_1370317653;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.paddingBottom = 2;
-               this.barDefault = _embed_css_images_BarsProgress_compact_orange_png_605959778;
+               this.barDefault = _embed_css_images_BarsProgress_compact_orange_png_198580350;
                this.backgroundMask = "left center right";
                this.paddingTop = 2;
                this.labelHorizontalAlign = "center";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsProgress_compact_tileable_png_1503274352;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsProgress_compact_tileable_png_1434705776;
                this.barLimits = 0;
             };
          }
@@ -10668,15 +10657,15 @@ package
                this.defaultDisabledMask = "center";
                this.defaultDownMask = "center";
                this.selectedUpMask = "center";
-               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_WhiteHandOff_idle_png_1012304800;
-               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_WhiteHandOn_over_png_2062716238;
-               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_WhiteHandOff_over_png_1354370208;
+               this.defaultUpCenterImage = _embed_css_images_Icons_CombatControls_WhiteHandOff_idle_png_283159200;
+               this.selectedOverCenterImage = _embed_css_images_Icons_CombatControls_WhiteHandOn_over_png_1435348302;
+               this.defaultOverCenterImage = _embed_css_images_Icons_CombatControls_WhiteHandOff_over_png_814885792;
                this.selectedOverMask = "center";
-               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_WhiteHandOff_over_png_1354370208;
-               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_WhiteHandOn_over_png_2062716238;
+               this.defaultDownCenterImage = _embed_css_images_Icons_CombatControls_WhiteHandOff_over_png_814885792;
+               this.selectedDownCenterImage = _embed_css_images_Icons_CombatControls_WhiteHandOn_over_png_1435348302;
                this.defaultOverMask = "center";
                this.selectedDisabledMask = "center";
-               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_WhiteHandOn_idle_png_1901846962;
+               this.selectedUpCenterImage = _embed_css_images_Icons_CombatControls_WhiteHandOn_idle_png_1088011342;
             };
          }
          style = StyleManager.getStyleDeclaration("OfferDetails");
@@ -10742,21 +10731,21 @@ package
             style.factory = function():void
             {
                this.barImages = "barDefault";
-               this.backgroundRightImage = _embed_css_images_BG_Bars_default_enpiece_png_329250772;
+               this.backgroundRightImage = _embed_css_images_BG_Bars_default_enpiece_png_341854824;
                this.paddingRight = 1;
                this.backgroundMask = "center";
                this.leftOrnamentMask = "left";
                this.rightOrnamentMask = "none";
-               this.backgroundCenterImage = _embed_css_images_BG_Bars_default_tileable_png_813666947;
-               this.rightOrnamentRightImage = _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1621675861;
+               this.backgroundCenterImage = _embed_css_images_BG_Bars_default_tileable_png_402625151;
+               this.rightOrnamentRightImage = _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1901253493;
                this.backgroundLeftImage = "right";
                this.leftOrnamentLeftImage = "right";
                this.paddingBottom = 3;
-               this.barDefault = _embed_css_images_BarsHealth_default_Mana_png_2014888902;
+               this.barDefault = _embed_css_images_BarsHealth_default_Mana_png_2142805618;
                this.leftOrnamentOffset = -5;
                this.rightOrnamentOffset = 5;
                this.paddingTop = 1;
-               this.leftOrnamentRightImage = _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1621675861;
+               this.leftOrnamentRightImage = _embed_css_images_BG_Bars_default_enpieceOrnamented_png_1901253493;
                this.paddingLeft = 3;
                this.barLimits = 0;
             };
@@ -10771,15 +10760,15 @@ package
          {
             style.factory = function():void
             {
-               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1761755336;
+               this.tickCenterImage = _embed_css_images_Bars_ProgressMarker_png_1220674660;
                this.backgroundRightImage = "left";
                this.barImages = "barDefault";
                this.tickMask = "center";
                this.paddingRight = -5;
                this.backgroundMask = "left center right";
-               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1408337339;
-               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1394078162;
-               this.barDefault = _embed_css_images_BarsXP_default_malus_png_1083584633;
+               this.backgroundCenterImage = _embed_css_images_BG_BarsXP_default_tileable_png_1802488215;
+               this.backgroundLeftImage = _embed_css_images_BG_BarsXP_default_endpiece_png_1805006002;
+               this.barDefault = _embed_css_images_BarsXP_default_malus_png_1223952997;
                this.paddingBottom = 4;
                this.tickOffset = 3;
                this.paddingTop = 3;
@@ -10799,7 +10788,7 @@ package
             {
                this.borderCenterMask = "all";
                this.borderFooterMask = "none";
-               this.borderCenterCenterImage = _embed_css_images_BG_Combat_ExpertOn_png_2127142674;
+               this.borderCenterCenterImage = _embed_css_images_BG_Combat_ExpertOn_png_1994504722;
             };
          }
          style = StyleManager.getStyleDeclaration(".validationFeedbackError");
@@ -10825,10 +10814,16 @@ package
          {
             style.factory = function():void
             {
-               this.icon = _embed_css____images_prey_prey_unlock_permanently_png_1955932179;
+               this.icon = _embed_css____images_prey_prey_unlock_permanently_png_2084364847;
             };
          }
          StyleManager.mx_internal::initProtoChainRoots();
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get m_UITibiaRootContainer() : HBox
+      {
+         return this._1020379552m_UITibiaRootContainer;
       }
       
       protected function onGameWindowResize(param1:ResizeEvent) : void
@@ -10847,18 +10842,23 @@ package
          this.m_ForceDisableGameWindowSizeCalc = false;
       }
       
-      [Bindable(event="propertyChange")]
-      public function get m_UITibiaRootContainer() : HBox
-      {
-         return this._1020379552m_UITibiaRootContainer;
-      }
-      
       private function _Tibia_Array1_i() : Array
       {
          var _loc1_:Array = [undefined,undefined];
          this._Tibia_Array1 = _loc1_;
          BindingManager.executeBindings(this,"_Tibia_Array1",this._Tibia_Array1);
          return _loc1_;
+      }
+      
+      public function set m_UIActionBarTop(param1:HActionBarWidget) : void
+      {
+         var _loc2_:Object = null;
+         _loc2_ = this._1423351586m_UIActionBarTop;
+         if(_loc2_ !== param1)
+         {
+            this._1423351586m_UIActionBarTop = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"m_UIActionBarTop",_loc2_,param1));
+         }
       }
       
       public function setSessionKey(param1:String) : void
@@ -10889,12 +10889,6 @@ package
          this.onDividerRelease(param1);
       }
       
-      [Bindable(event="propertyChange")]
-      public function get m_UIActionBarBottom() : HActionBarWidget
-      {
-         return this._629924354m_UIActionBarBottom;
-      }
-      
       public function initializeGameClient(param1:Boolean, param2:Object = null) : void
       {
          this.m_TutorialMode = param1;
@@ -10908,6 +10902,12 @@ package
             this.m_GameActionFactory = new GameActionFactory();
          }
          s_InternalTibiaTimerFactor = 1;
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get m_UIActionBarBottom() : HActionBarWidget
+      {
+         return this._629924354m_UIActionBarBottom;
       }
       
       public function __m_UIGameWindow_resize(param1:ResizeEvent) : void
@@ -11086,6 +11086,12 @@ package
          return _loc1_;
       }
       
+      [Bindable(event="propertyChange")]
+      public function get m_UIOuterRootContainer() : DividedBox
+      {
+         return this._1568861366m_UIOuterRootContainer;
+      }
+      
       public function set m_UIActionBarLeft(param1:VActionBarWidget) : void
       {
          var _loc2_:Object = null;
@@ -11095,12 +11101,6 @@ package
             this._1174474338m_UIActionBarLeft = param1;
             this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"m_UIActionBarLeft",_loc2_,param1));
          }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get m_UIOuterRootContainer() : DividedBox
-      {
-         return this._1568861366m_UIOuterRootContainer;
       }
       
       private function onConnectionLoginAdvice(param1:ConnectionEvent) : void
@@ -11115,15 +11115,15 @@ package
          _loc2_.show();
       }
       
+      private function onConnectionRecovered(param1:ConnectionEvent) : void
+      {
+         this.m_ConnectionLostDialog.hide();
+      }
+      
       [Bindable(event="propertyChange")]
       public function get m_UIActionBarRight() : VActionBarWidget
       {
          return this._2043305115m_UIActionBarRight;
-      }
-      
-      private function onConnectionRecovered(param1:ConnectionEvent) : void
-      {
-         this.m_ConnectionLostDialog.hide();
       }
       
       override public function initialize() : void
@@ -11344,15 +11344,16 @@ package
          }
       }
       
-      public function set m_UISideBarA(param1:SideBarWidget) : void
+      [Bindable(event="propertyChange")]
+      public function get m_UISideBarToggleRight() : ToggleBar
       {
-         var _loc2_:Object = null;
-         _loc2_ = this._64278965m_UISideBarA;
-         if(_loc2_ !== param1)
-         {
-            this._64278965m_UISideBarA = param1;
-            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"m_UISideBarA",_loc2_,param1));
-         }
+         return this._665607314m_UISideBarToggleRight;
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get m_UIWorldMapWidget() : WorldMapWidget
+      {
+         return this._1314206572m_UIWorldMapWidget;
       }
       
       public function set m_UISideBarB(param1:SideBarWidget) : void
@@ -11388,16 +11389,15 @@ package
          }
       }
       
-      [Bindable(event="propertyChange")]
-      public function get m_UISideBarToggleRight() : ToggleBar
+      public function set m_UISideBarA(param1:SideBarWidget) : void
       {
-         return this._665607314m_UISideBarToggleRight;
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get m_UIWorldMapWidget() : WorldMapWidget
-      {
-         return this._1314206572m_UIWorldMapWidget;
+         var _loc2_:Object = null;
+         _loc2_ = this._64278965m_UISideBarA;
+         if(_loc2_ !== param1)
+         {
+            this._64278965m_UISideBarA = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"m_UISideBarA",_loc2_,param1));
+         }
       }
       
       private function onCloseChangeCharacter(param1:CloseEvent) : void
@@ -11810,6 +11810,12 @@ package
          dispatchEvent(_loc2_);
       }
       
+      [Bindable(event="propertyChange")]
+      public function get m_UIWorldMapWindow() : GameWindowContainer
+      {
+         return this._1313911232m_UIWorldMapWindow;
+      }
+      
       protected function releaseConnection() : void
       {
          if(this.m_Connection != null)
@@ -11839,15 +11845,15 @@ package
       }
       
       [Bindable(event="propertyChange")]
-      public function get m_UISideBarC() : SideBarWidget
-      {
-         return this._64278963m_UISideBarC;
-      }
-      
-      [Bindable(event="propertyChange")]
       public function get m_UISideBarB() : SideBarWidget
       {
          return this._64278964m_UISideBarB;
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get m_UISideBarC() : SideBarWidget
+      {
+         return this._64278963m_UISideBarC;
       }
       
       [Bindable(event="propertyChange")]
@@ -11899,12 +11905,6 @@ package
          }
       }
       
-      [Bindable(event="propertyChange")]
-      public function get m_UIWorldMapWindow() : GameWindowContainer
-      {
-         return this._1313911232m_UIWorldMapWindow;
-      }
-      
       protected function onDividerRelease(param1:DividerEvent) : void
       {
          var _loc2_:Number = NaN;
@@ -11936,6 +11936,17 @@ package
       private function onConnectionLoginChallenge(param1:ConnectionEvent) : void
       {
          this.m_ConnectionEstablishedAndPacketReceived = true;
+      }
+      
+      public function set m_UIOuterRootContainer(param1:DividedBox) : void
+      {
+         var _loc2_:Object = null;
+         _loc2_ = this._1568861366m_UIOuterRootContainer;
+         if(_loc2_ !== param1)
+         {
+            this._1568861366m_UIOuterRootContainer = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"m_UIOuterRootContainer",_loc2_,param1));
+         }
       }
       
       private function _Tibia_GameWindowContainer1_i() : GameWindowContainer
@@ -11985,29 +11996,6 @@ package
          return this.m_Options;
       }
       
-      public function set m_UIOuterRootContainer(param1:DividedBox) : void
-      {
-         var _loc2_:Object = null;
-         _loc2_ = this._1568861366m_UIOuterRootContainer;
-         if(_loc2_ !== param1)
-         {
-            this._1568861366m_UIOuterRootContainer = param1;
-            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"m_UIOuterRootContainer",_loc2_,param1));
-         }
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get m_UIGameWindow() : GridContainer
-      {
-         return this._1404294856m_UIGameWindow;
-      }
-      
-      [Bindable(event="propertyChange")]
-      public function get m_UICenterColumn() : CustomDividedBox
-      {
-         return this._1356021457m_UICenterColumn;
-      }
-      
       public function set m_UIActionBarRight(param1:VActionBarWidget) : void
       {
          var _loc2_:Object = null;
@@ -12017,6 +12005,18 @@ package
             this._2043305115m_UIActionBarRight = param1;
             this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"m_UIActionBarRight",_loc2_,param1));
          }
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get m_UICenterColumn() : CustomDividedBox
+      {
+         return this._1356021457m_UICenterColumn;
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get m_UIGameWindow() : GridContainer
+      {
+         return this._1404294856m_UIGameWindow;
       }
       
       [Bindable(event="propertyChange")]

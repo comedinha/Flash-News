@@ -1,6 +1,7 @@
 package tibia.sessiondump.hints.condition
 {
    import shared.utility.Vector3D;
+   import tibia.input.gameaction.UseActionImpl;
    
    public class HintConditionUse extends HintConditionBase
    {
@@ -92,7 +93,7 @@ package tibia.sessiondump.hints.condition
       private static var FIELD_PLAYER_OUTFIT_COLOR_HEAD:String = "color-head";
        
       
-      protected var m_UseTarget:int = 0;
+      protected var m_UseTarget:int;
       
       protected var m_MultiuseObjectPosition:int = 0;
       
@@ -108,6 +109,7 @@ package tibia.sessiondump.hints.condition
       
       public function HintConditionUse()
       {
+         this.m_UseTarget = UseActionImpl.TARGET_AUTO;
          super();
          m_Type = TYPE;
       }

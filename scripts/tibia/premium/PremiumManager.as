@@ -13,25 +13,37 @@ package tibia.premium
    public class PremiumManager extends EventDispatcher
    {
       
+      protected static const PREMIUM_TRIGGER_DAILY_REWARD:uint = 18;
+      
+      protected static const PREMIUM_TRIGGER_PREY:uint = 16;
+      
+      protected static const PREMIUM_TRIGGER_CYCLOPEDIA:uint = 19;
+      
+      protected static const PREMIUM_TRIGGER_DEATH_PENALTY:uint = 7;
+      
+      public static const HIGHLIGHT_TIMEOUT:int = 1000 * 60 * 10;
+      
+      protected static const PREMIUM_TRIGGER_ACCESS_ARENAS:uint = 15;
+      
+      protected static const PREMIUM_TRIGGER_CLASS_PROMOTION:uint = 13;
+      
       public static const PREMIUM_BUTTON_GENERAL_CONTROLS:int = 0;
+      
+      protected static const PREMIUM_TRIGGER_ALL_AREAS:uint = 0;
+      
+      protected static const PREMIUM_TRIGGER_IMBUING:uint = 17;
       
       protected static const PREMIUM_TRIGGER_ALL_OUTFITS:uint = 5;
       
-      protected static const PREMIUM_TRIGGER_RENEW_PREMIUM:uint = 14;
-      
       protected static const PREMIUM_EXPIRY_THRESHOLD:uint = 3;
-      
-      protected static const PREMIUM_TRIGGER_RIDE_MOUNTS:uint = 4;
       
       protected static const PREMIUM_TRIGGER_XP_BOOST:uint = 6;
       
       protected static const PREMIUM_TRIGGER_DEPOT_SPACE:uint = 11;
       
-      protected static const PREMIUM_TRIGGER_DEATH_PENALTY:uint = 7;
+      protected static const PREMIUM_TRIGGER_INVITE_PRIVCHAT:uint = 12;
       
-      protected static const PREMIUM_TRIGGER_ACCESS_ARENAS:uint = 15;
-      
-      public static const HIGHLIGHT_TIMEOUT:int = 1000 * 60 * 10;
+      protected static const PREMIUM_URL:String = "/account/index.php?subtopic=redirectlogin&clienttarget=payment&clientselection=FC";
       
       protected static const PREMIUM_TRIGGER_ALL_SPELLS:uint = 2;
       
@@ -41,19 +53,15 @@ package tibia.premium
       
       protected static const PREMIUM_TRIGGER_TRAVEL_FASTER:uint = 3;
       
-      protected static const PREMIUM_TRIGGER_INVITE_PRIVCHAT:uint = 12;
-      
       public static const PREMIUM_BUTTON_WIDGET:int = 1;
       
       protected static const PREMIUM_TRIGGER_RENT_HOUSES:uint = 9;
       
       protected static const PREMIUM_TRIGGER_VIP_LIST:uint = 10;
       
-      protected static const PREMIUM_URL:String = "/account/index.php?subtopic=redirectlogin&clienttarget=payment&clientselection=FC";
+      protected static const PREMIUM_TRIGGER_RIDE_MOUNTS:uint = 4;
       
-      protected static const PREMIUM_TRIGGER_ALL_AREAS:uint = 0;
-      
-      protected static const PREMIUM_TRIGGER_CLASS_PROMOTION:uint = 13;
+      protected static const PREMIUM_TRIGGER_RENEW_PREMIUM:uint = 14;
       
       protected static const PREMIUM_TRIGGER_TRAIN_OFFLINE:uint = 1;
        
@@ -194,7 +202,18 @@ package tibia.premium
          this.m_PremiumMessages.length = 0;
          a_MessageIds.forEach(function(param1:uint, param2:int, param3:Vector.<uint>):void
          {
-            m_PremiumMessages.push(translateMessageId(param1));
+            var a_MessageID:uint = param1;
+            var a_Index:int = param2;
+            var a_Vector:Vector.<uint> = param3;
+            try
+            {
+               m_PremiumMessages.push(translateMessageId(a_MessageID));
+               return;
+            }
+            catch(_Error:ArgumentError)
+            {
+               return;
+            }
          });
          var Event:PremiumEvent = new PremiumEvent(PremiumEvent.TRIGGER);
          Event.messages = this.m_PremiumMessages;
