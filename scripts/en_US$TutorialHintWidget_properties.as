@@ -5,11 +5,11 @@ package
    public class en_US$TutorialHintWidget_properties extends ResourceBundle
    {
       
-      private static var _embed_properties_______images_help_hint_05_vocationsorcerer_png_1043063186:Class = en_US$TutorialHintWidget_properties__embed_properties_______images_help_hint_05_vocationsorcerer_png_1043063186;
+      private static var _embed_properties_______images_help_hint_01_alternativecontrols_png_532885604:Class = en_US$TutorialHintWidget_properties__embed_properties_______images_help_hint_01_alternativecontrols_png_532885604;
       
       private static var _embed_properties_______images_help_hint_02_welcometodawnport_png_143009028:Class = en_US$TutorialHintWidget_properties__embed_properties_______images_help_hint_02_welcometodawnport_png_143009028;
       
-      private static var _embed_properties_______images_help_hint_01_alternativecontrols_png_532885604:Class = en_US$TutorialHintWidget_properties__embed_properties_______images_help_hint_01_alternativecontrols_png_532885604;
+      private static var _embed_properties_______images_help_hint_05_vocationsorcerer_png_1043063186:Class = en_US$TutorialHintWidget_properties__embed_properties_______images_help_hint_05_vocationsorcerer_png_1043063186;
       
       private static var _embed_properties_______images_help_hint_06_vocationdruid_png_394412274:Class = en_US$TutorialHintWidget_properties__embed_properties_______images_help_hint_06_vocationdruid_png_394412274;
       

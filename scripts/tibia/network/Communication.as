@@ -597,7 +597,7 @@ package tibia.network
       
       protected static const BLESSING_FIRE_OF_SUNS:int = BLESSING_SPARK_OF_PHOENIX << 1;
       
-      public static const CLIENT_VERSION:uint = 2483;
+      public static const CLIENT_VERSION:uint = 2491;
       
       protected static const CATTACK:int = 161;
       
@@ -785,7 +785,7 @@ package tibia.network
       
       protected static const SEDITGUILDMESSAGE:int = 174;
       
-      public static const PROTOCOL_VERSION:int = 1140;
+      public static const PROTOCOL_VERSION:int = 1141;
       
       protected static const SAMBIENTE:int = 130;
       

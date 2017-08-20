@@ -122,7 +122,7 @@ package
       
       public static const BUGGY_FLASH_PLAYER_VERSION:String = "21,0,0,182";
       
-      public static const PROTOCOL_VERSION:int = 1140;
+      public static const PROTOCOL_VERSION:int = 1141;
       
       public static var s_FrameTibiaTimestamp:Number = 0;
       
@@ -142,7 +142,7 @@ package
       
       private static var s_LastTibiaFactorChangeRealTimestamp:int = 0;
       
-      public static const CLIENT_VERSION:uint = 2483;
+      public static const CLIENT_VERSION:uint = 2491;
       
       public static const PREVIEW_STATE_PREVIEW_NO_ACTIVE_CHANGE:uint = 1;
       
